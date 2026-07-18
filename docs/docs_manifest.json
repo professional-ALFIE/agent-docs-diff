@@ -826,8 +826,8 @@
     "statusline.md": {
       "original_url": "https://code.claude.com/docs/en/statusline",
       "original_md_url": "https://code.claude.com/docs/en/statusline.md",
-      "hash": "1ef0d42252c5224a8eae06213b281f9aa0de0aa55ba3cf9f809c57200f654e31",
-      "last_updated": "2026-07-18T02:43:40.735726"
+      "hash": "a986e67cd5e92c6ae5fc8a5a607e55a96ffbf99f058d64a4c8eac2f65b9e295e",
+      "last_updated": "2026-07-18T05:30:50.946320"
     },
     "sub-agents.md": {
       "original_url": "https://code.claude.com/docs/en/sub-agents",
@@ -1023,8 +1023,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-07-18T02:44:40.756740",
-    "fetch_duration_seconds": 327.222562,
+    "last_fetch_completed": "2026-07-18T05:31:23.821495",
+    "fetch_duration_seconds": 162.642353,
     "total_pages_discovered": 170,
     "pages_fetched_successfully": 171,
     "pages_failed": 0,
@@ -1034,7 +1034,7 @@
     "total_files": 170,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-07-18T02:44:40.756758",
+  "last_updated": "2026-07-18T05:31:23.821529",
   "base_url": "https://raw.githubusercontent.com/professional-ALFIE/agent-docs-diff/main/docs/",
   "github_repository": "professional-ALFIE/agent-docs-diff",
   "github_ref": "main",
