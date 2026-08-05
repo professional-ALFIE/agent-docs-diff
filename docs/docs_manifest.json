@@ -1047,8 +1047,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-08-05T02:43:05.828735",
-    "fetch_duration_seconds": 163.261914,
+    "last_fetch_completed": "2026-08-05T05:50:21.045262",
+    "fetch_duration_seconds": 162.573096,
     "total_pages_discovered": 174,
     "pages_fetched_successfully": 175,
     "pages_failed": 0,
@@ -1058,7 +1058,7 @@
     "total_files": 174,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-08-05T02:43:05.828749",
+  "last_updated": "2026-08-05T05:50:21.045295",
   "base_url": "https://raw.githubusercontent.com/professional-ALFIE/agent-docs-diff/main/docs/",
   "github_repository": "professional-ALFIE/agent-docs-diff",
   "github_ref": "main",
