@@ -273,8 +273,8 @@
     "changelog.md": {
       "original_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "original_raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-      "hash": "0a4605db3acad1c67915e4c050584b747a2e7fdfb3ceb5f2d1b391dcb9af7811",
-      "last_updated": "2026-08-08T01:48:26.017152",
+      "hash": "e1f4d8ea93211bf4a8492c7babb19a7675f67eda5ebfd9c220e2dca3c095b27f",
+      "last_updated": "2026-08-08T04:14:20.365377",
       "source": "claude-code-repository"
     },
     "channels.md": {
@@ -1113,8 +1113,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-08-08T01:48:26.017204",
-    "fetch_duration_seconds": 176.499202,
+    "last_fetch_completed": "2026-08-08T04:14:20.365433",
+    "fetch_duration_seconds": 140.179451,
     "total_pages_discovered": 185,
     "pages_fetched_successfully": 186,
     "pages_failed": 0,
@@ -1124,7 +1124,7 @@
     "total_files": 185,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-08-08T01:48:26.017223",
+  "last_updated": "2026-08-08T04:14:20.365454",
   "base_url": "https://raw.githubusercontent.com/professional-ALFIE/agent-docs-diff/main/docs/",
   "github_repository": "professional-ALFIE/agent-docs-diff",
   "github_ref": "main",
