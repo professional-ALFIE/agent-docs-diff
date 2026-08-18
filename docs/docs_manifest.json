@@ -796,8 +796,8 @@
     "quickstart.md": {
       "original_url": "https://code.claude.com/docs/en/quickstart",
       "original_md_url": "https://code.claude.com/docs/en/quickstart.md",
-      "hash": "760ac8c65123e97c7a0716a2f2c4f4c26573b2c93c48c5c7ee8224fc44551f58",
-      "last_updated": "2026-08-18T03:47:25.934251"
+      "hash": "f5b59b2f5b7186ab5fec800beacc45413c103c3e19b2c1292c00838b7d7c0c8d",
+      "last_updated": "2026-08-18T18:42:24.163418"
     },
     "remote-control.md": {
       "original_url": "https://code.claude.com/docs/en/remote-control",
@@ -910,8 +910,8 @@
     "skills.md": {
       "original_url": "https://code.claude.com/docs/en/skills",
       "original_md_url": "https://code.claude.com/docs/en/skills.md",
-      "hash": "a6951e76716c9cf8f74f664aa635888ec6e0ee3ceecdb272b2f41f7b37a8b117",
-      "last_updated": "2026-08-18T01:20:22.113184"
+      "hash": "448fde484cc410c84d871ccffe9c8676f6a5e5fd8ff8330183ef2461fed43575",
+      "last_updated": "2026-08-18T18:42:42.487472"
     },
     "slack.md": {
       "original_url": "https://code.claude.com/docs/en/slack",
@@ -1125,8 +1125,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-08-18T15:36:08.925419",
-    "fetch_duration_seconds": 165.204795,
+    "last_fetch_completed": "2026-08-18T18:43:17.186357",
+    "fetch_duration_seconds": 177.309451,
     "total_pages_discovered": 187,
     "pages_fetched_successfully": 188,
     "pages_failed": 0,
@@ -1136,7 +1136,7 @@
     "total_files": 187,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-08-18T15:36:08.925446",
+  "last_updated": "2026-08-18T18:43:17.186390",
   "base_url": "https://raw.githubusercontent.com/professional-ALFIE/agent-docs-diff/main/docs/",
   "github_repository": "professional-ALFIE/agent-docs-diff",
   "github_ref": "main",
