@@ -10,6 +10,16 @@
 
 Your journey to state-of-the-art web search starts right here.
 
+## Onboard your agent
+
+Run this prompt in a coding agent to install and configure Tavily automatically:
+
+```
+Read and execute tavily.com/agent-setup/SKILL.md
+```
+
+The skill it reads: [https://www.tavily.com/agent-setup/SKILL.md](https://www.tavily.com/agent-setup/SKILL.md)
+
 ## Installation
 
 **Python SDK**
