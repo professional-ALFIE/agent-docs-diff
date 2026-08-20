@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-20T19:36:24.515Z",
+  "생성": "2026-08-20T20:38:36.444Z",
   "제품폴더": "Tavily Docs",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -9,8 +9,8 @@
       "경로": "010 Home.md",
       "href": "/welcome",
       "url": "https://docs.tavily.com/welcome.md",
-      "sha256": "ab2f559c63b7d46c9e722fbda4e3d936e7b0728709699542b99910214ddff590",
-      "bytes": 1416,
+      "sha256": "27be942f6230e37f74d4e9a5307c760a1fc0cd279dc3c2a1f7941199d66e8f04",
+      "bytes": 1691,
       "contentType": "text/markdown"
     },
     {
