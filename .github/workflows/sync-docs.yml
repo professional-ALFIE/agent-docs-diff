@@ -1,0 +1,38 @@
+name: Sync docs
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      accept:
+        description: "탭·그룹 수 변화를 사람이 확인했으면 true (scripts/sync.ts --accept)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-docs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - name: Sync
+        run: bun scripts/sync.ts ${{ inputs.accept && '--accept' || '' }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "변경 없음"; exit 0; }
+          git commit -m "docs: sync $(date -u +%Y-%m-%dT%H:%MZ)" -m "$(git diff --cached --stat | tail -1)"
+          git push

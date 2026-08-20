@@ -1,0 +1,598 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://exa.ai/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Delete a Monitor
+
+> Deletes a monitor. This cannot be undone.
+
+
+
+## OpenAPI
+
+````yaml delete /monitors/{id}
+openapi: 3.1.0
+info:
+  title: Exa Public API
+  version: 2.0.0
+servers:
+  - url: https://api.exa.ai
+security:
+  - apiKey: []
+  - bearer: []
+tags: []
+paths:
+  /monitors/{id}:
+    delete:
+      tags:
+        - Monitors
+      summary: Delete a Monitor
+      description: Deletes a monitor. This cannot be undone.
+      operationId: deleteMonitor
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            description: The monitor ID
+          required: true
+          description: The monitor ID
+      responses:
+        '200':
+          description: The deleted monitor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchMonitor'
+components:
+  schemas:
+    SearchMonitor:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the monitor
+        name:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: An optional display name
+        status:
+          type: string
+          enum:
+            - active
+            - paused
+            - disabled
+          description: >-
+            The status of the monitor. `active` monitors run on schedule and can
+            be triggered manually. `paused` monitors can only be triggered
+            manually. `disabled` monitors are auto-disabled after 10 consecutive
+            authentication failures.
+        search:
+          $ref: '#/components/schemas/SearchMonitorSearchOutput'
+        trigger:
+          anyOf:
+            - $ref: '#/components/schemas/SearchMonitorTriggerOutput'
+            - type: 'null'
+          description: >-
+            The interval-based schedule for automatic runs. Null if no schedule
+            is set.
+        outputSchema:
+          $ref: '#/components/schemas/SearchMonitorOutputSchemaOutput'
+        metadata:
+          anyOf:
+            - type: object
+              propertyNames:
+                type: string
+              additionalProperties:
+                type: string
+              description: Caller-provided key-value metadata for your own tracking.
+              example:
+                slack_channel_id: C123ABC
+                slack_thread_id: '1745444400.123456'
+                user_id: U123ABC
+            - type: 'null'
+          description: >-
+            Optional key-value metadata for your own tracking. Echoed back in
+            webhook deliveries so you can route updates to systems like Slack.
+          example:
+            slack_channel_id: C123ABC
+            slack_thread_id: '1745444400.123456'
+            user_id: U123ABC
+        webhook:
+          $ref: '#/components/schemas/SearchMonitorWebhookOutput'
+        nextRunAt:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+          description: When the next scheduled run will occur. Null if no trigger is set.
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+          description: When the monitor was created
+        updatedAt:
+          type: string
+          format: date-time
+          description: When the monitor was last updated
+      required:
+        - id
+        - name
+        - status
+        - search
+        - trigger
+        - outputSchema
+        - metadata
+        - webhook
+        - nextRunAt
+        - createdAt
+        - updatedAt
+      additionalProperties: false
+    SearchMonitorSearchOutput:
+      type: object
+      properties:
+        query:
+          type: string
+          minLength: 1
+          description: The query string for the search.
+          example: Latest developments in LLM capabilities
+        numResults:
+          type: integer
+          minimum: 1
+          maximum: 100
+          description: >-
+            Number of results to return. Limits vary by search type. The maximum
+            public limit is 100 results. Contact sales (hello@exa.ai) to discuss
+            higher limits.
+          example: 10
+          default: 10
+        contents:
+          $ref: '#/components/schemas/SearchMonitorContentsOutput'
+      required:
+        - query
+      additionalProperties: false
+    SearchMonitorTriggerOutput:
+      type: object
+      properties:
+        type:
+          type: string
+          const: interval
+          description: The type of trigger. Currently only `interval` is supported.
+          default: interval
+        period:
+          type: string
+          description: >-
+            A duration string specifying how often the monitor runs (e.g., "1h",
+            "6h", "1d", "7d"). Single-unit only. Minimum interval is 1 hour. The
+            schedule is anchored to the monitor's creation time (e.g., a daily
+            monitor created at 2:30 PM runs daily around 2:30 PM).
+          example: 6h
+      required:
+        - type
+        - period
+      additionalProperties: false
+    SearchMonitorOutputSchemaOutput:
+      anyOf:
+        - oneOf:
+            - type: object
+              properties:
+                type:
+                  type: string
+                  const: text
+                description:
+                  type: string
+              required:
+                - type
+              additionalProperties: false
+            - type: object
+              properties:
+                type:
+                  type: string
+                  const: object
+                description:
+                  type: string
+                properties:
+                  type: object
+                  propertyNames:
+                    type: string
+                  additionalProperties:
+                    $ref: '#/components/schemas/JsonValue'
+                required:
+                  type: array
+                  items:
+                    type: string
+                additionalProperties:
+                  type: boolean
+              required:
+                - type
+              additionalProperties:
+                $ref: '#/components/schemas/JsonValue'
+          description: >-
+            JSON schema for synthesized output. Supported root types are "text"
+            and "object". When provided, the response includes an output object
+            whose content matches this schema. Works with every search type and
+            adds about 2 seconds of synthesis latency on top of the selected
+            search type.
+          type: object
+        - type: 'null'
+      description: >-
+        Controls the format of the run output. Defaults to `{ "type": "text" }`
+        if not specified. When `type` is `"text"`, the output is a plain text
+        summary. When `type` is `"object"`, the output is structured JSON. If no
+        `properties` are specified with `"object"` type, a schema is inferred
+        automatically; otherwise the output adheres to the provided schema.
+    SearchMonitorWebhookOutput:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          description: >-
+            The HTTPS URL to receive webhook events. Must not point to localhost
+            or private IP ranges.
+        events:
+          type: array
+          items:
+            type: string
+            enum:
+              - monitor.created
+              - monitor.updated
+              - monitor.deleted
+              - monitor.run.created
+              - monitor.run.completed
+          description: >-
+            Which events to subscribe to. Defaults to all events if not
+            specified.
+      required:
+        - url
+      additionalProperties: false
+    SearchMonitorContentsOutput:
+      type: object
+      properties:
+        text:
+          description: Text extraction options for each result.
+          oneOf:
+            - type: boolean
+              title: Simple text retrieval
+              description: >-
+                If true, returns full page text with default settings. If false,
+                disables text return.
+              default: false
+            - type: object
+              properties:
+                maxCharacters:
+                  anyOf:
+                    - type: integer
+                      minimum: 1
+                      maximum: 10000
+                      description: >-
+                        Maximum character limit for the full page text. Useful
+                        for controlling response size and API costs. Maximum
+                        supported value is 10000.
+                      example: 1000
+                    - type: 'null'
+                includeHtmlTags:
+                  anyOf:
+                    - type: boolean
+                      description: >-
+                        If true, include lightweight HTML tags in returned text
+                        instead of plain markdown-style text. Use maxAgeHours: 0
+                        when you need this applied to freshly fetched content.
+                      example: false
+                      default: false
+                    - type: 'null'
+                verbosity:
+                  anyOf:
+                    - type: string
+                      enum:
+                        - compact
+                        - standard
+                        - full
+                      description: >-
+                        Controls text rendering verbosity. compact focuses on
+                        main content, standard includes more surrounding page
+                        context, and full requests the most complete rendered
+                        text. Some pages may produce identical standard and full
+                        output. Use maxAgeHours: 0 when you need this applied to
+                        freshly fetched content.
+                      example: standard
+                      default: compact
+                    - type: 'null'
+                includeSections:
+                  anyOf:
+                    - type: array
+                      items:
+                        type: string
+                        enum:
+                          - header
+                          - navigation
+                          - banner
+                          - body
+                          - sidebar
+                          - footer
+                          - metadata
+                      description: >-
+                        Best-effort. Only include content classified into these
+                        semantic page sections. Section classification may be
+                        unavailable or incomplete for some pages; validate
+                        output if strict filtering is required. Use maxAgeHours:
+                        0 when you need this applied to freshly fetched content.
+                      example:
+                        - body
+                        - header
+                    - type: 'null'
+                excludeSections:
+                  anyOf:
+                    - type: array
+                      items:
+                        type: string
+                        enum:
+                          - header
+                          - navigation
+                          - banner
+                          - body
+                          - sidebar
+                          - footer
+                          - metadata
+                      description: >-
+                        Exclude content classified into these semantic page
+                        sections. Section classification is best-effort. Use
+                        maxAgeHours: 0 when you need this applied to freshly
+                        fetched content.
+                      example:
+                        - navigation
+                        - footer
+                        - sidebar
+                    - type: 'null'
+              additionalProperties: false
+              title: Advanced text options
+              description: >-
+                Advanced options for controlling text extraction. Use this when
+                you need to limit text length or include HTML structure.
+        highlights:
+          description: Text snippets the LLM identifies as most relevant from each page.
+          oneOf:
+            - type: boolean
+              title: Simple highlights retrieval
+              description: >-
+                If true, returns highlights with default settings. If false,
+                disables highlights.
+              default: false
+            - type: object
+              properties:
+                query:
+                  anyOf:
+                    - type: string
+                      description: Custom query that guides which highlights the LLM picks.
+                      example: Key advancements
+                    - type: 'null'
+                maxCharacters:
+                  anyOf:
+                    - type: integer
+                      minimum: 1
+                      maximum: 10000
+                      description: >-
+                        Maximum number of characters to return for highlights.
+                        Controls the total length of highlight text returned per
+                        URL. Maximum supported value is 10000.
+                      example: 2000
+                    - type: 'null'
+                numSentences:
+                  anyOf:
+                    - type: integer
+                      minimum: 1
+                      description: >-
+                        Deprecated and will be removed in a future release.
+                        Currently mapped to a character budget of about 1333
+                        characters per sentence. Pass highlights: true for
+                        default highlights, or { query } to guide selection with
+                        your own query.
+                      example: 1
+                      deprecated: true
+                    - type: 'null'
+                highlightsPerUrl:
+                  anyOf:
+                    - type: integer
+                      minimum: 1
+                      description: >-
+                        Deprecated and will be removed in a future release.
+                        Currently ignored. Pass highlights: true for default
+                        highlights, or { query } to guide selection with your
+                        own query.
+                      example: 1
+                      deprecated: true
+                    - type: 'null'
+              additionalProperties: false
+              title: Advanced highlights options
+              description: >-
+                Advanced options for steering highlight extraction. Pass
+                highlights: true for the highest-quality default; supply this
+                object only when you need to guide selection with your own
+                query.
+        summary:
+          description: >-
+            Return an LLM-generated summary. Pass `true` for defaults, or an
+            object with `query` and `maxTokens`.
+          oneOf:
+            - type: boolean
+            - type: object
+              properties:
+                query:
+                  anyOf:
+                    - type: string
+                      description: Custom query for the LLM-generated summary.
+                      example: Main developments
+                    - type: 'null'
+                maxTokens:
+                  type: integer
+                  minimum: 1
+                  description: Maximum tokens for the generated summary.
+              additionalProperties: false
+        extras:
+          type: object
+          properties:
+            links:
+              anyOf:
+                - type: integer
+                  minimum: 0
+                  maximum: 1000
+                  description: Number of URLs to return from each webpage.
+                  example: 1
+                  default: 0
+                - type: 'null'
+            imageLinks:
+              anyOf:
+                - type: integer
+                  minimum: 0
+                  maximum: 1000
+                  description: Number of images to return for each result.
+                  example: 1
+                  default: 0
+                - type: 'null'
+            richImageLinks:
+              anyOf:
+                - type: integer
+                  minimum: 0
+                  maximum: 1000
+                  description: Number of rich image links to return for each result.
+                  default: 0
+                - type: 'null'
+            richLinks:
+              anyOf:
+                - type: integer
+                  minimum: 0
+                  maximum: 1000
+                  description: Number of rich links to return for each result.
+                  default: 0
+                - type: 'null'
+            codeBlocks:
+              anyOf:
+                - type: integer
+                  minimum: 0
+                  maximum: 1000
+                  description: Number of code blocks to return for each result.
+                  default: 0
+                - type: 'null'
+          additionalProperties: false
+          description: Extra parameters to pass.
+        context:
+          description: >-
+            Deprecated: Use highlights or text instead. Returns page contents as
+            a combined context string.
+          deprecated: true
+          oneOf:
+            - type: boolean
+              description: >-
+                Deprecated: Use highlights or text instead. Returns page
+                contents as a combined context string.
+              example: true
+              deprecated: true
+            - type: object
+              properties:
+                maxCharacters:
+                  type: integer
+                  minimum: 1
+                  maximum: 10000
+                  description: >-
+                    Deprecated. Maximum character limit for the context string.
+                    Maximum supported value is 10000.
+                  example: 10000
+              additionalProperties: false
+              description: >-
+                Deprecated: Use highlights or text instead. Returns page
+                contents as a combined context string.
+              deprecated: true
+        livecrawl:
+          description: Crawl strategy for fetching page content
+          oneOf:
+            - type: string
+              enum:
+                - never
+                - always
+                - fallback
+                - preferred
+            - type: string
+              const: auto
+        livecrawlTimeout:
+          type: integer
+          exclusiveMinimum: 0
+          maximum: 90000
+          description: The timeout for livecrawling in milliseconds.
+          example: 1000
+          default: 10000
+        maxAgeHours:
+          type: integer
+          minimum: -1
+          maximum: 720
+          description: >-
+            Maximum age of cached content in hours. Positive values use cached
+            content if it is less than this many hours old; 0 fetches fresh
+            content and is the supported way to apply text rendering options to
+            newly fetched pages; -1 always uses cache; omitted uses fallback
+            fetching when cached content is unavailable. Maximum supported value
+            is 720 hours.
+          example: 24
+        filterEmptyResults:
+          type: boolean
+          description: Filter out results with no content
+        subpages:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: >-
+            The number of subpages to crawl. The actual number crawled may be
+            limited by system constraints.
+          example: 1
+          default: 0
+        subpageTarget:
+          description: >-
+            Term to find specific subpages of search results. Can be a single
+            string or an array of strings.
+          example: sources
+          oneOf:
+            - type: string
+              minLength: 1
+              maxLength: 100
+            - minItems: 0
+              maxItems: 100
+              type: array
+              items:
+                type: string
+                minLength: 1
+                maxLength: 100
+      additionalProperties: false
+      description: >-
+        Content extraction options applied to each search result. All fields are
+        optional.
+    JsonValue:
+      description: Any JSON value.
+      oneOf:
+        - type: 'null'
+        - type: boolean
+        - type: number
+        - type: string
+        - type: array
+          items:
+            $ref: '#/components/schemas/JsonValue'
+        - type: object
+          propertyNames:
+            type: string
+          additionalProperties:
+            $ref: '#/components/schemas/JsonValue'
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: x-api-key
+      in: header
+      description: >-
+        Pass your Exa API key in the x-api-key header. You can also authenticate
+        with Authorization: Bearer <key>.
+    bearer:
+      type: http
+      scheme: bearer
+      description: >-
+        Pass your Exa API key in the x-api-key header. You can also authenticate
+        with Authorization: Bearer <key>.
+
+````

@@ -1,0 +1,197 @@
+> 이 파일은 공식 llms.txt 의 링크를 이 폴더 기준 경로로 바꾼 것이다 (scripts/llms-local.ts 가 생성). 원문은 같은 폴더의 llms.txt.
+
+# Exa
+
+## Docs
+
+- [Exa Search API](<010 Documentation/010 API/010 Search/010 For humans.md>): Exa is an SF-based research lab building perfect search.
+- [Search API Reference](<010 Documentation/010 API/010 Search/020 For your coding agent.md>): Self-contained reference with best practices and examples for coding agents
+- [Search Best Practices](<010 Documentation/010 API/010 Search/030 Best Practices.md>): Best practices for using Exa's Search API
+- [Contents API](<010 Documentation/010 API/020 Contents/010 For humans.md>): Extract clean, LLM-ready web content.
+- [Contents API Reference](<010 Documentation/010 API/020 Contents/020 For your coding agent.md>): Best practices, examples, and API reference for your coding agent
+- [Contents Best Practices](<010 Documentation/010 API/020 Contents/030 Best Practices.md>): Best practices for using Exa's Contents API
+- [Exa Agent](<010 Documentation/010 API/030 Agent/010 For Humans.md>): Run deep research, list-building, and enrichment workflows that return structured outputs.
+- [Examples](<010 Documentation/010 API/030 Agent/020 Examples.md>): Production Exa Agent examples for list building, KYB intelligence, job postings, and structured outputs.
+- [Websets](<010 Documentation/010 API/040 Websets/010 For humans.md>): Find anything on the web, no matter how complex. Websets searches, verifies, and enriches results automatically.
+- [Websets Reference (For Your Coding Agent)](<010 Documentation/010 API/040 Websets/020 For your coding agent.md>): Self-contained reference for coding agents. Websets API architecture, request/response shapes, event flow, and integration patterns.
+- [How Websets Works](<010 Documentation/010 API/040 Websets/030 How Websets Works.md>)
+- [How to Use Imports](<010 Documentation/010 API/040 Websets/040 How to Use Imports.md>): A step-by-step guide to importing URLs into Websets -- enriching your list, scoring it against criteria, discovering new matches, and combining all three.
+- [FAQ](<010 Documentation/010 API/040 Websets/050 FAQ.md>): Frequently asked questions about Websets
+- [Websets Best Practices](<010 Documentation/010 API/040 Websets/060 Best Practices.md>): Best practices for building with the Websets API
+- [Get started](<010 Documentation/010 API/040 Websets/070 Dashboard/010 Get started.md>): Welcome to the Websets Dashboard! Find anything you want on the web, no matter how complex.
+- [Example queries](<010 Documentation/010 API/040 Websets/070 Dashboard/020 Example queries.md>): Here are some examples for things to search for, to get you started!
+- [Criteria vs Enrichments](<010 Documentation/010 API/040 Websets/070 Dashboard/030 Criteria vs Enrichments.md>)
+- [Import from CSV](<010 Documentation/010 API/040 Websets/070 Dashboard/040 Import from CSV.md>): Turn your existing CSV data into a Webset
+- [Exclude Results](<010 Documentation/010 API/040 Websets/070 Dashboard/050 Exclude Results.md>): Avoid duplicate results in your new searches by excluding URLs from previous Websets or CSV files.
+- [Integrations](<010 Documentation/010 API/040 Websets/070 Dashboard/060 Integrations.md>): Connect your Websets with popular CRM and email tools
+- [Creating Enrichments ](<010 Documentation/010 API/040 Websets/080 Videos/010 Creating Enrichments.md>): Here's how to create enrichments (also known as Adding Columns).
+- [Exploring your results ](<010 Documentation/010 API/040 Websets/080 Videos/020 Exploring your results.md>): Explore your Websets matched results, view summaries, criteria justification
+- [Adding and Managing Your Team Members in Websets](<010 Documentation/010 API/040 Websets/080 Videos/030 Adding and Managing Your Team Members in Websets.md>): Here's how to manage your team.
+- [Prompting Websets](<010 Documentation/010 API/040 Websets/080 Videos/040 Prompting Websets.md>): Here's how to prompt your query in Websets
+- [Downloading and Sharing Your Results](<010 Documentation/010 API/040 Websets/080 Videos/050 Downloading and Sharing Your Results.md>): Here's how to share or download your results and enrichments.
+- [Monitors](<010 Documentation/010 API/050 Monitors/010 For humans.md>): Schedule recurring Exa searches and get results delivered to your webhook.
+- [Monitors API Reference](<010 Documentation/010 API/050 Monitors/020 For your coding agent.md>): Self-contained reference with all endpoints, parameters, and examples for coding agents.
+- [Exa Connect](<010 Documentation/020 Data/010 Exa Connect/010 Quickstart.md>): Give your Exa Agent live access to premium data partners, alongside Exa web search, in a single run.
+- [Fiber.ai](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/010 Fiber.ai.md>): Search Fiber.ai's B2B database for companies, people, and LinkedIn profiles.
+- [Similarweb](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/020 Similarweb.md>): Get website traffic estimates, global rankings, and competitor discovery.
+- [Baselayer](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/030 Baselayer.md>): Verify US businesses and retrieve KYB data: officers, registrations, risk scores.
+- [Affiliate.com](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/040 Affiliate.com.md>): Search product catalogs across merchants and affiliate networks.
+- [Particle](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/050 Particle.md>): Search podcast transcripts with speaker attribution and timestamps.
+- [Financial Datasets](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/060 Financial Datasets.md>): Structured financial and market data for 27,000+ active and delisted U.S. tickers, including prices, fundamentals, earnings, SEC filings, ownership, and stock screening.
+- [Jinko](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Jinko.md>): Discover travel destinations from your departure airports, ranked by lowest available fare.
+- [Combining providers](<010 Documentation/020 Data/010 Exa Connect/030 Combining providers.md>): Use several data partners together in a single Exa Agent run.
+- [Additional providers](<010 Documentation/020 Data/010 Exa Connect/040 Additional providers.md>): Exa Connect partners beyond the self-serve provider set.
+- [People Search](<010 Documentation/020 Data/020 People/010 For humans.md>)
+- [People Search Reference](<010 Documentation/020 Data/020 People/020 For your coding agent.md>): Self-contained reference for coding agents using Exa People Search
+- [Company Search](<010 Documentation/020 Data/030 Company/010 For humans.md>)
+- [Company Search Reference](<010 Documentation/020 Data/030 Company/020 For your coding agent.md>): Self-contained reference for coding agents using Exa Company Search
+- [Code Search](<010 Documentation/020 Data/040 Code/010 For humans.md>)
+- [Code Search Reference](<010 Documentation/020 Data/040 Code/020 For your coding agent.md>): Self-contained reference for coding agents using Exa Code Search
+- [News Search](<010 Documentation/020 Data/050 News/010 For humans.md>)
+- [News Search Reference](<010 Documentation/020 Data/050 News/020 For your coding agent.md>): Self-contained reference for coding agents using Exa News Search
+- [Web Search MCP](<010 Documentation/030 MCP/010 Exa MCP.md>): Complete setup guide for Exa MCP Server. Connect Claude Desktop, Cursor, VS Code, and 10+ AI assistants to Exa's web search, fetching, Exa Agent, and Exa Connect tools.
+- [Agent Skills](<010 Documentation/030 MCP/020 Agent Skills/010 Agent Skills.md>): Install Exa agent skills into Claude Code, Cursor, Codex, or any Agent Skills–compatible coding agent.
+- [Build with Exa](<010 Documentation/030 MCP/020 Agent Skills/020 Build with Exa.md>): Build applications and agents with Exa's full API platform: search, contents, answer, context, Agent API, monitors, websets, and the SDKs.
+- [Company Research](<010 Documentation/030 MCP/020 Agent Skills/030 Company Research.md>): Deep company research with the Exa Agent API — funding, competitors, tech stack, news — plus quick company-category lookups with Advanced Search.
+- [Lead Generation](<010 Documentation/030 MCP/020 Agent Skills/040 Lead Generation.md>): Generate enriched, ICP-scored lead lists as CSV using the Exa Agent API.
+- [Exa Search](<010 Documentation/030 MCP/020 Agent Skills/050 Exa Search.md>): Call Exa Search directly with cURL or raw HTTP — semantic search, ranked results, filters, freshness, and structured output.
+- [Exa Contents](<010 Documentation/030 MCP/020 Agent Skills/060 Exa Contents.md>): Call Exa Contents directly with cURL or raw HTTP — extracted text, highlights, summaries, links, and subpages from known URLs.
+- [Python SDK](<010 Documentation/040 SDKs/010 Python.md>): Install and use the Exa Python SDK
+- [JavaScript SDK](<010 Documentation/040 SDKs/020 JavaScript.md>): Install and use the Exa JavaScript SDK
+- [Python SDK Specification](<010 Documentation/040 SDKs/030 Python SDK Specification.md>): Enumeration of methods and types in the Exa Python SDK (exa_py).
+- [TypeScript SDK Specification](<010 Documentation/040 SDKs/040 TypeScript SDK Specification.md>): Enumeration of methods and types in the Exa TypeScript SDK (exa-js).
+- [Python and TS Cheat Sheets](<010 Documentation/040 SDKs/050 Python and TS Cheat Sheets.md>): Some common code you might want to use - don't miss the TypeScript tab below!
+- [Exa in Slack](<010 Documentation/050 Integrations/010 Exa in Slack.md>)
+- [Exa in Codex and ChatGPT](<010 Documentation/050 Integrations/020 ChatGPT & Codex.md>): Search the web, read any page, and research with Exa directly from Codex and ChatGPT.
+- [Grok Build](<010 Documentation/050 Integrations/030 Grok Build.md>): Use Exa web search in Grok Build. Install the Exa plugin from the Grok Build marketplace and sign in with your Exa account.
+- [OpenAI Tool Calling](<010 Documentation/050 Integrations/040 Tool Calling/010 OpenAI Tool Calling.md>): Use OpenAI tool calling to add Exa web search to your application.
+- [Anthropic Tool Calling](<010 Documentation/050 Integrations/040 Tool Calling/020 Anthropic Tool Calling.md>): Use Claude tool use to add Exa web search to your application.
+- [Vercel AI Gateway](<010 Documentation/050 Integrations/050 AI SDK/010 Vercel AI Gateway.md>): Use Exa web search through Vercel AI Gateway with the AI SDK.
+- [AI SDK by Vercel](<010 Documentation/050 Integrations/050 AI SDK/020 AI SDK by Vercel.md>): Add Exa web search to AI SDK applications with the @exalabs/ai-sdk package.
+- [OpenAI SDK Compatibility](<010 Documentation/050 Integrations/060 OpenAI SDK/010 OpenAI SDK Compatibility.md>): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.
+- [OpenAI Responses API](<010 Documentation/050 Integrations/060 OpenAI SDK/020 OpenAI Responses API.md>): Use Exa with OpenAI's Responses API - both as a web search tool and for direct research capabilities.
+- [Browserbase](<010 Documentation/050 Integrations/070 Browserbase.md>): Combine Exa company search with Browserbase browser automation for job application workflows.
+- [LangChain](<010 Documentation/050 Integrations/080 LangChain.md>): How to use Exa's integration with LangChain to perform RAG.
+- [Pydantic AI](<010 Documentation/050 Integrations/090 Pydantic AI.md>): Give a Pydantic AI agent web research tools backed by the Exa search API.
+- [CrewAI](<010 Documentation/050 Integrations/100 CrewAI.md>): Learn how to add Exa retrieval capabilities to your CrewAI agents.
+- [LlamaIndex](<010 Documentation/050 Integrations/110 LlamaIndex.md>): A quick-start guide on how to add Exa retrieval to a LlamaIndex Agent Application.
+- [Exa for Google Sheets](<010 Documentation/050 Integrations/120 Exa for Google Sheets.md>): Use Exa Agent and Exa formulas inside Google Sheets.
+- [Snowflake](<010 Documentation/050 Integrations/130 Snowflake.md>): Use Exa search and content retrieval from Snowflake stored procedures and Cortex Agents.
+- [ElevenLabs](<010 Documentation/050 Integrations/140 ElevenLabs.md>): Add Exa web search to ElevenLabs voice agents.
+- [OpenHuman](<010 Documentation/050 Integrations/150 OpenHuman.md>): Give the OpenHuman agent live web search with Exa, either managed or with your own Exa API key.
+- [TrueFoundry](<010 Documentation/050 Integrations/160 TrueFoundry.md>): Connect Exa to the TrueFoundry MCP Gateway for centralized access controls, tool management, and usage monitoring.
+- [Stripe Projects](<010 Documentation/050 Integrations/170 Stripe Projects.md>): Integrate Exa from your terminal using the Stripe Projects CLI.
+- [Pay with x402](<010 Documentation/060 Agentic payments/010 x402/010 x402 Payments.md>): Use Exa's Search and Contents APIs without an API key. Pay per request with USDC on Base or Solana via the x402 protocol.
+- [World AgentKit](<010 Documentation/060 Agentic payments/010 x402/020 World AgentKit.md>): Let verified human-backed AI agents access Exa for free using World AgentKit — no USDC needed.
+- [Pay with MPP (Tempo)](<010 Documentation/060 Agentic payments/020 MPP/010 MPP Payments.md>): Call Exa's Search and Contents APIs without an API key by paying per request with USDC.e on Tempo.
+- [Tempo MPP GTM Enrichment Cookbook](<010 Documentation/060 Agentic payments/020 MPP/020 GTM enrichment with MPP.md>): Build a GTM enrichment workflow that pays per Exa search and contents request with Tempo MPP — no API key required.
+- [Nevermined](<010 Documentation/060 Agentic payments/030 Nevermined.md>): Autonomous agent payments for Exa via Nevermined x402 card delegation. A 7 USD purchase provisions or tops up an Exa API key with 7 USD of credits.
+- [Managing Your Team](<010 Documentation/070 Admin/010 Managing Your Team.md>): Details on Team structure and account management for the Exa platform
+- [Pricing](<010 Documentation/070 Admin/020 Pricing.md>): Pay-as-you-go rates for Exa Search, Contents, Answer, Monitors, and the Agent API
+- [Billing](<010 Documentation/070 Admin/030 Billing.md>): How billing, auto recharge, and invoices work on Exa's API
+- [Rate Limits](<010 Documentation/070 Admin/040 Rate Limits.md>): Default rate limits for Exa API endpoints
+- [Error Codes](<010 Documentation/070 Admin/050 Error Codes.md>): Reference for common error codes used by the Exa API
+- [Enterprise Documentation & Security](<010 Documentation/070 Admin/060 Security/010 Enterprise Documentation & Security.md>)
+- [HIPAA](<010 Documentation/070 Admin/060 Security/020 HIPAA.md>): Use HIPAA compliance mode for eligible cached retrieval requests.
+- [OpenAPI Specification](<010 Documentation/080 Additional Resources/010 OpenAPI Specification.md>)
+- [Context (Exa Code)](<010 Documentation/080 Additional Resources/020 Context (Exa Code).md>): Get relevant code snippets and examples from open source libraries and repositories. Search through code repositories to find contextual examples that help developers understand how specific libraries, frameworks, or programming concepts are implemented in practice.
+- [Content Freshness](<010 Documentation/080 Additional Resources/030 Content Freshness.md>)
+- [Migrating from Bing](<010 Documentation/080 Additional Resources/040 Migrating from Bing.md>): Guide for switching from the deprecated Bing Search API to Exa
+- [Make Exa Your Default Search Engine](<010 Documentation/080 Additional Resources/050 Make Exa Your Default Search Engine.md>): Simple steps to set exa.ai as your browser's default search engine
+- [Building a Voice Agent with Exa](<010 Documentation/080 Additional Resources/060 Building a Voice Agent with Exa.md>): Best practices for building AI voice agents powered by Exa's real-time search
+- [FAQs](<010 Documentation/080 Additional Resources/070 FAQs.md>)
+- [Blog](https://exa.ai/docs/reference/blog.md) (메뉴에 있으나 받지 않음: content-type text/html — 문서가 아니다)
+- [Search](<020 API Reference/010 Search/010 Search.md>): The search endpoint lets you search the web and extract contents from the results.
+- [Contents](<020 API Reference/010 Search/020 Contents.md>): Get the full page contents, summaries, and metadata for a list of URLs.
+- [Answer](<020 API Reference/010 Search/030 Answer.md>): Get an LLM answer to a question informed by Exa search results. `/answer` performs an Exa search and uses an LLM to generate either: 1. A direct answer for specific queries. (i.e. "What is the capital of France?" would return "Paris") 2. A detailed summary with citations for open-ended queries (i.e.…
+- [Overview](<020 API Reference/020 Agent/010 Overview.md>): Agent runs asynchronous, multi-step web research, list-building, and enrichment workflows with natural-language answers, structured outputs, and citations.
+- [Create a run](<020 API Reference/020 Agent/020 Create a run.md>): Create an asynchronous Agent run. The response returns the run object immediately unless you request server-sent events.
+- [Get a run](<020 API Reference/020 Agent/030 Get a run.md>): Retrieve an Agent run by ID.
+- [List runs](<020 API Reference/020 Agent/040 List runs.md>): Retrieve a paginated list of Agent runs for your team.
+- [Cancel a run](<020 API Reference/020 Agent/050 Cancel a run.md>): Cancel a queued or running Agent run.
+- [Delete a run](<020 API Reference/020 Agent/060 Delete a run.md>): Delete a stored Agent run.
+- [List run events](<020 API Reference/020 Agent/070 List run events.md>): List stored Agent run events or replay them as server-sent events.
+- [Create a Webset](<020 API Reference/030 Websets/010 Websets/010 Create a Webset.md>): Creates a new Webset with optional search, import, and enrichment configurations. The Webset will automatically begin processing once created.
+- [Get a Webset](<020 API Reference/030 Websets/010 Websets/020 Get a Webset.md>)
+- [Update a Webset](<020 API Reference/030 Websets/010 Websets/030 Update a Webset.md>)
+- [Delete a Webset](<020 API Reference/030 Websets/010 Websets/040 Delete a Webset.md>): Deletes a Webset.
+- [Preview a webset](<020 API Reference/030 Websets/010 Websets/050 Preview a webset.md>): Preview how a search query will be decomposed before creating a webset. This endpoint performs the same query analysis that happens during webset creation, allowing you to see the detected entity type, generated search criteria, and available enrichment columns in advance.
+- [Cancel a running Webset](<020 API Reference/030 Websets/010 Websets/060 Cancel a running Webset.md>): Cancels all operations being performed on a Webset.
+- [List all Websets](<020 API Reference/030 Websets/010 Websets/070 List all Websets.md>): Returns a list of Websets.
+- [Get an Item](<020 API Reference/030 Websets/020 Items/010 Get an Item.md>): Returns a Webset Item.
+- [Delete an Item](<020 API Reference/030 Websets/020 Items/020 Delete an Item.md>): Deletes an Item from the Webset.
+- [List all Items for a Webset](<020 API Reference/030 Websets/020 Items/030 List all Items for a Webset.md>): Returns a list of Webset Items.
+- [Create a Search](<020 API Reference/030 Websets/030 Searches/010 Create a Search.md>): Creates a new Search for the Webset.
+- [Get a Search](<020 API Reference/030 Websets/030 Searches/020 Get a Search.md>): Gets a Search by id
+- [Cancel a running Search](<020 API Reference/030 Websets/030 Searches/030 Cancel a running Search.md>): Cancels a currently running Search.
+- [Create an Enrichment](<020 API Reference/030 Websets/040 Enrichments/010 Create an Enrichment.md>): Create an Enrichment for a Webset.
+- [Get an Enrichment](<020 API Reference/030 Websets/040 Enrichments/020 Get an Enrichment.md>)
+- [Update an Enrichment](<020 API Reference/030 Websets/040 Enrichments/030 Update an Enrichment.md>): Update an Enrichment configuration for a Webset.
+- [Delete an Enrichment](<020 API Reference/030 Websets/040 Enrichments/040 Delete an Enrichment.md>): When deleting an Enrichment, any running enrichments will be canceled and all existing `enrichment_result` generated by this Enrichment will no longer be available.
+- [Cancel a running Enrichment](<020 API Reference/030 Websets/040 Enrichments/050 Cancel a running Enrichment.md>): All running enrichments will be canceled. You can not resume an Enrichment after it has been canceled.
+- [Create an Import](<020 API Reference/030 Websets/050 Imports/010 Create an Import.md>): Creates a new import to upload your data into Websets. Imports can be used to:
+- [Get Import](<020 API Reference/030 Websets/050 Imports/020 Get Import.md>): Gets a specific import.
+- [Update Import](<020 API Reference/030 Websets/050 Imports/030 Update Import.md>): Updates a import configuration.
+- [Delete Import](<020 API Reference/030 Websets/050 Imports/040 Delete Import.md>): Deletes a import.
+- [List Imports](<020 API Reference/030 Websets/050 Imports/050 List Imports.md>): Lists all imports for the Webset.
+- [Create a Monitor](<020 API Reference/030 Websets/060 Monitors/010 Create a Monitor.md>): Creates a new `Monitor` to continuously keep your Websets updated with fresh data.
+- [Get Monitor](<020 API Reference/030 Websets/060 Monitors/020 Get Monitor.md>): Gets a specific monitor.
+- [Update Monitor](<020 API Reference/030 Websets/060 Monitors/030 Update Monitor.md>): Updates a monitor configuration.
+- [Delete Monitor](<020 API Reference/030 Websets/060 Monitors/040 Delete Monitor.md>): Deletes a monitor.
+- [List Monitors](<020 API Reference/030 Websets/060 Monitors/050 List Monitors.md>): Lists all monitors for the Webset.
+- [List Monitor Runs](<020 API Reference/030 Websets/060 Monitors/060 Monitor Runs/010 List Monitor Runs.md>): Lists all runs for the Monitor.
+- [Get Monitor Run](<020 API Reference/030 Websets/060 Monitors/060 Monitor Runs/020 Get Monitor Run.md>): Gets a specific monitor run.
+- [Create a Webhook](<020 API Reference/030 Websets/070 Webhooks/010 Create a Webhook.md>)
+- [Get a Webhook](<020 API Reference/030 Websets/070 Webhooks/020 Get a Webhook.md>)
+- [Update a Webhook](<020 API Reference/030 Websets/070 Webhooks/030 Update a Webhook.md>)
+- [Delete a Webhook](<020 API Reference/030 Websets/070 Webhooks/040 Delete a Webhook.md>)
+- [List webhooks](<020 API Reference/030 Websets/070 Webhooks/050 List webhooks.md>)
+- [List webhook attempts](<020 API Reference/030 Websets/070 Webhooks/060 List webhook attempts.md>): List all attempts made by a Webhook ordered in descending order.
+- [Verifying Signatures](<020 API Reference/030 Websets/070 Webhooks/070 Verifying Signatures.md>): Learn how to securely verify webhook signatures to ensure requests are from Exa
+- [Event Types](<020 API Reference/030 Websets/080 Events/010 Types.md>): Learn about the events that occur within the Webset API
+- [List all Events](<020 API Reference/030 Websets/080 Events/020 List all Events.md>): List all events that have occurred in the system.
+- [Get an Event](<020 API Reference/030 Websets/080 Events/030 Get an Event.md>): Get a single Event by id.
+- [Get Team Info](<020 API Reference/030 Websets/090 Teams/010 Get Team Info.md>): Retrieve information about your team including concurrency usage and limits.
+- [Create a Monitor](<020 API Reference/040 Monitors/010 Create a Monitor.md>): Creates a new Monitor to run recurring Exa searches on a schedule.
+- [List Monitors](<020 API Reference/040 Monitors/020 List Monitors.md>): Lists all monitors for the authenticated team. Supports filtering by status and cursor-based pagination.
+- [Get a Monitor](<020 API Reference/040 Monitors/030 Get a Monitor.md>): Retrieves a single monitor by its ID.
+- [Update a Monitor](<020 API Reference/040 Monitors/040 Update a Monitor.md>): Updates an existing monitor. All fields are optional. For `search`, you can send a partial object containing only the fields you want to change. Set `trigger` to `null` to remove the schedule.
+- [Delete a Monitor](<020 API Reference/040 Monitors/050 Delete a Monitor.md>): Deletes a monitor. This cannot be undone.
+- [Trigger a Monitor](<020 API Reference/040 Monitors/060 Trigger a Monitor.md>): Triggers a run immediately, regardless of the schedule. Works for monitors with status `active` or `paused`.
+- [Batch Action on Monitors](<020 API Reference/040 Monitors/070 Batch Action on Monitors.md>): Perform a batch action on monitors matching the provided filters.
+- [List Runs](<020 API Reference/040 Monitors/080 Runs/010 List Runs.md>): Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
+- [Get a Run](<020 API Reference/040 Monitors/080 Runs/020 Get a Run.md>): Retrieves a single run by its ID, including the full output if the run is completed.
+- [Create API Key](<020 API Reference/050 Team Management/010 Create API Key.md>): Create a new API key for your team with optional name and rate limit configuration.
+- [List API Keys](<020 API Reference/050 Team Management/020 List API Keys.md>): Retrieve all API keys belonging to your team with their metadata.
+- [Get API Key](<020 API Reference/050 Team Management/030 Get API Key.md>): Retrieve details of a specific API key by its ID.
+- [Get API Key Usage](<020 API Reference/050 Team Management/040 Get API Key Usage.md>): Retrieve usage analytics and billing data for a specific API key.
+- [Update API Key](<020 API Reference/050 Team Management/050 Update API Key.md>): Update the name and rate limit of an existing API key.
+- [Delete API Key](<020 API Reference/050 Team Management/060 Delete API Key.md>): Permanently delete an API key from your team.
+- [Changelog](<030 Changelog/010 Updates/010 Changelog.md>): Product updates and announcements from Exa.
+- [Agent](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/agent.md) (메뉴 미노출 · 로컬 없음)
+- [Answer](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/answer.md) (메뉴 미노출 · 로컬 없음)
+- [Common mistakes](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/common-mistakes.md) (메뉴 미노출 · 로컬 없음)
+- [Contents](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/contents.md) (메뉴 미노출 · 로컬 없음)
+- [Context](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/context.md) (메뉴 미노출 · 로컬 없음)
+- [Http requests](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/http-requests.md) (메뉴 미노출 · 로컬 없음)
+- [Migrate websets to agent](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/migrate-websets-to-agent.md) (메뉴 미노출 · 로컬 없음)
+- [Models and modes](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/models-and-modes.md) (메뉴 미노출 · 로컬 없음)
+- [Monitors](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/monitors.md) (메뉴 미노출 · 로컬 없음)
+- [Openai compat](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/openai-compat.md) (메뉴 미노출 · 로컬 없음)
+- [Prompting and patterns](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/prompting-and-patterns.md) (메뉴 미노출 · 로컬 없음)
+- [Sdks](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/sdks.md) (메뉴 미노출 · 로컬 없음)
+- [Search](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/search.md) (메뉴 미노출 · 로컬 없음)
+- [AGENTS](https://exa.ai/docs/AGENTS.md) (메뉴 미노출 · 로컬 없음)
+- [Exa](https://exa.ai/docs/integrations/agentops.md) (메뉴 미노출 · 로컬 없음)
+- [Google ADK](https://exa.ai/docs/integrations/google-adk.md) (메뉴 미노출 · 로컬 없음)
+- [OpenRouter](https://exa.ai/docs/integrations/openrouter.md) (메뉴 미노출 · 로컬 없음)
+- [Contents Retrieval](https://exa.ai/docs/reference/contents-retrieval.md) (메뉴 미노출 · 로컬 없음)
+- [Crawling Subpages](https://exa.ai/docs/reference/crawling-subpages.md) (메뉴 미노출 · 로컬 없음)
+- [IBM WatsonX](https://exa.ai/docs/reference/ibm-watsonx.md) (메뉴 미노출 · 로컬 없음)
+- [The Exa Index](https://exa.ai/docs/reference/the-exa-index.md): We spend a lot of time and energy creating a high quality, curated index. (메뉴 미노출 · 로컬 없음)
+
+## OpenAPI Specs
+
+- [exa-spec](https://exa.ai/docs/exa-spec.yaml) (메뉴 미노출 · 로컬 없음)
+- [team-management-spec](https://exa.ai/docs/team-management-spec.yaml) (메뉴 미노출 · 로컬 없음)
+- [openapi](https://exa.ai/docs/api-reference/openapi.json) (메뉴 미노출 · 로컬 없음)

@@ -1,0 +1,480 @@
+{
+  "생성": "2026-08-20T19:34:02.835Z",
+  "제품폴더": "Vibe Kanban Docs",
+  "진입": "https://vibekanban.com/docs/workspaces",
+  "최상위수": 7,
+  "그룹수": 9,
+  "문서": [
+    {
+      "경로": "010 Getting started/010 Home.md",
+      "href": "/index",
+      "url": "https://vibekanban.com/docs/index.md",
+      "sha256": "626461bb03b2326bb0e06bed1c1815866e7091f47d89228ac20317728698575d",
+      "bytes": 1224,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/020 Get Started.md",
+      "href": "/getting-started",
+      "url": "https://vibekanban.com/docs/getting-started.md",
+      "sha256": "647faa32ea54d127a6adf19242eb2b59865cd3faaef653d3590905d5068eb735",
+      "bytes": 7937,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/030 Browser Testing.md",
+      "href": "/browser-testing",
+      "url": "https://vibekanban.com/docs/browser-testing.md",
+      "sha256": "c86c187c4ab3a01634a11a304a8a8c17a8dacd9aff15f98dcd3fa658d1d38fcb",
+      "bytes": 9006,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/040 Issue Management.md",
+      "href": "/issue-management",
+      "url": "https://vibekanban.com/docs/issue-management.md",
+      "sha256": "c0eed1c276e3a0b2f0debd069dcf2d376e058dd54d3201b9456abd87000f6266",
+      "bytes": 8946,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/050 Reviewing Code.md",
+      "href": "/reviewing-code",
+      "url": "https://vibekanban.com/docs/reviewing-code.md",
+      "sha256": "b591e0b7fca0075389dea618298f137526d7ace28573e4fd1e9fe63009e7b7ab",
+      "bytes": 7344,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/060 Remote Access.md",
+      "href": "/remote-access",
+      "url": "https://vibekanban.com/docs/remote-access.md",
+      "sha256": "e5775e9f92a9ea14fb1b1ad96b6f20c317eae4ba0325a894ab51967121d9e96a",
+      "bytes": 3223,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/010 Supported Coding Agents.md",
+      "href": "/supported-coding-agents",
+      "url": "https://vibekanban.com/docs/supported-coding-agents.md",
+      "sha256": "e395bd293281c73f0ef4f2d9a802aeb787d1b4a24ef40f0a6bc31d23ea18895e",
+      "bytes": 2126,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/020 Claude Code.md",
+      "href": "/agents/claude-code",
+      "url": "https://vibekanban.com/docs/agents/claude-code.md",
+      "sha256": "67881c839b77775b82749cdcdd16136028417c075f531feba514d6d0dd573061",
+      "bytes": 795,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/030 OpenAI Codex.md",
+      "href": "/agents/openai-codex",
+      "url": "https://vibekanban.com/docs/agents/openai-codex.md",
+      "sha256": "5e2b5561ce0ea209e72148a754a5e3b0e6ea671d7583c785b27d91c1a2ef7606",
+      "bytes": 1610,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/040 GitHub Copilot.md",
+      "href": "/agents/github-copilot",
+      "url": "https://vibekanban.com/docs/agents/github-copilot.md",
+      "sha256": "070acff51ec5d0dc149f76b6c3e03def71fca4cf6f38259f03f3334db6223878",
+      "bytes": 860,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/050 Gemini CLI.md",
+      "href": "/agents/gemini-cli",
+      "url": "https://vibekanban.com/docs/agents/gemini-cli.md",
+      "sha256": "0f4594469f45e750b6808735120a08c5e351780728f308696548a65a0e45004a",
+      "bytes": 725,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/060 Amp.md",
+      "href": "/agents/amp",
+      "url": "https://vibekanban.com/docs/agents/amp.md",
+      "sha256": "be757eb729d6c1d3f76d49c036700e901366304292949fdbe94b6f7f76e27d20",
+      "bytes": 731,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/070 Cursor Agent CLI.md",
+      "href": "/agents/cursor-cli",
+      "url": "https://vibekanban.com/docs/agents/cursor-cli.md",
+      "sha256": "4edb9ca62249e01f8fce1e031f9365bec432c4f8858005dcd9ecde5d71421268",
+      "bytes": 1071,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/080 OpenCode.md",
+      "href": "/agents/opencode",
+      "url": "https://vibekanban.com/docs/agents/opencode.md",
+      "sha256": "d19f2422b652d9b6e6adcd976c7e2fb01c5ec78474a29e191fdd20f372f291ab",
+      "bytes": 729,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/090 Factory Droid.md",
+      "href": "/agents/droid",
+      "url": "https://vibekanban.com/docs/agents/droid.md",
+      "sha256": "4ac9d04b1c1fab90cf599709a89f4fb12aa88531105882b7d3092b4666fe702b",
+      "bytes": 2451,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/100 CCR (Claude Code Router).md",
+      "href": "/agents/ccr",
+      "url": "https://vibekanban.com/docs/agents/ccr.md",
+      "sha256": "fdc63468574b1ada983fceb6c3d20a44085055f00b2b20b53a66f98a1ae51fea",
+      "bytes": 4936,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Getting started/070 Supported Coding Agents/110 Qwen Code.md",
+      "href": "/agents/qwen-code",
+      "url": "https://vibekanban.com/docs/agents/qwen-code.md",
+      "sha256": "c1cb6a29f64874c709dc35bd18d70fbf7a77f337088b78f214ee78027a66373d",
+      "bytes": 765,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/010 Overview.md",
+      "href": "/workspaces/index",
+      "url": "https://vibekanban.com/docs/workspaces/index.md",
+      "sha256": "e2548686c7ac558fdd2ab3f4d42989485109f9fb45babfe2a062ab8ee340d2ad",
+      "bytes": 6805,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/020 Creating Workspaces.md",
+      "href": "/workspaces/creating-workspaces",
+      "url": "https://vibekanban.com/docs/workspaces/creating-workspaces.md",
+      "sha256": "e9ef26a5fd4778ae4689c959c0a9ade382f29fb912b1e3d2ef46474b0f3b3a66",
+      "bytes": 11212,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/030 Managing Workspaces.md",
+      "href": "/workspaces/managing-workspaces",
+      "url": "https://vibekanban.com/docs/workspaces/managing-workspaces.md",
+      "sha256": "4bbfd982c45bcc79587e9738c41bc03044675f8ff1bd9097c2a71cab59bfa71a",
+      "bytes": 7538,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/040 Repositories.md",
+      "href": "/workspaces/repositories",
+      "url": "https://vibekanban.com/docs/workspaces/repositories.md",
+      "sha256": "9257cd8ccad8861f59ed1660713a2c7228b09a317f6753967b0a1512b5f8fc38",
+      "bytes": 9524,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/050 Sessions.md",
+      "href": "/workspaces/sessions",
+      "url": "https://vibekanban.com/docs/workspaces/sessions.md",
+      "sha256": "8539f52eb536da93b14e7a765848538194a78cc10bbeacd1fb1a95b85bba69ee",
+      "bytes": 7645,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/060 Chat Interface.md",
+      "href": "/workspaces/chat-interface",
+      "url": "https://vibekanban.com/docs/workspaces/chat-interface.md",
+      "sha256": "a0e8b6501179cb7ce28187cd971f371379d6e7cb8041e1d00816517b784c3f94",
+      "bytes": 12591,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/070 Slash Commands.md",
+      "href": "/workspaces/slash-commands",
+      "url": "https://vibekanban.com/docs/workspaces/slash-commands.md",
+      "sha256": "4c7fac548eee085063e9f925aedcadbaa7ac0324bad3ba2cc0257c710a5b4d17",
+      "bytes": 5259,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/080 Interface Guide.md",
+      "href": "/workspaces/interface",
+      "url": "https://vibekanban.com/docs/workspaces/interface.md",
+      "sha256": "6e7363b414ca3c398c9a130ec8b108d5b76b81a1ec83aee64b7f1e798b88ff31",
+      "bytes": 14812,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/090 Command Bar.md",
+      "href": "/workspaces/command-bar",
+      "url": "https://vibekanban.com/docs/workspaces/command-bar.md",
+      "sha256": "556b8013a005c99fdefff139b64afb9dea4938384efc930c0a0616c373c9bdd8",
+      "bytes": 7720,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/100 Multi-Repo & Sessions.md",
+      "href": "/workspaces/multi-repo-sessions",
+      "url": "https://vibekanban.com/docs/workspaces/multi-repo-sessions.md",
+      "sha256": "c4be667fe8b2c2b8b32426003610bfb9becf2394c4c912c55f2e0040ac195303",
+      "bytes": 7435,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/110 Changes Panel.md",
+      "href": "/workspaces/changes",
+      "url": "https://vibekanban.com/docs/workspaces/changes.md",
+      "sha256": "0f7e63be7bd330fc01341629dbf4410319277b6ac5df6e286d2fa8588daebdb5",
+      "bytes": 8363,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Workspaces/120 Git Operations.md",
+      "href": "/workspaces/git-operations",
+      "url": "https://vibekanban.com/docs/workspaces/git-operations.md",
+      "sha256": "95cb44ca92d406fc671b9b6f6a0ec03b7b849c28a27725a05ac73dfe2bb53c27",
+      "bytes": 12495,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/010 Overview.md",
+      "href": "/cloud/index",
+      "url": "https://vibekanban.com/docs/cloud/index.md",
+      "sha256": "01f75cc92493bdabb41c47479ebc192a3e5c4bb3b1977dc8687302abb11e10be",
+      "bytes": 4720,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/020 Getting Started.md",
+      "href": "/cloud/getting-started",
+      "url": "https://vibekanban.com/docs/cloud/getting-started.md",
+      "sha256": "ae7438a2efac75a2f44a0044852713c601b2f4cb2b5a341c7f61806a51aa29e9",
+      "bytes": 7245,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/030 Authentication.md",
+      "href": "/cloud/authentication",
+      "url": "https://vibekanban.com/docs/cloud/authentication.md",
+      "sha256": "44db64d26ce9a46ddfb6d8c6a9219b2c4efd148938adc206215b517f7a9f142d",
+      "bytes": 7631,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/040 Organisations.md",
+      "href": "/cloud/organizations",
+      "url": "https://vibekanban.com/docs/cloud/organizations.md",
+      "sha256": "27713833fbac92ac510b26b8e314eb193542a1b8cff266c2410dcdc3067cbf09",
+      "bytes": 8129,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/050 Team Members.md",
+      "href": "/cloud/team-members",
+      "url": "https://vibekanban.com/docs/cloud/team-members.md",
+      "sha256": "8a0b5e5cc7a4c19cb30038d03cd0171f70cfc16dfab3de41ae8562ed5ed2bbd3",
+      "bytes": 9517,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/060 Projects.md",
+      "href": "/cloud/projects",
+      "url": "https://vibekanban.com/docs/cloud/projects.md",
+      "sha256": "38cb965559a4d67df7fbd74fef5ff68dd61462d53b390457df916ae6640cac88",
+      "bytes": 9830,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/070 Issues.md",
+      "href": "/cloud/issues",
+      "url": "https://vibekanban.com/docs/cloud/issues.md",
+      "sha256": "2aa9afbb4378c0959ebe85155f71e3f8f7889754331a596dfe3c287ce99f83df",
+      "bytes": 17752,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/080 Kanban View.md",
+      "href": "/cloud/kanban-board",
+      "url": "https://vibekanban.com/docs/cloud/kanban-board.md",
+      "sha256": "14ec8baac11cb13df680afaf90141a1bb6ea719161af1a09071ccf80bbfb2d94",
+      "bytes": 9797,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/090 List View.md",
+      "href": "/cloud/list-view",
+      "url": "https://vibekanban.com/docs/cloud/list-view.md",
+      "sha256": "0e6ca0b2dc3a425ad51549b95e3f7c9477b2820eb31872c3d360e148321f8f02",
+      "bytes": 4670,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/100 Filtering & Sorting.md",
+      "href": "/cloud/filtering",
+      "url": "https://vibekanban.com/docs/cloud/filtering.md",
+      "sha256": "151f25f592915f62f1a270c2881a1a7c478608bc40404fa2e91166497ccaae00",
+      "bytes": 8217,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/110 Customising Your Board.md",
+      "href": "/cloud/customisation",
+      "url": "https://vibekanban.com/docs/cloud/customisation.md",
+      "sha256": "1071efbe57d9e8c99e44d71b0c4248690e54adc8c036dc69378ee0e6f560e705",
+      "bytes": 8310,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Cloud/120 Troubleshooting.md",
+      "href": "/cloud/troubleshooting",
+      "url": "https://vibekanban.com/docs/cloud/troubleshooting.md",
+      "sha256": "4dd7fd77436206c1797a3c8f7554865b18aa70046d6772ec9658fa0521facc2c",
+      "bytes": 8946,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/010 Overview.md",
+      "href": "/settings/index",
+      "url": "https://vibekanban.com/docs/settings/index.md",
+      "sha256": "9c500ce2e559959385181cfe82ca1afa2843cbd6a6277abcc708140d345713ed",
+      "bytes": 5161,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/020 General/010 Overview.md",
+      "href": "/settings/general",
+      "url": "https://vibekanban.com/docs/settings/general.md",
+      "sha256": "3de8bac410844ca2c0327656bd9d828e647358935a07cc44d78c8d69d34e01ac",
+      "bytes": 9044,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/020 General/020 Creating Tags.md",
+      "href": "/settings/creating-task-tags",
+      "url": "https://vibekanban.com/docs/settings/creating-task-tags.md",
+      "sha256": "5a5b5cbf22f9544734e8696f554d15d6bf9de4444e894aaed6d6bd00c22dcdc2",
+      "bytes": 4394,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/030 Projects & Repositories.md",
+      "href": "/settings/projects-repositories",
+      "url": "https://vibekanban.com/docs/settings/projects-repositories.md",
+      "sha256": "47990a51f1007dee020629ae4bc0bed07a05770295d7b0d49ceda08f1bbd4ca2",
+      "bytes": 7204,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/040 Organisation Settings.md",
+      "href": "/settings/organization-settings",
+      "url": "https://vibekanban.com/docs/settings/organization-settings.md",
+      "sha256": "1431650e90ef509cc9600810d5a11e5f657eb9e9144f204f9acd20227c734b9a",
+      "bytes": 6524,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/050 Remote Projects.md",
+      "href": "/settings/remote-projects",
+      "url": "https://vibekanban.com/docs/settings/remote-projects.md",
+      "sha256": "b9dbc9c5541c6861274df02ff034fc9276a668b3d2bd5bb1236ac52e2797370f",
+      "bytes": 6928,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/060 Agent Profiles & Configuration.md",
+      "href": "/settings/agent-configurations",
+      "url": "https://vibekanban.com/docs/settings/agent-configurations.md",
+      "sha256": "6d99e880edcfc8106f12f5b2bd180b9a35c11090547fc7b114462e0332c7ac11",
+      "bytes": 13833,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Settings/070 Connecting MCP Servers.md",
+      "href": "/settings/mcp-servers",
+      "url": "https://vibekanban.com/docs/settings/mcp-servers.md",
+      "sha256": "1177442d9ca0af7630733439f771223d56364c6022626b1bf1d505adc7e03b16",
+      "bytes": 3920,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Self-Hosting/010 Local Development.md",
+      "href": "/self-hosting/local-development",
+      "url": "https://vibekanban.com/docs/self-hosting/local-development.md",
+      "sha256": "a2d4eb6d520a3eddc9867321c9dccd66bcfe1475c92f4f6ac9a138c40b731ad9",
+      "bytes": 8152,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Self-Hosting/020 Deploy with Docker Compose.md",
+      "href": "/self-hosting/deploy-docker",
+      "url": "https://vibekanban.com/docs/self-hosting/deploy-docker.md",
+      "sha256": "5ed7d0200898f8204692656012e7c3615814e38d26bf94fd8a5e1b206c96255f",
+      "bytes": 11768,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Integrations/010 GitHub Integration.md",
+      "href": "/integrations/github-integration",
+      "url": "https://vibekanban.com/docs/integrations/github-integration.md",
+      "sha256": "42345f664c469005eaae4d8ea35edf55ad996a2acf040a297d75278f2d266b2b",
+      "bytes": 2268,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Integrations/020 Azure Repos Integration.md",
+      "href": "/integrations/azure-repos-integration",
+      "url": "https://vibekanban.com/docs/integrations/azure-repos-integration.md",
+      "sha256": "dda9315ea3259f43e8a2ed92fb6e880911ee925c50b2a6b12446b326193d04ea",
+      "bytes": 2668,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Integrations/030 VSCode Extension Integration.md",
+      "href": "/integrations/vscode-extension",
+      "url": "https://vibekanban.com/docs/integrations/vscode-extension.md",
+      "sha256": "ceeedff716487515518fd68685a286adacf36688056299c5a6903802a05ec700",
+      "bytes": 5501,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Integrations/040 Connecting MCP Servers.md",
+      "href": "/integrations/mcp-server-configuration",
+      "url": "https://vibekanban.com/docs/integrations/mcp-server-configuration.md",
+      "sha256": "4716c9284686e026d99d50e517503b42579dc5bce9ffb76c02ffac1e53340b42",
+      "bytes": 3991,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Integrations/050 Vibe Kanban MCP Server.md",
+      "href": "/integrations/vibe-kanban-mcp-server",
+      "url": "https://vibekanban.com/docs/integrations/vibe-kanban-mcp-server.md",
+      "sha256": "c4d284c58f88e9e9afe33b26840064c80a0ee7f179f4aecab33a221de4b5fa39",
+      "bytes": 19195,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "070 Help/010 Troubleshooting.md",
+      "href": "/troubleshooting",
+      "url": "https://vibekanban.com/docs/troubleshooting.md",
+      "sha256": "0da29b269f951bebd1dffaa68a817b7cde9e8aacda0c218c5266aa68aa4fcb64",
+      "bytes": 1914,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "070 Help/020 Responsible Disclosure.md",
+      "href": "/responsible-disclosure",
+      "url": "https://vibekanban.com/docs/responsible-disclosure.md",
+      "sha256": "f73c1c0621f93ece9be0366862c43b70c25584bca134126ed5efbd0afeb9e311",
+      "bytes": 4027,
+      "contentType": "text/markdown"
+    }
+  ],
+  "제외": [],
+  "llms": {
+    "치환": 58,
+    "미노출": 0,
+    "외부": 0,
+    "메뉴에만": 0
+  }
+}

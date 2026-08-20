@@ -1,0 +1,53 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://vibekanban.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Supported Coding Agents
+
+> Complete guide to all coding agents supported by Vibe Kanban, including installation and authentication instructions
+
+Vibe Kanban integrates with a variety of coding agents. Each agent requires installation and authentication before use. Select your preferred agent when creating task attempts.
+
+## Available Agents
+
+<CardGroup cols={2}>
+  <Card title="Claude Code" icon="https://www.vibekanban.com/images/logos/claude.svg" href="/docs/agents/claude-code">
+    Claude Code CLI
+  </Card>
+
+  <Card title="OpenAI Codex" icon="https://www.vibekanban.com/images/logos/openai-logo.svg" href="/docs/agents/openai-codex">
+    OpenAI Codex CLI
+  </Card>
+
+  <Card title="GitHub Copilot" icon="https://www.vibekanban.com/images/logos/github-copilot-logo.svg" href="/docs/agents/github-copilot">
+    GitHub Copilot CLI
+  </Card>
+
+  <Card title="Gemini CLI" icon="https://www.vibekanban.com/images/logos/gemini-logo.svg" href="/docs/agents/gemini-cli">
+    Google Gemini CLI
+  </Card>
+
+  <Card title="Amp" icon="https://www.vibekanban.com/images/logos/amp-logo.svg" href="/docs/agents/amp">
+    Amp Code
+  </Card>
+
+  <Card title="Cursor Agent CLI" icon="https://www.vibekanban.com/images/logos/cursor-logo-light.png" href="/docs/agents/cursor-cli">
+    Cursor Agent CLI
+  </Card>
+
+  <Card title="OpenCode" icon="https://www.vibekanban.com/images/logos/opencode-light.svg" href="/docs/agents/opencode">
+    SST OpenCode
+  </Card>
+
+  <Card title="Droid CLI" icon="https://www.vibekanban.com/images/logos/factory-ai-logo-light.png" href="/docs/agents/droid">
+    Factory Droid
+  </Card>
+
+  <Card title="Claude Code Router" icon="https://www.vibekanban.com/images/logos/claude.svg#" href="/docs/agents/ccr">
+    Claude Code Router - orchestrate multiple models
+  </Card>
+
+  <Card title="Qwen Code" icon="https://www.vibekanban.com/images/logos/qwen-logo.png#" href="/docs/agents/qwen-code">
+    Qwen Code CLI
+  </Card>
+</CardGroup>

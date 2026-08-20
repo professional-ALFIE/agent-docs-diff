@@ -1,0 +1,67 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://vibekanban.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Troubleshooting
+
+> Common issues and solutions when using Vibe Kanban
+
+## Agent Reports Empty Codebase
+
+If your coding agent reports that the codebase is empty when you create a new task, you may have Git's sparse-checkout feature enabled in your repository.
+
+**Solution:**
+
+Run the following command in the root directory of your repository:
+
+```bash theme={null}
+git sparse-checkout disable
+```
+
+After disabling sparse-checkout, create a new task and try again.
+
+## Enabling Debug Logs
+
+If you need more detailed logs to help debug an issue, you can enable debug-level logging by setting the `RUST_LOG` environment variable.
+
+**Usage:**
+
+```bash theme={null}
+RUST_LOG=debug npx vibe-kanban
+```
+
+This will provide verbose logging output that can help identify the root cause of issues.
+
+## DANGER: Wiping Your Database
+
+If you encounter irrecoverable errors and need to completely wipe your Vibe Kanban database, you can delete the application data directory for your operating system.
+
+<Warning>
+  This action is irreversible and will result in the loss of ALL your tasks and settings. Make sure to back up any important information before proceeding.
+</Warning>
+
+**Delete the following directory based on your OS:**
+
+<Tabs>
+  <Tab title="macOS">
+    ```bash theme={null}
+    ~/Library/Application Support/ai.bloop.vibe-kanban/
+    ```
+  </Tab>
+
+  <Tab title="Linux">
+    ```bash theme={null}
+    ~/.local/share/vibe-kanban/
+    ```
+  </Tab>
+
+  <Tab title="Windows">
+    ```
+    %APPDATA%\bloop\vibe-kanban\
+    ```
+
+    Typically: `C:\Users\<username>\AppData\Roaming\bloop\vibe-kanban\`
+  </Tab>
+</Tabs>
+
+After deleting the application data directory, restart Vibe Kanban to reset with an empty database and default settings.

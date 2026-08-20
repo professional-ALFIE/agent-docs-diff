@@ -1,0 +1,839 @@
+{
+  "생성": "2026-08-20T19:36:24.515Z",
+  "제품폴더": "Tavily Docs",
+  "진입": "https://docs.tavily.com/documentation/about",
+  "최상위수": 8,
+  "그룹수": 29,
+  "문서": [
+    {
+      "경로": "010 Home.md",
+      "href": "/welcome",
+      "url": "https://docs.tavily.com/welcome.md",
+      "sha256": "ab2f559c63b7d46c9e722fbda4e3d936e7b0728709699542b99910214ddff590",
+      "bytes": 1416,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 Agents/010 Agents.md",
+      "href": "/agents",
+      "url": "https://docs.tavily.com/agents.md",
+      "sha256": "493fad8f390cbf4d38949c856001284653db8e46769fa67837457c09da43a230",
+      "bytes": 10909,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Introduction/010 Getting Started/010 About.md",
+      "href": "/documentation/about",
+      "url": "https://docs.tavily.com/documentation/about.md",
+      "sha256": "0a4f44bc820a97b173349962a138c3ea0b907358272a2e39ce604fa8ccb17b92",
+      "bytes": 5610,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Introduction/010 Getting Started/020 Quickstart.md",
+      "href": "/documentation/quickstart",
+      "url": "https://docs.tavily.com/documentation/quickstart.md",
+      "sha256": "91a0d48223b077816ebfaac813733e4e3fde7002a0ae1baac7962d89312f906f",
+      "bytes": 2121,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Introduction/010 Getting Started/030 Credits & Pricing.md",
+      "href": "/documentation/api-credits",
+      "url": "https://docs.tavily.com/documentation/api-credits.md",
+      "sha256": "33e39e70fe99098f09de88cc74f40dca8d0dcf6a57f05c199dfdded2a42b38da",
+      "bytes": 3819,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Introduction/010 Getting Started/040 Rate Limits.md",
+      "href": "/documentation/rate-limits",
+      "url": "https://docs.tavily.com/documentation/rate-limits.md",
+      "sha256": "9d4e3b4d143958648b5ff89cd12662fe101819ca09409c0672e8c1d0cabdd527",
+      "bytes": 2602,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "030 Introduction/020 FAQ/010 Frequently Asked Questions.md",
+      "href": "/faq/faq",
+      "url": "https://docs.tavily.com/faq/faq.md",
+      "sha256": "ca450c16e552b4f66a4171f6485ba2fa6080c4c0054cc4bc6da2c51ed27ffaa3",
+      "bytes": 6433,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/010 API Reference/010 Introduction.md",
+      "href": "/documentation/api-reference/introduction",
+      "url": "https://docs.tavily.com/documentation/api-reference/introduction.md",
+      "sha256": "645fc2552b2684a174b9bca5e216cb6c5e07e9d91e958bdf5749371a960b6806",
+      "bytes": 3757,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/020 Core Endpoints/010 Search.md",
+      "href": "/documentation/api-reference/endpoint/search",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/search.md",
+      "sha256": "75bfb3ddf6708a610bdf2b6fda8f30ddc571064050a11e581866c7b0725c1616",
+      "bytes": 26743,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/020 Core Endpoints/020 Extract.md",
+      "href": "/documentation/api-reference/endpoint/extract",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/extract.md",
+      "sha256": "b5e2f4679e3e3da83044ae8f30c54215d2bcb0d4aeb9e46715e3b3cf9fe70a62",
+      "bytes": 15053,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/020 Core Endpoints/030 Crawl.md",
+      "href": "/documentation/api-reference/endpoint/crawl",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/crawl.md",
+      "sha256": "6240c5b149b7c477456fab505c1a067e0eeabc12da623e132ae32709f3fe9973",
+      "bytes": 29794,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/020 Core Endpoints/040 Map.md",
+      "href": "/documentation/api-reference/endpoint/map",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/map.md",
+      "sha256": "7ba0d81bb01e86120a252feb4488e46dfaf093ee02250e35d59a8ba6d9b395cf",
+      "bytes": 11343,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/030 Research Endpoint/010 Create Research Task.md",
+      "href": "/documentation/api-reference/endpoint/research",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/research.md",
+      "sha256": "eea2d646096b7b68e0767b406e1a359bf36bd4ee931ce384e968f98b017e978e",
+      "bytes": 15724,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/030 Research Endpoint/020 Get Research Task Status.md",
+      "href": "/documentation/api-reference/endpoint/research-get",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/research-get.md",
+      "sha256": "4bd41cfc0879fb20fdcae0b4e89debee3684f6130426cc0761adf293ecc00bf1",
+      "bytes": 8659,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/030 Research Endpoint/030 Streaming.md",
+      "href": "/documentation/api-reference/endpoint/research-streaming",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/research-streaming.md",
+      "sha256": "32762caa7eb35639824372962b4f4361dd658772a081349540647b2fe26dd569",
+      "bytes": 10507,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/040 Account/010 Usage.md",
+      "href": "/documentation/api-reference/endpoint/usage",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/usage.md",
+      "sha256": "1d512af1f3568d3098a8f03bc1677a0a78692405b580ad7a4bf825f341521de8",
+      "bytes": 7169,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/040 Account/020 Logs.md",
+      "href": "/documentation/api-reference/endpoint/logs",
+      "url": "https://docs.tavily.com/documentation/api-reference/endpoint/logs.md",
+      "sha256": "32ee911734cb1278a1f15bc325c3386e539edd81bb8c6398f80a02b7d7749769",
+      "bytes": 9214,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/050 Enterprise API Reference/010 API Key Generator/010 Generate Keys.md",
+      "href": "/documentation/enterprise/generate-keys",
+      "url": "https://docs.tavily.com/documentation/enterprise/generate-keys.md",
+      "sha256": "2b970e9c6b4adbeaa1f85c7e1f36d3ac1681916103bc1159e05dd0193366b115",
+      "bytes": 4908,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/050 Enterprise API Reference/010 API Key Generator/020 Deactivate Keys.md",
+      "href": "/documentation/enterprise/deactivate-keys",
+      "url": "https://docs.tavily.com/documentation/enterprise/deactivate-keys.md",
+      "sha256": "2c1e824b8d2994cc98b163e0b1526cea4ca772a9e7f04a6ec3fcdc7e1c99d021",
+      "bytes": 2851,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/050 Enterprise API Reference/010 API Key Generator/030 Key Info.md",
+      "href": "/documentation/enterprise/key-info",
+      "url": "https://docs.tavily.com/documentation/enterprise/key-info.md",
+      "sha256": "5bad241c42344208813fe2a822bd82e55c90d7dda12ba34f1db4ac0fb29c9f6f",
+      "bytes": 2561,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/050 Enterprise API Reference/020 Organization Usage.md",
+      "href": "/documentation/enterprise/org-usage",
+      "url": "https://docs.tavily.com/documentation/enterprise/org-usage.md",
+      "sha256": "26ee133072ebeb914fc78190bc459097c9b84216b556cc3f831ec44cdd353d86",
+      "bytes": 11933,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/060 Python SDK/010 Quickstart.md",
+      "href": "/sdk/python/quick-start",
+      "url": "https://docs.tavily.com/sdk/python/quick-start.md",
+      "sha256": "6b8a45d18ec6481b3203c93b07542362df080ef9181b89a2d47c01eb2c701a6d",
+      "bytes": 3064,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/060 Python SDK/020 SDK Reference.md",
+      "href": "/sdk/python/reference",
+      "url": "https://docs.tavily.com/sdk/python/reference.md",
+      "sha256": "ea7f5128ba6dcd4f4d1812a4401ac2b52802f4286e1526fc7b700f5d870f7306",
+      "bytes": 92915,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/070 JavaScript SDK/010 Quickstart.md",
+      "href": "/sdk/javascript/quick-start",
+      "url": "https://docs.tavily.com/sdk/javascript/quick-start.md",
+      "sha256": "0902b7a7f41c90ed1a19ca83bb33e68ec7ed8eb7f10ce0fa201ebafbb42e0082",
+      "bytes": 3226,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/070 JavaScript SDK/020 SDK Reference.md",
+      "href": "/sdk/javascript/reference",
+      "url": "https://docs.tavily.com/sdk/javascript/reference.md",
+      "sha256": "84156fc1533b8e113c3a97d5dbe658dab6e78cafe0dc643cebfaf57e030b1006",
+      "bytes": 123598,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/080 Best Practices/010 Search.md",
+      "href": "/documentation/best-practices/best-practices-search",
+      "url": "https://docs.tavily.com/documentation/best-practices/best-practices-search.md",
+      "sha256": "28856a55b9c261c8dd210a7b2f2630bdebca071deb327e81a508efa2da2910b5",
+      "bytes": 15123,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/080 Best Practices/020 Extract.md",
+      "href": "/documentation/best-practices/best-practices-extract",
+      "url": "https://docs.tavily.com/documentation/best-practices/best-practices-extract.md",
+      "sha256": "2a0eac276edae51ee68e61ba44c15da973772ff673af92540dbf85dc715c233f",
+      "bytes": 8221,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/080 Best Practices/030 Crawl.md",
+      "href": "/documentation/best-practices/best-practices-crawl",
+      "url": "https://docs.tavily.com/documentation/best-practices/best-practices-crawl.md",
+      "sha256": "89b4577f3100b3fc86b6fc4cf37a6a69d0e60fa9a8e5f6f53a438d3e51270d8a",
+      "bytes": 10473,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/080 Best Practices/040 Research.md",
+      "href": "/documentation/best-practices/best-practices-research",
+      "url": "https://docs.tavily.com/documentation/best-practices/best-practices-research.md",
+      "sha256": "5b902327f5c8a6df6762c0501167d78b106777b0d1f7320c8bd0223d9e05060d",
+      "bytes": 5258,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 API & SDKs/080 Best Practices/050 API Key Management.md",
+      "href": "/documentation/best-practices/api-key-management",
+      "url": "https://docs.tavily.com/documentation/best-practices/api-key-management.md",
+      "sha256": "5c860b478ad2f3f183852af0aa03568b2a6618c67498321631e0764e969900f8",
+      "bytes": 2146,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/010 Tavily MCP Server/010 Tavily MCP Server.md",
+      "href": "/documentation/mcp",
+      "url": "https://docs.tavily.com/documentation/mcp.md",
+      "sha256": "201e51912d8a93d3e018448db4750e4305ab867ea74cd623fddf1267676524c2",
+      "bytes": 17173,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/020 Keyless Access/010 Try Tavily Without an API Key.md",
+      "href": "/documentation/keyless",
+      "url": "https://docs.tavily.com/documentation/keyless.md",
+      "sha256": "ffba31554204da8c27fd5a66f6d99cb11f5baa2493cf94db0e0f4ec3b66524b3",
+      "bytes": 5302,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/010 Tavily Agent Skills.md",
+      "href": "/documentation/agent-skills",
+      "url": "https://docs.tavily.com/documentation/agent-skills.md",
+      "sha256": "16cd0ee29c8b211f62b950bd19e6e2957cae710ca099b364974e8351af853689",
+      "bytes": 11030,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/020 Tavily CLI.md",
+      "href": "/documentation/tavily-cli",
+      "url": "https://docs.tavily.com/documentation/tavily-cli.md",
+      "sha256": "b182c73387c7de1fd4b0d3da14fdda6f3f412ecad4c42c939143fad34256a249",
+      "bytes": 21315,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/030 OpenClaw.md",
+      "href": "/documentation/integrations/openclaw",
+      "url": "https://docs.tavily.com/documentation/integrations/openclaw.md",
+      "sha256": "2ef75a53e6d2191ed19b1822baebe1b03726c32ad6ae4a22e34208159721e161",
+      "bytes": 7201,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/040 Claude.md",
+      "href": "/documentation/integrations/claude",
+      "url": "https://docs.tavily.com/documentation/integrations/claude.md",
+      "sha256": "624c6538f7218f5fdce2fb30ce77b5d864db44d471e7e857f9f1ceaea8789063",
+      "bytes": 8658,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/050 Pi.md",
+      "href": "/documentation/integrations/pi",
+      "url": "https://docs.tavily.com/documentation/integrations/pi.md",
+      "sha256": "738205e067e482d965f003839761615a824b6278f0795609044f080642e3da06",
+      "bytes": 4199,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/060 Grok Build.md",
+      "href": "/documentation/integrations/grok-build",
+      "url": "https://docs.tavily.com/documentation/integrations/grok-build.md",
+      "sha256": "35ba041a536953ad8115db310b0a449203b679bcf5283251048e59f4baf1938b",
+      "bytes": 5759,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/070 OpenCode.md",
+      "href": "/documentation/integrations/opencode",
+      "url": "https://docs.tavily.com/documentation/integrations/opencode.md",
+      "sha256": "210bd082fab5d3a7d7001db3c51a0fe9bbd75769138928510ef91f9f8f354875",
+      "bytes": 6069,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/040 Machine Payments/010 Tavily x402.md",
+      "href": "/documentation/machine-payments/x402",
+      "url": "https://docs.tavily.com/documentation/machine-payments/x402.md",
+      "sha256": "26c530fc218298a298f33f501dc65206928932707feb40b09a38cb9a42bcc965",
+      "bytes": 8336,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/050 Partnerships/010 Databricks.md",
+      "href": "/documentation/partnerships/databricks",
+      "url": "https://docs.tavily.com/documentation/partnerships/databricks.md",
+      "sha256": "960037b24e1568c5bf308ab31d24499df551beade8f17742ef270fa30c3adb39",
+      "bytes": 9359,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/050 Partnerships/020 Amazon Bedrock AgentCore.md",
+      "href": "/documentation/partnerships/amazon",
+      "url": "https://docs.tavily.com/documentation/partnerships/amazon.md",
+      "sha256": "a938c0ea24f51717333cf9e78cb134a32b8d7ff75bec2dfa6a9300f94a5fe2d4",
+      "bytes": 6865,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/050 Partnerships/030 Microsoft Azure.md",
+      "href": "/documentation/partnerships/azure",
+      "url": "https://docs.tavily.com/documentation/partnerships/azure.md",
+      "sha256": "ddee08018e88566ae0081c0ada9939b8150cffca43c1d8a100657f62083af94e",
+      "bytes": 6731,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/050 Partnerships/040 IBM watsonx Orchestrate.md",
+      "href": "/documentation/partnerships/ibm",
+      "url": "https://docs.tavily.com/documentation/partnerships/ibm.md",
+      "sha256": "260f34ef7b7f5e15bcde22ee4a12d8a96823b174729cd6d8943af260a1ec2509",
+      "bytes": 5506,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/050 Partnerships/050 Snowflake.md",
+      "href": "/documentation/partnerships/snowflake",
+      "url": "https://docs.tavily.com/documentation/partnerships/snowflake.md",
+      "sha256": "b0f1dc1674e4a98d87041e6fcaa20a8e75914ce352cba198d96dd910a5f4da1e",
+      "bytes": 6091,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/010 LangChain.md",
+      "href": "/documentation/integrations/langchain",
+      "url": "https://docs.tavily.com/documentation/integrations/langchain.md",
+      "sha256": "52f929881ddcd4f0fe5beec845d7285695f988d939a1873bd873cbe7d7ff8354",
+      "bytes": 14835,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/020 Arcade.dev.md",
+      "href": "/documentation/integrations/arcade-dev",
+      "url": "https://docs.tavily.com/documentation/integrations/arcade-dev.md",
+      "sha256": "4cf836a41a139a1ebd5dbc3fdeba0f0be530462ef9198bf362ded2b49da272d1",
+      "bytes": 5810,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/030 Vercel AI SDK.md",
+      "href": "/documentation/integrations/vercel",
+      "url": "https://docs.tavily.com/documentation/integrations/vercel.md",
+      "sha256": "739a5290ddcad1f69a9eea6b7411a762e466cfc167ef3b26ac751314ff6b0a77",
+      "bytes": 7429,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/040 LlamaIndex.md",
+      "href": "/documentation/integrations/llamaindex",
+      "url": "https://docs.tavily.com/documentation/integrations/llamaindex.md",
+      "sha256": "c9c92a124f307671bc6d7c349c024d0f6596616de3c7ebf28e4b661901c7bdd9",
+      "bytes": 1502,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/050 OpenAI.md",
+      "href": "/documentation/integrations/openai",
+      "url": "https://docs.tavily.com/documentation/integrations/openai.md",
+      "sha256": "6b46b69ffe1f94f02e940516d5ff9e4e838a91d1a6f6ea1074af8572412f20fa",
+      "bytes": 36147,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/060 Google ADK.md",
+      "href": "/documentation/integrations/google-adk",
+      "url": "https://docs.tavily.com/documentation/integrations/google-adk.md",
+      "sha256": "23469c1dd944b27a437038d0f4ef7435937cf99f253017142933c7d0bfaf52b1",
+      "bytes": 6008,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/070 Microsoft 365 Copilot.md",
+      "href": "/documentation/integrations/microsoft",
+      "url": "https://docs.tavily.com/documentation/integrations/microsoft.md",
+      "sha256": "fa005124ed70e51229d3dfbaec27c39f558ee7cd6ae328a9967abf4e49e3c495",
+      "bytes": 7870,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/080 Anthropic.md",
+      "href": "/documentation/integrations/anthropic",
+      "url": "https://docs.tavily.com/documentation/integrations/anthropic.md",
+      "sha256": "73e0a2853f01aa378a8cc9e2b349d50e27cb60dfc5d938901059e5bda9363650",
+      "bytes": 29315,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/090 Nemo Deep Agents.md",
+      "href": "/documentation/integrations/nemo-deepagents",
+      "url": "https://docs.tavily.com/documentation/integrations/nemo-deepagents.md",
+      "sha256": "d937bbfacdd7ffd174a714950176e0bdef27d410002a74bb40067762f5cb0311",
+      "bytes": 7181,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/100 OpenClaw.md",
+      "href": "/documentation/integrations/openclaw",
+      "url": "https://docs.tavily.com/documentation/integrations/openclaw.md",
+      "sha256": "2ef75a53e6d2191ed19b1822baebe1b03726c32ad6ae4a22e34208159721e161",
+      "bytes": 7201,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/110 Portkey.md",
+      "href": "/documentation/integrations/portkey",
+      "url": "https://docs.tavily.com/documentation/integrations/portkey.md",
+      "sha256": "f390a9e6b7bd997d42a304349ee699a1db9967457688b4c91efb817579bfe859",
+      "bytes": 4613,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/120 LibreChat.md",
+      "href": "/documentation/integrations/librechat",
+      "url": "https://docs.tavily.com/documentation/integrations/librechat.md",
+      "sha256": "5fec2b6ecbc10a91c6fe66b9bcb20d72352413e3f9f36899729d23446927b436",
+      "bytes": 5133,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/130 n8n.md",
+      "href": "/documentation/integrations/n8n",
+      "url": "https://docs.tavily.com/documentation/integrations/n8n.md",
+      "sha256": "ca016779e3b1a19105c47009c103197fbc8e7b60fb71be35580d3a6156bd948e",
+      "bytes": 4249,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/140 Make.md",
+      "href": "/documentation/integrations/make",
+      "url": "https://docs.tavily.com/documentation/integrations/make.md",
+      "sha256": "053e3278b0b040932df514f2ba49b50901b9e4fddee8d8d055084869754fcc80",
+      "bytes": 3809,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/150 OpenAI Agent Builder.md",
+      "href": "/documentation/integrations/agent-builder",
+      "url": "https://docs.tavily.com/documentation/integrations/agent-builder.md",
+      "sha256": "6eea7ec0acce68ae48f10def719106f0f981e0570138bda9f8d27d09dc2239d9",
+      "bytes": 5590,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/160 Langflow.md",
+      "href": "/documentation/integrations/langflow",
+      "url": "https://docs.tavily.com/documentation/integrations/langflow.md",
+      "sha256": "1eb9788987f9a9dc3bbb4cc9f1c16f8a29eaa67a3cedf71ec606c7d04f23d4fb",
+      "bytes": 3375,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/170 Zapier.md",
+      "href": "/documentation/integrations/zapier",
+      "url": "https://docs.tavily.com/documentation/integrations/zapier.md",
+      "sha256": "4b4ad1a188453a29eccb1f89a429e0db56e0282da92cd4799b3fd3e4bc8081eb",
+      "bytes": 5151,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/180 Tines.md",
+      "href": "/documentation/integrations/tines",
+      "url": "https://docs.tavily.com/documentation/integrations/tines.md",
+      "sha256": "90d9872bf80b5099d7aa9a4be043fc3527c96f5ef0ba7408356d3ef486575550",
+      "bytes": 3251,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/190 Dify.md",
+      "href": "/documentation/integrations/dify",
+      "url": "https://docs.tavily.com/documentation/integrations/dify.md",
+      "sha256": "faef1bfb74b2e630d2af931c0315ad9551e81bc3fdc37724200f664064bb04db",
+      "bytes": 3306,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/200 Composio.md",
+      "href": "/documentation/integrations/composio",
+      "url": "https://docs.tavily.com/documentation/integrations/composio.md",
+      "sha256": "8276c7869bcddc6873ac9e562b3ec7acac9d0ba9b0e7af4b59fa30b394ffa8c6",
+      "bytes": 4174,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/210 Agno.md",
+      "href": "/documentation/integrations/agno",
+      "url": "https://docs.tavily.com/documentation/integrations/agno.md",
+      "sha256": "4e522aba8ff38699a57d3dd9de740c7802228b4a3522716644ff41eb64d63c8f",
+      "bytes": 2983,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/220 Pydantic AI.md",
+      "href": "/documentation/integrations/pydantic-ai",
+      "url": "https://docs.tavily.com/documentation/integrations/pydantic-ai.md",
+      "sha256": "9c0c855578d2a1e07dabe26f474907b9fb0b0b4b0c02f117124f1a4f3d9d4d32",
+      "bytes": 3307,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/230 FlowiseAI.md",
+      "href": "/documentation/integrations/flowise",
+      "url": "https://docs.tavily.com/documentation/integrations/flowise.md",
+      "sha256": "f36086436d2ba2ac00bc479c9436ce7fda50f3a52fce1b1e9c8676b647585d4b",
+      "bytes": 3318,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/240 CrewAI.md",
+      "href": "/documentation/integrations/crewai",
+      "url": "https://docs.tavily.com/documentation/integrations/crewai.md",
+      "sha256": "527c9c69bb12d70677f2f11d21bb442bead2db5af50a8590a08899acf205dac0",
+      "bytes": 14921,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/250 StackAI.md",
+      "href": "/documentation/integrations/stackai",
+      "url": "https://docs.tavily.com/documentation/integrations/stackai.md",
+      "sha256": "76349fc4ad87da64617ebb2840448d03b883cc035488bb17f53ad97c5cc6abfe",
+      "bytes": 4543,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/260 TrueFoundry.md",
+      "href": "/documentation/integrations/truefoundry",
+      "url": "https://docs.tavily.com/documentation/integrations/truefoundry.md",
+      "sha256": "62f58fa37ab1b502a1600cdd355b5f9c39ac1d974bd9c56243ef03e8899e6dfa",
+      "bytes": 6228,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/270 Cartesia.md",
+      "href": "/documentation/integrations/cartesia",
+      "url": "https://docs.tavily.com/documentation/integrations/cartesia.md",
+      "sha256": "ac9026c8e4884668625bf726b71ebe340c4c61606d941628ddddfd2d66165e5c",
+      "bytes": 8001,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/280 ElevenLabs.md",
+      "href": "/documentation/integrations/elevenlabs",
+      "url": "https://docs.tavily.com/documentation/integrations/elevenlabs.md",
+      "sha256": "075457bf9d31dc4482c55e593273f2a04fdef920d093a9b596188a5375530572",
+      "bytes": 2902,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/290 Gradium.md",
+      "href": "/documentation/integrations/gradium",
+      "url": "https://docs.tavily.com/documentation/integrations/gradium.md",
+      "sha256": "5fca846b326ef9347178d1089bdcf5329af967592ffd98175a65f5c443c6bc53",
+      "bytes": 5303,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/300 Mastra.md",
+      "href": "/documentation/integrations/mastra",
+      "url": "https://docs.tavily.com/documentation/integrations/mastra.md",
+      "sha256": "cc0f10294ad7490c946721f5fc12ee701e92830508f0c574ca73635c5b35aa6a",
+      "bytes": 6814,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/310 Haystack.md",
+      "href": "/documentation/integrations/haystack",
+      "url": "https://docs.tavily.com/documentation/integrations/haystack.md",
+      "sha256": "5f02e988807617c9ce7072e72dccd2b6c5ec1b551bb038c695e872c12d248213",
+      "bytes": 4602,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/320 Vellum.md",
+      "href": "/documentation/integrations/vellum",
+      "url": "https://docs.tavily.com/documentation/integrations/vellum.md",
+      "sha256": "b201cd75b84907ab83e520ae9b0d84e7407be277211c9f37521557c1891065c5",
+      "bytes": 2549,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/330 Devin.md",
+      "href": "/documentation/integrations/devin",
+      "url": "https://docs.tavily.com/documentation/integrations/devin.md",
+      "sha256": "c1cee93398ed35d7b62d9abe0abf8c00b519ac8f0837043d5590513e041f9e1f",
+      "bytes": 3667,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/340 Convex.md",
+      "href": "/documentation/integrations/convex",
+      "url": "https://docs.tavily.com/documentation/integrations/convex.md",
+      "sha256": "75630d72a099a55c6118f6a5abe95751886b4f09bd0d75763a5ca4efe0964047",
+      "bytes": 5265,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/010 Hub/010 Examples Hub.md",
+      "href": "/examples/hub",
+      "url": "https://docs.tavily.com/examples/hub.md",
+      "sha256": "c3d4ae24d585a734e99a3fd560b622244142cedb97b90afe54457a3be2d81989",
+      "bytes": 3610,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/020 Agent Toolkit/010 Agent Toolkit.md",
+      "href": "/examples/agent-toolkit/overview",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/overview.md",
+      "sha256": "49ea819758bffe47b67a52a05494855b3d39d70188935e07091f59f2e9dc6d48",
+      "bytes": 6365,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/020 Agent Toolkit/020 Tools Reference.md",
+      "href": "/examples/agent-toolkit/tools",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/tools.md",
+      "sha256": "95229643ad619ab63994225ab6bf04661a6bc985d157065d134e7e6a1a0d0fd1",
+      "bytes": 10178,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/020 Agent Toolkit/030 Chatbot.md",
+      "href": "/examples/agent-toolkit/chatbot",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/chatbot.md",
+      "sha256": "d336e7d405631cc1f2c419a18ad386b17911c955215b63653bdc38a9eebe6f65",
+      "bytes": 6744,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/020 Agent Toolkit/040 Hybrid Research.md",
+      "href": "/examples/agent-toolkit/hybrid-research",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/hybrid-research.md",
+      "sha256": "d15d194d7c10bd960348e951c4f54a3e79b221fa13f2f91e976c63f541dedfc0",
+      "bytes": 8350,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/020 Agent Toolkit/050 Company Intelligence.md",
+      "href": "/examples/agent-toolkit/company-intelligence",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/company-intelligence.md",
+      "sha256": "f9d66de513a0b49d33c30361cc50c17d38cd30fe9aa1680207dcae472086e64a",
+      "bytes": 7538,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/020 Agent Toolkit/060 Social Media Research.md",
+      "href": "/examples/agent-toolkit/social-media-research",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/social-media-research.md",
+      "sha256": "dfce84ff3cd97249cdd41c53821bb3b06c1333bd523530b0bcb120db975935e5",
+      "bytes": 7694,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/010 Chat.md",
+      "href": "/examples/use-cases/chat",
+      "url": "https://docs.tavily.com/examples/use-cases/chat.md",
+      "sha256": "5e61372111af60824ddcc0c52f9956f0d14c79b5390b8cdef9827fd4b235e979",
+      "bytes": 4663,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/020 Data Enrichment.md",
+      "href": "/examples/use-cases/data-enrichment",
+      "url": "https://docs.tavily.com/examples/use-cases/data-enrichment.md",
+      "sha256": "e7a5d18e5b32af2d0b6bcae9290602a095dff988e2488266379e484c0c56c5e9",
+      "bytes": 1350,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/030 Company Research.md",
+      "href": "/examples/use-cases/company-research",
+      "url": "https://docs.tavily.com/examples/use-cases/company-research.md",
+      "sha256": "57f469f33cc6fe1de563668290e704741ed8dc1d17c6363189df32c27487112d",
+      "bytes": 2564,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/040 Crawl to RAG.md",
+      "href": "/examples/use-cases/crawl-to-rag",
+      "url": "https://docs.tavily.com/examples/use-cases/crawl-to-rag.md",
+      "sha256": "3a94578ff8981611a835fc0ae62e784f7abed17685be67ade57aed7ed385fd0a",
+      "bytes": 2173,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/050 Meeting Prep.md",
+      "href": "/examples/use-cases/meeting-prep",
+      "url": "https://docs.tavily.com/examples/use-cases/meeting-prep.md",
+      "sha256": "47006dfb6cc60e5f899f294e3e77a984a4dfadfa0b6c30de8f54ec15d6234008",
+      "bytes": 2170,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/060 RAG Evaluation.md",
+      "href": "/examples/use-cases/web-eval",
+      "url": "https://docs.tavily.com/examples/use-cases/web-eval.md",
+      "sha256": "11a3fac3300022ee8ef3616e89ee4ef4ddf51851673664082bb893512922c6c0",
+      "bytes": 4166,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/030 Apps/070 Market Researcher.md",
+      "href": "/examples/use-cases/market-researcher",
+      "url": "https://docs.tavily.com/examples/use-cases/market-researcher.md",
+      "sha256": "11eb97b85fe2b6a76626c69b1b90228673b5560902fff04347d7219a9003ef37",
+      "bytes": 1826,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/010 Cookbook.md",
+      "href": "/examples/quick-tutorials/cookbook",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/cookbook.md",
+      "sha256": "588e2f9bd70164c9474e0d0b98381898f7272db4fcb0af6ae9f79691755abff5",
+      "bytes": 4799,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/020 Web Search Essentials.md",
+      "href": "/examples/quick-tutorials/search-api",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/search-api.md",
+      "sha256": "6c93f55dc42c0f50e48f2bcca44fc462c4cdc36880b4d6ae23e7b468ff5ed20d",
+      "bytes": 6400,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/030 Clean Content Extraction.md",
+      "href": "/examples/quick-tutorials/extract-api",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/extract-api.md",
+      "sha256": "f627a9550de3032b62de6e3cab964916611eefafa873577f8eae4df50c9066e9",
+      "bytes": 6338,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/040 Site Structure Discovery with Map.md",
+      "href": "/examples/quick-tutorials/map-api",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/map-api.md",
+      "sha256": "4623bbccf688b2357197205b98b1f3be16fb27a7ff844cee087038bd195ba83a",
+      "bytes": 5692,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/050 Website Crawling and Content Extraction.md",
+      "href": "/examples/quick-tutorials/crawl-api",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/crawl-api.md",
+      "sha256": "81046b20f4f0d184fd8d6c9a42206a3a0441b6443a25f32fe42f9e15e3e23424",
+      "bytes": 8446,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/060 Deep Research with Streaming.md",
+      "href": "/examples/quick-tutorials/research-streaming",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/research-streaming.md",
+      "sha256": "8d5c210a9fc991b8894b8802de02fd5d25427da52e1fef7250e545b1b4e841d6",
+      "bytes": 9872,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/040 Cookbook/070 Product News Tracker.md",
+      "href": "/examples/quick-tutorials/product-news-tracker",
+      "url": "https://docs.tavily.com/examples/quick-tutorials/product-news-tracker.md",
+      "sha256": "1dc25aa6e85ba16ddca9db2ce8e8a7e43149242f55663d2aa8a64e80335ce763",
+      "bytes": 5794,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Examples/050 Open Source/010 Projects.md",
+      "href": "/examples/open-sources/projects",
+      "url": "https://docs.tavily.com/examples/open-sources/projects.md",
+      "sha256": "109d41525ffdae45459621a7683e6b53c9309479bac7eb7940eb7560969a2c16",
+      "bytes": 8376,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "070 Changelog/010 Changelog.md",
+      "href": "/changelog",
+      "url": "https://docs.tavily.com/changelog.md",
+      "sha256": "c97ba1db300fd812826ced63b8bf21673425d44ad5ad6d1c34f6045b3ef82728",
+      "bytes": 25951,
+      "contentType": "text/markdown"
+    }
+  ],
+  "제외": [
+    {
+      "경로": "080 Help/010 Help.md",
+      "href": "/documentation/help",
+      "url": "https://docs.tavily.com/documentation/help.md",
+      "이유": "외부로 리다이렉트: https://help.tavily.com/"
+    }
+  ],
+  "llms": {
+    "치환": 97,
+    "미노출": 2,
+    "외부": 3,
+    "메뉴에만": 4
+  }
+}

@@ -32,3 +32,70 @@ test_*.txt
 test_*.md
 *.test
 *.tmp
+.claude/settings.json
+
+# ── 아래는 공용 기본 규칙에서 덧붙인 것 (2026-08-20) ──
+# ── 비밀정보 ──────────────────────────────────────────
+# OAuth·API 인증 파일. token.pickle 은 액세스·리프레시 토큰이라 credentials 보다 위험하다.
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+token.pickle
+*service_account*.json
+*.pem
+*.key
+*.p12
+id_rsa*
+
+# ── 로컬 DB (실행 중 생겨나는 파일) ───────────────────
+# *.sqlite* 한 줄이 -wal · -shm · -journal · sqlite3 변형까지 모두 잡는다.
+# MySQL (파일 기반)
+# Postgres — 파일이 아니라 디렉터리라 이름으로 막는다
+*.sqlite*
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.db3
+*.duckdb
+*.mdb
+*.realm
+*.ldb
+*.sst
+*.ibd
+ibdata1
+ib_logfile*
+pgdata/
+pg_data/
+postgres-data/
+pg_wal/
+
+# ── Node ──────────────────────────────────────────────
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.next/
+.turbo/
+dist/
+build/
+out/
+
+# ── Python ────────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Rust ──────────────────────────────────────────────
+target/
+
+# ── 로그 · 캐시 ───────────────────────────────────────
+logs/
+.cache/
+.parcel-cache/
+coverage/
+.nyc_output/
+tmp/cache/
+docs-nav-probe/

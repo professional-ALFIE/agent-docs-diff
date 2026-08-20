@@ -1,0 +1,240 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://exa.ai/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Update a Webhook
+
+<Warning>
+  **Redirects are not followed.** If you update the URL, ensure it is the final
+  destination. Endpoints that respond with a 3xx redirect will be treated as
+  delivery failures.
+</Warning>
+
+
+## OpenAPI
+
+````yaml patch /v0/webhooks/{id}
+openapi: 3.1.0
+info:
+  title: Exa Public API
+  version: 2.0.0
+servers:
+  - url: https://api.exa.ai
+security:
+  - apiKey: []
+  - bearer: []
+tags: []
+paths:
+  /v0/webhooks/{id}:
+    servers:
+      - url: https://api.exa.ai/websets
+    patch:
+      tags:
+        - Webhooks
+      summary: Update a Webhook
+      operationId: webhooks-update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: The id of the webhook
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWebhookParameters'
+      responses:
+        '200':
+          description: Webhook
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+              description: Unique identifier for the request.
+              example: req_N6SsgoiaOQOPqsYKKiw5
+              required: true
+        '404':
+          description: Webhook not found
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+              description: Unique identifier for the request.
+              example: req_N6SsgoiaOQOPqsYKKiw5
+              required: true
+      security:
+        - apiKey: []
+        - bearer: []
+      x-codeSamples:
+        - lang: javascript
+          label: JavaScript
+          source: |-
+            // npm install exa-js
+            import Exa from "exa-js";
+            const exa = new Exa("YOUR_EXA_API_KEY");
+
+            const webhook = await exa.websets.webhooks.update("webhook_id", {
+              url: "https://api.yourapp.com/webhooks/exa-updated",
+              events: ["webset.completed"],
+            });
+
+            console.log(`Updated webhook: ${webhook.id}`);
+        - lang: python
+          label: Python
+          source: |-
+            # pip install exa-py
+            from exa_py import Exa
+
+            exa = Exa("YOUR_EXA_API_KEY")
+
+            webhook = exa.websets.webhooks.update(
+                "webhook_id",
+                params={
+                    "url": "https://api.yourapp.com/webhooks/exa-updated",
+                    "events": ["webset.completed"],
+                },
+            )
+
+            print(f"Updated webhook: {webhook.id}")
+components:
+  schemas:
+    UpdateWebhookParameters:
+      type:
+        - object
+      properties:
+        events:
+          type:
+            - array
+          items:
+            $ref: '#/components/schemas/EventType'
+            type:
+              - string
+          minItems: 1
+          maxItems: 19
+          description: The events to trigger the webhook
+        url:
+          type:
+            - string
+          format: uri
+          description: The URL to send the webhook to
+        metadata:
+          description: Set of key-value pairs you want to associate with this object.
+          type:
+            - object
+          additionalProperties:
+            type:
+              - string
+            maxLength: 1000
+    Webhook:
+      type:
+        - object
+      properties:
+        id:
+          type:
+            - string
+          description: The unique identifier for the webhook
+        object:
+          type: string
+          const: webhook
+          default: webhook
+        status:
+          type:
+            - string
+          enum:
+            - active
+            - inactive
+          description: The status of the webhook
+          title: WebhookStatus
+        events:
+          type:
+            - array
+          items:
+            $ref: '#/components/schemas/EventType'
+            type:
+              - string
+          minItems: 1
+          description: The events to trigger the webhook
+        url:
+          type:
+            - string
+          format: uri
+          description: The URL to send the webhook to
+        secret:
+          type: string
+          description: >-
+            The secret to verify the webhook signature. Only returned on Webhook
+            creation.
+          nullable: true
+        metadata:
+          default: {}
+          description: The metadata of the webhook
+          type:
+            - object
+          additionalProperties:
+            type:
+              - string
+            maxLength: 1000
+        createdAt:
+          type:
+            - string
+          format: date-time
+          description: The date and time the webhook was created
+        updatedAt:
+          type:
+            - string
+          format: date-time
+          description: The date and time the webhook was last updated
+      required:
+        - id
+        - object
+        - status
+        - events
+        - url
+        - secret
+        - createdAt
+        - updatedAt
+    EventType:
+      type: string
+      enum:
+        - webset.created
+        - webset.deleted
+        - webset.paused
+        - webset.idle
+        - webset.search.created
+        - webset.search.canceled
+        - webset.search.completed
+        - webset.search.updated
+        - import.created
+        - import.completed
+        - webset.item.created
+        - webset.item.enriched
+        - monitor.created
+        - monitor.updated
+        - monitor.deleted
+        - monitor.run.created
+        - monitor.run.completed
+        - webset.export.created
+        - webset.export.completed
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: x-api-key
+      in: header
+      description: >-
+        Pass your Exa API key in the x-api-key header. You can also authenticate
+        with Authorization: Bearer <key>.
+    bearer:
+      type: http
+      scheme: bearer
+      description: >-
+        Pass your Exa API key in the x-api-key header. You can also authenticate
+        with Authorization: Bearer <key>.
+
+````
