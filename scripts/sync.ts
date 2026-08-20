@@ -84,7 +84,9 @@ async function 사이트하나(s: 사이트설정): Promise<string[]> {
   for (const p of 삭제) { await rm(join(제품폴더, p)); console.log(`  삭제: ${p}`); }
   await 빈폴더정리(제품폴더);
   for (const [이름, 내용] of 파일들) await Bun.write(join(제품폴더, 이름), 내용);
-  await Bun.write(join(제품폴더, ".manifest.json"), JSON.stringify(이번, null, 2) + "\n");
+  // 생성 시각 말고 아무것도 안 바뀌었으면 manifest 를 다시 쓰지 않는다 — CI 가 3시간마다 시각만 바뀐 커밋을 만들지 않게
+  const 같음 = 직전 && JSON.stringify({ ...이번, 생성: 직전.생성 }) === JSON.stringify(직전);
+  if (!같음) await Bun.write(join(제품폴더, ".manifest.json"), JSON.stringify(이번, null, 2) + "\n");
   return [];
 }
 
