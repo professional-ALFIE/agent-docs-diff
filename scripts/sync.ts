@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 // 한 회차: 사이트마다 계층 → 경로 → 본문 → 검사 → (통과하면) 저장 · 삭제 · manifest · llms-local.
 // 검사를 하나라도 통과하지 못한 사이트는 디스크를 건드리지 않는다. 끝에 하나라도 실패면 exit 1 — CI 가 커밋하지 않는다.
-// 사용법: ./sync.ts [--site "<제품폴더명>"]... [--accept] [--dry] [--no-releases]
+// 사용법: ./sync.ts [--site "<제품폴더명>"]... [--accept] [--dry]
 //   --accept  구조 변화(최상위 수·그룹 수·대량 rename)를 사람이 확인했으니 막지 말라는 뜻
 //   --dry     아무것도 쓰지 않고 결과만 보여준다
 import { mkdir, readdir, rm, rmdir, stat } from "node:fs/promises";
@@ -90,26 +90,9 @@ async function 사이트하나(s: 사이트설정): Promise<string[]> {
   return [];
 }
 
-/** Claude Code 의 공식 릴리스 노트. 문서 사이트가 아니라 GitHub 리포에 있다 */
-async function 릴리스() {
-  const url = "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md";
-  const r = await fetch(url);
-  if (!r.ok) throw new Error(`CHANGELOG 받기 실패: HTTP ${r.status}`);
-  const 본문 = await r.text();
-  if (!/^#\s*Changelog/im.test(본문.slice(0, 200))) throw new Error("CHANGELOG 머리가 예상과 다르다");
-  const p = join(루트, "Claude Code Releases", "CHANGELOG.md");
-  const 전 = (await Bun.file(p).exists()) ? await Bun.file(p).text() : null;
-  console.log(`Claude Code Releases: CHANGELOG.md ${Buffer.byteLength(본문)} bytes · ${전 === null ? "새로" : 전 === 본문 ? "같음" : "바뀜"}`);
-  if (!dry && 전 !== 본문) { await mkdir(dirname(p), { recursive: true }); await Bun.write(p, 본문); }
-}
-
 const 실패한곳: string[] = [];
 for (const s of 대상) {
   try { if ((await 사이트하나(s)).length) 실패한곳.push(s.제품폴더); }
   catch (e) { console.log(`${s.제품폴더}: ✗ ${String(e).split("\n")[0]}`); 실패한곳.push(s.제품폴더); }
-}
-if (!인자.includes("--no-releases") && !고른사이트.length) {
-  try { await 릴리스(); } catch (e) { console.log(`Claude Code Releases: ✗ ${e}`); 실패한곳.push("Claude Code Releases"); }
-}
-if (실패한곳.length) { console.log(`\n실패 ${실패한곳.length}곳: ${실패한곳.join(" · ")} — 커밋하지 않는다`); process.exit(1); }
+}if (실패한곳.length) { console.log(`\n실패 ${실패한곳.length}곳: ${실패한곳.join(" · ")} — 커밋하지 않는다`); process.exit(1); }
 console.log(dry ? "\n(dry) 아무것도 쓰지 않았다" : "\n전부 통과");

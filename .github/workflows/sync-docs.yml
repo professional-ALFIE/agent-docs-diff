@@ -28,11 +28,6 @@ jobs:
       - run: bun install --frozen-lockfile
       - name: Sync
         run: bun scripts/sync.ts ${{ inputs.accept && '--accept' || '' }}
-      - name: Commit if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet && { echo "변경 없음"; exit 0; }
-          git commit -m "docs: sync $(date -u +%Y-%m-%dT%H:%MZ)" -m "$(git diff --cached --stat | tail -1)"
-          git push
+      - name: Commit one document per commit
+        run: bash scripts/commit-each.sh
+      - run: git push

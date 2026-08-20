@@ -23,8 +23,6 @@ agent-docs-diff/
 │   │   │   └── ...
 │   │   └── 020 Core concepts/
 │   └── 020 Build with Claude Code/
-├── Claude Code Releases/
-│   └── CHANGELOG.md
 ├── scripts/
 └── .github/workflows/
 ```
@@ -107,7 +105,10 @@ bun TypeScript + Zod. 저장소 루트의 `package.json`·`bun.lock` 과 `node_m
 실행 파일:
   sync.ts:            한 회차. 사이트마다 계층 → 경로 → 본문(메모리) → 검사 → 통과하면 저장·삭제·.manifest.json·
                       llms-local. 하나라도 실패면 exit 1 — CI 가 커밋하지 않는다.
-                      --site "<제품폴더>" 반복 가능 · --dry 쓰지 않음 · --accept 구조 변화 허용 · --no-releases
+                      --site "<제품폴더>" 반복 가능 · --dry 쓰지 않음 · --accept 구조 변화 허용
+  commit-each.sh:     CI 의 커밋 단계. 바뀐 문서마다 커밋 하나 — 제목 "<제품 폴더>: <문서 제목>" (+ 추가/삭제),
+                      본문은 .manifest.json 에서 찾은 공식 URL. 문서 아닌 것은 끝에 "sync: manifests" 한 커밋.
+                      변경 목록은 git status --porcelain -z 로 뽑는다 (git add -A -N 은 삭제를 스테이지해 첫 커밋에 섞였다)
   make-tree.ts:       계층 JSON 파일로 폴더만 만든다 (디버그용)
   make-llms-local.ts: 계층 JSON 파일로 llms.txt · llms-local.txt · CLAUDE.md 만 만든다 (디버그용)
 모듈:
@@ -232,10 +233,17 @@ docs-nav-probe/curl-bun/
 docs-nav-probe/ 는 .gitignore 로 제외돼 있다 — 보고서에 이 컴퓨터의 경로와 브라우저 실행 파일 위치가 들어 있어서다
 ```
 
+## 없앤 것 — Claude Code Releases/
+
+2026-07-12 설계의 별도 폴더(GitHub 의 CHANGELOG.md)는 없앴다. 문서 사이트 메뉴의 Changelog 문서
+(`Claude Code Docs (en)/010 Getting started/010 Getting started/030 Changelog.md`)가 같은 출처에서 생성되고
+(본문에 "generated from the CHANGELOG.md on GitHub"), 버전마다 날짜까지 붙어 있어 상위 집합이다.
+한국어 폴더에는 넣지 않는다 — 사이트가 한국어 changelog .md 를 안 준다(text/html). 영어를 대신 넣지 않는 원칙 그대로.
+
 ## 남은 것
 
 ```yaml
-CI:              push 끝. Sync docs 워크플로가 3시간마다 돈다. 첫 실행(2026-08-20T20:21Z)은 통과했고 바뀐 문서 2개만 커밋했다
+CI:              Sync docs 워크플로가 3시간마다 돈다. 첫 실행(2026-08-20T20:21Z)은 통과했고 바뀐 문서 2개만 커밋했다
 과거 이력 재작성: 2026-07-12 설계에 있던 것 — 원본 2,996 커밋에서 문서 변경분만 골라 지금 경로표로 소급.
                  보류. 하면 별도 브랜치에서
 .claude/ 폴더:    원본에서 온 빈 껍데기. settings 는 .gitignore 에 있다
