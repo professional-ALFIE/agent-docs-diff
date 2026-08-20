@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-20T19:32:59.365Z",
+  "생성": "2026-08-20T20:20:16.437Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -153,8 +153,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/030 Claude Code on the web/030 Routines.md",
       "href": "/en/routines",
       "url": "https://code.claude.com/docs/en/routines.md",
-      "sha256": "137c0eda8a7e929260c4b253ab3504a68e63f1794fdb38642f69aa39e7fd3abd",
-      "bytes": 33540,
+      "sha256": "a2855f70de2fa86b53b5131ee170692404d81acc1c5956aad485fc2bbb219317",
+      "bytes": 33555,
       "contentType": "text/markdown"
     },
     {
@@ -201,8 +201,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/040 Claude Code on desktop/050 Scheduled tasks.md",
       "href": "/en/desktop-scheduled-tasks",
       "url": "https://code.claude.com/docs/en/desktop-scheduled-tasks.md",
-      "sha256": "52f27066a1be5ad79b076b2dcb9de78de2676f8b57b381252becf9acb334fb1d",
-      "bytes": 11778,
+      "sha256": "a3818d29e5f008491e8b8db09cc127e1bd0bf987fb17ceab9582007597c571a4",
+      "bytes": 11840,
       "contentType": "text/markdown"
     },
     {
