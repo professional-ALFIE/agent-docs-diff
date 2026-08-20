@@ -235,7 +235,7 @@ docs-nav-probe/ 는 .gitignore 로 제외돼 있다 — 보고서에 이 컴퓨�
 ## 남은 것
 
 ```yaml
-push:            첫 커밋은 로컬에만 있다. 원격 professional-ALFIE/agent-docs-diff 에 push 하면 3시간마다 워크플로가 돈다
+CI:              push 끝. Sync docs 워크플로가 3시간마다 돈다. 첫 실행(2026-08-20T20:21Z)은 통과했고 바뀐 문서 2개만 커밋했다
 과거 이력 재작성: 2026-07-12 설계에 있던 것 — 원본 2,996 커밋에서 문서 변경분만 골라 지금 경로표로 소급.
                  보류. 하면 별도 브랜치에서
 .claude/ 폴더:    원본에서 온 빈 껍데기. settings 는 .gitignore 에 있다
