@@ -75,7 +75,7 @@ distributions and package installation, see the
               
 
 
-          <ChatGPTModeDropdown client:load />
+          <ChatGPTModeDropdown client:visible />
 
     
 
@@ -138,7 +138,7 @@ Go to [chatgpt.com](https://chatgpt.com) and sign in with your ChatGPT account.
               
 
 
-          <ChatWorkSegmentPicker client:load />
+          <ChatWorkSegmentPicker client:visible />
 
     
 
