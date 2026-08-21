@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-20T19:33:47.415Z",
+  "생성": "2026-08-21T03:59:46.280Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -801,8 +801,8 @@
       "경로": "020 API Reference/020 Agent/010 Overview.md",
       "href": "/reference/agent-api/overview",
       "url": "https://exa.ai/docs/reference/agent-api/overview.md",
-      "sha256": "2efcd9e50dbf058dfa1f21bbc37d0a2b9de246f8a8015d9c802b8c3d4100ef1d",
-      "bytes": 12643,
+      "sha256": "2eb01943666648f2958795d0284b1c82d402e794eafba0264daad6ce860d4f01",
+      "bytes": 12674,
       "contentType": "text/markdown"
     },
     {
