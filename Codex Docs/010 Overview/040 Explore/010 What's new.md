@@ -554,13 +554,13 @@ explicit approval before it uses that access on a website.
 Browser use is also up to twice as fast because CDP and DOM snapshot
 optimizations reduce browser round trips.
 
-<CodexScreenshot
-  alt="Codex Browser settings with Developer mode enabled"
-  lightSrc="/images/codex/app/browser-developer-mode-light.webp"
-  darkSrc="/images/codex/app/browser-developer-mode-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-/>
+
+  
+
+> Illustration: Codex Browser settings with Developer mode enabled
+
+
+
 
 
 
@@ -755,13 +755,13 @@ comments, while [Computer Use](https://learn.chatgpt.com/docs/computer-use) let 
 operate macOS apps. Together, they made visual implementation and end-to-end
 verification part of the same task as the code change.
 
-<CodexScreenshot
-  alt="ChatGPT desktop app with a local web page open in the built-in browser"
-  lightSrc="/images/codex/app/in-app-browser-light.webp"
-  darkSrc="/images/codex/app/in-app-browser-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app with a local web page open in the built-in browser
+
+
+
 
 <a id="start-with-a-task-and-keep-it-moving"></a>
 
@@ -823,13 +823,13 @@ with an explicit model and reasoning level. Reusable templates made common
 tasks faster to configure, and custom themes made the workspace easier to
 personalize.
 
-<CodexScreenshot
-  alt="Scheduled task settings in the ChatGPT desktop app"
-  lightSrc="/images/codex/app/codex-automations-light.webp"
-  darkSrc="/images/codex/app/codex-automations-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-/>
+
+  
+
+> Illustration: Scheduled task settings in the ChatGPT desktop app
+
+
+
 
 ### Let Codex inspect terminal output
 
@@ -856,13 +856,13 @@ The Codex app launched on [Windows](https://learn.chatgpt.com/docs/windows/windo
 and sandbox support, plus worktrees, scheduled tasks, and skills. WSL remained
 available for developers who preferred a Linux environment.
 
-<CodexScreenshot
-  alt="Codex app running natively on Windows"
-  lightSrc="/images/codex/windows/codex-windows-light.webp"
-  darkSrc="/images/codex/windows/codex-windows-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-/>
+
+  
+
+> Illustration: Codex app running natively on Windows
+
+
+
 
 <a id="move-tasks-between-local-and-worktree"></a>
 
@@ -898,13 +898,13 @@ The Codex app launched as a desktop workspace for parallel project chats,
 built-in Git review, worktrees, skills, scheduled tasks, and voice dictation.
 Those capabilities now live in Codex in the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app).
 
-<CodexScreenshot
-  alt="The original Codex app showing parallel project chats on macOS"
-  lightSrc="/images/codex/app/codex-app-basic-light.webp"
-  darkSrc="/images/codex/app/codex-app-basic-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-/>
+
+  
+
+> Illustration: The original Codex app showing parallel project chats on macOS
+
+
+
 
 ### Steer active work and add files
 
