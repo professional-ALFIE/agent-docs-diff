@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-20T19:34:35.920Z",
+  "생성": "2026-08-21T01:57:36.608Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -409,8 +409,8 @@
       "경로": "030 Configuration/030 Config file/040 Environment Variables.md",
       "href": "/codex/config-file/environment-variables",
       "url": "https://learn.chatgpt.com/docs/config-file/environment-variables.md",
-      "sha256": "cdeaeb1acea9787e326ba520587fc1a8a58d8564c89b8f38b24bbae2912c61ae",
-      "bytes": 6460,
+      "sha256": "ba6cf76677497e35af145c6cab6965dd9a550fd2251a580be93160b86416af4c",
+      "bytes": 7288,
       "contentType": "text/markdown"
     },
     {
@@ -617,8 +617,8 @@
       "경로": "040 Developers/050 Build with Codex/050 Non-interactive mode.md",
       "href": "/codex/non-interactive-mode",
       "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
-      "sha256": "b4792bedcfec440b81a27f2ce43a75a893d2a3bfdfa55e016b53e4cc4db32111",
-      "bytes": 14784,
+      "sha256": "cd4a99999324ff8a1c73e08a767126cea7c5db0bc977adc5f44eee0285b41fd8",
+      "bytes": 15063,
       "contentType": "text/markdown"
     },
     {
@@ -921,8 +921,8 @@
       "경로": "060 Administration/010 Overview.md",
       "href": "/codex/administration",
       "url": "https://learn.chatgpt.com/docs/administration.md",
-      "sha256": "8036908542bde4f20a45a79a1a89ee8a2329f4bfd2a89383f40b9e66defb5008",
-      "bytes": 8319,
+      "sha256": "b985fc4895a24f2a747809764487487037dd840dc3e3da2590b7c81d105f8528",
+      "bytes": 8558,
       "contentType": "text/markdown"
     },
     {
@@ -953,12 +953,20 @@
       "경로": "060 Administration/030 Identity and authentication/010 Authentication overview.md",
       "href": "/codex/auth",
       "url": "https://learn.chatgpt.com/docs/auth.md",
-      "sha256": "04400cae9aa4d0671bd8960e6935c38ded38d988f70cc2c01acec1754276ead5",
-      "bytes": 15024,
+      "sha256": "7e60e75b7efffc50de8ba9488029d8be235cd9a423520fb5f269215616d7914d",
+      "bytes": 15440,
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/030 Identity and authentication/020 Personal Access Tokens.md",
+      "경로": "060 Administration/030 Identity and authentication/020 Workload identity.md",
+      "href": "/codex/enterprise/workload-identity",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workload-identity.md",
+      "sha256": "d9d51acc6123444c8820b3e0104a5d95279c1c32b22b6b404a323178d2c38fbc",
+      "bytes": 19620,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Administration/030 Identity and authentication/030 Personal Access Tokens.md",
       "href": "/codex/enterprise/access-tokens",
       "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens.md",
       "sha256": "119b65283633296c3389f48e28a72837418fe3944e69a2c34d5dc4f000f47b1e",
@@ -966,7 +974,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/030 Identity and authentication/030 Service accounts.md",
+      "경로": "060 Administration/030 Identity and authentication/040 Service accounts.md",
       "href": "/codex/enterprise/service-accounts",
       "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts.md",
       "sha256": "54b1d955fe020c628632946f95f6236632adbc16a88f2e2ff4d27bc23f72d146",
@@ -1125,7 +1133,7 @@
     }
   ],
   "llms": {
-    "치환": 140,
+    "치환": 141,
     "미노출": 5,
     "외부": 5,
     "메뉴에만": 2
