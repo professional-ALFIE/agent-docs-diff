@@ -146,9 +146,11 @@ the Site in ChatGPT on the web or in the desktop app to review its analytics.
 
 </ContentModeSwitch>
 
-<Illustration description="Interactive Sites analytics dashboard showing unique visitors and page views over seven days.">
-  <SitesAnalyticsIllustration />
-</Illustration>
+
+
+> Illustration: Interactive Sites analytics dashboard showing unique visitors and page views over seven days.
+
+
 
 Analytics is currently available for Sites that aren't owned by an Enterprise
   workspace.
