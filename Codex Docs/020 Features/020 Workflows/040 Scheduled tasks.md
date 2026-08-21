@@ -106,12 +106,11 @@ If a scheduled task uses `gpt-5.4` or `gpt-5.4-mini` with ChatGPT sign-in,
 update it before those models retire on August 31, 2026. Replace `gpt-5.4` with
 `gpt-5.6-terra` and `gpt-5.4-mini` with `gpt-5.6-luna`.
 
-<Illustration description="ChatGPT composer ready to create a scheduled task with 5.6 Sol Extended selected.">
-  <CodexScheduledTasksIllustration
-    variant="manage"
-    ariaLabel="ChatGPT composer ready to create a scheduled task with 5.6 Sol Extended selected."
-  />
-</Illustration>
+
+
+> Illustration: ChatGPT composer ready to create a scheduled task with 5.6 Sol Extended selected.
+
+
 
 Scheduled tasks run unattended with your default sandbox settings. Start with the
 narrowest access that lets the task succeed, and grant network or broader file
@@ -125,12 +124,11 @@ app sidebar.
 The **Scheduled** view acts as your inbox. Scheduled task runs with findings
 appear there, and an unread indicator shows when a run needs your attention.
 
-<Illustration description="Scheduled tasks page with All, Active, and Paused filters and three scheduled tasks.">
-  <CodexScheduledTasksIllustration
-    variant="inbox"
-    ariaLabel="Scheduled tasks page with All, Active, and Paused filters and three scheduled tasks."
-  />
-</Illustration>
+
+
+> Illustration: Scheduled tasks page with All, Active, and Paused filters and three scheduled tasks.
+
+
 
 Standalone scheduled tasks start a new chat for each scheduled run and report
 results in **Scheduled**. Use them when each run should be independent or when one
