@@ -52,14 +52,13 @@ PDF files in a compatible viewer.
 
 <ContentModeSwitch group="codex-surface" id="app">
 
-<CodexScreenshot
-  alt="ChatGPT desktop app showing a generated presentation preview"
-  lightSrc="/images/codex/app/artifact-viewer-light.webp"
-  darkSrc="/images/codex/app/artifact-viewer-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-  class="my-8"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app showing a generated presentation preview
+
+
+
 
 </ContentModeSwitch>
 
