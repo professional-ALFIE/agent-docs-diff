@@ -92,4 +92,8 @@ Hands-on notebooks you can run locally or on [Colab](https://colab.research.goog
   <Card href="https://github.com/tavily-ai/tavily-cookbook/blob/main/cookbooks/integrations/aws-strands/deep-research.ipynb" title="AWS Strands" horizontal>
     Deep research agent using AWS Strands with Bedrock and Tavily search, extract, and crawl tools.
   </Card>
+
+  <Card href="/examples/use-cases/slack-research-agent" title="Slack Research Agent" horizontal>
+    LangChain Deep Agent Slack bot with Tavily search and extract, live tool events, and thread replies.
+  </Card>
 </CardGroup>
