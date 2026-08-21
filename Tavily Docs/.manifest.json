@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-20T20:38:36.444Z",
+  "생성": "2026-08-21T15:48:15.954Z",
   "제품폴더": "Tavily Docs",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -750,11 +750,19 @@
       "contentType": "text/markdown"
     },
     {
+      "경로": "060 Examples/030 Apps/080 Slack Research Agent.md",
+      "href": "/examples/use-cases/slack-research-agent",
+      "url": "https://docs.tavily.com/examples/use-cases/slack-research-agent.md",
+      "sha256": "e7baa79dc52b400913228a3c3284e85e0a9c0dab99c7818a8fdcf016eb38976e",
+      "bytes": 5157,
+      "contentType": "text/markdown"
+    },
+    {
       "경로": "060 Examples/040 Cookbook/010 Cookbook.md",
       "href": "/examples/quick-tutorials/cookbook",
       "url": "https://docs.tavily.com/examples/quick-tutorials/cookbook.md",
-      "sha256": "588e2f9bd70164c9474e0d0b98381898f7272db4fcb0af6ae9f79691755abff5",
-      "bytes": 4799,
+      "sha256": "ddd0d2ad610c08d5ac035a4959dc71ed9425ac92fcfec25bd16d573bd2b2d3f2",
+      "bytes": 5012,
       "contentType": "text/markdown"
     },
     {
@@ -834,6 +842,6 @@
     "치환": 97,
     "미노출": 2,
     "외부": 3,
-    "메뉴에만": 4
+    "메뉴에만": 5
   }
 }

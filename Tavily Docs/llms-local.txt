@@ -210,3 +210,4 @@ Recommended defaults for agents: prefer `search_depth="advanced"`, add `chunks_p
 - [Pi](<050 Ecosystem/030 Developer/050 Pi.md>)
 - [Nemo Deep Agents](<050 Ecosystem/060 Integrations/090 Nemo Deep Agents.md>)
 - [Portkey](<050 Ecosystem/060 Integrations/110 Portkey.md>)
+- [Slack Research Agent](<060 Examples/030 Apps/080 Slack Research Agent.md>)
