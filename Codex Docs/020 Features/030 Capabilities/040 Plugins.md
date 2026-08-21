@@ -102,11 +102,13 @@ ChatGPT desktop app, open the **Plugins** tab to browse and install plugins.
 
 <ContentModeSwitch group="codex-surface" id="app">
 
-<CodexScreenshot
-  alt="Plugins Directory in the ChatGPT desktop app"
-  lightSrc="/images/codex/plugins/directory.webp"
-  darkSrc="/images/codex/plugins/directory-dark.webp"
-/>
+
+  
+
+> Illustration: Plugins Directory in the ChatGPT desktop app
+
+
+
 
 </ContentModeSwitch>
 
@@ -155,11 +157,13 @@ After you install a plugin, you can use it directly in the prompt window:
 
 <ContentModeSwitch group="codex-surface" id="app">
 
-<CodexScreenshot
-  alt="Installed plugin on the Plugins page"
-  lightSrc="/images/codex/plugins/plugin-github-invoke.png"
-  darkSrc="/images/codex/plugins/plugin-github-invoke-dark.png"
-/>
+
+  
+
+> Illustration: Installed plugin on the Plugins page
+
+
+
 
 </ContentModeSwitch>
 
@@ -273,11 +277,13 @@ codex
 /plugins
 ```
 
-<CodexScreenshot
-  alt="Plugins list in Codex CLI"
-  lightSrc="/images/codex/plugins/cli_light.png"
-  darkSrc="/images/codex/plugins/codex-plugin-cli.png"
-/>
+
+  
+
+> Illustration: Plugins list in Codex CLI
+
+
+
 
 The CLI plugin browser groups plugins by marketplace. Use the marketplace tabs
 to switch sources, open a plugin to inspect details, install or uninstall
