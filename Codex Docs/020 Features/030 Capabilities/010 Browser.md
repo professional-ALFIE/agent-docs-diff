@@ -41,13 +41,13 @@ Open the built-in browser from the toolbar, by clicking a URL, by navigating
 manually, or by pressing <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>
 (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> on Windows).
 
-<CodexScreenshot
-  alt="ChatGPT desktop app showing a browser comment on a local web app preview"
-  lightSrc="/images/codex/app/in-app-browser-light.webp"
-  darkSrc="/images/codex/app/in-app-browser-dark.webp"
-  maxHeight="420px"
-  variant="no-wallpaper"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app showing a browser comment on a local web app preview
+
+
+
 
 ## Search from the address bar
 
@@ -152,12 +152,13 @@ and then send the annotation with a clearer target.
 
 
 
-<CodexScreenshot
-  alt="ChatGPT desktop app showing built-in browser annotation style controls"
-  lightSrc="/images/codex/app/iab-annotations-light.webp"
-  darkSrc="/images/codex/app/iab-annotations-dark.webp"
-  maxHeight="420px"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app showing built-in browser annotation style controls
+
+
+
 
 </section>
 
@@ -212,12 +213,13 @@ network traffic, then identify the bottleneck.
 
 
 
-<CodexScreenshot
-  alt="ChatGPT desktop app Browser settings showing Developer mode with full CDP access enabled"
-  lightSrc="/images/codex/app/browser-developer-mode-light.webp"
-  darkSrc="/images/codex/app/browser-developer-mode-dark.webp"
-  maxHeight="420px"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app Browser settings showing Developer mode with full CDP access enabled
+
+
+
 
 </section>
 
