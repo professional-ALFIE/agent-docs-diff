@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-21T03:59:46.280Z",
+  "생성": "2026-08-21T13:10:40.562Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -225,16 +225,16 @@
       "경로": "010 Documentation/020 Data/010 Exa Connect/010 Quickstart.md",
       "href": "/reference/agent-api/connect/overview",
       "url": "https://exa.ai/docs/reference/agent-api/connect/overview.md",
-      "sha256": "1e6b920c306e1cdcf58eace2a2dc981b76c1f77d26b1a16b74ab4aca587c0690",
-      "bytes": 8992,
+      "sha256": "99c877141538f8e9a191d24791c185c1632c5d694342d9b391e5c3eaf7613101",
+      "bytes": 9895,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/010 Fiber.ai.md",
       "href": "/reference/agent-api/connect/fiber",
       "url": "https://exa.ai/docs/reference/agent-api/connect/fiber.md",
-      "sha256": "cbd426bf1bf80f95b35d53118519aa40043a67616c3cf71a03d0a30e10bfacfe",
-      "bytes": 4944,
+      "sha256": "43e390f988f20709d6b41ec52431b4dc907b5551f9426a10155b3408fa500641",
+      "bytes": 5715,
       "contentType": "text/markdown"
     },
     {
@@ -673,8 +673,8 @@
       "경로": "010 Documentation/070 Admin/020 Pricing.md",
       "href": "/reference/pricing",
       "url": "https://exa.ai/docs/reference/pricing.md",
-      "sha256": "b7e8301703f9364b56df8753fcc7719177649a29128ea994c41ae8a9f28aaae7",
-      "bytes": 7220,
+      "sha256": "12006f7f663c5dd471205dc25512c7c7ce539094f24d2c9724d86d3598becbbd",
+      "bytes": 7687,
       "contentType": "text/markdown"
     },
     {
