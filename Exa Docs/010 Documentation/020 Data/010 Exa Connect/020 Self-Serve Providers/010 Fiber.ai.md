@@ -31,6 +31,22 @@ Use this value in `dataSources`:
 fiber
 ```
 
+## Pricing
+
+Fiber.ai bills in credits at `$0.02 / credit`, and each call is charged the
+credits Fiber reports for it:
+
+| Operation                            | Credits                    |
+| ------------------------------------ | -------------------------- |
+| Search                               | 2 + 1 per result returned  |
+| Company lookup                       | \~2 per candidate returned |
+| Person lookup / email reverse lookup | 2                          |
+| Contact reveal                       | 2 (work email) – 5 (phone) |
+
+Calls that return no match (or whose charge Fiber refunds) are free. Parameter
+choices change the price: a company lookup's `numResults` sets how many
+candidates you pay for, and a search's result count drives most of its cost.
+
 ## Example
 
 Build a B2B prospecting list of Series A fintech companies in New York with 50–200 employees.
