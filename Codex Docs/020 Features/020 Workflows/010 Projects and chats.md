@@ -68,13 +68,13 @@ collection of source files or a codebase.
 Start a separate chat for each distinct outcome so its messages and results stay
 focused while the project keeps related work organized.
 
-<CodexScreenshot
-  alt="ChatGPT desktop app showing multiple projects in the sidebar and chats in the main pane"
-  lightSrc="/images/codex/app/multitask-light.webp"
-  darkSrc="/images/codex/app/multitask-dark.webp"
-  maxHeight="400px"
-  class="my-8"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app showing multiple projects in the sidebar and chats in the main pane
+
+
+
 
 </ContentModeSwitch>
 
