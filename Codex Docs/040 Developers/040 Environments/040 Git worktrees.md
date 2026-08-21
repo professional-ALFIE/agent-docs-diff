@@ -80,13 +80,13 @@ You can open your IDE to the worktree using the "Open" button in the header, use
 
 
 
-<CodexScreenshot
-  alt="Worktree chat view with branch controls and worktree details"
-  lightSrc="/images/codex/app/worktree-light.webp"
-  darkSrc="/images/codex/app/worktree-dark.webp"
-  maxHeight="400px"
-  class="mb-4 lg:mb-0"
-/>
+
+  
+
+> Illustration: Worktree chat view with branch controls and worktree details
+
+
+
 
 
 
@@ -116,13 +116,13 @@ Each chat keeps the same associated worktree over time. If you hand the chat bac
 
 
 
-<CodexScreenshot
-  alt="Handoff dialog moving a chat from a worktree to Local"
-  lightSrc="/images/codex/app/handoff-light.webp"
-  darkSrc="/images/codex/app/handoff-dark.webp"
-  maxHeight="400px"
-  class="mb-4 lg:mb-0"
-/>
+
+  
+
+> Illustration: Handoff dialog moving a chat from a worktree to Local
+
+
+
 
 
 
