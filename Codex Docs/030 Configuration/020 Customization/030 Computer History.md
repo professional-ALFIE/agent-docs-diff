@@ -27,9 +27,11 @@ create summaries you can review and delete. It does not include screenshots in
 your history or record audio, and private-mode web browsing activity is never
 included.
 
-<Illustration description="Computer History timeline showing activity summaries, contributing apps, and suggested skills and automations">
-  <ComputerHistoryTimelineIllustration />
-</Illustration>
+
+
+> Illustration: Computer History timeline showing activity summaries, contributing apps, and suggested skills and automations
+
+
 
 ## How Computer History helps
 
