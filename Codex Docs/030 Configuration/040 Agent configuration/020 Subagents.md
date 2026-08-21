@@ -242,17 +242,17 @@ subagent.
 - Ask Codex directly to steer a running subagent, stop it, or close completed
   subagent threads.
 
-<Illustration description="Codex desktop chat showing two subagents working in parallel.">
-  <SubagentWorkflowIllustration ariaLabel="Codex desktop chat showing two subagents working in parallel." />
-</Illustration>
 
-<Illustration description="Codex desktop Subagents panel with no active subagents and three completed audits.">
-  <SubagentWorkflowIllustration
-    ariaLabel="Codex desktop Subagents panel with no active subagents and three completed audits."
-    class="mt-4"
-    variant="results"
-  />
-</Illustration>
+
+> Illustration: Codex desktop chat showing two subagents working in parallel.
+
+
+
+
+
+> Illustration: Codex desktop Subagents panel with no active subagents and three completed audits.
+
+
 
 </ContentModeSwitch>
 
