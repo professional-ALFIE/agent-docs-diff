@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-21T01:57:36.608Z",
+  "생성": "2026-08-21T18:56:42.490Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -9,8 +9,8 @@
       "경로": "010 Overview/020 Get started/010 Quickstart.md",
       "href": "/codex/quickstart",
       "url": "https://learn.chatgpt.com/docs/quickstart.md",
-      "sha256": "44bedf13d37550a28de99b70ab036683ad21bfb561d3e6f83c8220d15f454bce",
-      "bytes": 5967,
+      "sha256": "159f7a63216a8b8831655848095defbc4d73b6c4bbe10e834cc977ff4693ee7f",
+      "bytes": 5973,
       "contentType": "text/markdown"
     },
     {
@@ -41,8 +41,8 @@
       "경로": "010 Overview/030 Foundations/010 Prompting.md",
       "href": "/codex/prompting",
       "url": "https://learn.chatgpt.com/docs/prompting.md",
-      "sha256": "37492b2b7ce5a1d91a8099ba8f04f6bf99784070345750c453311fc41f607935",
-      "bytes": 22976,
+      "sha256": "3a01a0ec7da505d0643f76a2b64a69c7e7809cf3c8fdcc412feff761a87bc718",
+      "bytes": 22972,
       "contentType": "text/markdown"
     },
     {
@@ -177,8 +177,8 @@
       "경로": "020 Features/020 Workflows/010 Projects and chats.md",
       "href": "/codex/projects",
       "url": "https://learn.chatgpt.com/docs/projects.md",
-      "sha256": "1570bd657d1587802224780dce3492271f6f7fbef1887a7233e6f79dd508e108",
-      "bytes": 13032,
+      "sha256": "07a448d29b1614709aba644e5b3409962b292268bbe3037a66f4890b24484259",
+      "bytes": 13142,
       "contentType": "text/markdown"
     },
     {
@@ -321,8 +321,8 @@
       "경로": "020 Features/040 Reference/010 Commands.md",
       "href": "/codex/reference/commands",
       "url": "https://learn.chatgpt.com/docs/reference/commands.md",
-      "sha256": "1172375df5781e2772c6feb350c4fc6fb054b32dc05234e0bb810d7340465ed9",
-      "bytes": 18569,
+      "sha256": "fff765516339ebe6ad91c3c4b7549cd39ef2f5930517bf6e356a6ef078b0c990",
+      "bytes": 26566,
       "contentType": "text/markdown"
     },
     {

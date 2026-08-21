@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-21T07:06:27.405Z",
+  "생성": "2026-08-21T18:55:01.618Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -9,16 +9,16 @@
       "경로": "010 Getting started/010 Getting started/010 Overview.md",
       "href": "/en/overview",
       "url": "https://code.claude.com/docs/en/overview.md",
-      "sha256": "12a8ac12ac36b417afdd968c64944bd1ade572dbf51aeb1ef56c45eccf36a55c",
-      "bytes": 16422,
+      "sha256": "9b5c92f12a8c7671febf9d9d810c85b1a9345fee754e7de3c91fa873644a2d31",
+      "bytes": 19341,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/010 Getting started/020 Quickstart.md",
       "href": "/en/quickstart",
       "url": "https://code.claude.com/docs/en/quickstart.md",
-      "sha256": "f5b59b2f5b7186ab5fec800beacc45413c103c3e19b2c1292c00838b7d7c0c8d",
-      "bytes": 13325,
+      "sha256": "44416c21ddbcd482ca354832f72be80a87d98cbbca29b8543b2e0afd4bae4262",
+      "bytes": 16718,
       "contentType": "text/markdown"
     },
     {
@@ -33,24 +33,24 @@
       "경로": "010 Getting started/020 Core concepts/010 How Claude Code works.md",
       "href": "/en/how-claude-code-works",
       "url": "https://code.claude.com/docs/en/how-claude-code-works.md",
-      "sha256": "557f278dba57a414fdcc82cbd33428f87c7f23a4b7e95152d5089ab97d211ee5",
-      "bytes": 20981,
+      "sha256": "66530590fadf4b269ae9415c22399c651c8ebb6d2d9682d0f624fe27bd292241",
+      "bytes": 20928,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/020 Core concepts/020 Extend Claude Code.md",
       "href": "/en/features-overview",
       "url": "https://code.claude.com/docs/en/features-overview.md",
-      "sha256": "13239ab3f914ce2146fbfa4ab8b3c9b564176d57af817885b51e2a2afd786ce5",
-      "bytes": 32859,
+      "sha256": "997701290357adacf696671b85196621a8a47d3faee8cb11545e9e0b811e0521",
+      "bytes": 33792,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/020 Core concepts/030 Explore the .claude directory.md",
       "href": "/en/claude-directory",
       "url": "https://code.claude.com/docs/en/claude-directory.md",
-      "sha256": "25099bf1f49ce2cb333aa4e5bf296b064fab0b339c6e7a529da3955ba2e3cb29",
-      "bytes": 92283,
+      "sha256": "589a933b4173311de3a0a12c0a522a992db9051a44ec586b40bbadc2994a2e56",
+      "bytes": 93546,
       "contentType": "text/markdown"
     },
     {
@@ -73,56 +73,56 @@
       "경로": "010 Getting started/030 Use Claude Code/010 Store instructions and memories.md",
       "href": "/en/memory",
       "url": "https://code.claude.com/docs/en/memory.md",
-      "sha256": "6458bf6c1696cdf26a707f8f2167a705c33279e9219df41c5842e13a3b74a8ab",
-      "bytes": 36719,
+      "sha256": "79cd744d57f2edea8243101a1833921658f07936c51740d7643eb585f6fc2fab",
+      "bytes": 37385,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/030 Use Claude Code/020 Permission modes.md",
       "href": "/en/permission-modes",
       "url": "https://code.claude.com/docs/en/permission-modes.md",
-      "sha256": "abc2e28fb649dffa640f6bb1730f9f2e13fcc88ec6c68bf08c920af9858a50d4",
-      "bytes": 74931,
+      "sha256": "f40381688354bb4d891674071d2de0b612146a9b67e8a360aa48301a6b89e2bc",
+      "bytes": 74951,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/030 Use Claude Code/030 Manage sessions.md",
       "href": "/en/sessions",
       "url": "https://code.claude.com/docs/en/sessions.md",
-      "sha256": "5861c6bf998099861616d2a50e08e72145e34656a80074b19c0e6c49730e755d",
-      "bytes": 28616,
+      "sha256": "26b3e59c41d93a083d5d89d4085cd68f7017ca6f62d5145ec57ecca20da4d5d6",
+      "bytes": 29581,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/030 Use Claude Code/040 Common workflows.md",
       "href": "/en/common-workflows",
       "url": "https://code.claude.com/docs/en/common-workflows.md",
-      "sha256": "9544fa5019de739654206948d597a6a90abd9f86a3dc504ba9871e1e295b3170",
-      "bytes": 18907,
+      "sha256": "eaa7a9fbcbdc792079baf5a1fb63889015454564d7f03bc63d9b74d4ca5160f4",
+      "bytes": 19032,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/030 Use Claude Code/050 Prompt library.md",
       "href": "/en/prompt-library",
       "url": "https://code.claude.com/docs/en/prompt-library.md",
-      "sha256": "0240042f18bd1ff6c25b078749720d1978266455e4d877d7bc408ec87f8ea313",
-      "bytes": 56251,
+      "sha256": "985ba3bd07863a741e2e5f137e14bc8fb173fa547242ad52de426929d3e9ecba",
+      "bytes": 56598,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/030 Use Claude Code/060 Best practices.md",
       "href": "/en/best-practices",
       "url": "https://code.claude.com/docs/en/best-practices.md",
-      "sha256": "0ed0a6bc09b0d0bd69f4fcf7e2c494d860c3d3b40a318a09660019457eb834ac",
-      "bytes": 39175,
+      "sha256": "defa65b9be8f0c7ed96824822644bdb9334a6b6b71f13684ddd6f6995eccf56c",
+      "bytes": 39871,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/040 Platforms and integrations/010 Overview.md",
       "href": "/en/platforms",
       "url": "https://code.claude.com/docs/en/platforms.md",
-      "sha256": "4516ef873bfb1337a9ad8db5f4fc47089186f052dbdf47d016984318c24d9c98",
-      "bytes": 12360,
+      "sha256": "2d9e36e37fd82e2771084ac7c8d8189de6918a4149c683be62e2ba0d97db9a9c",
+      "bytes": 12499,
       "contentType": "text/markdown"
     },
     {
@@ -137,8 +137,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/030 Claude Code on the web/010 Get started.md",
       "href": "/en/web-quickstart",
       "url": "https://code.claude.com/docs/en/web-quickstart.md",
-      "sha256": "2adf11ab3ffe956b2ffbf034f27cfa234f34d4c49ff0990b127b9cc8f4c8e743",
-      "bytes": 20318,
+      "sha256": "7d76bc361d6ec9beb08c4a88b9ffc2a5ef6f451ac79c031acd768cf1a13569e8",
+      "bytes": 20385,
       "contentType": "text/markdown"
     },
     {
@@ -153,8 +153,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/030 Claude Code on the web/030 Routines.md",
       "href": "/en/routines",
       "url": "https://code.claude.com/docs/en/routines.md",
-      "sha256": "a2855f70de2fa86b53b5131ee170692404d81acc1c5956aad485fc2bbb219317",
-      "bytes": 33555,
+      "sha256": "eea7ac52746cf0e5ed820d60c37fbd5288183a0a6aa63082fbc6a1bcd09ff47f",
+      "bytes": 33602,
       "contentType": "text/markdown"
     },
     {
@@ -177,8 +177,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/040 Claude Code on desktop/020 Reference.md",
       "href": "/en/desktop",
       "url": "https://code.claude.com/docs/en/desktop.md",
-      "sha256": "d4975d3c35c9c40e3ca6a05c238f964545eccc022c21ef94f255243f7d269061",
-      "bytes": 95336,
+      "sha256": "3756dc72c18d249aa48c4ac1352fa67d0e8e7295e468262020622c7cbeac5307",
+      "bytes": 95313,
       "contentType": "text/markdown"
     },
     {
@@ -265,8 +265,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/100 Code review & CI-CD/020 Claude Security plugin.md",
       "href": "/en/claude-security",
       "url": "https://code.claude.com/docs/en/claude-security.md",
-      "sha256": "15728be37be9fd79d4b0b680dabf7dd77f6ac88ed30a8915ba594afd5f89508d",
-      "bytes": 13210,
+      "sha256": "688671bb149bfc5b0892adbdf535c459ced5799f457a7b5abb1064b803b75b6d",
+      "bytes": 13414,
       "contentType": "text/markdown"
     },
     {
@@ -281,8 +281,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/100 Code review & CI-CD/040 GitHub Actions.md",
       "href": "/en/github-actions",
       "url": "https://code.claude.com/docs/en/github-actions.md",
-      "sha256": "0ca99e2a65d0522aae03d28a6b18c10a1355f268f3332beb3dc287e7b070968e",
-      "bytes": 32697,
+      "sha256": "e9e7440214140f40aa6f7928260b00ae5b232e1f24dcc09ff449c299fbdb53cd",
+      "bytes": 32691,
       "contentType": "text/markdown"
     },
     {
@@ -345,24 +345,24 @@
       "경로": "020 Build with Claude Code/010 Agents and parallel work/030 Agent view.md",
       "href": "/en/agent-view",
       "url": "https://code.claude.com/docs/en/agent-view.md",
-      "sha256": "b2c20afb3f543154238e786cdab5230476a45d10b044e312d9f0236119f13cd3",
-      "bytes": 173060,
+      "sha256": "899ee831959f7bc68e999795ac01645f5ecf8341015ff2b2424b70a4b9fbcb0d",
+      "bytes": 173054,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 Build with Claude Code/010 Agents and parallel work/040 Run agent teams.md",
       "href": "/en/agent-teams",
       "url": "https://code.claude.com/docs/en/agent-teams.md",
-      "sha256": "afd50dd3eaa8b65678bc626927b6cf0fce0ff8f5f9699a5e371a5897bdc867f1",
-      "bytes": 38819,
+      "sha256": "65cd7a894cd5c10c7b16a4d76edcf87625f94249f8eda6079c0d181b472f0621",
+      "bytes": 39366,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 Build with Claude Code/010 Agents and parallel work/050 Cross-session messaging.md",
       "href": "/en/cross-session-messaging",
       "url": "https://code.claude.com/docs/en/cross-session-messaging.md",
-      "sha256": "6ed69df8d13151ee5fd678f9eac02c3a5d02d31d1c6deaa096a0041c5ead6dc2",
-      "bytes": 34672,
+      "sha256": "7484a16e61174e9af013663f96190af8c13ea551fc80b85a4f62354be31171bb",
+      "bytes": 35786,
       "contentType": "text/markdown"
     },
     {
@@ -393,8 +393,8 @@
       "경로": "020 Build with Claude Code/020 MCP/020 Reference.md",
       "href": "/en/mcp",
       "url": "https://code.claude.com/docs/en/mcp.md",
-      "sha256": "42f4f6df676f9a4296ea51590278b89390902fbc4ffe7800c73ae1f01b85ce68",
-      "bytes": 96831,
+      "sha256": "609649c176491c806adfd15f80e3ffc6caa8e419d5951ef2d9a79266cb6f6a3b",
+      "bytes": 96838,
       "contentType": "text/markdown"
     },
     {
@@ -425,8 +425,8 @@
       "경로": "020 Build with Claude Code/050 Artifacts/010 Share session output as artifacts.md",
       "href": "/en/artifacts",
       "url": "https://code.claude.com/docs/en/artifacts.md",
-      "sha256": "a11e6fbd2e8de88b89b87b0023795ebb486c4d0c09083cef6e7f80980d43932c",
-      "bytes": 32350,
+      "sha256": "a58656a5d4d6ab2df654272fa681b125e3454d17bcd7126a604806f83f44b5ac",
+      "bytes": 32894,
       "contentType": "text/markdown"
     },
     {
@@ -465,8 +465,8 @@
       "경로": "020 Build with Claude Code/060 Automation/050 Programmatic usage.md",
       "href": "/en/headless",
       "url": "https://code.claude.com/docs/en/headless.md",
-      "sha256": "620142d9bd8bca700497d9bfe29cb24257a3ed6577fc591a9c8a761ccc4f6d8b",
-      "bytes": 30280,
+      "sha256": "85d8e2699c2fd1b889d206954196d27c9aa0650d7d47c718c185c065283887ab",
+      "bytes": 30358,
       "contentType": "text/markdown"
     },
     {
@@ -481,8 +481,8 @@
       "경로": "020 Build with Claude Code/070 Guides/010 Monorepos and large repos.md",
       "href": "/en/large-codebases",
       "url": "https://code.claude.com/docs/en/large-codebases.md",
-      "sha256": "8ecd0342f326ddd34abb24999670c71fd859f34171f3f837d2e2a717d19fe16a",
-      "bytes": 35145,
+      "sha256": "f5eab82d0fb494867920438c910bae57883036fa43456c26d6b8370c8deb71e9",
+      "bytes": 35162,
       "contentType": "text/markdown"
     },
     {
@@ -497,8 +497,8 @@
       "경로": "020 Build with Claude Code/080 Troubleshooting/020 Troubleshoot performance and stability.md",
       "href": "/en/troubleshooting",
       "url": "https://code.claude.com/docs/en/troubleshooting.md",
-      "sha256": "cce81af0a27e251016386854857b98282a856c72e62bbf583719452e66784824",
-      "bytes": 11880,
+      "sha256": "962e8bb63600665ef8472baf878410212b378b035233ed39175c8bd17ab67658",
+      "bytes": 11949,
       "contentType": "text/markdown"
     },
     {
@@ -513,16 +513,16 @@
       "경로": "020 Build with Claude Code/080 Troubleshooting/040 Error reference.md",
       "href": "/en/errors",
       "url": "https://code.claude.com/docs/en/errors.md",
-      "sha256": "132cef75d27cfe36a303b96046bf726a51a18a8d1dc9d45f64bdeec762a8b104",
-      "bytes": 259889,
+      "sha256": "98620e7cd2f47dbca9390e64281ddf421f540b4996c80d6a303e8ec6400d33f9",
+      "bytes": 261886,
       "contentType": "text/markdown"
     },
     {
       "경로": "030 Administration/010 Setup and access/010 Administration overview.md",
       "href": "/en/admin-setup",
       "url": "https://code.claude.com/docs/en/admin-setup.md",
-      "sha256": "afdd0ec00b9f874c2481efa9b2323ea95676836fce52f774a912523e8f2b4147",
-      "bytes": 36018,
+      "sha256": "39ac46071d1b50b8c9843cd32c8c479aa12642bbfe34e37066576da5fe25ad77",
+      "bytes": 36035,
       "contentType": "text/markdown"
     },
     {
@@ -545,8 +545,8 @@
       "경로": "030 Administration/010 Setup and access/040 Server-managed settings.md",
       "href": "/en/server-managed-settings",
       "url": "https://code.claude.com/docs/en/server-managed-settings.md",
-      "sha256": "cbb9d814c13982cb20b1a9e18126d8e02ece5f66939781ca44c9a73fb6f83af7",
-      "bytes": 32935,
+      "sha256": "ecf6f8b3813a3483cbc38e368b02824cbc0d1313965d3e75ae433db2494b2050",
+      "bytes": 33151,
       "contentType": "text/markdown"
     },
     {
@@ -577,16 +577,16 @@
       "경로": "030 Administration/020 Deployment/020 Feature availability.md",
       "href": "/en/feature-availability",
       "url": "https://code.claude.com/docs/en/feature-availability.md",
-      "sha256": "d6406d8e9c3ff103e6ff7ec924768d11ccefe2322623be0e312bee3d9523754a",
-      "bytes": 23657,
+      "sha256": "55bc3b8b4a15d06d9a9b56429eba2bbd5b99e5f7d603526d12ef53564d00a834",
+      "bytes": 23674,
       "contentType": "text/markdown"
     },
     {
       "경로": "030 Administration/020 Deployment/030 Amazon Bedrock.md",
       "href": "/en/amazon-bedrock",
       "url": "https://code.claude.com/docs/en/amazon-bedrock.md",
-      "sha256": "4c967b4d1cf239e0ab24e8896efc26ec2adb611cbff54822703d29a5853f508c",
-      "bytes": 39748,
+      "sha256": "cc98e7d1a45ff1f75db8d5c87bd9a615e1975b17af59d6a359d21adf16955fa3",
+      "bytes": 39818,
       "contentType": "text/markdown"
     },
     {
@@ -649,8 +649,8 @@
       "경로": "030 Administration/030 Gateways/020 Claude apps gateway/010 Configuration.md",
       "href": "/en/claude-apps-gateway-config",
       "url": "https://code.claude.com/docs/en/claude-apps-gateway-config.md",
-      "sha256": "9d325a9c4b00ee11f5fbc95d0f975c79ed6d929f1cdb676abad5a2f2fff9cb39",
-      "bytes": 100472,
+      "sha256": "9344dd2b96e5430f1b5e8562e16c9645011dba67c461de66b0ab553cce86a651",
+      "bytes": 100523,
       "contentType": "text/markdown"
     },
     {
@@ -721,8 +721,8 @@
       "경로": "030 Administration/040 Usage and costs/020 Costs.md",
       "href": "/en/costs",
       "url": "https://code.claude.com/docs/en/costs.md",
-      "sha256": "39428ff69d5e338f5dac1f0038a7d81303ee4451e3ba87e5437646b94d702e38",
-      "bytes": 33956,
+      "sha256": "8ee3af6f66ce9502c7bae0db21c5330b1f8f4dc0a01826801275314218da5962",
+      "bytes": 33980,
       "contentType": "text/markdown"
     },
     {
@@ -793,8 +793,8 @@
       "경로": "030 Administration/070 Adoption/010 Communications kit.md",
       "href": "/en/communications-kit",
       "url": "https://code.claude.com/docs/en/communications-kit.md",
-      "sha256": "e808b73b06fabf2cd5eeec86df10e216a2374ec0f32d9b378c8433ed609bc551",
-      "bytes": 25743,
+      "sha256": "4212a532eb0352a2bff81f05cec42cab21f8e4350a9bf9ce0d6a798ddd34a50e",
+      "bytes": 25723,
       "contentType": "text/markdown"
     },
     {
@@ -809,8 +809,8 @@
       "경로": "040 Configuration/010 Settings and permissions/010 Settings.md",
       "href": "/en/settings",
       "url": "https://code.claude.com/docs/en/settings.md",
-      "sha256": "4056c3d1558e20de056a07e7ed970b9c1aedd837ee4bed54dd291daf526c4fb8",
-      "bytes": 339678,
+      "sha256": "adbc164cf6d3255a4210ed214f75adc5d6d18220b5efb51b9795b0fc433e2500",
+      "bytes": 339906,
       "contentType": "text/markdown"
     },
     {
@@ -977,23 +977,23 @@
       "경로": "050 Reference/010 Reference/010 CLI reference.md",
       "href": "/en/cli-reference",
       "url": "https://code.claude.com/docs/en/cli-reference.md",
-      "sha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120",
-      "bytes": 106538,
+      "sha256": "7f1cbbb27907d7341bd32efa18505f370c1ee406d42834b1fd20dfe35cf2a773",
+      "bytes": 106543,
       "contentType": "text/markdown"
     },
     {
       "경로": "050 Reference/010 Reference/020 Commands.md",
       "href": "/en/commands",
       "url": "https://code.claude.com/docs/en/commands.md",
-      "sha256": "6193356a1711741ac7b982826f114ba95d8968a07f6fa177ae44b4c6bea634e4",
-      "bytes": 154241,
+      "sha256": "4267b1d3400680f49b54a583eea9e591b503885e7d0f9f8cec9dfa13955699bd",
+      "bytes": 157381,
       "contentType": "text/markdown"
     },
     {
       "경로": "050 Reference/010 Reference/030 Environment variables.md",
       "href": "/en/env-vars",
       "url": "https://code.claude.com/docs/en/env-vars.md",
-      "sha256": "4be43c98261d22698014a633d4e9c7c5f972b8d7b994a2be7712c6cfa1a2282a",
+      "sha256": "35707b7cb69f8ca1fb26d81f80733dd0247075d79d9915c7a448b659fdffbe38",
       "bytes": 417708,
       "contentType": "text/markdown"
     },
@@ -1009,8 +1009,8 @@
       "경로": "050 Reference/010 Reference/050 Interactive mode.md",
       "href": "/en/interactive-mode",
       "url": "https://code.claude.com/docs/en/interactive-mode.md",
-      "sha256": "5d73c162f891bbaf52c06464bbe7788dea72ec60a4ce0006b7fbd3cc273ac721",
-      "bytes": 74233,
+      "sha256": "328febf4eec17accd2e1c3651c3974b2a855f2f11c1bf8904fa5fb378a4ed98d",
+      "bytes": 74986,
       "contentType": "text/markdown"
     },
     {
@@ -1049,8 +1049,8 @@
       "경로": "050 Reference/020 Glossary/010 Glossary.md",
       "href": "/en/glossary",
       "url": "https://code.claude.com/docs/en/glossary.md",
-      "sha256": "64ae2fd9a68a7bb1d4a29df8294a99a12e632cc0ecddcb760511d89bbeac2aad",
-      "bytes": 23564,
+      "sha256": "0da40e21070e1924c08abd351974169201579b62aa746b0e406ea78185a2688f",
+      "bytes": 23588,
       "contentType": "text/markdown"
     },
     {
@@ -1273,7 +1273,7 @@
       "경로": "060 Agent SDK/090 SDK references/010 TypeScript SDK.md",
       "href": "/en/agent-sdk/typescript",
       "url": "https://code.claude.com/docs/en/agent-sdk/typescript.md",
-      "sha256": "dd498e5135ecf95704130d66ff95b1dc95927ae8b37d14caebceb958b029f736",
+      "sha256": "eab03de73fa052ce3f484d1b2fe64a4007f9cd077451b3c004bc839852b15590",
       "bytes": 298699,
       "contentType": "text/markdown"
     },
