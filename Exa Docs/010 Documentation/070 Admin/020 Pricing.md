@@ -88,6 +88,16 @@ Metered runs bill actual usage up to their per-run cap. `auto` defaults to a \$5
 | Email contact enrichment | \$0.02 / email        |
 | Phone contact enrichment | \$0.07 / phone number |
 
+### Connect providers
+
+Runs that use [Exa Connect](/docs/reference/agent-api/connect/overview) data sources
+additionally bill each provider call — for example
+[Fiber.ai](/docs/reference/agent-api/connect/fiber#pricing) at \$0.02 per credit and
+[Baselayer](/docs/reference/agent-api/connect/baselayer#pricing) at \$0.15–\$4.00 per
+order depending on the operation. See
+[Connect pricing](/docs/reference/agent-api/connect/overview#pricing) for all
+provider rates.
+
 ## Deep Search
 
 Set with `type` on [`/search`](/docs/reference/search-api-guide). Additional results and AI page summaries cost the same as standard search.
