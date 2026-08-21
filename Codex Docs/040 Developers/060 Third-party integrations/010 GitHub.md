@@ -35,10 +35,13 @@ GitHub push or admin permission for its settings.
 
 
 
-  <img src="https://developers.openai.com/images/codex/code-review/code-review-settings.png"
-    alt="Codex settings showing the Code review toggle"
-    class="block h-auto w-full mx-0!"
-  />
+  
+    
+
+> Illustration: Codex settings showing the Code review toggle
+
+
+  
 
 
 
@@ -51,10 +54,13 @@ GitHub push or admin permission for its settings.
 
 
 
-  <img src="https://developers.openai.com/images/codex/code-review/review-trigger.png"
-    alt="A pull request comment with @codex review"
-    class="block h-auto w-full mx-0!"
-  />
+  
+    
+
+> Illustration: A pull request comment with @codex review
+
+
+  
 
 
 
@@ -66,10 +72,13 @@ high-priority risks.
 
 
 
-  <img src="https://developers.openai.com/images/codex/code-review/review-example.png"
-    alt="Example Codex code review on a pull request"
-    class="block h-auto w-full mx-0!"
-  />
+  
+    
+
+> Illustration: Example Codex code review on a pull request
+
+
+  
 
 
 
