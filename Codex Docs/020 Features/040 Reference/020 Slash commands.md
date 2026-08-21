@@ -52,12 +52,13 @@ objective that ChatGPT works toward until it finishes the task, pauses, or needs
 more input. To define the goal with ChatGPT first, start with `/plan`, then set
 the refined goal with `/goal`.
 
-<CodexScreenshot
-  alt="ChatGPT desktop app goal progress controls above the composer"
-  lightSrc="/images/codex/app/goal-dialog-light.webp"
-  darkSrc="/images/codex/app/goal-dialog-dark.webp"
-  class="mb-6"
-/>
+
+  
+
+> Illustration: ChatGPT desktop app goal progress controls above the composer
+
+
+
 
 When a goal is active, the app shows its progress above the composer. Use the
 buttons in that progress row to pause or resume the goal, edit the goal text, or
