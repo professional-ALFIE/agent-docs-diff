@@ -147,8 +147,8 @@ Exa Agent supports Zero Data Retention (ZDR). ZDR is enabled per team — [conta
 
 When ZDR is enabled for your team:
 
-* Runs may be created with streaming (`Accept: text/event-stream`). Consume the run's output from the live SSE stream. It cannot be retrieved after the run completes. See [Stream events](/docs/reference/agent-api-guide#stream-events) for SDK and cURL examples and the complete event contract.
-* Alternatively, for use of Exa Agent asynchronously or within the Batch API, runs may be created without streaming and processing will be held open for up to 10 minutes to enable the final result to be collected via polling. The result cannot be retrieved if not collected within this time, as it is immediately deleted once processing completes.
+* Runs may be created with streaming (`Accept: text/event-stream`). Consume the run's output from the live SSE stream. The final result can also be collected via polling for up to 10 minutes after the run completes. See [Stream events](/docs/reference/agent-api-guide#stream-events) for SDK and cURL examples and the complete event contract.
+* Alternatively, for use of Exa Agent asynchronously or within the Batch API, runs may be created and processing will be held open for up to 10 minutes to enable the final result to be collected via polling. The result cannot be retrieved if not collected within this time, as it is immediately deleted once processing completes.
 * Exa does not retain your query, request, or output.
 * `previousRunId` is not available on ZDR runs.
 * Creating a run with Exa Connect `dataSources` set, returns a `400` error when ZDR is enabled.
