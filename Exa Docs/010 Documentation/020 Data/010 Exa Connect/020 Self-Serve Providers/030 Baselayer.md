@@ -25,6 +25,28 @@ Use this value in `dataSources`:
 baselayer
 ```
 
+## Pricing
+
+Baselayer bills per order, and the rate depends on the operation and its
+parameters:
+
+| Operation                                                           | Price                                       |
+| ------------------------------------------------------------------- | ------------------------------------------- |
+| Business search                                                     | `$1.00 / search`                            |
+| Business lookup / officers / registrations / officer reverse lookup | Free (reads of a prior search)              |
+| Lien search                                                         | `$2.00 / state searched`                    |
+| Litigation search                                                   | `$1.00 / category (litigation, bankruptcy)` |
+| Watchlist screen                                                    | `$0.10 – $0.25 / list requested`            |
+| Industry classification                                             | `$0.35 / call`                              |
+| Website analysis                                                    | `$0.35 / call`                              |
+| Web presence                                                        | `$0.15 – $0.35 / selected analysis`         |
+| International business search                                       | `$4.00 / search`                            |
+
+Parameter choices change the price: a lien search across two states costs
+\$4.00, a watchlist screen of all six supported lists costs \$1.35, and a web
+presence call is the sum of the analyses you select (or of Baselayer's
+default set — NAICS prediction and website analysis — when you select none).
+
 ## Example
 
 Verify a business and retrieve its officer and registration details.
