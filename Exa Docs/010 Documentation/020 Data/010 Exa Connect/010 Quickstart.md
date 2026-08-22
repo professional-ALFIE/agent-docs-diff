@@ -45,15 +45,15 @@ then come back to attach data partners.
   You pay the usual Agent compute and search costs, plus the provider call charge for each Exa Connect tool call.
 </Note>
 
-| Provider                                               | Price            |
-| ------------------------------------------------------ | ---------------- |
-| [Fiber.ai](/docs/reference/agent-api/connect/fiber#pricing) | `$0.02 / credit` |
-| Similarweb                                             | `$0.03 / call`   |
-| Baselayer                                              | `$0.022 / call`  |
-| Affiliate.com                                          | `$0.015 / call`  |
-| Particle                                               | `$0.015 / call`  |
-| Financial Datasets                                     | `$0.01 / call`   |
-| Jinko                                                  | `$0.005 / call`  |
+| Provider                                                    | Price                                         |
+| ----------------------------------------------------------- | --------------------------------------------- |
+| [Fiber.ai](/docs/reference/agent-api/connect/fiber#pricing)      | `$0.02 / credit`                              |
+| Similarweb                                                  | `$0.03 / call`                                |
+| [Baselayer](/docs/reference/agent-api/connect/baselayer#pricing) | `$0.10 – $4.00 / order (varies by operation)` |
+| Affiliate.com                                               | `$0.015 / call`                               |
+| Particle                                                    | `$0.015 / call`                               |
+| Financial Datasets                                          | `$0.01 / call`                                |
+| Jinko                                                       | `$0.005 / call`                               |
 
 Fiber.ai bills in credits rather than per call, because its own charge varies by
 call: a search costs 2 credits plus 1 per result returned, a company or person
@@ -62,6 +62,15 @@ lookup is billed per candidate returned (so raising a company lookup's
 reveal 2–5 credits depending on whether you ask for work email, personal email,
 or phone. You are charged the credits Fiber reports for each call; calls that
 return no match are free. See [Fiber.ai pricing](/docs/reference/agent-api/connect/fiber#pricing).
+
+Baselayer bills per order, and the rate depends on the operation: a KYB
+business search is \$1.00, a UCC lien search is \$2.00 per state searched, a
+litigation/bankruptcy docket search is \$1.00 per category, watchlist screening
+is \$0.10–\$0.25 per list requested, industry classification and website
+analysis are \$0.35 each, web presence is the sum of the selected analyses
+(\$0.15–\$0.35 each), and an international business search is \$4.00. Follow-up
+reads of a prior business search (business lookup, officers, registrations,
+officer reverse lookup) are free. See [Baselayer pricing](/docs/reference/agent-api/connect/baselayer#pricing).
 
 <CodeGroup>
   ```python Python theme={null}
