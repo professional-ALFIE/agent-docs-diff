@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-22T21:41:22.514Z",
+  "생성": "2026-08-24T01:57:10.342Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -225,8 +225,8 @@
       "경로": "010 Documentation/020 Data/010 Exa Connect/010 Quickstart.md",
       "href": "/reference/agent-api/connect/overview",
       "url": "https://exa.ai/docs/reference/agent-api/connect/overview.md",
-      "sha256": "611be8c38e088f228cd751643c1f0a40a49c9dd75c83f23d41d3027f1bf23799",
-      "bytes": 10858,
+      "sha256": "bc864b458dd1da1e7fc2c15a737853e0e98c7715aa1be68e6b9b3a9a089c6ab6",
+      "bytes": 10816,
       "contentType": "text/markdown"
     },
     {
@@ -281,8 +281,8 @@
       "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Jinko.md",
       "href": "/reference/agent-api/connect/jinko",
       "url": "https://exa.ai/docs/reference/agent-api/connect/jinko.md",
-      "sha256": "f923dcf78f4c4901a66ff034d6553a12645d4bd832427f2aaa8464e7891ae991",
-      "bytes": 4005,
+      "sha256": "e6d4c7fe8888fff8d508ce283ab513485ab76098e4ac2e80a0737d557880283e",
+      "bytes": 4050,
       "contentType": "text/markdown"
     },
     {

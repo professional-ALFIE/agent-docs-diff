@@ -38,7 +38,7 @@
 - [Affiliate.com](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/040 Affiliate.com.md>): Search product catalogs across merchants and affiliate networks.
 - [Particle](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/050 Particle.md>): Search podcast transcripts with speaker attribution and timestamps.
 - [Financial Datasets](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/060 Financial Datasets.md>): Structured financial and market data for 27,000+ active and delisted U.S. tickers, including prices, fundamentals, earnings, SEC filings, ownership, and stock screening.
-- [Jinko](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Jinko.md>): Discover travel destinations from your departure airports, ranked by lowest available fare.
+- [Jinko](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Jinko.md>): Flight and Hotel search with real-time pricing.
 - [Combining providers](<010 Documentation/020 Data/010 Exa Connect/030 Combining providers.md>): Use several data partners together in a single Exa Agent run.
 - [Additional providers](<010 Documentation/020 Data/010 Exa Connect/040 Additional providers.md>): Exa Connect partners beyond the self-serve provider set.
 - [People Search](<010 Documentation/020 Data/020 People/010 For humans.md>)
