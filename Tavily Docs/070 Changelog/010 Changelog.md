@@ -5,6 +5,24 @@
 # Changelog
 
 <AccordionGroup>
+  <Accordion title="Language boosting and filtering for Search" icon="rocket" description="August 2026">
+    <b><br />New [<code>language</code>](/documentation/api-reference/endpoint/search#body-language) and [<code>filter\_by\_language</code>](/documentation/api-reference/endpoint/search#body-filter-by-language) parameters for [Search](/documentation/api-reference/endpoint/search)</b><br />
+
+    <ul>
+      <li>
+        <b><code>language</code></b> — boost search results in a specific language. Accepts an ISO 639-1 code (e.g. <code>en</code>, <code>fr</code>, <code>zh-cn</code>) or an English language name (e.g. <code>english</code>, <code>french</code>).
+      </li>
+
+      <li>
+        <b><code>filter\_by\_language</code></b> — when <code>true</code>, strictly drops results that don't match <code>language</code> instead of only boosting them in ranking. Requires <code>language</code> to be set, or the request returns a <code>400</code>.
+      </li>
+
+      <li>
+        See <a href="/documentation/best-practices/best-practices-search#by-language">Best Practices for Search</a> for guidance on when to use a soft boost vs. a strict filter.
+      </li>
+    </ul>
+  </Accordion>
+
   <Accordion title="Logs API: filter by API key and Research endpoint" icon="rocket" description="August 2026">
     <b><br />The [Logs endpoint](/documentation/api-reference/endpoint/logs) can now return logs for the calling API key only, and filter by the Research endpoint</b><br />
 
