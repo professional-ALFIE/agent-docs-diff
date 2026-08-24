@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-23T01:59:21.679Z",
+  "생성": "2026-08-24T18:58:33.382Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -17,8 +17,8 @@
       "경로": "010 Getting started/010 Getting started/020 Quickstart.md",
       "href": "/en/quickstart",
       "url": "https://code.claude.com/docs/en/quickstart.md",
-      "sha256": "6a7a0a38ced1235db962c3cd321c05a4370dc68732c9b41780d47ee489b33e0e",
-      "bytes": 13251,
+      "sha256": "a11c7b3caeac3debfebd7f916c8fe358d52a48f2f74dbd79de7f8966be096573",
+      "bytes": 13511,
       "contentType": "text/markdown"
     },
     {
@@ -505,8 +505,8 @@
       "경로": "020 Build with Claude Code/080 Troubleshooting/040 Error reference.md",
       "href": "/en/errors",
       "url": "https://code.claude.com/docs/en/errors.md",
-      "sha256": "5e24a7ac66783f2098e3d0e9571ac764ad7f9580dd3063af28c1b84fd27c70d8",
-      "bytes": 271117,
+      "sha256": "c5c1b1fa3d8bdbf69b84987af91ddf45ce4fd4eb8c06e747d9c4cf0d70a4345a",
+      "bytes": 271165,
       "contentType": "text/markdown"
     },
     {
@@ -553,8 +553,8 @@
       "경로": "030 Administration/010 Setup and access/060 Managed MCP configuration.md",
       "href": "/en/managed-mcp",
       "url": "https://code.claude.com/docs/en/managed-mcp.md",
-      "sha256": "d40699b94baafed3e5406cb812d852f1418ebb9ece1a7fe8bdf79d74f289c11a",
-      "bytes": 33543,
+      "sha256": "1dc358e524668fb928d62ec84753f1d3c8e0cdd9a563a12b1b3240e507ea8984",
+      "bytes": 34745,
       "contentType": "text/markdown"
     },
     {
@@ -817,8 +817,8 @@
       "경로": "040 Configuration/010 Settings/020 Settings reference.md",
       "href": "/en/settings-reference",
       "url": "https://code.claude.com/docs/en/settings-reference.md",
-      "sha256": "b8838a8f9fbfb7ce503a6ff2b391328b12014ac04b635ef75a1155b30e5e14a7",
-      "bytes": 362726,
+      "sha256": "8ef434257834bbbbc9ad81ff20b7cbdb0c99df0b2ec0408cd91f7d60901e72d9",
+      "bytes": 362594,
       "contentType": "text/markdown"
     },
     {
@@ -841,8 +841,8 @@
       "경로": "040 Configuration/020 Permissions and sandboxing/020 Permission modes.md",
       "href": "/en/permission-modes",
       "url": "https://code.claude.com/docs/en/permission-modes.md",
-      "sha256": "934f1da099db38eea39fa1091523503af19e0ad829049683d529fbb67fc840c3",
-      "bytes": 74983,
+      "sha256": "907b01cb04a63a994eeeb7dcbada66b951634a844bf093bbca52fcd9c8efab95",
+      "bytes": 74948,
       "contentType": "text/markdown"
     },
     {
@@ -1217,8 +1217,8 @@
       "경로": "060 Agent SDK/060 Customize behavior/020 Extend agents with skills.md",
       "href": "/en/agent-sdk/skills",
       "url": "https://code.claude.com/docs/en/agent-sdk/skills.md",
-      "sha256": "afd81fe8632f84dc6b594556d85640067c5d69562969c78724febe329eb6e785",
-      "bytes": 26987,
+      "sha256": "4aaac25c8c12822fa55aecbfcd49261e5e57008877c61489e7e816996652fe24",
+      "bytes": 26958,
       "contentType": "text/markdown"
     },
     {

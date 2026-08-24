@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-21T15:48:15.954Z",
+  "생성": "2026-08-24T18:59:12.897Z",
   "제품폴더": "Tavily Docs",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -73,8 +73,8 @@
       "경로": "040 API & SDKs/020 Core Endpoints/010 Search.md",
       "href": "/documentation/api-reference/endpoint/search",
       "url": "https://docs.tavily.com/documentation/api-reference/endpoint/search.md",
-      "sha256": "75bfb3ddf6708a610bdf2b6fda8f30ddc571064050a11e581866c7b0725c1616",
-      "bytes": 26743,
+      "sha256": "e401c6eb34fc3d04da0b1eadc4ee2ae166dba04ee568bb7e15fa843b734fe9d7",
+      "bytes": 27810,
       "contentType": "text/markdown"
     },
     {
@@ -185,8 +185,8 @@
       "경로": "040 API & SDKs/060 Python SDK/020 SDK Reference.md",
       "href": "/sdk/python/reference",
       "url": "https://docs.tavily.com/sdk/python/reference.md",
-      "sha256": "ea7f5128ba6dcd4f4d1812a4401ac2b52802f4286e1526fc7b700f5d870f7306",
-      "bytes": 92915,
+      "sha256": "5fdd594d3627b514a1dbc3b3db90eaa6f804dbfcc934e39df88d944b427f22dd",
+      "bytes": 94219,
       "contentType": "text/markdown"
     },
     {
@@ -201,16 +201,16 @@
       "경로": "040 API & SDKs/070 JavaScript SDK/020 SDK Reference.md",
       "href": "/sdk/javascript/reference",
       "url": "https://docs.tavily.com/sdk/javascript/reference.md",
-      "sha256": "84156fc1533b8e113c3a97d5dbe658dab6e78cafe0dc643cebfaf57e030b1006",
-      "bytes": 123598,
+      "sha256": "07fb9af0fc030605b86cd89f1e8274f37401e1dc9a93146136187f8892b095a0",
+      "bytes": 124902,
       "contentType": "text/markdown"
     },
     {
       "경로": "040 API & SDKs/080 Best Practices/010 Search.md",
       "href": "/documentation/best-practices/best-practices-search",
       "url": "https://docs.tavily.com/documentation/best-practices/best-practices-search.md",
-      "sha256": "28856a55b9c261c8dd210a7b2f2630bdebca071deb327e81a508efa2da2910b5",
-      "bytes": 15123,
+      "sha256": "bcd24e8cf8e6f4f1674400424a053fc6f91005a5db334f2b86865d5dbd12698b",
+      "bytes": 16514,
       "contentType": "text/markdown"
     },
     {
@@ -825,8 +825,8 @@
       "경로": "070 Changelog/010 Changelog.md",
       "href": "/changelog",
       "url": "https://docs.tavily.com/changelog.md",
-      "sha256": "c97ba1db300fd812826ced63b8bf21673425d44ad5ad6d1c34f6045b3ef82728",
-      "bytes": 25951,
+      "sha256": "478275b80de6172e09a0cbbea756271e2fe5310314301d1d18f80aa478d4ed94",
+      "bytes": 27148,
       "contentType": "text/markdown"
     }
   ],

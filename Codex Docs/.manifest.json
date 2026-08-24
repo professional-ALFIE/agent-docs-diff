@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-22T21:41:53.646Z",
+  "생성": "2026-08-24T18:59:29.343Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -153,8 +153,8 @@
       "경로": "010 Overview/060 Releases/020 Feature Maturity.md",
       "href": "/codex/feature-maturity",
       "url": "https://learn.chatgpt.com/docs/feature-maturity.md",
-      "sha256": "43d6be459082abf225a60101b1a552d756b35a6e688a3220e9d3cb382c60edff",
-      "bytes": 1653,
+      "sha256": "9b773769ae13afc594c3c5fd28327009667f0a8fade51e261ead9c02c3109e6e",
+      "bytes": 1867,
       "contentType": "text/markdown"
     },
     {
@@ -601,8 +601,8 @@
       "경로": "040 Developers/050 Build with Codex/030 MCP Server.md",
       "href": "/codex/mcp-server",
       "url": "https://learn.chatgpt.com/docs/mcp-server.md",
-      "sha256": "697085cd61f9623f6c81491b426e639ecacf6b5b278205845fb6244e905b9536",
-      "bytes": 19478,
+      "sha256": "1f2a1804a79c8f8e6cf24938c0262081a1cca3435de74315690d9da29fc28639",
+      "bytes": 19812,
       "contentType": "text/markdown"
     },
     {
@@ -665,8 +665,8 @@
       "경로": "040 Developers/070 Reference/020 Developer commands.md",
       "href": "/codex/developer-commands",
       "url": "https://learn.chatgpt.com/docs/developer-commands.md",
-      "sha256": "ab26eead5b10032ac8bf1690ec787d7dbc9edea2e8fe02638065265152fb063c",
-      "bytes": 54686,
+      "sha256": "fe6a8aa49238235a8741b8fa950d850075bbe2703860701438d1afa1efaefe1b",
+      "bytes": 54982,
       "contentType": "text/markdown"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T13:12:54.203Z",
+  "생성": "2026-08-24T18:59:25.816Z",
   "제품폴더": "opencode Docs (ko)",
   "진입": "https://opencode.ai/docs/ko",
   "최상위수": 10,
@@ -225,8 +225,8 @@
       "경로": "090 구성/130 ACP Support.md",
       "href": "/docs/ko/acp/",
       "url": "https://opencode.ai/docs/ko/acp.md",
-      "sha256": "3a58100af808bbbff9945d5c69d8ad36e1e9ae2e7799de175faa7297a3645f09",
-      "bytes": 3725,
+      "sha256": "1732ce373e514160779587bce922d7db3a3da9c49ead3dd8b6abeab87ff978fc",
+      "bytes": 3976,
       "contentType": "text/plain"
     },
     {

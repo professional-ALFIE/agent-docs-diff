@@ -189,7 +189,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Long-running work](https://learn.chatgpt.com/docs/long-running-work.md): Keep multi-step work focused with clear outcomes and completion criteria
 
 ## Mcp Server
-- [Use Codex with the Agents SDK](https://learn.chatgpt.com/docs/mcp-server.md): Invoke Codex as an MCP server to build multi-agent development workflows
+- [Use Codex with the Agents SDK](https://learn.chatgpt.com/docs/mcp-server.md): Deprecated. Use the Codex app server or the Codex plugin for Claude Code
 
 ## Models
 - [Models](https://learn.chatgpt.com/docs/models.md): Meet the AI models that power ChatGPT Work and Codex

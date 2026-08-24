@@ -191,7 +191,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Long-running work](<020 Features/020 Workflows/050 Long-running work.md>): Keep multi-step work focused with clear outcomes and completion criteria
 
 ## Mcp Server
-- [Use Codex with the Agents SDK](<040 Developers/050 Build with Codex/030 MCP Server.md>): Invoke Codex as an MCP server to build multi-agent development workflows
+- [Use Codex with the Agents SDK](<040 Developers/050 Build with Codex/030 MCP Server.md>): Deprecated. Use the Codex app server or the Codex plugin for Claude Code
 
 ## Models
 - [Models](<010 Overview/040 Explore/020 Models.md>): Meet the AI models that power ChatGPT Work and Codex
