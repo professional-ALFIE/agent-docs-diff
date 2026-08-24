@@ -137,6 +137,29 @@ Use `topic` to filter by content type. Set to `news` for news sources (includes 
 
 <Note>Keep domain lists short and relevant for best results.</Note>
 
+### By language
+
+| Parameter            | Description                                                                                                                              |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `language`           | Boost results in a specific language. Accepts an ISO 639-1 code (`en`, `fr`, `zh-cn`) or an English language name (`english`, `french`). |
+| `filter_by_language` | Strictly drop results that don't match `language`, instead of only boosting them. Requires `language` to be set.                         |
+
+```json theme={null}
+// Boost French results, but still allow other languages through
+{ "query": "actualités technologiques", "language": "french" }
+
+// Strictly return only French-language results
+{ "query": "actualités technologiques", "language": "fr", "filter_by_language": true }
+```
+
+<Note>
+  `filter_by_language` can return fewer results — or none — when few sources match the requested language. Use it only when a mismatched-language result would be worse than no result; otherwise rely on `language` alone for a soft boost.
+</Note>
+
+<Tip>
+  For best results, write your `query` in the same language you pass to `language`. Search ranking is optimized when the query and target language match.
+</Tip>
+
 ## Response Content
 
 ### `max_results`
