@@ -385,6 +385,26 @@ paths:
                     - zambia
                     - zimbabwe
                   default: null
+                language:
+                  type: string
+                  description: >-
+                    Boost search results in a specific language. Accepts an ISO
+                    639-1 code (e.g. `en`, `fr`, `zh-cn`) or an English language
+                    name (e.g. `english`, `french`). By default this only boosts
+                    matching-language results in ranking; pass
+                    `filter_by_language: true` to strictly filter out
+                    non-matching results instead. For best results, write your
+                    `query` in the same language you set here.
+                  example: en
+                  default: null
+                filter_by_language:
+                  type: boolean
+                  description: >-
+                    Strictly filter out search results that don't match the
+                    `language` parameter, instead of only boosting them in
+                    ranking. Requires `language` to be set; returns a 400 error
+                    otherwise.
+                  default: false
                 auto_parameters:
                   type: boolean
                   description: >-
