@@ -184,8 +184,7 @@ officer reverse lookup) are free. See [Baselayer pricing](/docs/reference/agent-
     </Card>
 
     <Card title="Jinko" icon="https://mintcdn.com/exa-52/vc1Uh8_sSaqT3DeY/images/connect/jinko.svg?fit=max&auto=format&n=vc1Uh8_sSaqT3DeY&q=85&s=7fc6b4cd3691d1fd0eb7e583ebe3994a" href="/docs/reference/agent-api/connect/jinko" width="400" height="395" data-path="images/connect/jinko.svg">
-      **Travel.** Destination discovery ranked by lowest available fare from your
-      departure airports.
+      **Travel.** Flight and Hotel search with real-time pricing.
     </Card>
   </Columns>
 </div>
