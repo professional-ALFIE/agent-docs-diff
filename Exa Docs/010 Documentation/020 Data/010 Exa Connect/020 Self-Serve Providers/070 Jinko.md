@@ -4,18 +4,18 @@
 
 # Jinko
 
-> Discover travel destinations from your departure airports, ranked by lowest available fare.
+> Flight and Hotel search with real-time pricing.
 
-[Jinko](https://gojinko.com) is a travel discovery platform that turns a budget
-and a set of departure airports into ranked destination ideas. It searches live
-fares across routes and surfaces the places you can actually reach, with example
-itineraries and prices for each one.
+[Jinko](https://gojinko.com) is a travel search platform providing flight and
+hotel search with real-time pricing. Search live flight offers for a route and
+date, shop hotel rooms and rates for a destination or specific properties, and
+explore destinations reachable from your departure airports.
 
 ## Use it for
 
-* Finding destinations reachable from a city within a target budget.
-* Planning flexible trips across date windows, cabin classes, and party sizes.
-* Comparing fares to a shortlist of candidate destinations.
+* Searching live flight offers with fares, baggage, and change policies for a route and date.
+* Finding hotels with live room rates for a destination, or re-shopping specific hotels.
+* Discovering destinations and flexible dates across date windows, cabin classes, and budgets.
 
 ## Provider ID
 
