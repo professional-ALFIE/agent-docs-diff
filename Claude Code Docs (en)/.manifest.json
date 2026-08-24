@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T18:58:33.382Z",
+  "생성": "2026-08-24T21:43:22.604Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -17,8 +17,8 @@
       "경로": "010 Getting started/010 Getting started/020 Quickstart.md",
       "href": "/en/quickstart",
       "url": "https://code.claude.com/docs/en/quickstart.md",
-      "sha256": "a11c7b3caeac3debfebd7f916c8fe358d52a48f2f74dbd79de7f8966be096573",
-      "bytes": 13511,
+      "sha256": "5103508ee3a996b48abf344d5c6937750483d6bc1140f6b01e7190f90e6cb7f8",
+      "bytes": 13251,
       "contentType": "text/markdown"
     },
     {
@@ -57,8 +57,8 @@
       "경로": "010 Getting started/020 Core concepts/040 Explore the context window.md",
       "href": "/en/context-window",
       "url": "https://code.claude.com/docs/en/context-window.md",
-      "sha256": "a0e41a7e1224983db24e752c6826726d5f0e74a889585b7619476b54dab27e4d",
-      "bytes": 58687,
+      "sha256": "923207d0127294f1123edc3953bd908dfe0276b42820ccda37ada61fd3728018",
+      "bytes": 61489,
       "contentType": "text/markdown"
     },
     {
@@ -233,8 +233,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/080 Visual Studio Code.md",
       "href": "/en/vs-code",
       "url": "https://code.claude.com/docs/en/vs-code.md",
-      "sha256": "1fbc967a6dfddf3ded7aeab05655f86fb464692288825a1e469c3cfa09c30bb1",
-      "bytes": 60066,
+      "sha256": "d8cc6988c61113b2079eec2956524c1d080d7e34673e68fd5c00c52af4894594",
+      "bytes": 60287,
       "contentType": "text/markdown"
     },
     {
@@ -401,8 +401,8 @@
       "경로": "020 Build with Claude Code/040 Plugins/010 Discover and install prebuilt plugins.md",
       "href": "/en/discover-plugins",
       "url": "https://code.claude.com/docs/en/discover-plugins.md",
-      "sha256": "71249e65b992cdf41b1c925fb85e6d54d01eab26fdaf0ac9e6d29a120415bf56",
-      "bytes": 32413,
+      "sha256": "a6f8329be16e3a5bb2024c2d91e1b25880428e72bdbfbe3491b54b3ef5e59eb0",
+      "bytes": 32795,
       "contentType": "text/markdown"
     },
     {
@@ -537,8 +537,8 @@
       "경로": "030 Administration/010 Setup and access/040 Managed settings.md",
       "href": "/en/managed-settings",
       "url": "https://code.claude.com/docs/en/managed-settings.md",
-      "sha256": "cfe614209fa6b44086a2a02ab6b4763f66cdd1ad1a17d2ead066bde70681b2cb",
-      "bytes": 41642,
+      "sha256": "b46e9a4268c1889ea9fef1ad53e0632f76aa7ce6473a45257c1f2c28a725f66f",
+      "bytes": 45049,
       "contentType": "text/markdown"
     },
     {
@@ -649,8 +649,8 @@
       "경로": "030 Administration/030 Gateways/020 Claude apps gateway/010 Configuration.md",
       "href": "/en/claude-apps-gateway-config",
       "url": "https://code.claude.com/docs/en/claude-apps-gateway-config.md",
-      "sha256": "fc4f482ebb837b7a0df8ad41ccbdce6f5a52c8028a34c1f2b7d875fb8e2004e0",
-      "bytes": 100331,
+      "sha256": "634674631ea462803effc2fb2a5262e718ae31e7006b3b6dcfadde772163784d",
+      "bytes": 100554,
       "contentType": "text/markdown"
     },
     {
@@ -737,16 +737,16 @@
       "경로": "030 Administration/050 Plugin distribution/010 Create and distribute a plugin marketplace.md",
       "href": "/en/plugin-marketplaces",
       "url": "https://code.claude.com/docs/en/plugin-marketplaces.md",
-      "sha256": "b9eebf6c5ea2e2ae5b3f7e43827a050d03db0cef61fb81c3d935c0682e036c19",
-      "bytes": 99736,
+      "sha256": "d4aa337c78f3d02c55b0d28aca62860b2668f43c7f7ba5e47fa9f920847277d3",
+      "bytes": 113146,
       "contentType": "text/markdown"
     },
     {
       "경로": "030 Administration/050 Plugin distribution/020 Plugin dependency versions.md",
       "href": "/en/plugin-dependencies",
       "url": "https://code.claude.com/docs/en/plugin-dependencies.md",
-      "sha256": "b14be1930464992027b58ff897760ec49399123575de93b5a2294ea9e324323d",
-      "bytes": 22117,
+      "sha256": "ac3ed51b67b7cb90a264a6891454bfc9ce72a7f584f9592d204f53a29858db52",
+      "bytes": 22577,
       "contentType": "text/markdown"
     },
     {
@@ -817,8 +817,8 @@
       "경로": "040 Configuration/010 Settings/020 Settings reference.md",
       "href": "/en/settings-reference",
       "url": "https://code.claude.com/docs/en/settings-reference.md",
-      "sha256": "8ef434257834bbbbc9ad81ff20b7cbdb0c99df0b2ec0408cd91f7d60901e72d9",
-      "bytes": 362594,
+      "sha256": "822b0eefb6df151d5405fbc6c1c37c937bfe6e043cab49e115abd6e578843a4e",
+      "bytes": 366942,
       "contentType": "text/markdown"
     },
     {
@@ -833,24 +833,24 @@
       "경로": "040 Configuration/020 Permissions and sandboxing/010 Permissions.md",
       "href": "/en/permissions",
       "url": "https://code.claude.com/docs/en/permissions.md",
-      "sha256": "851b92c394be10228ace118771f19e77342be34db3874c9826dae0c6c8bed021",
-      "bytes": 65899,
+      "sha256": "6a1d2d107dc217f2d2f699d6d6a602fa6f6f806ac81a28a5d9664d77a2b6a791",
+      "bytes": 68203,
       "contentType": "text/markdown"
     },
     {
       "경로": "040 Configuration/020 Permissions and sandboxing/020 Permission modes.md",
       "href": "/en/permission-modes",
       "url": "https://code.claude.com/docs/en/permission-modes.md",
-      "sha256": "907b01cb04a63a994eeeb7dcbada66b951634a844bf093bbca52fcd9c8efab95",
-      "bytes": 74948,
+      "sha256": "8dffbd5e4f3d775c603349a48521e5989b8671f772f29a1287a34adf221c391c",
+      "bytes": 74907,
       "contentType": "text/markdown"
     },
     {
       "경로": "040 Configuration/020 Permissions and sandboxing/030 Bash sandbox.md",
       "href": "/en/sandboxing",
       "url": "https://code.claude.com/docs/en/sandboxing.md",
-      "sha256": "0a81c62d2c194b8b58c27b78b2b189bdaa13c3b40065599f4bcb3f6aa78d6917",
-      "bytes": 69247,
+      "sha256": "0df6834fd722a0a0af419725f61a1fe296bb5b7790a45033776639debac4f022",
+      "bytes": 69573,
       "contentType": "text/markdown"
     },
     {
@@ -865,8 +865,8 @@
       "경로": "040 Configuration/030 Environments/010 Cloud environments.md",
       "href": "/en/cloud-environments",
       "url": "https://code.claude.com/docs/en/cloud-environments.md",
-      "sha256": "c5f6a4d2b6095b81d232e8d636e5d8a84e66d4b7f81f6b52715efdd767ed1da9",
-      "bytes": 58581,
+      "sha256": "72c2d776de7ba634344bd9614ba8bf5766c41d5434ded4f1e32ef1ae036dcd28",
+      "bytes": 58816,
       "contentType": "text/markdown"
     },
     {
@@ -1017,16 +1017,16 @@
       "경로": "050 Reference/010 Reference/030 Environment variables.md",
       "href": "/en/env-vars",
       "url": "https://code.claude.com/docs/en/env-vars.md",
-      "sha256": "a0355c4d410e46dfd5757bdce0966d99578d71d605ce7ef9804d7c103e865c28",
-      "bytes": 463620,
+      "sha256": "4bc0e4b0a2ff9979031cd011ed1283319464c7e84c100bb135d09d18b54f9b55",
+      "bytes": 463922,
       "contentType": "text/markdown"
     },
     {
       "경로": "050 Reference/010 Reference/040 Tools reference.md",
       "href": "/en/tools-reference",
       "url": "https://code.claude.com/docs/en/tools-reference.md",
-      "sha256": "7c3d4fe1196a44485ffdc6322a58755d956e5372bd507b11582ed3b5105c0b87",
-      "bytes": 103331,
+      "sha256": "c14f317625e925af09b578419e0df427c19548be24d7907f6711d23f6442bcbe",
+      "bytes": 103533,
       "contentType": "text/markdown"
     },
     {
@@ -1049,16 +1049,16 @@
       "경로": "050 Reference/010 Reference/070 Hooks reference.md",
       "href": "/en/hooks",
       "url": "https://code.claude.com/docs/en/hooks.md",
-      "sha256": "e4756ca746899ebd35c712f725d62734cdfa84d710a79e55139a24228df3e530",
-      "bytes": 283488,
+      "sha256": "142db5a4fe6ff4556d51fec287c93f414d2549cd6dc595abcac916f7a024c4e5",
+      "bytes": 284232,
       "contentType": "text/markdown"
     },
     {
       "경로": "050 Reference/010 Reference/080 Plugins reference.md",
       "href": "/en/plugins-reference",
       "url": "https://code.claude.com/docs/en/plugins-reference.md",
-      "sha256": "2997c815eebad8c8eccc5d0dbc10992d194b06de3eff855f497c7bcd6d81d0f1",
-      "bytes": 108305,
+      "sha256": "4af60d4b69e90b22611b6abd12020c42df0b45b8dbf142a45598dfdeeb7db1c5",
+      "bytes": 110933,
       "contentType": "text/markdown"
     },
     {

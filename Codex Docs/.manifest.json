@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T18:59:29.343Z",
+  "생성": "2026-08-24T21:44:24.053Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -401,8 +401,8 @@
       "경로": "030 Configuration/030 Config file/030 Config Reference.md",
       "href": "/codex/config-file/config-reference",
       "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
-      "sha256": "5041b566caab9686ac5e0635ee50eb84b42910f9e7551178489b2c4a55f0c1a2",
-      "bytes": 91379,
+      "sha256": "6464159e3897bbda6c81871500497bf79de35c62d7dfd7af354b2a33a158f687",
+      "bytes": 91395,
       "contentType": "text/markdown"
     },
     {
@@ -545,8 +545,8 @@
       "경로": "040 Developers/030 Extend and automate/030 Hooks.md",
       "href": "/codex/hooks",
       "url": "https://learn.chatgpt.com/docs/hooks.md",
-      "sha256": "017d2a86bc8654fb5e566f968019e5bc23f65ab0bca3b051b92ec74bc6da130a",
-      "bytes": 41639,
+      "sha256": "c1f1b2d78195fb6d382f9b9f32fe78d79025d6f0e1c65d87a1eece1693a78271",
+      "bytes": 44346,
       "contentType": "text/markdown"
     },
     {
@@ -1081,8 +1081,8 @@
       "경로": "060 Administration/060 Usage, governance, and compliance/040 Compliance API and audit events.md",
       "href": "/codex/enterprise/compliance-api",
       "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api.md",
-      "sha256": "d4db4be75e8e7ebdc029e628475e88216d49eddff179824f8cab9d89dc3d35c6",
-      "bytes": 3467,
+      "sha256": "0220c2cafe47f5ab5429eaa6225ed1448f6780950da06d60368b6616dce72fea",
+      "bytes": 4584,
       "contentType": "text/markdown"
     },
     {

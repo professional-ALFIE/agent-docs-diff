@@ -161,7 +161,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Building an AI-Native Engineering Team](https://learn.chatgpt.com/guides/build-ai-native-engineering-team.md): How coding agents speed up the software development lifecycle (외부 링크)
 
 ## Hooks
-- [Hooks](<040 Developers/030 Extend and automate/030 Hooks.md>): Run deterministic scripts during the Codex lifecycle
+- [Hooks](<040 Developers/030 Extend and automate/030 Hooks.md>): Run scripts or MCP tools during the Codex lifecycle
 
 ## Ide
 - [Codex IDE extension](<010 Overview/050 Available on/050 Codex IDE extension.md>): Use Codex beside your code and editor context.
