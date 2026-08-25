@@ -76,43 +76,6 @@ paths:
             text/event-stream:
               schema:
                 $ref: '#/components/schemas/AnswerStreamChunk'
-      x-codeSamples:
-        - lang: bash
-          label: Simple answer
-          source: |-
-            curl -X POST 'https://api.exa.ai/answer' \
-              -H 'x-api-key: YOUR-EXA-API-KEY' \
-              -H 'Content-Type: application/json' \
-              -d '{
-                "query": "What is the latest valuation of SpaceX?",
-                "text": true
-              }'
-        - lang: python
-          label: Simple answer
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-            exa = Exa(api_key='YOUR_EXA_API_KEY')
-
-            result = exa.answer(
-                "What is the latest valuation of SpaceX?",
-                text=True
-            )
-
-            print(result)
-        - lang: javascript
-          label: Simple answer
-          source: |-
-            // npm install exa-js
-            import Exa from 'exa-js';
-            const exa = new Exa('YOUR_EXA_API_KEY');
-
-            const result = await exa.answer(
-                'What is the latest valuation of SpaceX?',
-                { text: true }
-            );
-
-            console.log(result);
 components:
   schemas:
     AnswerRequest:
