@@ -62,33 +62,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const webhooks = await exa.websets.webhooks.list();
-
-            console.log(`Found ${webhooks.data.length} webhooks`);
-            webhooks.data.forEach((webhook) => {
-              console.log(`- ${webhook.id}: ${webhook.url}`);
-            });
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            webhooks = exa.websets.webhooks.list()
-
-            print(f"Found {len(webhooks.data)} webhooks")
-            for webhook in webhooks.data:
-                print(f"- {webhook.id}: {webhook.url}")
 components:
   schemas:
     ListWebhooksResponse:
