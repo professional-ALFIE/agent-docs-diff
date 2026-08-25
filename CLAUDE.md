@@ -153,7 +153,46 @@ Codex 정본:        sites.ts 에서 base 를 https://learn.chatgpt.com/docs 로
                   표현한다. "/docs 로 정규화" 결정과 같은 효과다
 ```
 
-## 검사 — check.ts 가 막는 것
+## 파서 3방식 — 사이트마다 다른 이유와 판정법
+
+사이트 6곳은 프레임워크가 세 갈래라 파서도 세 방식이다. 배정과 원리는 이 표 하나로
+판정된다. 상세 근거(셀렉터 · JSON 키 · 함정 전체)는 REPORT-3.
+
+```yaml
+1. Mintlify 박힌 JSON — 4곳: Claude Code · Exa · Tavily · Vibe Kanban
+  파서:    mintlify-nav.ts(한 페이지) + mintlify-full.ts(탭 순회)
+  원리:    HTML 안의 self.__next_f.push 조각에 navigation JSON 이 통째로 박혀 있다.
+         JSON 을 복원하므로 HTML 태그 파싱이 아예 필요 없다 (docs.json · mint.json 은 404)
+  재사용:  새 Mintlify 사이트는 파서를 무수정으로 쓴다 — 4곳을 같은 파일 하나로 돌린 것이 실증.
+         JSON 키(tabs·groups·pages·href·title·sidebarTitle)만 보므로 사이트별 예외는
+         sidebarTitle 유무 · href 불일치 · 외부 링크 걸러내기 수준이다
+  판정:    meta generator 가 ["Mintlify"] · 정적 자산 경로가 /mintlify-assets/
+
+2. Astro Starlight 시맨틱 HTML — 1곳: opencode
+  파서:    starlight-nav.ts (탭이 없어 순회 불필요)
+  원리:    표준 시맨틱 HTML — ul.top-level 안의 중첩 목록, 접힘은 details/summary
+  재사용:  Starlight 표준 구조라 다른 Starlight 사이트에도 그대로 될 가능성이 높다
+         (실증은 opencode 한 곳뿐 — Mintlify 만큼 확인되지 않았다)
+  판정:    meta generator 에 Astro + Starlight 버전이 함께 찍힌다
+
+3. Astro 자체 테마 — 1곳: Codex (learn.chatgpt.com)
+  파서:    codex-nav.ts(한 페이지) + codex-full.ts(탭 6개 순회)
+  원리:    사이트 전용 마크업 — h3 + ul > li > a + details.nav-disclosure. Starlight 를
+         안 쓴 Astro 라 표준 구조가 없다
+  재사용:  안 된다. 이 범주는 "사이트마다 전용 파서를 새로 짠다"는 뜻이다. 다만 시맨틱
+         HTML 을 읽는 패턴은 같아 codex-nav(109줄) 수준의 작은 비용이다
+  판정:    meta generator 가 Astro 인데 Starlight 태그가 없다
+
+llms.txt 유무는 프레임워크와 별개 축이다: Mintlify 는 플랫폼 기본이라 4곳 다 있고
+Codex 도 제공하며, opencode 만 Starlight 기능을 안 켜서 없다 (sitemap 대조로 대신한다).
+```
+
+새 사이트를 추가할 때의 절차 — 원본 HTML 을 curl 로 받아 (1) `self.__next_f.push` 조각에
+navigation JSON 이 있는가 (2) `ul.top-level` 같은 Starlight 구조인가 (3) 둘 다 아니면
+사이트 전용 마크업인가를 보고 위 표의 파서를 고른다. 브라우저 렌더링은 6곳 모두
+필요 없었다 — 접힌 메뉴까지 원본 HTML 에 다 들어 있었다.
+
+
 
 ```yaml
 항상:
