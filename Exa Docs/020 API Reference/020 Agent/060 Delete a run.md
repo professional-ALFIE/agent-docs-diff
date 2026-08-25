@@ -77,33 +77,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
-      x-codeSamples:
-        - lang: python
-          label: Delete a run
-          source: |-
-            from exa_py import Exa
-
-            exa = Exa(api_key="YOUR_EXA_API_KEY")
-            run_id = "agent_run_01j..."
-            deleted = exa.agent.runs.delete(
-                run_id,
-            )
-            print(deleted)
-        - lang: typescript
-          label: Delete a run
-          source: |-
-            import Exa from "exa-js";
-
-            const exa = new Exa();
-            const runId = "agent_run_01j...";
-            const deleted = await exa.agent.runs.delete(runId);
-
-            console.log(deleted);
-        - lang: bash
-          label: Delete a run
-          source: |-
-            curl -s -X DELETE "https://api.exa.ai/agent/runs/agent_run_01j..." \
-              -H "x-api-key: $EXA_API_KEY"
 components:
   schemas:
     AgentRunId:
