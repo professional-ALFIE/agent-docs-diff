@@ -99,3 +99,8 @@ coverage/
 .nyc_output/
 tmp/cache/
 docs-nav-probe/
+
+# ── 로컬 전용 문서 (절대경로·세션 uuid 포함 — 공개 리포에 커밋 금지, 2026-08-26) ──
+/CLAUDE.md
+/HANDOFF-*.md
+/spec-tracking-*.md
