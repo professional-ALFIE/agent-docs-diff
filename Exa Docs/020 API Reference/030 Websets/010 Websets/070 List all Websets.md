@@ -85,39 +85,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            // List websets with optional pagination
-            const websets = await exa.websets.list({
-              limit: 20, // Optional: max results per page
-            });
-
-            console.log(`Found ${websets.data.length} websets`);
-            websets.data.forEach((webset) => {
-              console.log(`- ${webset.id}: ${webset.status}`);
-            });
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            # List websets with optional pagination
-            websets_response = exa.websets.list(
-                limit=20  # Optional: max results per page
-            )
-
-            print(f"Found {len(websets_response.data)} websets")
-            for webset in websets_response.data:
-                print(f"- {webset.id}: {webset.status}")
 components:
   schemas:
     ListWebsetsResponse:
