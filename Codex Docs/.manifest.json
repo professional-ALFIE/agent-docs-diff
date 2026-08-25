@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T21:44:24.053Z",
+  "생성": "2026-08-25T01:52:17.961Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -241,8 +241,8 @@
       "경로": "020 Features/030 Capabilities/010 Browser.md",
       "href": "/codex/browser",
       "url": "https://learn.chatgpt.com/docs/browser.md",
-      "sha256": "f28e5f118ccd0ecb84380e4e10df46a94f88f6fdab3862f611cba04bbada652f",
-      "bytes": 11307,
+      "sha256": "b40840a522f5bab60f00f46943dead31a78c9fb27f7f3a5e0e7588eaefd8e05b",
+      "bytes": 11330,
       "contentType": "text/markdown"
     },
     {
@@ -489,16 +489,16 @@
       "경로": "030 Configuration/070 Windows/020 Windows sandbox.md",
       "href": "/codex/windows/windows-sandbox",
       "url": "https://learn.chatgpt.com/docs/windows/windows-sandbox.md",
-      "sha256": "996dd7b9bcc88267c7fea62dc93c9e0f1b7e110ef01bda0152fbc73dfcf43a12",
-      "bytes": 11121,
+      "sha256": "294f0c8de1d2201ba562ccb88367a21bce2f2472f65f4dc8486b7c0b2e3f3efc",
+      "bytes": 11206,
       "contentType": "text/markdown"
     },
     {
       "경로": "030 Configuration/070 Windows/030 WSL.md",
       "href": "/codex/windows/wsl",
       "url": "https://learn.chatgpt.com/docs/windows/wsl.md",
-      "sha256": "fc3765fe84bb00f43a9ab7528b07dd83da008d1fc8e01c219a83c557e731a4dc",
-      "bytes": 3372,
+      "sha256": "116d5d9f02c5435fe8a6da1889e758833ef17b952ff44b541e0d076e3d666ac6",
+      "bytes": 3392,
       "contentType": "text/markdown"
     },
     {
@@ -921,8 +921,8 @@
       "경로": "060 Administration/010 Overview.md",
       "href": "/codex/administration",
       "url": "https://learn.chatgpt.com/docs/administration.md",
-      "sha256": "b985fc4895a24f2a747809764487487037dd840dc3e3da2590b7c81d105f8528",
-      "bytes": 8558,
+      "sha256": "18cf62d80287b65db57850ddd9617d85490e23848378a86e6dbaff5cb8c58063",
+      "bytes": 8856,
       "contentType": "text/markdown"
     },
     {
@@ -937,12 +937,20 @@
       "경로": "060 Administration/020 Getting started/020 ChatGPT Work Overview.md",
       "href": "/codex/enterprise/chatgpt-work-overview",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
-      "sha256": "44ce5b0a91b2dd1aa9f054e4066118f6d6301554273c72e62613def7dc43985f",
-      "bytes": 11095,
+      "sha256": "3279aff5d513cee01943807d4f17ce5980f02e6c25149dc6bd632b004255484e",
+      "bytes": 11584,
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/020 Getting started/030 ChatGPT Work admin FAQ.md",
+      "경로": "060 Administration/020 Getting started/030 ChatGPT Work cloud security.md",
+      "href": "/codex/enterprise/chatgpt-work-cloud-security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security.md",
+      "sha256": "5e5e71fa9b9bc6f941ce7018e39447f7daeb5cf4bcbe23171a972e83889a9d3c",
+      "bytes": 17716,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060 Administration/020 Getting started/040 ChatGPT Work admin FAQ.md",
       "href": "/codex/enterprise/work-admin-faq",
       "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq.md",
       "sha256": "0ddd34764efbd4f3f03494a6cebdc703817cd2b8161fe233aa139e75d98e4c8e",
@@ -1133,7 +1141,7 @@
     }
   ],
   "llms": {
-    "치환": 141,
+    "치환": 142,
     "미노출": 5,
     "외부": 5,
     "메뉴에만": 2
