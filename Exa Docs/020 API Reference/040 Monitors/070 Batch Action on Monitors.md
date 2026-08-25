@@ -65,6 +65,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BatchMonitorsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '500':
+          $ref: '#/components/responses/InternalServerErrorResponse'
 components:
   schemas:
     BatchMonitorsRequest:
@@ -155,6 +161,73 @@ components:
         - dry_run
         - has_more
       additionalProperties: false
+    ErrorResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        error:
+          type: string
+          description: Human-readable message describing the error.
+          example: Invalid API key
+        tag:
+          type: string
+          description: >-
+            Machine-readable error tag identifying the failure. The set of tags
+            is open-ended: new tags may be added at any time, so treat
+            unrecognized tags as a generic error of the response's HTTP status.
+            Known tags are listed as examples.
+          examples:
+            - DEFAULT_ERROR
+            - INTERNAL_ERROR
+            - INVALID_API_KEY
+            - INVALID_REQUEST
+            - INVALID_REQUEST_BODY
+            - INVALID_REQUEST_QUERY
+            - INVALID_JSON_SCHEMA
+            - INVALID_NUM_RESULTS
+            - NUM_RESULTS_EXCEEDED
+            - NO_MORE_CREDITS
+            - API_KEY_BUDGET_EXCEEDED
+            - TEAM_BUDGET_EXCEEDED
+            - NO_CONTENT_FOUND
+            - PROHIBITED_CONTENT
+            - INSUFFICIENT_SCOPE
+            - UNABLE_TO_GENERATE_RESPONSE
+            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
+            - SUBPAGES_LIMIT_EXCEEDED
+            - FEATURE_DISABLED
+            - INVALID_URLS
+            - FETCH_DOCUMENT_ERROR
+            - TEAM_BLOCKED
+            - NOT_FOUND
+      required:
+        - requestId
+        - error
+        - tag
+      additionalProperties: false
+      description: Standard error envelope returned by the Exa API for failed requests.
+  responses:
+    BadRequestResponse:
+      description: The request body or query parameters failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    UnauthorizedResponse:
+      description: The API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerErrorResponse:
+      description: An unexpected error occurred while processing the request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     apiKey:
       type: apiKey
