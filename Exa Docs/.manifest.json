@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-25T07:08:10.205Z",
+  "생성": "2026-08-25T13:11:19.580Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -777,24 +777,24 @@
       "경로": "020 API Reference/010 Search/010 Search.md",
       "href": "/reference/search",
       "url": "https://exa.ai/docs/reference/search.md",
-      "sha256": "ae22920266563e54d7870ce2c4140d917554144bd983e81494a189d71fb3cb81",
-      "bytes": 84776,
+      "sha256": "b4a00a82ecc6be3a5492e529633672f48aec887f518bfd4e366ce6cc12b3dd4e",
+      "bytes": 93748,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/010 Search/020 Contents.md",
       "href": "/reference/get-contents",
       "url": "https://exa.ai/docs/reference/get-contents.md",
-      "sha256": "e4cf41f114b6d3bf0be924c491e0209a6d1f56add0230ff48c345527a7d66273",
-      "bytes": 62058,
+      "sha256": "ea664fe9f55a53d06527e42e9430286e1a9a6879c635ec2fcdde6fc3f3b618fc",
+      "bytes": 70291,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/010 Search/030 Answer.md",
       "href": "/reference/answer",
       "url": "https://exa.ai/docs/reference/answer.md",
-      "sha256": "fe6bd2c74900d56f04fc7b2b43a8fb0ce20cab2431ead76bb01e919db766f9a8",
-      "bytes": 16211,
+      "sha256": "4c1da0852b4b36228c5f089f34bba9dc1175ebc62750d81c298723cd50146892",
+      "bytes": 20449,
       "contentType": "text/markdown"
     },
     {
@@ -1185,72 +1185,72 @@
       "경로": "020 API Reference/040 Monitors/010 Create a Monitor.md",
       "href": "/reference/monitors/create-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/create-a-monitor.md",
-      "sha256": "7a7bc70b7f4148e94afcf2d39aedd5a48144d04b4d30f3ee4ba39eb69ca45e97",
-      "bytes": 39865,
+      "sha256": "9e029b22d30dacdfc3ee2fbb8ce7ed042c266ccef281e83278f1fe584d65d9d6",
+      "bytes": 43025,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/020 List Monitors.md",
       "href": "/reference/monitors/list-monitors",
       "url": "https://exa.ai/docs/reference/monitors/list-monitors.md",
-      "sha256": "51b08abb20ad17682bcd0d062d58dfcf30de8f400885810fe5ad28c8e627849c",
-      "bytes": 23215,
+      "sha256": "172c969400c52dd1ee2f2d71d9ba963077897ded4bb5c69f5c1bf77bfc785e54",
+      "bytes": 26068,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/030 Get a Monitor.md",
       "href": "/reference/monitors/get-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/get-a-monitor.md",
-      "sha256": "1fcf18125da4e9f173f17d1fc02cdb8ba365cd1b268e8c914fc7408083075663",
-      "bytes": 21302,
+      "sha256": "7a3df1db32a8e98bcb9ec6e6619ad25c262852e654fd1d0d202f9c65fa397ea3",
+      "bytes": 24422,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/040 Update a Monitor.md",
       "href": "/reference/monitors/update-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/update-a-monitor.md",
-      "sha256": "407c443d363e9f2a3832eee834083ce8261b5421335dc0d290885cbfd85f0069",
-      "bytes": 39671,
+      "sha256": "483fbcc4d5f303e07f2dd9c47d395d6b86eec5e1ba4099eacf2f1c8cfb746530",
+      "bytes": 43138,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/050 Delete a Monitor.md",
       "href": "/reference/monitors/delete-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/delete-a-monitor.md",
-      "sha256": "b12256c358b22080fbe45a8cb55de9bc4a5fc77c58bf83db05a6efae6a805bda",
-      "bytes": 21333,
+      "sha256": "2b572e3ec5cf5e78902a7efd1c68b35d851838137cbe3599c2ed76980b7e7c2d",
+      "bytes": 24453,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/060 Trigger a Monitor.md",
       "href": "/reference/monitors/trigger-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/trigger-a-monitor.md",
-      "sha256": "bf071f2e56de5564e91a405657803c62453f80776c7a4f506630b943f75fd739",
-      "bytes": 1941,
+      "sha256": "ca47d66b0c489ac8274024b6fe469534deff7bc69a381be51bb0383323414f17",
+      "bytes": 4754,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/070 Batch Action on Monitors.md",
       "href": "/reference/monitors/batch-monitors",
       "url": "https://exa.ai/docs/reference/monitors/batch-monitors.md",
-      "sha256": "5afd4187b3ad9671b2852f7bd35e55074c540b5b92f52ee419c19bfa34efd8c7",
-      "bytes": 5029,
+      "sha256": "11a3f912eae2f0552d400ab6410cc762309c338d6e14c950009d9d9dd56d2378",
+      "bytes": 7575,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/080 Runs/010 List Runs.md",
       "href": "/reference/monitors/runs/list-runs",
       "url": "https://exa.ai/docs/reference/monitors/runs/list-runs.md",
-      "sha256": "8d2adb57850b6572ce7518bb89ddc4aebd12f5f274d02161a5bb64b1b549d7c2",
-      "bytes": 7858,
+      "sha256": "54a9ce38b9323f6bc98f37292800c58dca89b997ff1595fba89734dd331530fd",
+      "bytes": 10671,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/080 Runs/020 Get a Run.md",
       "href": "/reference/monitors/runs/get-a-run",
       "url": "https://exa.ai/docs/reference/monitors/runs/get-a-run.md",
-      "sha256": "6d836dbe326c690711de11b3f850cd98d4ec924fbcc53e15c2b8859064852282",
-      "bytes": 7069,
+      "sha256": "830dfd02f3f1166aa6e88900be3b05ec8a98aee8b60177c2279b71acfd026b57",
+      "bytes": 9882,
       "contentType": "text/markdown"
     },
     {
