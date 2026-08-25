@@ -116,35 +116,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const events = await exa.websets.events.list({
-              limit: 20,
-            });
-
-            console.log(`Found ${events.data.length} events`);
-            events.data.forEach((event) => {
-              console.log(`- ${event.id}: ${event.type} at ${event.createdAt}`);
-            });
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            events = exa.websets.events.list(limit=20)
-
-            print(f"Found {len(events.data)} events")
-            for event in events.data:
-                print(f"- {event.id}: {event.type}")
 components:
   schemas:
     ListEventsResponse:
