@@ -72,37 +72,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const webhook = await exa.websets.webhooks.update("webhook_id", {
-              url: "https://api.yourapp.com/webhooks/exa-updated",
-              events: ["webset.completed"],
-            });
-
-            console.log(`Updated webhook: ${webhook.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            webhook = exa.websets.webhooks.update(
-                "webhook_id",
-                params={
-                    "url": "https://api.yourapp.com/webhooks/exa-updated",
-                    "events": ["webset.completed"],
-                },
-            )
-
-            print(f"Updated webhook: {webhook.id}")
 components:
   schemas:
     UpdateWebhookParameters:
