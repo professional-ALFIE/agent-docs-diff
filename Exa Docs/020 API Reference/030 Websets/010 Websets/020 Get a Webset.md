@@ -71,28 +71,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const webset = await exa.websets.get("webset_id");
-
-            console.log(`Webset: ${webset.id} - ${webset.status}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            webset = exa.websets.get("webset_id")
-
-            print(f"Webset: {webset.id} - {webset.status}")
 components:
   schemas:
     GetWebsetResponse:
