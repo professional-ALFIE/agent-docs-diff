@@ -77,33 +77,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
-      x-codeSamples:
-        - lang: python
-          label: Get a run
-          source: |-
-            from exa_py import Exa
-
-            exa = Exa(api_key="YOUR_EXA_API_KEY")
-            run_id = "agent_run_01j..."
-            run = exa.agent.runs.get(
-                run_id,
-            )
-            print(run)
-        - lang: typescript
-          label: Get a run
-          source: |-
-            import Exa from "exa-js";
-
-            const exa = new Exa();
-            const runId = "agent_run_01j...";
-            const run = await exa.agent.runs.get(runId);
-
-            console.log(run);
-        - lang: bash
-          label: Get a run
-          source: |-
-            curl -s "https://api.exa.ai/agent/runs/agent_run_01j..." \
-              -H "x-api-key: $EXA_API_KEY"
 components:
   schemas:
     AgentRunId:
