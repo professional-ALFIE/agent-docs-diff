@@ -61,37 +61,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: >-
-            // npm install exa-js
-
-            import Exa from "exa-js";
-
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-
-            const importJob = await exa.websets.imports.update("webset_id",
-            "import_id", {
-              name: "Updated Import Name",
-            });
-
-
-            console.log(`Updated import: ${importJob.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            import_job = exa.websets.imports.update(
-                "webset_id", "import_id", params={"name": "Updated Import Name"}
-            )
-
-            print(f"Updated import: {import_job.id}")
 components:
   schemas:
     UpdateImport:
