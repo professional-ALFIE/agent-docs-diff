@@ -117,44 +117,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
-      x-codeSamples:
-        - lang: python
-          label: List run events
-          source: |-
-            from exa_py import Exa
-
-            exa = Exa(api_key="YOUR_EXA_API_KEY")
-            run_id = "agent_run_01j..."
-            events = exa.agent.runs.events.list(
-                run_id,
-                limit=20,
-            )
-            print(events)
-        - lang: typescript
-          label: List run events
-          source: |-
-            import Exa from "exa-js";
-
-            const exa = new Exa();
-            const runId = "agent_run_01j...";
-            const events = await exa.agent.runs.events.list(runId, {
-              limit: 20
-            });
-
-            console.log(events);
-        - lang: bash
-          label: List run events
-          source: >-
-            curl -s
-            "https://api.exa.ai/agent/runs/agent_run_01j.../events?limit=20" \
-              -H "x-api-key: $EXA_API_KEY"
-        - lang: bash
-          label: Replay run events
-          source: |-
-            curl -N "https://api.exa.ai/agent/runs/agent_run_01j.../events" \
-              -H "Accept: text/event-stream" \
-              -H "Last-Event-ID: 1" \
-              -H "x-api-key: $EXA_API_KEY"
 components:
   schemas:
     AgentRunId:
