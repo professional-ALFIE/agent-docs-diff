@@ -55,28 +55,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            await exa.websets.monitors.delete("monitor_id");
-
-            console.log("Monitor deleted successfully");
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            exa.websets.monitors.delete("monitor_id")
-
-            print("Monitor deleted successfully")
 components:
   schemas:
     Monitor:
