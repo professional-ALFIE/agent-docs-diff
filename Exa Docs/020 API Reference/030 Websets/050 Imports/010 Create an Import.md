@@ -77,36 +77,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const importJob = await exa.websets.imports.create("webset_id", {
-              source: {
-                type: "csv",
-                url: "https://example.com/companies.csv",
-              },
-            });
-
-            console.log(`Created import: ${importJob.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            import_job = exa.websets.imports.create(
-                "webset_id",
-                params={"source": {"type": "csv", "url": "https://example.com/companies.csv"}},
-            )
-
-            print(f"Created import: {import_job.id}")
 components:
   schemas:
     CreateImportParameters:
