@@ -82,35 +82,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const items = await exa.websets.items.list("webset_id", {
-              limit: 20,
-            });
-
-            console.log(`Found ${items.data.length} items`);
-            items.data.forEach((item) => {
-              console.log(`- ${item.id}: ${item.properties.name}`);
-            });
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            items = exa.websets.items.list("webset_id", limit=20)
-
-            print(f"Found {len(items.data)} items")
-            for item in items.data:
-                print(f"- {item.id}: {item.properties.name}")
 components:
   schemas:
     ListWebsetItemResponse:
