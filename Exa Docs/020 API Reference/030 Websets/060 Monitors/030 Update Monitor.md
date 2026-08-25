@@ -61,41 +61,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const monitor = await exa.websets.monitors.update("monitor_id", {
-              cadence: {
-                cron: "0 14 * * *", // Every day at 2 PM
-                timezone: "America/New_York",
-              },
-            });
-
-            console.log(`Updated monitor: ${monitor.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            monitor = exa.websets.monitors.update(
-                "monitor_id",
-                params={
-                    "cadence": {
-                        "cron": "0 14 * * *",  # Every day at 2 PM
-                        "timezone": "America/New_York",
-                    }
-                },
-            )
-
-            print(f"Updated monitor: {monitor.id}")
 components:
   schemas:
     UpdateMonitor:
