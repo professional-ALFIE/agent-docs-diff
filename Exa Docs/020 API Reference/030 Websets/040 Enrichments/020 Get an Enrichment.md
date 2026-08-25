@@ -58,38 +58,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: >-
-            // npm install exa-js
-
-            import Exa from "exa-js";
-
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-
-            const enrichment = await exa.websets.enrichments.get("webset_id",
-            "enrichment_id");
-
-
-            console.log(`Enrichment: ${enrichment.id} - ${enrichment.status}`);
-        - lang: python
-          label: Python
-          source: >-
-            # pip install exa-py
-
-            from exa_py import Exa
-
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-
-            enrichment = exa.websets.enrichments.get("webset_id",
-            "enrichment_id")
-
-
-            print(f"Enrichment: {enrichment.id} - {enrichment.status}")
 components:
   schemas:
     WebsetEnrichment:
