@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T18:59:22.679Z",
+  "생성": "2026-08-25T03:59:51.345Z",
   "제품폴더": "opencode Docs (en)",
   "진입": "https://opencode.ai/docs/en",
   "최상위수": 10,
@@ -121,8 +121,8 @@
       "경로": "080 Usage/080 GitHub.md",
       "href": "/docs/github/",
       "url": "https://opencode.ai/docs/github.md",
-      "sha256": "039a4fad7695023066e7adeabe2b8af70c3c1281a30640568f36cdbd28d2b9f7",
-      "bytes": 10774,
+      "sha256": "1fb228f01f4f6d7e02e09435d7dc542564f28ca4b55904abca2060d61dd7a74f",
+      "bytes": 11252,
       "contentType": "text/plain"
     },
     {
