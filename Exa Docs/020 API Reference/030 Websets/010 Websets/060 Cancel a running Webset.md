@@ -62,28 +62,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const webset = await exa.websets.cancel("webset_id");
-
-            console.log(`Cancelled webset: ${webset.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            webset = exa.websets.cancel("webset_id")
-
-            print(f"Cancelled webset: {webset.id}")
 components:
   schemas:
     Webset:
