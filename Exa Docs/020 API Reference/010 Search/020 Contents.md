@@ -68,8 +68,29 @@ paths:
                   total: 0.003
               schema:
                 $ref: '#/components/schemas/ContentsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '402':
-          description: Payment Required
+          description: >-
+            Payment required. For API-key requests this is the standard error
+            envelope (out of credits or a budget exceeded). On x402-priced
+            endpoints, requests without an API key instead receive an x402
+            payment challenge with tag `X402_PAYMENT_REQUIRED`: the envelope
+            extended with x402 payment metadata (`x402Version`, `resource`,
+            `accepts`, and optional `extensions`) describing how to pay for the
+            request.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+                  - $ref: '#/components/schemas/X402PaymentChallenge'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+        '500':
+          $ref: '#/components/responses/InternalServerErrorResponse'
 components:
   schemas:
     ContentsRequest:
@@ -181,7 +202,158 @@ components:
             additionalProperties: false
         costDollars:
           $ref: '#/components/schemas/CostDollarsOutput'
+        searchTime:
+          type: number
+          description: >-
+            Server-side processing time in milliseconds, measured at the
+            gateway. Covers retrieval but may exclude later phases such as
+            structured output synthesis, so it can be lower than end-to-end
+            request latency.
+          example: 312.4
       additionalProperties: false
+    ErrorResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        error:
+          type: string
+          description: Human-readable message describing the error.
+          example: Invalid API key
+        tag:
+          type: string
+          description: >-
+            Machine-readable error tag identifying the failure. The set of tags
+            is open-ended: new tags may be added at any time, so treat
+            unrecognized tags as a generic error of the response's HTTP status.
+            Known tags are listed as examples.
+          examples:
+            - DEFAULT_ERROR
+            - INTERNAL_ERROR
+            - INVALID_API_KEY
+            - INVALID_REQUEST
+            - INVALID_REQUEST_BODY
+            - INVALID_REQUEST_QUERY
+            - INVALID_JSON_SCHEMA
+            - INVALID_NUM_RESULTS
+            - NUM_RESULTS_EXCEEDED
+            - NO_MORE_CREDITS
+            - API_KEY_BUDGET_EXCEEDED
+            - TEAM_BUDGET_EXCEEDED
+            - NO_CONTENT_FOUND
+            - PROHIBITED_CONTENT
+            - INSUFFICIENT_SCOPE
+            - UNABLE_TO_GENERATE_RESPONSE
+            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
+            - SUBPAGES_LIMIT_EXCEEDED
+            - FEATURE_DISABLED
+            - INVALID_URLS
+            - FETCH_DOCUMENT_ERROR
+            - TEAM_BLOCKED
+            - NOT_FOUND
+      required:
+        - requestId
+        - error
+        - tag
+      additionalProperties: false
+      description: Standard error envelope returned by the Exa API for failed requests.
+    X402PaymentChallenge:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        error:
+          type: string
+          description: Human-readable message describing the error.
+          example: Payment required to access this resource
+        tag:
+          type: string
+          description: >-
+            Machine-readable error tag identifying the failure. The set of tags
+            is open-ended: new tags may be added at any time, so treat
+            unrecognized tags as a generic error of the response's HTTP status.
+            Known tags are listed as examples.
+          examples:
+            - DEFAULT_ERROR
+            - INTERNAL_ERROR
+            - INVALID_API_KEY
+            - INVALID_REQUEST
+            - INVALID_REQUEST_BODY
+            - INVALID_REQUEST_QUERY
+            - INVALID_JSON_SCHEMA
+            - INVALID_NUM_RESULTS
+            - NUM_RESULTS_EXCEEDED
+            - NO_MORE_CREDITS
+            - API_KEY_BUDGET_EXCEEDED
+            - TEAM_BUDGET_EXCEEDED
+            - NO_CONTENT_FOUND
+            - PROHIBITED_CONTENT
+            - INSUFFICIENT_SCOPE
+            - UNABLE_TO_GENERATE_RESPONSE
+            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
+            - SUBPAGES_LIMIT_EXCEEDED
+            - FEATURE_DISABLED
+            - INVALID_URLS
+            - FETCH_DOCUMENT_ERROR
+            - TEAM_BLOCKED
+            - NOT_FOUND
+        x402Version:
+          type: number
+          description: Version of the x402 protocol used to build this challenge.
+          example: 2
+        resource:
+          type: object
+          properties:
+            url:
+              type: string
+              description: URL of the priced resource being requested.
+            description:
+              type: string
+              description: Human-readable resource description.
+            mimeType:
+              type: string
+              description: MIME type of the priced resource.
+          required:
+            - url
+            - description
+            - mimeType
+          additionalProperties: false
+          description: The priced resource this challenge applies to.
+        accepts:
+          type: array
+          items:
+            type: object
+            propertyNames:
+              type: string
+            additionalProperties: {}
+            description: >-
+              An accepted x402 payment requirement (scheme, network, amount,
+              payTo, asset, maxTimeoutSeconds, and scheme-specific `extra`
+              fields).
+          description: Payment requirements the server accepts, one per supported rail.
+        extensions:
+          description: >-
+            Optional x402 protocol extensions (e.g. Bazaar or AgentKit discovery
+            metadata).
+          type: object
+          propertyNames:
+            type: string
+          additionalProperties: {}
+      required:
+        - requestId
+        - error
+        - tag
+        - x402Version
+        - resource
+        - accepts
+      additionalProperties: false
+      description: >-
+        x402 payment challenge: the standard error envelope extended with x402
+        payment metadata.
     ContentsOptions:
       type: object
       properties:
@@ -1428,6 +1600,38 @@ components:
               example: 0.007
               format: float
               type: number
+            keyword:
+              description: Cost of keyword search operations.
+              example: 0.0025
+              format: float
+              type: number
+          additionalProperties: false
+        summary:
+          description: Cost of synthesized summary generation for search requests.
+          example: 0.005
+          format: float
+          type: number
+        contents:
+          description: >-
+            Estimated cost breakdown for standalone content retrieval (text,
+            highlights, and summaries billed outside the bundled search price).
+          type: object
+          properties:
+            text:
+              description: Cost of text extraction.
+              example: 0.001
+              format: float
+              type: number
+            highlights:
+              description: Cost of highlight extraction.
+              example: 0.001
+              format: float
+              type: number
+            summary:
+              description: Cost of per-result summary generation.
+              example: 0.001
+              format: float
+              type: number
           additionalProperties: false
       additionalProperties: false
       description: >-
@@ -1449,6 +1653,31 @@ components:
             type: string
           additionalProperties:
             $ref: '#/components/schemas/JsonValue'
+  responses:
+    BadRequestResponse:
+      description: The request body or query parameters failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    UnauthorizedResponse:
+      description: The API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    TooManyRequestsResponse:
+      description: A rate limit was exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerErrorResponse:
+      description: An unexpected error occurred while processing the request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     apiKey:
       type: apiKey
