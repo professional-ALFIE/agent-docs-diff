@@ -69,28 +69,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const event = await exa.websets.events.get("event_id");
-
-            console.log(`Event: ${event.id} - ${event.type}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            event = exa.websets.events.get("event_id")
-
-            print(f"Event: {event.id} - {event.type}")
 components:
   schemas:
     Event:
