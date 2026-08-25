@@ -61,33 +61,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: >-
-            // npm install exa-js
-
-            import Exa from "exa-js";
-
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-
-            const search = await exa.websets.searches.get("webset_id",
-            "search_id");
-
-
-            console.log(`Search: ${search.id} - ${search.status}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            search = exa.websets.searches.get("webset_id", "search_id")
-
-            print(f"Search: {search.id} - {search.status}")
 components:
   schemas:
     WebsetSearch:
