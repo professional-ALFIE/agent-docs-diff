@@ -17,6 +17,10 @@ data handling, and how tasks are executed securely using ChatGPT Work on the
 web. Availability and administrative controls depend on your plan and workspace
 configuration.
 
+For a focused review of hosted execution, connected-account permissions,
+browser and network settings, retention, and audit visibility, see
+[ChatGPT Work cloud security](https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security).
+
 ## Execution isolation, files, and device access
 
 The files and tools available to ChatGPT Work depend on where Work is running,
@@ -95,11 +99,12 @@ It operates remotely and uses a browser session separate from the user's local
 browser. It can't access local tabs, extensions, browsing history, saved
 passwords, or authenticated local sessions.
 
-The cloud browser supports public, signed-out websites. It can navigate pages,
-enter information into supported public forms, and combine relevant information
-from an approved app with a website task. It can't accept credentials, use a
-password manager or saved form entries, sign in to a website, or complete
-payments. If a task requires one of those unsupported steps, it stops. Browser
+The cloud browser can navigate public websites, enter information into supported
+public forms, and combine relevant information from an approved app with a
+website task. Depending on workspace configuration and available browser
+capabilities, supported workflows can request a separate, user-authorized
+sign-in or passkey action. This doesn't grant access to the user's existing
+local browser sessions, saved passwords, or password manager. Browser
 availability depends on your plan, region, rollout, and workspace permissions.
 For Enterprise workspaces, an administrator must enable cloud browser access in
 addition to Work access.
@@ -135,8 +140,10 @@ dashboard.
 For Enterprise and Edu workspaces, plugins and their underlying apps are off by
 default. For Business workspaces, plugins and apps are on by default. Making a
 plugin available doesn't automatically enable its required app or grant access
-to a user's account. The user must enable the plugin and authenticate before
-ChatGPT Work can access it.
+to an account. The required connection must be authorized for an individual,
+shared, or agent-owned account before ChatGPT Work can access it. A shared or
+agent-owned connection uses the connected account's source-system permissions,
+which can differ from the requesting user's permissions.
 
 Where supported, administrators can restrict an app to read-only actions or an
 approved set of actions. App permission settings can also determine whether
