@@ -57,36 +57,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const webhook = await exa.websets.webhooks.create({
-              url: "https://api.yourapp.com/webhooks/exa",
-              events: ["webset.completed", "enrichment.completed"],
-            });
-
-            console.log(`Created webhook: ${webhook.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            webhook = exa.websets.webhooks.create(
-                params={
-                    "url": "https://api.yourapp.com/webhooks/exa",
-                    "events": ["webset.completed", "enrichment.completed"],
-                }
-            )
-
-            print(f"Created webhook: {webhook.id}")
 components:
   schemas:
     CreateWebhookParameters:
