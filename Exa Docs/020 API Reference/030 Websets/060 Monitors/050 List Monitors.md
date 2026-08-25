@@ -71,35 +71,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const monitors = await exa.websets.monitors.list({
-              webset_id: "webset_id",
-            });
-
-            console.log(`Found ${monitors.data.length} monitors`);
-            monitors.data.forEach((monitor) => {
-              console.log(`- ${monitor.id}: ${monitor.status}`);
-            });
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            monitors = exa.websets.monitors.list(webset_id="webset_id")
-
-            print(f"Found {len(monitors.data)} monitors")
-            for monitor in monitors.data:
-                print(f"- {monitor.id}: {monitor.status}")
 components:
   schemas:
     ListMonitorsResponse:
