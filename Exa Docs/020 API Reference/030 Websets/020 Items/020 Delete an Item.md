@@ -66,28 +66,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            await exa.websets.items.delete("webset_id", "item_id");
-
-            console.log("Item deleted successfully");
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            exa.websets.items.delete("webset_id", "item_id")
-
-            print("Item deleted successfully")
 components:
   schemas:
     WebsetItem:
