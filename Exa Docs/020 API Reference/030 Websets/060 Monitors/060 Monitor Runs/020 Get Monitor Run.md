@@ -60,33 +60,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: >-
-            // npm install exa-js
-
-            import Exa from "exa-js";
-
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-
-            const run = await exa.websets.monitors.runs.get("monitor_id",
-            "run_id");
-
-
-            console.log(`Monitor run: ${run.id} - ${run.status}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            run = exa.websets.monitors.runs.get("monitor_id", "run_id")
-
-            print(f"Monitor run: {run.id} - {run.status}")
 components:
   schemas:
     MonitorRun:
