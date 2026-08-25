@@ -61,38 +61,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: >-
-            // npm install exa-js
-
-            import Exa from "exa-js";
-
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-
-            const enrichment = await exa.websets.enrichments.create("webset_id",
-            {
-              description: "Company revenue information",
-              format: "text",
-            });
-
-
-            console.log(`Created enrichment: ${enrichment.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            enrichment = exa.websets.enrichments.create(
-                "webset_id", params={"description": "Company revenue information", "format": "text"}
-            )
-
-            print(f"Created enrichment: {enrichment.id}")
 components:
   schemas:
     CreateEnrichmentParameters:
