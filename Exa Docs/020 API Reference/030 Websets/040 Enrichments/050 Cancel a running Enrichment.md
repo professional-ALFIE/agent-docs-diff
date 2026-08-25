@@ -63,38 +63,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: >-
-            // npm install exa-js
-
-            import Exa from "exa-js";
-
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-
-            const enrichment = await exa.websets.enrichments.cancel("webset_id",
-            "enrichment_id");
-
-
-            console.log(`Cancelled enrichment: ${enrichment.id}`);
-        - lang: python
-          label: Python
-          source: >-
-            # pip install exa-py
-
-            from exa_py import Exa
-
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-
-            enrichment = exa.websets.enrichments.cancel("webset_id",
-            "enrichment_id")
-
-
-            print(f"Cancelled enrichment: {enrichment.id}")
 components:
   schemas:
     WebsetEnrichment:
