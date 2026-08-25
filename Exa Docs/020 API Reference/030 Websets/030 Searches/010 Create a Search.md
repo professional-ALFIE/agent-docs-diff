@@ -68,33 +68,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const search = await exa.websets.searches.create("webset_id", {
-              query: "additional companies to add",
-              count: 5,
-            });
-
-            console.log(`Created search: ${search.id}`);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            search = exa.websets.searches.create(
-                "webset_id", params={"query": "additional companies to add", "count": 5}
-            )
-
-            print(f"Created search: {search.id}")
 components:
   schemas:
     CreateWebsetSearchParameters:
