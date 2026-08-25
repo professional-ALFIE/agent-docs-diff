@@ -65,42 +65,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WebsetsTeamInfo'
-      x-codeSamples:
-        - lang: bash
-          label: Get team info
-          source: |-
-            curl -X GET 'https://api.exa.ai/websets/v0/teams/me' \
-              -H 'x-api-key: YOUR-EXA-API-KEY'
-        - lang: python
-          label: Get team info
-          source: |-
-            import requests
-
-            headers = {
-                'x-api-key': 'YOUR-EXA-API-KEY'
-            }
-
-            response = requests.get(
-                'https://api.exa.ai/websets/v0/teams/me',
-                headers=headers
-            )
-
-            print(response.json())
-        - lang: javascript
-          label: Get team info
-          source: >-
-            const response = await
-            fetch('https://api.exa.ai/websets/v0/teams/me', {
-              method: 'GET',
-              headers: {
-                'x-api-key': 'YOUR-EXA-API-KEY'
-              }
-            });
-
-
-            const result = await response.json();
-
-            console.log(result);
 components:
   schemas:
     WebsetsTeamInfo:
