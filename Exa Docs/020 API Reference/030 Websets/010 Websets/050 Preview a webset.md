@@ -81,38 +81,6 @@ paths:
       security:
         - apiKey: []
         - bearer: []
-      x-codeSamples:
-        - lang: javascript
-          label: JavaScript
-          source: |-
-            // npm install exa-js
-            import Exa from "exa-js";
-            const exa = new Exa("YOUR_EXA_API_KEY");
-
-            const preview = await exa.websets.preview({
-              search: {
-                query:
-                  "Marketing agencies based in the US, that focus on consumer products. Get brands worked with and city",
-              },
-            });
-
-            console.log("Search criteria:", preview.search.criteria);
-        - lang: python
-          label: Python
-          source: |-
-            # pip install exa-py
-            from exa_py import Exa
-
-            exa = Exa("YOUR_EXA_API_KEY")
-
-            preview = exa.websets.preview(
-                params={
-                    "query": "Marketing agencies based in the US, that focus on consumer products. Get brands worked with and city"
-                }
-            )
-
-            print("Search criteria:", preview.search.criteria)
-            print("Available enrichments:", len(preview.enrichments))
 components:
   schemas:
     PreviewWebsetParameters:
