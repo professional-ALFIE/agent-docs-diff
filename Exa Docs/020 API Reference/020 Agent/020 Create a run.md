@@ -250,47 +250,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
-      x-codeSamples:
-        - lang: python
-          label: Create a run
-          source: |-
-            from exa_py import Exa
-
-            exa = Exa(api_key="YOUR_EXA_API_KEY")
-            run = exa.agent.runs.create(
-                query="What are the most important AI infrastructure funding rounds announced this week?",
-            )
-            print(run)
-        - lang: typescript
-          label: Create a run
-          source: |-
-            import Exa from "exa-js";
-
-            const exa = new Exa();
-            const run = await exa.agent.runs.create({
-              query: "What are the most important AI infrastructure funding rounds announced this week?"
-            });
-
-            console.log(run);
-        - lang: bash
-          label: Create a run
-          source: |-
-            curl -s -X POST "https://api.exa.ai/agent/runs" \
-              -H "Content-Type: application/json" \
-              -H "x-api-key: $EXA_API_KEY" \
-              -d '{
-                "query": "What are the most important AI infrastructure funding rounds announced this week?"
-              }'
-        - lang: bash
-          label: Stream a run
-          source: |-
-            curl -N -X POST "https://api.exa.ai/agent/runs" \
-              -H "Content-Type: application/json" \
-              -H "Accept: text/event-stream" \
-              -H "x-api-key: $EXA_API_KEY" \
-              -d '{
-                "query": "Find five recently launched developer tools for evaluating AI agents."
-            }'
 components:
   parameters:
     AcceptHeader:
