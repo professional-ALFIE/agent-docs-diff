@@ -73,33 +73,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
-      x-codeSamples:
-        - lang: python
-          label: List runs
-          source: |-
-            from exa_py import Exa
-
-            exa = Exa(api_key="YOUR_EXA_API_KEY")
-            runs = exa.agent.runs.list(
-                limit=10,
-            )
-            print(runs)
-        - lang: typescript
-          label: List runs
-          source: |-
-            import Exa from "exa-js";
-
-            const exa = new Exa();
-            const runs = await exa.agent.runs.list({
-              limit: 10
-            });
-
-            console.log(runs);
-        - lang: bash
-          label: List runs
-          source: |-
-            curl -s "https://api.exa.ai/agent/runs?limit=10" \
-              -H "x-api-key: $EXA_API_KEY"
 components:
   schemas:
     AgentRunId:
