@@ -101,11 +101,9 @@ passwords, or authenticated local sessions.
 
 The cloud browser can navigate public websites, enter information into supported
 public forms, and combine relevant information from an approved app with a
-website task. Depending on workspace configuration and available browser
-capabilities, supported workflows can request a separate, user-authorized
-sign-in or passkey action. This doesn't grant access to the user's existing
-local browser sessions, saved passwords, or password manager. Browser
-availability depends on your plan, region, rollout, and workspace permissions.
+website task. Website sign-in through the cloud browser isn't available in
+Enterprise or Edu workspaces. Browser availability depends on your plan,
+region, rollout, and workspace permissions.
 For Enterprise workspaces, an administrator must enable cloud browser access in
 addition to Work access.
 
@@ -176,21 +174,21 @@ and the [ChatGPT Work Admin FAQ](https://learn.chatgpt.com/docs/enterprise/work-
 
 ### Retention depends on the data type
 
-- **Work conversations**—Follow the applicable ChatGPT workspace conversation
+- **Work conversations:** Follow the applicable ChatGPT workspace conversation
   retention and deletion settings.
-- **Files saved to Library**—Follow the applicable file and workspace
+- **Files saved to Library:** Follow the applicable file and workspace
   retention rules. Deleting a conversation doesn't delete files stored in
   Library.
-- **Project files**—Remain with the project until its deletion, subject to the
+- **Project files:** Remain with the project until its deletion, subject to the
   applicable deletion rules and exceptions.
-- **Transient uploads outside Library**—For Enterprise, transient uploads can
+- **Transient uploads outside Library:** For Enterprise, transient uploads can
   expire after 48 hours unless a different retention setting applies.
-- **Saved memories, when enabled**—Follow separate memory controls.
-- **Cloud browser cookies**—Remain separate from local browser data. Users can
+- **Saved memories, when enabled:** Follow separate memory controls.
+- **Cloud browser cookies:** Remain separate from local browser data. Users can
   clear them from the Cloud browser settings.
-- **Compliance Logs Platform records**—Remain available in the platform for 30
+- **Compliance Logs Platform records:** Remain available in the platform for 30
   days. Exported copies follow the receiving system's retention policy.
-- **Connected application data**—Source records follow the connected
+- **Connected application data:** Source records follow the connected
   application's policies. Copies saved in a chat, file, or synced index also
   follow the applicable OpenAI storage and retention rules.
 
