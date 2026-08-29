@@ -64,17 +64,17 @@ const result = await exa.search("latest developments in LLMs", {
 
 ### Contents Parameters (nested under `contents`)
 
-| Parameter                    | Type                | Default | Description                                                                                                                                                                                                        |
-| ---------------------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `contents.text`              | boolean or object   | —       | Return full page text as markdown. Object form: `{maxCharacters, includeHtmlTags, verbosity, includeSections, excludeSections}`.                                                                                   |
-| `contents.highlights`        | boolean or object   | —       | Return key excerpts relevant to query. Pass `true` for the highest-quality default. Object form: `{query, maxCharacters}` — use `query` to guide which highlights are returned, `maxCharacters` to cap the budget. |
-| `contents.summary`           | boolean or object   | —       | Return LLM-generated summary. Object form: `{query, schema}`.                                                                                                                                                      |
-| `contents.livecrawlTimeout`  | integer             | `10000` | Timeout for livecrawling in milliseconds.                                                                                                                                                                          |
-| `contents.maxAgeHours`       | integer             | —       | Max age of cached content in hours. `0` = always livecrawl. `-1` = never livecrawl. Omit for default (livecrawl as fallback).                                                                                      |
-| `contents.subpages`          | integer             | `0`     | Number of subpages to crawl per result.                                                                                                                                                                            |
-| `contents.subpageTarget`     | string or string\[] | —       | Keywords to prioritize when selecting subpages.                                                                                                                                                                    |
-| `contents.extras.links`      | integer             | `0`     | Number of URLs to extract from each page.                                                                                                                                                                          |
-| `contents.extras.imageLinks` | integer             | `0`     | Number of image URLs to extract from each page.                                                                                                                                                                    |
+| Parameter                    | Type                | Default | Description                                                                                                                       |
+| ---------------------------- | ------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `contents.text`              | boolean or object   | —       | Return full page text as markdown. Object form: `{maxCharacters, includeHtmlTags, verbosity, includeSections, excludeSections}`.  |
+| `contents.highlights`        | boolean or object   | —       | Return query-relevant excerpts. Pass `true` for per-page extraction; use `{query, dynamic, maxCharacters}` for explicit controls. |
+| `contents.summary`           | boolean or object   | —       | Return LLM-generated summary. Object form: `{query, schema}`.                                                                     |
+| `contents.livecrawlTimeout`  | integer             | `10000` | Timeout for livecrawling in milliseconds.                                                                                         |
+| `contents.maxAgeHours`       | integer             | —       | Max age of cached content in hours. `0` = always livecrawl. `-1` = never livecrawl. Omit for default (livecrawl as fallback).     |
+| `contents.subpages`          | integer             | `0`     | Number of subpages to crawl per result.                                                                                           |
+| `contents.subpageTarget`     | string or string\[] | —       | Keywords to prioritize when selecting subpages.                                                                                   |
+| `contents.extras.links`      | integer             | `0`     | Number of URLs to extract from each page.                                                                                         |
+| `contents.extras.imageLinks` | integer             | `0`     | Number of image URLs to extract from each page.                                                                                   |
 
 ### Text Object Options
 
@@ -88,12 +88,26 @@ const result = await exa.search("latest developments in LLMs", {
 
 ### Highlights Object Options
 
-Prefer `highlights: true` for the highest-quality default. Only supply this object when you specifically need to guide selection with a custom query or cap output size.
+Prefer `highlights: true` for the default per-page behavior. Use the object form only for a custom query, a per-page character limit, or Dynamic Highlights.
 
-| Parameter       | Type    | Default | Description                                                                                                                             |
-| --------------- | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `query`         | string  | —       | Custom query that guides which highlights are returned.                                                                                 |
-| `maxCharacters` | integer | —       | Cap on total highlight characters per URL. Omit unless you have a specific budget — leaving it unset gives the highest-quality default. |
+| Parameter       | Type    | Default | Description                                                          |
+| --------------- | ------- | ------- | -------------------------------------------------------------------- |
+| `query`         | string  | —       | Custom query that guides which highlights are returned.              |
+| `dynamic`       | boolean | `false` | Allocate one shared context budget across the search results.        |
+| `maxCharacters` | integer | —       | Cap highlight characters per URL. Incompatible with `dynamic: true`. |
+
+```json theme={null}
+{
+  "query": "How are inference providers reducing transformer latency?",
+  "contents": {
+    "highlights": {
+      "dynamic": true
+    }
+  }
+}
+```
+
+Dynamic Highlights sizes and distributes the output automatically. The response shape is unchanged. It is available as a research preview: include the `Exa-Beta: dynamic-highlights-2026-08-28` header on every request that sets `dynamic: true`.
 
 ### Summary Object Options
 
@@ -202,7 +216,6 @@ Do NOT include citation fields in your schema — `/search` returns grounding da
 ```json theme={null}
 {
   "requestId": "b5947044c4b78efa9552a7c89b306d95",
-  "searchType": "auto",
   "results": [
     {
       "title": "Page Title",
@@ -214,7 +227,6 @@ Do NOT include citation fields in your schema — `/search` returns grounding da
       "favicon": "https://example.com/favicon.ico",
       "text": "Full page content as markdown...",
       "highlights": ["Key excerpt from the page..."],
-      "highlightScores": [0.46],
       "summary": "LLM-generated summary...",
       "subpages": [],
       "extras": {
@@ -243,7 +255,6 @@ Do NOT include citation fields in your schema — `/search` returns grounding da
 | Field                           | Type             | Description                                                                    |
 | ------------------------------- | ---------------- | ------------------------------------------------------------------------------ |
 | `requestId`                     | string           | Unique request identifier.                                                     |
-| `searchType`                    | string           | Which search type was used (for `auto` queries).                               |
 | `results`                       | array            | List of result objects.                                                        |
 | `results[].title`               | string           | Page title.                                                                    |
 | `results[].url`                 | string           | Page URL.                                                                      |
@@ -254,7 +265,6 @@ Do NOT include citation fields in your schema — `/search` returns grounding da
 | `results[].favicon`             | string           | Favicon URL for the domain.                                                    |
 | `results[].text`                | string           | Full page text (if `contents.text` requested).                                 |
 | `results[].highlights`          | string\[]        | Key excerpts (if `contents.highlights` requested).                             |
-| `results[].highlightScores`     | float\[]         | Cosine similarity scores for each highlight.                                   |
 | `results[].summary`             | string           | LLM summary (if `contents.summary` requested).                                 |
 | `results[].subpages`            | array            | Nested results from subpage crawling.                                          |
 | `results[].extras.links`        | string\[]        | Extracted links from the page.                                                 |
