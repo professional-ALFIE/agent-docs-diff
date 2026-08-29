@@ -222,6 +222,187 @@ Completed runs include:
   compatibility](/docs/reference/openai-sdk#agent-via-responses-api).
 </Note>
 
+## Verify and enrich a specific entity
+
+Beyond list building, use Exa Agent to inspect a single known entity, verify a claim against authoritative sources, and return structured enrichment. This example checks whether a company's official website has a publicly accessible pricing page, and enriches the result with pricing details when they are available. The schema requires only `domain` and `verdict`; everything else is optional enrichment.
+
+<CodeGroup>
+  ```python Python theme={null}
+  import json
+  from exa_py import Exa
+
+  exa = Exa()
+  run = exa.agent.runs.create(
+      query="Inspect the official website redbarnrobotics.com and determine whether it has a publicly accessible pricing or plans page. A dedicated pricing page counts as present even if it only says 'Contact sales'.",
+      system_prompt="Judge only the company specified in the query. Use present only when a public pricing or plans page is found. Use absent only after successfully inspecting the website and finding no such page. If the website is unreachable, blocked, fails to render, or cannot be inspected reliably, use cannot_verify. Never use absent when inspection failed. Use only the company's official website as evidence.",
+      effort="low",
+      output_schema={
+          "type": "object",
+          "additionalProperties": False,
+          "required": ["domain", "verdict"],
+          "properties": {
+              "domain": {"type": "string", "const": "redbarnrobotics.com"},
+              "verdict": {
+                  "type": "string",
+                  "enum": ["present", "absent", "cannot_verify"],
+              },
+              "pricing_page_url": {"type": ["string", "null"], "format": "uri"},
+              "displays_numeric_prices": {"type": ["boolean", "null"]},
+              "pricing_model": {
+                  "type": ["string", "null"],
+                  "enum": [
+                      "free",
+                      "subscription",
+                      "usage_based",
+                      "one_time",
+                      "custom_quote",
+                      "mixed",
+                      "other",
+                      None,
+                  ],
+              },
+              "starting_price": {"type": ["number", "null"], "minimum": 0},
+              "currency": {
+                  "type": ["string", "null"],
+                  "description": "ISO 4217 code such as USD or EUR.",
+              },
+              "billing_period": {
+                  "type": ["string", "null"],
+                  "enum": [
+                      "monthly",
+                      "annual",
+                      "one_time",
+                      "usage_based",
+                      "variable",
+                      "other",
+                      None,
+                  ],
+              },
+              "has_free_plan": {"type": ["boolean", "null"]},
+              "has_free_trial": {"type": ["boolean", "null"]},
+              "reasoning": {"type": ["string", "null"], "maxLength": 300},
+          },
+      },
+  )
+  run = exa.agent.runs.poll_until_finished(run.id)
+
+  print(json.dumps(run.output.structured if run.output else None, indent=2))
+  ```
+
+  ```typescript TypeScript theme={null}
+  import Exa from "exa-js";
+
+  const exa = new Exa();
+  const run = await exa.agent.runs.create({
+    query:
+      "Inspect the official website redbarnrobotics.com and determine whether it has a publicly accessible pricing or plans page. A dedicated pricing page counts as present even if it only says 'Contact sales'.",
+    systemPrompt:
+      "Judge only the company specified in the query. Use present only when a public pricing or plans page is found. Use absent only after successfully inspecting the website and finding no such page. If the website is unreachable, blocked, fails to render, or cannot be inspected reliably, use cannot_verify. Never use absent when inspection failed. Use only the company's official website as evidence.",
+    effort: "low",
+    outputSchema: {
+      type: "object",
+      additionalProperties: false,
+      required: ["domain", "verdict"],
+      properties: {
+        domain: { type: "string", const: "redbarnrobotics.com" },
+        verdict: {
+          type: "string",
+          enum: ["present", "absent", "cannot_verify"]
+        },
+        pricing_page_url: { type: ["string", "null"], format: "uri" },
+        displays_numeric_prices: { type: ["boolean", "null"] },
+        pricing_model: {
+          type: ["string", "null"],
+          enum: [
+            "free",
+            "subscription",
+            "usage_based",
+            "one_time",
+            "custom_quote",
+            "mixed",
+            "other",
+            null
+          ]
+        },
+        starting_price: { type: ["number", "null"], minimum: 0 },
+        currency: {
+          type: ["string", "null"],
+          description: "ISO 4217 code such as USD or EUR."
+        },
+        billing_period: {
+          type: ["string", "null"],
+          enum: [
+            "monthly",
+            "annual",
+            "one_time",
+            "usage_based",
+            "variable",
+            "other",
+            null
+          ]
+        },
+        has_free_plan: { type: ["boolean", "null"] },
+        has_free_trial: { type: ["boolean", "null"] },
+        reasoning: { type: ["string", "null"], maxLength: 300 }
+      }
+    }
+  });
+  const completedRun = await exa.agent.runs.pollUntilFinished(run.id);
+
+  console.log(JSON.stringify(completedRun.output?.structured, null, 2));
+  ```
+
+  ```bash cURL theme={null}
+  curl -s -X POST "https://api.exa.ai/agent/runs" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $EXA_API_KEY" \
+    -d '{
+      "query": "Inspect the official website redbarnrobotics.com and determine whether it has a publicly accessible pricing or plans page. A dedicated pricing page counts as present even if it only says '"'"'Contact sales'"'"'.",
+      "systemPrompt": "Judge only the company specified in the query. Use present only when a public pricing or plans page is found. Use absent only after successfully inspecting the website and finding no such page. If the website is unreachable, blocked, fails to render, or cannot be inspected reliably, use cannot_verify. Never use absent when inspection failed. Use only the company'"'"'s official website as evidence.",
+      "effort": "low",
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["domain", "verdict"],
+        "properties": {
+          "domain": { "type": "string", "const": "redbarnrobotics.com" },
+          "verdict": {
+            "type": "string",
+            "enum": ["present", "absent", "cannot_verify"]
+          },
+          "pricing_page_url": { "type": ["string", "null"], "format": "uri" },
+          "displays_numeric_prices": { "type": ["boolean", "null"] },
+          "pricing_model": {
+            "type": ["string", "null"],
+            "enum": ["free", "subscription", "usage_based", "one_time", "custom_quote", "mixed", "other", null]
+          },
+          "starting_price": { "type": ["number", "null"], "minimum": 0 },
+          "currency": {
+            "type": ["string", "null"],
+            "description": "ISO 4217 code such as USD or EUR."
+          },
+          "billing_period": {
+            "type": ["string", "null"],
+            "enum": ["monthly", "annual", "one_time", "usage_based", "variable", "other", null]
+          },
+          "has_free_plan": { "type": ["boolean", "null"] },
+          "has_free_trial": { "type": ["boolean", "null"] },
+          "reasoning": { "type": ["string", "null"], "maxLength": 300 }
+        }
+      }
+    }' | jq
+  ```
+</CodeGroup>
+
+<Note>
+  Schemas for verification workflows should account for uncertainty. Make
+  fields that may not be verifiable nullable and leave them out of `required`,
+  so the agent can return `null` instead of fabricating a value. The `verdict`
+  enum distinguishes a failed inspection (`cannot_verify`) from actual negative
+  evidence (`absent`): a site that could not be reached is not evidence that
+  the page does not exist.
+</Note>
+
 ## Stream events
 
 Streaming keeps the create request open and sends Server-Sent Events (SSE) until the run completes. See [Event format](#event-format) for the event types and payloads.
