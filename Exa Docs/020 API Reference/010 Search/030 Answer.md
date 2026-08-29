@@ -51,6 +51,13 @@ paths:
       responses:
         '200':
           description: OK
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
+            x-exa-queued:
+              $ref: '#/components/headers/XExaQueued'
+            x-exa-queue-ms:
+              $ref: '#/components/headers/XExaQueueMs'
           content:
             application/json:
               example:
@@ -109,6 +116,28 @@ components:
             If true, returns full page text with default settings. If false,
             disables text return.
           default: false
+        model:
+          description: The model used to generate the answer.
+          default: exa
+          type: string
+          enum:
+            - exa
+            - exa-pro
+            - exa-research
+            - exa-fast
+        systemPrompt:
+          type: string
+          description: >-
+            Additional instructions that guide generated output or agent
+            behavior. Use this for source preferences, novelty constraints,
+            duplication constraints, or other behavior guidance.
+          example: Prefer official sources and avoid duplicate results.
+        userLocation:
+          anyOf:
+            - type: string
+              description: The two-letter ISO country code of the user, e.g. US.
+              example: US
+            - type: 'null'
         outputSchema:
           type: object
           properties:
@@ -504,41 +533,108 @@ components:
             - FETCH_DOCUMENT_ERROR
             - TEAM_BLOCKED
             - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
       required:
         - requestId
         - error
         - tag
       additionalProperties: false
       description: Standard error envelope returned by the Exa API for failed requests.
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
+    XExaQueued:
+      description: >-
+        Whether the request waited in the customer rate-limit queue before being
+        admitted.
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+      example: 'false'
+    XExaQueueMs:
+      description: Total milliseconds the request waited in the customer rate-limit queue.
+      schema:
+        type: string
+      example: '0'
   responses:
     BadRequestResponse:
       description: The request body or query parameters failed validation.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 0a1b2c3d4e5f60718293a4b5c6d7e8f9
+            error: >-
+              Invalid request body: query: Invalid input: expected string,
+              received undefined
+            tag: INVALID_REQUEST_BODY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     UnauthorizedResponse:
       description: The API key is missing or invalid.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2
+            error: Invalid API key
+            tag: INVALID_API_KEY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     PaymentRequiredResponse:
       description: The team is out of credits or a spending budget has been exceeded.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 1c3e5a7b9d0f2a4c6e8b0d2f4a6c8e0b
+            error: >-
+              You have exceeded your credits limit. Please top up to keep using
+              Exa at dashboard.exa.ai
+            tag: NO_MORE_CREDITS
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     TooManyRequestsResponse:
       description: A rate limit was exceeded.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 7f9b1d3e5a0c2e4b6d8f0a2c4e6b8d0f
+            error: >-
+              You've exceeded the Exa rate limit for your network. If you
+              believe this is in error, please email hello@exa.ai :)
+            tag: RATE_LIMIT_EXCEEDED
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     InternalServerErrorResponse:
       description: An unexpected error occurred while processing the request.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 9b1d3f5e7a0c2e4b6d8f0a2c4e6b8d0f
+            error: >-
+              Sorry, we encountered an error while processing your request.
+              Please try again later
+            tag: DEFAULT_ERROR
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
