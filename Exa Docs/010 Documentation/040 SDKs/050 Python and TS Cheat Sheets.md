@@ -26,6 +26,9 @@
   # search with highlights (recommended for agentic workflows)
   results = exa.search("This is an Exa query:", contents={"highlights": True})
 
+  # search with Dynamic Highlights
+  results = exa.search("This is an Exa query:", contents={"highlights": {"dynamic": True}})
+
   # search with date filters
   results = exa.search("This is an Exa query:", start_published_date="2019-01-01", end_published_date="2019-01-31")
 
@@ -80,6 +83,13 @@
   // Search with highlights (recommended for agentic workflows)
   const highlightResults = await exa.search("This is an Exa query:", {
     contents: { highlights: true }
+  });
+
+  // Search with Dynamic Highlights
+  const dynamicHighlightResults = await exa.search("This is an Exa query:", {
+    contents: {
+      highlights: { dynamic: true }
+    }
   });
 
   // Search with date filters
