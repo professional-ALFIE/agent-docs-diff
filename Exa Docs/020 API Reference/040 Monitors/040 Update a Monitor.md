@@ -49,6 +49,9 @@ paths:
       responses:
         '200':
           description: The updated monitor
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
@@ -374,6 +377,24 @@ components:
                       description: Custom query that guides which highlights the LLM picks.
                       example: Key advancements
                     - type: 'null'
+                dynamic:
+                  anyOf:
+                    - type: boolean
+                      description: >-
+                        Enable Dynamic Highlights (research preview): considers
+                        all results together and allocates a single shared
+                        context budget across the result set instead of a
+                        per-document budget. Not compatible with maxCharacters.
+                        Beta: requires the `Exa-Beta:
+                        dynamic-highlights-2026-08-28` request header; requests
+                        setting `dynamic` without it are rejected.
+                      example: true
+                      x-exa-lifecycle: beta
+                      x-exa-beta-flag: dynamic-highlights-2026-08-28
+                      x-mint:
+                        post:
+                          - Beta
+                    - type: 'null'
                 maxCharacters:
                   anyOf:
                     - type: integer
@@ -382,7 +403,8 @@ components:
                       description: >-
                         Maximum number of characters to return for highlights.
                         Controls the total length of highlight text returned per
-                        URL. Maximum supported value is 10000.
+                        URL. Maximum supported value is 10000. Not compatible
+                        with highlights.dynamic.
                       example: 2000
                     - type: 'null'
                 numSentences:
@@ -786,6 +808,7 @@ components:
             - FETCH_DOCUMENT_ERROR
             - TEAM_BLOCKED
             - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
       required:
         - requestId
         - error
@@ -927,6 +950,24 @@ components:
                       description: Custom query that guides which highlights the LLM picks.
                       example: Key advancements
                     - type: 'null'
+                dynamic:
+                  anyOf:
+                    - type: boolean
+                      description: >-
+                        Enable Dynamic Highlights (research preview): considers
+                        all results together and allocates a single shared
+                        context budget across the result set instead of a
+                        per-document budget. Not compatible with maxCharacters.
+                        Beta: requires the `Exa-Beta:
+                        dynamic-highlights-2026-08-28` request header; requests
+                        setting `dynamic` without it are rejected.
+                      example: true
+                      x-exa-lifecycle: beta
+                      x-exa-beta-flag: dynamic-highlights-2026-08-28
+                      x-mint:
+                        post:
+                          - Beta
+                    - type: 'null'
                 maxCharacters:
                   anyOf:
                     - type: integer
@@ -935,7 +976,8 @@ components:
                       description: >-
                         Maximum number of characters to return for highlights.
                         Controls the total length of highlight text returned per
-                        URL. Maximum supported value is 10000.
+                        URL. Maximum supported value is 10000. Not compatible
+                        with highlights.dynamic.
                       example: 2000
                     - type: 'null'
                 numSentences:
@@ -1125,29 +1167,69 @@ components:
       description: >-
         Content extraction options applied to each search result. All fields are
         optional.
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
   responses:
     BadRequestResponse:
       description: The request body or query parameters failed validation.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 0a1b2c3d4e5f60718293a4b5c6d7e8f9
+            error: >-
+              Invalid request body: query: Invalid input: expected string,
+              received undefined
+            tag: INVALID_REQUEST_BODY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     UnauthorizedResponse:
       description: The API key is missing or invalid.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2
+            error: Invalid API key
+            tag: INVALID_API_KEY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     NotFoundResponse:
       description: The requested resource does not exist.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 3b1d5f7a9c0e2b4d6f8a0c2e4b6d8f0a
+            error: Not found
+            tag: NOT_FOUND
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     InternalServerErrorResponse:
       description: An unexpected error occurred while processing the request.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 9b1d3f5e7a0c2e4b6d8f0a2c4e6b8d0f
+            error: >-
+              Sorry, we encountered an error while processing your request.
+              Please try again later
+            tag: DEFAULT_ERROR
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
