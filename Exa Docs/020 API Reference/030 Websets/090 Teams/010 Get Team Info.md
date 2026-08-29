@@ -61,11 +61,22 @@ paths:
       responses:
         '200':
           description: Team information retrieved successfully
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/WebsetsTeamInfo'
 components:
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
   schemas:
     WebsetsTeamInfo:
       type: object
