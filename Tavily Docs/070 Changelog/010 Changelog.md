@@ -5,6 +5,16 @@
 # Changelog
 
 <AccordionGroup>
+  <Accordion title="Safe search for everyone" icon="rocket" description="August 2026">
+    <b><br />[<code>safe\_search</code>](/documentation/api-reference/endpoint/search#body-safe-search) is now available on all plans</b><br />
+
+    <ul>
+      <li>
+        Set <b><code>"safe\_search": true</code></b> in your [Search](/documentation/api-reference/endpoint/search) request to drop adult and unsafe content from results and images. Defaults to <code>false</code>. Not supported for <code>fast</code> or <code>ultra-fast</code> search depths.
+      </li>
+    </ul>
+  </Accordion>
+
   <Accordion title="Language boosting and filtering for Search" icon="rocket" description="August 2026">
     <b><br />New [<code>language</code>](/documentation/api-reference/endpoint/search#body-language) and [<code>filter\_by\_language</code>](/documentation/api-reference/endpoint/search#body-filter-by-language) parameters for [Search](/documentation/api-reference/endpoint/search)</b><br />
 
