@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-29T16:42:11.273Z",
+  "생성": "2026-08-29T20:54:08.689Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -137,16 +137,16 @@
       "경로": "010 Getting started/040 Platforms and integrations/030 Claude Code on the web/020 Reference.md",
       "href": "/en/claude-code-on-the-web",
       "url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
-      "sha256": "8fb9706540d1312e18aa647233801489f522637a40934ab7f738720db3bcb5a1",
-      "bytes": 38641,
+      "sha256": "f6a53f0617b8872a25c47b03e34a8eeef6b0158d825a58e51316c0621ead3114",
+      "bytes": 38786,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Getting started/040 Platforms and integrations/030 Claude Code on the web/030 Routines.md",
       "href": "/en/routines",
       "url": "https://code.claude.com/docs/en/routines.md",
-      "sha256": "10885806485e05ef09ff1aca4a2c5a94eb410e149923d1e621f0d105fafb715b",
-      "bytes": 33612,
+      "sha256": "143dedf97e8920521aedfec9b27348dd071ac21346d341819b9940e3660ed5a7",
+      "bytes": 33772,
       "contentType": "text/markdown"
     },
     {
@@ -865,8 +865,8 @@
       "경로": "040 Configuration/030 Environments/010 Cloud environments.md",
       "href": "/en/cloud-environments",
       "url": "https://code.claude.com/docs/en/cloud-environments.md",
-      "sha256": "afd3f9dd7249d63a609774c88625a6bd5d1be7d6e2751d68aec287c5a599cc58",
-      "bytes": 57733,
+      "sha256": "4f60cae2896e2963b1c978b62050965fd592743b731b42c585415393db50e7b8",
+      "bytes": 64278,
       "contentType": "text/markdown"
     },
     {
@@ -881,8 +881,8 @@
       "경로": "040 Configuration/030 Environments/020 Self-hosted environments/020 Deploy to production.md",
       "href": "/en/self-hosted-environments-deploy",
       "url": "https://code.claude.com/docs/en/self-hosted-environments-deploy.md",
-      "sha256": "80c4d2820a36fc140c267ade491b7d977dea8afb8788d338bcc23e4b9b80a343",
-      "bytes": 58366,
+      "sha256": "e79472e914cc2e550db10536526c9cd713d71952f711ca4f177ea0dcf9fbdcf8",
+      "bytes": 58379,
       "contentType": "text/markdown"
     },
     {
