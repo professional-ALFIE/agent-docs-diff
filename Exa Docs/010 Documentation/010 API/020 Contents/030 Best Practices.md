@@ -13,7 +13,7 @@ The Contents API extracts clean, LLM-ready content from any URL—handling JavaS
 ## Key Benefits
 
 * **Clean markdown extraction**: Automatically filters out navigation, ads, and boilerplate to return only the main content, formatted as clean markdown.
-* **Flexible content modes**: Choose between full text, query-relevant highlights, or LLM-generated summaries—or combine them in one request.
+* **Flexible content modes**: Choose between full text, query-relevant highlights, or LLM-generated summaries.
 * **Subpage crawling**: Automatically discover and extract content from linked pages within a site, with targeted filtering to focus on specific sections.
 
 ## Request Fields
@@ -111,6 +111,37 @@ Choosing the right content mode can significantly reduce token usage while maint
 }
 ```
 
+### Allocate context across pages
+
+Regular highlights optimize each page independently. Dynamic Highlights optimizes the result set as a whole, spending more context on useful pages and less on information that another page already covers.
+
+```json theme={null}
+{
+  "ids": [
+    "https://www.baseten.co/blog/how-to-optimize-llm-inference-speed-and-reduce-costs-in-production/",
+    "https://blog.cloudflare.com/smaller-faster-safer-models/",
+    "https://www.crusoe.ai/resources/blog/430-tokens-per-second-optimizing-kimi-k2-6-and-k2-7-for-production"
+  ],
+  "highlights": {
+    "dynamic": true
+  }
+}
+```
+
+| Mode               | Use it when                                                           |
+| ------------------ | --------------------------------------------------------------------- |
+| Full text          | You need complete pages or document structure                         |
+| Highlights         | Every page needs its own relevant excerpt or per-page character limit |
+| Dynamic Highlights | Several pages share one agent or RAG context                          |
+
+Dynamic Highlights decides the output size and allocation. Do not combine `dynamic: true` with the per-page `maxCharacters` control. Requests that set `dynamic: true` require the `Exa-Beta: dynamic-highlights-2026-08-28` header.
+
+## Measured impact
+
+Across single-turn RAG evaluations from coding to general QA, Dynamic Highlights improved average token efficiency by about 49% and downstream quality by 2.4% with Exa Auto.
+
+In agentic evaluations, it reduced total agent token usage by about 30% while improving quality by about 1%. These evaluations used Exa Agent Auto on BrowseComp and WideSearch and Exa Agent Medium on internal company and people datasets. The token measurement covers the complete agent trajectory, including follow-up searches, rather than one search response.
+
 **Use full text for deep analysis**: When the task requires comprehensive understanding or when you're unsure which parts of the page matter, request full text. Use `maxCharacters` to cap token usage.
 
 ```json theme={null}
@@ -120,7 +151,7 @@ Choosing the right content mode can significantly reduce token usage while maint
 }
 ```
 
-**Combine modes strategically**: You can request multiple content types together—use highlights for quick answers and include full text only when deeper analysis is needed.
+**Retrieve in two passes**: Start with highlights, then request full text only for the URLs that need broader context. This keeps the first response compact and avoids returning two content views for every page.
 
 ## Content Freshness
 
