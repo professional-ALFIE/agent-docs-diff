@@ -429,6 +429,6 @@ print(f"Test signature valid: {is_valid}")  # Should print True
 
 ## What's Next?
 
-* Learn about [webhook events](/docs/websets/api/events) and their payloads
+* Learn about [webhook events](/docs/websets/api/events/types) and their payloads
 * Set up [webhook retries and monitoring](/docs/websets/api/webhooks/attempts/list-webhook-attempts)
 * Explore [webhook management endpoints](/docs/websets/api/webhooks/create-a-webhook)
