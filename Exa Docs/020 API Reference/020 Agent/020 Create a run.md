@@ -165,6 +165,9 @@ paths:
       responses:
         '200':
           description: Agent run created
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
@@ -228,24 +231,36 @@ paths:
                     {"id":"agent_run_01j...","object":"agent_run","status":"completed"}
         '400':
           description: Invalid request.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '401':
           description: Team context or authentication was not found.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '429':
           description: Agent run concurrency limit reached.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '500':
           description: Server error or run timeout.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
@@ -515,6 +530,7 @@ components:
       enum:
         - schema_satisfied
         - budget_reached
+        - stopped
         - error
         - cancelled
     AgentRunRequest:
@@ -797,6 +813,14 @@ components:
       required:
         - url
       additionalProperties: false
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
   securitySchemes:
     apiKey:
       type: apiKey
