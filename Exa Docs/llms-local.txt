@@ -64,23 +64,24 @@
 - [Exa in Slack](<010 Documentation/050 Integrations/010 Exa in Slack.md>)
 - [Exa in Codex and ChatGPT](<010 Documentation/050 Integrations/020 ChatGPT & Codex.md>): Search the web, read any page, and research with Exa directly from Codex and ChatGPT.
 - [Grok Build](<010 Documentation/050 Integrations/030 Grok Build.md>): Use Exa web search in Grok Build. Install the Exa plugin from the Grok Build marketplace and sign in with your Exa account.
-- [OpenAI Tool Calling](<010 Documentation/050 Integrations/040 Tool Calling/010 OpenAI Tool Calling.md>): Use OpenAI tool calling to add Exa web search to your application.
-- [Anthropic Tool Calling](<010 Documentation/050 Integrations/040 Tool Calling/020 Anthropic Tool Calling.md>): Use Claude tool use to add Exa web search to your application.
-- [Vercel AI Gateway](<010 Documentation/050 Integrations/050 AI SDK/010 Vercel AI Gateway.md>): Use Exa web search through Vercel AI Gateway with the AI SDK.
-- [AI SDK by Vercel](<010 Documentation/050 Integrations/050 AI SDK/020 AI SDK by Vercel.md>): Add Exa web search to AI SDK applications with the @exalabs/ai-sdk package.
-- [OpenAI SDK Compatibility](<010 Documentation/050 Integrations/060 OpenAI SDK/010 OpenAI SDK Compatibility.md>): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.
-- [OpenAI Responses API](<010 Documentation/050 Integrations/060 OpenAI SDK/020 OpenAI Responses API.md>): Use Exa with OpenAI's Responses API - both as a web search tool and for direct research capabilities.
-- [Browserbase](<010 Documentation/050 Integrations/070 Browserbase.md>): Combine Exa company search with Browserbase browser automation for job application workflows.
-- [LangChain](<010 Documentation/050 Integrations/080 LangChain.md>): How to use Exa's integration with LangChain to perform RAG.
-- [Pydantic AI](<010 Documentation/050 Integrations/090 Pydantic AI.md>): Give a Pydantic AI agent web research tools backed by the Exa search API.
-- [CrewAI](<010 Documentation/050 Integrations/100 CrewAI.md>): Learn how to add Exa retrieval capabilities to your CrewAI agents.
-- [LlamaIndex](<010 Documentation/050 Integrations/110 LlamaIndex.md>): A quick-start guide on how to add Exa retrieval to a LlamaIndex Agent Application.
-- [Exa for Google Sheets](<010 Documentation/050 Integrations/120 Exa for Google Sheets.md>): Use Exa Agent and Exa formulas inside Google Sheets.
-- [Snowflake](<010 Documentation/050 Integrations/130 Snowflake.md>): Use Exa search and content retrieval from Snowflake stored procedures and Cortex Agents.
-- [ElevenLabs](<010 Documentation/050 Integrations/140 ElevenLabs.md>): Add Exa web search to ElevenLabs voice agents.
-- [OpenHuman](<010 Documentation/050 Integrations/150 OpenHuman.md>): Give the OpenHuman agent live web search with Exa, either managed or with your own Exa API key.
-- [TrueFoundry](<010 Documentation/050 Integrations/160 TrueFoundry.md>): Connect Exa to the TrueFoundry MCP Gateway for centralized access controls, tool management, and usage monitoring.
-- [Stripe Projects](<010 Documentation/050 Integrations/170 Stripe Projects.md>): Integrate Exa from your terminal using the Stripe Projects CLI.
+- [fx by Vercel Labs](<010 Documentation/050 Integrations/040 Fx by Vercel.md>): Add Exa web search to fx, Vercel Labs' native coding agent, with the hosted Exa MCP server.
+- [OpenAI Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/010 OpenAI Tool Calling.md>): Use OpenAI tool calling to add Exa web search to your application.
+- [Anthropic Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/020 Anthropic Tool Calling.md>): Use Claude tool use to add Exa web search to your application.
+- [Vercel AI Gateway](<010 Documentation/050 Integrations/060 AI SDK/010 Vercel AI Gateway.md>): Use Exa web search through Vercel AI Gateway with the AI SDK.
+- [AI SDK by Vercel](<010 Documentation/050 Integrations/060 AI SDK/020 AI SDK by Vercel.md>): Add Exa web search to AI SDK applications with the @exalabs/ai-sdk package.
+- [OpenAI SDK Compatibility](<010 Documentation/050 Integrations/070 OpenAI SDK/010 OpenAI SDK Compatibility.md>): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.
+- [OpenAI Responses API](<010 Documentation/050 Integrations/070 OpenAI SDK/020 OpenAI Responses API.md>): Use Exa with OpenAI's Responses API - both as a web search tool and for direct research capabilities.
+- [Browserbase](<010 Documentation/050 Integrations/080 Browserbase.md>): Combine Exa company search with Browserbase browser automation for job application workflows.
+- [LangChain](<010 Documentation/050 Integrations/090 LangChain.md>): How to use Exa's integration with LangChain to perform RAG.
+- [Pydantic AI](<010 Documentation/050 Integrations/100 Pydantic AI.md>): Give a Pydantic AI agent web research tools backed by the Exa search API.
+- [CrewAI](<010 Documentation/050 Integrations/110 CrewAI.md>): Learn how to add Exa retrieval capabilities to your CrewAI agents.
+- [LlamaIndex](<010 Documentation/050 Integrations/120 LlamaIndex.md>): A quick-start guide on how to add Exa retrieval to a LlamaIndex Agent Application.
+- [Exa for Google Sheets](<010 Documentation/050 Integrations/130 Exa for Google Sheets.md>): Use Exa Agent and Exa formulas inside Google Sheets.
+- [Snowflake](<010 Documentation/050 Integrations/140 Snowflake.md>): Use Exa search and content retrieval from Snowflake stored procedures and Cortex Agents.
+- [ElevenLabs](<010 Documentation/050 Integrations/150 ElevenLabs.md>): Add Exa web search to ElevenLabs voice agents.
+- [OpenHuman](<010 Documentation/050 Integrations/160 OpenHuman.md>): Give the OpenHuman agent live web search with Exa, either managed or with your own Exa API key.
+- [TrueFoundry](<010 Documentation/050 Integrations/170 TrueFoundry.md>): Connect Exa to the TrueFoundry MCP Gateway for centralized access controls, tool management, and usage monitoring.
+- [Stripe Projects](<010 Documentation/050 Integrations/180 Stripe Projects.md>): Integrate Exa from your terminal using the Stripe Projects CLI.
 - [Pay with x402](<010 Documentation/060 Agentic payments/010 x402/010 x402 Payments.md>): Use Exa's Search and Contents APIs without an API key. Pay per request with USDC on Base or Solana via the x402 protocol.
 - [World AgentKit](<010 Documentation/060 Agentic payments/010 x402/020 World AgentKit.md>): Let verified human-backed AI agents access Exa for free using World AgentKit — no USDC needed.
 - [Pay with MPP (Tempo)](<010 Documentation/060 Agentic payments/020 MPP/010 MPP Payments.md>): Call Exa's Search and Contents APIs without an API key by paying per request with USDC.e on Tempo.
@@ -109,8 +110,9 @@
 - [Get a run](<020 API Reference/020 Agent/030 Get a run.md>): Retrieve an Agent run by ID.
 - [List runs](<020 API Reference/020 Agent/040 List runs.md>): Retrieve a paginated list of Agent runs for your team.
 - [Cancel a run](<020 API Reference/020 Agent/050 Cancel a run.md>): Cancel a queued or running Agent run.
-- [Delete a run](<020 API Reference/020 Agent/060 Delete a run.md>): Delete a stored Agent run.
-- [List run events](<020 API Reference/020 Agent/070 List run events.md>): List stored Agent run events or replay them as server-sent events.
+- [Stop a run](<020 API Reference/020 Agent/060 Stop a run.md>): Gracefully stop a running Agent run and keep the results gathered so far.
+- [Delete a run](<020 API Reference/020 Agent/070 Delete a run.md>): Delete a stored Agent run.
+- [List run events](<020 API Reference/020 Agent/080 List run events.md>): List stored Agent run events or replay them as server-sent events.
 - [Create a Webset](<020 API Reference/030 Websets/010 Websets/010 Create a Webset.md>): Creates a new Webset with optional search, import, and enrichment configurations. The Webset will automatically begin processing once created.
 - [Get a Webset](<020 API Reference/030 Websets/010 Websets/020 Get a Webset.md>)
 - [Update a Webset](<020 API Reference/030 Websets/010 Websets/030 Update a Webset.md>)
@@ -189,6 +191,7 @@
 - [Crawling Subpages](https://exa.ai/docs/reference/crawling-subpages.md) (메뉴 미노출 · 로컬 없음)
 - [IBM WatsonX](https://exa.ai/docs/reference/ibm-watsonx.md) (메뉴 미노출 · 로컬 없음)
 - [The Exa Index](https://exa.ai/docs/reference/the-exa-index.md): We spend a lot of time and energy creating a high quality, curated index. (메뉴 미노출 · 로컬 없음)
+- [2026 08 24 design button behavioral stability](https://exa.ai/docs/superpowers/plans/2026-08-24-design-button-behavioral-stability.md) (메뉴 미노출 · 로컬 없음)
 
 ## OpenAPI Specs
 

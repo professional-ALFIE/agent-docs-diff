@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T21:43:55.081Z",
+  "생성": "2026-08-29T00:42:59.855Z",
   "제품폴더": "Claude Code Docs (ko)",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -41,8 +41,8 @@
       "경로": "010 시작하기/020 핵심 개념/030 .claude 디렉토리 탐색.md",
       "href": "/ko/claude-directory",
       "url": "https://code.claude.com/docs/ko/claude-directory.md",
-      "sha256": "90bc805306ed7e347abfac2f827e38e4bcf472b1c7028fff6dbaa0539c787906",
-      "bytes": 86646,
+      "sha256": "271c39d222c1882fd5d0f2a067d5f8407bb942725df8362968aa8a1627b9093c",
+      "bytes": 86676,
       "contentType": "text/markdown"
     },
     {

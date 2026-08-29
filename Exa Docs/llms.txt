@@ -62,6 +62,7 @@
 - [Exa in Slack](https://exa.ai/docs/reference/exa-slack.md)
 - [Exa in Codex and ChatGPT](https://exa.ai/docs/integrations/chatgpt-codex.md): Search the web, read any page, and research with Exa directly from Codex and ChatGPT.
 - [Grok Build](https://exa.ai/docs/integrations/grok-build.md): Use Exa web search in Grok Build. Install the Exa plugin from the Grok Build marketplace and sign in with your Exa account.
+- [fx by Vercel Labs](https://exa.ai/docs/integrations/fx.md): Add Exa web search to fx, Vercel Labs' native coding agent, with the hosted Exa MCP server.
 - [OpenAI Tool Calling](https://exa.ai/docs/reference/openai-tool-calling.md): Use OpenAI tool calling to add Exa web search to your application.
 - [Anthropic Tool Calling](https://exa.ai/docs/reference/anthropic-tool-calling.md): Use Claude tool use to add Exa web search to your application.
 - [Vercel AI Gateway](https://exa.ai/docs/integrations/vercel-ai-gateway.md): Use Exa web search through Vercel AI Gateway with the AI SDK.
@@ -107,6 +108,7 @@
 - [Get a run](https://exa.ai/docs/reference/agent-api/get-a-run.md): Retrieve an Agent run by ID.
 - [List runs](https://exa.ai/docs/reference/agent-api/list-runs.md): Retrieve a paginated list of Agent runs for your team.
 - [Cancel a run](https://exa.ai/docs/reference/agent-api/cancel-a-run.md): Cancel a queued or running Agent run.
+- [Stop a run](https://exa.ai/docs/reference/agent-api/stop-a-run.md): Gracefully stop a running Agent run and keep the results gathered so far.
 - [Delete a run](https://exa.ai/docs/reference/agent-api/delete-a-run.md): Delete a stored Agent run.
 - [List run events](https://exa.ai/docs/reference/agent-api/list-run-events.md): List stored Agent run events or replay them as server-sent events.
 - [Create a Webset](https://exa.ai/docs/websets/api/websets/create-a-webset.md): Creates a new Webset with optional search, import, and enrichment configurations. The Webset will automatically begin processing once created.
@@ -187,6 +189,7 @@
 - [Crawling Subpages](https://exa.ai/docs/reference/crawling-subpages.md)
 - [IBM WatsonX](https://exa.ai/docs/reference/ibm-watsonx.md)
 - [The Exa Index](https://exa.ai/docs/reference/the-exa-index.md): We spend a lot of time and energy creating a high quality, curated index.
+- [2026 08 24 design button behavioral stability](https://exa.ai/docs/superpowers/plans/2026-08-24-design-button-behavioral-stability.md)
 
 ## OpenAPI Specs
 

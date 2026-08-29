@@ -9,6 +9,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 ## Documentation sets
 - [Combined ChatGPT docs](https://learn.chatgpt.com/docs/llms-full.txt): Single-file Markdown export of ChatGPT and Codex guides and references. (메뉴 미노출 · 로컬 없음)
 - [Codex manual (Markdown)](https://learn.chatgpt.com/docs/codex-manual.md): Machine-oriented condensed manual generated from the ChatGPT and Codex docs set. (메뉴 미노출 · 로컬 없음)
+- [ChatGPT use cases](https://learn.chatgpt.com/use-cases/llms.txt): Generated index of practical ChatGPT and Codex workflows and curated collections. (외부 링크)
 
 ## Administration
 - [Administration](<060 Administration/010 Overview.md>): Set access and policy boundaries for ChatGPT, Codex developer tools, APIs, plugins, and connected systems
@@ -44,7 +45,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Authentication](<060 Administration/030 Identity and authentication/010 Authentication overview.md>): Sign-in methods for ChatGPT web and Codex clients
 
 ## Automations
-- [Scheduled tasks](<020 Features/020 Workflows/040 Scheduled tasks.md>): Schedule recurring tasks in ChatGPT
+- [Scheduled tasks](<020 Features/020 Workflows/040 Scheduled tasks.md>): Run tasks on a schedule or from supported app events in ChatGPT
 
 ## Browser
 - [Browser](<020 Features/030 Capabilities/010 Browser.md>): Let ChatGPT research and interact with websites
@@ -56,7 +57,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Build skills](<040 Developers/030 Extend and automate/010 Build skills.md>): Give ChatGPT and Codex new capabilities and expertise
 
 ## Chrome Extension
-- [Chrome extension](<020 Features/030 Capabilities/090 Chrome extension.md>): Use Chrome with ChatGPT while managing browser permissions, website approvals, and browsing data
+- [Browser extension](<020 Features/030 Capabilities/090 Browser extension.md>): Use Chrome, Edge, Brave, Opera, or Vivaldi with ChatGPT
 
 ## Cli
 - [Codex CLI](<010 Overview/050 Available on/040 Codex CLI.md>): Use Codex from your terminal and scripts.
@@ -162,7 +163,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Building an AI-Native Engineering Team](https://learn.chatgpt.com/guides/build-ai-native-engineering-team.md): How coding agents speed up the software development lifecycle (외부 링크)
 
 ## Hooks
-- [Hooks](<040 Developers/030 Extend and automate/030 Hooks.md>): Run scripts or MCP tools during the Codex lifecycle
+- [Hooks](<040 Developers/030 Extend and automate/040 Hooks.md>): Run scripts or MCP tools during the Codex lifecycle
 
 ## Ide
 - [Codex IDE extension](<010 Overview/050 Available on/050 Codex IDE extension.md>): Use Codex beside your code and editor context.
@@ -254,9 +255,9 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 
 ## Security
 - [Codex Security](<050 Security/030 Codex Security/010 Overview.md>): Find and remediate vulnerabilities with the Codex Security plugin, CLI, TypeScript SDK, or cloud.
-- [Codex Security CLI FAQ](<050 Security/030 Codex Security/030 Codex Security CLI/050 FAQ.md>): Answers about Codex Security scans, findings, false positives, coverage, cost, and CI.
+- [Codex Security CLI FAQ](<050 Security/030 Codex Security/030 Codex Security CLI/060 FAQ.md>): Answers about Codex Security scans, findings, false positives, coverage, cost, and CI.
 - [Codex Security CLI quickstart](<050 Security/030 Codex Security/030 Codex Security CLI/010 Quickstart.md>): Set up Codex Security, run a local scan, and review the report, findings, and coverage.
-- [Codex Security CLI reference](<050 Security/030 Codex Security/030 Codex Security CLI/040 Reference.md>): Arguments, output formats, scan artifacts, and exit codes for the Codex Security CLI.
+- [Codex Security CLI reference](<050 Security/030 Codex Security/030 Codex Security CLI/050 Reference.md>): Arguments, output formats, scan artifacts, and exit codes for the Codex Security CLI.
 - [Codex Security cloud FAQ](<050 Security/030 Codex Security/050 Codex Security cloud/040 FAQ.md>): Common questions about Codex Security cloud.
 - [Codex Security cloud setup](<050 Security/030 Codex Security/050 Codex Security cloud/010 Setup.md>): Set up Codex Security cloud, wait for initial findings, and improve results with threat model edits
 - [Codex Security plugin changelog](<050 Security/030 Codex Security/020 Codex Security plugin/110 Changelog.md>): Notable user-facing changes to the Codex Security plugin.
@@ -271,6 +272,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Run a deep security scan](<050 Security/030 Codex Security/020 Codex Security plugin/030 Run a deep scan.md>): Run a slower, more thorough review of a repository or scoped folder.
 - [Run bulk security scans](<050 Security/030 Codex Security/030 Codex Security CLI/020 Run bulk scans.md>): Discover GitHub repositories or run resumable security scans from a CSV inventory.
 - [Run Codex Security in CI](<050 Security/030 Codex Security/030 Codex Security CLI/030 Run scans in CI.md>): Scan pull-request and merge-request changes, preserve structured results, upload SARIF, and set a severity policy.
+- [Run Codex Security in GitLab CI/CD](<050 Security/030 Codex Security/030 Codex Security CLI/040 GitLab CI-CD.md>): Scan GitLab merge requests and branches, publish SARIF findings, and optionally open draft merge requests with verified fixes.
 - [Security Review](<050 Security/030 Codex Security/050 Codex Security cloud/020 Security Review.md>): Configure and run in-depth security reviews for GitHub pull requests.
 - [Triage a backlog](<050 Security/030 Codex Security/020 Codex Security plugin/060 Triage a backlog.md>): Review existing security findings against a repository and order follow-up work.
 - [Use the Codex Security workbench](<050 Security/030 Codex Security/020 Codex Security plugin/050 Use the Security workbench.md>): Start security scans, review findings, and inspect repository history in the Codex desktop app.
@@ -295,7 +297,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Use ChatGPT](<010 Overview/020 Get started/020 Use ChatGPT.md>): Choose Chat, ChatGPT Work, or Codex, add useful context, and refine the result.
 
 ## Videos
-- [Videos](https://learn.chatgpt.com/videos.md): Learn how to use Codex with demos, walkthroughs, and talks (외부 링크)
+- [Videos](https://learn.chatgpt.com/videos.md): Learn how to use ChatGPT and Codex with demos, walkthroughs, and talks (외부 링크)
 
 ## Visualizations
 - [Visualizations](<020 Features/020 Workflows/030 Visualizations.md>): Turn ideas and information into interactive visual explanations in ChatGPT
@@ -305,6 +307,9 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 
 ## Web Search
 - [Web search](<020 Features/030 Capabilities/050 Web search.md>): Search the web while you work in ChatGPT
+
+## Webmcp
+- [Site tools](<040 Developers/030 Extend and automate/030 Site tools (WebMCP).md>): Use WebMCP to give AI agents a direct way to work with your website
 
 ## Whats New
 - [What's new](<010 Overview/040 Explore/010 What's new.md>): A weekly digest of ChatGPT and Codex features that can change how you work

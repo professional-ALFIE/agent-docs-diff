@@ -120,41 +120,42 @@ Recommended defaults for agents: prefer `search_depth="advanced"`, add `chunks_p
 
 ## Integrations
 
-- [OpenAI Agent Builder](<050 Ecosystem/060 Integrations/150 OpenAI Agent Builder.md>): Empower OpenAI's Agent Builder with real-time web access via Tavily MCP.
-- [Agno](<050 Ecosystem/060 Integrations/210 Agno.md>): Use Tavily with the Agno agent framework.
+- [OpenAI Agent Builder](<050 Ecosystem/060 Integrations/170 OpenAI Agent Builder.md>): Empower OpenAI's Agent Builder with real-time web access via Tavily MCP.
+- [Agno](<050 Ecosystem/060 Integrations/230 Agno.md>): Use Tavily with the Agno agent framework.
 - [Anthropic](<050 Ecosystem/060 Integrations/080 Anthropic.md>): Add real-time web search to Claude tool-calling agents.
 - [Arcade.dev](<050 Ecosystem/060 Integrations/020 Arcade.dev.md>): Governed Tavily access via the Arcade.dev MCP Gateway.
-- [Cartesia](<050 Ecosystem/060 Integrations/270 Cartesia.md>): Build real-time voice agents that search and extract with the Cartesia Line SDK.
-- [Claude](<050 Ecosystem/030 Developer/040 Claude.md>): Use Tavily across the Claude ecosystem as a Connector or Plugin.
-- [Composio](<050 Ecosystem/060 Integrations/200 Composio.md>): Unified tool management across agent frameworks.
-- [Convex](<050 Ecosystem/060 Integrations/340 Convex.md>): Web search and content extraction in Convex apps via the `@tavily/convex-tavily` component.
-- [CrewAI](<050 Ecosystem/060 Integrations/240 CrewAI.md>): Build multi-agent CrewAI workflows with web research.
-- [Devin](<050 Ecosystem/060 Integrations/330 Devin.md>): Connect Tavily to Devin via the MCP Marketplace.
-- [Dify](<050 Ecosystem/060 Integrations/190 Dify.md>): No-code LLM app building with Tavily.
-- [ElevenLabs](<050 Ecosystem/060 Integrations/280 ElevenLabs.md>): Give ElevenLabs agents live web search.
-- [FlowiseAI](<050 Ecosystem/060 Integrations/230 FlowiseAI.md>): Visual LLM orchestration with Tavily.
+- [Cartesia](<050 Ecosystem/060 Integrations/290 Cartesia.md>): Build real-time voice agents that search and extract with the Cartesia Line SDK.
+- [Claude](<050 Ecosystem/030 Developer/050 Claude.md>): Use Tavily across the Claude ecosystem as a Connector or Plugin.
+- [Composio](<050 Ecosystem/060 Integrations/220 Composio.md>): Unified tool management across agent frameworks.
+- [Convex](<050 Ecosystem/060 Integrations/360 Convex.md>): Web search and content extraction in Convex apps via the `@tavily/convex-tavily` component.
+- [CrewAI](<050 Ecosystem/060 Integrations/260 CrewAI.md>): Build multi-agent CrewAI workflows with web research.
+- [Devin](<050 Ecosystem/060 Integrations/350 Devin.md>): Connect Tavily to Devin via the MCP Marketplace.
+- [Dify](<050 Ecosystem/060 Integrations/210 Dify.md>): No-code LLM app building with Tavily.
+- [ElevenLabs](<050 Ecosystem/060 Integrations/300 ElevenLabs.md>): Give ElevenLabs agents live web search.
+- [FlowiseAI](<050 Ecosystem/060 Integrations/250 FlowiseAI.md>): Visual LLM orchestration with Tavily.
 - [Google ADK](<050 Ecosystem/060 Integrations/060 Google ADK.md>): Use Tavily with Google's Agent Development Kit.
-- [Gradium](<050 Ecosystem/060 Integrations/290 Gradium.md>): Use Tavily web search with Gradium voice AI agents.
-- [Grok Build](<050 Ecosystem/030 Developer/060 Grok Build.md>): Real-time web search and research in xAI's Grok Build coding agent.
-- [Haystack](<050 Ecosystem/060 Integrations/310 Haystack.md>): Use Tavily in Haystack pipelines via `tavily-haystack`.
+- [Gradium](<050 Ecosystem/060 Integrations/310 Gradium.md>): Use Tavily web search with Gradium voice AI agents.
+- [Grok Build](<050 Ecosystem/030 Developer/070 Grok Build.md>): Real-time web search and research in xAI's Grok Build coding agent.
+- [Haystack](<050 Ecosystem/060 Integrations/330 Haystack.md>): Use Tavily in Haystack pipelines via `tavily-haystack`.
+- [Hermes Agent](<050 Ecosystem/030 Developer/040 Hermes Agent.md>): Built-in web search and extraction for Hermes Agent, with keyless access and no plugin required.
 - [LangChain](<050 Ecosystem/060 Integrations/010 LangChain.md>): LangChain's recommended search tool.
-- [Langflow](<050 Ecosystem/060 Integrations/160 Langflow.md>): Build multi-agent and RAG apps visually with Tavily.
-- [LibreChat](<050 Ecosystem/060 Integrations/120 LibreChat.md>): Web search, extraction, and agent tools inside LibreChat.
+- [Langflow](<050 Ecosystem/060 Integrations/180 Langflow.md>): Build multi-agent and RAG apps visually with Tavily.
+- [LibreChat](<050 Ecosystem/060 Integrations/140 LibreChat.md>): Web search, extraction, and agent tools inside LibreChat.
 - [LlamaIndex](<050 Ecosystem/060 Integrations/040 LlamaIndex.md>): Search the web from LlamaIndex RAG pipelines.
-- [Make](<050 Ecosystem/060 Integrations/140 Make.md>): No-code workflow automation with Tavily.
-- [Mastra](<050 Ecosystem/060 Integrations/300 Mastra.md>): First-class Mastra tools for search, extract, crawl, and map.
+- [Make](<050 Ecosystem/060 Integrations/160 Make.md>): No-code workflow automation with Tavily.
+- [Mastra](<050 Ecosystem/060 Integrations/320 Mastra.md>): First-class Mastra tools for search, extract, crawl, and map.
 - [Microsoft 365 Copilot](<050 Ecosystem/060 Integrations/070 Microsoft 365 Copilot.md>): Use Tavily as a declarative agent in Microsoft 365 Copilot or as a Copilot Cowork plugin.
-- [n8n](<050 Ecosystem/060 Integrations/130 n8n.md>): No-code workflow automation with Tavily.
+- [n8n](<050 Ecosystem/060 Integrations/150 n8n.md>): No-code workflow automation with Tavily.
 - [OpenAI](<050 Ecosystem/060 Integrations/050 OpenAI.md>): Grounded web search for OpenAI function-calling agents.
 - [OpenClaw](<050 Ecosystem/030 Developer/030 OpenClaw.md>): Add web search and extraction to agents across messaging apps. (같은 문서가 메뉴 다른 곳에도: <050 Ecosystem/060 Integrations/100 OpenClaw.md>)
-- [OpenCode](<050 Ecosystem/030 Developer/070 OpenCode.md>): Web search, extraction, crawling, and research in the OpenCode terminal agent.
-- [Pydantic AI](<050 Ecosystem/060 Integrations/220 Pydantic AI.md>): Type-safe AI agents with Tavily.
-- [StackAI](<050 Ecosystem/060 Integrations/250 StackAI.md>): Enhance StackAI workflows with real-time web data.
-- [TrueFoundry](<050 Ecosystem/060 Integrations/260 TrueFoundry.md>): Managed Tavily MCP access through the TrueFoundry MCP Gateway.
-- [Tines](<050 Ecosystem/060 Integrations/180 Tines.md>): Automated, no-code intelligence workflows.
-- [Vellum](<050 Ecosystem/060 Integrations/320 Vellum.md>): Built-in web search provider in the Vellum Assistant.
+- [OpenCode](<050 Ecosystem/030 Developer/080 OpenCode.md>): Web search, extraction, crawling, and research in the OpenCode terminal agent.
+- [Pydantic AI](<050 Ecosystem/060 Integrations/240 Pydantic AI.md>): Type-safe AI agents with Tavily.
+- [StackAI](<050 Ecosystem/060 Integrations/270 StackAI.md>): Enhance StackAI workflows with real-time web data.
+- [TrueFoundry](<050 Ecosystem/060 Integrations/280 TrueFoundry.md>): Managed Tavily MCP access through the TrueFoundry MCP Gateway.
+- [Tines](<050 Ecosystem/060 Integrations/200 Tines.md>): Automated, no-code intelligence workflows.
+- [Vellum](<050 Ecosystem/060 Integrations/340 Vellum.md>): Built-in web search provider in the Vellum Assistant.
 - [Vercel AI SDK](<050 Ecosystem/060 Integrations/030 Vercel AI SDK.md>): Add web search, extraction, crawling, and mapping to Vercel AI agents.
-- [Zapier](<050 Ecosystem/060 Integrations/170 Zapier.md>): Connect Tavily to thousands of apps, no code required.
+- [Zapier](<050 Ecosystem/060 Integrations/190 Zapier.md>): Connect Tavily to thousands of apps, no code required.
 
 ## Partnerships
 
@@ -207,7 +208,10 @@ Recommended defaults for agents: prefer `search_depth="advanced"`, add `chunks_p
 ## 메뉴에만 있는 문서 (공식 llms.txt 에 없음)
 
 - [Home](<010 Home.md>)
-- [Pi](<050 Ecosystem/030 Developer/050 Pi.md>)
+- [Pi](<050 Ecosystem/030 Developer/060 Pi.md>)
+- [NanoClaw](<050 Ecosystem/030 Developer/090 NanoClaw.md>)
 - [Nemo Deep Agents](<050 Ecosystem/060 Integrations/090 Nemo Deep Agents.md>)
-- [Portkey](<050 Ecosystem/060 Integrations/110 Portkey.md>)
+- [NanoClaw](<050 Ecosystem/060 Integrations/110 NanoClaw.md>)
+- [Portkey](<050 Ecosystem/060 Integrations/120 Portkey.md>)
+- [Langfuse](<050 Ecosystem/060 Integrations/130 Langfuse.md>)
 - [Slack Research Agent](<060 Examples/030 Apps/080 Slack Research Agent.md>)

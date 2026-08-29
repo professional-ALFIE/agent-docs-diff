@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-24T18:59:12.897Z",
+  "생성": "2026-08-29T00:43:14.508Z",
   "제품폴더": "Tavily Docs",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -73,8 +73,8 @@
       "경로": "040 API & SDKs/020 Core Endpoints/010 Search.md",
       "href": "/documentation/api-reference/endpoint/search",
       "url": "https://docs.tavily.com/documentation/api-reference/endpoint/search.md",
-      "sha256": "e401c6eb34fc3d04da0b1eadc4ee2ae166dba04ee568bb7e15fa843b734fe9d7",
-      "bytes": 27810,
+      "sha256": "4bf4a1f453e31f6bbbbbf12a1a85979117453c2d3e4bb89af74bf15bb609e34a",
+      "bytes": 27786,
       "contentType": "text/markdown"
     },
     {
@@ -286,7 +286,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/030 Developer/040 Claude.md",
+      "경로": "050 Ecosystem/030 Developer/040 Hermes Agent.md",
+      "href": "/documentation/integrations/hermes-agent",
+      "url": "https://docs.tavily.com/documentation/integrations/hermes-agent.md",
+      "sha256": "a328862b42e64f23bfd1a0d0c2b869907cd54e2ec1a3e6a068927b611b21ace3",
+      "bytes": 7130,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/050 Claude.md",
       "href": "/documentation/integrations/claude",
       "url": "https://docs.tavily.com/documentation/integrations/claude.md",
       "sha256": "624c6538f7218f5fdce2fb30ce77b5d864db44d471e7e857f9f1ceaea8789063",
@@ -294,7 +302,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/030 Developer/050 Pi.md",
+      "경로": "050 Ecosystem/030 Developer/060 Pi.md",
       "href": "/documentation/integrations/pi",
       "url": "https://docs.tavily.com/documentation/integrations/pi.md",
       "sha256": "738205e067e482d965f003839761615a824b6278f0795609044f080642e3da06",
@@ -302,7 +310,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/030 Developer/060 Grok Build.md",
+      "경로": "050 Ecosystem/030 Developer/070 Grok Build.md",
       "href": "/documentation/integrations/grok-build",
       "url": "https://docs.tavily.com/documentation/integrations/grok-build.md",
       "sha256": "35ba041a536953ad8115db310b0a449203b679bcf5283251048e59f4baf1938b",
@@ -310,11 +318,19 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/030 Developer/070 OpenCode.md",
+      "경로": "050 Ecosystem/030 Developer/080 OpenCode.md",
       "href": "/documentation/integrations/opencode",
       "url": "https://docs.tavily.com/documentation/integrations/opencode.md",
       "sha256": "210bd082fab5d3a7d7001db3c51a0fe9bbd75769138928510ef91f9f8f354875",
       "bytes": 6069,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/030 Developer/090 NanoClaw.md",
+      "href": "/documentation/integrations/nanoclaw",
+      "url": "https://docs.tavily.com/documentation/integrations/nanoclaw.md",
+      "sha256": "6bb52bfef71aea17447138bab12b0553395bcc44d723d49a3372555f3caec9d6",
+      "bytes": 4345,
       "contentType": "text/markdown"
     },
     {
@@ -446,7 +462,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/110 Portkey.md",
+      "경로": "050 Ecosystem/060 Integrations/110 NanoClaw.md",
+      "href": "/documentation/integrations/nanoclaw",
+      "url": "https://docs.tavily.com/documentation/integrations/nanoclaw.md",
+      "sha256": "6bb52bfef71aea17447138bab12b0553395bcc44d723d49a3372555f3caec9d6",
+      "bytes": 4345,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/120 Portkey.md",
       "href": "/documentation/integrations/portkey",
       "url": "https://docs.tavily.com/documentation/integrations/portkey.md",
       "sha256": "f390a9e6b7bd997d42a304349ee699a1db9967457688b4c91efb817579bfe859",
@@ -454,7 +478,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/120 LibreChat.md",
+      "경로": "050 Ecosystem/060 Integrations/130 Langfuse.md",
+      "href": "/documentation/integrations/langfuse",
+      "url": "https://docs.tavily.com/documentation/integrations/langfuse.md",
+      "sha256": "d59fe18321f828ab3474a384ec200874ac123060d9d548b01842ffaa58cd798d",
+      "bytes": 11202,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Ecosystem/060 Integrations/140 LibreChat.md",
       "href": "/documentation/integrations/librechat",
       "url": "https://docs.tavily.com/documentation/integrations/librechat.md",
       "sha256": "5fec2b6ecbc10a91c6fe66b9bcb20d72352413e3f9f36899729d23446927b436",
@@ -462,7 +494,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/130 n8n.md",
+      "경로": "050 Ecosystem/060 Integrations/150 n8n.md",
       "href": "/documentation/integrations/n8n",
       "url": "https://docs.tavily.com/documentation/integrations/n8n.md",
       "sha256": "ca016779e3b1a19105c47009c103197fbc8e7b60fb71be35580d3a6156bd948e",
@@ -470,7 +502,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/140 Make.md",
+      "경로": "050 Ecosystem/060 Integrations/160 Make.md",
       "href": "/documentation/integrations/make",
       "url": "https://docs.tavily.com/documentation/integrations/make.md",
       "sha256": "053e3278b0b040932df514f2ba49b50901b9e4fddee8d8d055084869754fcc80",
@@ -478,7 +510,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/150 OpenAI Agent Builder.md",
+      "경로": "050 Ecosystem/060 Integrations/170 OpenAI Agent Builder.md",
       "href": "/documentation/integrations/agent-builder",
       "url": "https://docs.tavily.com/documentation/integrations/agent-builder.md",
       "sha256": "6eea7ec0acce68ae48f10def719106f0f981e0570138bda9f8d27d09dc2239d9",
@@ -486,7 +518,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/160 Langflow.md",
+      "경로": "050 Ecosystem/060 Integrations/180 Langflow.md",
       "href": "/documentation/integrations/langflow",
       "url": "https://docs.tavily.com/documentation/integrations/langflow.md",
       "sha256": "1eb9788987f9a9dc3bbb4cc9f1c16f8a29eaa67a3cedf71ec606c7d04f23d4fb",
@@ -494,7 +526,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/170 Zapier.md",
+      "경로": "050 Ecosystem/060 Integrations/190 Zapier.md",
       "href": "/documentation/integrations/zapier",
       "url": "https://docs.tavily.com/documentation/integrations/zapier.md",
       "sha256": "4b4ad1a188453a29eccb1f89a429e0db56e0282da92cd4799b3fd3e4bc8081eb",
@@ -502,7 +534,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/180 Tines.md",
+      "경로": "050 Ecosystem/060 Integrations/200 Tines.md",
       "href": "/documentation/integrations/tines",
       "url": "https://docs.tavily.com/documentation/integrations/tines.md",
       "sha256": "90d9872bf80b5099d7aa9a4be043fc3527c96f5ef0ba7408356d3ef486575550",
@@ -510,7 +542,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/190 Dify.md",
+      "경로": "050 Ecosystem/060 Integrations/210 Dify.md",
       "href": "/documentation/integrations/dify",
       "url": "https://docs.tavily.com/documentation/integrations/dify.md",
       "sha256": "faef1bfb74b2e630d2af931c0315ad9551e81bc3fdc37724200f664064bb04db",
@@ -518,7 +550,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/200 Composio.md",
+      "경로": "050 Ecosystem/060 Integrations/220 Composio.md",
       "href": "/documentation/integrations/composio",
       "url": "https://docs.tavily.com/documentation/integrations/composio.md",
       "sha256": "8276c7869bcddc6873ac9e562b3ec7acac9d0ba9b0e7af4b59fa30b394ffa8c6",
@@ -526,7 +558,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/210 Agno.md",
+      "경로": "050 Ecosystem/060 Integrations/230 Agno.md",
       "href": "/documentation/integrations/agno",
       "url": "https://docs.tavily.com/documentation/integrations/agno.md",
       "sha256": "4e522aba8ff38699a57d3dd9de740c7802228b4a3522716644ff41eb64d63c8f",
@@ -534,7 +566,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/220 Pydantic AI.md",
+      "경로": "050 Ecosystem/060 Integrations/240 Pydantic AI.md",
       "href": "/documentation/integrations/pydantic-ai",
       "url": "https://docs.tavily.com/documentation/integrations/pydantic-ai.md",
       "sha256": "9c0c855578d2a1e07dabe26f474907b9fb0b0b4b0c02f117124f1a4f3d9d4d32",
@@ -542,7 +574,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/230 FlowiseAI.md",
+      "경로": "050 Ecosystem/060 Integrations/250 FlowiseAI.md",
       "href": "/documentation/integrations/flowise",
       "url": "https://docs.tavily.com/documentation/integrations/flowise.md",
       "sha256": "f36086436d2ba2ac00bc479c9436ce7fda50f3a52fce1b1e9c8676b647585d4b",
@@ -550,7 +582,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/240 CrewAI.md",
+      "경로": "050 Ecosystem/060 Integrations/260 CrewAI.md",
       "href": "/documentation/integrations/crewai",
       "url": "https://docs.tavily.com/documentation/integrations/crewai.md",
       "sha256": "527c9c69bb12d70677f2f11d21bb442bead2db5af50a8590a08899acf205dac0",
@@ -558,7 +590,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/250 StackAI.md",
+      "경로": "050 Ecosystem/060 Integrations/270 StackAI.md",
       "href": "/documentation/integrations/stackai",
       "url": "https://docs.tavily.com/documentation/integrations/stackai.md",
       "sha256": "76349fc4ad87da64617ebb2840448d03b883cc035488bb17f53ad97c5cc6abfe",
@@ -566,7 +598,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/260 TrueFoundry.md",
+      "경로": "050 Ecosystem/060 Integrations/280 TrueFoundry.md",
       "href": "/documentation/integrations/truefoundry",
       "url": "https://docs.tavily.com/documentation/integrations/truefoundry.md",
       "sha256": "62f58fa37ab1b502a1600cdd355b5f9c39ac1d974bd9c56243ef03e8899e6dfa",
@@ -574,7 +606,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/270 Cartesia.md",
+      "경로": "050 Ecosystem/060 Integrations/290 Cartesia.md",
       "href": "/documentation/integrations/cartesia",
       "url": "https://docs.tavily.com/documentation/integrations/cartesia.md",
       "sha256": "ac9026c8e4884668625bf726b71ebe340c4c61606d941628ddddfd2d66165e5c",
@@ -582,7 +614,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/280 ElevenLabs.md",
+      "경로": "050 Ecosystem/060 Integrations/300 ElevenLabs.md",
       "href": "/documentation/integrations/elevenlabs",
       "url": "https://docs.tavily.com/documentation/integrations/elevenlabs.md",
       "sha256": "075457bf9d31dc4482c55e593273f2a04fdef920d093a9b596188a5375530572",
@@ -590,7 +622,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/290 Gradium.md",
+      "경로": "050 Ecosystem/060 Integrations/310 Gradium.md",
       "href": "/documentation/integrations/gradium",
       "url": "https://docs.tavily.com/documentation/integrations/gradium.md",
       "sha256": "5fca846b326ef9347178d1089bdcf5329af967592ffd98175a65f5c443c6bc53",
@@ -598,7 +630,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/300 Mastra.md",
+      "경로": "050 Ecosystem/060 Integrations/320 Mastra.md",
       "href": "/documentation/integrations/mastra",
       "url": "https://docs.tavily.com/documentation/integrations/mastra.md",
       "sha256": "cc0f10294ad7490c946721f5fc12ee701e92830508f0c574ca73635c5b35aa6a",
@@ -606,7 +638,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/310 Haystack.md",
+      "경로": "050 Ecosystem/060 Integrations/330 Haystack.md",
       "href": "/documentation/integrations/haystack",
       "url": "https://docs.tavily.com/documentation/integrations/haystack.md",
       "sha256": "5f02e988807617c9ce7072e72dccd2b6c5ec1b551bb038c695e872c12d248213",
@@ -614,7 +646,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/320 Vellum.md",
+      "경로": "050 Ecosystem/060 Integrations/340 Vellum.md",
       "href": "/documentation/integrations/vellum",
       "url": "https://docs.tavily.com/documentation/integrations/vellum.md",
       "sha256": "b201cd75b84907ab83e520ae9b0d84e7407be277211c9f37521557c1891065c5",
@@ -622,7 +654,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/330 Devin.md",
+      "경로": "050 Ecosystem/060 Integrations/350 Devin.md",
       "href": "/documentation/integrations/devin",
       "url": "https://docs.tavily.com/documentation/integrations/devin.md",
       "sha256": "c1cee93398ed35d7b62d9abe0abf8c00b519ac8f0837043d5590513e041f9e1f",
@@ -630,7 +662,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Ecosystem/060 Integrations/340 Convex.md",
+      "경로": "050 Ecosystem/060 Integrations/360 Convex.md",
       "href": "/documentation/integrations/convex",
       "url": "https://docs.tavily.com/documentation/integrations/convex.md",
       "sha256": "75630d72a099a55c6118f6a5abe95751886b4f09bd0d75763a5ca4efe0964047",
@@ -825,8 +857,8 @@
       "경로": "070 Changelog/010 Changelog.md",
       "href": "/changelog",
       "url": "https://docs.tavily.com/changelog.md",
-      "sha256": "478275b80de6172e09a0cbbea756271e2fe5310314301d1d18f80aa478d4ed94",
-      "bytes": 27148,
+      "sha256": "d2d3ee97fa70b13053afd634e2e146f41d4cafae2a26b54f1164e5858044bc49",
+      "bytes": 27730,
       "contentType": "text/markdown"
     }
   ],
@@ -839,9 +871,9 @@
     }
   ],
   "llms": {
-    "치환": 97,
+    "치환": 98,
     "미노출": 2,
     "외부": 3,
-    "메뉴에만": 5
+    "메뉴에만": 8
   }
 }

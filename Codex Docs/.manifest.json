@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-25T16:00:17.283Z",
+  "생성": "2026-08-29T00:43:26.587Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -17,8 +17,8 @@
       "경로": "010 Overview/020 Get started/020 Use ChatGPT.md",
       "href": "/codex/use-chatgpt",
       "url": "https://learn.chatgpt.com/docs/use-chatgpt.md",
-      "sha256": "069233407d6f4d7fcd05de92fa80e3c1dd1ba0ab22aac48f2c2566381a2ab931",
-      "bytes": 14463,
+      "sha256": "f81ec5a9199e86add61b65812b3dce23e0e13bb82391d612ab6db4797454e35e",
+      "bytes": 14464,
       "contentType": "text/markdown"
     },
     {
@@ -57,8 +57,8 @@
       "경로": "010 Overview/030 Foundations/030 Skills & Plugins.md",
       "href": "/codex/skills-and-plugins",
       "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
-      "sha256": "0ad76146f66f6239da09714f0731c48d8f4132f7d377e879e79d3aca79c1e7e7",
-      "bytes": 4812,
+      "sha256": "bf84a1447f98d9934a521a51d3a36ccb4e6e1690e7d285312ec078203f8b9339",
+      "bytes": 4821,
       "contentType": "text/markdown"
     },
     {
@@ -73,15 +73,15 @@
       "경로": "010 Overview/040 Explore/010 What's new.md",
       "href": "/codex/whats-new",
       "url": "https://learn.chatgpt.com/docs/whats-new.md",
-      "sha256": "1d1b2d4d1ceed2268c86e1dd856ca4bd68b117719cc899a343298d3a7b874b15",
-      "bytes": 41884,
+      "sha256": "6ce27d5a4c6adabbe74c7940c7c430c4c3ff44fb6eebfcfa6884433cd0bcfdf7",
+      "bytes": 49372,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Overview/040 Explore/020 Models.md",
       "href": "/codex/models",
       "url": "https://learn.chatgpt.com/docs/models.md",
-      "sha256": "645aabe4c385b2b26c9b175357391f7dff8c169bf70ac63d674cf7b5bbf1ce09",
+      "sha256": "92693a296077863addc675ad39eea72f214c1f662957d3ea69aec16234f8e4d2",
       "bytes": 15970,
       "contentType": "text/markdown"
     },
@@ -89,8 +89,8 @@
       "경로": "010 Overview/040 Explore/030 Pricing.md",
       "href": "/codex/pricing",
       "url": "https://learn.chatgpt.com/docs/pricing.md",
-      "sha256": "3b5f39a64fb7459181044da23a7771a307b6afef21d31b7569dadfbc4fecf461",
-      "bytes": 44351,
+      "sha256": "6c846c477e84333ed9fc8566f3a620213e4bf143d6b79fad7c4647fbda80b607",
+      "bytes": 45539,
       "contentType": "text/markdown"
     },
     {
@@ -169,8 +169,8 @@
       "경로": "020 Features/010 Overview.md",
       "href": "/codex/features",
       "url": "https://learn.chatgpt.com/docs/features.md",
-      "sha256": "07b084f1702ee51275ebbe9b56ea4789fad831916ed07db4b65afc993385c0c1",
-      "bytes": 6151,
+      "sha256": "04fc49e634c8a1c208d15bdebcf0303138a955231be7e0b48292e38fd892170b",
+      "bytes": 6173,
       "contentType": "text/markdown"
     },
     {
@@ -201,8 +201,8 @@
       "경로": "020 Features/020 Workflows/040 Scheduled tasks.md",
       "href": "/codex/automations",
       "url": "https://learn.chatgpt.com/docs/automations.md",
-      "sha256": "1b305d8d341ae32412f6d7c3a992c08a7df94f58612155e026a7448ef049c0ac",
-      "bytes": 16308,
+      "sha256": "74f337fa46f682d6b1d22c523f2c6e6a866acbb3eab6a9a69c1513e3ce81109b",
+      "bytes": 18048,
       "contentType": "text/markdown"
     },
     {
@@ -241,8 +241,8 @@
       "경로": "020 Features/030 Capabilities/010 Browser.md",
       "href": "/codex/browser",
       "url": "https://learn.chatgpt.com/docs/browser.md",
-      "sha256": "b40840a522f5bab60f00f46943dead31a78c9fb27f7f3a5e0e7588eaefd8e05b",
-      "bytes": 11330,
+      "sha256": "27d80f51ec78c8d2c5fe27299033fc9d1649f6612957c5c5fa2cef1db7676a5d",
+      "bytes": 15289,
       "contentType": "text/markdown"
     },
     {
@@ -302,19 +302,19 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 Features/030 Capabilities/090 Chrome extension.md",
+      "경로": "020 Features/030 Capabilities/090 Browser extension.md",
       "href": "/codex/chrome-extension",
       "url": "https://learn.chatgpt.com/docs/chrome-extension.md",
-      "sha256": "fd32bb64696e5c95b8d8082db5b048f85a19f765541afa921a495d34224bd163",
-      "bytes": 8975,
+      "sha256": "6bb7a7b3d953f9dbd13dc0ecd4a606ec2686c88ad967bdf04f6d515ddbeefa09",
+      "bytes": 10038,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 Features/030 Capabilities/100 Work with files.md",
       "href": "/codex/artifacts-viewer",
       "url": "https://learn.chatgpt.com/docs/artifacts-viewer.md",
-      "sha256": "a2f8b9a61a4b990a91015e72c80b7e96399647e16b4e1f58276a4674d1030476",
-      "bytes": 4261,
+      "sha256": "16a6ea2620ab1909da72ab6235445ac4fffc046fa316cf69bc0b2f57fbeb4ace",
+      "bytes": 4266,
       "contentType": "text/markdown"
     },
     {
@@ -337,8 +337,8 @@
       "경로": "020 Features/040 Reference/030 Settings.md",
       "href": "/codex/reference/settings",
       "url": "https://learn.chatgpt.com/docs/reference/settings.md",
-      "sha256": "d896f9565bc6c0350c8eb9d33abd6e8c090b13b7b5a994d33253cc6e3ee21f80",
-      "bytes": 4745,
+      "sha256": "c9643d8d9b6d2bc467d1a6541c9a8d91bb4fe20a783b37ddc318843aa103e04e",
+      "bytes": 4746,
       "contentType": "text/markdown"
     },
     {
@@ -401,8 +401,8 @@
       "경로": "030 Configuration/030 Config file/030 Config Reference.md",
       "href": "/codex/config-file/config-reference",
       "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
-      "sha256": "6464159e3897bbda6c81871500497bf79de35c62d7dfd7af354b2a33a158f687",
-      "bytes": 91395,
+      "sha256": "b60fbf91a216b9a1136fb42c7dbbbf42d3943b212101aae09a1d5b946805e6dd",
+      "bytes": 92585,
       "contentType": "text/markdown"
     },
     {
@@ -417,8 +417,8 @@
       "경로": "030 Configuration/030 Config file/050 Sample Config.md",
       "href": "/codex/config-file/config-sample",
       "url": "https://learn.chatgpt.com/docs/config-file/config-sample.md",
-      "sha256": "9cdd6430e4449d3f4d19980a37102a3487624dcf3150e2491ab70dadd3f80c3b",
-      "bytes": 29660,
+      "sha256": "085f334489c5b5ae5cc10db59d5537bc3cd2decfd9daf32785e895492b6505d7",
+      "bytes": 30694,
       "contentType": "text/markdown"
     },
     {
@@ -465,8 +465,8 @@
       "경로": "030 Configuration/050 Extend ChatGPT and Codex/020 MCP.md",
       "href": "/codex/extend/mcp",
       "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
-      "sha256": "b3f015b9edce4bd7a27c29d7b39f3014b92ab7dd5c4481e96ee3c9d4ab137efa",
-      "bytes": 13213,
+      "sha256": "c8241aaeece7a970751e14f9c864e972f8abacc09117e3f8b70f3932a0094f35",
+      "bytes": 18939,
       "contentType": "text/markdown"
     },
     {
@@ -505,8 +505,8 @@
       "경로": "040 Developers/010 Overview.md",
       "href": "/codex/developers",
       "url": "https://learn.chatgpt.com/docs/developers.md",
-      "sha256": "e8cdd9f51db51c18ab946ed315f035d3bd8dc5850a44e38b07a0a3f62aca9b75",
-      "bytes": 6564,
+      "sha256": "01992dfa6523195b3a33f27239f295812e29448dc1effa131a1a8107bdcd6d11",
+      "bytes": 6790,
       "contentType": "text/markdown"
     },
     {
@@ -542,7 +542,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "040 Developers/030 Extend and automate/030 Hooks.md",
+      "경로": "040 Developers/030 Extend and automate/030 Site tools (WebMCP).md",
+      "href": "/codex/webmcp",
+      "url": "https://learn.chatgpt.com/docs/webmcp.md",
+      "sha256": "6935d7e39c25d19c931335960fb7a66d52e265f92cf31d07a6f72c8b5f7e5798",
+      "bytes": 8305,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "040 Developers/030 Extend and automate/040 Hooks.md",
       "href": "/codex/hooks",
       "url": "https://learn.chatgpt.com/docs/hooks.md",
       "sha256": "c1f1b2d78195fb6d382f9b9f32fe78d79025d6f0e1c65d87a1eece1693a78271",
@@ -593,8 +601,8 @@
       "경로": "040 Developers/050 Build with Codex/020 App Server.md",
       "href": "/codex/app-server",
       "url": "https://learn.chatgpt.com/docs/app-server.md",
-      "sha256": "9194fc63fd56b8f49bf16c5ecc672eb50a4bc9c08370f3289c183d2a1133844a",
-      "bytes": 98321,
+      "sha256": "ed260792a8d17ed2ff91caceccc80bb9d256dbc1289cd6bf088c44db538bc91f",
+      "bytes": 98322,
       "contentType": "text/markdown"
     },
     {
@@ -625,8 +633,8 @@
       "경로": "040 Developers/060 Third-party integrations/010 GitHub.md",
       "href": "/codex/third-party/github",
       "url": "https://learn.chatgpt.com/docs/third-party/github.md",
-      "sha256": "0eaa1c0ddc9143f7e625509fde2f010a2115cfe71dc88f5e5ad57c72580b3071",
-      "bytes": 6566,
+      "sha256": "d2b08eb80004e26a246d2664007de3239c7d07fa35055f6bf6a6362ebe953ef1",
+      "bytes": 6545,
       "contentType": "text/markdown"
     },
     {
@@ -737,8 +745,8 @@
       "경로": "050 Security/030 Codex Security/020 Codex Security plugin/010 Quickstart.md",
       "href": "/codex/security/plugin",
       "url": "https://learn.chatgpt.com/docs/security/plugin.md",
-      "sha256": "3a6051f0cac73354e9d67be7d0eee75a0b447d6323582eafb2318acf6b13f145",
-      "bytes": 8216,
+      "sha256": "fe4698447a3f3a5e785699fe54f9de7d3532f312df3fac134505694d4b878f09",
+      "bytes": 8228,
       "contentType": "text/markdown"
     },
     {
@@ -817,8 +825,8 @@
       "경로": "050 Security/030 Codex Security/020 Codex Security plugin/110 Changelog.md",
       "href": "/codex/security/plugin/changelog",
       "url": "https://learn.chatgpt.com/docs/security/plugin/changelog.md",
-      "sha256": "87ebd18758f65b0f0323a114be946d41377be1fc6f51a91198a5c9294f09c3a7",
-      "bytes": 15968,
+      "sha256": "d801375db660c46791d30226d93654bc1574f4ab60b7ca8024e901fb69a3927e",
+      "bytes": 17000,
       "contentType": "text/markdown"
     },
     {
@@ -841,12 +849,20 @@
       "경로": "050 Security/030 Codex Security/030 Codex Security CLI/030 Run scans in CI.md",
       "href": "/codex/security/cli/ci",
       "url": "https://learn.chatgpt.com/docs/security/cli/ci.md",
-      "sha256": "c1dcf0539923d920415a7aa4535602e9200d0344a3e290b976ea2da35507ccef",
-      "bytes": 15930,
+      "sha256": "8ca71d7e679e4e033eb3ea98322496c2f5c125a840da6f7f0280d2ffaddec7db",
+      "bytes": 16325,
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Security/030 Codex Security/030 Codex Security CLI/040 Reference.md",
+      "경로": "050 Security/030 Codex Security/030 Codex Security CLI/040 GitLab CI-CD.md",
+      "href": "/codex/security/cli/ci/gitlab",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/gitlab.md",
+      "sha256": "4c8faca552bbdadd64df9f0cb34b6c928c4d41b5fdb222c7ceeb69415fc9f2c0",
+      "bytes": 18796,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "050 Security/030 Codex Security/030 Codex Security CLI/050 Reference.md",
       "href": "/codex/security/cli/reference",
       "url": "https://learn.chatgpt.com/docs/security/cli/reference.md",
       "sha256": "62a474509e1806fed52d84791de8c981c49731ba07cd521c4d669638cd2e47a2",
@@ -854,7 +870,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "050 Security/030 Codex Security/030 Codex Security CLI/050 FAQ.md",
+      "경로": "050 Security/030 Codex Security/030 Codex Security CLI/060 FAQ.md",
       "href": "/codex/security/cli/faq",
       "url": "https://learn.chatgpt.com/docs/security/cli/faq.md",
       "sha256": "bb3a1f6739b81941294b7ee22366f8ed898b57fd4220da2818a40b5d35e0c101",
@@ -905,7 +921,7 @@
       "경로": "050 Security/040 Cyber safety/010 Models & Trusted Access.md",
       "href": "/codex/cyber-safety",
       "url": "https://learn.chatgpt.com/docs/cyber-safety.md",
-      "sha256": "843df6192b1cbf4eacb355759fb8fc60edb4c8855091abe61c812a03c58ad7cc",
+      "sha256": "bb0024ac81bd00f9a2b17b6142a2f4c68d42b626827df1522e8466a8b98b03b9",
       "bytes": 5125,
       "contentType": "text/markdown"
     },
@@ -937,8 +953,8 @@
       "경로": "060 Administration/020 Getting started/020 ChatGPT Work Overview.md",
       "href": "/codex/enterprise/chatgpt-work-overview",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
-      "sha256": "3279aff5d513cee01943807d4f17ce5980f02e6c25149dc6bd632b004255484e",
-      "bytes": 11584,
+      "sha256": "45dba618452a57377d8229691a8c85c34a1ea88fa2b2daf32d9126e7f585200b",
+      "bytes": 11396,
       "contentType": "text/markdown"
     },
     {
@@ -985,8 +1001,8 @@
       "경로": "060 Administration/030 Identity and authentication/040 Service accounts.md",
       "href": "/codex/enterprise/service-accounts",
       "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts.md",
-      "sha256": "54b1d955fe020c628632946f95f6236632adbc16a88f2e2ff4d27bc23f72d146",
-      "bytes": 8935,
+      "sha256": "2418e02ccae67c129d348312333fff0b2e493e93295bb8e73f971e1677848d94",
+      "bytes": 8921,
       "contentType": "text/markdown"
     },
     {
@@ -1065,32 +1081,32 @@
       "경로": "060 Administration/060 Usage, governance, and compliance/010 Governance.md",
       "href": "/codex/enterprise/governance",
       "url": "https://learn.chatgpt.com/docs/enterprise/governance.md",
-      "sha256": "111c19c69f7940d3bdece7c82d2b6b72d14b1587bc38138500f503ab9833c584",
-      "bytes": 5620,
+      "sha256": "1adb8b6b1811beae3dc49ed1324a7900d60f973963d2e4878e5bc219c5b07568",
+      "bytes": 5599,
       "contentType": "text/markdown"
     },
     {
       "경로": "060 Administration/060 Usage, governance, and compliance/020 Workspace analytics.md",
       "href": "/codex/enterprise/workspace-analytics",
       "url": "https://learn.chatgpt.com/docs/enterprise/workspace-analytics.md",
-      "sha256": "59b8f23b66b65419cf9ee3c5ba1241b3a35008f8b7fcacdab55f5a17565b181e",
-      "bytes": 3564,
+      "sha256": "0c39730a6c431aa07a77abc875e4d78e1427d8a1b5fe6eb6243891ee34fad4d5",
+      "bytes": 3638,
       "contentType": "text/markdown"
     },
     {
       "경로": "060 Administration/060 Usage, governance, and compliance/030 Analytics API.md",
       "href": "/codex/enterprise/analytics-api",
       "url": "https://learn.chatgpt.com/docs/enterprise/analytics-api.md",
-      "sha256": "5439c9b30725b8a3ea27961d2e783354840994c54093b0e56ae8dfbd51013719",
-      "bytes": 1797,
+      "sha256": "98c6a495f558053d75df9bec82cda7a7ecfbcb9379fe2b98fc71b69c8657f9ba",
+      "bytes": 1801,
       "contentType": "text/markdown"
     },
     {
       "경로": "060 Administration/060 Usage, governance, and compliance/040 Compliance API and audit events.md",
       "href": "/codex/enterprise/compliance-api",
       "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api.md",
-      "sha256": "0220c2cafe47f5ab5429eaa6225ed1448f6780950da06d60368b6616dce72fea",
-      "bytes": 4584,
+      "sha256": "3b1c3a0613606946bcd1414770a4ec9e797fa2bcda511a5e1f00e046951e2823",
+      "bytes": 4544,
       "contentType": "text/markdown"
     },
     {
@@ -1141,9 +1157,9 @@
     }
   ],
   "llms": {
-    "치환": 142,
+    "치환": 144,
     "미노출": 5,
-    "외부": 5,
+    "외부": 6,
     "메뉴에만": 2
   }
 }

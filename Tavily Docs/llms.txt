@@ -135,6 +135,7 @@ Recommended defaults for agents: prefer `search_depth="advanced"`, add `chunks_p
 - [Gradium](https://docs.tavily.com/documentation/integrations/gradium.md): Use Tavily web search with Gradium voice AI agents.
 - [Grok Build](https://docs.tavily.com/documentation/integrations/grok-build.md): Real-time web search and research in xAI's Grok Build coding agent.
 - [Haystack](https://docs.tavily.com/documentation/integrations/haystack.md): Use Tavily in Haystack pipelines via `tavily-haystack`.
+- [Hermes Agent](https://docs.tavily.com/documentation/integrations/hermes-agent.md): Built-in web search and extraction for Hermes Agent, with keyless access and no plugin required.
 - [LangChain](https://docs.tavily.com/documentation/integrations/langchain.md): LangChain's recommended search tool.
 - [Langflow](https://docs.tavily.com/documentation/integrations/langflow.md): Build multi-agent and RAG apps visually with Tavily.
 - [LibreChat](https://docs.tavily.com/documentation/integrations/librechat.md): Web search, extraction, and agent tools inside LibreChat.

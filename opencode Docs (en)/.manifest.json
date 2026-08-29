@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-25T03:59:51.345Z",
+  "생성": "2026-08-29T00:43:21.338Z",
   "제품폴더": "opencode Docs (en)",
   "진입": "https://opencode.ai/docs/en",
   "최상위수": 10,
@@ -25,8 +25,8 @@
       "경로": "030 Providers.md",
       "href": "/docs/providers/",
       "url": "https://opencode.ai/docs/providers.md",
-      "sha256": "0c0f1364ab8a1942899c5159e5c2b72dde28cbf9e0b04745c50110c7ebd3caa6",
-      "bytes": 63788,
+      "sha256": "9f3b33ab719ddd0b74b8a92ccb204dca4b95fa4b9f493751b1bab3e4e477012a",
+      "bytes": 66105,
       "contentType": "text/plain"
     },
     {
@@ -65,8 +65,8 @@
       "경로": "080 Usage/010 Go.md",
       "href": "/docs/go/",
       "url": "https://opencode.ai/docs/go.md",
-      "sha256": "ebd52ae959733f123ff1f834f2aedc064d7b74bcf2e42693ae618596f9fd4566",
-      "bytes": 18842,
+      "sha256": "3783f9aa599b51b8ecca59c62f0a311b3eb3b3d068503bc855618ddb1eb8b6e5",
+      "bytes": 19961,
       "contentType": "text/plain"
     },
     {
@@ -81,8 +81,8 @@
       "경로": "080 Usage/030 CLI.md",
       "href": "/docs/cli/",
       "url": "https://opencode.ai/docs/cli.md",
-      "sha256": "0ecc1310904cdc54d4704f636942c5a17a05c14eeeaec53d08deafd246e806c6",
-      "bytes": 27125,
+      "sha256": "2a9ab76671f746744a5db10fe8f2f26968c071ce2abaffc05a58b17f9a048114",
+      "bytes": 27229,
       "contentType": "text/plain"
     },
     {
@@ -105,8 +105,8 @@
       "경로": "080 Usage/060 Zen.md",
       "href": "/docs/zen/",
       "url": "https://opencode.ai/docs/zen.md",
-      "sha256": "215c618fd2f0a703429a1ca7a974d048c618fb428d9739e7068063cdaae03356",
-      "bytes": 26356,
+      "sha256": "a1e89d45a5379721fafaba2c158c43d5a7a5fd9ce08b5d81314e8ed4bad1a85c",
+      "bytes": 26427,
       "contentType": "text/plain"
     },
     {
@@ -137,8 +137,8 @@
       "경로": "090 Configure/010 Tools.md",
       "href": "/docs/tools/",
       "url": "https://opencode.ai/docs/tools.md",
-      "sha256": "6749884f01f3e032e1ede22fb32a5d644709b0b4e24d569dadef2f6c8067eebc",
-      "bytes": 8371,
+      "sha256": "543ef105b7ad03fd877034958de61b116c2e9cd30e6fe0eb2b11e0288a9e1ef0",
+      "bytes": 8463,
       "contentType": "text/plain"
     },
     {

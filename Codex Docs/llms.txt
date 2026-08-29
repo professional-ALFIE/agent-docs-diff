@@ -7,6 +7,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 ## Documentation sets
 - [Combined ChatGPT docs](https://learn.chatgpt.com/docs/llms-full.txt): Single-file Markdown export of ChatGPT and Codex guides and references.
 - [Codex manual (Markdown)](https://learn.chatgpt.com/docs/codex-manual.md): Machine-oriented condensed manual generated from the ChatGPT and Codex docs set.
+- [ChatGPT use cases](https://learn.chatgpt.com/use-cases/llms.txt): Generated index of practical ChatGPT and Codex workflows and curated collections.
 
 ## Administration
 - [Administration](https://learn.chatgpt.com/docs/administration.md): Set access and policy boundaries for ChatGPT, Codex developer tools, APIs, plugins, and connected systems
@@ -42,7 +43,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Authentication](https://learn.chatgpt.com/docs/auth.md): Sign-in methods for ChatGPT web and Codex clients
 
 ## Automations
-- [Scheduled tasks](https://learn.chatgpt.com/docs/automations.md): Schedule recurring tasks in ChatGPT
+- [Scheduled tasks](https://learn.chatgpt.com/docs/automations.md): Run tasks on a schedule or from supported app events in ChatGPT
 
 ## Browser
 - [Browser](https://learn.chatgpt.com/docs/browser.md): Let ChatGPT research and interact with websites
@@ -54,7 +55,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Build skills](https://learn.chatgpt.com/docs/build-skills.md): Give ChatGPT and Codex new capabilities and expertise
 
 ## Chrome Extension
-- [Chrome extension](https://learn.chatgpt.com/docs/chrome-extension.md): Use Chrome with ChatGPT while managing browser permissions, website approvals, and browsing data
+- [Browser extension](https://learn.chatgpt.com/docs/chrome-extension.md): Use Chrome, Edge, Brave, Opera, or Vivaldi with ChatGPT
 
 ## Cli
 - [Codex CLI](https://learn.chatgpt.com/docs/codex/cli.md): Use Codex from your terminal and scripts.
@@ -269,6 +270,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Run a deep security scan](https://learn.chatgpt.com/docs/security/plugin/deep-scans.md): Run a slower, more thorough review of a repository or scoped folder.
 - [Run bulk security scans](https://learn.chatgpt.com/docs/security/cli/bulk-scans.md): Discover GitHub repositories or run resumable security scans from a CSV inventory.
 - [Run Codex Security in CI](https://learn.chatgpt.com/docs/security/cli/ci.md): Scan pull-request and merge-request changes, preserve structured results, upload SARIF, and set a severity policy.
+- [Run Codex Security in GitLab CI/CD](https://learn.chatgpt.com/docs/security/cli/ci/gitlab.md): Scan GitLab merge requests and branches, publish SARIF findings, and optionally open draft merge requests with verified fixes.
 - [Security Review](https://learn.chatgpt.com/docs/security/security-review.md): Configure and run in-depth security reviews for GitHub pull requests.
 - [Triage a backlog](https://learn.chatgpt.com/docs/security/plugin/triage-backlog.md): Review existing security findings against a repository and order follow-up work.
 - [Use the Codex Security workbench](https://learn.chatgpt.com/docs/security/plugin/workbench.md): Start security scans, review findings, and inspect repository history in the Codex desktop app.
@@ -293,7 +295,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt.md): Choose Chat, ChatGPT Work, or Codex, add useful context, and refine the result.
 
 ## Videos
-- [Videos](https://learn.chatgpt.com/videos.md): Learn how to use Codex with demos, walkthroughs, and talks
+- [Videos](https://learn.chatgpt.com/videos.md): Learn how to use ChatGPT and Codex with demos, walkthroughs, and talks
 
 ## Visualizations
 - [Visualizations](https://learn.chatgpt.com/docs/visualizations.md): Turn ideas and information into interactive visual explanations in ChatGPT
@@ -303,6 +305,9 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 
 ## Web Search
 - [Web search](https://learn.chatgpt.com/docs/web-search.md): Search the web while you work in ChatGPT
+
+## Webmcp
+- [Site tools](https://learn.chatgpt.com/docs/webmcp.md): Use WebMCP to give AI agents a direct way to work with your website
 
 ## Whats New
 - [What's new](https://learn.chatgpt.com/docs/whats-new.md): A weekly digest of ChatGPT and Codex features that can change how you work
