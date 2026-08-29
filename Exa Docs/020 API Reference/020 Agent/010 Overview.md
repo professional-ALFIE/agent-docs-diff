@@ -31,14 +31,15 @@ For implementation examples and workflow guidance, start with the [Agent guide](
 
 ## Endpoints
 
-| Method   | Path                      | Description                                                 |
-| -------- | ------------------------- | ----------------------------------------------------------- |
-| `POST`   | `/agent/runs`             | Create a run. Can return JSON or stream server-sent events. |
-| `GET`    | `/agent/runs`             | List runs for your team.                                    |
-| `GET`    | `/agent/runs/{id}`        | Get a run by ID.                                            |
-| `POST`   | `/agent/runs/{id}/cancel` | Cancel a queued or running run.                             |
-| `DELETE` | `/agent/runs/{id}`        | Delete a stored run.                                        |
-| `GET`    | `/agent/runs/{id}/events` | List run events or replay them as server-sent events.       |
+| Method   | Path                      | Description                                                                     |
+| -------- | ------------------------- | ------------------------------------------------------------------------------- |
+| `POST`   | `/agent/runs`             | Create a run. Can return JSON or stream server-sent events.                     |
+| `GET`    | `/agent/runs`             | List runs for your team.                                                        |
+| `GET`    | `/agent/runs/{id}`        | Get a run by ID.                                                                |
+| `POST`   | `/agent/runs/{id}/cancel` | Cancel a queued or running run immediately.                                     |
+| `POST`   | `/agent/runs/{id}/stop`   | Complete a running `max` effort run early, keeping the results gathered so far. |
+| `DELETE` | `/agent/runs/{id}`        | Delete a stored run.                                                            |
+| `GET`    | `/agent/runs/{id}/events` | List run events or replay them as server-sent events.                           |
 
 ## Run lifecycle
 
@@ -51,7 +52,7 @@ queued -> running -> completed | failed | cancelled
 Completed, failed, and cancelled runs are terminal. Running or queued runs have `stopReason: null`. Terminal runs use one of these stop reasons:
 
 ```text theme={null}
-schema_satisfied | budget_reached | error | cancelled
+schema_satisfied | budget_reached | stopped | error | cancelled
 ```
 
 ## Output
