@@ -17,7 +17,7 @@
 
 ## What it is
 
-`/contents` returns clean, structured content from any URL, handling JavaScript-rendered pages, PDFs, and complex layouts automatically. You pass in URLs and get back full page text, targeted highlights, LLM-generated summaries, or all three. It can also be used to crawl linked subpages to pull content from entire site sections in a single request.
+`/contents` returns clean, structured content from any URL, handling JavaScript-rendered pages, PDFs, and complex layouts automatically. You pass in URLs and choose full page text, targeted highlights, or LLM-generated summaries. It can also crawl linked subpages to pull content from entire site sections in a single request.
 
 All contents features are also available in `/search` for returned URLs, at no extra charge up to 10 results per search (\$1/1000 pages afterwards). We recommend using `/search` in this way instead of `/contents` for web search tool use cases.
 
@@ -26,17 +26,18 @@ All contents features are also available in `/search` for returned URLs, at no e
   find the pages first, start with [Search](/docs/reference/search-api-guide).
 </Info>
 
-## Key Capabilities
+## Key capabilities
 
-### Content Modes
+### Content modes
 
-Choose how you receive content, or combine them in a single request:
+Choose the content view that matches the task:
 
-| Mode           | What You Get                        | Best For                                                |
-| -------------- | ----------------------------------- | ------------------------------------------------------- |
-| **Text**       | Full page content as clean markdown | Deep analysis, full context research                    |
-| **Highlights** | Key excerpts relevant to your query | Agent workflows, factual lookups (10x fewer tokens)     |
-| **Summary**    | LLM-generated abstract              | Quick overviews, structured extraction with JSON schema |
+| Mode                   | What You Get                             | Best For                                                |
+| ---------------------- | ---------------------------------------- | ------------------------------------------------------- |
+| **Text**               | Full page content as clean markdown      | Deep analysis, full context research                    |
+| **Highlights**         | Key excerpts relevant to your query      | Per-page evidence and factual lookups                   |
+| **Dynamic Highlights** | Excerpts allocated across the result set | Shared agent or RAG context                             |
+| **Summary**            | LLM-generated abstract                   | Quick overviews, structured extraction with JSON schema |
 
 ### Subpage crawling
 
@@ -52,6 +53,125 @@ Control whether results come from cache or are freshly crawled with `maxAgeHours
 | `24`           | Use cache if \< 24 hours old, otherwise livecrawl |
 | `0`            | Always livecrawl (slowest, freshest)              |
 | `-1`           | Cache only (fastest, may be stale)                |
+
+## Dynamic highlights
+
+<Note>
+  Dynamic Highlights is available as a research preview on `/search` and `/contents`. Include the `Exa-Beta: dynamic-highlights-2026-08-28` header on every request that sets `dynamic: true`.
+</Note>
+
+Regular highlights find relevant excerpts within each page independently. Dynamic Highlights considers the pages together and allocates one shared context budget across the result set. Useful pages can receive more context, while redundant or weak pages can receive less context.
+
+Use it when several pages will feed the same agent or RAG context. Keep regular highlights when every page needs its own excerpt or a predictable per-page limit.
+
+<Tabs>
+  <Tab title="Search">
+    On `/search`, enable it inside `contents.highlights`:
+
+    ```bash theme={null}
+    curl -X POST 'https://api.exa.ai/search' \
+      -H "x-api-key: $EXA_API_KEY" \
+      -H 'Content-Type: application/json' \
+      -H 'Exa-Beta: dynamic-highlights-2026-08-28' \
+      -d '{
+        "query": "How are inference providers reducing transformer latency?",
+        "numResults": 5,
+        "contents": {
+          "highlights": {
+            "dynamic": true
+          }
+        }
+      }'
+    ```
+
+    Response:
+
+    ```json theme={null}
+    {
+      "results": [
+        {
+          "title": "How to optimize LLM inference speed and reduce costs in production",
+          "url": "https://www.baseten.co/blog/how-to-optimize-llm-inference-speed-and-reduce-costs-in-production/",
+          "highlights": [
+            "During one decode iteration, the GPU generates one token for every active request in the batch. The problem with traditional batching is that the server waits for every request in the batch to finish before accepting new ones. ... Speculative decoding lets you generate multiple tokens per decode step ..."
+          ]
+        },
+        {
+          "title": "Smaller, faster, safer: running Kimi and GLM at scale",
+          "url": "https://blog.cloudflare.com/smaller-faster-safer-models/",
+          "highlights": [
+            "... separating the prefill and decode phases of inference to get more out of each GPU. This post looks at three techniques we layer on top of that to fit these models into memory and keep them fast: quantizing the KV cache, compressing the model weights ..."
+          ]
+        },
+        {
+          "title": "How Modern LLM Inference Became 10-100x Faster",
+          "url": "https://nandigamharikrishna.substack.com/p/how-modern-llm-inference-became-10100x",
+          "highlights": [
+            "... In the vLLM paper, PagedAttention achieved near-zero KV-cache ... 2 to 4x throughput improvements over systems such as FasterTransformer and Orca at similar latency."
+          ]
+        }
+      ]
+    }
+    ```
+
+    The most useful pages above received several thousand characters of the shared budget, while thinner pages received a few hundred.
+  </Tab>
+
+  <Tab title="Contents">
+    On `/contents`, `highlights` remains a top-level field:
+
+    ```bash theme={null}
+    curl -X POST 'https://api.exa.ai/contents' \
+      -H "x-api-key: $EXA_API_KEY" \
+      -H 'Content-Type: application/json' \
+      -H 'Exa-Beta: dynamic-highlights-2026-08-28' \
+      -d '{
+        "urls": [
+          "https://www.baseten.co/blog/how-to-optimize-llm-inference-speed-and-reduce-costs-in-production/",
+          "https://blog.cloudflare.com/smaller-faster-safer-models/",
+          "https://www.crusoe.ai/resources/blog/430-tokens-per-second-optimizing-kimi-k2-6-and-k2-7-for-production"
+        ],
+        "highlights": {
+          "dynamic": true,
+          "query": "How are inference providers reducing transformer latency?"
+        }
+      }'
+    ```
+
+    Response:
+
+    ```json theme={null}
+    {
+      "results": [
+        {
+          "url": "https://www.baseten.co/blog/how-to-optimize-llm-inference-speed-and-reduce-costs-in-production/",
+          "highlights": [
+            "A batch is a group of requests processed together on the GPU at the same time. Batching matters because GPUs are built to handle multiple computations from different requests in parallel. ..."
+          ]
+        },
+        {
+          "url": "https://blog.cloudflare.com/smaller-faster-safer-models/",
+          "highlights": [
+            "We've written before about how we serve large models on Workers AI and about separating the prefill and decode phases of inference to get more out of each GPU. ..."
+          ]
+        },
+        {
+          "url": "https://www.crusoe.ai/resources/blog/430-tokens-per-second-optimizing-kimi-k2-6-and-k2-7-for-production",
+          "highlights": [
+            "Through rigorous profiling, we identified a decode kernel that was operating suboptimally for specific Kimi workload shapes. We developed a custom optimization for this path ... This change alone added approximately 40 output tokens per second. ..."
+          ]
+        }
+      ]
+    }
+    ```
+  </Tab>
+</Tabs>
+
+The response shape does not change: each result still has a `highlights` array.
+
+<Warning>
+  Do not combine `dynamic: true` with `maxCharacters`. Dynamic Highlights sizes and distributes the shared output budget automatically.
+</Warning>
 
 ## Common use cases
 
