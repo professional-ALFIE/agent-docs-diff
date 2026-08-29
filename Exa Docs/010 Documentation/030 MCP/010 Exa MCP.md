@@ -93,6 +93,16 @@ Exa's Search MCP can be installed in any MCP client with the server URL: `https:
     New accounts get free credits at signup.
   </Tab>
 
+  <Tab title="Vercel fx">
+    In the [fx](https://fx.sh) interactive shell:
+
+    ```text theme={null}
+    /mcp add --transport http exa https://mcp.exa.ai/mcp
+    ```
+
+    fx saves it to `~/.fx/mcp.json`. See [Exa in fx](/docs/integrations/fx) for manual config and API keys.
+  </Tab>
+
   <Tab title="OpenCode">
     Add to your `opencode.json`:
 
@@ -342,6 +352,7 @@ The tool's parameters mirror the [Search API](/docs/reference/search) — see th
   Common config locations:
 
   * Cursor: `~/.cursor/mcp.json`
+  * fx: `~/.fx/mcp.json`
   * VS Code: `.vscode/mcp.json` (in project root)
   * Claude Desktop (macOS): `~/Library/Application Support/Claude/claude_desktop_config.json`
   * Claude Desktop (Windows): `%APPDATA%\Claude\claude_desktop_config.json`
