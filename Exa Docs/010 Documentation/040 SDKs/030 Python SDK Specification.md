@@ -346,10 +346,15 @@ A class representing the options that you can specify when requesting summary
 
 A class representing the options that you can specify when requesting highlights.
 
-| Field           | Type | Description                                                                                |
-| --------------- | ---- | ------------------------------------------------------------------------------------------ |
-| query           | str  | The query string for highlight generation. Highlights will be biased towards this query.   |
-| max\_characters | int  | The maximum number of characters to return for highlights. Default: None (server default). |
+| Field           | Type | Description                                                                                     |
+| --------------- | ---- | ----------------------------------------------------------------------------------------------- |
+| query           | str  | The query string for highlight generation. Highlights will be biased towards this query.        |
+| max\_characters | int  | The maximum number of characters to return for highlights. Default: None (server default).      |
+| dynamic         | bool | Allocate one shared highlight budget across the result set. Incompatible with `max_characters`. |
+
+<Note>
+  Dynamic Highlights is a research preview. Requests that set `dynamic` require the `Exa-Beta: dynamic-highlights-2026-08-28` header; the SDK sends it automatically.
+</Note>
 
 #### `ExtrasOptions`
 
