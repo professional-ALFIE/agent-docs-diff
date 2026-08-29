@@ -323,10 +323,15 @@ Options for retrieving text from page.
 Options for retrieving highlights from page.
 These options are supported for deep search types ("deep", "deep-reasoning") as well.
 
-| Field         | Type     | Description |
-| ------------- | -------- | ----------- |
-| query         | `string` | -           |
-| maxCharacters | `number` | -           |
+| Field         | Type      | Description                                                                                    |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| query         | `string`  | -                                                                                              |
+| maxCharacters | `number`  | -                                                                                              |
+| dynamic       | `boolean` | Allocate one shared highlight budget across the result set. Incompatible with `maxCharacters`. |
+
+<Note>
+  Dynamic Highlights is a research preview. Requests that set `dynamic` require the `Exa-Beta: dynamic-highlights-2026-08-28` header; the SDK sends it automatically.
+</Note>
 
 #### `SummaryContentsOptions`
 
