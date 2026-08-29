@@ -8,7 +8,7 @@
 
 Build a voice agent that searches the web and speaks answers back — all in under a second. This guide covers the end-to-end pipeline, best practices for each stage, and ideas to try.
 
-**Try the live demo:** [demo.exa.ai/voice](https://demo.exa.ai/voice)
+**Try the live demo:** [demos.exa.ai/voice](https://demos.exa.ai/voice)
 
 ## Why Exa for voice?
 
@@ -323,6 +323,6 @@ Here are some ideas to extend your voice agent:
 
 ## Full example
 
-For a complete working implementation, see the [Voice Demo](https://demo.exa.ai/voice) and its [technical walkthrough](https://demo.exa.ai/voice/how-it-works).
+For a complete working implementation, see the [Voice Demo](https://demos.exa.ai/voice) and its [technical walkthrough](https://demos.exa.ai/voice/how-it-works).
 
 Get started with [Exa for free](https://dashboard.exa.ai).
