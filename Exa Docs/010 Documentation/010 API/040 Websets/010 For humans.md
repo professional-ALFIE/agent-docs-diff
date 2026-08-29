@@ -153,5 +153,5 @@ Then make your first request:
 
 * [**Dashboard Guide**](./dashboard/get-started) - Step-by-step guide to using Websets in the dashboard
 * [**How It Works**](./api/how-it-works) - Deep dive into the event-driven architecture
-* [**Websets API Reference**](./api/overview) - Full API reference for all endpoints
+* [**Websets API Reference**](./api/websets/create-a-webset) - Full API reference for all endpoints
 * [**FAQ**](./faq) - Common questions about Websets
