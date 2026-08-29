@@ -44,19 +44,19 @@ const result = await exa.getContents(["https://example.com"], { text: true });
 
 ## Request Parameters
 
-| Parameter           | Type                | Default        | Description                                                                                                                                                                                                          |
-| ------------------- | ------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `urls`              | string\[]           | **(required)** | Array of URLs to extract content from. Also accepts `ids` (document IDs from search results).                                                                                                                        |
-| `text`              | boolean or object   | —              | Return full page text as markdown. Object form: `{maxCharacters, includeHtmlTags, verbosity, includeSections, excludeSections}`.                                                                                     |
-| `highlights`        | boolean or object   | —              | Return key excerpts relevant to a query. Pass `true` for the highest-quality default. Object form: `{query, maxCharacters}` — use `query` to guide which highlights are returned, `maxCharacters` to cap the budget. |
-| `summary`           | boolean or object   | —              | Return LLM-generated summary. Object form: `{query, schema}`.                                                                                                                                                        |
-| `maxAgeHours`       | integer             | —              | Max age of cached content in hours. `0` = always livecrawl. `-1` = never livecrawl. Omit for default (livecrawl as fallback).                                                                                        |
-| `livecrawlTimeout`  | integer             | `10000`        | Timeout for livecrawling in milliseconds. Recommended: 10000-15000.                                                                                                                                                  |
-| `subpages`          | integer             | `0`            | Number of subpages to crawl from each URL.                                                                                                                                                                           |
-| `subpageTarget`     | string or string\[] | —              | Keywords to prioritize when selecting subpages.                                                                                                                                                                      |
-| `extras.links`      | integer             | `0`            | Number of URLs to extract from each page.                                                                                                                                                                            |
-| `extras.imageLinks` | integer             | `0`            | Number of image URLs to extract from each page.                                                                                                                                                                      |
-| `compliance`        | string              | —              | Enterprise-only compliance mode. Set to `"hipaa"` for HIPAA mode. Uses cache-only retrieval; summaries and livecrawl are not supported. See [HIPAA](/docs/reference/security/hipaa).                                      |
+| Parameter           | Type                | Default        | Description                                                                                                                                                                     |
+| ------------------- | ------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `urls`              | string\[]           | **(required)** | Array of URLs to extract content from. Also accepts `ids` (document IDs from search results).                                                                                   |
+| `text`              | boolean or object   | —              | Return full page text as markdown. Object form: `{maxCharacters, includeHtmlTags, verbosity, includeSections, excludeSections}`.                                                |
+| `highlights`        | boolean or object   | —              | Return query-relevant excerpts. Pass `true` for per-page extraction; use `{query, dynamic, maxCharacters}` for explicit controls.                                               |
+| `summary`           | boolean or object   | —              | Return LLM-generated summary. Object form: `{query, schema}`.                                                                                                                   |
+| `maxAgeHours`       | integer             | —              | Max age of cached content in hours. `0` = always livecrawl. `-1` = never livecrawl. Omit for default (livecrawl as fallback).                                                   |
+| `livecrawlTimeout`  | integer             | `10000`        | Timeout for livecrawling in milliseconds. Recommended: 10000-15000.                                                                                                             |
+| `subpages`          | integer             | `0`            | Number of subpages to crawl from each URL.                                                                                                                                      |
+| `subpageTarget`     | string or string\[] | —              | Keywords to prioritize when selecting subpages.                                                                                                                                 |
+| `extras.links`      | integer             | `0`            | Number of URLs to extract from each page.                                                                                                                                       |
+| `extras.imageLinks` | integer             | `0`            | Number of image URLs to extract from each page.                                                                                                                                 |
+| `compliance`        | string              | —              | Enterprise-only compliance mode. Set to `"hipaa"` for HIPAA mode. Uses cache-only retrieval; summaries and livecrawl are not supported. See [HIPAA](/docs/reference/security/hipaa). |
 
 ### Text Object Options
 
@@ -70,12 +70,31 @@ const result = await exa.getContents(["https://example.com"], { text: true });
 
 ### Highlights Object Options
 
-Prefer `highlights: true` for the highest-quality default. Only supply this object when you specifically need to guide selection with a custom query or cap output size.
+Prefer `highlights: true` for the default per-page behavior. Use the object form only for a custom query, a per-page character limit, or Dynamic Highlights.
 
-| Parameter       | Type    | Default | Description                                                                                                                             |
-| --------------- | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `query`         | string  | —       | Custom query that guides which highlights the LLM picks.                                                                                |
-| `maxCharacters` | integer | —       | Cap on total highlight characters per URL. Omit unless you have a specific budget — leaving it unset gives the highest-quality default. |
+| Parameter       | Type    | Default | Description                                                          |
+| --------------- | ------- | ------- | -------------------------------------------------------------------- |
+| `query`         | string  | —       | Custom query that guides which highlights the LLM picks.             |
+| `dynamic`       | boolean | `false` | Allocate one shared context budget across the requested pages.       |
+| `maxCharacters` | integer | —       | Cap highlight characters per URL. Incompatible with `dynamic: true`. |
+
+```json theme={null}
+{
+  "urls": [
+    "https://www.baseten.co/blog/how-to-optimize-llm-inference-speed-and-reduce-costs-in-production/",
+    "https://blog.cloudflare.com/smaller-faster-safer-models/"
+  ],
+  "highlights": {
+    "dynamic": true
+  }
+}
+```
+
+Dynamic Highlights sizes and distributes the output automatically. The response shape is unchanged.
+
+<Note>
+  Dynamic Highlights is available as a research preview. Include the `Exa-Beta: dynamic-highlights-2026-08-28` header on every request that sets `dynamic: true`.
+</Note>
 
 ### Summary Object Options
 
@@ -163,7 +182,6 @@ Automatically discover and extract content from linked pages within a site.
       "favicon": "https://example.com/favicon.ico",
       "text": "Full page content as markdown...",
       "highlights": ["Key excerpt from the page..."],
-      "highlightScores": [0.46],
       "summary": "LLM-generated summary...",
       "subpages": [],
       "extras": {
@@ -196,7 +214,6 @@ Automatically discover and extract content from linked pages within a site.
 | `results[].author`                | string or null  | Author if available.                                         |
 | `results[].text`                  | string          | Full page text (if `text` requested).                        |
 | `results[].highlights`            | string\[]       | Key excerpts (if `highlights` requested).                    |
-| `results[].highlightScores`       | float\[]        | Cosine similarity scores for each highlight.                 |
 | `results[].summary`               | string          | LLM summary (if `summary` requested).                        |
 | `results[].subpages`              | array           | Nested results from subpage crawling. Same shape as results. |
 | `results[].extras.links`          | string\[]       | Extracted links from the page.                               |
