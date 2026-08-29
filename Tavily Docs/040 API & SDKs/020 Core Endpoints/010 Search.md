@@ -435,9 +435,9 @@ paths:
                   default: false
                 safe_search:
                   type: boolean
-                  description: |-
-                    🔒 Enterprise only. 
-                     whether to filter out adult or unsafe content from results. Not supported for `fast` or `ultra-fast` search depths.
+                  description: >-
+                    Whether to filter out adult or unsafe content from results.
+                    Not supported for `fast` or `ultra-fast` search depths.
                   default: false
               required:
                 - query
