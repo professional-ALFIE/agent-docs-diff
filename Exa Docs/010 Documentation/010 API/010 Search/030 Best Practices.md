@@ -20,17 +20,17 @@ Exa's Search API returns a list of webpages and their contents based on a natura
 
 The `query` parameter is required for all search requests. The remaining fields are optional. See the [API Reference](/docs/reference/search) for complete parameter details.
 
-| Field        | Type     | Notes                                                                                                                                                     | Example                                               |
-| ------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| query        | string   | The search query. Supports long, semantically rich descriptions for finding niche content.                                                                | "blog post about embeddings and vector search"        |
-| type         | string   | Search method: `auto` (default balance of speed and quality), `fast` (low latency), `instant` (lowest latency), `deep-lite`, `deep`, or `deep-reasoning`. | "auto"                                                |
-| systemPrompt | string   | Instructions that guide synthesized output and, for deep-search variants, search planning.                                                                | "Prefer official sources and avoid duplicate results" |
-| outputSchema | object   | JSON schema that controls `output.content`. When set, `/search` returns `output` for any search type.                                                     | `{ "type": "text", "description": "one sentence" }`   |
-| stream       | boolean  | If true, `/search` streams OpenAI-compatible chat completion chunks over SSE instead of returning one JSON payload.                                       | `true`                                                |
-| numResults   | int      | Number of results to return (1-100). Defaults to 10.                                                                                                      | 10                                                    |
-| highlights   | bool/obj | Return token-efficient excerpts most relevant to your query. You can also request full text if needed—see the [API Reference](/docs/reference/search).         | `true`                                                |
-| maxAgeHours  | int      | Maximum age of indexed content in hours. If older, fetches with livecrawl. `0` = always livecrawl, `-1` = never livecrawl (cache only).                   | 24                                                    |
-| category     | string   | Target specific content types: `company`, `people`, `news`                                                                                                | "company"                                             |
+| Field                | Type     | Notes                                                                                                                                                     | Example                                               |
+| -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| query                | string   | The search query. Supports long, semantically rich descriptions for finding niche content.                                                                | "blog post about embeddings and vector search"        |
+| type                 | string   | Search method: `auto` (default balance of speed and quality), `fast` (low latency), `instant` (lowest latency), `deep-lite`, `deep`, or `deep-reasoning`. | "auto"                                                |
+| systemPrompt         | string   | Instructions that guide synthesized output and, for deep-search variants, search planning.                                                                | "Prefer official sources and avoid duplicate results" |
+| outputSchema         | object   | JSON schema that controls `output.content`. When set, `/search` returns `output` for any search type.                                                     | `{ "type": "text", "description": "one sentence" }`   |
+| stream               | boolean  | If true, `/search` streams OpenAI-compatible chat completion chunks over SSE instead of returning one JSON payload.                                       | `true`                                                |
+| numResults           | int      | Number of results to return (1-100). Defaults to 10.                                                                                                      | 10                                                    |
+| contents.highlights  | bool/obj | Return token-efficient excerpts most relevant to your query. You can also request full text if needed—see the [API Reference](/docs/reference/search).         | `true`                                                |
+| contents.maxAgeHours | int      | Maximum age of indexed content in hours. If older, fetches with livecrawl. `0` = always livecrawl, `-1` = never livecrawl (cache only).                   | 24                                                    |
+| category             | string   | Target specific content types: `company`, `people`, `news`                                                                                                | "company"                                             |
 
 ## Search Types
 
@@ -72,6 +72,21 @@ Choosing the right content mode can significantly reduce token usage while maint
 }
 ```
 
+**Allocate context across results with Dynamic Highlights**: Use `contents.highlights.dynamic` when several pages will feed the same agent or RAG context. Exa spends more context on useful results and less on redundant ones.
+
+```json theme={null}
+{
+  "query": "What is the current Fed interest rate?",
+  "contents": {
+    "highlights": {
+      "dynamic": true
+    }
+  }
+}
+```
+
+Keep regular highlights when every result needs its own excerpt or a per-page character limit. Requests that set `dynamic: true` require the `Exa-Beta: dynamic-highlights-2026-08-28` header. See [Dynamic highlights](/docs/reference/contents-api-guide#dynamic-highlights) for response behavior and limitations.
+
 **Use full text for deep research**: When the task requires comprehensive understanding or when you're unsure which parts of the page matter, request full text. Use `maxCharacters` to cap token usage.
 
 ```json theme={null}
@@ -84,11 +99,11 @@ Choosing the right content mode can significantly reduce token usage while maint
 }
 ```
 
-**Combine modes strategically**: You can request both highlights and text together—use highlights for quick answers and fall back to full text only when needed.
+**Retrieve in two passes**: Search with highlights, select the useful URLs, then call Contents for full text only where broader context is needed.
 
 ## Content Freshness
 
-Control whether results come from Exa's index or are freshly crawled using `maxAgeHours`:
+Control whether results come from Exa's index or are freshly crawled using `contents.maxAgeHours`:
 
 * **`maxAgeHours: 24`**: Use cache if less than 24 hours old, otherwise livecrawl. Good for daily-fresh content.
 * **`maxAgeHours: 0`**: Always livecrawl (ignore cache). Use when cached data is unacceptable.
@@ -99,9 +114,9 @@ Control whether results come from Exa's index or are freshly crawled using `maxA
 {
   "query": "latest announcements from OpenAI",
   "includeDomains": ["openai.com"],
-  "maxAgeHours": 72,
   "contents": {
-    "highlights": true
+    "highlights": true,
+    "maxAgeHours": 72
   }
 }
 ```
