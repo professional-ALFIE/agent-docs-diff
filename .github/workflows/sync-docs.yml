@@ -4,11 +4,6 @@ on:
   schedule:
     - cron: "17 */3 * * *"
   workflow_dispatch:
-    inputs:
-      accept:
-        description: "탭·그룹 수 변화를 사람이 확인했으면 true (scripts/sync.ts --accept)"
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -27,7 +22,7 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - name: Sync
-        run: bun scripts/sync.ts ${{ inputs.accept && '--accept' || '' }}
+        run: bun scripts/sync.ts
       - name: Commit one document per commit
         run: bash scripts/commit-each.sh
       - run: git push

@@ -1,9 +1,9 @@
 #!/usr/bin/env bun
 // 한 회차: 사이트마다 계층 → 경로 → 본문 → 검사 → (통과하면) 저장 · 삭제 · manifest · llms-local.
 // 검사를 하나라도 통과하지 못한 사이트는 디스크를 건드리지 않는다. 끝에 하나라도 실패면 exit 1 — CI 가 커밋하지 않는다.
-// 사용법: ./sync.ts [--site "<제품폴더명>"]... [--accept] [--dry]
-//   --accept  구조 변화(최상위 수·그룹 수·대량 rename)를 사람이 확인했으니 막지 말라는 뜻
+// 사용법: ./sync.ts [--site "<제품폴더명>"]... [--dry]
 //   --dry     아무것도 쓰지 않고 결과만 보여준다
+// 구조 변화(최상위 수·그룹 수·대량 rename·llms 급증)는 자동 수용하고, /tmp 파일로 넘겨 커밋 메시지에 싣는다.
 import { mkdir, readdir, rm, rmdir, stat } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { 매니페스트 } from "./contracts";
@@ -16,7 +16,6 @@ import { 경로계산 } from "./tree";
 import type { 매니페스트 as 매니페스트T, 사이트설정 } from "./types";
 
 const 인자 = process.argv.slice(2);
-const accept = 인자.includes("--accept");
 const dry = 인자.includes("--dry");
 const 루트 = join(import.meta.dir, "..");
 const 고른사이트 = 인자.flatMap((a, i) => a === "--site" ? [사이트찾기(인자[i + 1])] : []);
@@ -56,7 +55,8 @@ async function 사이트하나(s: 사이트설정): Promise<string[]> {
   });
   const 직전파일 = Bun.file(join(제품폴더, ".manifest.json"));
   const 직전 = (await 직전파일.exists()) ? 매니페스트.parse(await 직전파일.json()) : null;
-  const 실패 = 검사(s, 이번, 직전, accept);
+  const { 실패, 구조변화 } = 검사(s, 이번, 직전);
+  for (const m of 구조변화) 구조변화모음.push(`${s.제품폴더}: ${m}`);
 
   const 기존 = await 기존문서들(제품폴더);
   const 이번경로 = new Set(저장.map(d => d.경로));
@@ -72,6 +72,7 @@ async function 사이트하나(s: 사이트설정): Promise<string[]> {
     + ` · llms 치환 ${통계.치환} 미노출 ${통계.미노출} 외부 ${통계.외부} 메뉴에만 ${통계.메뉴에만}`);
   for (const c of 충돌들) console.log(`  이름 충돌 처리: ${c}`);
   for (const x of 제외) console.log(`  제외: ${x.경로} ← ${x.이유} (${x.url})`);
+  for (const m of 구조변화) console.log(`  (구조변화 수용) ${m}`);
   for (const m of 실패) console.log(`  ✗ ${m}`);
   if (실패.length || dry) return 실패;
 
@@ -91,8 +92,12 @@ async function 사이트하나(s: 사이트설정): Promise<string[]> {
 }
 
 const 실패한곳: string[] = [];
+const 구조변화모음: string[] = [];
 for (const s of 대상) {
   try { if ((await 사이트하나(s)).length) 실패한곳.push(s.제품폴더); }
   catch (e) { console.log(`${s.제품폴더}: ✗ ${String(e).split("\n")[0]}`); 실패한곳.push(s.제품폴더); }
-}if (실패한곳.length) { console.log(`\n실패 ${실패한곳.length}곳: ${실패한곳.join(" · ")} — 커밋하지 않는다`); process.exit(1); }
+}const 구조변화파일 = "/tmp/agent-docs-diff-structure-changes.txt";
+await rm(구조변화파일, { force: true });
+if (!dry && 구조변화모음.length) await Bun.write(구조변화파일, 구조변화모음.join("\n") + "\n");
+if (실패한곳.length) { console.log(`\n실패 ${실패한곳.length}곳: ${실패한곳.join(" · ")} — 커밋하지 않는다`); process.exit(1); }
 console.log(dry ? "\n(dry) 아무것도 쓰지 않았다" : "\n전부 통과");

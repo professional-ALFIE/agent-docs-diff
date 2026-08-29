@@ -37,7 +37,12 @@ done < <(git status --porcelain=v1 -z --untracked-files=all --no-renames)
 
 git add -A
 if ! git diff --cached --quiet; then
-  git commit -q -m "sync: manifests" -m "$(git diff --cached --stat | tail -1)"
+  sc=/tmp/agent-docs-diff-structure-changes.txt
+  if [ -s "$sc" ]; then
+    git commit -q -m "sync: manifests (구조변화 수용)" -m "$(cat "$sc")" -m "$(git diff --cached --stat | tail -1)"
+  else
+    git commit -q -m "sync: manifests" -m "$(git diff --cached --stat | tail -1)"
+  fi
   n=$((n+1))
 fi
 echo "커밋 ${n}개"

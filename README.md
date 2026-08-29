@@ -3,14 +3,14 @@
 공식 문서 사이트를 3시간마다 받아 커밋으로 쌓는다. 문서가 바뀌면 이 저장소의 커밋 diff 가 곧 변경 내역이다.
 **왼쪽 메뉴 계층을 폴더 구조로 그대로 보존**하므로, 폴더를 열면 공식 사이트의 메뉴 순서 그대로 보인다.
 
-| 제품 폴더 | 출처 | 문서 수 |
-|---|---|---|
-| Claude Code Docs (en) · (ko) | https://code.claude.com/docs | 183 · 163 |
-| Exa Docs | https://exa.ai/docs | 163 |
-| Tavily Docs | https://docs.tavily.com | 102 |
-| Vibe Kanban Docs | https://vibekanban.com/docs | 58 |
-| opencode Docs (en) · (ko) | https://opencode.ai/docs | 36 · 34 |
-| Codex Docs | https://learn.chatgpt.com/docs | 138 |
+| 제품 폴더                            | 출처                               | 문서 수         |
+| ────────────────────────────ーーーー | ──────────────────────────────ーー | ─────────ーーー |
+| Claude Code Docs (en) · (ko)　　　　 | https://code.claude.com/docs　　   | 183 · 163　　　 |
+| Exa Docs　　　　                     | https://exa.ai/docs　　            | 163　　　       |
+| Tavily Docs　　　　                  | https://docs.tavily.com　　        | 102　　　       |
+| Vibe Kanban Docs　　　　             | https://vibekanban.com/docs　　    | 58　　　        |
+| opencode Docs (en) · (ko)　　　　    | https://opencode.ai/docs　　       | 36 · 34　　　   |
+| Codex Docs　　　　                   | https://learn.chatgpt.com/docs　　 | 138　　　       |
 
 각 제품 폴더 안의 `llms-local.txt` 가 문서 지도다 — 공식 `llms.txt` 의 제목·설명은 그대로 두고
 링크만 그 폴더 기준 경로로 바꾼 것이라, 줄을 찾으면 그 파일을 바로 열 수 있다.
@@ -25,8 +25,10 @@ bun install
 scripts/sync.ts                      # 8벌 전부
 scripts/sync.ts --site "Exa Docs"    # 한 곳만
 scripts/sync.ts --dry                # 쓰지 않고 결과만
-scripts/sync.ts --accept             # 탭·그룹 수가 바뀐 것을 사람이 확인했을 때
 ```
+
+탭·그룹 수·경로가 크게 바뀐 것(사이트 개편)은 자동으로 받아들이고, 무엇이 바뀌었는지를
+`sync: manifests (구조변화 수용)` 커밋 본문에 남긴다.
 
 검사를 하나라도 통과하지 못한 사이트는 디스크를 건드리지 않고, 끝에 하나라도 실패면 exit 1 이라
 GitHub Actions 가 커밋하지 않는다. 통과하면 `scripts/commit-each.sh` 가 **바뀐 문서마다 커밋 하나**를 만든다 —
