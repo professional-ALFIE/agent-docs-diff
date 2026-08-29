@@ -6,7 +6,7 @@
 
 > Cancel a queued or running Agent run.
 
-If the run is still active, it transitions to `cancelled`. If the run has already completed, failed, or been cancelled, the endpoint returns the existing run.
+If the run is still active, it transitions to `cancelled` immediately and terminates without returning any results. The run ends with status `cancelled` and `stopReason: cancelled`. You are billed for usage accrued before cancellation. If the run has already reached a terminal status (completed, failed, or cancelled), the endpoint returns the existing run unchanged.
 
 <Card title="Get your Exa API key" icon="key" horizontal href="https://dashboard.exa.ai/api-keys" />
 
@@ -31,8 +31,10 @@ paths:
         - Agent
       summary: Cancel a run
       description: >-
-        Cancel a queued or running Agent run. If the run has already reached a
-        terminal status, the API returns the existing run.
+        Cancel a queued or running Agent run immediately without returning any
+        results. You are billed for usage accrued before cancellation. If the
+        run has already reached a terminal status, the API returns the existing
+        run.
       operationId: cancelAgentRun
       parameters:
         - in: path
@@ -45,36 +47,54 @@ paths:
       responses:
         '200':
           description: Agent run
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentRun'
         '400':
           description: Invalid request.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '401':
           description: Team context or authentication was not found.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '404':
           description: Run not found.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '429':
           description: Agent run concurrency limit reached.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AgentErrorResponse'
         '500':
           description: Server error or run timeout.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
@@ -156,6 +176,7 @@ components:
       enum:
         - schema_satisfied
         - budget_reached
+        - stopped
         - error
         - cancelled
     AgentRunRequest:
@@ -470,6 +491,14 @@ components:
       required:
         - url
       additionalProperties: false
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
   securitySchemes:
     apiKey:
       type: apiKey
