@@ -42,6 +42,9 @@ paths:
       responses:
         '200':
           description: Whether the monitor was triggered
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
@@ -55,6 +58,14 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerErrorResponse'
 components:
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
   schemas:
     TriggerSearchMonitorResponse:
       type: object
@@ -107,6 +118,7 @@ components:
             - FETCH_DOCUMENT_ERROR
             - TEAM_BLOCKED
             - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
       required:
         - requestId
         - error
@@ -116,26 +128,58 @@ components:
   responses:
     BadRequestResponse:
       description: The request body or query parameters failed validation.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 0a1b2c3d4e5f60718293a4b5c6d7e8f9
+            error: >-
+              Invalid request body: query: Invalid input: expected string,
+              received undefined
+            tag: INVALID_REQUEST_BODY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     UnauthorizedResponse:
       description: The API key is missing or invalid.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2
+            error: Invalid API key
+            tag: INVALID_API_KEY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     NotFoundResponse:
       description: The requested resource does not exist.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 3b1d5f7a9c0e2b4d6f8a0c2e4b6d8f0a
+            error: Not found
+            tag: NOT_FOUND
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     InternalServerErrorResponse:
       description: An unexpected error occurred while processing the request.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 9b1d3f5e7a0c2e4b6d8f0a2c4e6b8d0f
+            error: >-
+              Sorry, we encountered an error while processing your request.
+              Please try again later
+            tag: DEFAULT_ERROR
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
