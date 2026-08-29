@@ -40,6 +40,13 @@ paths:
       responses:
         '200':
           description: OK
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
+            x-exa-queued:
+              $ref: '#/components/headers/XExaQueued'
+            x-exa-queue-ms:
+              $ref: '#/components/headers/XExaQueueMs'
           content:
             application/json:
               example:
@@ -81,6 +88,9 @@ paths:
             extended with x402 payment metadata (`x402Version`, `resource`,
             `accepts`, and optional `extensions`) describing how to pay for the
             request.
+          headers:
+            x-request-id:
+              $ref: '#/components/headers/XRequestId'
           content:
             application/json:
               schema:
@@ -253,6 +263,7 @@ components:
             - FETCH_DOCUMENT_ERROR
             - TEAM_BLOCKED
             - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
       required:
         - requestId
         - error
@@ -301,6 +312,7 @@ components:
             - FETCH_DOCUMENT_ERROR
             - TEAM_BLOCKED
             - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
         x402Version:
           type: number
           description: Version of the x402 protocol used to build this challenge.
@@ -483,6 +495,24 @@ components:
                             picks.
                           example: Key advancements
                         - type: 'null'
+                    dynamic:
+                      anyOf:
+                        - type: boolean
+                          description: >-
+                            Enable Dynamic Highlights (research preview):
+                            considers all results together and allocates a
+                            single shared context budget across the result set
+                            instead of a per-document budget. Not compatible
+                            with maxCharacters. Beta: requires the `Exa-Beta:
+                            dynamic-highlights-2026-08-28` request header;
+                            requests setting `dynamic` without it are rejected.
+                          example: true
+                          x-exa-lifecycle: beta
+                          x-exa-beta-flag: dynamic-highlights-2026-08-28
+                          x-mint:
+                            post:
+                              - Beta
+                        - type: 'null'
                     maxCharacters:
                       anyOf:
                         - type: integer
@@ -492,7 +522,7 @@ components:
                             Maximum number of characters to return for
                             highlights. Controls the total length of highlight
                             text returned per URL. Maximum supported value is
-                            10000.
+                            10000. Not compatible with highlights.dynamic.
                           example: 2000
                         - type: 'null'
                     numSentences:
@@ -1562,7 +1592,9 @@ components:
                 additionalProperties: false
             type: object
         extras:
-          description: Results from extras.
+          description: >-
+            Results from extras. Each field is returned only when requested via
+            contents.extras.
           example:
             links: []
           type: object
@@ -1573,6 +1605,71 @@ components:
               type: array
               items:
                 type: string
+            imageLinks:
+              description: Array of image URLs from the search result.
+              example: []
+              type: array
+              items:
+                type: string
+            richImageLinks:
+              description: >-
+                Array of images with their alt text, in the order the images
+                appear on the page.
+              example:
+                - url: https://exa.ai/images/illustrations/api_illustration4.webp
+                  alt: High rate limits, low latency and high reliability.
+              type: array
+              items:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    description: The URL of the image.
+                  alt:
+                    description: The alt text of the image, when the page provides one.
+                    type: string
+                required:
+                  - url
+                additionalProperties: false
+            richLinks:
+              description: >-
+                Array of links with their anchor text, in the order they appear
+                on the page.
+              example:
+                - url: https://dashboard.exa.ai
+                  anchor: API Dashboard
+              type: array
+              items:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    description: The URL of the link.
+                  anchor:
+                    description: The anchor text of the link, when the page provides one.
+                    type: string
+                required:
+                  - url
+                additionalProperties: false
+            codeBlocks:
+              description: Array of code blocks from the search result.
+              example:
+                - text: pip install exa-py
+                  source: bash
+              type: array
+              items:
+                type: object
+                properties:
+                  text:
+                    type: string
+                    description: The contents of the code block.
+                  source:
+                    type: string
+                    description: The language the code block is annotated with, if any.
+                required:
+                  - text
+                  - source
+                additionalProperties: false
           additionalProperties: false
       required:
         - title
@@ -1653,29 +1750,86 @@ components:
             type: string
           additionalProperties:
             $ref: '#/components/schemas/JsonValue'
+  headers:
+    XRequestId:
+      description: >-
+        Unique identifier for the request. Matches the `requestId` field
+        returned in response bodies that carry one.
+      schema:
+        type: string
+      example: 07e29bb1f4f1dd05f0d4b57bbcf6e4b8
+    XExaQueued:
+      description: >-
+        Whether the request waited in the customer rate-limit queue before being
+        admitted.
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+      example: 'false'
+    XExaQueueMs:
+      description: Total milliseconds the request waited in the customer rate-limit queue.
+      schema:
+        type: string
+      example: '0'
   responses:
     BadRequestResponse:
       description: The request body or query parameters failed validation.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 0a1b2c3d4e5f60718293a4b5c6d7e8f9
+            error: >-
+              Invalid request body: query: Invalid input: expected string,
+              received undefined
+            tag: INVALID_REQUEST_BODY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     UnauthorizedResponse:
       description: The API key is missing or invalid.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2
+            error: Invalid API key
+            tag: INVALID_API_KEY
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     TooManyRequestsResponse:
       description: A rate limit was exceeded.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 7f9b1d3e5a0c2e4b6d8f0a2c4e6b8d0f
+            error: >-
+              You've exceeded the Exa rate limit for your network. If you
+              believe this is in error, please email hello@exa.ai :)
+            tag: RATE_LIMIT_EXCEEDED
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     InternalServerErrorResponse:
       description: An unexpected error occurred while processing the request.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
       content:
         application/json:
+          example:
+            requestId: 9b1d3f5e7a0c2e4b6d8f0a2c4e6b8d0f
+            error: >-
+              Sorry, we encountered an error while processing your request.
+              Please try again later
+            tag: DEFAULT_ERROR
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
