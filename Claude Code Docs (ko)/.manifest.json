@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-29T00:42:59.855Z",
+  "생성": "2026-08-29T16:42:31.658Z",
   "제품폴더": "Claude Code Docs (ko)",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -377,8 +377,8 @@
       "경로": "020 Claude Code로 빌드하기/060 자동화/010 hooks로 자동화.md",
       "href": "/ko/hooks-guide",
       "url": "https://code.claude.com/docs/ko/hooks-guide.md",
-      "sha256": "7919241102c7c91856122e4a511dcbdbd57e7602e701b53f1d6d517e5266d43f",
-      "bytes": 71284,
+      "sha256": "a87f0dcad885d715f74312839e8fce4dc4f6bd0ca2d560759a179845767ec796",
+      "bytes": 71832,
       "contentType": "text/markdown"
     },
     {
@@ -905,16 +905,16 @@
       "경로": "050 참고/010 참고/070 Hooks 참조.md",
       "href": "/ko/hooks",
       "url": "https://code.claude.com/docs/ko/hooks.md",
-      "sha256": "74e32d5bd0795a56276bad2659a689b62e83e353ab6f623e2b00ba0a15b1d6c1",
-      "bytes": 244109,
+      "sha256": "78a5d91d6c7d66d2d60521cf1a0f2ca3d676d4c858c88956c0b07b320e455627",
+      "bytes": 244657,
       "contentType": "text/markdown"
     },
     {
       "경로": "050 참고/010 참고/080 플러그인 참조.md",
       "href": "/ko/plugins-reference",
       "url": "https://code.claude.com/docs/ko/plugins-reference.md",
-      "sha256": "2f23318e07cecf4565edc81edd1d47ab4f0617c74d39879ed404cf15d9264011",
-      "bytes": 95429,
+      "sha256": "932473687ae3cb79c4ba496dde7c64a5ba34e60e84af3675cc58a0042846b277",
+      "bytes": 95977,
       "contentType": "text/markdown"
     },
     {
