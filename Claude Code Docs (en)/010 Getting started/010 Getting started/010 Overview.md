@@ -109,7 +109,7 @@ Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop ap
     * [Windows ARM64](https://claude.ai/api/desktop/win32/arm64/setup/latest/redirect?utm_source=claude_code\&utm_medium=docs)
     * On Ubuntu or Debian, where the app is in beta, install it with apt by following the [Linux install instructions](/docs/en/desktop-linux)
 
-    After installing, launch Claude, sign in, and click the **Code** tab to start coding. A [paid subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=overview_desktop_pricing) is required.
+    After installing, launch Claude, sign in, and click the **Code** tab to start coding. The app includes Claude Code, so you don't need to install the CLI separately. A [paid subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=overview_desktop_pricing) is required.
 
     [Learn more about the desktop app →](/docs/en/desktop-quickstart)
   </Tab>
