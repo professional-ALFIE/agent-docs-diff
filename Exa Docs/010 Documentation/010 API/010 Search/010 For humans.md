@@ -245,27 +245,6 @@ Then make your first request:
   ```
 </CodeGroup>
 
-## Dynamic Highlights
-
-Dynamic Highlights allocates context across the result set instead of selecting an independent excerpt from every page. Use it when several results will share one agent or RAG context.
-
-```json theme={null}
-{
-  "query": "How are inference providers reducing transformer latency?",
-  "contents": {
-    "highlights": {
-      "dynamic": true
-    }
-  }
-}
-```
-
-<Warning>
-  Do not combine `dynamic: true` with `maxCharacters`.
-</Warning>
-
-Dynamic Highlights is available as a research preview: include the `Exa-Beta: dynamic-highlights-2026-08-28` header on every request that sets `dynamic: true`. See the [Contents API guide](/docs/reference/contents-api-guide#dynamic-highlights) for the full behavior and `/contents` request shape.
-
 ## Next
 
 * [**Contents API**](/docs/reference/contents-api-guide) - Extract clean content from any URL
