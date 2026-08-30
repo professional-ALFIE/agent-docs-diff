@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-29T00:43:10.898Z",
+  "생성": "2026-08-30T11:53:29.331Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -9,8 +9,8 @@
       "경로": "010 Documentation/010 API/010 Search/010 For humans.md",
       "href": "/reference/search-api-guide",
       "url": "https://exa.ai/docs/reference/search-api-guide.md",
-      "sha256": "604cbed7c0934f74e4b4a3161b8eb92dd8a5d9b95a10a00de10b7b26be438046",
-      "bytes": 11636,
+      "sha256": "96e73acc797c44798fb2f7c0f41b5fc20c91b3709b742d5988d39559cf2f721e",
+      "bytes": 10882,
       "contentType": "text/markdown"
     },
     {
