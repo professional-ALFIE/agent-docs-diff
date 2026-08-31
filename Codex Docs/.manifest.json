@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-31T05:31:58.329Z",
+  "생성": "2026-08-31T20:50:32.951Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -593,8 +593,8 @@
       "경로": "040 Developers/050 Build with Codex/010 Codex SDK.md",
       "href": "/codex/codex-sdk",
       "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
-      "sha256": "c1742b8558d8a24d0a36e1a8016226329477011b10c24d23481c482341e89d63",
-      "bytes": 4401,
+      "sha256": "1ff5e1a4b61044bae464f757ceb814e9c5d2736188cb30bec5703274515bf889",
+      "bytes": 4560,
       "contentType": "text/markdown"
     },
     {
