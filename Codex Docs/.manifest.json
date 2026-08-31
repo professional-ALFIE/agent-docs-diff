@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-29T10:02:08.783Z",
+  "생성": "2026-08-31T05:31:58.329Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -9,8 +9,8 @@
       "경로": "010 Overview/020 Get started/010 Quickstart.md",
       "href": "/codex/quickstart",
       "url": "https://learn.chatgpt.com/docs/quickstart.md",
-      "sha256": "5b8afc5785a910fe5bf523aee07f3bfdde054a11188f8146b06a1f95a81d5aad",
-      "bytes": 5918,
+      "sha256": "0682956084eab3bb880258295eaae07aa2daaddded9ebc1e65891dfdefa78cf0",
+      "bytes": 5927,
       "contentType": "text/markdown"
     },
     {
