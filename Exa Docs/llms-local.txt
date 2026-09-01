@@ -35,10 +35,11 @@
 - [Fiber.ai](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/010 Fiber.ai.md>): Search Fiber.ai's B2B database for companies, people, and LinkedIn profiles.
 - [Similarweb](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/020 Similarweb.md>): Get website traffic estimates, global rankings, and competitor discovery.
 - [Baselayer](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/030 Baselayer.md>): Verify US businesses and retrieve KYB data: officers, registrations, risk scores.
-- [Affiliate.com](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/040 Affiliate.com.md>): Search product catalogs across merchants and affiliate networks.
-- [Particle](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/050 Particle.md>): Search podcast transcripts with speaker attribution and timestamps.
-- [Financial Datasets](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/060 Financial Datasets.md>): Structured financial and market data for 27,000+ active and delisted U.S. tickers, including prices, fundamentals, earnings, SEC filings, ownership, and stock screening.
-- [Jinko](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Jinko.md>): Flight and Hotel search with real-time pricing.
+- [Polymarket](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/040 Polymarket.md>): Get prediction-market odds, price history, order books, and trader positions.
+- [Affiliate.com](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/050 Affiliate.com.md>): Search product catalogs across merchants and affiliate networks.
+- [Particle](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/060 Particle.md>): Search podcast transcripts with speaker attribution and timestamps.
+- [Financial Datasets](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Financial Datasets.md>): Structured financial and market data for 27,000+ active and delisted U.S. tickers, including prices, fundamentals, earnings, SEC filings, ownership, and stock screening.
+- [Jinko](<010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/080 Jinko.md>): Flight and Hotel search with real-time pricing.
 - [Combining providers](<010 Documentation/020 Data/010 Exa Connect/030 Combining providers.md>): Use several data partners together in a single Exa Agent run.
 - [Additional providers](<010 Documentation/020 Data/010 Exa Connect/040 Additional providers.md>): Exa Connect partners beyond the self-serve provider set.
 - [People Search](<010 Documentation/020 Data/020 People/010 For humans.md>)
@@ -65,8 +66,8 @@
 - [Exa in Codex and ChatGPT](<010 Documentation/050 Integrations/020 ChatGPT & Codex.md>): Search the web, read any page, and research with Exa directly from Codex and ChatGPT.
 - [Grok Build](<010 Documentation/050 Integrations/030 Grok Build.md>): Use Exa web search in Grok Build. Install the Exa plugin from the Grok Build marketplace and sign in with your Exa account.
 - [fx by Vercel Labs](<010 Documentation/050 Integrations/040 Fx by Vercel.md>): Add Exa web search to fx, Vercel Labs' native coding agent, with the hosted Exa MCP server.
-- [OpenAI Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/010 OpenAI Tool Calling.md>): Use OpenAI tool calling to add Exa web search to your application.
-- [Anthropic Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/020 Anthropic Tool Calling.md>): Use Claude tool use to add Exa web search to your application.
+- [OpenAI Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/010 OpenAI Tool Calling.md>): Use OpenAI tool calling to add Exa web search and page contents to your application.
+- [Anthropic Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/020 Anthropic Tool Calling.md>): Use Claude tool use to add Exa web search and page contents to your application.
 - [Vercel AI Gateway](<010 Documentation/050 Integrations/060 AI SDK/010 Vercel AI Gateway.md>): Use Exa web search through Vercel AI Gateway with the AI SDK.
 - [AI SDK by Vercel](<010 Documentation/050 Integrations/060 AI SDK/020 AI SDK by Vercel.md>): Add Exa web search to AI SDK applications with the @exalabs/ai-sdk package.
 - [OpenAI SDK Compatibility](<010 Documentation/050 Integrations/070 OpenAI SDK.md>): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.

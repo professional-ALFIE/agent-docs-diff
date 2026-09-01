@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-30T05:22:40.158Z",
+  "생성": "2026-09-01T08:37:33.693Z",
   "제품폴더": "opencode Docs (en)",
   "진입": "https://opencode.ai/docs/en",
   "최상위수": 10,
@@ -65,8 +65,8 @@
       "경로": "080 Usage/010 Go.md",
       "href": "/docs/go/",
       "url": "https://opencode.ai/docs/go.md",
-      "sha256": "3783f9aa599b51b8ecca59c62f0a311b3eb3b3d068503bc855618ddb1eb8b6e5",
-      "bytes": 19961,
+      "sha256": "22a738b4c96ff2d63a6a18054625a7c6d0cc89bfa71bd6118403f54c9cb73d93",
+      "bytes": 20393,
       "contentType": "text/plain"
     },
     {

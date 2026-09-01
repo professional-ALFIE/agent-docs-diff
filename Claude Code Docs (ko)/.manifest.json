@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-29T16:42:31.658Z",
+  "생성": "2026-09-01T08:37:16.248Z",
   "제품폴더": "Claude Code Docs (ko)",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -49,8 +49,8 @@
       "경로": "010 시작하기/020 핵심 개념/040 컨텍스트 윈도우 살펴보기.md",
       "href": "/ko/context-window",
       "url": "https://code.claude.com/docs/ko/context-window.md",
-      "sha256": "935e74b80f6aae104d1a3a8ded8dc1ab66618c1925a4c127e8d58d101b1cfb82",
-      "bytes": 60431,
+      "sha256": "e68dd37ffcb1a87dd1c21e0e795475b31ea60ff8e746bc53cbec97de0e12a752",
+      "bytes": 60467,
       "contentType": "text/markdown"
     },
     {

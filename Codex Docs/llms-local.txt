@@ -121,20 +121,21 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Compliance API and audit events](<060 Administration/060 Usage, governance, and compliance/050 Compliance API and audit events.md>): Understand the purpose and administration boundary of the Compliance API
 - [Deploy the Windows app](<060 Administration/070 Deployment and model providers/020 Windows app deployment.md>): Choose an enterprise installation and update path for the ChatGPT desktop app on Windows
 - [Governance](<060 Administration/060 Usage, governance, and compliance/010 Governance.md>): Choose the appropriate analytics, usage, and audit surface for each administration question
-- [GPTs and Sharing](<060 Administration/040 Workspace access, policy, and models/030 GPTs and Sharing.md>): Manage GPT sharing, ownership, connected apps, and third-party actions across your workspace.
+- [GPTs and Sharing](<060 Administration/040 Workspace access, policy, and models/040 GPTs and Sharing.md>): Manage GPT sharing, ownership, connected apps, and third-party actions across your workspace.
 - [Groups and provisioning](<060 Administration/040 Workspace access, policy, and models/010 Groups and provisioning.md>): Understand group membership sources and their workspace access boundary
 - [Manage app updates](<060 Administration/070 Deployment and model providers/010 Manage app updates.md>): Control how your organization updates the ChatGPT desktop app on macOS and Windows
-- [Managed configuration](<060 Administration/040 Workspace access, policy, and models/040 Managed configuration.md>): Enforce runtime requirements across supported local clients and distribute managed defaults
+- [Managed configuration](<060 Administration/040 Workspace access, policy, and models/050 Managed configuration.md>): Enforce runtime requirements across supported local clients and distribute managed defaults
 - [Plugin controls](<060 Administration/050 Plugin and connector controls/010 Plugin controls.md>): Choose which plugins your team can use, and manage access to their connected services and actions
 - [Plugin management](<060 Administration/050 Plugin and connector controls/020 Plugin management.md>): Import and sync workspace plugins from GitHub
-- [Prisma AIRS](<060 Administration/040 Workspace access, policy, and models/050 Prisma AIRS.md>): Connect Palo Alto Networks Prisma AIRS to scan Codex prompts
-- [Roles and workspace permissions](<060 Administration/040 Workspace access, policy, and models/020 Roles and workspace permissions.md>): Separate ChatGPT workspace access from local runtime, API, plugin, and source-system controls
+- [Prisma AIRS](<060 Administration/040 Workspace access, policy, and models/060 Prisma AIRS.md>): Connect Palo Alto Networks Prisma AIRS to scan Codex prompts
+- [Roles and workspace permissions](<060 Administration/040 Workspace access, policy, and models/030 Roles and workspace permissions.md>): Separate ChatGPT workspace access from local runtime, API, plugin, and source-system controls
 - [Service accounts](<060 Administration/030 Identity and authentication/040 Service accounts.md>): Set up and manage service accounts for Codex automation in your ChatGPT workspace
 - [Skill controls](<060 Administration/050 Plugin and connector controls/030 Skill controls.md>): Compare ChatGPT workspace, local filesystem, and plugin skill controls
+- [User lifecycle management](<060 Administration/040 Workspace access, policy, and models/020 User lifecycle management.md>): Provision employees, update group-based permissions, and remove workspace access and Codex tokens
 - [Using the Admin plugin in ChatGPT Work](<060 Administration/060 Usage, governance, and compliance/020 Admin plugin.md>): Manage supported administrative workflows, permissions, and approvals in ChatGPT Work
 - [Workload identity federation](<060 Administration/030 Identity and authentication/020 Workload identity.md>): Configure workload identity federation for Codex with an OIDC token or SPIFFE JWT-SVID stored in a runtime-managed file.
 - [Workspace analytics](<060 Administration/060 Usage, governance, and compliance/030 Workspace analytics.md>): Compare ChatGPT workspace analytics, Codex analytics, reporting APIs, and audit records
-- [Workspace model availability](<060 Administration/040 Workspace access, policy, and models/070 Workspace model availability.md>): Separate model access across ChatGPT, Codex in the ChatGPT desktop app, Codex CLI, the IDE extension, Codex cloud, and the OpenAI API Platform
+- [Workspace model availability](<060 Administration/040 Workspace access, policy, and models/080 Workspace model availability.md>): Separate model access across ChatGPT, Codex in the ChatGPT desktop app, Codex CLI, the IDE extension, Codex cloud, and the OpenAI API Platform
 
 ## Environments
 - [Cloud environments](<040 Developers/040 Environments/030 Cloud environment.md>): Customize dependencies and tools for Codex
@@ -327,4 +328,4 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 ## 메뉴에만 있는 문서 (공식 llms.txt 에 없음)
 
 - [Slash commands](<020 Features/040 Reference/020 Slash commands.md>)
-- [HIPAA configuration](<060 Administration/040 Workspace access, policy, and models/060 HIPAA configuration.md>)
+- [HIPAA configuration](<060 Administration/040 Workspace access, policy, and models/070 HIPAA configuration.md>)

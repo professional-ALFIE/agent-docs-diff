@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-01T00:37:02.742Z",
+  "생성": "2026-09-01T08:37:24.563Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -225,8 +225,8 @@
       "경로": "010 Documentation/020 Data/010 Exa Connect/010 Quickstart.md",
       "href": "/reference/agent-api/connect/overview",
       "url": "https://exa.ai/docs/reference/agent-api/connect/overview.md",
-      "sha256": "bc864b458dd1da1e7fc2c15a737853e0e98c7715aa1be68e6b9b3a9a089c6ab6",
-      "bytes": 10816,
+      "sha256": "c7f5094b4e7c9bbb571931d5b2bad6ae31aa673ad92a43051a9ade5ace3ae2bb",
+      "bytes": 11388,
       "contentType": "text/markdown"
     },
     {
@@ -254,7 +254,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/040 Affiliate.com.md",
+      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/040 Polymarket.md",
+      "href": "/reference/agent-api/connect/polymarket",
+      "url": "https://exa.ai/docs/reference/agent-api/connect/polymarket.md",
+      "sha256": "ae4565ac15b84ca4732da68ffa7e3a5ae8a405e8a49c7b035622e189a08b87a4",
+      "bytes": 4791,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/050 Affiliate.com.md",
       "href": "/reference/agent-api/connect/affiliatecom",
       "url": "https://exa.ai/docs/reference/agent-api/connect/affiliatecom.md",
       "sha256": "f413ea851c8ec4ac5872fc891fc01c1dc7a2da796d38d526bb57add7f40b6c1c",
@@ -262,7 +270,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/050 Particle.md",
+      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/060 Particle.md",
       "href": "/reference/agent-api/connect/particle",
       "url": "https://exa.ai/docs/reference/agent-api/connect/particle.md",
       "sha256": "ea66c7ee7dda83cab13077fd9858e8db73587009934af2da87c4c50d22272cd0",
@@ -270,7 +278,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/060 Financial Datasets.md",
+      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Financial Datasets.md",
       "href": "/reference/agent-api/connect/financialdatasets",
       "url": "https://exa.ai/docs/reference/agent-api/connect/financialdatasets.md",
       "sha256": "947b91d73c55901af26e919728623d7efe1e9af0a78645c521b4d83e68f59bc8",
@@ -278,7 +286,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/070 Jinko.md",
+      "경로": "010 Documentation/020 Data/010 Exa Connect/020 Self-Serve Providers/080 Jinko.md",
       "href": "/reference/agent-api/connect/jinko",
       "url": "https://exa.ai/docs/reference/agent-api/connect/jinko.md",
       "sha256": "e6d4c7fe8888fff8d508ce283ab513485ab76098e4ac2e80a0737d557880283e",
@@ -497,16 +505,16 @@
       "경로": "010 Documentation/050 Integrations/050 Tool Calling/010 OpenAI Tool Calling.md",
       "href": "/reference/openai-tool-calling",
       "url": "https://exa.ai/docs/reference/openai-tool-calling.md",
-      "sha256": "a220cfea8d246d366bf97e5ba6bdf7d7fff9da501645f0a5038fe75edce8fac4",
-      "bytes": 7327,
+      "sha256": "900a90622ebe17ec49fef93fd9bc9bbcbe110bd68e94a35b73cc89d30d982974",
+      "bytes": 8367,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Documentation/050 Integrations/050 Tool Calling/020 Anthropic Tool Calling.md",
       "href": "/reference/anthropic-tool-calling",
       "url": "https://exa.ai/docs/reference/anthropic-tool-calling.md",
-      "sha256": "5440e5c00d1739717d54d6c88cb81eac8f4789146d853a87baea293df4c22354",
-      "bytes": 6988,
+      "sha256": "01dd145ae9ad0ff16c076976283bbc89f00ddfaf55c1af94b1569da2a966e581",
+      "bytes": 8040,
       "contentType": "text/markdown"
     },
     {
@@ -809,40 +817,40 @@
       "경로": "020 API Reference/020 Agent/020 Create a run.md",
       "href": "/reference/agent-api/create-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/create-a-run.md",
-      "sha256": "a1247eba192819f2bce8e99e61a1f7f83db420dade11e3e5b0c526c560702b68",
-      "bytes": 26990,
+      "sha256": "d49a4c99cb2efd8cf2d866124f5b2dd44f2ba8a4ee1a31e5c1f785aa3381075f",
+      "bytes": 27011,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/020 Agent/030 Get a run.md",
       "href": "/reference/agent-api/get-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/get-a-run.md",
-      "sha256": "e96827c1129c9b5eb8c1b98891d1debd7dc090a1dafe31d0ce2ac0f37fdd963b",
-      "bytes": 15060,
+      "sha256": "bdfd9ea109def4483438c66fc97dcfbd85ed2800c141406b70196778401911c3",
+      "bytes": 15081,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/020 Agent/040 List runs.md",
       "href": "/reference/agent-api/list-runs",
       "url": "https://exa.ai/docs/reference/agent-api/list-runs.md",
-      "sha256": "c4726c7ff4d2afc88600324b6eb42a654e655fbb08c45abfc3d7a45d1a9a6a0e",
-      "bytes": 15406,
+      "sha256": "83b65565353de42584bb8200a322b65dbf2d10031b0226018ebdbe6555bda83e",
+      "bytes": 15427,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/020 Agent/050 Cancel a run.md",
       "href": "/reference/agent-api/cancel-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/cancel-a-run.md",
-      "sha256": "c8e6af6c11e023f28b34bbe3877fcda434a5d30bb91a1e15e016ace1036199e4",
-      "bytes": 15593,
+      "sha256": "8ee354de39689545a5a93545905e444a565e3d1f3b66e0819dda96c84f2d4bf5",
+      "bytes": 15614,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/020 Agent/060 Stop a run.md",
       "href": "/reference/agent-api/stop-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/stop-a-run.md",
-      "sha256": "0cb77b789203252ed4e53c642f5f04cc06d9a8ab872ec602a0961219f05b911a",
-      "bytes": 16427,
+      "sha256": "982cec6eb0ef576d770695e1b769cb63ed47950cf7c87d2644e15e4cf71c1fde",
+      "bytes": 16448,
       "contentType": "text/markdown"
     },
     {
@@ -1327,7 +1335,7 @@
     }
   ],
   "llms": {
-    "치환": 164,
+    "치환": 165,
     "미노출": 26,
     "외부": 0,
     "메뉴에만": 0
