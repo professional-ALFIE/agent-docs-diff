@@ -93,6 +93,7 @@
 - [Enterprise Documentation & Security](https://exa.ai/docs/reference/security.md)
 - [HIPAA](https://exa.ai/docs/reference/security/hipaa.md): Use HIPAA compliance mode for eligible cached retrieval requests.
 - [OpenAPI Specification](https://exa.ai/docs/reference/openapi-spec.md)
+- [Batch API](https://exa.ai/docs/reference/batches.md): Run Exa API requests asynchronously in batches.
 - [Context (Exa Code)](https://exa.ai/docs/reference/context.md): Get relevant code snippets and examples from open source libraries and repositories. Search through code repositories to find contextual examples that help developers understand how specific libraries, frameworks, or programming concepts are implemented in practice.
 - [Content Freshness](https://exa.ai/docs/reference/livecrawling-contents.md)
 - [Migrating from Bing](https://exa.ai/docs/reference/migrating-from-bing.md): Guide for switching from the deprecated Bing Search API to Exa
@@ -161,6 +162,11 @@
 - [Batch Action on Monitors](https://exa.ai/docs/reference/monitors/batch-monitors.md): Perform a batch action on monitors matching the provided filters.
 - [List Runs](https://exa.ai/docs/reference/monitors/runs/list-runs.md): Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
 - [Get a Run](https://exa.ai/docs/reference/monitors/runs/get-a-run.md): Retrieves a single run by its ID, including the full output if the run is completed.
+- [Create a batch](https://exa.ai/docs/reference/batches/create-a-batch.md): Submit a batch of Exa API requests to run asynchronously.
+- [List batches](https://exa.ai/docs/reference/batches/list-batches.md): Retrieve a paginated list of batches for your team.
+- [Get a batch](https://exa.ai/docs/reference/batches/get-a-batch.md): Retrieve a batch by ID.
+- [Cancel a batch](https://exa.ai/docs/reference/batches/cancel-a-batch.md): Cancel an in-progress batch.
+- [Delete a batch](https://exa.ai/docs/reference/batches/delete-a-batch.md): Delete a batch in a terminal status.
 - [Create API Key](https://exa.ai/docs/reference/team-management/create-api-key.md): Create a new API key for your team with optional name and rate limit configuration.
 - [List API Keys](https://exa.ai/docs/reference/team-management/list-api-keys.md): Retrieve all API keys belonging to your team with their metadata.
 - [Get API Key](https://exa.ai/docs/reference/team-management/get-api-key.md): Retrieve details of a specific API key by its ID.

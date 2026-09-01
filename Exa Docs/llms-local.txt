@@ -95,12 +95,13 @@
 - [Enterprise Documentation & Security](<010 Documentation/070 Admin/060 Security/010 Enterprise Documentation & Security.md>)
 - [HIPAA](<010 Documentation/070 Admin/060 Security/020 HIPAA.md>): Use HIPAA compliance mode for eligible cached retrieval requests.
 - [OpenAPI Specification](<010 Documentation/080 Additional Resources/010 OpenAPI Specification.md>)
-- [Context (Exa Code)](<010 Documentation/080 Additional Resources/020 Context (Exa Code).md>): Get relevant code snippets and examples from open source libraries and repositories. Search through code repositories to find contextual examples that help developers understand how specific libraries, frameworks, or programming concepts are implemented in practice.
-- [Content Freshness](<010 Documentation/080 Additional Resources/030 Content Freshness.md>)
-- [Migrating from Bing](<010 Documentation/080 Additional Resources/040 Migrating from Bing.md>): Guide for switching from the deprecated Bing Search API to Exa
-- [Make Exa Your Default Search Engine](<010 Documentation/080 Additional Resources/050 Make Exa Your Default Search Engine.md>): Simple steps to set exa.ai as your browser's default search engine
-- [Building a Voice Agent with Exa](<010 Documentation/080 Additional Resources/060 Building a Voice Agent with Exa.md>): Best practices for building AI voice agents powered by Exa's real-time search
-- [FAQs](<010 Documentation/080 Additional Resources/070 FAQs.md>)
+- [Batch API](<010 Documentation/080 Additional Resources/020 Batch API.md>): Run Exa API requests asynchronously in batches.
+- [Context (Exa Code)](<010 Documentation/080 Additional Resources/030 Context (Exa Code).md>): Get relevant code snippets and examples from open source libraries and repositories. Search through code repositories to find contextual examples that help developers understand how specific libraries, frameworks, or programming concepts are implemented in practice.
+- [Content Freshness](<010 Documentation/080 Additional Resources/040 Content Freshness.md>)
+- [Migrating from Bing](<010 Documentation/080 Additional Resources/050 Migrating from Bing.md>): Guide for switching from the deprecated Bing Search API to Exa
+- [Make Exa Your Default Search Engine](<010 Documentation/080 Additional Resources/060 Make Exa Your Default Search Engine.md>): Simple steps to set exa.ai as your browser's default search engine
+- [Building a Voice Agent with Exa](<010 Documentation/080 Additional Resources/070 Building a Voice Agent with Exa.md>): Best practices for building AI voice agents powered by Exa's real-time search
+- [FAQs](<010 Documentation/080 Additional Resources/080 FAQs.md>)
 - [Blog](https://exa.ai/docs/reference/blog.md) (메뉴에 있으나 받지 않음: content-type text/html — 문서가 아니다)
 - [Search](<020 API Reference/010 Search/010 Search.md>): The search endpoint lets you search the web and extract contents from the results.
 - [Contents](<020 API Reference/010 Search/020 Contents.md>): Get the full page contents, summaries, and metadata for a list of URLs.
@@ -163,12 +164,17 @@
 - [Batch Action on Monitors](<020 API Reference/040 Monitors/070 Batch Action on Monitors.md>): Perform a batch action on monitors matching the provided filters.
 - [List Runs](<020 API Reference/040 Monitors/080 Runs/010 List Runs.md>): Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
 - [Get a Run](<020 API Reference/040 Monitors/080 Runs/020 Get a Run.md>): Retrieves a single run by its ID, including the full output if the run is completed.
-- [Create API Key](<020 API Reference/050 Team Management/010 Create API Key.md>): Create a new API key for your team with optional name and rate limit configuration.
-- [List API Keys](<020 API Reference/050 Team Management/020 List API Keys.md>): Retrieve all API keys belonging to your team with their metadata.
-- [Get API Key](<020 API Reference/050 Team Management/030 Get API Key.md>): Retrieve details of a specific API key by its ID.
-- [Get API Key Usage](<020 API Reference/050 Team Management/040 Get API Key Usage.md>): Retrieve usage analytics and billing data for a specific API key.
-- [Update API Key](<020 API Reference/050 Team Management/050 Update API Key.md>): Update the name and rate limit of an existing API key.
-- [Delete API Key](<020 API Reference/050 Team Management/060 Delete API Key.md>): Permanently delete an API key from your team.
+- [Create a batch](<020 API Reference/050 Batch/010 Create a batch.md>): Submit a batch of Exa API requests to run asynchronously.
+- [List batches](<020 API Reference/050 Batch/020 List batches.md>): Retrieve a paginated list of batches for your team.
+- [Get a batch](<020 API Reference/050 Batch/030 Get a batch.md>): Retrieve a batch by ID.
+- [Cancel a batch](<020 API Reference/050 Batch/040 Cancel a batch.md>): Cancel an in-progress batch.
+- [Delete a batch](<020 API Reference/050 Batch/050 Delete a batch.md>): Delete a batch in a terminal status.
+- [Create API Key](<020 API Reference/060 Team Management/010 Create API Key.md>): Create a new API key for your team with optional name and rate limit configuration.
+- [List API Keys](<020 API Reference/060 Team Management/020 List API Keys.md>): Retrieve all API keys belonging to your team with their metadata.
+- [Get API Key](<020 API Reference/060 Team Management/030 Get API Key.md>): Retrieve details of a specific API key by its ID.
+- [Get API Key Usage](<020 API Reference/060 Team Management/040 Get API Key Usage.md>): Retrieve usage analytics and billing data for a specific API key.
+- [Update API Key](<020 API Reference/060 Team Management/050 Update API Key.md>): Update the name and rate limit of an existing API key.
+- [Delete API Key](<020 API Reference/060 Team Management/060 Delete API Key.md>): Permanently delete an API key from your team.
 - [Changelog](<030 Changelog/010 Updates/010 Changelog.md>): Product updates and announcements from Exa.
 - [Agent](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/agent.md) (메뉴 미노출 · 로컬 없음)
 - [Answer](https://exa.ai/docs/.mintlify/skills/build-with-exa/references/answer.md) (메뉴 미노출 · 로컬 없음)

@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-01T18:29:32.330Z",
+  "생성": "2026-09-01T23:17:40.484Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -25,8 +25,8 @@
       "경로": "010 Getting started/010 Getting started/030 Changelog.md",
       "href": "/en/changelog",
       "url": "https://code.claude.com/docs/en/changelog.md",
-      "sha256": "b1018bcfc35eaa87d1efc8bfc2dd590985dfca85ae2f36c084c76bdf84fd1a8f",
-      "bytes": 636466,
+      "sha256": "6cc34ef163eac1d40ee82d5ad431c48374c37f9d3ffeaf4cf88be8ac872beea0",
+      "bytes": 636787,
       "contentType": "text/markdown"
     },
     {
@@ -329,8 +329,8 @@
       "경로": "020 Build with Claude Code/010 Agents and parallel work/020 Create custom subagents.md",
       "href": "/en/sub-agents",
       "url": "https://code.claude.com/docs/en/sub-agents.md",
-      "sha256": "e98921cc27501a4bcb8b21cefab2fe06a227cf211bf492e870f7336820c029aa",
-      "bytes": 109836,
+      "sha256": "a5c6748e506ffc27d8ff6f27f377f49767438d07c61c4f0862e7e3733fe1955e",
+      "bytes": 110791,
       "contentType": "text/markdown"
     },
     {
@@ -345,8 +345,8 @@
       "경로": "020 Build with Claude Code/010 Agents and parallel work/040 Run agent teams.md",
       "href": "/en/agent-teams",
       "url": "https://code.claude.com/docs/en/agent-teams.md",
-      "sha256": "71fdb875aebcd713b70815917e7dd8a9b2e3075fae0eff17de73c35b05048e5d",
-      "bytes": 40623,
+      "sha256": "42ee37642823ee36bbb94238db39bbd7795ceedf06b2c769f215cf9175a75c8e",
+      "bytes": 40743,
       "contentType": "text/markdown"
     },
     {
@@ -817,8 +817,8 @@
       "경로": "040 Configuration/010 Settings/020 Settings reference.md",
       "href": "/en/settings-reference",
       "url": "https://code.claude.com/docs/en/settings-reference.md",
-      "sha256": "77307a313c4553d0219889a932e704730bd1139883fff78f1e941166e5498cf8",
-      "bytes": 415023,
+      "sha256": "dad0b5b962271e8f0a10ead987a037ee1138054392865caad617b20dfd6dae76",
+      "bytes": 418199,
       "contentType": "text/markdown"
     },
     {
@@ -921,8 +921,8 @@
       "경로": "040 Configuration/040 Model and responses/010 Model configuration.md",
       "href": "/en/model-config",
       "url": "https://code.claude.com/docs/en/model-config.md",
-      "sha256": "3dbfc8f63a6aabe2a91e61c90933302cab880521842906b40638bb70ac47b49d",
-      "bytes": 103241,
+      "sha256": "00cdd121b128313bd9bad9e8947817b0a01dbd785e25091c9367f24526816196",
+      "bytes": 103869,
       "contentType": "text/markdown"
     },
     {
@@ -1017,8 +1017,8 @@
       "경로": "050 Reference/010 Reference/030 Environment variables.md",
       "href": "/en/env-vars",
       "url": "https://code.claude.com/docs/en/env-vars.md",
-      "sha256": "56266ae9f04ae3fc1740043b9b38b6a862afe534de81f216ecc8e69f300b961b",
-      "bytes": 478133,
+      "sha256": "ec3f3d97dbf615114965b3f4e650b2811ddc3b595dadf6d6490ac7c4d37fbea8",
+      "bytes": 479462,
       "contentType": "text/markdown"
     },
     {

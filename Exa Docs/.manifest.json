@@ -1,9 +1,9 @@
 {
-  "생성": "2026-09-01T08:37:24.563Z",
+  "생성": "2026-09-01T23:18:12.098Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
-  "그룹수": 47,
+  "그룹수": 48,
   "문서": [
     {
       "경로": "010 Documentation/010 API/010 Search/010 For humans.md",
@@ -734,7 +734,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/080 Additional Resources/020 Context (Exa Code).md",
+      "경로": "010 Documentation/080 Additional Resources/020 Batch API.md",
+      "href": "/reference/batches",
+      "url": "https://exa.ai/docs/reference/batches.md",
+      "sha256": "650477e373e9dddb3d65ad5ada3db1658a414bbd79598617d2613120f1e0a881",
+      "bytes": 5937,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Documentation/080 Additional Resources/030 Context (Exa Code).md",
       "href": "/reference/context",
       "url": "https://exa.ai/docs/reference/context.md",
       "sha256": "6da111a1c19334e9fcd438223eee5b3c9e0d872c5e59b4b376d745c4b5caf88f",
@@ -742,7 +750,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/080 Additional Resources/030 Content Freshness.md",
+      "경로": "010 Documentation/080 Additional Resources/040 Content Freshness.md",
       "href": "/reference/livecrawling-contents",
       "url": "https://exa.ai/docs/reference/livecrawling-contents.md",
       "sha256": "61dc811fe4bc4d12cd78c9e80ea6957676231ca4f985dfd58f6b6c1f91fdabc4",
@@ -750,7 +758,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/080 Additional Resources/040 Migrating from Bing.md",
+      "경로": "010 Documentation/080 Additional Resources/050 Migrating from Bing.md",
       "href": "/reference/migrating-from-bing",
       "url": "https://exa.ai/docs/reference/migrating-from-bing.md",
       "sha256": "a70bea0cf1e67f35f8ade4277b7b6e9e19338312a531b3a79b8c801c22842f52",
@@ -758,7 +766,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/080 Additional Resources/050 Make Exa Your Default Search Engine.md",
+      "경로": "010 Documentation/080 Additional Resources/060 Make Exa Your Default Search Engine.md",
       "href": "/reference/set-exa-as-default-search",
       "url": "https://exa.ai/docs/reference/set-exa-as-default-search.md",
       "sha256": "c85b15ff2015225b274a2ad6723e98dfa939b6fb88a139f4ee9a543b38bbba90",
@@ -766,7 +774,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/080 Additional Resources/060 Building a Voice Agent with Exa.md",
+      "경로": "010 Documentation/080 Additional Resources/070 Building a Voice Agent with Exa.md",
       "href": "/examples/voice-agent",
       "url": "https://exa.ai/docs/examples/voice-agent.md",
       "sha256": "bb616d81890c2fc74e26606261a6e21730b6ddd45604d51bdf74be6adc1fa5bf",
@@ -774,7 +782,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/080 Additional Resources/070 FAQs.md",
+      "경로": "010 Documentation/080 Additional Resources/080 FAQs.md",
       "href": "/reference/faqs",
       "url": "https://exa.ai/docs/reference/faqs.md",
       "sha256": "9b2bf6347bf68049fe96ff159fea7f460e4fa55bd413d5c44309168a23bc610a",
@@ -1270,7 +1278,47 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 API Reference/050 Team Management/010 Create API Key.md",
+      "경로": "020 API Reference/050 Batch/010 Create a batch.md",
+      "href": "/reference/batches/create-a-batch",
+      "url": "https://exa.ai/docs/reference/batches/create-a-batch.md",
+      "sha256": "fee8c7cd6cd58d45628969c0edcc79731754cc44166413206645be109840d27b",
+      "bytes": 12339,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 API Reference/050 Batch/020 List batches.md",
+      "href": "/reference/batches/list-batches",
+      "url": "https://exa.ai/docs/reference/batches/list-batches.md",
+      "sha256": "cd9f52b2a928e42f5c8be23cee36f0ab6253fd6b186f46d9c2689a01078d4ec8",
+      "bytes": 11188,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 API Reference/050 Batch/030 Get a batch.md",
+      "href": "/reference/batches/get-a-batch",
+      "url": "https://exa.ai/docs/reference/batches/get-a-batch.md",
+      "sha256": "338edf5f4f1fd995c71b42f4e259d8fc7d1c21b2506425b040a7d03af7e35b42",
+      "bytes": 10045,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 API Reference/050 Batch/040 Cancel a batch.md",
+      "href": "/reference/batches/cancel-a-batch",
+      "url": "https://exa.ai/docs/reference/batches/cancel-a-batch.md",
+      "sha256": "8a08da4f73459ea9994f94ec04b9c02fa7c1f74565da3ad67fa0a1e643945cf8",
+      "bytes": 10775,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 API Reference/050 Batch/050 Delete a batch.md",
+      "href": "/reference/batches/delete-a-batch",
+      "url": "https://exa.ai/docs/reference/batches/delete-a-batch.md",
+      "sha256": "fce3c559b5d85814119dc405fa795b5a6786fcc3d7018ae663e0521c4210528f",
+      "bytes": 7581,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020 API Reference/060 Team Management/010 Create API Key.md",
       "href": "/reference/team-management/create-api-key",
       "url": "https://exa.ai/docs/reference/team-management/create-api-key.md",
       "sha256": "bd7da644c901c0cef418a1a47bc0b90e61171ff2b036ce615634f1563088e255",
@@ -1278,7 +1326,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 API Reference/050 Team Management/020 List API Keys.md",
+      "경로": "020 API Reference/060 Team Management/020 List API Keys.md",
       "href": "/reference/team-management/list-api-keys",
       "url": "https://exa.ai/docs/reference/team-management/list-api-keys.md",
       "sha256": "1510fa7ecaa4197ed229f4347c41bdc0d96c6581a53a54137e2cc522cad5e72a",
@@ -1286,7 +1334,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 API Reference/050 Team Management/030 Get API Key.md",
+      "경로": "020 API Reference/060 Team Management/030 Get API Key.md",
       "href": "/reference/team-management/get-api-key",
       "url": "https://exa.ai/docs/reference/team-management/get-api-key.md",
       "sha256": "2123945b63035313c29df065645d65f0cd5a161b7a43507885c5db71a1a24c5c",
@@ -1294,7 +1342,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 API Reference/050 Team Management/040 Get API Key Usage.md",
+      "경로": "020 API Reference/060 Team Management/040 Get API Key Usage.md",
       "href": "/reference/team-management/get-api-key-usage",
       "url": "https://exa.ai/docs/reference/team-management/get-api-key-usage.md",
       "sha256": "9a975f6b05a2ee3aea3c9981af82a59a7c8586757f638bbb6b795a278d8b6f72",
@@ -1302,7 +1350,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 API Reference/050 Team Management/050 Update API Key.md",
+      "경로": "020 API Reference/060 Team Management/050 Update API Key.md",
       "href": "/reference/team-management/update-api-key",
       "url": "https://exa.ai/docs/reference/team-management/update-api-key.md",
       "sha256": "7c0fd32580816f8a1b602d3dcc028125ed0efaf2f690d4722948f8aa76156257",
@@ -1310,7 +1358,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "020 API Reference/050 Team Management/060 Delete API Key.md",
+      "경로": "020 API Reference/060 Team Management/060 Delete API Key.md",
       "href": "/reference/team-management/delete-api-key",
       "url": "https://exa.ai/docs/reference/team-management/delete-api-key.md",
       "sha256": "7faf7c321fd87bacf7ad079f8548c680938c991705444e24825e8e0c66b7e61c",
@@ -1328,14 +1376,14 @@
   ],
   "제외": [
     {
-      "경로": "010 Documentation/080 Additional Resources/080 Blog.md",
+      "경로": "010 Documentation/080 Additional Resources/090 Blog.md",
       "href": "/reference/blog",
       "url": "https://exa.ai/docs/reference/blog.md",
       "이유": "content-type text/html — 문서가 아니다"
     }
   ],
   "llms": {
-    "치환": 165,
+    "치환": 171,
     "미노출": 26,
     "외부": 0,
     "메뉴에만": 0
