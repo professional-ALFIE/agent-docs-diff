@@ -486,6 +486,7 @@ components:
         - affiliate
         - particle
         - jinko
+        - polymarket
       description: Identifier of an Exa Connect data provider.
     AgentCitation:
       type: object
