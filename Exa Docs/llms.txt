@@ -68,7 +68,6 @@
 - [Vercel AI Gateway](https://exa.ai/docs/integrations/vercel-ai-gateway.md): Use Exa web search through Vercel AI Gateway with the AI SDK.
 - [AI SDK by Vercel](https://exa.ai/docs/reference/vercel.md): Add Exa web search to AI SDK applications with the @exalabs/ai-sdk package.
 - [OpenAI SDK Compatibility](https://exa.ai/docs/reference/openai-sdk.md): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.
-- [OpenAI Responses API](https://exa.ai/docs/reference/openai-responses-api-with-exa.md): Use Exa with OpenAI's Responses API - both as a web search tool and for direct research capabilities.
 - [Browserbase](https://exa.ai/docs/integrations/browserbase.md): Combine Exa company search with Browserbase browser automation for job application workflows.
 - [LangChain](https://exa.ai/docs/reference/langchain.md): How to use Exa's integration with LangChain to perform RAG.
 - [Pydantic AI](https://exa.ai/docs/reference/pydantic-ai.md): Give a Pydantic AI agent web research tools backed by the Exa search API.

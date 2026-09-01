@@ -69,8 +69,7 @@
 - [Anthropic Tool Calling](<010 Documentation/050 Integrations/050 Tool Calling/020 Anthropic Tool Calling.md>): Use Claude tool use to add Exa web search to your application.
 - [Vercel AI Gateway](<010 Documentation/050 Integrations/060 AI SDK/010 Vercel AI Gateway.md>): Use Exa web search through Vercel AI Gateway with the AI SDK.
 - [AI SDK by Vercel](<010 Documentation/050 Integrations/060 AI SDK/020 AI SDK by Vercel.md>): Add Exa web search to AI SDK applications with the @exalabs/ai-sdk package.
-- [OpenAI SDK Compatibility](<010 Documentation/050 Integrations/070 OpenAI SDK/010 OpenAI SDK Compatibility.md>): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.
-- [OpenAI Responses API](<010 Documentation/050 Integrations/070 OpenAI SDK/020 OpenAI Responses API.md>): Use Exa with OpenAI's Responses API - both as a web search tool and for direct research capabilities.
+- [OpenAI SDK Compatibility](<010 Documentation/050 Integrations/070 OpenAI SDK.md>): Use Exa's endpoints as a drop-in replacement for OpenAI - supporting both chat completions and responses APIs.
 - [Browserbase](<010 Documentation/050 Integrations/080 Browserbase.md>): Combine Exa company search with Browserbase browser automation for job application workflows.
 - [LangChain](<010 Documentation/050 Integrations/090 LangChain.md>): How to use Exa's integration with LangChain to perform RAG.
 - [Pydantic AI](<010 Documentation/050 Integrations/100 Pydantic AI.md>): Give a Pydantic AI agent web research tools backed by the Exa search API.

@@ -1,9 +1,9 @@
 {
-  "생성": "2026-08-30T11:53:29.331Z",
+  "생성": "2026-09-01T00:37:02.742Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
-  "그룹수": 48,
+  "그룹수": 47,
   "문서": [
     {
       "경로": "010 Documentation/010 API/010 Search/010 For humans.md",
@@ -497,16 +497,16 @@
       "경로": "010 Documentation/050 Integrations/050 Tool Calling/010 OpenAI Tool Calling.md",
       "href": "/reference/openai-tool-calling",
       "url": "https://exa.ai/docs/reference/openai-tool-calling.md",
-      "sha256": "87dcacea1a1923542dbc58fc89a4a22c96e24ad08c929b462fbbc3bb7b4fa05f",
-      "bytes": 12728,
+      "sha256": "a220cfea8d246d366bf97e5ba6bdf7d7fff9da501645f0a5038fe75edce8fac4",
+      "bytes": 7327,
       "contentType": "text/markdown"
     },
     {
       "경로": "010 Documentation/050 Integrations/050 Tool Calling/020 Anthropic Tool Calling.md",
       "href": "/reference/anthropic-tool-calling",
       "url": "https://exa.ai/docs/reference/anthropic-tool-calling.md",
-      "sha256": "fdc5bfd6b2f89e14045eccd92046731d40dce7b3e19c941e9ee4fc67bf5e0958",
-      "bytes": 16847,
+      "sha256": "5440e5c00d1739717d54d6c88cb81eac8f4789146d853a87baea293df4c22354",
+      "bytes": 6988,
       "contentType": "text/markdown"
     },
     {
@@ -526,19 +526,11 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "010 Documentation/050 Integrations/070 OpenAI SDK/010 OpenAI SDK Compatibility.md",
+      "경로": "010 Documentation/050 Integrations/070 OpenAI SDK.md",
       "href": "/reference/openai-sdk",
       "url": "https://exa.ai/docs/reference/openai-sdk.md",
       "sha256": "0f44761fc6242b69427f83a10b9ce28b8779b7423a5ed5427adb3d83d068bf35",
       "bytes": 12137,
-      "contentType": "text/markdown"
-    },
-    {
-      "경로": "010 Documentation/050 Integrations/070 OpenAI SDK/020 OpenAI Responses API.md",
-      "href": "/reference/openai-responses-api-with-exa",
-      "url": "https://exa.ai/docs/reference/openai-responses-api-with-exa.md",
-      "sha256": "2f7812d834c85a17ca2e1f3060fdca7a231fbf274731da295c7ba41912db0f74",
-      "bytes": 14649,
       "contentType": "text/markdown"
     },
     {
@@ -1335,7 +1327,7 @@
     }
   ],
   "llms": {
-    "치환": 165,
+    "치환": 164,
     "미노출": 26,
     "외부": 0,
     "메뉴에만": 0

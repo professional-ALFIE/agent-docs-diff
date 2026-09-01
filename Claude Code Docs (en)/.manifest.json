@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-31T20:49:46.701Z",
+  "생성": "2026-09-01T00:36:32.586Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -1201,8 +1201,8 @@
       "경로": "060 Agent SDK/050 Extend with tools/040 Subagents in the SDK.md",
       "href": "/en/agent-sdk/subagents",
       "url": "https://code.claude.com/docs/en/agent-sdk/subagents.md",
-      "sha256": "0f2e497a7ed516f81e702b3b7ed3aa6775a4e96119b25982fa6a2f10c184c902",
-      "bytes": 46509,
+      "sha256": "74ec0f8f4f1690b1eebcb3879f0215ffa456d67995730e6bb35d0cfb81db5382",
+      "bytes": 45398,
       "contentType": "text/markdown"
     },
     {
