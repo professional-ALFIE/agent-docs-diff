@@ -45,15 +45,16 @@ then come back to attach data partners.
   You pay the usual Agent compute and search costs, plus the provider call charge for each Exa Connect tool call.
 </Note>
 
-| Provider                                                    | Price                                         |
-| ----------------------------------------------------------- | --------------------------------------------- |
-| [Fiber.ai](/docs/reference/agent-api/connect/fiber#pricing)      | `$0.02 / credit`                              |
-| Similarweb                                                  | `$0.03 / call`                                |
-| [Baselayer](/docs/reference/agent-api/connect/baselayer#pricing) | `$0.10 – $4.00 / order (varies by operation)` |
-| Affiliate.com                                               | `$0.015 / call`                               |
-| Particle                                                    | `$0.015 / call`                               |
-| Financial Datasets                                          | `$0.01 / call`                                |
-| Jinko                                                       | `$0.005 / call`                               |
+| Provider                                                      | Price                                         |
+| ------------------------------------------------------------- | --------------------------------------------- |
+| [Fiber.ai](/docs/reference/agent-api/connect/fiber#pricing)        | `$0.02 / credit`                              |
+| Similarweb                                                    | `$0.03 / call`                                |
+| [Baselayer](/docs/reference/agent-api/connect/baselayer#pricing)   | `$0.10 – $4.00 / order (varies by operation)` |
+| [Polymarket](/docs/reference/agent-api/connect/polymarket#pricing) | `Free`                                        |
+| Affiliate.com                                                 | `$0.015 / call`                               |
+| Particle                                                      | `$0.015 / call`                               |
+| Financial Datasets                                            | `$0.01 / call`                                |
+| Jinko                                                         | `$0.005 / call`                               |
 
 Fiber.ai bills in credits rather than per call, because its own charge varies by
 call: a search costs 2 credits plus 1 per result returned, a company or person
@@ -167,6 +168,11 @@ officer reverse lookup) are free. See [Baselayer pricing](/docs/reference/agent-
     <Card title="Baselayer" icon="https://mintcdn.com/exa-52/vc1Uh8_sSaqT3DeY/images/connect/baselayer.svg?fit=max&auto=format&n=vc1Uh8_sSaqT3DeY&q=85&s=f74500a7ac081c852e32f44b1a22350a" href="/docs/reference/agent-api/connect/baselayer" width="400" height="247" data-path="images/connect/baselayer.svg">
       **Compliance & KYB.** Verify US businesses: officers, registrations, and risk
       signals.
+    </Card>
+
+    <Card title="Polymarket" icon="https://mintcdn.com/exa-52/ssQBJbA1Qf06uOW1/images/connect/polymarket.svg?fit=max&auto=format&n=ssQBJbA1Qf06uOW1&q=85&s=48b6daea65a39fbd8907a02301fa9c03" href="/docs/reference/agent-api/connect/polymarket" width="168" height="168" data-path="images/connect/polymarket.svg">
+      **Prediction markets.** Prediction market odds, price history, and trader
+      positions from Polymarket.
     </Card>
 
     <Card title="Affiliate.com" icon="https://mintcdn.com/exa-52/vc1Uh8_sSaqT3DeY/images/connect/affiliatecom.svg?fit=max&auto=format&n=vc1Uh8_sSaqT3DeY&q=85&s=c488bec107ff7747e1fedf87b989b352" href="/docs/reference/agent-api/connect/affiliatecom" width="400" height="400" data-path="images/connect/affiliatecom.svg">
