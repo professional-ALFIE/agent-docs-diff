@@ -14,236 +14,163 @@
 ***
 
 <Info>
-  OpenAI recommends using the Responses API for all new projects. [See the guide](/docs/reference/openai-responses-api-with-exa).
+  OpenAI recommends the Responses API for all new projects. See the [Responses API](#responses-api) section below.
 </Info>
 
-OpenAI's [tool calling](https://platform.openai.com/docs/guides/function-calling?lang=python) allows models to call functions that you define in your code. Use tool calling to invoke Exa search:
-
-1. Install prerequisite packages and set up the environment
-2. Use Exa within an OpenAI tool call
-
-***
+OpenAI's [tool calling](https://platform.openai.com/docs/guides/function-calling?lang=python) allows models to call functions that you define in your code. The Exa SDKs ship a ready-made `web_search` tool for OpenAI, so you don't have to hand-write the tool schema, parse tool calls, or format Exa results yourself.
 
 ## Get started
 
 <Steps>
-  <Step title="Prerequisites and installation">
-    Install the:
+  <Step title="Install the SDKs">
+    <CodeGroup>
+      ```bash Python theme={null}
+      pip install openai exa_py
+      ```
 
-    * `openai` library to perform OpenAI API calls and completions
-    * `exa_py` library to perform Exa search
-    * `rich` library to make the output more readable
-
-    ```python Python theme={null}
-    pip install openai exa_py rich
-    ```
+      ```bash JavaScript theme={null}
+      npm install openai exa-js
+      ```
+    </CodeGroup>
   </Step>
 
-  <Step title="Set up the environment variables">
-    Create an `.env` file in the root of your project and set the `EXA_API_KEY` and `OPENAI_API_KEY` environment variable to your API keys respectively. Visit the [OpenAI playground](https://platform.openai.com/api-keys) and the [Exa dashboard](https://dashboard.exa.ai/api-keys) to generate your API keys.
-
-    <br />
+  <Step title="Set up your API keys">
+    Set the `EXA_API_KEY` and `OPENAI_API_KEY` environment variables. Visit the [OpenAI dashboard](https://platform.openai.com/api-keys) and the [Exa dashboard](https://dashboard.exa.ai/api-keys) to generate your API keys.
 
     <Card title="Get your Exa API key" icon="key" horizontal href="https://dashboard.exa.ai/api-keys" />
-
-    ```Shell Shell theme={null}
-    OPENAI_API_KEY=insert your OpenAI API key here, without quotes
-    EXA_API_KEY=insert your Exa API key here, without quotes
-    ```
   </Step>
 
-  <Step title="Use Exa search as an OpenAI tool">
-    First, we import and initialise the OpenAI and Exa libraries and load the stored API keys.
+  <Step title="Add Exa web search to your tool loop">
+    Pass `exa.openai.web_search()` in the request's `tools` list, then hand the assistant message to `handle_tool_calls`. It executes every Exa tool call in the message and returns the matching `role: "tool"` messages, ready to append to the conversation.
 
-    ```python Python theme={null}
-    from dotenv import load_dotenv
-    from exa_py import Exa
-    from openai import OpenAI
+    <CodeGroup>
+      ```python Python theme={null}
+      from exa_py import Exa
+      from openai import OpenAI
 
-    load_dotenv()
+      exa = Exa()  # reads EXA_API_KEY from the environment
+      openai_client = OpenAI()
 
-    openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    exa = Exa(api_key=os.getenv("EXA_API_KEY"))
-    ```
+      messages = [{"role": "user", "content": "What's the latest on AI chips?"}]
 
-    Next, we define the function and the function schema so that OpenAI knows how to use it and what arguments our local function takes:
+      completion = openai_client.chat.completions.create(
+          model="gpt-5.6",
+          reasoning_effort="none",
+          messages=messages,
+          tools=[exa.openai.web_search()],
+      )
 
-    ```python Python theme={null}
-    TOOLS = [
-        {
-            "type": "function",
-            "function": {
-                "name": "exa_search",
-                "description": "Perform a search query on the web, and retrieve the most relevant URLs/web data.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "query": {
-                            "type": "string",
-                            "description": "The search query to perform.",
-                        },
-                    },
-                    "required": ["query"],
-                },
-            },
-        }
-    ]
-    ```
+      message = completion.choices[0].message
+      messages.append(message)
+      messages += exa.openai.handle_tool_calls(message)
 
-    Finally, we'll define the primer `SYSTEM_MESSAGE`, which explains to OpenAI what it is supposed to do:
+      completion = openai_client.chat.completions.create(
+          model="gpt-5.6",
+          reasoning_effort="none",
+          messages=messages,
+      )
+      print(completion.choices[0].message.content)
+      ```
 
-    ```python Python theme={null}
-    SYSTEM_MESSAGE = {
-        "role": "system",
-        "content": "You are an agent that has access to an advanced search engine. Please provide the user with the information they are looking for by using the search tool provided.",
-    }
-    ```
+      ```javascript JavaScript theme={null}
+      import Exa from "exa-js";
+      import { OpenAI } from "openai";
 
-    We can now start writing the code needed to perform the LLM calls and the search. We'll create the `exa_search` function that will call Exa's `search` function with the query:
+      const exa = new Exa(); // reads EXA_API_KEY from the environment
+      const openai = new OpenAI();
 
-    ```python Python theme={null}
-    def exa_search(query: str) -> Dict[str, Any]:
-        return exa.search(query=query, type='auto', contents={'highlights': True})
-    ```
+      const messages = [
+        { role: "user", content: "What's the latest on AI chips?" },
+      ];
 
-    Next, we create a function to process the tool calls:
+      let completion = await openai.chat.completions.create({
+        model: "gpt-5.6",
+        reasoning_effort: "none",
+        messages,
+        tools: [exa.openai.webSearch()],
+      });
 
-    ```python Python theme={null}
-    def process_tool_calls(tool_calls, messages):
-        for tool_call in tool_calls:
-            function_name = tool_call.function.name
-            function_args = json.loads(tool_call.function.arguments)
-            if function_name == "exa_search":
-                search_results = exa_search(**function_args)
-                messages.append(
-                    {
-                        "role": "tool",
-                        "content": str(search_results),
-                        "tool_call_id": tool_call.id,
-                    }
-                )
-                console.print(
-                    f"[bold cyan]Context updated[/bold cyan] [i]with[/i] "
-                    f"[bold green]exa_search ({function_args.get('mode')})[/bold green]: ",
-                    function_args.get("query"),
-                )
-        return messages
-    ```
+      const message = completion.choices[0].message;
+      messages.push(message, ...(await exa.openai.handleToolCalls(message)));
 
-    Lastly, we'll create a `main` function to bring it all together, and handle the user input and interaction with OpenAI:
+      completion = await openai.chat.completions.create({
+        model: "gpt-5.6",
+        reasoning_effort: "none",
+        messages,
+      });
+      console.log(completion.choices[0].message.content);
+      ```
+    </CodeGroup>
 
-    ```python Python theme={null}
-    def main():
-        messages = [SYSTEM_MESSAGE]
-        while True:
-            try:
-                user_query = Prompt.ask(
-                    "[bold yellow]What do you want to search for?[/bold yellow]",
-                )
-                messages.append({"role": "user", "content": user_query})
-                completion = openai.chat.completions.create(
-                    model="gpt-5.4",
-                    messages=messages,
-                    tools=TOOLS,
-                )
-                message = completion.choices[0].message
-                tool_calls = message.tool_calls
-                if tool_calls:
-                    messages.append(message)
-                    messages = process_tool_calls(tool_calls, messages)
-                    messages.append(
-                        {
-                            "role": "user",
-                            "content": "Answer my previous query based on the search results.",
-                        }
-                    )
-                    completion = openai.chat.completions.create(
-                        model="gpt-5.4",
-                        messages=messages,
-                    )
-                    console.print(Markdown(completion.choices[0].message.content))
-                else:
-                    console.print(Markdown(message.content))
-            except Exception as e:
-                console.print(f"[bold red]An error occurred:[/bold red] {str(e)}")
-    if __name__ == "__main__":
-        main()
-    ```
-
-    The implementation creates a loop that continually prompts the user for search queries, uses OpenAI's tool calling feature to determine when to perform a search, and then uses the Exa search results to provide an informed response to the user's query.
-
-    We also use the rich library to provide a more visually appealing console interface, including coloured output and markdown rendering for the responses.
-  </Step>
-
-  <Step title="Running the code">
-    Save the code in a file, e.g. `openai_search.py`, and make sure the `.env` file containing the API keys we previously created is in the same directory as the script.
-
-    Then run the script using the following command from your terminal:
-
-    ```bash Bash theme={null}
-    python openai_search.py
-    ```
-
-    You should see a prompt:
-
-    ```bash Bash theme={null}
-    What do you want to search for?
-    ```
-
-    Let's test it out.
-
-    ```bash Bash theme={null}
-    What do you want to search for?: Who is Tony Stark?
-    Context updated with exa_search (None):  Tony Stark
-    Tony Stark, also known as Iron Man, is a fictional superhero from Marvel Comics. He is a wealthy inventor and businessman, known for creating a powered suit of armor that gives him superhuman abilities. Tony Stark is a founding member of the Avengers and has appeared in various comic book series, animated
-    television shows, and films within the Marvel Cinematic Universe.
-
-    If you're interested in more detailed information, you can visit Tony Stark (Marvel Cinematic Universe) - Wikipedia.
-    ```
-
-    That's it, enjoy your search agent!
+    Calling the factory with no arguments gives Exa's recommended settings for agentic search: `type="auto"` and `contents={"highlights": True}`.
   </Step>
 </Steps>
 
-## Full code
+## Responses API
+
+For the OpenAI Responses API, use the `responses` factory with the same `handle_tool_calls` helper. The handler returns `function_call_output` items for a follow-up request.
+
+<CodeGroup>
+  ```python Python theme={null}
+  response = openai_client.responses.create(
+      model="gpt-5.6",
+      input=messages,
+      tools=[exa.openai.responses.web_search()],
+  )
+
+  messages += response.output
+  messages += exa.openai.responses.handle_tool_calls(response)
+  ```
+
+  ```javascript JavaScript theme={null}
+  const response = await openai.responses.create({
+    model: "gpt-5.6",
+    input: messages,
+    tools: [exa.openai.responses.webSearch()],
+  });
+
+  messages.push(...response.output);
+  messages.push(...(await exa.openai.responses.handleToolCalls(response)));
+  ```
+</CodeGroup>
+
+<Note>
+  Chat Completions and the Responses API use different tool shapes and reject each other's, so use the factory that matches the endpoint you're calling.
+</Note>
+
+## Configuring the tool
+
+Keyword arguments are regular Exa search options, passed through to `exa.search()` when the tool runs:
+
+<CodeGroup>
+  ```python Python theme={null}
+  tools = [exa.openai.web_search(category="news", contents={"text": True})]
+  ```
+
+  ```javascript JavaScript theme={null}
+  const tools = [exa.openai.webSearch({ category: "news", contents: { text: true } })];
+  ```
+</CodeGroup>
+
+`name` (default `"web_search"`) and `description` instead override the tool definition the model sees. Use a custom `name` to run differently-configured Exa tools side by side, or to avoid clashes with other tools that reserve the `web_search` name.
+
+## Mixing in your own tools
+
+The handlers answer every tool call in the message: a call naming a tool they can't resolve gets an `Error: unknown tool "<name>"` output instead of being dropped, so the follow-up request never omits a required tool response. If you run your own tools alongside Exa's, replace those error outputs with your own results before the next request.
+
+## Writing the loop by hand
+
+If you'd rather own the tool schema and execution yourself, define the tool and process the calls manually. `exa.tools.web_search()` gives you the same provider-neutral tool spec (with a `run` method) for hand-rolled loops, or you can write everything from scratch:
 
 ```python Python theme={null}
 import json
-import os
 
-from dotenv import load_dotenv
-from typing import Any, Dict
-from exa_py import Exa
-from openai import OpenAI
-from rich.console import Console
-from rich.markdown import Markdown
-from rich.prompt import Prompt
-
-# Load environment variables from .env file
-load_dotenv()
-
-# create the openai client
-openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-# create the exa client
-exa = Exa(api_key=os.getenv("EXA_API_KEY"))
-
-# create the rich console
-console = Console()
-
-# define the system message (primer) of your agent
-SYSTEM_MESSAGE = {
-    "role": "system",
-    "content": "You are the world's most advanced search engine. Please provide the user with the information they are looking for by using the tools provided.",
-}
-
-# define the tools available to the agent - we're defining a single tool, exa_search
 TOOLS = [
     {
         "type": "function",
         "function": {
             "name": "exa_search",
-            "description": "Perform a search query on the web, and retrieve the world's most relevant information.",
+            "description": "Perform a search query on the web, and retrieve the most relevant URLs/web data.",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -258,86 +185,21 @@ TOOLS = [
     }
 ]
 
-# define the function that will be called when the tool is used and perform the search
-# and the retrieval of the result highlights.
-# See /reference/python-sdk-specification#search-method for the search method reference.
-def exa_search(query: str) -> Dict[str, Any]:
-    return exa.search(query=query, type='auto', contents={'highlights': True})
+def exa_search(query: str):
+    return exa.search(query=query, type="auto", contents={"highlights": True})
 
-# define the function that will process the tool call and perform the exa search
 def process_tool_calls(tool_calls, messages):
-    
     for tool_call in tool_calls:
-        function_name = tool_call.function.name
-        function_args = json.loads(tool_call.function.arguments)
-        
-        if function_name == "exa_search":
-            search_results = exa_search(**function_args)
+        if tool_call.function.name == "exa_search":
+            args = json.loads(tool_call.function.arguments)
             messages.append(
                 {
                     "role": "tool",
-                    "content": str(search_results),
+                    "content": str(exa_search(**args)),
                     "tool_call_id": tool_call.id,
                 }
             )
-            console.print(
-                f"[bold cyan]Context updated[/bold cyan] [i]with[/i] "
-                f"[bold green]exa_search ({function_args.get('mode')})[/bold green]: ",
-                function_args.get("query"),
-            )
-            
     return messages
-
-def main():
-    messages = [SYSTEM_MESSAGE]
-    
-    while True:
-        try:
-            # create the user input prompt using rich
-            user_query = Prompt.ask(
-                "[bold yellow]What do you want to search for?[/bold yellow]",
-            )
-            messages.append({"role": "user", "content": user_query})
-            
-            # call openai llm by creating a completion which calls the defined exa tool
-            completion = openai.chat.completions.create(
-                model="gpt-5.4",
-                messages=messages,
-                tools=TOOLS,
-                tool_choice="auto",
-            )
-            
-            # completion will contain the object needed to invoke your tool and perform the search
-            message = completion.choices[0].message
-            tool_calls = message.tool_calls
-            
-            if tool_calls:
-
-                messages.append(message)
-
-                # process the tool object created by OpenAI llm and store the search results
-                messages = process_tool_calls(tool_calls, messages)
-                messages.append(
-                    {
-                        "role": "user",
-                        "content": "Answer my previous query based on the search results.",
-                    }
-                )
-                
-                # call OpenAI llm again to process the search results and yield the final answer
-                completion = openai.chat.completions.create(
-                    model="gpt-5.4",
-                    messages=messages,
-                )
-                
-                # parse the agents final answer and print it
-                console.print(Markdown(completion.choices[0].message.content))
-            else:
-                console.print(Markdown(message.content))
-        except Exception as e:
-            console.print(f"[bold red]An error occurred:[/bold red] {str(e)}")
-            
-            
-if __name__ == "__main__":
-    main()
 ```
+
+See the [Python SDK specification](/docs/sdks/python-sdk-specification) and [TypeScript SDK specification](/docs/sdks/typescript-sdk-specification) for the full search options.
