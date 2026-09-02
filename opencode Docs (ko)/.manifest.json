@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-01T08:37:35.479Z",
+  "생성": "2026-09-02T04:31:10.142Z",
   "제품폴더": "opencode Docs (ko)",
   "진입": "https://opencode.ai/docs/ko",
   "최상위수": 10,
@@ -105,8 +105,8 @@
       "경로": "080 사용/060 Zen.md",
       "href": "/docs/ko/zen/",
       "url": "https://opencode.ai/docs/ko/zen.md",
-      "sha256": "d92bf793149ad5677d21d95d6b072cb7b69a115b974428c87349e6dea29a3046",
-      "bytes": 27703,
+      "sha256": "98f20b1b2d008d8ae4895d48fcf2c10f8b09a10acc52beed5c4f07440340e032",
+      "bytes": 27949,
       "contentType": "text/plain"
     },
     {

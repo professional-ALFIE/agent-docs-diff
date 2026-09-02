@@ -1,9 +1,9 @@
 {
-  "생성": "2026-09-01T08:37:38.042Z",
+  "생성": "2026-09-02T04:31:12.708Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
-  "그룹수": 38,
+  "그룹수": 39,
   "문서": [
     {
       "경로": "010 Overview/020 Get started/010 Quickstart.md",
@@ -937,8 +937,8 @@
       "경로": "060 Administration/010 Overview.md",
       "href": "/codex/administration",
       "url": "https://learn.chatgpt.com/docs/administration.md",
-      "sha256": "6ff82154bea318485b763cdfdca2686182d2b392e73b4ad3d2bfd5b56c9cb90f",
-      "bytes": 10194,
+      "sha256": "018c2634f36f28c33df47f484b07b51a9180c57b6deea4154d2a3828f0d597e3",
+      "bytes": 10353,
       "contentType": "text/markdown"
     },
     {
@@ -950,7 +950,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/020 Getting started/020 ChatGPT Work Overview.md",
+      "경로": "060 Administration/030 ChatGPT Work/010 ChatGPT Work Overview.md",
       "href": "/codex/enterprise/chatgpt-work-overview",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
       "sha256": "7db0edd1555d05c5cf170efaa0e30d116c73e5f24d2d8036bd89eb16b157842f",
@@ -958,7 +958,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/020 Getting started/030 ChatGPT Work cloud security.md",
+      "경로": "060 Administration/030 ChatGPT Work/020 ChatGPT Work cloud security.md",
       "href": "/codex/enterprise/chatgpt-work-cloud-security",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security.md",
       "sha256": "775d4aa61914d179a70014a21d2c5d4f580695edcfe0867a3da87ae720a994c8",
@@ -966,7 +966,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/020 Getting started/040 ChatGPT Work local security.md",
+      "경로": "060 Administration/030 ChatGPT Work/030 ChatGPT Work local security.md",
       "href": "/codex/enterprise/chatgpt-work-local-security",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security.md",
       "sha256": "9f4e9cf92f0082a764bc730abf1293fc18d95022d03785ebffb5e0d33078ba02",
@@ -974,7 +974,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/020 Getting started/050 ChatGPT Work admin FAQ.md",
+      "경로": "060 Administration/030 ChatGPT Work/040 ChatGPT Work admin FAQ.md",
       "href": "/codex/enterprise/work-admin-faq",
       "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq.md",
       "sha256": "dc968955bdd5a2e3d92f39e4a8b47295b274036303390e2ce0c3bba6b076a17c",
@@ -982,7 +982,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/020 Getting started/060 ChatGPT Work- usage and cost.md",
+      "경로": "060 Administration/030 ChatGPT Work/050 ChatGPT Work- usage and cost.md",
       "href": "/codex/enterprise/chatgpt-work-usage-and-cost",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost.md",
       "sha256": "15a5f5e7318c92a20c5193993fb7c4998c1f473b7c818a08d10fa0dcad04b78d",
@@ -990,7 +990,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/030 Identity and authentication/010 Authentication overview.md",
+      "경로": "060 Administration/040 Identity and authentication/010 Authentication overview.md",
       "href": "/codex/auth",
       "url": "https://learn.chatgpt.com/docs/auth.md",
       "sha256": "7e60e75b7efffc50de8ba9488029d8be235cd9a423520fb5f269215616d7914d",
@@ -998,7 +998,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/030 Identity and authentication/020 Workload identity.md",
+      "경로": "060 Administration/040 Identity and authentication/020 Workload identity.md",
       "href": "/codex/enterprise/workload-identity",
       "url": "https://learn.chatgpt.com/docs/enterprise/workload-identity.md",
       "sha256": "d9d51acc6123444c8820b3e0104a5d95279c1c32b22b6b404a323178d2c38fbc",
@@ -1006,7 +1006,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/030 Identity and authentication/030 Personal Access Tokens.md",
+      "경로": "060 Administration/040 Identity and authentication/030 Personal Access Tokens.md",
       "href": "/codex/enterprise/access-tokens",
       "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens.md",
       "sha256": "bd5b1821bc59ec534504caa8ed5960cd649425527f67680ba39a9aa389cec95a",
@@ -1014,7 +1014,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/030 Identity and authentication/040 Service accounts.md",
+      "경로": "060 Administration/040 Identity and authentication/040 Service accounts.md",
       "href": "/codex/enterprise/service-accounts",
       "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts.md",
       "sha256": "2418e02ccae67c129d348312333fff0b2e493e93295bb8e73f971e1677848d94",
@@ -1022,7 +1022,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/010 Groups and provisioning.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/010 Groups and provisioning.md",
       "href": "/codex/enterprise/groups-and-provisioning",
       "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning.md",
       "sha256": "ba5a16d78ca7b233b79b8573acb626d6f3b71a59235bb3076dd8e76798d9d92c",
@@ -1030,7 +1030,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/020 User lifecycle management.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/020 User lifecycle management.md",
       "href": "/codex/enterprise/user-lifecycle",
       "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle.md",
       "sha256": "9e1a61f4e1b3d577137754ce31d10511ab3dfba5391beb22122c90fa6b81d2a3",
@@ -1038,7 +1038,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/030 Roles and workspace permissions.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/030 Roles and workspace permissions.md",
       "href": "/codex/enterprise/roles-and-workspace-permissions",
       "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions.md",
       "sha256": "db3102c0569806a83f31204d384e18cd1a7282a3644d952672cb929a7ef292f0",
@@ -1046,7 +1046,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/040 GPTs and Sharing.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/040 GPTs and Sharing.md",
       "href": "/codex/enterprise/gpts-and-sharing",
       "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing.md",
       "sha256": "3052dc3a4e3dfcea5f1c4a670f79de955e393424dc2ebbd0cfa9a667ab52b9b5",
@@ -1054,7 +1054,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/050 Managed configuration.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/050 Managed configuration.md",
       "href": "/codex/enterprise/managed-configuration",
       "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration.md",
       "sha256": "8d4997397e6f7bd360200678a0bdb16048602976e5da4e1576cbbd63fc783f00",
@@ -1062,7 +1062,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/060 Prisma AIRS.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/060 Prisma AIRS.md",
       "href": "/codex/enterprise/prisma-airs",
       "url": "https://learn.chatgpt.com/docs/enterprise/prisma-airs.md",
       "sha256": "d25c37b4523d5dfd7b68613266f05dfc90883be0f5b72eb17b7e88977900dfae",
@@ -1070,7 +1070,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/070 HIPAA configuration.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/070 HIPAA configuration.md",
       "href": "/codex/hipaa-configuration",
       "url": "https://learn.chatgpt.com/docs/hipaa-configuration.md",
       "sha256": "826d15143ba2f1b1a80b8acf55a4d4f8b9a627ccd546ae54d71267f89534acf2",
@@ -1078,7 +1078,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/040 Workspace access, policy, and models/080 Workspace model availability.md",
+      "경로": "060 Administration/050 Workspace access, policy, and models/080 Workspace model availability.md",
       "href": "/codex/enterprise/workspace-model-availability",
       "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability.md",
       "sha256": "242ef29b9532c007e852a4d6800c39679569ad17d3a983ddb070a19d1a1fb29e",
@@ -1086,7 +1086,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/050 Plugin and connector controls/010 Plugin controls.md",
+      "경로": "060 Administration/060 Plugin and connector controls/010 Plugin controls.md",
       "href": "/codex/enterprise/apps-and-connectors",
       "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors.md",
       "sha256": "fab4d5f6feafea40932df85af6026ef629ea87d2de5f0c544b4aa65c6fc338af",
@@ -1094,7 +1094,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/050 Plugin and connector controls/020 Plugin management.md",
+      "경로": "060 Administration/060 Plugin and connector controls/020 Plugin management.md",
       "href": "/codex/enterprise/plugin-management",
       "url": "https://learn.chatgpt.com/docs/enterprise/plugin-management.md",
       "sha256": "c666e78185a171dea169c492e93a067c9ec42f5839f7bfa913aa817f61090683",
@@ -1102,7 +1102,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/050 Plugin and connector controls/030 Skill controls.md",
+      "경로": "060 Administration/060 Plugin and connector controls/030 Skill controls.md",
       "href": "/codex/enterprise/skills",
       "url": "https://learn.chatgpt.com/docs/enterprise/skills.md",
       "sha256": "cea03f3708d47495b2a59949f516e9e9ab6575407c4ad1c4db38c3e4dd5125ee",
@@ -1110,7 +1110,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/060 Usage, governance, and compliance/010 Governance.md",
+      "경로": "060 Administration/070 Usage, governance, and compliance/010 Governance.md",
       "href": "/codex/enterprise/governance",
       "url": "https://learn.chatgpt.com/docs/enterprise/governance.md",
       "sha256": "1adb8b6b1811beae3dc49ed1324a7900d60f973963d2e4878e5bc219c5b07568",
@@ -1118,7 +1118,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/060 Usage, governance, and compliance/020 Admin plugin.md",
+      "경로": "060 Administration/070 Usage, governance, and compliance/020 Admin plugin.md",
       "href": "/codex/enterprise/admin-plugin",
       "url": "https://learn.chatgpt.com/docs/enterprise/admin-plugin.md",
       "sha256": "838335dbb6f1bdb0c8e9e9d19c88367459da88e636d54f8b591e544d868dfda0",
@@ -1126,7 +1126,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/060 Usage, governance, and compliance/030 Workspace analytics.md",
+      "경로": "060 Administration/070 Usage, governance, and compliance/030 Workspace analytics.md",
       "href": "/codex/enterprise/workspace-analytics",
       "url": "https://learn.chatgpt.com/docs/enterprise/workspace-analytics.md",
       "sha256": "0c39730a6c431aa07a77abc875e4d78e1427d8a1b5fe6eb6243891ee34fad4d5",
@@ -1134,7 +1134,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/060 Usage, governance, and compliance/040 Analytics API.md",
+      "경로": "060 Administration/070 Usage, governance, and compliance/040 Analytics API.md",
       "href": "/codex/enterprise/analytics-api",
       "url": "https://learn.chatgpt.com/docs/enterprise/analytics-api.md",
       "sha256": "98c6a495f558053d75df9bec82cda7a7ecfbcb9379fe2b98fc71b69c8657f9ba",
@@ -1142,7 +1142,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/060 Usage, governance, and compliance/050 Compliance API and audit events.md",
+      "경로": "060 Administration/070 Usage, governance, and compliance/050 Compliance API and audit events.md",
       "href": "/codex/enterprise/compliance-api",
       "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api.md",
       "sha256": "3b1c3a0613606946bcd1414770a4ec9e797fa2bcda511a5e1f00e046951e2823",
@@ -1150,7 +1150,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/070 Deployment and model providers/010 Manage app updates.md",
+      "경로": "060 Administration/080 Deployment and model providers/010 Manage app updates.md",
       "href": "/codex/enterprise/manage-app-updates",
       "url": "https://learn.chatgpt.com/docs/enterprise/manage-app-updates.md",
       "sha256": "d287f362a6808ce7d9fd01a9c3df52a801aef99dc32992f0cde9562e6bbeed29",
@@ -1158,7 +1158,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/070 Deployment and model providers/020 Windows app deployment.md",
+      "경로": "060 Administration/080 Deployment and model providers/020 Windows app deployment.md",
       "href": "/codex/enterprise/windows-deployment",
       "url": "https://learn.chatgpt.com/docs/enterprise/windows-deployment.md",
       "sha256": "c8ab611007c5e69acb9589dfea64d9fb09e4412b83863e2eb47232a8361832c2",
@@ -1166,7 +1166,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/070 Deployment and model providers/030 Remote connections.md",
+      "경로": "060 Administration/080 Deployment and model providers/030 Remote connections.md",
       "href": "/codex/remote-connections",
       "url": "https://learn.chatgpt.com/docs/remote-connections.md",
       "sha256": "56337f1d1ae34b3cd91db9bcb3fad282b00cb2a1eba9332793adec0b67868b82",
@@ -1174,7 +1174,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060 Administration/070 Deployment and model providers/040 Amazon Bedrock.md",
+      "경로": "060 Administration/080 Deployment and model providers/040 Amazon Bedrock.md",
       "href": "/codex/amazon-bedrock",
       "url": "https://learn.chatgpt.com/docs/amazon-bedrock.md",
       "sha256": "acfb6f719ba6c5e2065d1baf88bd13222d9efd7d7d74538efa156eb4bd233859",
