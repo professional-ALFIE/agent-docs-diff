@@ -104,7 +104,7 @@ paths:
                   type: integer
                   example: 1
                   description: The maximum number of search results to return.
-                  default: 5
+                  default: 10
                   minimum: 0
                   maximum: 20
                 topic:
