@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-02T21:02:15.018Z",
+  "생성": "2026-09-02T23:19:38.040Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -1073,8 +1073,8 @@
       "경로": "060 Administration/050 Workspace access, policy, and models/070 HIPAA configuration.md",
       "href": "/codex/hipaa-configuration",
       "url": "https://learn.chatgpt.com/docs/hipaa-configuration.md",
-      "sha256": "dcfaa492ec5c5f0f90259234362f5475b65347380183e924deaa4cb8b6df8848",
-      "bytes": 22334,
+      "sha256": "9bcd961b74dcd61801fe3fe062a1790e932eca9e16f79f9c995f8f7c7204eb29",
+      "bytes": 22341,
       "contentType": "text/markdown"
     },
     {

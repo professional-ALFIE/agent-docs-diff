@@ -188,4 +188,3 @@
 
 - [exa-spec](https://exa.ai/docs/exa-spec.yaml)
 - [team-management-spec](https://exa.ai/docs/team-management-spec.yaml)
-- [openapi](https://exa.ai/docs/api-reference/openapi.json)

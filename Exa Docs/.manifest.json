@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-02T21:01:56.402Z",
+  "생성": "2026-09-02T23:19:13.032Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -1376,6 +1376,12 @@
   ],
   "제외": [
     {
+      "경로": "010 Documentation/070 Admin/070 Mcp enterprise managed auth.md",
+      "href": "/reference/mcp-enterprise-managed-auth",
+      "url": "https://exa.ai/docs/reference/mcp-enterprise-managed-auth.md",
+      "이유": "HTTP 404"
+    },
+    {
       "경로": "010 Documentation/080 Additional Resources/090 Blog.md",
       "href": "/reference/blog",
       "url": "https://exa.ai/docs/reference/blog.md",
@@ -1384,7 +1390,7 @@
   ],
   "llms": {
     "치환": 171,
-    "미노출": 13,
+    "미노출": 12,
     "외부": 0,
     "메뉴에만": 0
   }

@@ -190,4 +190,3 @@
 
 - [exa-spec](https://exa.ai/docs/exa-spec.yaml) (메뉴 미노출 · 로컬 없음)
 - [team-management-spec](https://exa.ai/docs/team-management-spec.yaml) (메뉴 미노출 · 로컬 없음)
-- [openapi](https://exa.ai/docs/api-reference/openapi.json) (메뉴 미노출 · 로컬 없음)
