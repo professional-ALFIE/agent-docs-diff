@@ -1,5 +1,5 @@
 {
-  "생성": "2026-08-29T00:43:14.508Z",
+  "생성": "2026-09-02T11:20:52.662Z",
   "제품폴더": "Tavily Docs",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -9,8 +9,8 @@
       "경로": "010 Home.md",
       "href": "/welcome",
       "url": "https://docs.tavily.com/welcome.md",
-      "sha256": "27be942f6230e37f74d4e9a5307c760a1fc0cd279dc3c2a1f7941199d66e8f04",
-      "bytes": 1691,
+      "sha256": "82c7fa1acbf3ae3fd268e59b8eb6250bc55341635020b393dbd01e4021086421",
+      "bytes": 1890,
       "contentType": "text/markdown"
     },
     {
@@ -73,8 +73,8 @@
       "경로": "040 API & SDKs/020 Core Endpoints/010 Search.md",
       "href": "/documentation/api-reference/endpoint/search",
       "url": "https://docs.tavily.com/documentation/api-reference/endpoint/search.md",
-      "sha256": "4bf4a1f453e31f6bbbbbf12a1a85979117453c2d3e4bb89af74bf15bb609e34a",
-      "bytes": 27786,
+      "sha256": "20faa4dad9c83aa2b66ba6d4fb68cfaa4de7433baba3eecec1efc711210b8be4",
+      "bytes": 27787,
       "contentType": "text/markdown"
     },
     {
@@ -185,7 +185,7 @@
       "경로": "040 API & SDKs/060 Python SDK/020 SDK Reference.md",
       "href": "/sdk/python/reference",
       "url": "https://docs.tavily.com/sdk/python/reference.md",
-      "sha256": "5fdd594d3627b514a1dbc3b3db90eaa6f804dbfcc934e39df88d944b427f22dd",
+      "sha256": "191c37577a19e5bf5daf6d09598340110bbbeb2046c156778e21f93f8d89a673",
       "bytes": 94219,
       "contentType": "text/markdown"
     },
@@ -201,7 +201,7 @@
       "경로": "040 API & SDKs/070 JavaScript SDK/020 SDK Reference.md",
       "href": "/sdk/javascript/reference",
       "url": "https://docs.tavily.com/sdk/javascript/reference.md",
-      "sha256": "07fb9af0fc030605b86cd89f1e8274f37401e1dc9a93146136187f8892b095a0",
+      "sha256": "3eef11d668a3494f19c372e3aba09569fcab249d8b594f62a2f469017c344d28",
       "bytes": 124902,
       "contentType": "text/markdown"
     },

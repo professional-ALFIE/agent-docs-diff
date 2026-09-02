@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-02T04:30:28.933Z",
+  "생성": "2026-09-02T11:17:56.763Z",
   "제품폴더": "Claude Code Docs (en)",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -201,8 +201,8 @@
       "경로": "010 Getting started/040 Platforms and integrations/040 Claude Code on desktop/060 iOS simulator (beta).md",
       "href": "/en/desktop-ios-simulator",
       "url": "https://code.claude.com/docs/en/desktop-ios-simulator.md",
-      "sha256": "0d5c48a0ba3ad4772457abc46c471493da913f1bb6cba9b5dc3da08f596e3afc",
-      "bytes": 12430,
+      "sha256": "9ef38bd26965240e873fa23a9b06bcac4e78e280a2f384bf3daf59a800b13a9f",
+      "bytes": 12362,
       "contentType": "text/markdown"
     },
     {
