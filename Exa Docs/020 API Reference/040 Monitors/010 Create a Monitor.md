@@ -617,6 +617,30 @@ components:
                       description: Custom query that guides which highlights the LLM picks.
                       example: Key advancements
                     - type: 'null'
+                verbosity:
+                  anyOf:
+                    - type: string
+                      enum:
+                        - low
+                        - medium
+                        - high
+                      description: >-
+                        Preset highlight length: `low`, `medium`, and `high`
+                        allocate progressively larger token budgets for the
+                        returned highlights. With highlights.dynamic, the preset
+                        sets a single shared budget across the whole result set
+                        instead of a per-URL budget. Exact budgets are tuned by
+                        Exa and may change. Not compatible with maxCharacters or
+                        numSentences. Beta: requires the `Exa-Beta:
+                        dynamic-highlights-2026-08-28` request header; requests
+                        setting `verbosity` without it are rejected.
+                      example: medium
+                      x-exa-lifecycle: beta
+                      x-exa-beta-flag: dynamic-highlights-2026-08-28
+                      x-mint:
+                        post:
+                          - Beta
+                    - type: 'null'
                 dynamic:
                   anyOf:
                     - type: boolean
@@ -963,6 +987,30 @@ components:
                     - type: string
                       description: Custom query that guides which highlights the LLM picks.
                       example: Key advancements
+                    - type: 'null'
+                verbosity:
+                  anyOf:
+                    - type: string
+                      enum:
+                        - low
+                        - medium
+                        - high
+                      description: >-
+                        Preset highlight length: `low`, `medium`, and `high`
+                        allocate progressively larger token budgets for the
+                        returned highlights. With highlights.dynamic, the preset
+                        sets a single shared budget across the whole result set
+                        instead of a per-URL budget. Exact budgets are tuned by
+                        Exa and may change. Not compatible with maxCharacters or
+                        numSentences. Beta: requires the `Exa-Beta:
+                        dynamic-highlights-2026-08-28` request header; requests
+                        setting `verbosity` without it are rejected.
+                      example: medium
+                      x-exa-lifecycle: beta
+                      x-exa-beta-flag: dynamic-highlights-2026-08-28
+                      x-mint:
+                        post:
+                          - Beta
                     - type: 'null'
                 dynamic:
                   anyOf:
