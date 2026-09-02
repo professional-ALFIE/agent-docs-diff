@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-02T04:31:12.708Z",
+  "생성": "2026-09-02T21:02:15.018Z",
   "제품폴더": "Codex Docs",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -401,8 +401,8 @@
       "경로": "030 Configuration/030 Config file/030 Config Reference.md",
       "href": "/codex/config-file/config-reference",
       "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
-      "sha256": "b60fbf91a216b9a1136fb42c7dbbbf42d3943b212101aae09a1d5b946805e6dd",
-      "bytes": 92585,
+      "sha256": "9d6a413bfb3ba34acd49a13882a7b17597053c2b0c59c34df9d01a6e63059465",
+      "bytes": 93802,
       "contentType": "text/markdown"
     },
     {
@@ -417,8 +417,8 @@
       "경로": "030 Configuration/030 Config file/050 Sample Config.md",
       "href": "/codex/config-file/config-sample",
       "url": "https://learn.chatgpt.com/docs/config-file/config-sample.md",
-      "sha256": "085f334489c5b5ae5cc10db59d5537bc3cd2decfd9daf32785e895492b6505d7",
-      "bytes": 30694,
+      "sha256": "8153bc58c109d2c282f036af96f8539e0a13d7b4252d7b1e6eecb5e331d2374e",
+      "bytes": 31328,
       "contentType": "text/markdown"
     },
     {
@@ -465,8 +465,8 @@
       "경로": "030 Configuration/050 Extend ChatGPT and Codex/020 MCP.md",
       "href": "/codex/extend/mcp",
       "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
-      "sha256": "c8241aaeece7a970751e14f9c864e972f8abacc09117e3f8b70f3932a0094f35",
-      "bytes": 18939,
+      "sha256": "41f531ed9200f16cda4519d632e42589c40f50671bd370ce45cf8f1ebf67fa2d",
+      "bytes": 20179,
       "contentType": "text/markdown"
     },
     {
@@ -553,8 +553,8 @@
       "경로": "040 Developers/030 Extend and automate/040 Hooks.md",
       "href": "/codex/hooks",
       "url": "https://learn.chatgpt.com/docs/hooks.md",
-      "sha256": "c1f1b2d78195fb6d382f9b9f32fe78d79025d6f0e1c65d87a1eece1693a78271",
-      "bytes": 44346,
+      "sha256": "6b4c549c4f1df78e802f289151e54f7677128b8a9929912afb7e8ecd975d2ce9",
+      "bytes": 45547,
       "contentType": "text/markdown"
     },
     {
@@ -601,8 +601,8 @@
       "경로": "040 Developers/050 Build with Codex/020 App Server.md",
       "href": "/codex/app-server",
       "url": "https://learn.chatgpt.com/docs/app-server.md",
-      "sha256": "ed260792a8d17ed2ff91caceccc80bb9d256dbc1289cd6bf088c44db538bc91f",
-      "bytes": 98322,
+      "sha256": "a72a5c88ab05ab9737ec28b432708f2776f696be48eae09ee39c02dd2f9480e0",
+      "bytes": 99470,
       "contentType": "text/markdown"
     },
     {
@@ -1073,8 +1073,8 @@
       "경로": "060 Administration/050 Workspace access, policy, and models/070 HIPAA configuration.md",
       "href": "/codex/hipaa-configuration",
       "url": "https://learn.chatgpt.com/docs/hipaa-configuration.md",
-      "sha256": "826d15143ba2f1b1a80b8acf55a4d4f8b9a627ccd546ae54d71267f89534acf2",
-      "bytes": 22640,
+      "sha256": "dcfaa492ec5c5f0f90259234362f5475b65347380183e924deaa4cb8b6df8848",
+      "bytes": 22334,
       "contentType": "text/markdown"
     },
     {

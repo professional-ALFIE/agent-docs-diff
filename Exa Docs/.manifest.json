@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-01T23:18:12.098Z",
+  "생성": "2026-09-02T21:01:56.402Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -793,16 +793,16 @@
       "경로": "020 API Reference/010 Search/010 Search.md",
       "href": "/reference/search",
       "url": "https://exa.ai/docs/reference/search.md",
-      "sha256": "b8debc6d97049cb3d2fcb71a939739391d911aa097ed0cb29c4baa42afa1ad97",
-      "bytes": 99629,
+      "sha256": "1768b744614fa1592d0cd63e79403288442247fcfd11410c044e12773380fcd7",
+      "bytes": 100999,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/010 Search/020 Contents.md",
       "href": "/reference/get-contents",
       "url": "https://exa.ai/docs/reference/get-contents.md",
-      "sha256": "14f2d3a10c7fe6fda2738f0a02601a36fd09bd3107cc8c8ee41cef04e33ae9be",
-      "bytes": 76172,
+      "sha256": "ad1c806eb29472cbdaa935fd34cea5d43477b670e2b8cb99b1923045f8c020e9",
+      "bytes": 77542,
       "contentType": "text/markdown"
     },
     {
@@ -1209,40 +1209,40 @@
       "경로": "020 API Reference/040 Monitors/010 Create a Monitor.md",
       "href": "/reference/monitors/create-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/create-a-monitor.md",
-      "sha256": "046683702ef19304517db7e7f30b75f201f51bc521a559e5b0848000540c6b15",
-      "bytes": 46253,
+      "sha256": "c23dc566dd37b9c844f31fae388f0d65ee6311ce92414d24288e56af757e2b42",
+      "bytes": 48689,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/020 List Monitors.md",
       "href": "/reference/monitors/list-monitors",
       "url": "https://exa.ai/docs/reference/monitors/list-monitors.md",
-      "sha256": "1638c48d6917574f1cb653b69e8af589b7082185a294bcd438eec68719c5e558",
-      "bytes": 28321,
+      "sha256": "5e883125c1946e038ce0f91c4632b1e60d2f164d8c48ca8f72ac3d2187fa4a8d",
+      "bytes": 29539,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/030 Get a Monitor.md",
       "href": "/reference/monitors/get-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/get-a-monitor.md",
-      "sha256": "a080252e78b94a632b9fb4f7b41916b6749e1420c08d82b1fb704b4e1d21b813",
-      "bytes": 26893,
+      "sha256": "9541b1cd65d2880860a69e71cdc246181f508afb38dff855e4269be970f0f08d",
+      "bytes": 28111,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/040 Update a Monitor.md",
       "href": "/reference/monitors/update-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/update-a-monitor.md",
-      "sha256": "c0c614b7f37c3898e23ba105f917552fcd20e38b4fa67d11519519f018094647",
-      "bytes": 46584,
+      "sha256": "780ee3f2ff3cca0c1a3c2087f9a145ec092dc42755c65efe7c1c112c615875a6",
+      "bytes": 49020,
       "contentType": "text/markdown"
     },
     {
       "경로": "020 API Reference/040 Monitors/050 Delete a Monitor.md",
       "href": "/reference/monitors/delete-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/delete-a-monitor.md",
-      "sha256": "76643dc7073f1ebb15ce757531f016dd8cdc478d22aaea791422f3559e262dda",
-      "bytes": 26924,
+      "sha256": "4efe3e30142e1b5884a4e8d164c06932f09a617e94d67c056665fa6319001732",
+      "bytes": 28142,
       "contentType": "text/markdown"
     },
     {
@@ -1384,7 +1384,7 @@
   ],
   "llms": {
     "치환": 171,
-    "미노출": 26,
+    "미노출": 13,
     "외부": 0,
     "메뉴에만": 0
   }
