@@ -1,10 +1,10 @@
-# HIPAA configuration guide for Codex Local
+# HIPAA configuration guide for Codex
 
 > For the complete documentation index, see [llms.txt](https://learn.chatgpt.com/llms.txt). Markdown versions of documentation pages are available by appending `.md` to the page URL.
 
 ## Who's this for
 
-This guide is for IT administrators and compliance professionals to get familiar with the shared responsibility for managing Protected Health Information (PHI) in Codex. Codex includes the ChatGPT desktop app, Codex IDE extension, and Codex CLI, which run on your users' computers. It does not include Codex Cloud.
+This guide is for IT administrators and compliance professionals to get familiar with the shared responsibility for managing Protected Health Information (PHI) in Codex. Codex includes the ChatGPT desktop app, Codex IDE extension, and Codex CLI, which run on your users' computers. It does not include using Codex in the cloud.
 
 If you use ChatGPT for Healthcare, ChatGPT for Clinicians, or a Regulated workspace, have an applicable OpenAI Business Associate Agreement (BAA), and have the required Codex access, OpenAI handles PHI it receives from Codex consistent with the BAA. OpenAI securely handles prompts, files, and other inputs it receives through your use of Codex and securely returns outputs to you.
 
