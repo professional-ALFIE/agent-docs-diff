@@ -81,6 +81,8 @@ Exa's Search MCP can be installed in any MCP client with the server URL: `https:
     2. Go to the **Plugins** tab
     3. Click Browse, open the Partners tab, and search for **Exa**
     4. Click **+** to add it
+
+    Claude Team and Enterprise admins can provision the connector for everyone through their identity provider instead: see [Enterprise Managed Auth](/docs/reference/mcp-enterprise-managed-auth).
   </Tab>
 
   <Tab title="Grok Build">
