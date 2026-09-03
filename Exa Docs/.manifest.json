@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-02T23:19:13.032Z",
+  "생성": "2026-09-03T04:21:30.182Z",
   "제품폴더": "Exa Docs",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -57,8 +57,8 @@
       "경로": "010 Documentation/010 API/030 Agent/010 For Humans.md",
       "href": "/reference/agent-api-guide",
       "url": "https://exa.ai/docs/reference/agent-api-guide.md",
-      "sha256": "ad52f16ad276e4c7b50612b4b3570763b5d49403cabd674af5d6f082d0da002c",
-      "bytes": 35252,
+      "sha256": "e88146cf05da8ddd2b45901bfc3cc20ed0285e1d8137883f5a5dc89207f06599",
+      "bytes": 35238,
       "contentType": "text/markdown"
     },
     {
@@ -377,8 +377,8 @@
       "경로": "010 Documentation/030 MCP/010 Exa MCP.md",
       "href": "/reference/exa-mcp",
       "url": "https://exa.ai/docs/reference/exa-mcp.md",
-      "sha256": "ce1aacce50a43ed212f1329e271333a047ccff25c291e14e1f00732ff0f086ae",
-      "bytes": 13708,
+      "sha256": "4f4efa82fbc5870b5b1dce5be930013ee954c0f0ebeac4c7ade732378dbc7874",
+      "bytes": 13905,
       "contentType": "text/markdown"
     },
     {
@@ -723,6 +723,14 @@
       "url": "https://exa.ai/docs/reference/security/hipaa.md",
       "sha256": "f0119d6f6bdd3c049551bb2041b95e1533a92bf0ad238df283c7772f9321bda7",
       "bytes": 2158,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "010 Documentation/070 Admin/070 Enterprise Managed Auth.md",
+      "href": "/reference/mcp-enterprise-managed-auth",
+      "url": "https://exa.ai/docs/reference/mcp-enterprise-managed-auth.md",
+      "sha256": "9ea47a41cb20efbb5b05d7910464e989a681e1d4a8ff75005874ca92e131c5fe",
+      "bytes": 6289,
       "contentType": "text/markdown"
     },
     {
@@ -1376,12 +1384,6 @@
   ],
   "제외": [
     {
-      "경로": "010 Documentation/070 Admin/070 Mcp enterprise managed auth.md",
-      "href": "/reference/mcp-enterprise-managed-auth",
-      "url": "https://exa.ai/docs/reference/mcp-enterprise-managed-auth.md",
-      "이유": "HTTP 404"
-    },
-    {
       "경로": "010 Documentation/080 Additional Resources/090 Blog.md",
       "href": "/reference/blog",
       "url": "https://exa.ai/docs/reference/blog.md",
@@ -1389,7 +1391,7 @@
     }
   ],
   "llms": {
-    "치환": 171,
+    "치환": 172,
     "미노출": 12,
     "외부": 0,
     "메뉴에만": 0

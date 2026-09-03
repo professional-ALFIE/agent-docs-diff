@@ -94,6 +94,7 @@
 - [Error Codes](<010 Documentation/070 Admin/050 Error Codes.md>): Reference for common error codes used by the Exa API
 - [Enterprise Documentation & Security](<010 Documentation/070 Admin/060 Security/010 Enterprise Documentation & Security.md>)
 - [HIPAA](<010 Documentation/070 Admin/060 Security/020 HIPAA.md>): Use HIPAA compliance mode for eligible cached retrieval requests.
+- [Enterprise Managed Auth for Claude](<010 Documentation/070 Admin/070 Enterprise Managed Auth.md>): Set up Enterprise Managed Auth (EMA) so Claude connects to Exa MCP through your identity provider, with no per-user OAuth login or consent screen. Includes Okta Cross App Access (XAA) setup.
 - [OpenAPI Specification](<010 Documentation/080 Additional Resources/010 OpenAPI Specification.md>)
 - [Batch API](<010 Documentation/080 Additional Resources/020 Batch API.md>): Run Exa API requests asynchronously in batches.
 - [Context (Exa Code)](<010 Documentation/080 Additional Resources/030 Context (Exa Code).md>): Get relevant code snippets and examples from open source libraries and repositories. Search through code repositories to find contextual examples that help developers understand how specific libraries, frameworks, or programming concepts are implemented in practice.
