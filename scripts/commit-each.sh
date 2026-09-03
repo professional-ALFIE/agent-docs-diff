@@ -23,10 +23,10 @@ while IFS= read -r -d '' entry; do
   case "$xy" in '??') status=A;; *D*) status=D;; *) status=M;; esac
   case "$path" in *.md) ;; *) continue ;; esac
   base="${path##*/}"
-  case "$base" in [0-9][0-9][0-9][ _]*|[0-9][0-9][0-9][0-9][ _]*) ;; *) continue ;; esac
+  case "$base" in [0-9][0-9][0-9][\ _]*|[0-9][0-9][0-9][0-9][\ _]*) ;; *) continue ;; esac
   product="${path%%/*}"
   rel="${path#*/}"
-  title="${base#*[ _]}"; title="${title%.md}"
+  title="${base#*[\ _]}"; title="${title%.md}"
   case "$status" in A) tag=" (추가)";; D) tag=" (삭제)";; *) tag="";; esac
   url="$(url_of "$product" "$rel")"
   git add -A -- "$path"
