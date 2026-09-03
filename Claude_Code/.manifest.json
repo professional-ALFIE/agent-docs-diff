@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-03T10:52:29.342Z",
+  "생성": "2026-09-03T16:24:15.512Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -1297,8 +1297,8 @@
       "경로": "060_Agent_SDK/090_SDK_references/010_TypeScript_SDK.md",
       "href": "/en/agent-sdk/typescript",
       "url": "https://code.claude.com/docs/en/agent-sdk/typescript.md",
-      "sha256": "f8bd8517458341800b0f89b577b5eb1b285231cb8e3127cd3a7ef73213e26e0c",
-      "bytes": 332048,
+      "sha256": "3912cf1206dd9bb4279c02ec8fafff58a80eb955936538a574d834cec66e21f0",
+      "bytes": 332042,
       "contentType": "text/markdown"
     },
     {
@@ -1313,8 +1313,8 @@
       "경로": "060_Agent_SDK/090_SDK_references/030_Python_SDK.md",
       "href": "/en/agent-sdk/python",
       "url": "https://code.claude.com/docs/en/agent-sdk/python.md",
-      "sha256": "edb1490718bb0a92ef3217c0c3c613195d742f0e56ba14d567495854bd4604a1",
-      "bytes": 198356,
+      "sha256": "34ac00d6581d3cb7b5f88903334908f30a28b572d4a79673cec7136289c22eff",
+      "bytes": 198376,
       "contentType": "text/markdown"
     },
     {
