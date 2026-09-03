@@ -21,13 +21,14 @@ const 루트 = join(import.meta.dir, "..");
 const 고른사이트 = 인자.flatMap((a, i) => a === "--site" ? [사이트찾기(인자[i + 1])] : []);
 const 대상 = 고른사이트.length ? 고른사이트 : 사이트들;
 
-/** 제품 폴더 안에서 번호가 붙은 .md 를 전부 찾는다 (수집기가 만든 문서만 — llms·CLAUDE.md 는 번호가 없다) */
+/** 제품 폴더 안에서 번호가 붙은 .md 를 전부 찾는다 (수집기가 만든 문서만 — llms·CLAUDE.md 는 번호가 없다).
+ *  옛 회차의 '번호 이름' 형태와 2026-09-03 이후의 '번호_이름' 형태를 둘 다 잡는다 — rename 회차에 옛 이름을 삭제로 잡으려면 둘 다 필요하다 */
 async function 기존문서들(폴더: string, 상대 = ""): Promise<string[]> {
   const out: string[] = [];
   for (const e of await readdir(join(폴더, 상대), { withFileTypes: true }).catch(() => [])) {
     const p = 상대 ? `${상대}/${e.name}` : e.name;
     if (e.isDirectory()) out.push(...await 기존문서들(폴더, p));
-    else if (/^\d{3,4} .+\.md$/.test(e.name)) out.push(p);
+    else if (/^\d{3,4}[ _].+\.md$/.test(e.name)) out.push(p);
   }
   return out;
 }

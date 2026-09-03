@@ -2,8 +2,8 @@ import type { 계층노드 } from "./types";
 
 export type 문서자리 = { href: string; title: string; 경로: string };
 
-/** 파일시스템 금지 문자를 - 로 바꾼다. 공백은 그대로 둔다 */
-const 이름정리 = (s: string) => s.replace(/[\/:*?"<>|\\]/g, "-").replace(/\s+$/, "").replace(/\.$/, "");
+/** 파일시스템 금지 문자는 -, 공백은 _ 로 바꾼다. 표시명 복원은 _ → 공백 치환으로 무손실이다 (원 표시명에 _ 가 0건) */
+const 이름정리 = (s: string) => s.replace(/[\/:*?"<>|\\]/g, "-").replace(/\s+$/, "").replace(/\.$/, "").replace(/\s+/g, "_");
 /** 형제 안 순번을 고정 폭 간격 번호로. 010 · 020 · 030 */
 const 번호 = (i: number, 형제수: number) => String((i + 1) * 10).padStart(형제수 >= 100 ? 4 : 3, "0");
 /** href 의 마지막 조각. 형제 이름이 충돌할 때만 덧붙인다 */
@@ -27,7 +27,7 @@ export function 경로계산(트리: 계층노드[]) {
         이름 = `${이름}--${url이름(h)}`;
         충돌들.push(`${부모}${이름}`);
       }
-      const 경로 = `${부모}${번호(i, 노드들.length)} ${이름}`;
+      const 경로 = `${부모}${번호(i, 노드들.length)}_${이름}`;
       if (n.kind === "group") { 폴더들.push(경로); 걷기(n.children, 경로 + "/"); }
       else 문서들.push({ href: n.href, title: n.title, 경로: 경로 + ".md" });
     });

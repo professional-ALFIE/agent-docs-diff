@@ -1,0 +1,44 @@
+> 이 파일은 메뉴 계층에서 만든 문서 목록이다 (scripts/llms-local.ts 가 생성). 이 사이트는 공식 llms.txt 를 제공하지 않는다.
+
+# opencode
+
+> 공식 llms.txt 가 없어(https://opencode.ai/docs/en 기준 404) 메뉴 계층에서 만든 목록이다. 설명문이 없다.
+
+## Docs
+
+- [Intro](<010_Intro.md>)
+- [Config](<020_Config.md>)
+- [Providers](<030_Providers.md>)
+- [Network](<040_Network.md>)
+- [Enterprise](<050_Enterprise.md>)
+- [Troubleshooting](<060_Troubleshooting.md>)
+- [Windows](<070_Windows.md>)
+- [Go](<080_Usage/010_Go.md>)
+- [TUI](<080_Usage/020_TUI.md>)
+- [CLI](<080_Usage/030_CLI.md>)
+- [Web](<080_Usage/040_Web.md>)
+- [IDE](<080_Usage/050_IDE.md>)
+- [Zen](<080_Usage/060_Zen.md>)
+- [Share](<080_Usage/070_Share.md>)
+- [GitHub](<080_Usage/080_GitHub.md>)
+- [GitLab](<080_Usage/090_GitLab.md>)
+- [Tools](<090_Configure/010_Tools.md>)
+- [Rules](<090_Configure/020_Rules.md>)
+- [Agents](<090_Configure/030_Agents.md>)
+- [Models](<090_Configure/040_Models.md>)
+- [Themes](<090_Configure/050_Themes.md>)
+- [Keybinds](<090_Configure/060_Keybinds.md>)
+- [Commands](<090_Configure/070_Commands.md>)
+- [Formatters](<090_Configure/080_Formatters.md>)
+- [Permissions](<090_Configure/090_Permissions.md>)
+- [Policies](<090_Configure/100_Policies.md>)
+- [LSP Servers](<090_Configure/110_LSP_Servers.md>)
+- [MCP servers](<090_Configure/120_MCP_servers.md>)
+- [ACP Support](<090_Configure/130_ACP_Support.md>)
+- [Agent Skills](<090_Configure/140_Agent_Skills.md>)
+- [References](<090_Configure/150_References.md>)
+- [Custom Tools](<090_Configure/160_Custom_Tools.md>)
+- [SDK](<100_Develop/010_SDK.md>)
+- [Server](<100_Develop/020_Server.md>)
+- [Plugins](<100_Develop/030_Plugins.md>)
+- [Ecosystem](<100_Develop/040_Ecosystem.md>)
