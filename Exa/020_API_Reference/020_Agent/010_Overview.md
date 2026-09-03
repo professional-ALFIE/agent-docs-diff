@@ -93,7 +93,11 @@ Terminal event names are `agent_run.completed`, `agent_run.failed`, and `agent_r
 
 ## Limits and pricing
 
-Your Agent concurrency limit is one fifth of your account QPS. For pay-as-you-go accounts with default QPS, this means two active Agent runs at a time.
+Agent limits are two separate controls: how many runs can be in progress at once, and how fast you can start new ones.
+
+* **Concurrency**: you can have 50 Agent runs in progress at a time. This limit is separate from your QPS and does not change when your QPS is raised. Starting a run past the limit returns `429` with error code `CONCURRENCY_LIMIT_REACHED`; wait for a run to finish or contact us to raise your concurrency limit.
+* **Starting runs**: `POST /agent/runs` draws from your account QPS, and each run start counts as two requests. You can start runs at half your QPS, so an account with the default 10 QPS can start 5 runs per second, and 25 QPS allows 12 per second.
+* **Polling**: `GET` requests for run status, events, and run lists do not count against your QPS and never block dispatch, so poll running Agents independently of how fast you start new ones.
 
 | Component           | Price             |
 | ------------------- | ----------------- |
