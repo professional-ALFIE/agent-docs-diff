@@ -765,7 +765,7 @@ Costs are usage-based and priced by component:
 
 `usage.agentComputeUnits` measures model computation across the full run. Complex queries, especially ones with a large `input.data` field, need more reasoning steps and tool calls and consume more ACUs.
 
-Your Agent concurrency limit is one-fifth of your account QPS. With the default QPS on pay-as-you-go accounts, you can run two Agents at a time.
+Your Agent concurrency limit is your account QPS. With the default QPS on pay-as-you-go accounts, you can run 50 Agents at a time.
 
 ### Effort
 
