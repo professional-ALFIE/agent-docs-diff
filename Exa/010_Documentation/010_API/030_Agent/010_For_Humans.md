@@ -767,7 +767,13 @@ Costs are usage-based and priced by component:
 
 `usage.agentComputeUnits` measures model computation across the full run. Complex queries, especially ones with a large `input.data` field, need more reasoning steps and tool calls and consume more ACUs.
 
-Your Agent concurrency limit is your account QPS. With the default QPS on pay-as-you-go accounts, you can run 50 Agents at a time.
+### Concurrency and rate limits
+
+Agent limits are two separate controls: how many runs can be in progress at once, and how fast you can start new ones.
+
+* **Concurrency**: you can have 50 Agent runs in progress at a time. This limit is separate from your QPS and does not change when your QPS is raised. Starting a run past the limit returns `429` with error code `CONCURRENCY_LIMIT_REACHED`; wait for a run to finish or contact us to raise your concurrency limit.
+* **Starting runs**: `POST /agent/runs` draws from your account QPS, and each run start counts as two requests. You can start runs at half your QPS, so an account with the default 10 QPS can start 5 runs per second, and 25 QPS allows 12 per second.
+* **Polling**: `GET` requests for run status, events, and run lists do not count against your QPS and never block dispatch, so poll running Agents independently of how fast you start new ones.
 
 ### Effort
 
