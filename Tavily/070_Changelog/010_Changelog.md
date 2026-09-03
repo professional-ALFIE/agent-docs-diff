@@ -7,6 +7,20 @@
 # Changelog
 
 <AccordionGroup>
+  <Accordion title="Boosted domains for Search" icon="rocket" description="August 2026">
+    <b><br />New [<code>include\_domains\_mode</code>](/documentation/api-reference/endpoint/search#body-include-domains-mode) parameter for [Search](/documentation/api-reference/endpoint/search)</b><br />
+
+    <ul>
+      <li>
+        <b><code>include\_domains\_mode</code></b> — controls how <code>include\_domains</code> is applied. Set to <b><code>"boost"</code></b> to also search the rest of the web, so results outside <code>include\_domains</code> can still surface, rather than excluding them, or <b><code>"filter"</code></b> to keep the existing hard-filter behavior. Requires <code>include\_domains</code> to be set, or the request returns a <code>400</code>.
+      </li>
+
+      <li>
+        See <a href="/documentation/best-practices/best-practices-search#by-domain">Best Practices for Search</a> for guidance on when to boost trusted domains vs. hard-filter to them.
+      </li>
+    </ul>
+  </Accordion>
+
   <Accordion title="Safe search for everyone" icon="rocket" description="August 2026">
     <b><br />[<code>safe\_search</code>](/documentation/api-reference/endpoint/search#body-safe-search) is now available on all plans</b><br />
 
