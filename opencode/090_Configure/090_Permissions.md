@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/permissions.md
+
 OpenCode uses the `permission` config to decide whether a given action should run automatically, prompt you, or be blocked.
 
 As of `v1.1.1`, the legacy `tools` boolean config is deprecated and has been merged into `permission`. The old `tools` config is still supported for backwards compatibility.

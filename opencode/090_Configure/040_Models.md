@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/models.md
+
 OpenCode uses the [AI SDK](https://ai-sdk.dev/) and [Models.dev](https://models.dev) to support **75+ LLM providers** and it supports running local models.
 
 ---

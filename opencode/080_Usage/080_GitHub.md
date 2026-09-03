@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/github.md
+
 OpenCode integrates with your GitHub workflow. Mention `/opencode` or `/oc` in your comment, and OpenCode will execute tasks within your GitHub Actions runner.
 
 ---

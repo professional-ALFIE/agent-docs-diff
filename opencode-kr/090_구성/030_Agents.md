@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/agents.md
+
 agent는 특정 작업과 워크플로에 맞게 설정할 수 있는 전문 AI assistant입니다. custom prompt, model, tool 접근 권한을 조합해 목적에 맞는 agent를 만들 수 있습니다.
 
 :::tip

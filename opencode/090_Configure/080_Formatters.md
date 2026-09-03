@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/formatters.md
+
 OpenCode can format files after they are written or edited using language-specific formatters. Formatters are disabled by default; enable them in your config before OpenCode will run them.
 
 ---

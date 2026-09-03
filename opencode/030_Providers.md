@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/providers.md
+
 import config from "../../../config.mjs"
 export const console = config.console
 

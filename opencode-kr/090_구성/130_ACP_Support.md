@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/acp.md
+
 OpenCode는 [Agent Client Protocol](https://agentclientprotocol.com)(ACP)을 지원하므로, ACP 호환 편집기와 IDE에서 OpenCode를 직접 사용할 수 있습니다.
 
 :::tip

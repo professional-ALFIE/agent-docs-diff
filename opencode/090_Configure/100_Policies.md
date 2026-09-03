@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/policies.md
+
 Policies control whether OpenCode may perform an action on a named resource. This feature is experimental and is configured with the `experimental.policies` array in `opencode.json`.
 
 Policies are separate from [permissions](/docs/permissions). Permissions control what tools can do during a session, while policies control whether OpenCode may use a resource such as an LLM provider.

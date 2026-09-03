@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ecosystem.md
+
 A collection of community projects built on OpenCode.
 
 :::note

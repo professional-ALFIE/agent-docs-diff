@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/lsp.md
+
 OpenCode can integrate with Language Server Protocol (LSP) servers to use diagnostics as feedback for the agent.
 
 ---

@@ -24,7 +24,9 @@ async function 하나(s: 사이트설정, d: 문서자리): Promise<받은문서
   const 본문 = await r.text();
   if (!본문.trim()) return { ...기본, 이유: "본문이 비어 있다" };
   if (/^\s*<(!doctype|html)/i.test(본문)) return { ...기본, 이유: "본문이 HTML 이다" };
-  return { ...기본, sha256: sha256(본문), bytes: Buffer.byteLength(본문), contentType: ct, 본문 };
+  // 머리에 원본 URL 을 붙인다 (검사는 원본 기준으로 끝났으므로 이 뒤에). sha256·bytes 는 저장 단위 그대로
+  const 머리포함 = `> 원본: ${r.url}\n\n${본문}`;
+  return { ...기본, sha256: sha256(머리포함), bytes: Buffer.byteLength(머리포함), contentType: ct, 본문: 머리포함 };
 }
 
 /** 문서 전부를 받아 메모리에 둔다. 디스크에는 쓰지 않는다 — 검사를 통과한 뒤 sync 가 쓴다 */

@@ -1,3 +1,5 @@
+> 원본: https://learn.chatgpt.com/docs/third-party/gitlab.md
+
 # Review GitLab merge requests with Codex
 
 > For the complete documentation index, see [llms.txt](https://learn.chatgpt.com/llms.txt). Markdown versions of documentation pages are available by appending `.md` to the page URL.

@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/plugins.md
+
 Plugins allow you to extend OpenCode by hooking into various events and customizing behavior. You can create plugins to add new features, integrate with external services, or modify OpenCode's default behavior.
 
 For examples, check out the [plugins](/docs/ecosystem#plugins) created by the community.

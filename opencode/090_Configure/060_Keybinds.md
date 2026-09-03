@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/keybinds.md
+
 OpenCode has a list of keybinds that you can customize through `tui.json`.
 
 ```json title="tui.json"

@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/custom-tools.md
+
 Custom tools are functions you create that the LLM can call during conversations. They work alongside opencode's [built-in tools](/docs/tools) like `read`, `write`, and `bash`.
 
 ---

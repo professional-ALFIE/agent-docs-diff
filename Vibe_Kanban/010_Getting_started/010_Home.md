@@ -1,3 +1,5 @@
+> 원본: https://vibekanban.com/docs/index.md
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://vibekanban.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

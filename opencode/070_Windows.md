@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/windows-wsl.md
+
 import { Steps } from "@astrojs/starlight/components"
 
 While OpenCode can run directly on Windows, we recommend using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) for the best experience. WSL provides a Linux environment that works seamlessly with OpenCode's features.

@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/troubleshooting.md
+
 To debug issues with OpenCode, start by checking the logs and local data it stores on disk.
 
 ---

@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/network.md
+
 OpenCode supports standard proxy environment variables and custom certificates for enterprise network environments.
 
 ---

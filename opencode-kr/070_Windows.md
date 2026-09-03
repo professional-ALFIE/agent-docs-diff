@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/windows-wsl.md
+
 import { Steps } from "@astrojs/starlight/components"
 
 opencode는 Windows에서 직접 실행할 수 있지만, 가장 좋은 사용 경험을 위해 [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) 사용을 권장합니다. WSL은 opencode 기능과 자연스럽게 동작하는 Linux 환경을 제공합니다.

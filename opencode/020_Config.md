@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/config.md
+
 You can configure OpenCode using a JSON config file.
 
 ---

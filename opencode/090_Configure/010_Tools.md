@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/tools.md
+
 Tools allow the LLM to perform actions in your codebase. OpenCode comes with a set of built-in tools, but you can extend it with [custom tools](/docs/custom-tools) or [MCP servers](/docs/mcp-servers).
 
 By default, all tools are **enabled** and don't need permission to run. You can control tool behavior through [permissions](/docs/permissions).

@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/gitlab.md
+
 OpenCode는 GitLab CI/CD 파이프라인 또는 GitLab Duo를 통해 GitLab 워크플로에 통합됩니다.
 
 두 경우 모두 OpenCode는 GitLab runner에서 실행됩니다.

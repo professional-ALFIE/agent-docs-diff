@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-03T10:31:37.206Z",
+  "생성": "2026-09-03T10:53:30.572Z",
   "제품폴더": "opencode",
   "진입": "https://opencode.ai/docs/en",
   "최상위수": 10,
@@ -9,288 +9,288 @@
       "경로": "010_Intro.md",
       "href": "/docs/",
       "url": "https://opencode.ai/docs.md",
-      "sha256": "15bf359ed0414df94ed6b3a4969f58b9f33cf1d886d586ecc436166808820321",
-      "bytes": 8308,
+      "sha256": "26cdc90fd2934c387dc8bf714eb0ec3db47c5b5c7046b66453dc6c62bfab889a",
+      "bytes": 8353,
       "contentType": "text/plain"
     },
     {
       "경로": "020_Config.md",
       "href": "/docs/config/",
       "url": "https://opencode.ai/docs/config.md",
-      "sha256": "4d8ef2d3ebf6f05016ef58fc12a7c8a027427a01409d4146032f4b030b138f51",
-      "bytes": 26588,
+      "sha256": "044f5f67a7a5a8efc1c02b226cf644261cda401d43b059c5b1c37c13b3d4b69a",
+      "bytes": 26634,
       "contentType": "text/plain"
     },
     {
       "경로": "030_Providers.md",
       "href": "/docs/providers/",
       "url": "https://opencode.ai/docs/providers.md",
-      "sha256": "b11724a11eee99b901f1289050d7d3d96cb48a20c0df774821b6631e555fb8b7",
-      "bytes": 66816,
+      "sha256": "a3a439fd9f1a0878758a973d47ba8648cb8064e2b5ca6a29ff88ab285fa4e95f",
+      "bytes": 66865,
       "contentType": "text/plain"
     },
     {
       "경로": "040_Network.md",
       "href": "/docs/network/",
       "url": "https://opencode.ai/docs/network.md",
-      "sha256": "368f316dab132e86381935a8b67ace96d4dd146715b790951b047c79a9bdb33d",
-      "bytes": 1332,
+      "sha256": "182329a57189dff57d60c8495fbe79d0626239a0e3b0a5fb4720e84846734c66",
+      "bytes": 1379,
       "contentType": "text/plain"
     },
     {
       "경로": "050_Enterprise.md",
       "href": "/docs/enterprise/",
       "url": "https://opencode.ai/docs/enterprise.md",
-      "sha256": "746d137a94848df61b6347b03b7f630b1f9c671034d8a2e48774ab7515acc965",
-      "bytes": 5398,
+      "sha256": "0a177768dadf51259330f6c2f826b8a16e3b53eed6309898c996cd514ba8cdb9",
+      "bytes": 5448,
       "contentType": "text/plain"
     },
     {
       "경로": "060_Troubleshooting.md",
       "href": "/docs/troubleshooting/",
       "url": "https://opencode.ai/docs/troubleshooting.md",
-      "sha256": "c4301ca7f99534c1b1d18a3d7e8ed93b1395b50483156c34c90a894559dc438a",
-      "bytes": 9454,
+      "sha256": "c0a459bc489a42cf5f09b29ef8945d90e346ffb0c3332274656bf3ffc5909d31",
+      "bytes": 9509,
       "contentType": "text/plain"
     },
     {
       "경로": "070_Windows.md",
       "href": "/docs/windows-wsl",
       "url": "https://opencode.ai/docs/windows-wsl.md",
-      "sha256": "7ac8f54d4667e5b24c915c66a7cb174c35dc438e2ff381b4e5c9a5de0d10b3b2",
-      "bytes": 2949,
+      "sha256": "974e12087aac5d33648b2332c4af99c5b79ba6daafc9bf340fa3a61b4fec6c2b",
+      "bytes": 3000,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/010_Go.md",
       "href": "/docs/go/",
       "url": "https://opencode.ai/docs/go.md",
-      "sha256": "b06cf4850e6e06dbfc370cb567b205d5c46031051abd99690e0ce402e527a103",
-      "bytes": 21461,
+      "sha256": "adc8e05406f3fc98778d53619497971141ca5794238b1eb813ab5da4b4fa40ef",
+      "bytes": 21503,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/020_TUI.md",
       "href": "/docs/tui/",
       "url": "https://opencode.ai/docs/tui.md",
-      "sha256": "5e8fe3f6cdb2d88d6db80dffaf44455e7000b4cdaed755cfe329071cbb8d01ac",
-      "bytes": 9680,
+      "sha256": "f34e41c92b289333266f08a89146bfa20fc7de39dec9b000252b435a2a1017d5",
+      "bytes": 9723,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/030_CLI.md",
       "href": "/docs/cli/",
       "url": "https://opencode.ai/docs/cli.md",
-      "sha256": "2a9ab76671f746744a5db10fe8f2f26968c071ce2abaffc05a58b17f9a048114",
-      "bytes": 27229,
+      "sha256": "e08f66b4ba292ede92f5b6e83e5ddeaf145b01f9df913e40a4fda872427d3d50",
+      "bytes": 27272,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/040_Web.md",
       "href": "/docs/web/",
       "url": "https://opencode.ai/docs/web.md",
-      "sha256": "e497501964a1d6d3c07d98bacf7353b06de9cae1e37783660e6fefd6ce40cc59",
-      "bytes": 3214,
+      "sha256": "eca328210a595786f05cbe4e1c86b42b4dd5e1bdfba10dbefc3617a5bea15bf2",
+      "bytes": 3257,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/050_IDE.md",
       "href": "/docs/ide/",
       "url": "https://opencode.ai/docs/ide.md",
-      "sha256": "a35e6f611f009dc6eb94dd1e75c4f95cb21b55155ba876d15adca9b923496906",
-      "bytes": 1808,
+      "sha256": "8d691c76be9161d0cb0c55db1dea609d204fd7b098ca64a8cff2fb6bab5988e4",
+      "bytes": 1851,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/060_Zen.md",
       "href": "/docs/zen/",
       "url": "https://opencode.ai/docs/zen.md",
-      "sha256": "51edf659405645e9561e2eeffb41e5b136fe79cb5ce44bff7b120be5d21e97e8",
-      "bytes": 27094,
+      "sha256": "16b60ccd411748d66926d6eae4010e0141967dd1b871b92e6941046e4270a35b",
+      "bytes": 27137,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/070_Share.md",
       "href": "/docs/share/",
       "url": "https://opencode.ai/docs/share.md",
-      "sha256": "2e92b0afb643382786262cc8a723f0ffda1613d2013338bd83f5010a411f4313",
-      "bytes": 2854,
+      "sha256": "e390e20336bdc5a018a76033f72ef7009c148160536b860eb92d60eff1e46cc9",
+      "bytes": 2899,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/080_GitHub.md",
       "href": "/docs/github/",
       "url": "https://opencode.ai/docs/github.md",
-      "sha256": "1fb228f01f4f6d7e02e09435d7dc542564f28ca4b55904abca2060d61dd7a74f",
-      "bytes": 11252,
+      "sha256": "e80ffcd4b5349c4ea702541b7a9d33457c645376e139bac57fb539f52b5dc5b7",
+      "bytes": 11298,
       "contentType": "text/plain"
     },
     {
       "경로": "080_Usage/090_GitLab.md",
       "href": "/docs/gitlab/",
       "url": "https://opencode.ai/docs/gitlab.md",
-      "sha256": "a486a410d01d1b79e2d9e60da340a076619ac381e87d6b38bcb1aec4c33085cb",
-      "bytes": 6447,
+      "sha256": "4b85d42559c5e67f5cf3e71c5ff6465fe1659649ae4fb318d0875d17084e26a4",
+      "bytes": 6493,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/010_Tools.md",
       "href": "/docs/tools/",
       "url": "https://opencode.ai/docs/tools.md",
-      "sha256": "543ef105b7ad03fd877034958de61b116c2e9cd30e6fe0eb2b11e0288a9e1ef0",
-      "bytes": 8463,
+      "sha256": "d6029cbef99557bbb022ffba64c4b89eeede3be9867798dd25d87f194642b137",
+      "bytes": 8508,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/020_Rules.md",
       "href": "/docs/rules/",
       "url": "https://opencode.ai/docs/rules.md",
-      "sha256": "dfb242d9a8c0cfb1c97cee74a895b56ba72cba64b558200f06eede4f5f93cb54",
-      "bytes": 6684,
+      "sha256": "427692556159f47aeafe74056d4070113d5d83561412764fd7543339c2d6cae7",
+      "bytes": 6729,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/030_Agents.md",
       "href": "/docs/agents/",
       "url": "https://opencode.ai/docs/agents.md",
-      "sha256": "7b7dfc8ca2fc363358d6c6f4625bc13d8386942f9b64b0fcaa711a5aeee56074",
-      "bytes": 20440,
+      "sha256": "3cb39ecd6914f609625f2aa15a7ab90ea472cff05f52477537abbb8afe710395",
+      "bytes": 20486,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/040_Models.md",
       "href": "/docs/models/",
       "url": "https://opencode.ai/docs/models.md",
-      "sha256": "e85757cc588b507fc3cd9abac909ce425c496f7dab9ae2ad6a8e8f1c5335edca",
-      "bytes": 5454,
+      "sha256": "0b0055d9df76cb4d82dcf80d88a6822b25325906f8dc385cee27b299dab0c874",
+      "bytes": 5500,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/050_Themes.md",
       "href": "/docs/themes/",
       "url": "https://opencode.ai/docs/themes.md",
-      "sha256": "14e1703cfd10cc850d0376c8201b7bb41361a00d443befaf2639aff509460def",
-      "bytes": 9772,
+      "sha256": "6a19bc727a193f6f123ca21fbca85c9006a995e5beb2a11d8d863fb7e44b0097",
+      "bytes": 9818,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/060_Keybinds.md",
       "href": "/docs/keybinds/",
       "url": "https://opencode.ai/docs/keybinds.md",
-      "sha256": "7d1f814c668ca468e0a7b61cadaaa02794fb236c0173073cb258b366fb0a4499",
-      "bytes": 9743,
+      "sha256": "ee479b4c7224f546226deec32d3cdb98818f873ca72fde669baaf59045eb6401",
+      "bytes": 9791,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/070_Commands.md",
       "href": "/docs/commands/",
       "url": "https://opencode.ai/docs/commands.md",
-      "sha256": "7a1db15a20488c4c1813e135962480978788bf0509d866346d2e3cdde8a850e1",
-      "bytes": 6682,
+      "sha256": "22b640ccd38ffdd0f6a1998905149ff856f1a9c7c8c46b592a189ef093ac363f",
+      "bytes": 6730,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/080_Formatters.md",
       "href": "/docs/formatters/",
       "url": "https://opencode.ai/docs/formatters.md",
-      "sha256": "4f66622b4968c94208046103a34be3b7f9bc10cab62356ab80a3d871615241cd",
-      "bytes": 9965,
+      "sha256": "d2ba791cc1aa280a47cb9f38a37b9dfa961794f5ba3d37edfeba7d7affdb878c",
+      "bytes": 10015,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/090_Permissions.md",
       "href": "/docs/permissions/",
       "url": "https://opencode.ai/docs/permissions.md",
-      "sha256": "f159e9dbcd2a66114e444ff85883f84d2393b3fdc16f88554e4149173e68146d",
-      "bytes": 7360,
+      "sha256": "d13be46c6b219ffff8df6191bacc37d59e999397cfcdad215bcfb3b177f1d62e",
+      "bytes": 7411,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/100_Policies.md",
       "href": "/docs/policies/",
       "url": "https://opencode.ai/docs/policies.md",
-      "sha256": "5738f4681d9a225ffedc1f22887522e63339d8df02995cccc31bca5f197151cd",
-      "bytes": 3593,
+      "sha256": "ed84a6d46b078bb3a9f66e661c6725a154b3f648cb988544e7927cb6fc064e3a",
+      "bytes": 3641,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/110_LSP_Servers.md",
       "href": "/docs/lsp/",
       "url": "https://opencode.ai/docs/lsp.md",
-      "sha256": "c8119da9e6aabc779380f0e68e00c881de8114cf03c227fa3c5da3cda65bc9b7",
-      "bytes": 10347,
+      "sha256": "a393319ce81f744b32ab223ea9918fd6e877a2ca55bf13ab2cc25d5295b065ce",
+      "bytes": 10390,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/120_MCP_servers.md",
       "href": "/docs/mcp-servers/",
       "url": "https://opencode.ai/docs/mcp-servers.md",
-      "sha256": "a8c9af4721d0553baa517c4fbd3f064fceadc18bf37bf2def649b5ace3d89d6c",
-      "bytes": 13917,
+      "sha256": "359245fb7cb1cef88859150d4ea31479d7ddf473f893d132b87e0e714af5bde3",
+      "bytes": 13968,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/130_ACP_Support.md",
       "href": "/docs/acp/",
       "url": "https://opencode.ai/docs/acp.md",
-      "sha256": "69b2dd63db3aa64e716ed094a024d90066c8acbd84c29b22a2e0c08c212cc063",
-      "bytes": 3695,
+      "sha256": "4d02460a796aeab5af2fb13af6532cdd6ccd61dc107fd5c5f3ecde6157881b1d",
+      "bytes": 3738,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/140_Agent_Skills.md",
       "href": "/docs/skills/",
       "url": "https://opencode.ai/docs/skills.md",
-      "sha256": "0cc6d2ebeece718df41fdec0164d406b1fa9bd60fd5b46c94fc0fab63ddd5b93",
-      "bytes": 4544,
+      "sha256": "0c13aaba7b11352315917e9fb0dc7f0dcf3e852aaebf366eed846eeaf5adb1e0",
+      "bytes": 4590,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/150_References.md",
       "href": "/docs/references/",
       "url": "https://opencode.ai/docs/references.md",
-      "sha256": "6fed8fb784df470d5b02fa56b2e8122f283dafc6fb22651868d0ce208fcb27de",
-      "bytes": 4444,
+      "sha256": "8e70a0d4fb6cdbba2c96aad287be908badc3c5894921400e44ef215ca87cecbf",
+      "bytes": 4494,
       "contentType": "text/plain"
     },
     {
       "경로": "090_Configure/160_Custom_Tools.md",
       "href": "/docs/custom-tools/",
       "url": "https://opencode.ai/docs/custom-tools.md",
-      "sha256": "9f1a0bda024fc8085e8cb967bac7d372673a67ae70ca393fc2b4569d706cb1ea",
-      "bytes": 4844,
+      "sha256": "6cac6ae13101b8eecb60c0950e44c79a6b4b6f662675674d38cdf1d95176ee66",
+      "bytes": 4896,
       "contentType": "text/plain"
     },
     {
       "경로": "100_Develop/010_SDK.md",
       "href": "/docs/sdk/",
       "url": "https://opencode.ai/docs/sdk.md",
-      "sha256": "615db594720d8c67dd2d5f6e5761971fc5071b5d0bba157537812aa5ed10be37",
-      "bytes": 19892,
+      "sha256": "3c7fdd0ba46d7b50a2be671f4e50aacc8bbcc4f85d8de1cd9517f15851e44960",
+      "bytes": 19935,
       "contentType": "text/plain"
     },
     {
       "경로": "100_Develop/020_Server.md",
       "href": "/docs/server/",
       "url": "https://opencode.ai/docs/server.md",
-      "sha256": "0d5f2be1d0024d256d163dbc780450f7ad9b2d274705ea045fb96644a82faf8a",
-      "bytes": 18165,
+      "sha256": "120975a22cc94c2c0299df131469cbf7d991f5818c8762ed218dbdceda2082e8",
+      "bytes": 18211,
       "contentType": "text/plain"
     },
     {
       "경로": "100_Develop/030_Plugins.md",
       "href": "/docs/plugins/",
       "url": "https://opencode.ai/docs/plugins.md",
-      "sha256": "ab99892a03931c7d7cb36f93beba067346492cb9adae0f263fb6ac83f83391bb",
-      "bytes": 9392,
+      "sha256": "5abcfd9c681a6d88e2001ec840f280965d5d46e2808f4e3084810403e47cf1e4",
+      "bytes": 9439,
       "contentType": "text/plain"
     },
     {
       "경로": "100_Develop/040_Ecosystem.md",
       "href": "/docs/ecosystem/",
       "url": "https://opencode.ai/docs/ecosystem.md",
-      "sha256": "02d0588e96cddd4f01b822fc506574d96602a87979d4264bf301fe38752c6d4f",
-      "bytes": 11193,
+      "sha256": "6dbb64770d1d65ce70fb510ebeec908481c569b0e3700cfe0c092d0272bce9da",
+      "bytes": 11242,
       "contentType": "text/plain"
     }
   ],

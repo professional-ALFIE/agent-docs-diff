@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/gitlab.md
+
 OpenCode integrates with your GitLab workflow through your GitLab CI/CD pipeline or with GitLab Duo.
 
 In both cases, OpenCode will run on your GitLab runners.

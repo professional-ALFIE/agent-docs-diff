@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/custom-tools.md
+
 custom tool은 대화 중 LLM이 호출할 수 있도록 사용자가 직접 만든 함수입니다. `read`, `write`, `bash` 같은 OpenCode의 [built-in tools](/docs/tools)와 함께 동작합니다.
 
 ---

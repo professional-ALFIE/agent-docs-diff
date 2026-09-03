@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/mcp-servers.md
+
 You can add external tools to OpenCode using the _Model Context Protocol_, or MCP. OpenCode supports both local and remote servers.
 
 Once added, MCP tools are automatically available to the LLM alongside built-in tools.

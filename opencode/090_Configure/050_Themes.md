@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/themes.md
+
 With OpenCode you can select from one of several built-in themes, use a theme that adapts to your terminal theme, or define your own custom theme.
 
 By default, OpenCode uses our own `opencode` theme.

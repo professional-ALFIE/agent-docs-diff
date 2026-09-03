@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/rules.md
+
 You can provide custom instructions to opencode by creating an `AGENTS.md` file. This is similar to Cursor's rules. It contains instructions that will be included in the LLM's context to customize its behavior for your specific project.
 
 ---

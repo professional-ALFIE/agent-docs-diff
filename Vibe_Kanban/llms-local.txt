@@ -1,66 +1,70 @@
-> 이 파일은 공식 llms.txt 의 링크를 이 폴더 기준 경로로 바꾼 것이다 (scripts/llms-local.ts 가 생성). 원문은 같은 폴더의 llms.txt.
+> 이 폴더의 트리다 (scripts/llms-local.ts 가 생성). 들여쓰기가 메뉴 계층이고 문서마다 공식 llms.txt 의 설명이 붙는다.
+> 문서 파일의 경로는 조상 폴더들 + 파일명이며, 파일 맨 위에 원본 URL 이 적혀 있다. 원문 목록은 같은 폴더의 llms.txt.
 
-# Vibe Kanban
-
-> A kanban board for developers to track coding tasks with AI coding agents
-
-## Docs
-
-- [Vibe Kanban](<010_Getting_started/010_Home.md>): Plan and review the work of AI agents faster, ship more
-- [Get Started](<010_Getting_started/020_Get_Started.md>): Launch Vibe Kanban, connect a coding agent, and go from zero to pull request
-- [Browser Testing](<010_Getting_started/030_Browser_Testing.md>): Preview your app in the built-in browser, inspect components, and debug with full devtools
-- [Issue Management](<010_Getting_started/040_Issue_Management.md>): Create, organise, and track issues from first draft to done on the kanban board
-- [Reviewing Code](<010_Getting_started/050_Reviewing_Code.md>): Review diffs, add inline comments, and send feedback to your coding agent
-- [Remote Access](<010_Getting_started/060_Remote_Access.md>): Access your local Vibe Kanban instance from another device
-- [Supported Coding Agents](<010_Getting_started/070_Supported_Coding_Agents/010_Supported_Coding_Agents.md>): Complete guide to all coding agents supported by Vibe Kanban, including installation and authentication instructions
-- [Claude Code](<010_Getting_started/070_Supported_Coding_Agents/020_Claude_Code.md>): Set up Anthropic's Claude Code agent
-- [OpenAI Codex](<010_Getting_started/070_Supported_Coding_Agents/030_OpenAI_Codex.md>): Set up OpenAI Codex integration
-- [GitHub Copilot](<010_Getting_started/070_Supported_Coding_Agents/040_GitHub_Copilot.md>): Set up GitHub Copilot CLI
-- [Gemini CLI](<010_Getting_started/070_Supported_Coding_Agents/050_Gemini_CLI.md>): Set up Google Gemini CLI
-- [Amp](<010_Getting_started/070_Supported_Coding_Agents/060_Amp.md>): Set up Amp code completion agent
-- [Cursor Agent CLI](<010_Getting_started/070_Supported_Coding_Agents/070_Cursor_Agent_CLI.md>): Set up Cursor's command-line agent
-- [OpenCode](<010_Getting_started/070_Supported_Coding_Agents/080_OpenCode.md>): Set up SST's OpenCode
-- [Factory Droid](<010_Getting_started/070_Supported_Coding_Agents/090_Factory_Droid.md>): Set up Factory AI's Droid coding agent
-- [CCR (Claude Code Router)](<010_Getting_started/070_Supported_Coding_Agents/100_CCR_(Claude_Code_Router).md>): Set up CCR to orchestrate multiple Claude Code models
-- [Qwen Code](<010_Getting_started/070_Supported_Coding_Agents/110_Qwen_Code.md>): Set up Qwen code-focused assistant
-- [Workspaces Overview](<020_Workspaces/010_Overview.md>): A redesigned task execution experience with multi-repo support, multiple agent sessions, and an integrated preview browser
-- [Creating Workspaces](<020_Workspaces/020_Creating_Workspaces.md>): Learn how to create and configure workspaces for your development tasks
-- [Managing Workspaces](<020_Workspaces/030_Managing_Workspaces.md>): Archive, delete, and manage disk space for your workspaces
-- [Repositories](<020_Workspaces/040_Repositories.md>): Add and manage repositories within your workspaces
-- [Sessions](<020_Workspaces/050_Sessions.md>): Create and manage multiple conversation sessions within a workspace
-- [Chat Interface](<020_Workspaces/060_Chat_Interface.md>): Interact with coding agents through the conversation panel
-- [Slash Commands](<020_Workspaces/070_Slash_Commands.md>): Use slash commands to run agent commands directly from the chat input
-- [Interface Guide](<020_Workspaces/080_Interface_Guide.md>): Understanding the Workspaces four-panel layout and navigation
-- [Command Bar](<020_Workspaces/090_Command_Bar.md>): Navigate and control your workspace with keyboard shortcuts
-- [Multi-Repo & Sessions](<020_Workspaces/100_Multi-Repo_&_Sessions.md>): Work with multiple repositories and agent sessions in a single workspace
-- [Changes Panel](<020_Workspaces/110_Changes_Panel.md>): Review code modifications and provide feedback to agents
-- [Git Operations](<020_Workspaces/120_Git_Operations.md>): Create pull requests, merge, rebase, and manage branches in Workspaces
-- [Vibe Kanban Cloud](<030_Cloud/010_Overview.md>): Collaborate with your team in real-time with Cloud features
-- [Getting Started with Cloud](<030_Cloud/020_Getting_Started.md>): Sign in and start collaborating with your team
-- [Authentication](<030_Cloud/030_Authentication.md>): Sign in with GitHub or Google and manage your sessions
-- [Organisations](<030_Cloud/040_Organisations.md>): Manage organisations that group your team and projects
-- [Team Members](<030_Cloud/050_Team_Members.md>): Invite colleagues and manage team access to your organisation
-- [Projects](<030_Cloud/060_Projects.md>): Create and manage projects to organise your work
-- [Issues](<030_Cloud/070_Issues.md>): Create, edit, and manage issues to track your work
-- [Kanban View](<030_Cloud/080_Kanban_View.md>): Visualise and manage your work with the kanban board
-- [List View](<030_Cloud/090_List_View.md>): View and manage all your issues in a tabular format
-- [Filtering & Sorting](<030_Cloud/100_Filtering_&_Sorting.md>): Find issues quickly with search, filters, and sorting
-- [Customising Your Board](<030_Cloud/110_Customising_Your_Board.md>): Configure columns, colours, and display settings
-- [Troubleshooting](<030_Cloud/120_Troubleshooting.md>): Solutions for common issues with Vibe Kanban Cloud
-- [Settings Overview](<040_Settings/010_Overview.md>): Configure application-wide settings including themes, editor, agents, and more
-- [Overview](<040_Settings/020_General/010_Overview.md>): Configure appearance, default agent, editor, git, and notification preferences
-- [Creating Tags](<040_Settings/020_General/020_Creating_Tags.md>): Create reusable text snippets that can be quickly inserted into workspace prompts using @mentions. Tags are available globally across all projects.
-- [Projects & Repositories](<040_Settings/030_Projects_&_Repositories.md>): Configure project-specific settings and repository scripts in the Settings dialog
-- [Organisation Settings](<040_Settings/040_Organisation_Settings.md>): Manage your organisation, members, and invitations
-- [Remote Projects](<040_Settings/050_Remote_Projects.md>): Manage your Cloud projects across organisations
-- [Agent Profiles & Configuration](<040_Settings/060_Agent_Profiles_&_Configuration.md>): Create reusable agent configurations with custom settings for planning mode, model selection, and permission levels that you can quickly switch between when creating task attempts
-- [Connecting MCP Servers](<040_Settings/070_Connecting_MCP_Servers.md>): Configure MCP (Model Context Protocol) servers to enhance your coding agents within Vibe Kanban with additional tools and capabilities.
-- [Local Development](<050_Self-Hosting/010_Local_Development.md>): Run Vibe Kanban Cloud locally
-- [Deploy with Docker Compose](<050_Self-Hosting/020_Deploy_with_Docker_Compose.md>): Deploy Vibe Kanban Cloud on any server using Docker Compose
-- [GitHub Integration](<060_Integrations/010_GitHub_Integration.md>): Connect to GitHub to create pull requests and manage your workflow directly from Vibe Kanban
-- [Azure Repos Integration](<060_Integrations/020_Azure_Repos_Integration.md>): Connect to Azure Repos to create pull requests and manage your workflow directly from Vibe Kanban
-- [VSCode Extension Integration](<060_Integrations/030_VSCode_Extension_Integration.md>): Complete guide to using the Vibe Kanban extension with VSCode, Cursor, and Windsurf
-- [Connecting MCP Servers](<060_Integrations/040_Connecting_MCP_Servers.md>): Configure MCP (Model Context Protocol) servers to enhance your coding agents within Vibe Kanban with additional tools and capabilities.
-- [Vibe Kanban MCP Server](<060_Integrations/050_Vibe_Kanban_MCP_Server.md>): Configure the Vibe Kanban MCP server
-- [Troubleshooting](<070_Help/010_Troubleshooting.md>): Common issues and solutions when using Vibe Kanban
-- [Responsible Disclosure](<070_Help/020_Responsible_Disclosure.md>): How to report security vulnerabilities to Vibe Kanban responsibly
+010_Getting_started/
+  010_Home.md — Plan and review the work of AI agents faster, ship more
+  020_Get_Started.md — Launch Vibe Kanban, connect a coding agent, and go from zero to pull request
+  030_Browser_Testing.md — Preview your app in the built-in browser, inspect components, and debug with full devtools
+  040_Issue_Management.md — Create, organise, and track issues from first draft to done on the kanban board
+  050_Reviewing_Code.md — Review diffs, add inline comments, and send feedback to your coding agent
+  060_Remote_Access.md — Access your local Vibe Kanban instance from another device
+  070_Supported_Coding_Agents/
+    010_Supported_Coding_Agents.md — Complete guide to all coding agents supported by Vibe Kanban, including installation and authentication instructions
+    020_Claude_Code.md — Set up Anthropic's Claude Code agent
+    030_OpenAI_Codex.md — Set up OpenAI Codex integration
+    040_GitHub_Copilot.md — Set up GitHub Copilot CLI
+    050_Gemini_CLI.md — Set up Google Gemini CLI
+    060_Amp.md — Set up Amp code completion agent
+    070_Cursor_Agent_CLI.md — Set up Cursor's command-line agent
+    080_OpenCode.md — Set up SST's OpenCode
+    090_Factory_Droid.md — Set up Factory AI's Droid coding agent
+    100_CCR_(Claude_Code_Router).md — Set up CCR to orchestrate multiple Claude Code models
+    110_Qwen_Code.md — Set up Qwen code-focused assistant
+020_Workspaces/
+  010_Overview.md — A redesigned task execution experience with multi-repo support, multiple agent sessions, and an integrated preview browser
+  020_Creating_Workspaces.md — Learn how to create and configure workspaces for your development tasks
+  030_Managing_Workspaces.md — Archive, delete, and manage disk space for your workspaces
+  040_Repositories.md — Add and manage repositories within your workspaces
+  050_Sessions.md — Create and manage multiple conversation sessions within a workspace
+  060_Chat_Interface.md — Interact with coding agents through the conversation panel
+  070_Slash_Commands.md — Use slash commands to run agent commands directly from the chat input
+  080_Interface_Guide.md — Understanding the Workspaces four-panel layout and navigation
+  090_Command_Bar.md — Navigate and control your workspace with keyboard shortcuts
+  100_Multi-Repo_&_Sessions.md — Work with multiple repositories and agent sessions in a single workspace
+  110_Changes_Panel.md — Review code modifications and provide feedback to agents
+  120_Git_Operations.md — Create pull requests, merge, rebase, and manage branches in Workspaces
+030_Cloud/
+  010_Overview.md — Collaborate with your team in real-time with Cloud features
+  020_Getting_Started.md — Sign in and start collaborating with your team
+  030_Authentication.md — Sign in with GitHub or Google and manage your sessions
+  040_Organisations.md — Manage organisations that group your team and projects
+  050_Team_Members.md — Invite colleagues and manage team access to your organisation
+  060_Projects.md — Create and manage projects to organise your work
+  070_Issues.md — Create, edit, and manage issues to track your work
+  080_Kanban_View.md — Visualise and manage your work with the kanban board
+  090_List_View.md — View and manage all your issues in a tabular format
+  100_Filtering_&_Sorting.md — Find issues quickly with search, filters, and sorting
+  110_Customising_Your_Board.md — Configure columns, colours, and display settings
+  120_Troubleshooting.md — Solutions for common issues with Vibe Kanban Cloud
+040_Settings/
+  010_Overview.md — Configure application-wide settings including themes, editor, agents, and more
+  020_General/
+    010_Overview.md — Configure appearance, default agent, editor, git, and notification preferences
+    020_Creating_Tags.md — Create reusable text snippets that can be quickly inserted into workspace prompts using @mentions. Tags are available globally across all projects.
+  030_Projects_&_Repositories.md — Configure project-specific settings and repository scripts in the Settings dialog
+  040_Organisation_Settings.md — Manage your organisation, members, and invitations
+  050_Remote_Projects.md — Manage your Cloud projects across organisations
+  060_Agent_Profiles_&_Configuration.md — Create reusable agent configurations with custom settings for planning mode, model selection, and permission levels that you can quickly switch between when creating task attempts
+  070_Connecting_MCP_Servers.md — Configure MCP (Model Context Protocol) servers to enhance your coding agents within Vibe Kanban with additional tools and capabilities.
+050_Self-Hosting/
+  010_Local_Development.md — Run Vibe Kanban Cloud locally
+  020_Deploy_with_Docker_Compose.md — Deploy Vibe Kanban Cloud on any server using Docker Compose
+060_Integrations/
+  010_GitHub_Integration.md — Connect to GitHub to create pull requests and manage your workflow directly from Vibe Kanban
+  020_Azure_Repos_Integration.md — Connect to Azure Repos to create pull requests and manage your workflow directly from Vibe Kanban
+  030_VSCode_Extension_Integration.md — Complete guide to using the Vibe Kanban extension with VSCode, Cursor, and Windsurf
+  040_Connecting_MCP_Servers.md — Configure MCP (Model Context Protocol) servers to enhance your coding agents within Vibe Kanban with additional tools and capabilities.
+  050_Vibe_Kanban_MCP_Server.md — Configure the Vibe Kanban MCP server
+070_Help/
+  010_Troubleshooting.md — Common issues and solutions when using Vibe Kanban
+  020_Responsible_Disclosure.md — How to report security vulnerabilities to Vibe Kanban responsibly

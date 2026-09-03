@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/skills.md
+
 Agent skills let OpenCode discover reusable instructions from your repo or home directory.
 Skills are loaded on-demand via the native `skill` tool—agents see available skills and can load the full content when needed.
 

@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/share.md
+
 OpenCode's share feature allows you to create public links to your OpenCode conversations, so you can collaborate with teammates or get help from others.
 
 :::note

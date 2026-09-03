@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/enterprise.md
+
 export const enterprise = "https://opencode.ai/enterprise"
 
 OpenCode Enterprise is for organizations that want to ensure that their code and data never leaves their infrastructure. It can do this by using a centralized config that integrates with your SSO and internal AI gateway.

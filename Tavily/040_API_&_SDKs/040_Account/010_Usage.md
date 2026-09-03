@@ -1,3 +1,5 @@
+> 원본: https://docs.tavily.com/documentation/api-reference/endpoint/usage.md
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://docs.tavily.com/llms.txt
 > Use this file to discover all available pages before exploring further.

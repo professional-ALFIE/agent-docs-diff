@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/config.md
+
 JSON config 파일로 OpenCode를 설정할 수 있습니다.
 
 ---

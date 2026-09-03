@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/index.md
+
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import config from "../../../config.mjs"
 export const console = config.console

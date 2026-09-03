@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/references.md
+
 References give OpenCode access to directories outside the current project. Use them to make documentation, shared libraries, examples, or another repository available while you work.
 
 References are configured by alias in `opencode.json` or `opencode.jsonc`.

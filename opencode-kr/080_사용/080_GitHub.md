@@ -1,3 +1,5 @@
+> 원본: https://opencode.ai/docs/ko/github.md
+
 OpenCode는 GitHub 워크플로와 통합됩니다. 댓글에 `/opencode` 또는 `/oc`를 mention하면 OpenCode가 GitHub Actions runner 안에서 작업을 실행합니다.
 
 ---
