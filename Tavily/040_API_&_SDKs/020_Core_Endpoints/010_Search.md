@@ -213,6 +213,19 @@ paths:
                   items:
                     type: string
                   default: []
+                include_domains_mode:
+                  type: string
+                  description: >-
+                    Controls how `include_domains` is applied. `filter`
+                    restricts results to only the listed domains. `boost` also
+                    searches the rest of the web, so results outside
+                    `include_domains` can still surface, rather than excluding
+                    them. Requires `include_domains` to be set; returns a 400
+                    error otherwise.
+                  enum:
+                    - filter
+                    - boost
+                  default: null
                 country:
                   type: string
                   description: >-
