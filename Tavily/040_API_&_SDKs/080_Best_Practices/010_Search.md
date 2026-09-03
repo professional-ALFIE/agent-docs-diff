@@ -117,15 +117,19 @@ Use `topic` to filter by content type. Set to `news` for news sources (includes 
 
 ### By domain
 
-| Parameter         | Description                           |
-| ----------------- | ------------------------------------- |
-| `include_domains` | Limit to specific domains             |
-| `exclude_domains` | Filter out specific domains           |
-| `country`         | Boost results from a specific country |
+| Parameter              | Description                                                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `include_domains`      | Limit to specific domains                                                                                                                  |
+| `include_domains_mode` | Set to `boost` to also search the rest of the web, so results outside `include_domains` can still surface, rather than hard-filtering them |
+| `exclude_domains`      | Filter out specific domains                                                                                                                |
+| `country`              | Boost results from a specific country                                                                                                      |
 
 ```json theme={null}
 // Restrict to LinkedIn profiles
 { "query": "CEO background at Google", "include_domains": ["linkedin.com/in"] }
+
+// Boost trusted sources without excluding everything else
+{ "query": "quarterly earnings outlook", "include_domains": ["bloomberg.com", "reuters.com"], "include_domains_mode": "boost" }
 
 // Exclude irrelevant domains
 { "query": "US economy trends", "exclude_domains": ["espn.com", "vogue.com"] }
@@ -138,6 +142,10 @@ Use `topic` to filter by content type. Set to `news` for news sources (includes 
 ```
 
 <Note>Keep domain lists short and relevant for best results.</Note>
+
+<Note>
+  `include_domains_mode: "boost"` is useful when you want to prioritize trusted sources without risking empty results if none of them cover the query.
+</Note>
 
 ### By language
 
