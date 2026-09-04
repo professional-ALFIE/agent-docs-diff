@@ -111,7 +111,7 @@
     030_Other_gateways/
       010_Connect_to_a_gateway.md — Point Claude Code at your organization's LLM gateway. Check whether your admin already configured it, or set the base URL and credential yourself, then verify the connection and fix gateway errors.
       020_Organization_rollout.md — Deploy a gateway product for Claude Code: configure it to forward what Claude Code sends, issue developer credentials, distribute the configuration through managed settings, and verify the rollout.
-      030_Protocol_reference.md — The API contract between Claude Code and an LLM gateway: endpoints, headers and body fields to forward, feature degradation when fields are stripped, attribution headers for cost tracking, and model discovery.
+      030_Compatibility_guide.md — Keep an LLM gateway compatible with Claude Code: the endpoints it calls, the headers and body fields to forward, and what breaks when they're stripped.
   040_Usage_and_costs/
     010_Monitoring.md — Learn how to enable and configure OpenTelemetry for Claude Code.
     020_Costs.md — Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and preprocessing hooks.

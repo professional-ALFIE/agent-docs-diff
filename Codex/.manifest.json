@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-03T23:17:22.008Z",
+  "생성": "2026-09-04T04:30:27.660Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -25,8 +25,8 @@
       "경로": "010_Overview/020_Get_started/030_Get_started_with_Work.md",
       "href": "/codex/get-started-with-work",
       "url": "https://learn.chatgpt.com/docs/get-started-with-work.md",
-      "sha256": "cda378e9467bfbdf7d2657d8abfca1e88c02db1cb26ad452ad1cc28c19f57ca4",
-      "bytes": 7274,
+      "sha256": "19f4b25ebe7b7da10db0d164eb946742fde8efdd950ce4764d88a408e8720a30",
+      "bytes": 7256,
       "contentType": "text/markdown"
     },
     {
@@ -73,24 +73,24 @@
       "경로": "010_Overview/040_Explore/010_What's_new.md",
       "href": "/codex/whats-new",
       "url": "https://learn.chatgpt.com/docs/whats-new.md",
-      "sha256": "b71a4922ba5b44023dbae87099c8c029fbaa8333fce62864f5a43a31c93eb01c",
-      "bytes": 50497,
+      "sha256": "fca528f72043e6337d29ab3ccfa8907f2487524320807a77381d82fecfcb6016",
+      "bytes": 50359,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Overview/040_Explore/020_Models.md",
       "href": "/codex/models",
       "url": "https://learn.chatgpt.com/docs/models.md",
-      "sha256": "d1752e48def5b8151485c89e9f33a6e4822769f54d60f901e0e90528bdd6cd85",
-      "bytes": 19327,
+      "sha256": "214882d1fd07074f2fcea82b94644d2a648270de5ca252d83dd87bf6803b0f4d",
+      "bytes": 19309,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Overview/040_Explore/030_Pricing.md",
       "href": "/codex/pricing",
       "url": "https://learn.chatgpt.com/docs/pricing.md",
-      "sha256": "4e11e0da8d9af0e35a4ac503d8754c2aedeca8f4a0b8f3637b234c209c84a998",
-      "bytes": 48931,
+      "sha256": "cc535642c5a1f0cb5b7659f9692cbe488271b94c010ce4caff232fd5fec3ecd0",
+      "bytes": 46649,
       "contentType": "text/markdown"
     },
     {
@@ -1081,8 +1081,8 @@
       "경로": "060_Administration/050_Workspace_access,_policy,_and_models/080_Workspace_model_availability.md",
       "href": "/codex/enterprise/workspace-model-availability",
       "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability.md",
-      "sha256": "9d4bb06af9625279f40d2ef28b08117045ec265938058306ae09c95903c28687",
-      "bytes": 8194,
+      "sha256": "ad00699f15a4c16bf35f01dc3cff7d36fc6a2b8f63f2d6431e3c19250a68ca04",
+      "bytes": 8172,
       "contentType": "text/markdown"
     },
     {
