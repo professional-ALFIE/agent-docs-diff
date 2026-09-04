@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-04T04:29:36.580Z",
+  "생성": "2026-09-04T11:15:29.295Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -137,16 +137,16 @@
       "경로": "010_Getting_started/040_Platforms_and_integrations/030_Claude_Code_on_the_web/020_Reference.md",
       "href": "/en/claude-code-on-the-web",
       "url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
-      "sha256": "f375863f9cd9624368fc5ad5b0fd0e28b805f3c821364922bf4dae481884b097",
-      "bytes": 38855,
+      "sha256": "c306e994c77cdb85a9f59efeec0ce3461a1d2e07057c2b0144b396b32f606434",
+      "bytes": 38927,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Getting_started/040_Platforms_and_integrations/030_Claude_Code_on_the_web/030_Routines.md",
       "href": "/en/routines",
       "url": "https://code.claude.com/docs/en/routines.md",
-      "sha256": "64977459205b9a7c9f4e5a41072b60ecd62bf5c6b3dc7aa2a42a2ea736f96678",
-      "bytes": 33252,
+      "sha256": "9ce8cca84f7be1d79d8e24de9135b3e6c9d47fc40ad2946461738d5c95fba744",
+      "bytes": 33274,
       "contentType": "text/markdown"
     },
     {
@@ -865,8 +865,8 @@
       "경로": "040_Configuration/030_Environments/010_Cloud_environments.md",
       "href": "/en/cloud-environments",
       "url": "https://code.claude.com/docs/en/cloud-environments.md",
-      "sha256": "f3e7f78128e4054be02ac0db76bf5b3fb021866b3a5a149bc7298cd0f02bf613",
-      "bytes": 64364,
+      "sha256": "31f57f560b4a43538dc5ad847ec5a7016c24546a8e07bbe41f7830f9688759cd",
+      "bytes": 64869,
       "contentType": "text/markdown"
     },
     {
