@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-04T16:19:56.336Z",
+  "생성": "2026-09-04T20:44:18.732Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -25,8 +25,8 @@
       "경로": "010_Getting_started/010_Getting_started/030_Changelog.md",
       "href": "/en/changelog",
       "url": "https://code.claude.com/docs/en/changelog.md",
-      "sha256": "5a82e633f1515d18ea805295ef4a43c753f76b70e5dd25ab53bad6352b3c6b55",
-      "bytes": 652786,
+      "sha256": "c13706fccacb08ced470a9e44f2f59ca0c6d5f03f2ca9348282315ec38d2a65b",
+      "bytes": 663289,
       "contentType": "text/markdown"
     },
     {
@@ -961,8 +961,8 @@
       "경로": "040_Configuration/050_Interface/020_Fullscreen_rendering.md",
       "href": "/en/fullscreen",
       "url": "https://code.claude.com/docs/en/fullscreen.md",
-      "sha256": "383977678b088553246e4ea8f83d2e1321f9df321db3b79d53a95c57162d206e",
-      "bytes": 31910,
+      "sha256": "93a2286243e0d8ee566380939753b88d2a54c801bf726a282d9aecd6e4ae509e",
+      "bytes": 32408,
       "contentType": "text/markdown"
     },
     {
@@ -993,8 +993,8 @@
       "경로": "040_Configuration/050_Interface/060_Customize_keyboard_shortcuts.md",
       "href": "/en/keybindings",
       "url": "https://code.claude.com/docs/en/keybindings.md",
-      "sha256": "3d843e5ca5ed1063d6d4d34b6a3453c537976be4e11b32d551c77ab63f74aafa",
-      "bytes": 40252,
+      "sha256": "87ae37809f1b4fd79340b7539b88ca9fbb1efd77ac961a55cdf8f2276a565cda",
+      "bytes": 41860,
       "contentType": "text/markdown"
     },
     {
@@ -1009,8 +1009,8 @@
       "경로": "050_Reference/010_Reference/020_Commands.md",
       "href": "/en/commands",
       "url": "https://code.claude.com/docs/en/commands.md",
-      "sha256": "83238f368511a4b64cb99357969b10329f5bdeb260564a5d2e8dd2e65152792a",
-      "bytes": 163034,
+      "sha256": "8a04c03533bbb1a2922630265624be7c305da0595d2b99fa209a84946e1ca2f2",
+      "bytes": 163039,
       "contentType": "text/markdown"
     },
     {
@@ -1033,8 +1033,8 @@
       "경로": "050_Reference/010_Reference/050_Interactive_mode.md",
       "href": "/en/interactive-mode",
       "url": "https://code.claude.com/docs/en/interactive-mode.md",
-      "sha256": "3033253f47288bbd8fc7bae7bc044188de67fbfd31efd99bd838bceeea21e258",
-      "bytes": 84019,
+      "sha256": "e9a81343dc1de13873d5af030c2020e67adcc83d9eafeb61eb39e267a2e1b176",
+      "bytes": 87290,
       "contentType": "text/markdown"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-04T04:30:27.660Z",
+  "생성": "2026-09-04T20:45:05.430Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -73,24 +73,24 @@
       "경로": "010_Overview/040_Explore/010_What's_new.md",
       "href": "/codex/whats-new",
       "url": "https://learn.chatgpt.com/docs/whats-new.md",
-      "sha256": "fca528f72043e6337d29ab3ccfa8907f2487524320807a77381d82fecfcb6016",
-      "bytes": 50359,
+      "sha256": "78b626909a18810861ce0c88b14a9cbec34104fb6a73294768a3ca042a095d2c",
+      "bytes": 50109,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Overview/040_Explore/020_Models.md",
       "href": "/codex/models",
       "url": "https://learn.chatgpt.com/docs/models.md",
-      "sha256": "214882d1fd07074f2fcea82b94644d2a648270de5ca252d83dd87bf6803b0f4d",
-      "bytes": 19309,
+      "sha256": "c166941f2442d6d41ce384ee9a49985903e9d28db9a42c61612f55de8415bbec",
+      "bytes": 19059,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Overview/040_Explore/030_Pricing.md",
       "href": "/codex/pricing",
       "url": "https://learn.chatgpt.com/docs/pricing.md",
-      "sha256": "cc535642c5a1f0cb5b7659f9692cbe488271b94c010ce4caff232fd5fec3ecd0",
-      "bytes": 46649,
+      "sha256": "aa35ac9fac229f008c7525cb7135799f715024e86dbb2991e4a80d633b3c783a",
+      "bytes": 46997,
       "contentType": "text/markdown"
     },
     {
@@ -1081,8 +1081,8 @@
       "경로": "060_Administration/050_Workspace_access,_policy,_and_models/080_Workspace_model_availability.md",
       "href": "/codex/enterprise/workspace-model-availability",
       "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability.md",
-      "sha256": "ad00699f15a4c16bf35f01dc3cff7d36fc6a2b8f63f2d6431e3c19250a68ca04",
-      "bytes": 8172,
+      "sha256": "0fbeace9df20e482dbb5102b3a36b5ad9e02ede6e9a106d8bc1155562c76c90f",
+      "bytes": 7922,
       "contentType": "text/markdown"
     },
     {
