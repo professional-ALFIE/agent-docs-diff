@@ -337,7 +337,7 @@ making it useful for larger tasks that can be split across subagents.
 
 
 Availability depends on the rollout, your sign-in method, and your client.
-See [pricing](https://learn.chatgpt.com/docs/pricing#gpt-6-astra-usage) for plan access and usage, and
+See [pricing](https://learn.chatgpt.com/docs/pricing) for plan access and usage, and
 [workspace model availability](https://learn.chatgpt.com/docs/enterprise/workspace-model-availability#gpt-6-astra-in-enterprise)
 for Enterprise access.
 
