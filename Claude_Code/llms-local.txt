@@ -176,7 +176,8 @@
   010_Agent_SDK/
     010_Overview.md — Build production AI agents with Claude Code as a library
     020_Quickstart.md — Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously
-    030_Troubleshooting.md — Fix Agent SDK errors by the exact message you see, with the cause and fix for each error in the TypeScript and Python SDKs.
+    030_Migration_Guide.md — Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK
+    040_Troubleshooting.md — Fix Agent SDK errors by the exact message you see, with the cause and fix for each error in the TypeScript and Python SDKs.
   020_Build_agents/
     010_Examples.md — Find a complete, runnable Agent SDK project or a guided recipe in the Claude Cookbook that matches what you want to build.
   030_Core_concepts/
@@ -212,7 +213,6 @@
     010_TypeScript_SDK.md — Complete API reference for the TypeScript Agent SDK, including all functions, types, and interfaces.
     020_TypeScript_V2_(removed).md — Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations.
     030_Python_SDK.md — Complete API reference for the Python Agent SDK, including all functions, types, and classes.
-    040_Migration_Guide.md — Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK
 070_What's_New/
   010_What's_New/
     010_What's_new.md — A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.
