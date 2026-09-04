@@ -60,7 +60,7 @@ confirm availability on each client used by your pilot group.
 
 Enabling access and choosing a starting model are separate decisions. Check the
 applicable seat, role, and billing arrangement before setting Astra as a default.
-See [Astra usage](https://learn.chatgpt.com/docs/pricing#gpt-6-astra-usage) for allowance and billing
+See [pricing](https://learn.chatgpt.com/docs/pricing) for allowance and billing
 guidance and [safety monitoring](https://learn.chatgpt.com/docs/agent-approvals-security#safety-monitoring-and-paused-tasks)
 for tasks that pause for review.
 
