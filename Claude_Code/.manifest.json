@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-05T10:33:24.084Z",
+  "생성": "2026-09-05T15:11:45.482Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -329,8 +329,8 @@
       "경로": "020_Build_with_Claude_Code/010_Agents_and_parallel_work/020_Create_custom_subagents.md",
       "href": "/en/sub-agents",
       "url": "https://code.claude.com/docs/en/sub-agents.md",
-      "sha256": "746151bf46d4a642d0c17d71abc438c75c646d4210d55b9c1adf746523f427e0",
-      "bytes": 112347,
+      "sha256": "b87eac7541807dac8b0611aa8ee72bd9e69935b4f0d2df79ac192cb377147348",
+      "bytes": 112544,
       "contentType": "text/markdown"
     },
     {
@@ -1001,8 +1001,8 @@
       "경로": "050_Reference/010_Reference/010_CLI_reference.md",
       "href": "/en/cli-reference",
       "url": "https://code.claude.com/docs/en/cli-reference.md",
-      "sha256": "f1a11c89706e5567735a14a251bb242389c75c14dbcc98261fa13fc255620a7f",
-      "bytes": 108642,
+      "sha256": "9507858d27b53dc9873548442b253a766dad54d9326a0f8de00d7135cc318c26",
+      "bytes": 109644,
       "contentType": "text/markdown"
     },
     {
@@ -1017,8 +1017,8 @@
       "경로": "050_Reference/010_Reference/030_Environment_variables.md",
       "href": "/en/env-vars",
       "url": "https://code.claude.com/docs/en/env-vars.md",
-      "sha256": "78b99393bbddfbafa5b0025f868320376978152fe5bba97bfb7343edea52f8de",
-      "bytes": 481504,
+      "sha256": "93a844a21c4cc9eca9c3a9b5592d42f60372fb8d0266ba360589cd61d6314777",
+      "bytes": 481509,
       "contentType": "text/markdown"
     },
     {
