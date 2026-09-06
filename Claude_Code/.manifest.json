@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-05T15:11:45.482Z",
+  "생성": "2026-09-06T04:36:02.569Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -25,8 +25,8 @@
       "경로": "010_Getting_started/010_Getting_started/030_Changelog.md",
       "href": "/en/changelog",
       "url": "https://code.claude.com/docs/en/changelog.md",
-      "sha256": "c13706fccacb08ced470a9e44f2f59ca0c6d5f03f2ca9348282315ec38d2a65b",
-      "bytes": 663289,
+      "sha256": "783367dcdf02d3bdfeff7b96131e55ae1be3762b51f1a3688ba169e7e2d810c6",
+      "bytes": 663400,
       "contentType": "text/markdown"
     },
     {
