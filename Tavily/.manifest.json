@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-03T16:25:17.536Z",
+  "생성": "2026-09-06T15:27:29.812Z",
   "제품폴더": "Tavily",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -857,8 +857,8 @@
       "경로": "070_Changelog/010_Changelog.md",
       "href": "/changelog",
       "url": "https://docs.tavily.com/changelog.md",
-      "sha256": "da6a28a8bf3f23ebd07fd977e1a16ace10ebfe8eafd69119901042ebca98cbda",
-      "bytes": 28786,
+      "sha256": "2b21607c39a529eb1eab4233c6b95628a08299cb114d73f1271e7c0d7bf7c0d8",
+      "bytes": 29425,
       "contentType": "text/markdown"
     }
   ],
