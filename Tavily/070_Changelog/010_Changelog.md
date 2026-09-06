@@ -18,6 +18,14 @@
       <li>
         See <a href="/documentation/best-practices/best-practices-search#by-domain">Best Practices for Search</a> for guidance on when to boost trusted domains vs. hard-filter to them.
       </li>
+
+      <li>
+        <b>Supported domain types:</b> plain domains and subdomains (e.g. <code>nytimes.com</code>, <code>cooking.nytimes.com</code>), with or without a protocol/<code>[www](http://www).</code> prefix. Wildcards, regex, and URLs with a path/query/fragment are not supported.
+      </li>
+
+      <li>
+        <b>Hard-filter matching:</b> under <code>include\_domains\_mode="filter"</code> and for <code>exclude\_domains</code>, listing a domain (e.g. <code>nytimes.com</code>) matches that domain and all its subdomains, while listing a subdomain (e.g. <code>cooking.nytimes.com</code>) matches only that exact host.
+      </li>
     </ul>
   </Accordion>
 
