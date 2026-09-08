@@ -45,6 +45,13 @@ paths:
           schema:
             type: string
           example: 123e4567-e89b-12d3-a456-426614174111
+        - name: include_usage
+          in: query
+          required: false
+          description: Whether to include credit usage information in the response.
+          schema:
+            type: boolean
+            default: false
       responses:
         '200':
           description: Research task is completed or failed.
@@ -214,6 +221,11 @@ components:
           type: integer
           description: Time in seconds it took to complete the request.
           example: 1.23
+        usage:
+          type: object
+          description: Credit usage details for the request.
+          example:
+            credits: 16
       required:
         - request_id
         - created_at
@@ -260,6 +272,11 @@ components:
           type: integer
           description: Time in seconds it took to complete the request.
           example: 1.23
+        usage:
+          type: object
+          description: Credit usage details for the request.
+          example:
+            credits: 16
       required:
         - request_id
         - status
