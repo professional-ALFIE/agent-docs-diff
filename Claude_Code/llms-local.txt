@@ -130,8 +130,8 @@
     020_Champion_kit.md — A playbook for engineers advocating Claude Code internally: what to share, how to answer questions, and how to grow adoption on your team.
 040_Configuration/
   010_Settings/
-    010_Settings_overview.md — Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places.
-    020_Settings_reference.md — Complete reference for every Claude Code settings.json key: where each one goes, its type and default, and a paste-ready example, with an index of every key.
+    010_Settings_files_and_precedence.md — Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places.
+    020_All_settings.md — Complete reference for every Claude Code settings.json key: where each one goes, its type and default, and a paste-ready example, with an index of every key.
     030_Example_settings_files.md — Realistic settings.json files for a developer, a team, and an organization: copy one, keep the keys you want, and change the values.
   020_Permissions_and_sandboxing/
     010_Permissions.md — Control what Claude Code can access and do with fine-grained permission rules, modes, and managed policies.
