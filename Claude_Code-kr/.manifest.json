@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-03T10:52:54.370Z",
+  "생성": "2026-09-08T21:08:26.662Z",
   "제품폴더": "Claude_Code-kr",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -41,8 +41,8 @@
       "경로": "010_시작하기/020_핵심_개념/030_.claude_디렉토리_탐색.md",
       "href": "/ko/claude-directory",
       "url": "https://code.claude.com/docs/ko/claude-directory.md",
-      "sha256": "b948f58bbdcb794daeba9a56b2b0a1ddbf285164d3bb929e9abd092a95f26c0c",
-      "bytes": 86739,
+      "sha256": "772887c136ae5901fe84a4dc5820f141ef401cc2c4802d3487f8477e4f0af0f6",
+      "bytes": 86899,
       "contentType": "text/markdown"
     },
     {

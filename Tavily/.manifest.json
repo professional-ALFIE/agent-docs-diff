@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-06T15:27:29.812Z",
+  "생성": "2026-09-08T21:08:56.503Z",
   "제품폴더": "Tavily",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -113,8 +113,8 @@
       "경로": "040_API_&_SDKs/030_Research_Endpoint/020_Get_Research_Task_Status.md",
       "href": "/documentation/api-reference/endpoint/research-get",
       "url": "https://docs.tavily.com/documentation/api-reference/endpoint/research-get.md",
-      "sha256": "351ea441c458cf7e91d310c0e658dec539193bfdb2cc0f492d270a8e7ea2cea4",
-      "bytes": 8747,
+      "sha256": "f6da4189da2adaea8cd15d97897cb26a5f40f1aac5198fee64f118bf43621cdd",
+      "bytes": 9262,
       "contentType": "text/markdown"
     },
     {

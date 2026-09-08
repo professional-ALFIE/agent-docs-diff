@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-04T20:45:05.430Z",
+  "생성": "2026-09-08T21:09:18.661Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -57,8 +57,8 @@
       "경로": "010_Overview/030_Foundations/030_Skills_&_Plugins.md",
       "href": "/codex/skills-and-plugins",
       "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
-      "sha256": "b8a8ce4eba1ed064c38848851744fb249e242971b5778800a6537c8ab7fa645a",
-      "bytes": 4885,
+      "sha256": "a4c6db0fc2e4279f51df5f60914e4bf5111c88a496fcae2f1850bbb3bc25a9e2",
+      "bytes": 4970,
       "contentType": "text/markdown"
     },
     {
@@ -265,8 +265,8 @@
       "경로": "020_Features/030_Capabilities/040_Plugins.md",
       "href": "/codex/plugins",
       "url": "https://learn.chatgpt.com/docs/plugins.md",
-      "sha256": "da35e1d58f1c4d65d5af08d665a2c9d759cac942369349cfef0847ca262afc9e",
-      "bytes": 12893,
+      "sha256": "badfc03d851bc1e1a8c41adcf58dcc8617967031777ef7d59d018c8d4e9f8968",
+      "bytes": 12986,
       "contentType": "text/markdown"
     },
     {
@@ -537,8 +537,8 @@
       "경로": "040_Developers/030_Extend_and_automate/020_Build_plugins.md",
       "href": "/codex/build-plugins",
       "url": "https://learn.chatgpt.com/docs/build-plugins.md",
-      "sha256": "b268976665274157ce4d0cd61e03fea7a1ac9740810fe7fd20e98ac7a15efa62",
-      "bytes": 4455,
+      "sha256": "86bef1d7309cea554612e98c4374cceb249d1e19141fe7748629cfb2d17bfcea",
+      "bytes": 4809,
       "contentType": "text/markdown"
     },
     {
@@ -1089,8 +1089,8 @@
       "경로": "060_Administration/060_Plugin_and_connector_controls/010_Plugin_controls.md",
       "href": "/codex/enterprise/apps-and-connectors",
       "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors.md",
-      "sha256": "dce0a53f726656a537a3c03f33218e9f983b13299f4d6c56b928faa7de524bba",
-      "bytes": 9520,
+      "sha256": "77f0e32254c75ebfc8fc50ea970551d0a9349bf7446880798348088cf1a9beb1",
+      "bytes": 9644,
       "contentType": "text/markdown"
     },
     {
