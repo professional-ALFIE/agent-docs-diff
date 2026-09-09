@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-08T21:09:18.661Z",
+  "생성": "2026-09-09T04:39:54.319Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -401,8 +401,8 @@
       "경로": "030_Configuration/030_Config_file/030_Config_Reference.md",
       "href": "/codex/config-file/config-reference",
       "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
-      "sha256": "40238928776d970ff9498d897a6ec0c4cdf54443cf5ca909418f9de97f21b3c9",
-      "bytes": 108804,
+      "sha256": "d2a36735e9218fabb0624b78efdc0a15795ac59dc07317e636700d34c9338c92",
+      "bytes": 110394,
       "contentType": "text/markdown"
     },
     {
@@ -993,8 +993,8 @@
       "경로": "060_Administration/040_Identity_and_authentication/010_Authentication_overview.md",
       "href": "/codex/auth",
       "url": "https://learn.chatgpt.com/docs/auth.md",
-      "sha256": "7e2d13f1428249e52b3775525d9acb75442dfd288004b36f8b6f1cc833d9e55a",
-      "bytes": 15490,
+      "sha256": "f7ef1640ebe29d285e8f971e45424b7127c2c3a70e2ed863a1f12064b1830c92",
+      "bytes": 15958,
       "contentType": "text/markdown"
     },
     {
@@ -1057,8 +1057,8 @@
       "경로": "060_Administration/050_Workspace_access,_policy,_and_models/050_Managed_configuration.md",
       "href": "/codex/enterprise/managed-configuration",
       "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration.md",
-      "sha256": "ce5d18da03b7ad6b951a98ab80e5b4b310f23acfd4651739668cba092543f84b",
-      "bytes": 32381,
+      "sha256": "1922be220ce64cb0f247ad0c1918f4e4fc17c0bf31ef1923417a0b239c0329c1",
+      "bytes": 33993,
       "contentType": "text/markdown"
     },
     {
