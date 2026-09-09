@@ -6,6 +6,8 @@
 
 # Get a Webhook
 
+> Returns a Webhook by id, including its status, subscribed events, target URL, and metadata. The signing `secret` is not returned.
+
 
 
 ## OpenAPI
@@ -29,6 +31,9 @@ paths:
       tags:
         - Webhooks
       summary: Get a Webhook
+      description: >-
+        Returns a Webhook by id, including its status, subscribed events, target
+        URL, and metadata. The signing `secret` is not returned.
       operationId: webhooks-get
       parameters:
         - name: id
