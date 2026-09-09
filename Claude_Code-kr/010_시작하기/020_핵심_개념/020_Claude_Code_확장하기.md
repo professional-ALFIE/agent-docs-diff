@@ -14,7 +14,7 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
   핵심 에이전트 루프가 어떻게 작동하는지 알아보려면 [Claude Code 작동 방식](/docs/ko/how-claude-code-works)을 참조하세요.
 </Note>
 
-**Claude Code를 처음 사용하시나요?** 프로젝트 규칙을 위해 [CLAUDE.md](/docs/ko/memory)로 시작하세요. 필요에 따라 다른 확장을 추가하세요.
+**Claude Code를 처음 사용하시나요?** 프로젝트 규칙을 위해 [CLAUDE.md](/docs/ko/memory)로 시작하세요. 그런 다음 [특정 트리거가 발생할 때](#build-your-setup-over-time) 다른 확장을 추가하세요.
 
 <h2 id="overview">
   개요
@@ -27,8 +27,9 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 * \*\*[Code intelligence](/docs/ko/tools-reference#lsp-tool-behavior)\*\*는 Claude를 언어 서버에 연결하여 기호 수준의 네비게이션 및 실시간 타입 오류를 제공합니다.
 * \*\*[MCP](/docs/ko/mcp)\*\*는 Claude를 외부 서비스 및 도구에 연결합니다.
 * \*\*[Subagents](/docs/ko/sub-agents)\*\*는 격리된 컨텍스트에서 자신의 루프를 실행하고 요약을 반환합니다.
-* \*\*[Agent teams](/docs/ko/agent-teams)\*\*는 공유 작업 및 피어 투 피어 메시징으로 여러 독립적인 세션을 조정합니다.
-* \*\*[Hooks](/docs/ko/hooks-guide)\*\*는 라이프사이클 이벤트에서 실행되며 스크립트, HTTP 요청, 프롬프트 또는 subagent를 실행할 수 있습니다.
+* \*\*[Dynamic workflows](/docs/ko/workflows)\*\*는 Claude가 작성한 스크립트에서 많은 subagents를 실행하고 하나의 결과를 반환합니다.
+* \*\*[Cross-session messaging](/docs/ko/cross-session-messaging)\*\*을 통해 Claude는 한 세션에서 다른 세션으로 메시지를 전달할 수 있습니다.
+* \*\*[Hooks](/docs/ko/hooks-guide)\*\*는 Claude Code가 라이프사이클 이벤트에 도달할 때 스크립트, HTTP 요청, MCP 도구 호출, 프롬프트 또는 subagent를 실행합니다.
 * **[Plugins](/docs/ko/plugins)** 및 \*\*[marketplaces](/docs/ko/plugin-marketplaces)\*\*는 이러한 기능을 패키징하고 배포합니다.
 
 [Skills](/docs/ko/skills)는 가장 유연한 확장입니다. Skill은 지식, 워크플로우 또는 지침을 포함하는 마크다운 파일입니다. `/deploy`와 같은 명령으로 skill을 호출하거나, Claude가 관련이 있을 때 자동으로 로드할 수 있습니다. Skill은 현재 대화에서 실행되거나 subagents를 통해 격리된 컨텍스트에서 실행될 수 있습니다.
@@ -39,16 +40,17 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 
 기능은 Claude가 모든 세션에서 보는 항상 켜진 컨텍스트부터 사용자나 Claude가 호출할 수 있는 온디맨드 기능, 특정 이벤트에서 실행되는 백그라운드 자동화까지 다양합니다. 아래 표는 사용 가능한 기능과 각 기능이 언제 적절한지 보여줍니다.
 
-| 기능                                                             | 수행 작업                                      | 사용 시기                            | 예시                                                    |
-| -------------------------------------------------------------- | ------------------------------------------ | -------------------------------- | ----------------------------------------------------- |
-| **CLAUDE.md**                                                  | 모든 대화에서 로드되는 지속적인 컨텍스트                     | 프로젝트 규칙, "항상 X를 수행" 규칙           | "npm이 아닌 pnpm을 사용하세요. 커밋하기 전에 테스트를 실행하세요."            |
-| **Skill**                                                      | Claude가 사용할 수 있는 지침, 지식 및 워크플로우            | 재사용 가능한 콘텐츠, 참조 문서, 반복 가능한 작업    | `/deploy`는 배포 체크리스트를 실행합니다. 엔드포인트 패턴이 있는 API 문서 skill |
-| **Subagent**                                                   | 요약된 결과를 반환하는 격리된 실행 컨텍스트                   | 컨텍스트 격리, 병렬 작업, 특화된 워커           | 많은 파일을 읽지만 주요 결과만 반환하는 연구 작업                          |
-| **[Agent teams](/docs/ko/agent-teams)**                             | 여러 독립적인 Claude Code 세션 조정                  | 병렬 연구, 새로운 기능 개발, 경쟁하는 가설로 디버깅   | 보안, 성능 및 테스트를 동시에 확인하는 검토자 생성                         |
-| **[Code intelligence](/docs/ko/tools-reference#lsp-tool-behavior)** | 언어 서버 네비게이션 및 진단                           | 타입 언어, grep이 느리거나 부정확한 대규모 코드베이스 | 전체 파일을 읽는 대신 기호의 정의로 이동                               |
-| **MCP**                                                        | 외부 서비스에 연결                                 | 외부 데이터 또는 작업                     | 데이터베이스 쿼리, Slack에 게시, 브라우저 제어                         |
-| **Hook**                                                       | 이벤트에서 실행되는 스크립트, HTTP 요청, 프롬프트 또는 subagent | 모든 일치하는 이벤트에서 실행되어야 하는 자동화       | 모든 파일 편집 후 ESLint 실행                                  |
-| **[Artifact](/docs/ko/artifacts)**                                  | 세션 출력을 비공개 대화형 웹 페이지로 게시                   | 터미널 텍스트가 아닌 시각적으로 보거나 공유하려는 출력   | Claude가 조사할 때 업데이트되는 인시던트 타임라인                        |
+| 기능                                                             | 수행 작업                                                 | 사용 시기                                       | 예시                                                      |
+| -------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------- |
+| **CLAUDE.md**                                                  | 모든 대화에서 로드되는 지속적인 컨텍스트                                | 프로젝트 규칙, "항상 X를 수행" 규칙                      | "npm이 아닌 pnpm을 사용하세요. 커밋하기 전에 테스트를 실행하세요."              |
+| **Skill**                                                      | Claude가 사용할 수 있는 지침, 지식 및 워크플로우                       | 재사용 가능한 콘텐츠, 참조 문서, 반복 가능한 작업               | `/deploy`는 배포 체크리스트를 실행합니다. 엔드포인트 패턴이 있는 API 문서 skill   |
+| **Subagent**                                                   | 요약된 결과를 반환하는 격리된 실행 컨텍스트                              | 컨텍스트 격리, 병렬 작업, 특화된 워커                      | 많은 파일을 읽지만 주요 결과만 반환하는 연구 작업                            |
+| **[동적 워크플로우](/docs/ko/workflows)**                                  | Claude가 작성하는 스크립트로 백그라운드에서 많은 subagent를 실행합니다.        | subagent 몇 개를 초과하는 작업, 또는 각 결과를 교차 검증하려는 결과 | 전체 코드베이스를 감사하고, 두 번째 에이전트 세트가 각 결과를 검증합니다.              |
+| **[세션 간 메시징](/docs/ko/cross-session-messaging)**                    | Claude가 한 세션의 메시지를 다른 세션으로 전달합니다.                     | 작업 중간에 서로의 결과가 필요한 직접 실행하는 세션               | 한 세션이 다른 세션에 자신이 만든 변경 사항이 다른 세션이 구축 중인 것을 깨뜨린다고 경고합니다. |
+| **[Code intelligence](/docs/ko/tools-reference#lsp-tool-behavior)** | 언어 서버 네비게이션 및 진단                                      | 타입 언어, grep이 느리거나 부정확한 대규모 코드베이스            | 전체 파일을 읽는 대신 기호의 정의로 이동                                 |
+| **MCP**                                                        | 외부 서비스에 연결                                            | 외부 데이터 또는 작업                                | 데이터베이스 쿼리, Slack에 게시, 브라우저 제어                           |
+| **Hook**                                                       | 이벤트에서 실행되는 스크립트, HTTP 요청, MCP 도구 호출, 프롬프트 또는 subagent | 모든 일치하는 이벤트에서 실행되어야 하는 자동화                  | 모든 파일 편집 후 ESLint 실행                                    |
+| **[Artifact](/docs/ko/artifacts)**                                  | 세션 출력을 비공개 대화형 웹 페이지로 게시                              | 터미널 텍스트가 아닌 시각적으로 보거나 공유하려는 출력              | Claude가 조사할 때 업데이트되는 인시던트 타임라인                          |
 
 \*\*[Plugins](/docs/ko/plugins)\*\*는 패키징 계층입니다. 플러그인은 skill, hook, subagent 및 MCP 서버를 단일 설치 가능한 단위로 번들합니다. 플러그인 skill은 네임스페이스됩니다(예: `/my-plugin:review`). 따라서 여러 플러그인이 공존할 수 있습니다. 여러 저장소에서 동일한 설정을 재사용하거나 \*\*[marketplace](/docs/ko/plugin-marketplaces)\*\*를 통해 다른 사용자에게 배포하려는 경우 플러그인을 사용하세요.
 
@@ -131,29 +133,17 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
     **Skill을 사용하세요.** Claude가 때때로만 필요한 콘텐츠, API 문서 또는 `/<name>`으로 트리거하는 배포 체크리스트.
   </Tab>
 
-  <Tab title="Subagent vs Agent team">
-    둘 다 작업을 병렬화하지만 아키텍처가 다릅니다.
+  <Tab title="Subagent vs Dynamic workflow">
+    둘 다 주 대화 외부에서 작업을 수행합니다. Subagent의 경우 Claude가 차례대로 다음에 실행할 내용을 결정합니다. 워크플로우에서는 스크립트가 결정합니다.
 
-    * **Subagents**는 세션 내에서 실행되고 결과를 주 컨텍스트에 보고합니다.
-    * **Agent teams**는 서로 통신하는 독립적인 Claude Code 세션입니다.
+    * **Subagents**는 Claude가 생성하는 워커로, 각각 대화를 생성한 것에 요약을 반환합니다.
+    * \*\*[동적 워크플로우](/docs/ko/workflows)\*\*는 Claude가 작성하는 스크립트로 백그라운드에서 많은 subagent를 실행하고 하나의 결과를 반환합니다.
 
-    | 측면        | Subagent                    | Agent team                |
-    | --------- | --------------------------- | ------------------------- |
-    | **컨텍스트**  | 자신의 컨텍스트 윈도우; 결과는 호출자에게 반환됨 | 자신의 컨텍스트 윈도우; 완전히 독립적     |
-    | **통신**    | 주 에이전트에게만 결과 보고             | 팀원이 서로 직접 메시지             |
-    | **조정**    | 주 에이전트가 모든 작업 관리            | 공유 작업 목록과 자체 조정           |
-    | **최적 용도** | 결과만 중요한 집중된 작업              | 논의 및 협력이 필요한 복잡한 작업       |
-    | **토큰 비용** | 낮음: 결과가 주 컨텍스트로 요약됨         | 높음: 각 팀원은 별도의 Claude 인스턴스 |
+    **빠르고 집중된 워커가 필요할 때 subagent를 사용하세요.** 질문을 연구하고, 주장을 확인하고, 파일을 검토하세요. Subagent는 작업을 수행하고 요약을 반환하므로 주 대화는 깔끔하게 유지됩니다. Claude가 생성할 때 이름을 지정한 Subagent는 [서로 메시지를 보낼](/docs/ko/sub-agents#what-loads-at-startup) 수도 있습니다.
 
-    **빠르고 집중된 워커가 필요할 때 subagent를 사용하세요.** 질문을 연구하고, 주장을 확인하고, 파일을 검토하세요. Subagent는 작업을 수행하고 요약을 반환합니다. 주 대화는 깔끔하게 유지됩니다.
+    **작업이 [subagent 몇 개를 초과](/docs/ko/workflows#when-to-use-a-workflow)하거나 결과를 보기 전에 교차 검증하려는 경우 동적 워크플로우를 사용하세요.** 예를 들어 코드베이스 전체 감사, 대규모 마이그레이션, 또는 여러 각도에서 작성된 계획. 시작하려면 [프롬프트에서 워크플로우를 요청하세요](/docs/ko/workflows#ask-for-a-workflow-in-your-prompt).
 
-    **팀원이 결과를 공유하고, 서로 도전하고, 독립적으로 조정해야 할 때 agent team을 사용하세요.** Agent team은 경쟁하는 가설이 있는 연구, 병렬 코드 검토, 각 팀원이 별도의 부분을 소유하는 새로운 기능 개발에 최적입니다.
-
-    **전환점:** 병렬 subagent를 실행하지만 컨텍스트 제한에 도달하거나, subagent가 서로 통신해야 할 경우, agent team이 자연스러운 다음 단계입니다.
-
-    <Note>
-      Agent team은 실험적이며 기본적으로 비활성화됩니다. 설정 및 현재 제한 사항은 [agent teams](/docs/ko/agent-teams)를 참조하세요.
-    </Note>
+    **한 세션의 결과를 다른 세션으로 전달하려면**, 첫 번째 세션의 Claude에게 전송하도록 요청하세요. Claude는 [세션 간 메시징](/docs/ko/cross-session-messaging)으로 전달합니다. [병렬로 에이전트 실행](/docs/ko/agents)은 한 번에 여러 Claude를 실행하는 다른 방법을 비교하며, 나중에 확인하기 위해 넘기는 세션도 포함합니다.
   </Tab>
 
   <Tab title="MCP vs Skill">
@@ -170,8 +160,6 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
     **MCP**는 Claude에게 외부 시스템과 상호 작용할 수 있는 능력을 제공합니다. MCP 없이는 Claude가 데이터베이스를 쿼리하거나 Slack에 게시할 수 없습니다.
 
     **Skill**은 Claude에게 이러한 도구를 효과적으로 사용하는 방법에 대한 지식을 제공하며, `/<name>`으로 트리거할 수 있는 워크플로우도 포함합니다. Skill에는 팀의 데이터베이스 스키마 및 쿼리 패턴, 또는 팀의 메시지 형식 규칙이 있는 `/post-to-slack` 워크플로우가 포함될 수 있습니다.
-
-    예: MCP 서버는 Claude를 데이터베이스에 연결합니다. Skill은 Claude에게 데이터 모델, 일반적인 쿼리 패턴, 다양한 작업에 사용할 테이블을 가르칩니다.
   </Tab>
 
   <Tab title="Hook vs Skill">
@@ -179,7 +167,7 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 
     | 측면          | Hook                                                                   | Skill                                        |
     | ----------- | ---------------------------------------------------------------------- | -------------------------------------------- |
-    | **실행**      | 셸 명령, HTTP 요청, LLM 프롬프트 또는 subagent                                    | Claude가 읽고 따르는 지침                            |
+    | **실행**      | 셸 명령, HTTP 요청, MCP 도구 호출, LLM 프롬프트 또는 subagent                         | Claude가 읽고 따르는 지침                            |
     | **트리거**     | [라이프사이클 이벤트](/docs/ko/hooks#hook-events) 예: `PostToolUse` 또는 `SessionStart` | `/<name>`을 입력하거나, Claude가 설명을 작업과 일치시킬 때     |
     | **결정론성**    | 이벤트에서 항상 실행; 트리거가 보장됨                                                  | Claude가 지침을 해석; 결과는 다양할 수 있음                 |
     | **컨텍스트 비용** | 0, hook이 출력을 반환하지 않는 한                                                 | 설명은 모든 세션에 로드; 전체 콘텐츠는 사용 시 로드               |
@@ -202,7 +190,7 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 기능은 여러 수준에서 정의될 수 있습니다. 사용자 전체, 프로젝트별, 플러그인을 통해, 또는 관리 정책을 통해. 또한 CLAUDE.md 파일을 하위 디렉토리에 중첩하거나 monorepo의 특정 패키지에 skill을 배치할 수 있습니다. 동일한 기능이 여러 수준에 존재할 때, 계층화 방식은 다음과 같습니다.
 
 * **CLAUDE.md 파일**은 추가적입니다. 모든 수준이 동시에 Claude의 컨텍스트에 콘텐츠를 제공합니다. 작업 디렉토리 및 위의 파일은 시작 시 로드되고, 하위 디렉토리는 작업할 때 로드됩니다. 지침이 충돌할 때, Claude는 판단을 사용하여 조정하며, 더 구체적인 지침이 일반적으로 우선합니다. [CLAUDE.md 파일이 로드되는 방식](/docs/ko/memory#how-claude-md-files-load)을 참조하세요.
-* **Skill과 subagent**는 이름으로 재정의됩니다. 동일한 이름이 여러 수준에 존재할 때, 우선순위에 따라 하나의 정의가 승리합니다(skill의 경우 관리 > 사용자 > 프로젝트; subagent의 경우 관리 > CLI 플래그 > 프로젝트 > 사용자 > 플러그인). 플러그인 skill은 [네임스페이스됩니다](/docs/ko/plugins#add-skills-to-your-plugin). 충돌을 피하기 위해. [Skill 검색](/docs/ko/skills#where-skills-live) 및 [subagent 범위](/docs/ko/sub-agents#choose-the-subagent-scope)를 참조하세요.
+* **Skill과 subagent**는 이름으로 재정의됩니다. 동일한 이름이 여러 수준에 존재할 때, 우선순위에 따라 하나의 정의가 승리합니다(skill의 경우 관리 > 사용자 > 프로젝트; subagent의 경우 관리 > CLI 플래그 > 프로젝트 > 사용자 > 플러그인). 플러그인 skill은 [네임스페이스됩니다](/docs/ko/plugins#add-skills-to-your-plugin). 충돌을 피하기 위해. [Skill 검색](/docs/ko/skills#resolve-skills-that-share-a-name) 및 [subagent 범위](/docs/ko/sub-agents#choose-the-subagent-scope)를 참조하세요.
 * **MCP 서버**는 이름으로 재정의됩니다. 로컬 > 프로젝트 > 사용자. [MCP 범위](/docs/ko/mcp#scope-hierarchy-and-precedence)를 참조하세요.
 * **Hooks**는 병합됩니다. 모든 등록된 hook은 소스에 관계없이 일치하는 이벤트에 대해 실행됩니다. [Hooks](/docs/ko/hooks)를 참조하세요.
 
@@ -233,16 +221,16 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 
 각 기능은 다양한 로딩 전략과 컨텍스트 비용을 가집니다.
 
-| 기능                    | 로드 시기          | 로드되는 내용                              | 컨텍스트 비용                     |
-| --------------------- | -------------- | ------------------------------------ | --------------------------- |
-| **CLAUDE.md**         | 세션 시작          | 전체 콘텐츠                               | 모든 요청                       |
-| **Skills**            | 세션 시작 + 사용 시   | 시작 시 설명, 사용 시 전체 콘텐츠                 | 낮음(모든 요청마다 설명)\*            |
-| **MCP 서버**            | 세션 시작          | 도구 이름; 필요 시 전체 스키마                   | 도구 사용 시까지 낮음                |
-| **Code intelligence** | 파일 편집 후 및 온디맨드 | 각 파일 편집 후 진단; 기호 조회 시 정의, 참조 및 유형 정보 | 낮음; 다른 곳에서 파일 읽기 감소         |
-| **Subagents**         | 생성 시           | 지정된 skill이 있는 신선한 컨텍스트               | 주 세션에서 격리됨                  |
-| **Hooks**             | 트리거 시          | 없음(외부에서 실행)                          | 0, hook이 추가 컨텍스트를 반환하지 않는 한 |
+| 기능                    | 로드 시기          | 로드되는 내용                                                                              | 컨텍스트 비용                     |
+| --------------------- | -------------- | ------------------------------------------------------------------------------------ | --------------------------- |
+| **CLAUDE.md**         | 세션 시작          | 전체 콘텐츠                                                                               | 모든 요청                       |
+| **Skills**            | 세션 시작 + 사용 시   | 시작 시 설명, 사용 시 전체 콘텐츠                                                                 | 낮음(모든 요청마다 설명)\*            |
+| **MCP 서버**            | 세션 시작          | 도구 이름; 필요 시 전체 스키마                                                                   | 도구 사용 시까지 낮음                |
+| **Code intelligence** | 파일 편집 후 및 온디맨드 | 각 파일 편집 후 진단; 기호 조회 시 정의, 참조 및 유형 정보                                                 | 낮음; 다른 곳에서 파일 읽기 감소         |
+| **Subagents**         | 생성 시           | 지정된 skill이 있는 신선한 컨텍스트, 또는 [포크](/docs/ko/sub-agents#fork-the-current-conversation)의 부모 대화 | 주 세션에서 격리됨                  |
+| **Hooks**             | 트리거 시          | 없음(외부에서 실행)                                                                          | 0, hook이 추가 컨텍스트를 반환하지 않는 한 |
 
-\*기본적으로 skill 설명은 세션 시작 시 로드되므로 Claude가 사용할 시기를 결정할 수 있습니다. Skill의 frontmatter에서 `disable-model-invocation: true`를 설정하여 수동으로 호출할 때까지 Claude에서 완전히 숨깁니다. 이는 skill의 컨텍스트 비용을 0으로 줄입니다. 작성하지 않은 skill의 경우, 파일을 편집하지 않고도 동일한 작업을 수행하도록 설정에서 [`skillOverrides`](/docs/ko/skills#override-skill-visibility-from-settings)를 설정하세요.
+\*기본적으로 skill 설명은 세션 시작 시 로드되므로 Claude가 사용할 시기를 결정할 수 있습니다. Skill의 frontmatter에서 `disable-model-invocation: true`를 설정하여 수동으로 호출할 때까지 Claude에서 완전히 숨깁니다. 작성하지 않은 skill의 경우, 파일을 편집하지 않고도 동일한 작업을 수행하도록 설정에서 [`skillOverrides`](/docs/ko/skills#override-skill-visibility-from-settings)를 설정하세요.
 
 <h3 id="understand-how-features-load">
   기능이 어떻게 로드되는지 이해하기
@@ -250,7 +238,9 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 
 각 기능은 세션의 다양한 지점에서 로드됩니다. 아래 탭은 각 기능이 언제 로드되고 무엇이 컨텍스트에 들어가는지 설명합니다.
 
-<img src="https://mintcdn.com/claude-code/ikqp3_70mqIahteV/images/context-loading.svg?fit=max&auto=format&n=ikqp3_70mqIahteV&q=85&s=aab139e750494a237ae2e0c8f9139b0a" alt="컨텍스트 로딩: CLAUDE.md는 세션 시작 시 로드되고 모든 요청에 유지됩니다. MCP 도구 이름은 시작 시 로드되고 전체 스키마는 사용 시까지 연기됩니다. Skill은 시작 시 설명을 로드하고 호출 시 전체 콘텐츠를 로드합니다. Subagent는 격리된 컨텍스트를 받습니다. Hook은 외부에서 실행됩니다." width="720" height="382" data-path="images/context-loading.svg" />
+<img src="https://mintcdn.com/claude-code/ikqp3_70mqIahteV/images/context-loading.svg?fit=max&auto=format&n=ikqp3_70mqIahteV&q=85&s=aab139e750494a237ae2e0c8f9139b0a" className="dark:hidden" alt="컨텍스트 로딩: CLAUDE.md는 세션 시작 시 로드되고 모든 요청에 유지됩니다. MCP 도구 이름은 시작 시 로드되고 전체 스키마는 사용 시까지 연기됩니다. Skill은 시작 시 설명을 로드하고 호출 시 전체 콘텐츠를 로드합니다. Subagent는 격리된 컨텍스트를 받습니다. Hook은 외부에서 실행됩니다." width="720" height="382" data-path="images/context-loading.svg" />
+
+<img src="https://mintcdn.com/claude-code/_xqph1dUOslCOwsj/images/context-loading-dark.svg?fit=max&auto=format&n=_xqph1dUOslCOwsj&q=85&s=b274089ef9612d9c760bca9838557626" className="hidden dark:block" alt="컨텍스트 로딩: CLAUDE.md는 세션 시작 시 로드되고 모든 요청에 유지됩니다. MCP 도구 이름은 시작 시 로드되고 전체 스키마는 사용 시까지 연기됩니다. Skill은 시작 시 설명을 로드하고 호출 시 전체 콘텐츠를 로드합니다. Subagent는 격리된 컨텍스트를 받습니다. Hook은 외부에서 실행됩니다." width="720" height="382" data-path="images/context-loading-dark.svg" />
 
 <Tabs>
   <Tab title="CLAUDE.md">
@@ -260,11 +250,11 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 
     **상속:** Claude는 작업 디렉토리에서 루트까지 CLAUDE.md 파일을 읽고, 해당 파일에 접근할 때 하위 디렉토리에서 중첩된 파일을 검색합니다. 자세한 내용은 [CLAUDE.md 파일이 로드되는 방식](/docs/ko/memory#how-claude-md-files-load)을 참조하세요.
 
-    <Tip>CLAUDE.md를 200줄 이하로 유지하세요. 참조 자료를 skill로 이동하면 온디맨드로 로드됩니다.</Tip>
+    <Tip>CLAUDE.md를 200줄 이하로 유지하세요. 참조 자료를 skill로 이동하면 온디맨드로 로드됩니다. [체크인된 CLAUDE.md에 대한 트림 제안을 받으려면](/docs/ko/memory#my-claude-md-is-too-large) `/doctor`를 실행하세요.</Tip>
   </Tab>
 
   <Tab title="Skills">
-    Skill은 Claude의 도구 키트에 있는 추가 기능입니다. 참조 자료(API 스타일 가이드처럼) 또는 `/<name>`으로 트리거하는 호출 가능한 워크플로우(배포처럼)일 수 있습니다. Claude Code는 기본적으로 작동하는 `/code-review`, `/batch`, `/debug`와 같은 [번들 skill](/docs/ko/commands)과 함께 제공됩니다. 자신의 것을 만들 수도 있습니다. Claude는 적절할 때 skill을 사용하거나 직접 호출할 수 있습니다.
+    Skill은 Claude의 도구 키트에 있는 추가 기능입니다. 참조 자료(API 스타일 가이드처럼) 또는 `/<name>`으로 트리거하는 호출 가능한 워크플로우(배포처럼)일 수 있습니다. Claude Code는 기본적으로 작동하는 `/code-review`, `/batch`, `/debug`와 같은 [번들 skill](/docs/ko/commands)과 함께 제공됩니다. 자신의 것을 만들 수도 있습니다.
 
     **시기:** Skill의 구성에 따라 다릅니다. 기본적으로 설명은 세션 시작 시 로드되고 전체 콘텐츠는 사용 시 로드됩니다. 사용자 전용 skill(`disable-model-invocation: true`)의 경우, 호출할 때까지 아무것도 로드되지 않습니다.
 
@@ -282,11 +272,11 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
   <Tab title="MCP servers">
     **시기:** 세션 시작.
 
-    **로드되는 내용:** 연결된 서버의 도구 이름. 전체 JSON 스키마는 Claude가 특정 도구가 필요할 때까지 연기됩니다.
+    **로드되는 내용:** 연결된 서버의 도구 이름 및 서버 지침. 전체 JSON 스키마는 Claude가 특정 도구가 필요할 때까지 연기됩니다.
 
     **컨텍스트 비용:** [도구 검색](/docs/ko/mcp#scale-with-mcp-tool-search)은 기본적으로 활성화되므로, 유휴 MCP 도구는 최소한의 컨텍스트를 소비합니다.
 
-    <Tip>`/mcp`를 실행하여 연결 상태와 서버당 토큰 비용을 확인하세요. Claude Code는 서버가 끊어지면 [원격 서버에 자동으로 다시 연결](/docs/ko/mcp#automatic-reconnection)되며, 적극적으로 사용하지 않는 서버를 연결 해제할 수 있습니다.</Tip>
+    <Tip>`/mcp`를 실행하여 각 서버의 연결 상태를 확인하세요. `/context all`을 실행하여 각 로드된 MCP 도구가 사용하는 토큰 수를 확인하세요. Claude Code는 서버가 끊어지면 [원격 서버에 자동으로 다시 연결](/docs/ko/mcp#automatic-reconnection)되며, 적극적으로 사용하지 않는 서버를 연결 해제할 수 있습니다.</Tip>
   </Tab>
 
   <Tab title="Code intelligence">
@@ -304,18 +294,20 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
 
     **로드되는 내용:** 신선한, 격리된 컨텍스트 포함:
 
-    * 에이전트 자신의 시스템 프롬프트, 전체 Claude Code 시스템 프롬프트가 아님
+    * 에이전트 자신의 시스템 프롬프트, Claude Code 시스템 프롬프트가 아님
     * 에이전트의 `skills:` 필드에 나열된 skill의 전체 콘텐츠
     * CLAUDE.md 및 git 상태, 내장 Explore 및 Plan 에이전트 [둘 다 생략](/docs/ko/sub-agents#what-loads-at-startup) 제외
     * 리드 에이전트가 프롬프트에서 전달하는 모든 컨텍스트
 
-    **컨텍스트 비용:** 주 세션에서 격리됨. Subagent는 대화 기록이나 호출된 skill을 상속하지 않습니다.
+    [포크](/docs/ko/sub-agents#fork-the-current-conversation)의 경우, Claude Code는 부모의 대화 지금까지, 시스템 프롬프트 및 도구를 로드합니다.
+
+    **컨텍스트 비용:** 주 세션에서 격리됨.
 
     <Tip>전체 대화 컨텍스트가 필요하지 않은 작업에 subagent를 사용하세요. 격리는 주 세션이 부풀어지는 것을 방지합니다.</Tip>
   </Tab>
 
   <Tab title="Hooks">
-    **시기:** 트리거 시. Hook은 도구 실행, 세션 경계, 프롬프트 제출, 권한 요청 및 압축과 같은 특정 라이프사이클 이벤트에서 실행됩니다. 전체 목록은 [Hooks](/docs/ko/hooks)를 참조하세요.
+    **시기:** 트리거 시. Claude Code는 도구 실행, 세션 경계, 프롬프트 제출, 권한 요청 및 압축과 같은 특정 라이프사이클 이벤트에서 hook을 실행합니다. 전체 목록은 [Hooks](/docs/ko/hooks)를 참조하세요.
 
     **로드되는 내용:** 기본적으로 없음. Hook은 외부에서 실행됩니다.
 
@@ -344,8 +336,12 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
     격리된 컨텍스트로 작업 오프로드
   </Card>
 
-  <Card title="Agent teams" icon="network" href="/docs/ko/agent-teams">
-    병렬로 작동하는 여러 세션 조정
+  <Card title="Dynamic workflows" icon="network" href="/docs/ko/workflows">
+    한 스크립트에서 많은 서브에이전트 실행
+  </Card>
+
+  <Card title="Cross-session messaging" icon="terminal" href="/docs/ko/cross-session-messaging">
+    Claude가 다른 세션에 메시지를 보낼 수 있도록 허용
   </Card>
 
   <Card title="MCP" icon="plug" href="/docs/ko/mcp">
@@ -353,7 +349,7 @@ Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 �
   </Card>
 
   <Card title="Hooks" icon="bolt" href="/docs/ko/hooks-guide">
-    Hook으로 워크플로우 자동화
+    Hook으로 작업 자동화
   </Card>
 
   <Card title="Plugins" icon="puzzle-piece" href="/docs/ko/plugins">
