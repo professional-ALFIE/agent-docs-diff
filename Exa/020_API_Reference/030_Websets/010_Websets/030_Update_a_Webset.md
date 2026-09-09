@@ -6,6 +6,8 @@
 
 # Update a Webset
 
+> Updates the `title` or `metadata` of a Webset. Searches, imports, and enrichments are managed through their own endpoints.
+
 
 
 ## OpenAPI
@@ -29,6 +31,9 @@ paths:
       tags:
         - Websets
       summary: Update a Webset
+      description: >-
+        Updates the `title` or `metadata` of a Webset. Searches, imports, and
+        enrichments are managed through their own endpoints.
       operationId: websets-update
       parameters:
         - name: id
