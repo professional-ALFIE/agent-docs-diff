@@ -106,7 +106,7 @@ Google Cloud 자격증명이 있고 Google Cloud의 Agent Platform을 통해 Cla
   </Step>
 
   <Step title="Claude Code를 시작하고 Google Cloud의 Agent Platform 선택">
-    `claude`를 실행합니다. 로그인 프롬프트에서 **3rd-party platform**을 선택한 다음 **Google Vertex AI**를 선택합니다. 이는 로그인 프롬프트가 Google Cloud의 Agent Platform에 대해 여전히 사용하는 레이블입니다.
+    `claude`를 실행합니다. 로그인 프롬프트에서 **3rd-party platform**을 선택한 다음 **Google Vertex AI**를 선택합니다. 이는 로그인 프롬프트가 Google Cloud의 Agent Platform에 대해 여전히 사용하는 레이블입니다. 이미 로그인한 경우 `/login`을 실행하여 동일한 메뉴를 엽니다.
   </Step>
 
   <Step title="마법사 프롬프트 따르기">
@@ -136,7 +136,7 @@ Google Cloud의 Agent Platform을 마법사 대신 환경 변수를 통해 구�
   1. Agent Platform API 활성화
 </h3>
 
-GCP 프로젝트에서 Google Cloud의 Agent Platform API를 활성화합니다:
+GCP 프로젝트에서 Google Cloud의 Agent Platform API를 활성화합니다. 여기 및 아래 구성 단계에서 `YOUR-PROJECT-ID`를 GCP 프로젝트 ID로 바꾸십시오:
 
 ```bash theme={null}
 # 프로젝트 ID 설정
@@ -165,17 +165,17 @@ Claude Code는 표준 Google Cloud 인증을 사용합니다.
 
 자세한 내용은 [Google Cloud 인증 설명서](https://cloud.google.com/docs/authentication)를 참조하십시오.
 
-Claude Code v2.1.121 이상은 동일한 Application Default Credentials 체인을 통해 [X.509 인증서 기반 Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation-with-x509-certificates)을 지원합니다. `GOOGLE_APPLICATION_CREDENTIALS`를 자격증명 구성 파일의 경로로 설정합니다.
+Claude Code는 동일한 Application Default Credentials 체인을 통해 [X.509 인증서 기반 Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation-with-x509-certificates)을 지원합니다. `GOOGLE_APPLICATION_CREDENTIALS`를 자격증명 구성 파일의 경로로 설정합니다.
 
 <Note>
-  Claude Code는 Google Cloud의 Agent Platform 요청에 대해 `ANTHROPIC_VERTEX_PROJECT_ID`를 프로젝트 ID로 사용합니다. `GCLOUD_PROJECT` 및 `GOOGLE_CLOUD_PROJECT` 환경 변수와 `GOOGLE_APPLICATION_CREDENTIALS`에서 참조하는 자격증명 파일이 이를 우선합니다. 이 중 어느 것도 설정되지 않으면 프로젝트 ID는 `gcloud` 구성 또는 연결된 서비스 계정에서 확인됩니다.
+  Claude Code는 `GCLOUD_PROJECT`, `GOOGLE_CLOUD_PROJECT` 또는 `GOOGLE_APPLICATION_CREDENTIALS`에서 참조하는 자격증명 파일이 다른 프로젝트를 포함하더라도 Google Cloud의 Agent Platform 요청을 `ANTHROPIC_VERTEX_PROJECT_ID`의 프로젝트로 주소 지정합니다.
 </Note>
 
 <h4 id="advanced-credential-configuration">
   고급 자격증명 구성
 </h4>
 
-Claude Code는 `gcpAuthRefresh` 설정을 통해 GCP에 대한 자동 자격증명 새로 고침을 지원합니다. Claude Code가 GCP 자격증명이 만료되었거나 로드할 수 없음을 감지하면 요청을 다시 시도하기 전에 구성된 명령을 실행하여 새 자격증명을 얻습니다.
+Claude Code는 `gcpAuthRefresh` 설정을 통해 GCP에 대한 자동 자격증명 새로 고침을 지원합니다. Claude Code [설정 파일](/docs/ko/settings)(예: `~/.claude/settings.json`)에 추가합니다. Claude Code가 GCP 자격증명이 만료되었거나 로드할 수 없음을 감지하면 요청을 다시 시도하기 전에 구성된 명령을 실행하여 새 자격증명을 얻습니다.
 
 ```json theme={null}
 {
@@ -186,7 +186,11 @@ Claude Code는 `gcpAuthRefresh` 설정을 통해 GCP에 대한 자동 자격증�
 }
 ```
 
-명령의 출력은 사용자에게 표시되지만 대화형 입력은 지원되지 않습니다. 이는 CLI가 URL을 표시하고 브라우저에서 인증을 완료하는 브라우저 기반 인증 흐름에 적합합니다. 인증이 완료되지 않으면 새로 고침 명령은 3분 후에 시간 초과됩니다. `.claude/settings.json`과 같은 프로젝트 설정에서 `gcpAuthRefresh`를 설정하면 워크스페이스 신뢰 프롬프트를 수락한 후에만 명령이 실행됩니다.
+명령을 실행하기 전에 Claude Code는 현재 자격증명으로 액세스 토큰을 요청하여 실제로 만료되었는지 확인하고 여전히 작동할 때 명령을 건너뜁니다.
+
+확인이 5초 이내에 완료되지 않으면 Claude Code도 명령을 건너뛰고 요청이 자격증명 오류로 실패한 후에만 실행합니다. v2.1.261 이전에는 시간 초과된 확인이 만료된 자격증명으로 계산되었으므로 자격증명이 여전히 유효했음에도 불구하고 명령이 시작 시 브라우저를 열 수 있었습니다.
+
+Claude Code는 명령의 출력을 표시하지만 명령에 대화형 입력을 보낼 수 없습니다. 이는 CLI가 URL을 표시하고 브라우저에서 인증을 완료하는 브라우저 기반 인증 흐름에 적합합니다. 인증이 완료되지 않으면 새로 고침 명령은 3분 후에 시간 초과됩니다. `.claude/settings.json`과 같은 프로젝트 설정에서 `gcpAuthRefresh`를 설정하면 Claude Code는 [설정 파일의 훅과 동일한 워크스페이스 신뢰 규칙](/docs/ko/permissions#what-runs-before-you-trust-a-folder)에서 실행되며, 여기에는 신뢰한 적이 없는 폴더의 `-p` 세션이 포함됩니다.
 
 <h3 id="4-configure-claude-code">
   4. Claude Code 구성
@@ -203,12 +207,6 @@ export ANTHROPIC_VERTEX_PROJECT_ID=YOUR-PROJECT-ID
 # 선택사항: 사용자 정의 엔드포인트 또는 게이트웨이를 위해 Agent Platform 엔드포인트 URL 재정의
 # export ANTHROPIC_VERTEX_BASE_URL=https://aiplatform.googleapis.com
 
-# 선택사항: 필요한 경우 prompt caching 비활성화
-export DISABLE_PROMPT_CACHING=1
-
-# 선택사항: 기본 5분 대신 1시간 prompt cache TTL 요청
-export ENABLE_PROMPT_CACHING_1H=1
-
 # CLOUD_ML_REGION=global일 때, 전역 엔드포인트를 지원하지 않는 모델의 지역 재정의
 export VERTEX_REGION_CLAUDE_HAIKU_4_5=us-east5
 export VERTEX_REGION_CLAUDE_4_6_SONNET=europe-west1
@@ -216,9 +214,21 @@ export VERTEX_REGION_CLAUDE_4_6_SONNET=europe-west1
 
 대부분의 모델 버전에는 해당하는 `VERTEX_REGION_CLAUDE_*` 변수가 있습니다. 전체 목록은 [환경 변수 참조](/docs/ko/env-vars)를 참조하십시오. [Google Cloud의 Agent Platform Model Garden](https://console.cloud.google.com/vertex-ai/model-garden)에서 어떤 모델이 전역 엔드포인트를 지원하는지 또는 지역 전용인지 확인하십시오.
 
-[Prompt caching](/docs/ko/prompt-caching)은 자동으로 활성화됩니다. 이를 비활성화하려면 `DISABLE_PROMPT_CACHING=1`을 설정하십시오. 기본 5분 대신 1시간 캐시 TTL을 요청하려면 `ENABLE_PROMPT_CACHING_1H=1`을 설정하십시오. 1시간 TTL을 사용한 캐시 쓰기는 더 높은 요금으로 청구됩니다. 높은 속도 제한을 위해 Google Cloud 지원팀에 문의하십시오. Google Cloud의 Agent Platform을 사용할 때 `/logout` 명령은 Google Cloud 자격증명을 통해 인증이 처리되므로 사용할 수 없습니다.
+지역 값이 지역 또는 위치 이름처럼 보이지 않으면 Claude Code는 이를 설정되지 않은 것으로 취급합니다. 예를 들어 Claude Code는 슬래시, 점 또는 공백을 포함하는 값을 설정되지 않은 것으로 취급합니다. Claude Code는 각 변수에 대해 다른 소스로 폴백합니다:
 
-Claude Code는 [MCP tool search](/docs/ko/mcp#scale-with-mcp-tool-search)를 Google Cloud의 Agent Platform에서 기본적으로 비활성화합니다. 따라서 모든 MCP 도구 정의는 미리 로드됩니다. Google Cloud의 Agent Platform은 Claude Sonnet 4.5 이상 및 Claude Opus 4.5 이상에 대해 도구 검색을 지원합니다. 이러한 모델에서 도구 검색을 활성화하려면 `ENABLE_TOOL_SEARCH=true`를 설정하십시오. Google Cloud의 Agent Platform의 이전 모델은 필요한 베타 헤더를 허용하지 않으며, 이러한 모델에서 도구 검색을 활성화하면 요청이 실패합니다.
+* `VERTEX_REGION_CLAUDE_*`: Claude Code는 `CLOUD_ML_REGION`으로 폴백합니다.
+* `CLOUD_ML_REGION`: Claude Code는 `us-east5`로 폴백합니다.
+
+[Prompt caching](/docs/ko/prompt-caching)은 자동으로 활성화됩니다. 이를 비활성화하려면 `DISABLE_PROMPT_CACHING=1`을 설정하십시오. 기본 5분 대신 1시간 캐시 TTL을 요청하려면 `ENABLE_PROMPT_CACHING_1H=1`을 설정하십시오. 1시간 TTL을 사용한 캐시 쓰기는 더 높은 요금으로 청구됩니다. 주 대화와 Claude Code가 외부에서 수행하는 요청에 대해 다른 TTL을 설정하려면 [TTL을 직접 선택](/docs/ko/prompt-caching#choose-the-ttl-yourself)하십시오.
+
+속도 제한을 높이려면 Google Cloud 지원팀에 문의하십시오. Google Cloud의 Agent Platform을 사용할 때 인증이 Google Cloud 자격증명을 통해 처리되므로 `/logout` 명령을 사용할 수 없습니다.
+
+Claude Code는 모델 생성에 따라 [MCP 도구 검색](/docs/ko/mcp#scale-with-mcp-tool-search)과 사전 로드 사이에서 결정합니다:
+
+* **Claude Opus 4.5, Sonnet 4.5, Haiku 4.5 및 이후 버전**: Claude Code는 기본적으로 도구 검색을 활성화합니다.
+* **이전 모델(모든 Claude 3.x 모델 포함)**: Claude Code는 필요한 베타 헤더를 거부하는 Agent Platform 서빙 스택 때문에 MCP 도구 정의를 사전 로드합니다. `ENABLE_TOOL_SEARCH=true`를 설정해도 이를 재정의하지 않습니다.
+
+모든 모델에서 도구 검색을 비활성화하려면 `ENABLE_TOOL_SEARCH=false`를 설정하십시오. v2.1.221 이전에는 Claude Code가 `ENABLE_TOOL_SEARCH=true`를 설정하지 않는 한 Google Cloud의 Agent Platform의 모든 모델에 대해 도구 검색을 비활성화했습니다.
 
 <h3 id="5-pin-model-versions">
   5. 모델 버전 고정
@@ -230,7 +240,7 @@ Claude Code는 [MCP tool search](/docs/ko/mcp#scale-with-mcp-tool-search)를 Goo
 
 이러한 환경 변수를 특정 Google Cloud의 Agent Platform 모델 ID로 설정합니다.
 
-`ANTHROPIC_DEFAULT_OPUS_MODEL`이 없으면 Google Cloud의 Agent Platform의 `opus` 별칭이 Opus 4.8로 확인되고, `ANTHROPIC_DEFAULT_SONNET_MODEL`이 없으면 `sonnet` 별칭이 Sonnet 4.5로 확인됩니다. 이 예제는 각 별칭을 특정 버전으로 고정합니다:
+`ANTHROPIC_DEFAULT_OPUS_MODEL`이 없으면 Google Cloud의 Agent Platform의 `opus` 별칭이 Opus 5로 확인되고, `ANTHROPIC_DEFAULT_SONNET_MODEL`이 없으면 `sonnet` 별칭이 Sonnet 4.5로 확인됩니다. 이 예제는 각 별칭을 특정 버전으로 고정합니다:
 
 ```bash theme={null}
 export ANTHROPIC_DEFAULT_OPUS_MODEL='claude-opus-4-8'
@@ -244,19 +254,19 @@ Claude Code는 고정 변수가 설정되지 않았을 때 이러한 기본 모�
 
 | 모델 유형    | 기본값                          |
 | :------- | :--------------------------- |
-| 주 모델     | `claude-opus-4-8`            |
+| 주 모델     | `claude-opus-5`              |
 | 소형/빠른 모델 | `claude-sonnet-4-5@20250929` |
 
-백그라운드 작업(예: 세션 제목 생성)은 소형/빠른 모델(일반적으로 Haiku 클래스 모델)을 사용합니다. Google Cloud의 Agent Platform에서 Claude Code는 모든 프로젝트 또는 지역에서 Haiku가 활성화되지 않을 수 있으므로 백그라운드 작업에 기본 Sonnet 모델을 사용합니다. 다음 두 가지 선택이 어떤 모델이 이를 수행하는지 변경합니다:
+세션 제목 생성과 같은 백그라운드 작업은 소형/빠른 모델(일반적으로 Haiku 클래스 모델)을 사용합니다. Google Cloud의 Agent Platform에서 Claude Code는 모든 프로젝트 또는 지역에서 Haiku가 활성화되지 않을 수 있으므로 백그라운드 작업에 기본 Sonnet 모델을 사용합니다. 다음 두 가지 선택이 어떤 모델이 이를 수행하는지 변경합니다:
 
-* `--model`, `ANTHROPIC_MODEL` 또는 `model` 설정으로 주 모델을 선택하면 백그라운드 작업이 해당 모델을 사용합니다. `ANTHROPIC_DEFAULT_SONNET_MODEL` 없이 `ANTHROPIC_DEFAULT_OPUS_MODEL`을 설정하는 것도 선택으로 간주됩니다. 왜냐하면 기본 제공 Sonnet 모델이 자체 Opus를 조정하는 프로젝트에서 활성화되지 않을 수 있기 때문입니다.
+* `--model`, `ANTHROPIC_MODEL` 또는 `model` 설정으로 주 모델을 선택하면 백그라운드 작업이 해당 모델을 사용합니다. [`ANTHROPIC_DEFAULT_MODEL`](/docs/ko/model-config#set-a-default-model-for-new-sessions)로 설정한 모델에서 Claude Code가 세션을 시작할 때 백그라운드 작업도 해당 모델을 사용합니다. `ANTHROPIC_DEFAULT_SONNET_MODEL` 없이 `ANTHROPIC_DEFAULT_OPUS_MODEL`을 설정하는 것도 선택으로 간주됩니다. 왜냐하면 기본 제공 Sonnet 모델이 자체 Opus를 조정하는 프로젝트에서 활성화되지 않을 수 있기 때문입니다.
 * 백그라운드 작업에 Haiku를 사용하려면 `ANTHROPIC_DEFAULT_HAIKU_MODEL`을 프로젝트에서 사용 가능한 모델 ID로 설정합니다.
 
 <Warning>
   Opus 모델은 Sonnet 모델보다 토큰당 가격이 높으므로, 주 모델을 고정하지 않는 배포는 v2.1.207 이상으로 업데이트되면 Opus 요금으로 청구됩니다. Sonnet 4.5를 주 모델로 유지하려면 `ANTHROPIC_MODEL`을 전체 모델 ID로 설정합니다. `ANTHROPIC_DEFAULT_SONNET_MODEL`으로 기본값을 조정하고 `ANTHROPIC_DEFAULT_OPUS_MODEL`을 설정하지 않는 배포는 조정된 Sonnet 모델을 기본값으로 유지합니다.
 </Warning>
 
-v2.1.207 이전에는 Google Cloud의 Agent Platform의 주 모델이 기본적으로 Sonnet 4.5였고, `opus` 별칭이 Opus 4.6으로 확인되었으며, 백그라운드 작업은 항상 주 모델을 사용했습니다.
+v2.1.207부터 v2.1.218까지 Google Cloud의 Agent Platform의 주 모델은 기본적으로 Opus 4.8이었고 `opus` 별칭은 Opus 4.8로 확인되었습니다. v2.1.207 이전에는 주 모델이 기본적으로 Sonnet 4.5였고, `opus` 별칭이 Opus 4.6으로 확인되었으며, 백그라운드 작업은 항상 주 모델을 사용했습니다.
 
 모델을 추가로 사용자 정의하려면:
 
@@ -264,6 +274,12 @@ v2.1.207 이전에는 Google Cloud의 Agent Platform의 주 모델이 기본적�
 export ANTHROPIC_MODEL='claude-opus-4-8'
 export ANTHROPIC_DEFAULT_HAIKU_MODEL='claude-haiku-4-5@20251001'
 ```
+
+<h3 id="6-verify-your-configuration">
+  6. 구성 확인
+</h3>
+
+Claude Code를 시작하고 `/status`를 실행하여 설정을 확인합니다. `API provider` 줄은 `Google Vertex AI`를 표시하고, `GCP project`, `Default region` 및 `Model` 줄은 프로젝트 ID, 지역 및 확인된 모델을 표시합니다. 공급자 줄이 없으면 환경 변수가 프로세스에 도달하지 않습니다. `claude`를 시작한 셸에서 내보내졌는지 확인하거나 [설정 파일](/docs/ko/settings)의 `env` 블록에서 설정하십시오.
 
 <h2 id="startup-model-checks">
   시작 모델 확인
@@ -275,19 +291,21 @@ Claude Code가 Google Cloud의 Agent Platform으로 구성되어 시작할 때 �
 
 모델을 고정하지 않았고 현재 기본값을 프로젝트에서 사용할 수 없으면 Claude Code는 현재 세션에 대해 이전 버전으로 폴백하고 알림을 표시합니다. 기본값이 Opus 모델이고 사용 가능한 Opus 버전이 없으면 기본 Sonnet 모델로 폴백합니다. 폴백은 유지되지 않습니다. [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden)에서 최신 모델을 활성화하거나 [버전을 고정](#5-pin-model-versions)하여 선택을 영구적으로 만듭니다.
 
+특정 Sonnet 또는 Opus 버전에서 세션을 시작할 때(예: `--model`, `ANTHROPIC_MODEL` 또는 [`model` 설정](/docs/ko/settings-reference#model)을 사용하여), 해당 버전은 일치하는 `sonnet` 또는 `opus` 별칭에 대한 세션의 고정된 기본값으로 작동합니다. Claude Code는 모델이 대체하는 기본 제공 기본값에 대한 가용성 확인을 건너뛰고 구성한 모델에서 시작하며 폴백 알림이 없습니다.
+
+`opus`와 같은 모델 별칭은 고정으로 작동하지 않으며, Claude Code가 인식하지 못하는 모델 ID도 마찬가지입니다.
+
 <h2 id="iam-configuration">
   IAM 구성
 </h2>
 
-필요한 IAM 권한을 할당합니다:
-
-`roles/aiplatform.user` 역할에는 필요한 권한이 포함됩니다:
+`roles/aiplatform.user` 역할을 할당합니다. 이 역할에는 필요한 권한이 포함됩니다:
 
 * `aiplatform.endpoints.predict` - 모델 호출 및 토큰 계산에 필요
 
 더 제한적인 권한의 경우 위의 권한만 포함하는 사용자 정의 역할을 만듭니다.
 
-자세한 내용은 [Google Cloud의 Agent Platform IAM 설명서](https://cloud.google.com/vertex-ai/docs/general/access-control)를 참조하십시오.
+자세한 내용은 [Google Cloud의 Vertex AI IAM 설명서](https://cloud.google.com/vertex-ai/docs/general/access-control)를 참조하십시오.
 
 <Note>
   비용 추적 및 액세스 제어를 단순화하기 위해 Claude Code용 전용 GCP 프로젝트를 만듭니다.
