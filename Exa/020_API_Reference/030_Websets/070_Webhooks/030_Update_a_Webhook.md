@@ -6,6 +6,8 @@
 
 # Update a Webhook
 
+> Updates the target URL, subscribed events, or metadata of a Webhook. Omitted fields are left unchanged.
+
 <Warning>
   **Redirects are not followed.** If you update the URL, ensure it is the final
   destination. Endpoints that respond with a 3xx redirect will be treated as
@@ -34,6 +36,9 @@ paths:
       tags:
         - Webhooks
       summary: Update a Webhook
+      description: >-
+        Updates the target URL, subscribed events, or metadata of a Webhook.
+        Omitted fields are left unchanged.
       operationId: webhooks-update
       parameters:
         - name: id
