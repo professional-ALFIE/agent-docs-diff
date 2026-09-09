@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-03T21:01:58.552Z",
+  "생성": "2026-09-09T11:20:35.410Z",
   "제품폴더": "Exa",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -897,16 +897,16 @@
       "경로": "020_API_Reference/030_Websets/010_Websets/020_Get_a_Webset.md",
       "href": "/websets/api/websets/get-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/get-a-webset.md",
-      "sha256": "8f7dbef7887c9fbae0c9a403b0baeb45c2e1abd3bb1059b9432272821c2b8ec1",
-      "bytes": 49994,
+      "sha256": "95d8c10ef6acca7802559338455cf9e184bcad331d635d35017d926872e9c133",
+      "bytes": 50422,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/030_Update_a_Webset.md",
       "href": "/websets/api/websets/update-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/update-a-webset.md",
-      "sha256": "8ecd4753c9d2dc307d7da406da66655d8aa36b187f5a41e87205f3ae3dff9fe6",
-      "bytes": 28395,
+      "sha256": "ee5be52cb5c5dad182be4ff91c7091a580c27591766a0d62d8bbfe73f9e26a4d",
+      "bytes": 28682,
       "contentType": "text/markdown"
     },
     {
@@ -1001,8 +1001,8 @@
       "경로": "020_API_Reference/030_Websets/040_Enrichments/020_Get_an_Enrichment.md",
       "href": "/websets/api/websets/enrichments/get-an-enrichment",
       "url": "https://exa.ai/docs/websets/api/websets/enrichments/get-an-enrichment.md",
-      "sha256": "9c7ee627f58bad91fbf46584eb370e71335404d63cd6859ffda7026eaf9177b1",
-      "bytes": 4950,
+      "sha256": "361396b5c10bbab0e28ab9cf8f4afa6adcd6dbb0217103958d85fb3606745a3d",
+      "bytes": 5195,
       "contentType": "text/markdown"
     },
     {
@@ -1129,40 +1129,40 @@
       "경로": "020_API_Reference/030_Websets/070_Webhooks/010_Create_a_Webhook.md",
       "href": "/websets/api/webhooks/create-a-webhook",
       "url": "https://exa.ai/docs/websets/api/webhooks/create-a-webhook.md",
-      "sha256": "d368075bb53fc7bcfcc2eab016f5775e4a267ab5b882652d16d4127ef6ecb803",
-      "bytes": 5065,
+      "sha256": "693253f123830fd41f15c1e636cd6916e6de7040399b63e4006b51664e089e71",
+      "bytes": 5489,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/070_Webhooks/020_Get_a_Webhook.md",
       "href": "/websets/api/webhooks/get-a-webhook",
       "url": "https://exa.ai/docs/websets/api/webhooks/get-a-webhook.md",
-      "sha256": "49f1c084d0b8cc06b1c672c2a0ff94fe6baaa7ad7d9eb4ab6244c747271b6b94",
-      "bytes": 4320,
+      "sha256": "68199f113c861c4bbed19e4bd39dacdf936ec800073a0a1dae0436bd5198fbd2",
+      "bytes": 4621,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/070_Webhooks/030_Update_a_Webhook.md",
       "href": "/websets/api/webhooks/update-a-webhook",
       "url": "https://exa.ai/docs/websets/api/webhooks/update-a-webhook.md",
-      "sha256": "5b166560b4bb55623a8b5d55b02377015a66a2d097166cefac63d53999171b7f",
-      "bytes": 5416,
+      "sha256": "53520a6163e29fe0313a2b5e8c4c17ded9df54b51043ace75566bfe7761b883d",
+      "bytes": 5665,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/070_Webhooks/040_Delete_a_Webhook.md",
       "href": "/websets/api/webhooks/delete-a-webhook",
       "url": "https://exa.ai/docs/websets/api/webhooks/delete-a-webhook.md",
-      "sha256": "508df59f340739a89b94ada7b737229fbb8c3cab1af63bdf28cc2cb92c04aff3",
-      "bytes": 4338,
+      "sha256": "18d1d6851ea6efdda8501aaecc34dc848e11c803eebef43f3ca297cc8f35da03",
+      "bytes": 4579,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/070_Webhooks/050_List_webhooks.md",
       "href": "/websets/api/webhooks/list-webhooks",
       "url": "https://exa.ai/docs/websets/api/webhooks/list-webhooks.md",
-      "sha256": "b1d936154a1c3f33b3defcef78ef187ea2372ef13ead79a3ff75169dafa84053",
-      "bytes": 4952,
+      "sha256": "e30a4a82d51a70126521c60187b88d778a5f2254c0afd583aed5723df15f32e8",
+      "bytes": 5215,
       "contentType": "text/markdown"
     },
     {
