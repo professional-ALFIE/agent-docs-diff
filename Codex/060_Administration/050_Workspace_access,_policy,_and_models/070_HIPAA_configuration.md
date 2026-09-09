@@ -119,6 +119,12 @@ The following table summarizes some settings available for configuring Codex. Re
 
    When `[allowed_permission_profiles]` is present, omitted profiles are denied. Omitting `:danger-full-access` therefore prevents users from selecting full access.
 
+Keep `untrusted` in `allowed_approval_policies` to preserve the stricter
+approval policy Codex derives for projects with `trust_level = "untrusted"`.
+Don't set `approval_policy = "untrusted"` directly; Codex and ChatGPT Work no longer
+support that setting. See [Migrate from the retired `untrusted` approval
+policy](https://learn.chatgpt.com/docs/agent-approvals-security#migrate-from-the-retired-untrusted-approval-policy).
+
 <a id="example-1-enable-the-google-drive-app"></a>
 
 ### Example 1: Enable the Google Drive plugin
