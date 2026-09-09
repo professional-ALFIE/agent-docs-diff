@@ -6,6 +6,10 @@
 
 # Get a Webset
 
+> Returns a Webset by `id` or `externalId`, including its status, searches, imports, enrichments, and monitors.
+
+Pass `expand=items` to include up to the first 100 items in the response.
+
 
 
 ## OpenAPI
@@ -29,6 +33,13 @@ paths:
       tags:
         - Websets
       summary: Get a Webset
+      description: >-
+        Returns a Webset by `id` or `externalId`, including its status,
+        searches, imports, enrichments, and monitors.
+
+
+        Pass `expand=items` to include up to the first 100 items in the
+        response.
       operationId: websets-get
       parameters:
         - name: id
