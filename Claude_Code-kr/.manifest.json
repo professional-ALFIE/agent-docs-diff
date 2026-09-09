@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-08T21:08:26.662Z",
+  "생성": "2026-09-09T20:55:21.607Z",
   "제품폴더": "Claude_Code-kr",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -1177,128 +1177,128 @@
       "경로": "070_새로운_소식/010_새로운_소식/020_28주차_·_7월_6–10.md",
       "href": "/ko/whats-new/2026-w28",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w28.md",
-      "sha256": "dddf59e76ad1780a366c98ab577bcbc7e8201e8ce7cc123a1f526f85da718305",
-      "bytes": 5166,
+      "sha256": "b4d039e2049e2d13247f521c5ca931e2e4a5b6ae0763162de6d78a7e3e0b96c6",
+      "bytes": 5151,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/030_27주차_·_6월_29일_–_7월_3일.md",
       "href": "/ko/whats-new/2026-w27",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w27.md",
-      "sha256": "ba193bd993b55d33b123ac79945c9e60c974c3ee99649c5ab86be32c281044d5",
-      "bytes": 7934,
+      "sha256": "2e07d2766e5739aa1d24837cc13049f20aafe5c9f27c23b421da3aa7b3448ba9",
+      "bytes": 7894,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/040_26주차_·_6월_22–26.md",
       "href": "/ko/whats-new/2026-w26",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w26.md",
-      "sha256": "1318fb2096e1663ca612e567a549d05532ccd70311559dcc8362177f89807dd7",
-      "bytes": 5059,
+      "sha256": "66e40b487a672602c3125e141b521b214feb3d28e2c2e21c70a5f48d71fe7965",
+      "bytes": 5044,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/050_25주차_·_6월_15–19.md",
       "href": "/ko/whats-new/2026-w25",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w25.md",
-      "sha256": "7e1ea0d60cd6895ef8fc26a9cd404559f4e55a2b8e5849cfcc6b2dbf77ddc745",
-      "bytes": 6178,
+      "sha256": "7b6f21a4a1d0411eab24eb94d218f4f00763e4fd51f90e3c5fc650a9386978d0",
+      "bytes": 6158,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/060_24주차_·_6월_8–12일.md",
       "href": "/ko/whats-new/2026-w24",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w24.md",
-      "sha256": "809fecba39b7a6fe1bda851653d864c257c4fd7f8256cf7eb2cc30dabd183aa0",
-      "bytes": 6415,
+      "sha256": "227575b3b1cf43ca655868d7456fcde40bf166e6daad5fb6e424a804926fd1c2",
+      "bytes": 6390,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/070_23주차_·_6월_1–5일.md",
       "href": "/ko/whats-new/2026-w23",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w23.md",
-      "sha256": "2622017e1187a7d392a688ebe975ef79fd8822849c73e68000d991841e7acf66",
-      "bytes": 7582,
+      "sha256": "c7ebaf51a2f335f54b18c5e35ea127dd4c1030ab42f3766c5550db4fdfc5f8c6",
+      "bytes": 7547,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/080_Week_22_·_May_25–29.md",
       "href": "/ko/whats-new/2026-w22",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w22.md",
-      "sha256": "b3a8fae0ca797b2476ca5b5334c73fec1554a56cd2db189c303836e12b98af65",
-      "bytes": 8393,
+      "sha256": "d247d27761c6c594b1b07b1129e6f37ad7c08c97c48c8890295bdda54d990d8f",
+      "bytes": 8388,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/090_21주차_·_5월_18–22.md",
       "href": "/ko/whats-new/2026-w21",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w21.md",
-      "sha256": "2916a6903664a6289562efccf6474afe07599537eeeedb33cfa6abf97bd68fc7",
-      "bytes": 4602,
+      "sha256": "9d6b5f9a7aa7c8861c140d2de4ed8acc3e86a5c4a6bfc868bdb748c594b122b8",
+      "bytes": 4597,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/100_20주차_·_5월_11–15.md",
       "href": "/ko/whats-new/2026-w20",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w20.md",
-      "sha256": "09f68009644b1fec8f8866f96008010a808ed6cdd37f0746689245c66bebb8c0",
-      "bytes": 7853,
+      "sha256": "c20f6d25b2d89b01af094717495d8433a27ca1a06ce01dc39c98f3e6acf2296a",
+      "bytes": 7848,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/110_19주차_·_5월_4–8일.md",
       "href": "/ko/whats-new/2026-w19",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w19.md",
-      "sha256": "0fd507a1905c0b218de76da5380286427a5316fc8b414776fdb9f6ef01f16581",
-      "bytes": 5399,
+      "sha256": "0a5722314c24f5bee4b4b34ceaefdc2493cf189240d192b3237d84e317e4fd17",
+      "bytes": 5394,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/120_18주차_·_4월_27일_–_5월_1일.md",
       "href": "/ko/whats-new/2026-w18",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w18.md",
-      "sha256": "d7c122035109c662b5dafd7efc7b5edcb15017d6559b315f2255c75dbb1dc6f6",
-      "bytes": 7315,
+      "sha256": "c14a4aad9bb61205490c94c3eaf86ddc3d81e5ce46b84600f7fa3b8dbb94ac7f",
+      "bytes": 7285,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/130_17주차_·_4월_20–24.md",
       "href": "/ko/whats-new/2026-w17",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w17.md",
-      "sha256": "197f363a78ab8fe9fa8d31c63d1a0de108b11574faae367f03ac9188ac8e141b",
-      "bytes": 8227,
+      "sha256": "5f1b1ca9c4ba218944cef7c14be2d4df9f3d5ea03f7ad2b9095c8cac82f2af60",
+      "bytes": 8162,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/140_16주차_·_4월_13–17일.md",
       "href": "/ko/whats-new/2026-w16",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w16.md",
-      "sha256": "b1cf5df10dc350b4708951a49b0e6b5eba6bd162f7fe2dbc5b46fa76b882799c",
-      "bytes": 10221,
+      "sha256": "deaa8fdfd9c8423a9148be621bc54d4eac3ef340a894de01116efea504664808",
+      "bytes": 10171,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/150_15주차_·_4월_6–10일.md",
       "href": "/ko/whats-new/2026-w15",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w15.md",
-      "sha256": "0499f23c2bd371dcb8f4f1b6c38b14b56196c4bd51275f63a55c4bb4decff4ff",
-      "bytes": 8321,
+      "sha256": "db90c118dba562ca2a58c52b34545ebf3c6d89c24513fbb1b12858ba6915910b",
+      "bytes": 8286,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/160_14주차_·_3월_30일_–_4월_3일.md",
       "href": "/ko/whats-new/2026-w14",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w14.md",
-      "sha256": "2006d9d94ba2d556200e654a4dc789750f33a0ba5e4787832cb4d2ee5e8dd994",
-      "bytes": 9128,
+      "sha256": "3c2facbe2107e11f555548626335853b00e14d6acee8136f05506e80e9aeb257",
+      "bytes": 9098,
       "contentType": "text/markdown"
     },
     {
       "경로": "070_새로운_소식/010_새로운_소식/170_13주차_·_3월_23–27일.md",
       "href": "/ko/whats-new/2026-w13",
       "url": "https://code.claude.com/docs/ko/whats-new/2026-w13.md",
-      "sha256": "40e453a14c3aae89877787039a83ba474223eb3f9ff0e2890c07fcfa9dbc368b",
-      "bytes": 8989,
+      "sha256": "b272afc3802ca6f50dfe2aa822abc5e1b36060f9d7c654f5059c9156b065139e",
+      "bytes": 8954,
       "contentType": "text/markdown"
     },
     {

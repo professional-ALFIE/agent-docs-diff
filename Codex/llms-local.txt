@@ -170,7 +170,7 @@
     020_User_lifecycle_management.md — Provision employees, update group-based permissions, and remove workspace access and Codex tokens
     030_Roles_and_workspace_permissions.md — Separate ChatGPT workspace access from local runtime, API, plugin, and source-system controls
     040_GPTs_and_Sharing.md — Manage GPT sharing, ownership, connected apps, and third-party actions across your workspace.
-    050_Managed_configuration.md — Enforce runtime requirements across supported local clients and distribute managed defaults
+    050_Managed_configuration.md — Distribute configuration defaults and enforce requirements across supported local clients
     060_Prisma_AIRS.md — Connect Palo Alto Networks Prisma AIRS to scan Codex prompts
     070_HIPAA_configuration.md
     080_Workspace_model_availability.md — Separate model access across ChatGPT, Codex in the ChatGPT desktop app, Codex CLI, the IDE extension, Codex cloud, and the OpenAI API Platform

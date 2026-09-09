@@ -88,7 +88,7 @@
     030_Authentication.md — Log in to Claude Code and configure authentication for individuals, teams, and organizations.
     040_Managed_settings.md — Deploy managed settings to every developer's machine: delivery mechanisms per OS, how Claude Code combines managed sources, and how to verify enforcement.
     050_Server-managed_settings.md — Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.
-    060_Managed_MCP_configuration.md — Restrict which MCP servers users can add or connect to with managed configuration files, allowlists, and denylists.
+    060_Managed_MCP_configuration.md — Restrict which MCP servers users can add or connect to, or provide servers to every user, with managed configuration files, managed settings, allowlists, and denylists.
     070_Auto_mode.md — Tell the auto mode classifier which repos, buckets, and domains your organization trusts. Set environment context, override the default block and allow rules, and inspect your effective config with the auto-mode CLI subcommands.
   020_Deployment/
     010_Overview.md — Learn how Claude Code can integrate with various third-party services and infrastructure to meet enterprise deployment requirements.
