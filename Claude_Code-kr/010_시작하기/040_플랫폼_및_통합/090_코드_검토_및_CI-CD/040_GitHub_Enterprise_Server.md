@@ -47,7 +47,7 @@ github.com의 저장소의 경우 [웹에서 Claude Code](/docs/ko/claude-code-o
   </Step>
 
   <Step title="안내식 설정 시작">
-    **연결**을 클릭합니다. 연결의 표시 이름과 GHES 호스트명(예: `github.example.com`)을 입력합니다. GHES 인스턴스가 자체 서명 또는 개인 인증 기관 인증서를 사용하는 경우 선택적 필드에 CA 인증서를 붙여넣습니다.
+    **연결**을 클릭합니다. 연결의 표시 이름(최대 20자)과 GHES 호스트명(예: `github.example.com`)을 입력합니다. GHES 인스턴스가 자체 서명 또는 개인 인증 기관 인증서를 사용하는 경우 선택적 필드에 CA 인증서를 붙여넣습니다.
   </Step>
 
   <Step title="GitHub App 만들기">
@@ -67,31 +67,37 @@ github.com의 저장소의 경우 [웹에서 Claude Code](/docs/ko/claude-code-o
   GitHub App 권한
 </h3>
 
-매니페스트는 웹 세션, 코드 리뷰, Claude Security 및 기여도 메트릭 전반에 걸쳐 Claude가 필요로 하는 권한 및 웹훅 이벤트로 GitHub App을 구성합니다:
+매니페스트는 웹 세션, 코드 리뷰, Claude Security, 플러그인 마켓플레이스 및 기여도 메트릭을 포함하는 GitHub App을 다음의 권한 및 웹훅 이벤트로 구성합니다:
 
-| 권한               | 액세스     | 사용 목적              |
-| :--------------- | :------ | :----------------- |
-| Contents         | 읽기 및 쓰기 | 저장소 복제 및 분기 푸시     |
-| Pull requests    | 읽기 및 쓰기 | PR 생성 및 리뷰 의견 게시   |
-| Issues           | 읽기 및 쓰기 | 문제 언급에 응답          |
-| Checks           | 읽기 및 쓰기 | 코드 리뷰 확인 실행 게시     |
-| Actions          | 읽기      | 자동 수정을 위한 CI 상태 읽기 |
-| Repository hooks | 읽기 및 쓰기 | 기여도 메트릭을 위한 웹훅 수신  |
-| Metadata         | 읽기      | 모든 앱에 GitHub에서 필요  |
+| 권한                   | 액세스     | 사용 목적                                                                                                               |
+| :------------------- | :------ | :------------------------------------------------------------------------------------------------------------------ |
+| Contents             | 읽기 및 쓰기 | 저장소 복제 및 분기 푸시                                                                                                      |
+| Pull requests        | 읽기 및 쓰기 | PR 생성 및 리뷰 의견 게시                                                                                                    |
+| Issues               | 읽기 및 쓰기 | 문제 언급에 응답                                                                                                           |
+| Checks               | 읽기 및 쓰기 | 코드 리뷰 확인 실행 게시                                                                                                      |
+| Actions              | 읽기      | 자동 수정을 위한 CI 상태 읽기                                                                                                  |
+| Commit statuses      | 읽기      | 확인 실행 대신 커밋 상태를 보고하는 공급자로부터 CI 상태 읽기                                                                                |
+| Repository hooks     | 읽기 및 쓰기 | [조직 설정 > 플러그인](https://claude.ai/admin-settings/plugins)에서 마켓플레이스에 대해 **자동으로 동기화**가 켜져 있을 때 플러그인 마켓플레이스 저장소에서 웹훅 생성 |
+| Metadata             | 읽기      | 모든 앱에 GitHub에서 필요                                                                                                   |
+| Organization members | 읽기      | github.com의 Claude GitHub App과 일치하며, 설치를 연결할 때 연결하는 사용자의 조직 역할을 확인하는 데 사용됩니다                                        |
 
-앱은 `pull_request`, `issue_comment`, `pull_request_review_comment`, `pull_request_review` 및 `check_run` 이벤트를 구독합니다.
+앱은 `pull_request`, `issue_comment`, `pull_request_review_comment`, `pull_request_review`, `check_run` 및 `status` 이벤트를 구독합니다.
+
+GitHub는 앱이 생성될 때만 매니페스트를 적용하므로 이전 버전의 매니페스트에서 생성된 앱은 생성될 때의 권한 및 이벤트를 유지합니다. 앱에 위의 권한 또는 이벤트가 누락된 경우 GHES 인스턴스의 앱 설정에서 추가합니다. GitHub는 각 설치의 소유자에게 새 권한을 승인하도록 요청하며, 설치는 승인될 때까지 이전 권한을 유지합니다.
 
 <h3 id="manual-setup">
   수동 설정
 </h3>
 
-안내식 리디렉션 흐름이 네트워크 구성에 의해 차단되는 경우 연결 대신 **수동으로 추가**를 클릭합니다. [위의 권한 및 이벤트](#github-app-permissions)를 사용하여 GHES 인스턴스에서 GitHub App을 만든 다음 앱 자격 증명을 양식에 입력합니다: 호스트명, OAuth 클라이언트 ID 및 비밀, GitHub App ID, 클라이언트 ID, 클라이언트 비밀, 웹훅 비밀 및 개인 키.
+안내식 리디렉션 흐름이 네트워크 구성에 의해 차단되는 경우 연결 대신 **수동으로 추가**를 클릭합니다. [위의 권한 및 이벤트](#github-app-permissions)를 사용하여 GHES 인스턴스에서 GitHub App을 만든 다음 연결 세부 정보를 양식에 입력합니다: 표시 이름, GHES 호스트명 및 선택적 포트, 그리고 앱의 ID, 클라이언트 ID, 클라이언트 비밀, 웹훅 비밀 및 개인 키입니다. 양식은 선택적 사용자 정의 CA 인증서 및 읽기 복제본 호스트명도 허용합니다.
+
+Claude는 연결을 저장할 때 앱의 웹훅 URL을 생성합니다. **구성 추가**를 클릭한 후 연결의 **추가 옵션** 메뉴를 열고 **웹훅 URL 복사**를 선택한 다음 URL을 GHES 인스턴스의 앱 웹훅 설정에 붙여넣습니다. 양식에 입력한 것과 동일한 웹훅 비밀을 사용합니다.
 
 <h3 id="network-requirements">
   네트워크 요구 사항
 </h3>
 
-GHES 인스턴스는 Claude가 저장소를 복제하고 리뷰 의견을 게시할 수 있도록 Anthropic 인프라에서 도달 가능해야 합니다. GHES 인스턴스가 방화벽 뒤에 있는 경우 [Anthropic API IP 주소](https://platform.claude.com/docs/en/api/ip-addresses)를 허용 목록에 추가합니다.
+Anthropic 호스팅 세션의 경우 GHES 인스턴스는 Claude가 저장소를 복제하고 리뷰 의견을 게시할 수 있도록 Anthropic 인프라에서 도달 가능해야 합니다. GHES 인스턴스가 방화벽 뒤에 있는 경우 Anthropic의 [아웃바운드 IP 주소](https://platform.claude.com/docs/en/api/ip-addresses#outbound-ip-addresses)를 허용 목록에 추가합니다. [자체 호스팅 환경](/docs/ko/self-hosted-environments-deploy#configure-git)의 세션은 네트워크 내부에서 복제하거나, 실행자가 [Anthropic git 프록시](/docs/ko/self-hosted-environments-deploy#use-the-anthropic-git-proxy)를 선택하는 경우(Anthropic 측에서 가져오며 동일한 도달 가능성이 필요함), [SCM 커넥터](/docs/ko/self-hosted-environments-reference#scm-connector-flags)는 내부적으로만 라우팅 가능한 GHES 호스트에 대한 저장소 선택기와 같은 호스팅된 사전 세션 흐름을 포함합니다.
 
 <h2 id="developer-workflow">
   개발자 워크플로우
@@ -99,7 +105,7 @@ GHES 인스턴스는 Claude가 저장소를 복제하고 리뷰 의견을 게시
 
 관리자가 GHES 인스턴스를 연결하면 개발자 측 구성이 필요하지 않습니다. Claude Code는 작업 디렉토리의 git 원격에서 GHES 호스트명을 자동으로 감지합니다.
 
-평소처럼 GHES 인스턴스에서 저장소를 복제합니다:
+평소처럼 GHES 인스턴스에서 저장소를 복제합니다. `github.example.com`과 저장소 경로를 GHES 호스트명과 저장소로 바꿉니다:
 
 ```bash theme={null}
 git clone git@github.example.com:platform/api-service.git
@@ -112,7 +118,7 @@ cd api-service
 claude --cloud "Add retry logic to the payment webhook handler"
 ```
 
-세션은 Anthropic 인프라에서 실행되고, GHES에서 저장소를 복제하며, 변경 사항을 분기로 다시 푸시합니다. `/tasks`를 사용하거나 [claude.ai/code](https://claude.ai/code)에서 진행 상황을 모니터링합니다. diff 리뷰, 자동 수정 및 루틴을 포함한 전체 클라우드 세션 워크플로우는 [웹에서 Claude Code](/docs/ko/claude-code-on-the-web)를 참조하십시오.
+세션은 GHES에서 저장소를 복제하고 변경 사항을 분기로 다시 푸시합니다. `/tasks`를 사용하거나 [claude.ai/code](https://claude.ai/code)에서 진행 상황을 모니터링합니다. diff 리뷰, 자동 수정 및 루틴을 포함한 전체 클라우드 세션 워크플로우는 [웹에서 Claude Code](/docs/ko/claude-code-on-the-web)를 참조하십시오.
 
 <h3 id="teleport-sessions-to-your-terminal">
   터미널로 세션 Teleport
@@ -142,7 +148,7 @@ claude --cloud "Add retry logic to the payment webhook handler"
   GHES 마켓플레이스 추가
 </h3>
 
-`owner/repo` 단축형은 항상 github.com으로 확인됩니다. GHES 호스팅 마켓플레이스의 경우 전체 git URL을 사용합니다. HTTPS URL이 권장됩니다:
+`owner/repo` 단축형은 항상 github.com으로 확인됩니다. GHES 호스팅 마켓플레이스의 경우 전체 git URL을 사용하여 `github.example.com` 및 저장소 경로를 자신의 것으로 바꿉니다. HTTPS URL이 권장됩니다:
 
 ```bash theme={null}
 /plugin marketplace add https://github.example.com/platform/claude-plugins.git
@@ -162,7 +168,7 @@ Claude Code는 git을 비대화형으로 실행하며 머신의 `known_hosts` �
   관리되는 설정으로 GHES 마켓플레이스 사전 등록
 </h3>
 
-`extraKnownMarketplaces` 설정은 마켓플레이스를 사전 등록하여 개발자가 수동 설정 없이 이를 얻을 수 있습니다. 이는 저장소의 `.claude/settings.json`을 포함한 [모든 설정 파일](/docs/ko/settings#extraknownmarketplaces)에서 작동합니다. 관리되는 설정은 조직 전체에 이를 제공합니다:
+`extraKnownMarketplaces` 설정은 마켓플레이스를 사전 등록하여 개발자가 수동 설정 없이 이를 얻을 수 있습니다. 이는 저장소의 `.claude/settings.json`을 포함한 [모든 설정 파일](/docs/ko/settings-reference#extraknownmarketplaces)에서 작동합니다. 관리되는 설정은 조직 전체에 이를 제공합니다:
 
 ```json theme={null}
 {
@@ -182,13 +188,13 @@ Claude Code는 이러한 마켓플레이스를 로컬로 설치합니다: 각 �
 * **전체 git URL을 사용합니다.** `owner/repo` 단축형은 항상 github.com으로 확인되며 GHES 호스트를 참조할 수 없습니다.
 * **HTTPS URL을 선호합니다.** SSH 복제는 이미 GHES 호스트 키를 신뢰하지 않는 머신에서 실패합니다. 조직의 표준 git 자격 증명 도우미가 있는 HTTPS URL은 자격 증명이 구성된 모든 머신에서 작동합니다.
 * **각 머신이 GHES 호스트에서 복제할 수 있는지 확인합니다.** 머신에 자격 증명이 없으면 마켓플레이스는 등록되지만 설치되지 않으며, 플러그인은 자격 증명을 요청하는 대신 찾을 수 없음으로 보고됩니다.
-* **설정이 각 머신에 도달하는지 확인합니다.** 관리되는 설정 파일은 배포되는 머신에만 적용됩니다(예: 장치 관리 시스템을 통해). 파일 위치는 [관리되는 설정](/docs/ko/settings#settings-files)을 참조합니다.
+* **설정이 각 머신에 도달하는지 확인합니다.** 관리되는 설정 파일은 배포되는 머신에만 적용됩니다(예: 장치 관리 시스템을 통해). 파일 위치는 [관리되는 설정 배포](/docs/ko/managed-settings#delivery-mechanisms)를 참조합니다.
 
 <h3 id="allowlist-ghes-marketplaces-in-managed-settings">
   관리되는 설정에서 GHES 마켓플레이스 허용 목록
 </h3>
 
-조직이 [관리되는 설정](/docs/ko/settings)을 사용하여 개발자가 추가할 수 있는 마켓플레이스를 제한하는 경우 `hostPattern` 소스 유형을 사용하여 각 저장소를 열거하지 않고 GHES 인스턴스의 모든 마켓플레이스를 허용합니다:
+조직이 [관리되는 설정](/docs/ko/settings)을 사용하여 개발자가 추가할 수 있는 마켓플레이스를 제한하는 경우 `hostPattern` 소스 유형을 사용하여 각 저장소를 열거하지 않고 GHES 인스턴스의 모든 마켓플레이스를 허용합니다. 각 플랫폼의 파일 위치는 [배포 메커니즘](/docs/ko/managed-settings#delivery-mechanisms)을 참조합니다. JSON을 `managed-settings.json` 파일 또는 동등한 MDM 정책에 추가합니다:
 
 ```json theme={null}
 {
@@ -201,7 +207,7 @@ Claude Code는 이러한 마켓플레이스를 로컬로 설치합니다: 각 �
 }
 ```
 
-전체 스키마는 [strictKnownMarketplaces](/docs/ko/settings#strictknownmarketplaces) 및 [extraKnownMarketplaces](/docs/ko/settings#extraknownmarketplaces) 설정 참조를 참조하십시오.
+전체 스키마는 [strictKnownMarketplaces](/docs/ko/settings-reference#strictknownmarketplaces) 및 [extraKnownMarketplaces](/docs/ko/settings-reference#extraknownmarketplaces) 설정 참조를 참조합니다.
 
 <h2 id="limitations">
   제한 사항
@@ -242,7 +248,13 @@ GitHub Enterprise 계정을 연결하려면: [claude.ai/code](https://claude.ai/
   GHES 인스턴스에 도달할 수 없음
 </h3>
 
-리뷰 또는 웹 세션이 시간 초과되면 GHES 인스턴스가 Anthropic 인프라에서 도달 가능하지 않을 수 있습니다. 방화벽이 [Anthropic API IP 주소](https://platform.claude.com/docs/ko/api/ip-addresses)에서 인바운드 연결을 허용하는지 확인합니다.
+리뷰 또는 Anthropic 호스팅 웹 세션이 시간 초과되면 GHES 인스턴스가 Anthropic 인프라에서 도달 가능하지 않을 수 있습니다. 방화벽이 Anthropic의 [아웃바운드 IP 주소](https://platform.claude.com/docs/en/api/ip-addresses#outbound-ip-addresses)에서 인바운드 연결을 허용하는지 확인합니다. [자체 호스팅 환경](/docs/ko/self-hosted-environments)의 세션은 네트워크 내부에서 GHES에 도달하므로 이들의 경우 실행기의 자체 네트워크 경로와 [SCM 커넥터](/docs/ko/self-hosted-environments-reference#scm-connector-flags)를 대신 확인합니다.
+
+<h3 id="session-start-fails-with-unable-to-get-organization-uuid">
+  세션 시작이 `Unable to get organization UUID`로 실패함
+</h3>
+
+웹 세션에는 Team 또는 Enterprise 조직이 필요합니다. `/login`을 사용하여 조직 계정으로 로그인합니다. API 키로 인증하면 웹 세션이 더 일찍 실패하고 `/login`을 실행하도록 요청하는 메시지가 표시됩니다.
 
 <h2 id="related-resources">
   관련 리소스
