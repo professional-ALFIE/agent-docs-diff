@@ -6,6 +6,10 @@
 
 # Create a Webhook
 
+> Creates a Webhook that delivers the selected events to your URL as they occur.
+
+The response includes the signing `secret` used to verify deliveries; it is only returned on creation.
+
 <Warning>
   **Redirects are not followed.** Webhook deliveries are sent directly to the
   registered URL. If your endpoint responds with a 3xx redirect, the delivery
@@ -34,6 +38,13 @@ paths:
       tags:
         - Webhooks
       summary: Create a Webhook
+      description: >-
+        Creates a Webhook that delivers the selected events to your URL as they
+        occur.
+
+
+        The response includes the signing `secret` used to verify deliveries; it
+        is only returned on creation.
       operationId: webhooks-create
       parameters: []
       requestBody:
