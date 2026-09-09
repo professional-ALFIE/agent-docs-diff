@@ -255,6 +255,8 @@ components:
             url: https://example.com/ai-research
             favicon: https://example.com/favicon.ico
         response_time: 1.23
+        usage:
+          credits: 16
     ResearchTaskFailed:
       title: Failed
       type: object
@@ -284,6 +286,8 @@ components:
       example:
         request_id: 123e4567-e89b-12d3-a456-426614174111
         status: failed
+        usage:
+          credits: 0
   securitySchemes:
     bearerAuth:
       type: http
