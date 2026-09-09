@@ -6,6 +6,8 @@
 
 # Get an Enrichment
 
+> Returns an Enrichment configured on a Webset, including its status, description, format, and options.
+
 
 
 ## OpenAPI
@@ -29,6 +31,9 @@ paths:
       tags:
         - Enrichments
       summary: Get an Enrichment
+      description: >-
+        Returns an Enrichment configured on a Webset, including its status,
+        description, format, and options.
       operationId: websets-enrichments-get
       parameters:
         - name: webset
