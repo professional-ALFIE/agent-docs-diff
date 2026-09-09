@@ -6,6 +6,8 @@
 
 # Delete a Webhook
 
+> Deletes a Webhook. Its status becomes `inactive`, which stops future webhook deliveries to its URL.
+
 
 
 ## OpenAPI
@@ -29,6 +31,9 @@ paths:
       tags:
         - Webhooks
       summary: Delete a Webhook
+      description: >-
+        Deletes a Webhook. Its status becomes `inactive`, which stops future
+        webhook deliveries to its URL.
       operationId: webhooks-delete
       parameters:
         - name: id
