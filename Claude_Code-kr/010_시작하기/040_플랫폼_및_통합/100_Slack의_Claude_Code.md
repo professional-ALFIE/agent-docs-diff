@@ -6,11 +6,14 @@
 
 # Slack의 Claude Code
 
-> Slack 워크스페이스에서 직접 코딩 작업 위임
+> Slack 워크스페이스에서 직접 코딩 작업을 위임합니다. Anthropic은 Team 및 Enterprise 워크스페이스를 위해 이 이전 버전을 Claude Tag로 대체하고 있으며, Pro 및 Max 플랜에서는 이것이 설정 경로로 유지됩니다.
 
-<Note>
-  Slack의 Claude Code는 Team 및 Enterprise 워크스페이스를 위해 [Claude Tag](https://claude.com/product/tag)로 대체되고 있습니다. Claude Tag는 @Claude를 조직의 공유 ID로 실행하며 관리자가 구성한 액세스 권한을 가지고 동일한 Slack 앱에서 실행되므로 다시 설치할 필요가 없으며 기존 설정은 전환 중에 계속 작동합니다. 워크스페이스를 전환하려면 [이전 Slack의 Claude에서 마이그레이션](https://claude.com/docs/claude-tag/admins/migrate-from-earlier)을 참조하십시오.
-</Note>
+<Warning>
+  이 페이지는 각 세션이 개별 사용자의 계정에서 실행되는 이전 버전의 Slack의 Claude Code를 문서화합니다.
+
+  * **Team 및 Enterprise 플랜:** Anthropic은 @Claude를 조직의 공유 ID로 실행하며 관리자가 구성한 액세스 권한을 가지는 [Claude Tag](https://claude.com/product/tag)로 이 버전을 대체하고 있습니다. 기존 Slack 앱과 @Claude 핸들이 유지되며, Anthropic 계정 팀이 전환 날짜를 알려줄 수 있습니다. 새 워크스페이스의 경우 [Claude Tag 설정](https://claude.com/docs/claude-tag/overview)을 참조하고, 이미 이 버전을 사용 중인 워크스페이스를 이동하려면 [이전 Slack의 Claude에서 마이그레이션](https://claude.com/docs/claude-tag/admins/migrate-from-earlier)을 참조하십시오.
+  * **Pro 및 Max 플랜:** Claude Tag는 개별 플랜에서 사용할 수 없으므로 이 페이지가 설정 경로로 유지됩니다.
+</Warning>
 
 Slack의 Claude Code는 Claude Code의 강력한 기능을 Slack 워크스페이스에 직접 가져옵니다. `@Claude`를 언급하여 코딩 작업을 요청하면, Claude는 자동으로 의도를 감지하고 웹에서 Claude Code 세션을 생성하여 팀 대화를 떠나지 않고도 개발 작업을 위임할 수 있습니다.
 
@@ -90,7 +93,7 @@ Slack에서 Claude Code를 사용하기 전에 다음을 확인하세요:
   자동 감지
 </h3>
 
-Slack 채널이나 스레드에서 @Claude를 언급하면, Claude는 자동으로 메시지를 분석하여 코딩 작업인지 여부를 결정합니다. Claude가 코딩 의도를 감지하면 일반 채팅 어시스턴트로 응답하는 대신 요청을 웹의 Claude Code로 라우팅합니다.
+Code + Chat 라우팅 모드에서 Slack 채널이나 스레드에서 @Claude를 언급하면, Claude는 자동으로 메시지가 코딩 작업인지 여부를 감지합니다. 코딩 작업은 웹의 Claude Code로 이동합니다. 그 외의 모든 것은 일반 채팅 응답을 받습니다. Code only 모드에서는 모든 @mention이 Claude Code로 이동합니다.
 
 자동으로 감지되지 않더라도 Claude에 요청을 코딩 작업으로 처리하도록 명시적으로 지시할 수 있습니다.
 
@@ -126,12 +129,6 @@ Slack 채널이나 스레드에서 @Claude를 언급하면, Claude는 자동으�
 <h2 id="user-interface-elements">
   사용자 인터페이스 요소
 </h2>
-
-<h3 id="app-home">
-  앱 홈
-</h3>
-
-앱 홈 탭은 연결 상태를 표시하고 Claude 계정을 Slack에서 연결하거나 연결 해제할 수 있습니다.
 
 <h3 id="message-actions">
   메시지 작업
@@ -179,14 +176,7 @@ Slack 워크스페이스 관리자는 Claude 앱을 워크스페이스에서 사
   채널 기반 액세스 제어
 </h3>
 
-Claude는 설치 후 자동으로 채널에 추가되지 않습니다. 사용자는 Claude를 사용하려는 채널에 명시적으로 Claude를 초대해야 합니다:
-
-* **초대 필요**: 채널에서 `/invite @Claude`를 입력하여 Claude를 해당 채널에 추가합니다
-* **채널 멤버십이 액세스를 제어합니다**: Claude는 추가된 채널에서만 @mentions에 응답할 수 있습니다
-* **채널을 통한 액세스 제어**: 관리자는 Claude가 초대된 채널과 해당 채널에 액세스할 수 있는 사용자를 관리하여 Claude Code 사용을 제어할 수 있습니다
-* **비공개 채널 지원**: Claude는 공개 및 비공개 채널 모두에서 작동하여 팀에 가시성 제어의 유연성을 제공합니다
-
-이 채널 기반 모델을 통해 팀은 Claude Code 사용을 특정 채널로 제한하여 워크스페이스 수준 권한 이상의 추가 액세스 제어 계층을 제공할 수 있습니다.
+앱을 설치해도 Claude가 자동으로 채널에 추가되지 않습니다. Claude는 `/invite @Claude`로 초대된 채널에서만 @mentions에 응답합니다. 공개 및 비공개 채널 모두에서 작동합니다. 관리자는 Claude가 초대된 채널과 해당 채널에 액세스할 수 있는 사용자를 관리하여 Claude Code 사용을 제어할 수 있습니다. 이는 워크스페이스 수준 권한 이상의 추가 액세스 제어 계층을 제공합니다.
 
 <h2 id="what’s-accessible-where">
   어디서 액세스할 수 있는지
@@ -194,7 +184,7 @@ Claude는 설치 후 자동으로 채널에 추가되지 않습니다. 사용자
 
 **Slack에서**: 상태 업데이트, 완료 요약 및 작업 버튼이 표시됩니다. 전체 기록은 보존되며 항상 액세스할 수 있습니다.
 
-**웹에서**: 전체 대화 기록, 모든 코드 변경, 파일 작업 및 세션을 계속하거나 풀 요청을 생성할 수 있는 기능이 있는 완전한 Claude Code 세션입니다.
+**웹에서**: 전체 대화 기록, 모든 코드 변경 사항 및 파일 작업이 포함된 완전한 Claude Code 세션입니다. 세션은 [claude.ai/code](https://claude.ai/code)의 Claude Code 기록에 유지되므로 이전 세션을 계속하거나, 참조하거나, 풀 요청을 생성할 수 있습니다.
 
 Enterprise 및 Team 계정의 경우 Slack의 Claude에서 생성된 세션은 조직에 자동으로 표시됩니다. 자세한 내용은 [웹의 Claude Code 공유](/docs/ko/claude-code-on-the-web#share-sessions)를 참조하세요.
 
@@ -227,7 +217,7 @@ Enterprise 및 Team 계정의 경우 Slack의 Claude에서 생성된 세션은 �
   "Claude Code가 계정에서 활성화되지 않았습니다"
 </h3>
 
-이 오류는 Claude 계정에 아직 클라우드 환경이 없다는 의미이며, 관리자가 무언가를 활성화해야 한다는 뜻이 아닙니다. Slack에 연결한 동일한 계정으로 [claude.ai/code](https://claude.ai/code)에 한 번 로그인합니다. 첫 방문 시 기본 클라우드 환경이 생성되며, 다음 언급 시 오류가 해결됩니다. 각 사용자는 개별적으로 이 작업을 수행해야 합니다.
+이 오류는 Claude 계정에 아직 클라우드 환경이 없다는 의미입니다. Slack에 연결한 동일한 계정으로 [claude.ai/code](https://claude.ai/code)에 한 번 로그인하고 [웹 온보딩](/docs/ko/web-quickstart#connect-github)을 완료합니다. 이는 기본 클라우드 환경을 생성하거나 생성하도록 요청합니다. 오류는 다음 언급 시 해결됩니다. 각 사용자는 개별적으로 이 작업을 수행해야 합니다.
 
 <h3 id="sessions-not-starting">
   세션이 시작되지 않음
@@ -236,6 +226,19 @@ Enterprise 및 Team 계정의 경우 Slack의 Claude에서 생성된 세션은 �
 1. Claude 앱 홈에서 Claude 계정이 연결되어 있는지 확인합니다
 2. 웹의 Claude Code 액세스가 활성화되어 있는지 확인합니다
 3. Claude Code에 연결된 GitHub 저장소가 최소 하나 있는지 확인합니다
+
+<h3 id="sessions-from-a-claude-tag-channel-fail-to-start">
+  Claude Tag 채널의 세션이 시작되지 않음
+</h3>
+
+이 항목은 [Claude Tag](https://claude.com/docs/claude-tag/overview)를 사용하는 워크스페이스에 적용되며, 여기서 Claude는 조직의 공유 ID로 채널에서 작동하며 어떤 멤버의 계정으로도 작동하지 않습니다. [claude.ai/code](https://claude.ai/code)에서 채널의 클라우드 환경을 생성한 경우, 이는 개인 계정에 속하며 Claude는 개인 환경에서 채널 세션을 시작할 수 없습니다. Claude Code는 세션을 즉시 실패하며, 재시도해도 도움이 되지 않습니다.
+
+Owner인 경우, [admin settings](https://claude.ai/admin-settings)의 **Cloud environments** 페이지에서 환경을 [organization-shared environment](/docs/ko/cloud-environments#organization-shared-environments)로 다시 생성합니다. 두 가지 방법으로 적용할 수 있습니다:
+
+* [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code)에서 조직 기본값으로 설정합니다.
+* Claude Tag admin settings에서 [채널에 설정합니다](https://claude.com/docs/claude-tag/admins/troubleshooting#channel-sessions-use-the-wrong-environment-or-can%E2%80%99t-find-one).
+
+Owner가 아닌 경우, 이 항목을 Owner에게 보냅니다.
 
 <h3 id="repository-not-showing">
   저장소가 표시되지 않음
@@ -260,21 +263,13 @@ Enterprise 및 Team 계정의 경우 Slack의 Claude에서 생성된 세션은 �
 2. 브라우저에서 올바른 Claude 계정으로 로그인했는지 확인합니다
 3. Claude 플랜에 Claude Code 액세스가 포함되어 있는지 확인합니다
 
-<h3 id="session-expiration">
-  세션 만료
-</h3>
-
-1. 세션은 웹의 Claude Code 기록에서 액세스할 수 있습니다
-2. [claude.ai/code](https://claude.ai/code)에서 과거 세션을 계속하거나 참조할 수 있습니다
-
 <h2 id="current-limitations">
   현재 제한 사항
 </h2>
 
-* **GitHub만**: 현재 GitHub의 저장소만 지원합니다.
+* **GitHub만**: 저장소는 GitHub에 있어야 합니다.
 * **한 번에 하나의 PR**: 각 세션은 하나의 풀 요청을 생성할 수 있습니다.
-* **속도 제한 적용**: 세션은 개별 Claude 플랜의 속도 제한을 사용합니다.
-* **웹 액세스 필요**: 사용자는 웹의 Claude Code 액세스가 있어야 합니다. 없으면 표준 Claude 채팅 응답만 받습니다.
+* **웹 액세스 필요**: 사용자는 웹에서 Claude Code에 액세스해야 합니다. 없으면 Claude는 표준 채팅 응답으로 회신합니다.
 
 <h2 id="related-resources">
   관련 리소스
