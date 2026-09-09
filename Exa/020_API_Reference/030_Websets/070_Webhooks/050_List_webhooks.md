@@ -6,6 +6,10 @@
 
 # List webhooks
 
+> Returns the active Webhooks for your team.
+
+You can paginate through the results using the `cursor` parameter.
+
 
 
 ## OpenAPI
@@ -29,6 +33,10 @@ paths:
       tags:
         - Webhooks
       summary: List webhooks
+      description: |-
+        Returns the active Webhooks for your team.
+
+        You can paginate through the results using the `cursor` parameter.
       operationId: webhooks-list
       parameters:
         - name: cursor
