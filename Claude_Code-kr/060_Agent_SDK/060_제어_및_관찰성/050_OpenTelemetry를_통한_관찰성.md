@@ -199,7 +199,7 @@ SDK는 W3C 추적 컨텍스트를 CLI 하위 프로세스로 자동으로 전파
       ...process.env,
       // ... exporter configuration from the Enable telemetry export example ...
       OTEL_SERVICE_NAME: "support-triage-agent",
-      OTEL_RESOURCE_ATTRIBUTES":
+      OTEL_RESOURCE_ATTRIBUTES:
         "service.version=1.4.0,deployment.environment=production",
     },
   };
