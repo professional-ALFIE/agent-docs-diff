@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-10T04:40:00.175Z",
+  "생성": "2026-09-10T16:22:59.002Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -361,8 +361,8 @@
       "경로": "020_Build_with_Claude_Code/010_Agents_and_parallel_work/060_Dynamic_workflows.md",
       "href": "/en/workflows",
       "url": "https://code.claude.com/docs/en/workflows.md",
-      "sha256": "4915d26951448d5aa47dcce16ff2371212d0a6287e83cba4def2321e7cb2e5f4",
-      "bytes": 39671,
+      "sha256": "9075c3b19abd6b1ba865408f611c70d39a4d17b1a8510742db36be9889f15ef1",
+      "bytes": 39906,
       "contentType": "text/markdown"
     },
     {
@@ -737,8 +737,8 @@
       "경로": "030_Administration/050_Plugin_distribution/010_Create_and_distribute_a_plugin_marketplace.md",
       "href": "/en/plugin-marketplaces",
       "url": "https://code.claude.com/docs/en/plugin-marketplaces.md",
-      "sha256": "2a10e2fc61429d2dc406933d7611c2859be667e6bbbce02081dba0d41ee63e62",
-      "bytes": 117849,
+      "sha256": "7b0e11527edf5979fc99da90d919b88e0252141b2171b9a7f08a108895e891a9",
+      "bytes": 118002,
       "contentType": "text/markdown"
     },
     {
@@ -921,8 +921,8 @@
       "경로": "040_Configuration/040_Model_and_responses/010_Model_configuration.md",
       "href": "/en/model-config",
       "url": "https://code.claude.com/docs/en/model-config.md",
-      "sha256": "5403810aabda279e59288418932672c9d3f6a7b69d8eea9ecc0aa6f3ae43c89b",
-      "bytes": 110334,
+      "sha256": "b46d3b709bd97648dae0ba2ff6af7591706a9dd4a9d9bd3f3e6010d6a2f4b974",
+      "bytes": 110601,
       "contentType": "text/markdown"
     },
     {
@@ -961,8 +961,8 @@
       "경로": "040_Configuration/050_Interface/020_Fullscreen_rendering.md",
       "href": "/en/fullscreen",
       "url": "https://code.claude.com/docs/en/fullscreen.md",
-      "sha256": "61cf2a658219bc7ea6299bf91da898e04c35c5cdd9b2a555acb378df76ce0e2f",
-      "bytes": 32592,
+      "sha256": "932debc8a24384ba148143019b0a95fa8efed2a1de6a676a24a68fef76a43b85",
+      "bytes": 32768,
       "contentType": "text/markdown"
     },
     {

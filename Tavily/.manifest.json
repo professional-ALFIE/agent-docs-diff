@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-09T16:37:42.147Z",
+  "생성": "2026-09-10T16:23:42.871Z",
   "제품폴더": "Tavily",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -73,8 +73,8 @@
       "경로": "040_API_&_SDKs/020_Core_Endpoints/010_Search.md",
       "href": "/documentation/api-reference/endpoint/search",
       "url": "https://docs.tavily.com/documentation/api-reference/endpoint/search.md",
-      "sha256": "e0190e56173099021e079a9e37d00ab0525443fecc7e470c164750bd5a13dc00",
-      "bytes": 28499,
+      "sha256": "b0f0ae76dbd308877508650513e28d01ada907fecf7221169d76cbc8f5241d5a",
+      "bytes": 30935,
       "contentType": "text/markdown"
     },
     {
@@ -185,8 +185,8 @@
       "경로": "040_API_&_SDKs/060_Python_SDK/020_SDK_Reference.md",
       "href": "/sdk/python/reference",
       "url": "https://docs.tavily.com/sdk/python/reference.md",
-      "sha256": "4af7cd8eaeca017fca76db2dffeb106cd99ed858622781b3f236fd3a412b7377",
-      "bytes": 94931,
+      "sha256": "59f19912de6035f929aa94b4046915923fe9bd4dc52b0e5777e831dcbc9c05bc",
+      "bytes": 94650,
       "contentType": "text/markdown"
     },
     {
@@ -201,16 +201,16 @@
       "경로": "040_API_&_SDKs/070_JavaScript_SDK/020_SDK_Reference.md",
       "href": "/sdk/javascript/reference",
       "url": "https://docs.tavily.com/sdk/javascript/reference.md",
-      "sha256": "33d7baf81721c8d8d90b74a36927ec35e64c31c1eb7fa0510b06e0868371c188",
-      "bytes": 125618,
+      "sha256": "f722d90daa53dc1c814f8c588634270e4cfefcc339e6506caecf1b6cb5acc373",
+      "bytes": 125346,
       "contentType": "text/markdown"
     },
     {
       "경로": "040_API_&_SDKs/080_Best_Practices/010_Search.md",
       "href": "/documentation/best-practices/best-practices-search",
       "url": "https://docs.tavily.com/documentation/best-practices/best-practices-search.md",
-      "sha256": "f9b65a828d41f99460e2ab2a4a4344a73f79744e3e7ce75e059e5d78e82b6156",
-      "bytes": 17656,
+      "sha256": "37efb780349676ef0db591c2ce3ff405ca32c4e0c56c7ade1dc69dda9e3f72a4",
+      "bytes": 18336,
       "contentType": "text/markdown"
     },
     {
@@ -385,8 +385,8 @@
       "경로": "050_Ecosystem/060_Integrations/010_LangChain.md",
       "href": "/documentation/integrations/langchain",
       "url": "https://docs.tavily.com/documentation/integrations/langchain.md",
-      "sha256": "ee4431d43371ffc31d1c6da813a7ecd0a5dc23140d25d20ecb062bd0b22e9495",
-      "bytes": 14910,
+      "sha256": "7d560a7405320a700ec2516e014b59d685309584bd0aedfcad5aba69d90c8db4",
+      "bytes": 14952,
       "contentType": "text/markdown"
     },
     {

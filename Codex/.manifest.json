@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-09T20:55:47.449Z",
+  "생성": "2026-09-10T16:23:58.225Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -265,8 +265,8 @@
       "경로": "020_Features/030_Capabilities/040_Plugins.md",
       "href": "/codex/plugins",
       "url": "https://learn.chatgpt.com/docs/plugins.md",
-      "sha256": "badfc03d851bc1e1a8c41adcf58dcc8617967031777ef7d59d018c8d4e9f8968",
-      "bytes": 12986,
+      "sha256": "221811940199260830bfacd742d5a099b98b0ee5929b0e431fe6669d62f3545a",
+      "bytes": 12968,
       "contentType": "text/markdown"
     },
     {
@@ -537,8 +537,8 @@
       "경로": "040_Developers/030_Extend_and_automate/020_Build_plugins.md",
       "href": "/codex/build-plugins",
       "url": "https://learn.chatgpt.com/docs/build-plugins.md",
-      "sha256": "86bef1d7309cea554612e98c4374cceb249d1e19141fe7748629cfb2d17bfcea",
-      "bytes": 4809,
+      "sha256": "a58260c9eb070a4cdc4735c7da9a711a9bf7747659cfdba1e72cb808e3f4627c",
+      "bytes": 4938,
       "contentType": "text/markdown"
     },
     {
@@ -1089,8 +1089,8 @@
       "경로": "060_Administration/060_Plugin_and_connector_controls/010_Plugin_controls.md",
       "href": "/codex/enterprise/apps-and-connectors",
       "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors.md",
-      "sha256": "77f0e32254c75ebfc8fc50ea970551d0a9349bf7446880798348088cf1a9beb1",
-      "bytes": 9644,
+      "sha256": "93f66b36093fec660e77c6344a7e9e4278cc47490a8d724680652fd501d78d5d",
+      "bytes": 9905,
       "contentType": "text/markdown"
     },
     {
