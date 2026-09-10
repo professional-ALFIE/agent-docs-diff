@@ -68,7 +68,7 @@ Claude가 저장소의 `.claude/worktrees/` 디렉토리 외부의 경로에 들
 
 `-p`를 사용한 비대화형 실행에는 종료 프롬프트가 없으므로 Claude는 해당 worktree를 정리하지 않으며, Claude Code는 생성 시 각 worktree에 대해 가져온 잠금을 유지합니다. 나중 세션의 [stale-lock sweep](#clean-up-subagent-and-background-session-worktrees)이 이를 해제할 때까지 유지됩니다. 하나를 제거하려면 `git worktree remove`를 실행합니다. git이 worktree가 잠겨 있다고 거부하면 먼저 `git worktree unlock`을 실행합니다.
 
-Windows에서 worktree를 제거해도 그 안의 파일은 삭제되지 않습니다. Worktree 내부의 폴더가 다른 곳으로의 링크(예: NTFS 접합점 또는 디렉토리 심볼릭 링크)인 경우 Claude Code는 링크만 삭제하고 가리키는 폴더는 유지합니다. v2.1.205 이전에는 서브디렉토리에 중첩된 링크가 있는 worktree를 제거하면 가리키는 폴더를 삭제할 수 있었습니다.
+Windows에서 worktree를 제거해도 worktree 외부의 파일은 삭제되지 않습니다. Worktree 내부의 폴더가 다른 곳으로의 링크(예: NTFS 접합점 또는 디렉토리 심볼릭 링크)인 경우 Claude Code는 링크만 삭제하고 가리키는 폴더는 유지합니다. v2.1.205 이전에는 서브디렉토리에 중첩된 링크가 있는 worktree를 제거하면 가리키는 폴더를 삭제할 수 있었습니다.
 
 <h2 id="resume-a-worktree-session">
   worktree 세션 재개
@@ -374,9 +374,9 @@ git 메타데이터가 없는 디렉토리(예: [`WorktreeCreate` 훅](#non-git-
 Claude Code는 거부된 디렉토리를 제자리에 두며, 작업을 보유할 수 있기 때문입니다. 메시지를 해당 복구와 일치시킵니다. `Refusing to use <path>` 다음에 나타나든 [재개 메시지](#the-session-resumes-outside-its-worktree)에 나타나든 상관없습니다. 일부 끝은 재개 메시지에만 나타납니다:
 
 * **`launch from the parent checkout` 또는 `Run the resume from the project checkout`이라고 말함**: Claude Code를 worktree 내부에서 실행했습니다. 대신 메인 체크아웃에서 실행합니다. Worktree는 재생성이 필요하지 않습니다.
-* **`it cannot be resumed or re-entered`라고 말함**: 실행한 위치에서 이 세션을 보증하는 것이 없습니다. 재생성합니다. 디렉토리와 해당 작업은 수동 복구를 위해 디스크에 남아 있으며, worktree에 부모 체크아웃이 있으면 거기서 재개하는 것도 작동합니다.
-* **`it contains the protected checkout`이라고 말함**: 거부된 디렉토리는 메인 체크아웃의 부모입니다. 예를 들어 홈 디렉토리입니다. 삭제하지 마세요. Worktree 경로를 변경합니다. 예를 들어 `WorktreeCreate` 훅이 반환하는 경로 또는 `EnterWorktree` 대상이므로 worktree가 체크아웃을 포함하지 않습니다.
-* **`the protected checkout <path> has a .git entry that could not be examined` 또는 `has git metadata that could not be resolved`라고 말함**: 문제는 worktree의 git 메타데이터가 아닌 메인 체크아웃의 git 메타데이터입니다. Worktree를 삭제하지 마세요. 메시지의 후행 조언을 무시하여 재생성하세요. 이 두 끝에는 적용되지 않습니다. 메인 체크아웃을 복구합니다. 예를 들어 권한 문제 또는 해당 `.git`에 대한 git `dubious ownership` 거부를 수정하고 다시 시도합니다.
+* **`it cannot be resumed or re-entered`라고 말함**: 이 세션에는 실행한 위치의 worktree를 보증하는 것이 없습니다. worktree를 재생성하세요. 디렉토리와 해당 작업은 수동 복구를 위해 디스크에 남아 있으며, worktree에 부모 체크아웃이 있으면 거기서 재개하는 것도 작동합니다.
+* **`it contains the protected checkout`이라고 말함**: 거부된 디렉토리는 메인 체크아웃의 부모입니다. 예를 들어 홈 디렉토리입니다. 삭제하지 마세요. Worktree 경로(예: `WorktreeCreate` 훅이 반환하는 경로 또는 `EnterWorktree` 대상)를 변경하여 worktree가 체크아웃을 포함하지 않도록 하세요.
+* **`the protected checkout <path> has a .git entry that could not be examined` 또는 `has git metadata that could not be resolved`라고 말함**: 문제는 worktree의 git 메타데이터가 아닌 메인 체크아웃의 git 메타데이터입니다. Worktree를 삭제하지 말고, worktree를 재생성하라는 메시지 끝부분의 조언도 무시하세요. 이 조언은 이 두 가지 끝에는 적용되지 않습니다. 메인 체크아웃을 복구합니다. 예를 들어 권한 문제 또는 해당 `.git`에 대한 git `dubious ownership` 거부를 수정하고 다시 시도합니다.
 * **`its recorded path has a network spelling`이라고 말함**: Claude Code는 네트워크 경로의 worktree로 절대 재개하지 않습니다. 로컬 경로에서 worktree를 재생성합니다.
 * **다른 끝**: 메시지는 문제와 해당 수정을 명시합니다. 예를 들어 `core.worktree` 리다이렉트를 제거하거나 worktree를 재생성합니다. 이를 따릅니다. 메시지가 git 정체성을 확인할 수 없다고 말하는 디렉토리를 삭제하기 전에 명시된 원인을 먼저 해결합니다. 예를 들어 worktree 경로의 심볼릭 링크 또는 git 자체 실패입니다. 디렉토리가 건강할 수 있기 때문입니다. 재생성할 때 필요한 변경 사항을 이전 디렉토리에서 구출합니다. 디스크에 남아 있습니다.
 
@@ -386,12 +386,12 @@ Claude Code는 거부된 디렉토리를 제자리에 두며, 작업을 보유�
 
 대화형으로 세션을 재개할 때 Claude Code가 worktree로 반환할 수 없으면 Claude Code는 아래 메시지 중 하나로 말합니다. Claude Code가 worktree 바인딩을 지우면 세션 트랜스크립트에 지우기를 기록합니다. [트랜스크립트 쓰기를 억제](/docs/ko/sessions#where-transcripts-are-stored)하면 메시지는 대신 바인딩을 지울 수 없으며 Claude Code가 나중 재개에서 worktree를 다시 확인할 것이라고 말합니다.
 
-| 메시지 시작                                            | 무엇이 일어났고 무엇을 해야 하는가                                                                                                                                                                                                                                                                 |
-| :------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Your worktree <path> no longer exists`           | Worktree 디렉토리가 제거되었습니다. 세션은 격리 없이 현재 디렉토리에서 계속되며 Claude Code는 worktree 바인딩을 지웁니다. 조치가 필요하지 않습니다.                                                                                                                                                                                    |
-| `Could not verify your worktree <path> this time` | Claude Code가 worktree를 확인할 수 없습니다. 보통 일시적인 이유 때문입니다. 바인딩이 유지되고 세션은 격리 없이 현재 디렉토리에서 계속됩니다. 다시 재개하여 다시 시도합니다. 계속 발생하면 새 세션에서 worktree에 들어가고 [Claude Code가 worktree 사용을 거부](#claude-code-refuses-to-use-a-worktree) 아래의 거부 메시지와 일치시킵니다. 메인 체크아웃의 메타데이터보다는 worktree의 메타데이터를 명시할 수 있습니다. |
-| `Did not re-enter your worktree <path>`           | Claude Code가 worktree 바인딩을 안전하지 않은 것으로 거부했습니다. 바인딩을 지우고 세션은 격리 없이 계속됩니다. 메시지는 특정 거부를 포함합니다: [Claude Code가 worktree 사용을 거부](#claude-code-refuses-to-use-a-worktree) 아래와 일치시킵니다. 일부 거부는 재생성이고 다른 거부는 경로 변경입니다.                                                                        |
-| `Could not re-enter your worktree <path>`         | Claude Code가 실행한 위치에서 worktree를 보증할 수 없습니다. 가장 일반적으로 내부에서 실행했기 때문입니다. 바인딩이 유지됩니다. 메시지의 나머지 부분은 수정을 명시합니다. [Claude Code가 worktree 사용을 거부](#claude-code-refuses-to-use-a-worktree) 아래와 일치시킵니다.                                                                                        |
+| 메시지 시작                                            | 무엇이 일어났고 무엇을 해야 하는가                                                                                                                                                                                                                                                                            |
+| :------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Your worktree <path> no longer exists`           | Worktree 디렉토리가 제거되었습니다. 세션은 격리 없이 현재 디렉토리에서 계속되며 Claude Code는 worktree 바인딩을 지웁니다. 조치가 필요하지 않습니다.                                                                                                                                                                                               |
+| `Could not verify your worktree <path> this time` | Claude Code가 worktree를 확인할 수 없습니다. 보통 일시적인 이유 때문입니다. 바인딩이 유지되고 세션은 격리 없이 현재 디렉토리에서 계속됩니다. 다시 재개하여 다시 시도합니다. 계속 발생하면 새 세션에서 worktree에 들어가고 [Claude Code가 worktree 사용을 거부](#claude-code-refuses-to-use-a-worktree) 아래의 거부 메시지와 일치시킵니다. 해당 메시지는 worktree의 메타데이터가 아니라 메인 체크아웃의 메타데이터를 명시할 수도 있습니다. |
+| `Did not re-enter your worktree <path>`           | Claude Code가 worktree 바인딩을 안전하지 않은 것으로 거부했습니다. 바인딩을 지우고 세션은 격리 없이 계속됩니다. 메시지는 특정 거부를 포함합니다: [Claude Code가 worktree 사용을 거부](#claude-code-refuses-to-use-a-worktree) 아래와 일치시킵니다. 일부 거부는 재생성이고 다른 거부는 경로 변경입니다.                                                                                   |
+| `Could not re-enter your worktree <path>`         | Claude Code가 실행한 위치에서 worktree를 보증할 수 없습니다. 가장 일반적으로 내부에서 실행했기 때문입니다. 바인딩이 유지됩니다. 메시지의 나머지 부분은 수정을 명시합니다. [Claude Code가 worktree 사용을 거부](#claude-code-refuses-to-use-a-worktree) 아래와 일치시킵니다.                                                                                                   |
 
 [비대화형 모드](/docs/ko/headless)에서 `-p`를 사용하고 [Agent SDK](/docs/ko/agent-sdk/sessions)가 실행하는 재개에서 Claude Code는 사라진 worktree를 제외한 모든 거부에 대해 stderr 오류로 재개를 중지합니다. 격리 없이 계속하는 대신.
 
