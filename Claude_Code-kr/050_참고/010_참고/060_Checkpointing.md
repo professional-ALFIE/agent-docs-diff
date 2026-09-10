@@ -65,7 +65,7 @@ Rewind 메뉴는 세션 중에 보낸 각 프롬프트를 나열합니다. 작�
 요약은 디스크의 파일을 변경하지 않으며 원본 메시지는 세션 기록에 남아 있으므로 Claude가 여전히 세부 정보를 참조할 수 있습니다. 요약이 초점을 맞출 내용을 안내하려면 화살표 키로 **Summarize** 옵션을 강조 표시하고 행에 \*\*add context (optional)\*\*이라고 표시된 위치에 지침을 입력한 다음 `Enter`를 누르세요. 숫자 키로 옵션을 선택하면 지침 없이 즉시 요약합니다.
 
 <Note>
-  Summarize는 동일한 세션에 유지되고 context를 압축합니다. 원본 세션을 그대로 유지하면서 다른 접근 방식을 시도하고 싶다면 [`/branch`](/docs/ko/sessions#branch-a-session) 또는 `claude --continue --fork-session` 대신 사용하세요.
+  Summarize는 동일한 세션에 유지되고 범위를 좁힌 `/compact`처럼 context를 압축합니다. 원본 세션을 그대로 유지하면서 갈라져 나와 다른 접근 방식을 시도하고 싶다면 대신 [`/branch`](/docs/ko/sessions#branch-a-session) 또는 `claude --continue --fork-session`을 사용하세요.
 </Note>
 
 <h2 id="common-use-cases">
