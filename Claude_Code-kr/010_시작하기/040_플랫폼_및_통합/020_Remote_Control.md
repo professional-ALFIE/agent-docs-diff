@@ -370,14 +370,16 @@ Claude Code는 터미널에 입력하거나 연결된 터미널에 집중하는 
   * **서버 모드**: Claude Code는 약 10분 후에 포기하고 `claude remote-control` 프로세스가 종료됩니다. `claude remote-control`을 다시 실행하여 새 세션을 시작하세요.
   * **대화형 세션**: 로컬에서 계속 작업하세요. Claude Code는 중단이 지속되는 동안 재시도하고 네트워크가 복구되면 자동으로 다시 연결됩니다.
 * **현재 상태 하트비트 실패**: 대화형 세션이 `could not reach the Remote Control server for about 30 minutes`로 연결 해제되면 `/remote-control`을 실행하여 다시 연결하세요. Claude Code는 세션의 현재 상태 하트비트가 실패했지만 나머지 연결은 유지되었을 때만 이 메시지를 표시합니다. 약 30분 동안 세션을 다시 등록한 후 연결을 해제합니다.
-* **전달된 대화 상자 만료**: Claude Code는 권한 프롬프트와 `AskUserQuestion` 질문을 답변할 때까지 열어 둡니다. Claude Code가 다른 종류의 대화 상자를 원격 세션으로 전달할 때(예: 안전 거부 후 표시되는 모델 선택 프롬프트), 기본적으로 5분을 기다린 후 대화 상자를 닫고 대화 상자의 작업 없음 기본값으로 계속합니다. 중간 세션 [Fable 사용 크레딧 동의 프롬프트](/docs/ko/model-config#fable-and-usage-credits)는 동일한 기한을 따르지만 전달되지 않습니다: Claude Code는 세션이 실행되는 터미널에만 표시하고, 기한까지 아무도 답변하지 않으면 요청을 보내지 않고 턴을 종료합니다. 모델 선택은 변경되지 않으며 Claude Code는 다음 메시지에서 다시 묻습니다. [`dialogExpiry`](/docs/ko/settings-reference#dialogexpiry)를 설정하여 기한을 조정하거나 비활성화하세요. Claude Code v2.1.224 이상이 필요합니다. Claude Code는 보류된 교차 세션 메시지에 대한 승인 대화 상자에 동일한 기한을 적용합니다. [보류된 메시지 만료 규칙](/docs/ko/cross-session-messaging#control-inbound-messages)은 Claude Code가 대화 상자를 열어 두는 경우를 다룹니다.
+* **전달된 대화 상자 만료**: Claude Code는 권한 프롬프트와 `AskUserQuestion` 질문을 답변할 때까지 열어 둡니다. Claude Code가 다른 종류의 대화 상자를 원격 세션으로 전달할 때(예: 안전 거부 후 표시되는 모델 선택 프롬프트), 기본적으로 5분을 기다린 후 대화 상자를 닫고 대화 상자의 작업 없음 기본값으로 계속합니다. [`dialogExpiry`](/docs/ko/settings-reference#dialogexpiry)를 설정하여 기한을 조정하거나 비활성화하세요. Claude Code v2.1.224 이상이 필요합니다.
+* **Fable 사용 크레딧 동의 프롬프트는 전달되지 않음**: Claude Code는 중간 세션 [Fable 사용 크레딧 동의 프롬프트](/docs/ko/model-config#fable-and-usage-credits)를 세션이 실행되는 위치에만 표시하고 사용자의 디바이스에는 표시하지 않습니다. 세션이 터미널에서 실행되고 Claude Code가 프롬프트를 닫기 전에 아무도 답변하지 않으면 턴이 요청을 보내지 않고 종료됩니다. [프롬프트 확인이 답변되지 않음](/docs/ko/errors#the-prompt-to-confirm-went-unanswered)을 참조하세요.
 * **일부 명령은 로컬 전용**: `/plugin` 또는 `/resume`과 같이 터미널 인터페이스에서만 실행되는 명령은 인수를 전달하는지 여부와 관계없이 로컬 CLI에서만 작동합니다. 다음은 모바일 및 웹에서 작동합니다:
   * 텍스트 출력 명령: `/compact`, `/clear`, `/context`, `/usage`, `/exit`, `/usage-credits`, `/recap`, `/reload-plugins`. `/usage-credits`는 브라우저를 열지 않고 청구 URL을 인쇄합니다. `/reload-plugins`는 세션이 대화형 터미널에서 실행될 때만 작동합니다. 터미널이 없는 세션은 거부합니다.
   * `/model`, `/effort`, `/fast`, `/color`, `/rename`: 값을 인수로 전달합니다. 예를 들어 `/model sonnet` 또는 `/effort high`입니다. 모바일 및 웹에서 `/model`과 `/effort`는 터미널 선택기 또는 슬라이더 대신 인수를 사용합니다.
   * `/mcp`: 모바일 앱에서는 선택기를 열지 않고 서버 상태의 텍스트 요약을 반환합니다. 웹에서는 `/mcp`만으로 요약을 반환하는 대신 [claude.ai 커넥터](/docs/ko/mcp#use-mcp-servers-from-claude-ai)의 디렉토리를 엽니다. `reconnect`, `enable`, `disable` [하위 명령](/docs/ko/commands#all-commands)은 둘 다에서 작동합니다. 로컬 CLI와 달리, 서버 이름 없이 `/mcp reconnect`를 실행하면 실패했거나 인증이 필요한 모든 서버를 다시 연결합니다.
   * `/config`, v2.1.181부터: 모바일 앱에서는 `key=value`를 전달하여 설정을 지정하거나, 인수 없이 실행하여 설정할 수 있는 키를 나열합니다. 웹에서는 `/config`가 설정의 Claude Code 섹션을 열고 명령 뒤의 텍스트는 무시합니다.
   * Team 및 Enterprise에서 모바일 또는 웹의 `/usage-credits`는 [관리자에게 사용 크레딧 요청을 보내지](/docs/ko/costs#add-usage-credits-to-your-subscription) 않습니다. 전송하려면 대화형 CLI에만 나타나는 확인이 필요하므로 명령은 대신 거기서 실행하도록 지시합니다. v2.1.211 이전에는 텍스트 형식이 확인 없이 요청을 보냈습니다.
-  * `/autocompact`, v2.1.221부터: 창 크기를 인수로 전달합니다. 예를 들어 `/autocompact 500k`입니다. 인수 없이 현재 창 크기를 텍스트로 인쇄하는 대신 터미널 세션에서 명령이 표시하는 대화 상자를 엽니다.
+  * `/autocompact`, v2.1.221부터: 창 크기를 인수로 전달합니다. 예를 들어 `/autocompact 500k`입니다. 인수 없이 실행하면 터미널 세션에서 명령이 표시하는 대화 상자를 여는 대신 현재 창 크기를 텍스트로 인쇄합니다.
+  * `/advisor`, v2.1.260부터: 모델을 인수로 전달합니다. 예를 들어 `/advisor opus`이거나 advisor를 끄려면 `off`를 전달합니다. 두 형식 모두 현재 세션에만 적용되며 저장된 기본값은 변경하지 않습니다. 인수 없이 실행하면 선택기를 여는 대신 현재 advisor를 텍스트로 인쇄합니다.
 
 <h2 id="troubleshooting">
   문제 해결
@@ -448,13 +450,8 @@ Claude Code가 Remote Control이 계정에 대해 활성화되어 있는지 확�
 * **오류에 `disableRemoteControl`이 언급됨**: IT 관리자가 조직 전체 토글 및 로그인 방식과 무관하게 [관리 설정](/docs/ko/managed-settings)을 통해 이 장치에서 Remote Control을 비활성화했습니다.
 * **claude.ai 요금제가 Pro 또는 Max**: Claude Code가 여전히 이전 로그인의 Team 또는 Enterprise 조직으로 로그인되어 있으므로 해당 조직의 Remote Control 정책을 확인합니다. `/status`를 실행하여 로그인이 사용하는 요금제와 조직을 확인하세요. `claude auth logout`을 실행한 다음 `claude auth login`을 실행하여 현재 요금제로 다시 로그인하세요.
 * **조직 정책이 이 기계에 로드되지 않음**: `claude doctor`를 실행하고 `Organization policy` 줄을 읽으세요. 줄에 정책이 로드되지 않음을 표시하면 Remote Control을 꺼두는 것입니다. v2.1.261 이전에는 `claude doctor`가 이 줄을 인쇄하지 않았습니다.
+* **메시지에 조직 관리자에게 문의하라고 표시되지 않음**: 조직에 Remote Control과 호환되지 않는 HIPAA 구성이 있으며, `/status`는 `Compliance` 행에 `HIPAA`를 나열합니다. 이 상태에서 관리 패널의 Remote Control 토글은 회색으로 표시되므로 Owner가 변경할 수 없습니다. Anthropic 지원팀에 문의하여 옵션을 논의하세요. v2.1.267 이전에는 이 경우에 대신 "Remote Control isn't available for your organization due to its compliance policy"가 표시되었습니다.
 * **그 외의 경우, Owner가 조직에 대해 활성화하지 않음**: Remote Control은 Team 및 Enterprise 요금제에서 기본적으로 꺼져 있습니다. Owner는 [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code)에서 **Remote Control** 토글을 켜서 활성화할 수 있습니다. 이 토글은 서버 측 조직 설정입니다.
-
-<h3 id="remote-control-isn’t-available-for-your-organization-due-to-its-compliance-policy">
-  "Remote Control은 규정 준수 정책으로 인해 조직에서 사용할 수 없습니다"
-</h3>
-
-조직에 Remote Control과 호환되지 않는 데이터 보존 또는 규정 준수 구성이 있습니다. 메시지 끝의 괄호 안에 이를 명시합니다. 이 상태에서 관리 패널의 Remote Control 토글은 회색으로 표시되므로 Owner가 변경할 수 없습니다. Anthropic 지원팀에 문의하여 옵션을 논의하세요.
 
 <h3 id="remote-credentials-fetch-failed">
   "원격 자격 증명 가져오기 실패"
@@ -472,7 +469,7 @@ claude remote-control --verbose
 * 네트워크 또는 프록시 문제: 방화벽 또는 프록시가 아웃바운드 HTTPS 요청을 차단할 수 있습니다. Remote Control은 포트 443의 Anthropic API에 대한 액세스가 필요합니다.
 * 세션 생성 실패: `Session creation failed — see debug log`도 표시되면 설정 초기에 실패가 발생했습니다. 구독이 활성 상태인지 확인하세요.
 
-오래된 로그인 토큰은 이 오류를 발생시키지 않습니다. Anthropic API가 저장된 토큰을 거부할 때(예: 다른 Claude Code 프로세스가 이미 새로 고쳤기 때문에) Claude Code는 토큰을 새로 고치고 자동으로 다시 시도합니다. v2.1.224 이전에는 오래된 토큰이 이 메시지로 Remote Control 시작을 실패하게 했으므로 [자동으로 연결하도록 설정된](/docs/ko/errors#enable-remote-control-for-all-sessions) 세션이 시작 시 간헐적으로 실패할 수 있었습니다.
+오래된 로그인 토큰은 이 오류를 발생시키지 않습니다. Anthropic API가 저장된 토큰을 거부할 때(예: 다른 Claude Code 프로세스가 이미 새로 고쳤기 때문에) Claude Code는 토큰을 새로 고치고 자동으로 다시 시도합니다. v2.1.224 이전에는 오래된 토큰이 이 메시지로 Remote Control 시작을 실패하게 했으므로 [자동으로 연결하도록 설정된](#enable-remote-control-for-all-sessions) 세션이 시작 시 간헐적으로 실패할 수 있었습니다.
 
 <h3 id="couldn’t-reconnect-to-your-remote-control-session">
   "Remote Control 세션에 다시 연결할 수 없습니다"
