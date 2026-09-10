@@ -508,7 +508,7 @@ JWT를 보유하는 파일의 경우 `extract` 대신 또는 함께 `decode: "jw
   Claude Code는 [파일시스템 격리를 비활성화](#disable-filesystem-isolation)할 때 `deny`를 `error`로 처리하고, 모든 설정 소스의 `filesystem.allowRead` 항목이 파일의 경로를 다시 열 때도 마찬가지입니다.
 * `maskDuplicates`는 또한 각 마스킹된 자격증명 값의 축자 복사본을 바꾸며, `extract` 캡처 또는 `decode` 확인된 토큰은 일치한 범위 외부에서 발견되며, 비밀이 일치가 도달하지 않는 곳에서 반복됩니다. 원시 부분 문자열을 일치시키므로 짧거나 일반적인 값은 나타나는 모든 곳에서 바뀝니다. 긴 고엔트로피 비밀을 위해 예약합니다. 기본값: false.
 
-`mask`는 단일 파일에 적용되므로 각 자격증명 파일을 개별적으로 나열합니다. Claude Code는 안전하게 마스킹할 수 없는 `mask` 항목으로 폴백합니다: 디렉토리 경로, 글로브 패턴, 8 MiB보다 큰 파일 또는 UTF-8 텍스트가 아닌 파일. 디렉토리를 명시적 `deny` 항목으로 대신 작성합니다. [어떤 설정이 이를 비활성화할 수 있는지](#which-settings-can-disable-it) 아래의 표는 각 형식이 `filesystem.disabled`를 고정하는지 여부와 파일시스템 격리가 꺼져 있을 때 동작하는 방식을 다룹니다.
+`mask`는 단일 파일에 적용되므로 각 자격증명 파일을 개별적으로 나열합니다. Claude Code는 안전하게 마스킹할 수 없는 `mask` 항목에 대해서는 `deny`로 폴백합니다: 디렉토리 경로, 글로브 패턴, 8 MiB보다 큰 파일 또는 UTF-8 텍스트가 아닌 파일. 디렉토리를 명시적 `deny` 항목으로 대신 작성합니다. [어떤 설정이 이를 비활성화할 수 있는지](#which-settings-can-disable-it) 아래의 표는 각 형식이 `filesystem.disabled`를 고정하는지 여부와 파일시스템 격리가 꺼져 있을 때 동작하는 방식을 다룹니다.
 
 <h2 id="how-sandboxing-works">
   샌드박싱 작동 방식
@@ -605,7 +605,7 @@ WSL1은 bubblewrap이 WSL2에서만 사용 가능한 커널 기능을 필요로 
 
 권한 규칙과 샌드박싱은 다른 것을 제어합니다:
 
-* **권한 규칙**은 Claude Code가 사용할 수 있는 도구를 제어하며 도구가 실행되기 전에 평가됩니다. 이들은 모든 도구에 적용됩니다: Bash, Read, Edit, WebFetch, MCP 및 기타 도구입니다. 다만 [`EndConversation`](/docs/ko/tools-reference#endconversation-tool-behavior)이 남아 있는 동안 거부 또는 요청 규칙이 이를 차단할 수 없습니다.
+* **권한 규칙**은 Claude Code가 사용할 수 있는 도구를 제어하며 도구가 실행되기 전에 평가됩니다. 이들은 모든 도구에 적용됩니다: Bash, Read, Edit, WebFetch, MCP 및 기타 도구입니다. 다만 다른 도구가 하나라도 남아 있는 동안에는 거부 또는 요청 규칙이 [`EndConversation`](/docs/ko/tools-reference#endconversation-tool-behavior)을 차단할 수 없습니다.
 * **샌드박싱**은 Bash 명령이 파일시스템 및 네트워크 수준에서 액세스할 수 있는 것을 제한하는 OS 수준의 적용을 제공합니다. Bash 명령 및 그 자식 프로세스에만 적용됩니다.
 
 두 계층은 또한 적용 방식이 다릅니다. Claude Code는 명령 문자열을 기반으로 명령이 실행되기 전에 권한 결정을 평가하고, 자동 모드에서는 명령이 안전한지 여부에 대한 별도 분류기의 판단을 평가합니다. 운영 체제는 실행 중인 프로세스에 샌드박스 경계를 적용하므로 모델이 실행하도록 선택한 것과 관계없이 그리고 허용된 명령이 이름이 나타내는 것보다 더 많이 하더라도 유지됩니다.
@@ -671,7 +671,7 @@ WSL1은 bubblewrap이 WSL2에서만 사용 가능한 커널 기능을 필요로 
 * **`failIfUnavailable`**: Linux의 bubblewrap과 같은 누락된 종속성이 경고를 표시하고 샌드박싱 없는 실행으로 폴백하는 대신 Claude Code가 시작되는 것을 차단합니다
 * **`allowUnsandboxedCommands: false`**: Claude Code가 `dangerouslyDisableSandbox` 탈출 해치를 무시하므로 샌드박스에서 명령이 실패할 때 Claude가 샌드박스 외부에서 다시 시도할 수 없습니다
 
-함께 고려할 가치가 있는 두 가지 추가 사항이 있습니다. 격리 없이 실행해야 하는 조직 승인 도구에 대해 `excludedCommands`를 추가합니다. `~/.aws` 및 `~/.ssh`와 같은 자격 증명 디렉토리에 대해 [`sandbox.credentials`](#protect-credentials) 항목을 추가합니다. 비밀 환경 변수의 경우 기본 읽기 정책은 여전히 이를 허용합니다.
+함께 고려할 가치가 있는 두 가지 추가 사항이 있습니다. 격리 없이 실행해야 하는 조직 승인 도구에 대해 `excludedCommands`를 추가합니다. `~/.aws` 및 `~/.ssh`와 같은 자격 증명 디렉토리와 비밀 환경 변수에 대해 [`sandbox.credentials`](#protect-credentials) 항목을 추가합니다. 기본 읽기 정책은 여전히 이를 허용하기 때문입니다.
 
 이 구성은 Claude가 실행하는 명령을 샌드박싱합니다. 개발자는 여전히 [`!` 셸 모드 프롬프트](/docs/ko/interactive-mode#shell-mode-with-prefix)에서 명령을 입력하고 Claude Code 외부의 모든 터미널에서 이미 가지고 있는 것과 동일한 액세스 권한으로 샌드박스 외부에서 실행할 수 있습니다. 입력된 명령이 샌드박싱되는 세션에 대해서는 [샌드박스 없는 재시도 탈출 해치](#the-unsandboxed-retry-escape-hatch)를 참조하십시오.
 
@@ -729,6 +729,9 @@ Claude Code를 프록시로 지정하려면 [샌드박스 설정](/docs/ko/setti
 
   실패 후 Claude는 [명령을 샌드박스 외부에서 다시 실행하도록 제안](#the-unsandboxed-retry-escape-hatch)할 수 있습니다. 해당 재시도를 승인하거나 다른 터미널에서 git 명령을 직접 실행합니다. `allowUnsandboxedCommands`를 `false`로 설정한 경우 Claude는 재시도를 제안할 수 없으므로 명령을 직접 실행합니다. 동일한 git 명령이 자주 실패하면 [`excludedCommands`](/docs/ko/settings-reference#sandbox-excludedcommands)에 추가합니다.
 * **Bubblewrap이 컨테이너 내에서 시작 실패**: 권한 없는 컨테이너에서 bubblewrap은 새로운 `/proc` 파일시스템을 마운트할 수 없으므로 샌드박싱된 명령은 `bwrap` 오류(예: `Can't mount proc on /newroot/proc: Operation not permitted`)로 실패합니다. [`enableWeakerNestedSandbox`](/docs/ko/settings-reference#sandbox-enableweakernestedsandbox)를 `true`로 설정하여 내부 샌드박스가 컨테이너의 기존 `/proc`을 바인드 마운트하도록 합니다. 외부 컨테이너가 이미 필요한 격리 경계를 제공할 때만 이 설정을 사용합니다. 새로운 `/proc` 마운트가 숨길 프로세스 정보를 샌드박싱된 명령에 노출하기 때문입니다.
+* **0바이트 읽기 전용 파일이 `.claude` 설정 경로에 나타나고 "예, 다시 묻지 않기"가 저장되지 않음**: Linux 및 WSL2에서 샌드박스는 샌드박싱된 명령이 실행되는 동안 아직 존재하지 않는 파일에 대한 쓰기 거부를 0바이트 읽기 전용 자리 표시자를 만들어 유지합니다. 샌드박스는 그 후 자리 표시자를 제거합니다. 예를 들어 SIGKILL에 의해 세션이 정리 실행 전에 종료되면 자리 표시자가 남아 있습니다. 이후 세션은 매번 시작할 때마다 이들을 읽기 전용으로 바인드하므로 권한 선택 저장과 같은 설정 쓰기가 하나가 있는 곳에서 실패합니다.
+
+  `claude doctor`를 실행하여 남은 자리 표시자 파일을 나열합니다. [`Stale sandbox mask files left by a killed session`](/docs/ko/errors#stale-sandbox-mask-files-left-by-a-killed-session) 경고는 그중 최대 3개의 이름을 표시하고 나머지는 개수로 표시합니다. 해당 프로젝트에서 다른 Claude Code 세션이 실행되지 않는 동안 `rm`으로 각 파일을 삭제합니다. v2.1.257 이전에는 Claude Code가 동일한 자리 표시자를 남겨두면서도 이를 알리지 않았습니다.
 * **`--dangerously-skip-permissions`이 root로 실패**: 이 플래그는 Linux 및 macOS에서 root로 또는 sudo를 통해 실행할 때 차단됩니다. root 액세스와 권한 프롬프트 없음이 결합되면 시스템의 모든 파일 또는 서비스를 수정할 수 있기 때문입니다. 확인은 인식된 샌드박스 내에서 자동으로 건너뜁니다. 컨테이너에서 자율적으로 실행하려면 [dev 컨테이너](/docs/ko/devcontainer) 구성을 사용합니다. 이는 Claude Code를 비 root 사용자로 실행합니다.
 
 <h2 id="limitations">
