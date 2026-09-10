@@ -91,7 +91,7 @@ Microsoft Foundry로 Claude Code를 구성하기 전에 다음을 확인하세�
 * Azure CLI 설치 및 구성(선택 사항 - 자격 증명을 얻을 다른 메커니즘이 없는 경우에만 필요)
 
 <Note>
-  Claude Code를 여러 사용자에게 배포하는 경우 [모델 버전을 고정](#4-pin-model-versions)하기 전에 롤아웃하세요.
+  Claude Code를 여러 사용자에게 배포하는 경우 롤아웃하기 전에 [모델 버전을 고정](#4-pin-model-versions)하세요.
 </Note>
 
 <h2 id="setup">
