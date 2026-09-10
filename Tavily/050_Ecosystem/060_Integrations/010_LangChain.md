@@ -45,8 +45,8 @@ The Tavily Search API accepts various parameters to customize the search:
 * `include_images` (optional, bool): Include a list of query related images in the response. Default is False.
 * `include_image_descriptions` (optional, bool): Include descriptive text for each image. Default is False.
 * `search_depth` (optional, str): Depth of the search, either "basic" or "advanced". Default is "basic".
-* `time_range` (optional, str): The time range back from the current date ( publish date ) to filter results - "day", "week", "month", or "year". Default is None.
-* `start_date` (optional, str): Will return all results after the specified start date ( publish date ). Required to be written in the format YYYY-MM-DD. Default is None.
+* `time_range` (optional, str): The time range back from the current date ( publish date or last updated date ) to filter results - "day", "week", "month", or "year". Default is None.
+* `start_date` (optional, str): Will return all results after the specified start date ( publish date or last updated date ). Required to be written in the format YYYY-MM-DD. Default is None.
 * `end_date` (optional, str): Will return all results before the specified end date. Required to be written in the format YYYY-MM-DD. Default is None.
 * `include_domains` (optional, List\[str]): List of domains to specifically include. Maximum 300 domains. Default is None.
 * `exclude_domains` (optional, List\[str]): List of domains to specifically exclude. Maximum 150 domains. Default is None.
