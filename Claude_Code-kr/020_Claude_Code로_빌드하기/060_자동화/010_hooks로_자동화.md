@@ -472,7 +472,7 @@ Hook이 승인하면 Claude Code는 계획 모드를 종료하고 계획 모드�
 대신 특정 권한 모드를 설정하려면 hook의 출력에 `setMode` 항목이 있는 `updatedPermissions` 배열이 포함될 수 있습니다. `mode` 값은 `default`, `acceptEdits` 또는 `bypassPermissions`과 같은 모든 권한 모드이며 `destination: "session"`은 현재 세션에만 적용합니다.
 
 <Note>
-  `bypassPermissions`은 세션이 이미 bypass 모드로 시작된 경우에만 적용됩니다: `--dangerously-skip-permissions`, `--permission-mode bypassPermissions`, `--allow-dangerously-skip-permissions` 또는 [사용자, `--settings` 또는 관리 설정](/docs/ko/settings-reference#permissions-defaultmode)의 `permissions.defaultMode: "bypassPermissions"`. [`permissions.disableBypassPermissionsMode`](/docs/ko/permissions#managed-settings)로 비활성화되지 않으며, [제한된 모드](/docs/ko/cli-reference#cli-flags)에서 세션을 시작한 경우에는 적용되지 않습니다.
+  `bypassPermissions`은 bypass 모드를 이미 사용할 수 있는 상태로 세션을 시작한 경우에만 적용됩니다: `--dangerously-skip-permissions`, `--permission-mode bypassPermissions`, `--allow-dangerously-skip-permissions` 또는 [사용자, `--settings` 또는 관리 설정](/docs/ko/settings-reference#permissions-defaultmode)의 `permissions.defaultMode: "bypassPermissions"`. bypass 모드가 [`permissions.disableBypassPermissionsMode`](/docs/ko/permissions#managed-settings)로 비활성화되었거나 [제한된 모드](/docs/ko/cli-reference#cli-flags)에서 세션을 시작한 경우에는 적용되지 않습니다.
 
   Claude Code는 절대 이를 `defaultMode`로 저장하지 않습니다.
 </Note>
@@ -1060,7 +1060,7 @@ Hook이 구성되었지만 실행되지 않습니다.
   Stop hook이 블록 상한에 도달함
 </h3>
 
-Claude가 계속 작업하는 대신 중지하고 Stop hook이 너무 많은 횟수를 연속으로 차단했다는 경고로 턴을 종료합니다.
+Claude가 중지하는 대신 계속 작업하다가 Stop hook이 너무 많은 횟수를 연속으로 차단했다는 경고로 턴을 종료합니다.
 
 Claude Code는 Stop hook이 진행 없이 8번 연속으로 차단한 후 재정의합니다. Hook 스크립트는 이미 트리거되었는지 확인해야 합니다. JSON 입력에서 `stop_hook_active` 필드를 구문 분석하고 `true`인 경우 조기에 종료합니다:
 
