@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-09T23:14:36.667Z",
+  "생성": "2026-09-10T04:40:00.175Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -537,16 +537,16 @@
       "경로": "030_Administration/010_Setup_and_access/040_Managed_settings.md",
       "href": "/en/managed-settings",
       "url": "https://code.claude.com/docs/en/managed-settings.md",
-      "sha256": "c7e4343761e031cf823ee0fe6139a1571aada693f0d5c7f75b3beeebc514a47d",
-      "bytes": 64412,
+      "sha256": "def9ba8b7da1e6e635891aadfdd445c21a7b71a63bb6df3d6bab3ae00f7db099",
+      "bytes": 64454,
       "contentType": "text/markdown"
     },
     {
       "경로": "030_Administration/010_Setup_and_access/050_Server-managed_settings.md",
       "href": "/en/server-managed-settings",
       "url": "https://code.claude.com/docs/en/server-managed-settings.md",
-      "sha256": "c5d824c0e1ec74469fc37b52458d6a669ce8c98644e8d9e644eed01935b1dd81",
-      "bytes": 46403,
+      "sha256": "76abc43c91f2c46e293792297ea2dfebb1bf3a7932a96275e2f1074ebdcaaa09",
+      "bytes": 46180,
       "contentType": "text/markdown"
     },
     {
@@ -817,8 +817,8 @@
       "경로": "040_Configuration/010_Settings/020_All_settings.md",
       "href": "/en/settings-reference",
       "url": "https://code.claude.com/docs/en/settings-reference.md",
-      "sha256": "ea02a7254c4cd658a3c1e592c727a9250a5068e1c4458c9a471273863f559a77",
-      "bytes": 434580,
+      "sha256": "7f958ed597cd2057954c10b765f461cce72d0a018cae7031394988c90545740d",
+      "bytes": 434735,
       "contentType": "text/markdown"
     },
     {
@@ -881,8 +881,8 @@
       "경로": "040_Configuration/030_Environments/020_Self-hosted_environments/020_Deploy_to_production.md",
       "href": "/en/self-hosted-environments-deploy",
       "url": "https://code.claude.com/docs/en/self-hosted-environments-deploy.md",
-      "sha256": "73d4929a8ca821acd48445f4f45157b1d3957ffbaebb125b24f56a2d67058f05",
-      "bytes": 60518,
+      "sha256": "7da155a079b072240a15eacb93f45c85476dc5242e69f3bbb0853286f8c64fc9",
+      "bytes": 60889,
       "contentType": "text/markdown"
     },
     {
@@ -905,8 +905,8 @@
       "경로": "040_Configuration/030_Environments/020_Self-hosted_environments/050_Reference.md",
       "href": "/en/self-hosted-environments-reference",
       "url": "https://code.claude.com/docs/en/self-hosted-environments-reference.md",
-      "sha256": "944e2ec2df1f8f94b4616d822aea3bc4a58d1b6dfee1565c182cfd4188cfe1e7",
-      "bytes": 86566,
+      "sha256": "01f0676aae061cfb995a910472ed2855615d38aa658ac06d32b7ddac0664afdd",
+      "bytes": 86571,
       "contentType": "text/markdown"
     },
     {

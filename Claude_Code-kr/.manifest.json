@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-09T23:14:56.455Z",
+  "생성": "2026-09-10T04:40:21.734Z",
   "제품폴더": "Claude_Code-kr",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -321,8 +321,8 @@
       "경로": "020_Claude_Code로_빌드하기/010_에이전트_및_병렬_작업/060_worktree로_세션_격리.md",
       "href": "/ko/worktrees",
       "url": "https://code.claude.com/docs/ko/worktrees.md",
-      "sha256": "90baad5ff49c38b070efb1ef07c715076ac32d06af3d5be0ce499db272bb508b",
-      "bytes": 43385,
+      "sha256": "9d354743c369fcef8469e731d5ebf43622f340694f6a8f680852effbb76e50f9",
+      "bytes": 43521,
       "contentType": "text/markdown"
     },
     {
@@ -377,8 +377,8 @@
       "경로": "020_Claude_Code로_빌드하기/060_자동화/010_hooks로_자동화.md",
       "href": "/ko/hooks-guide",
       "url": "https://code.claude.com/docs/ko/hooks-guide.md",
-      "sha256": "13e19c63d125429dd39fbd7d3851487245a53abb3374fe746b5daaed06504c76",
-      "bytes": 89849,
+      "sha256": "ef9f6dd243bb7efed710fdde24710273ab421e310894abc694ff6485ebd64c24",
+      "bytes": 89895,
       "contentType": "text/markdown"
     },
     {
@@ -393,8 +393,8 @@
       "경로": "020_Claude_Code로_빌드하기/060_자동화/030_일정에_따라_프롬프트_실행하기.md",
       "href": "/ko/scheduled-tasks",
       "url": "https://code.claude.com/docs/ko/scheduled-tasks.md",
-      "sha256": "7e5f4024f40fa606e86ba0265784b59124e31aa2abb4987764809cbe545d81e4",
-      "bytes": 20397,
+      "sha256": "65e45d8bb9be334c0b75e4a7d9a07f88b10dfe111e8111fa94b60456f7ba7c66",
+      "bytes": 20418,
       "contentType": "text/markdown"
     },
     {
@@ -553,7 +553,7 @@
       "경로": "030_관리/020_배포/060_Microsoft_Foundry.md",
       "href": "/ko/microsoft-foundry",
       "url": "https://code.claude.com/docs/ko/microsoft-foundry.md",
-      "sha256": "69a0ce6734b9a8ca4e88b9e9b7ab32777cf4609d8e2270df500fe18e64c9813a",
+      "sha256": "20df3bc0be4e14caec5cbb83b6928875a0ff31df04e828dca42ee6c96df3e7d4",
       "bytes": 11787,
       "contentType": "text/markdown"
     },
@@ -761,8 +761,8 @@
       "경로": "040_구성/010_설정_및_권한/030_샌드박스_환경.md",
       "href": "/ko/sandbox-environments",
       "url": "https://code.claude.com/docs/ko/sandbox-environments.md",
-      "sha256": "d7a1cde22f118cfe37bb50d89a27ee266fb7025bc44b3564c19605636ab2caaf",
-      "bytes": 22106,
+      "sha256": "4d47bb649e77834cefe56fbbf0c20af5fb49464108046d9b4f80f660cb22f394",
+      "bytes": 22130,
       "contentType": "text/markdown"
     },
     {
@@ -881,8 +881,8 @@
       "경로": "050_참고/010_참고/040_도구_참조.md",
       "href": "/ko/tools-reference",
       "url": "https://code.claude.com/docs/ko/tools-reference.md",
-      "sha256": "611a2261a67bef1baca1201327db493a4de77c0397510505ec5c1ea9ca879d25",
-      "bytes": 113317,
+      "sha256": "c76f51860bb3145b3e5eebcfcee34a28bffe3a46130bbf6a14419dc687e545be",
+      "bytes": 113401,
       "contentType": "text/markdown"
     },
     {
@@ -897,8 +897,8 @@
       "경로": "050_참고/010_참고/060_Checkpointing.md",
       "href": "/ko/checkpointing",
       "url": "https://code.claude.com/docs/ko/checkpointing.md",
-      "sha256": "8939c1d467983f195b6d2732092ffcf2afcbcaa44620264ed94ee26adef4da10",
-      "bytes": 9878,
+      "sha256": "838b066356f1227b051c9e9cd12678aee3d4cdc582809bad880374bf72595bc6",
+      "bytes": 9932,
       "contentType": "text/markdown"
     },
     {
@@ -1105,8 +1105,8 @@
       "경로": "060_Agent_SDK/060_제어_및_관찰성/050_OpenTelemetry를_통한_관찰성.md",
       "href": "/ko/agent-sdk/observability",
       "url": "https://code.claude.com/docs/ko/agent-sdk/observability.md",
-      "sha256": "d5d71f33a1956ad127a1692254ebf9787cd11f6814fe34ee02ed376f69de2d03",
-      "bytes": 22105,
+      "sha256": "347135b7df31b695045d2829000f4bffa78864cde7cc0432a9b1674bc2ae90dd",
+      "bytes": 22104,
       "contentType": "text/markdown"
     },
     {
