@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-10T16:23:58.225Z",
+  "생성": "2026-09-10T20:51:24.865Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -825,8 +825,8 @@
       "경로": "050_Security/030_Codex_Security/020_Codex_Security_plugin/110_Changelog.md",
       "href": "/codex/security/plugin/changelog",
       "url": "https://learn.chatgpt.com/docs/security/plugin/changelog.md",
-      "sha256": "cc815672c99bd260ccb695ab785dda8dcad828a1518a1b3c4235c655e78e4f1d",
-      "bytes": 17071,
+      "sha256": "e074c0658861f73f2699d63ae903e3c07adef15c23d26344289694529b869a51",
+      "bytes": 21810,
       "contentType": "text/markdown"
     },
     {

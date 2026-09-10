@@ -111,10 +111,11 @@
   020_Agent_Toolkit/
     010_Agent_Toolkit.md — Production-grade research agents with battle-tested tools and patterns.
     020_Tools_Reference.md — Optimized retrieval primitives for research agents.
-    030_Chatbot.md — Route between quick search and deep research by query complexity.
-    040_Hybrid_Research.md — Combine an internal knowledge base with real-time web research.
-    050_Company_Intelligence.md — Crawl, extract, and search for company analysis.
-    060_Social_Media_Research.md — Research a topic across TikTok, Reddit, X, LinkedIn, and more.
+    030_Use_Case_Skills.md
+    040_Chatbot.md — Route between quick search and deep research by query complexity.
+    050_Hybrid_Research.md — Combine an internal knowledge base with real-time web research.
+    060_Company_Intelligence.md — Crawl, extract, and search for company analysis.
+    070_Social_Media_Research.md — Research a topic across TikTok, Reddit, X, LinkedIn, and more.
   030_Apps/
     010_Chat.md — A conversational agent with search, crawl, and extract.
     020_Data_Enrichment.md — Enhance datasets with Tavily's APIs.

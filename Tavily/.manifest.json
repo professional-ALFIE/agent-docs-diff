@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-10T16:23:42.871Z",
+  "생성": "2026-09-10T20:51:10.581Z",
   "제품폴더": "Tavily",
   "진입": "https://docs.tavily.com/documentation/about",
   "최상위수": 8,
@@ -289,8 +289,8 @@
       "경로": "050_Ecosystem/030_Developer/040_Hermes_Agent.md",
       "href": "/documentation/integrations/hermes-agent",
       "url": "https://docs.tavily.com/documentation/integrations/hermes-agent.md",
-      "sha256": "3388d92f53f229f05b8d1f045f3b942e4641476b62cdc70fa8422c0e2b56eccb",
-      "bytes": 7208,
+      "sha256": "2f9936604427575cc5348331a3250a80ef1034b5763a96de7c8f16d10f28d96c",
+      "bytes": 6697,
       "contentType": "text/markdown"
     },
     {
@@ -694,7 +694,15 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060_Examples/020_Agent_Toolkit/030_Chatbot.md",
+      "경로": "060_Examples/020_Agent_Toolkit/030_Use_Case_Skills.md",
+      "href": "/examples/agent-toolkit/skills_usecase",
+      "url": "https://docs.tavily.com/examples/agent-toolkit/skills_usecase.md",
+      "sha256": "9680c4495c58e47a0418a460aed91b7ab7dda656911a5a04576d306ccf37e5a5",
+      "bytes": 3948,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "060_Examples/020_Agent_Toolkit/040_Chatbot.md",
       "href": "/examples/agent-toolkit/chatbot",
       "url": "https://docs.tavily.com/examples/agent-toolkit/chatbot.md",
       "sha256": "9fda62000c0cf55ac8a1a3a9827a9eeca7313976c9e6d0558f336e4641d9c835",
@@ -702,7 +710,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060_Examples/020_Agent_Toolkit/040_Hybrid_Research.md",
+      "경로": "060_Examples/020_Agent_Toolkit/050_Hybrid_Research.md",
       "href": "/examples/agent-toolkit/hybrid-research",
       "url": "https://docs.tavily.com/examples/agent-toolkit/hybrid-research.md",
       "sha256": "088f4955ed40df4131f050dfad36bd0d4094d99d88a5dd9757ef44c3ab46712f",
@@ -710,7 +718,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060_Examples/020_Agent_Toolkit/050_Company_Intelligence.md",
+      "경로": "060_Examples/020_Agent_Toolkit/060_Company_Intelligence.md",
       "href": "/examples/agent-toolkit/company-intelligence",
       "url": "https://docs.tavily.com/examples/agent-toolkit/company-intelligence.md",
       "sha256": "8a4c9ae3034c790f02ee2c0e0cb8ce7e9e05283f4f1b1f558293ee9be33dd106",
@@ -718,7 +726,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "060_Examples/020_Agent_Toolkit/060_Social_Media_Research.md",
+      "경로": "060_Examples/020_Agent_Toolkit/070_Social_Media_Research.md",
       "href": "/examples/agent-toolkit/social-media-research",
       "url": "https://docs.tavily.com/examples/agent-toolkit/social-media-research.md",
       "sha256": "dbafcd54d5a8f7cb1572c9280b82ef1a076f0c58babac605c8065fd6140667be",
@@ -874,6 +882,6 @@
     "치환": 98,
     "미노출": 2,
     "외부": 3,
-    "메뉴에만": 8
+    "메뉴에만": 9
   }
 }

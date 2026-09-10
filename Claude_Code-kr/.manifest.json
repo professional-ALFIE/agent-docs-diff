@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-10T04:40:21.734Z",
+  "생성": "2026-09-10T20:50:52.964Z",
   "제품폴더": "Claude_Code-kr",
   "진입": "https://code.claude.com/docs/ko/overview",
   "최상위수": 8,
@@ -9,16 +9,16 @@
       "경로": "010_시작하기/010_시작하기/010_개요.md",
       "href": "/ko/overview",
       "url": "https://code.claude.com/docs/ko/overview.md",
-      "sha256": "9f5310ce894e039c9befbb18cf96e75c84bac20cd07190098e22700fa57c9d9f",
-      "bytes": 18973,
+      "sha256": "fc6372de88ece25920478b4ea318991632e47e13e49ced91e912c3b81d6850a4",
+      "bytes": 18778,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_시작하기/010_시작하기/020_빠른_시작.md",
       "href": "/ko/quickstart",
       "url": "https://code.claude.com/docs/ko/quickstart.md",
-      "sha256": "9f15c1132db6f364f970847a132e1dd1f0b1bef4e6bb1f28b56f00ca3349d412",
-      "bytes": 15500,
+      "sha256": "b7617af6cb9fd2587a2ebca5173c631de15762681b3342d393e37826e084752d",
+      "bytes": 15305,
       "contentType": "text/markdown"
     },
     {
@@ -121,8 +121,8 @@
       "경로": "010_시작하기/040_플랫폼_및_통합/020_Remote_Control.md",
       "href": "/ko/remote-control",
       "url": "https://code.claude.com/docs/ko/remote-control.md",
-      "sha256": "46829a2bbec20e38bd017f96ced3017f6295a45e549cec147cb5898e35a712b7",
-      "bytes": 72094,
+      "sha256": "3ddea496904727d31fc22663a58244df96afea22c5035eab1425af9c1268ecd3",
+      "bytes": 72327,
       "contentType": "text/markdown"
     },
     {
@@ -193,8 +193,8 @@
       "경로": "010_시작하기/040_플랫폼_및_통합/040_Claude_Code_데스크톱/050_예약된_작업.md",
       "href": "/ko/desktop-scheduled-tasks",
       "url": "https://code.claude.com/docs/ko/desktop-scheduled-tasks.md",
-      "sha256": "ff68ca9b1fb613dce9f002874a588edce40fd346d8ba6390a70167a4a6892208",
-      "bytes": 14212,
+      "sha256": "9790ba4ae0a14992871992eeb636700e358483ddd4e195ef3406754ad57b5103",
+      "bytes": 14646,
       "contentType": "text/markdown"
     },
     {
@@ -393,8 +393,8 @@
       "경로": "020_Claude_Code로_빌드하기/060_자동화/030_일정에_따라_프롬프트_실행하기.md",
       "href": "/ko/scheduled-tasks",
       "url": "https://code.claude.com/docs/ko/scheduled-tasks.md",
-      "sha256": "65e45d8bb9be334c0b75e4a7d9a07f88b10dfe111e8111fa94b60456f7ba7c66",
-      "bytes": 20418,
+      "sha256": "f9d89cbb91738197d5f0af1dc55e6b96effb596f153c9fb6f60a08b10bf705fa",
+      "bytes": 20852,
       "contentType": "text/markdown"
     },
     {
@@ -473,8 +473,8 @@
       "경로": "030_관리/010_설정_및_액세스/020_고급_설정.md",
       "href": "/ko/setup",
       "url": "https://code.claude.com/docs/ko/setup.md",
-      "sha256": "70c2491a83c7b7b9c5de61b732dc3932c959a35a2a0031c8c421e431dfc84919",
-      "bytes": 36102,
+      "sha256": "07136686b7de6a93cd01e5032dd4dd55e2876ae6ffbeadd996203ec9ab92a5b5",
+      "bytes": 35907,
       "contentType": "text/markdown"
     },
     {
@@ -505,8 +505,8 @@
       "경로": "030_관리/010_설정_및_액세스/060_자동_모드.md",
       "href": "/ko/auto-mode-config",
       "url": "https://code.claude.com/docs/ko/auto-mode-config.md",
-      "sha256": "1af43b6df1f70e24065e480bf188c69f31d982e3a6b2c5bd4946ccbf186074ba",
-      "bytes": 41178,
+      "sha256": "bd8a1d6d9fbcd41ee3308ce2d0dfd148e80126b12b8b2087d19a2b2526a66c3d",
+      "bytes": 41760,
       "contentType": "text/markdown"
     },
     {
@@ -561,8 +561,8 @@
       "경로": "030_관리/020_배포/070_네트워크_구성.md",
       "href": "/ko/network-config",
       "url": "https://code.claude.com/docs/ko/network-config.md",
-      "sha256": "a7df883398921b3cfaa171a1228592b98d453628eead77cf0003c8afc41f86e7",
-      "bytes": 42178,
+      "sha256": "9f39b733d8e87cd796311d83eb51b3be5c219b3ab8ee2522918e6ed2d7c07470",
+      "bytes": 43364,
       "contentType": "text/markdown"
     },
     {
@@ -673,8 +673,8 @@
       "경로": "030_관리/050_플러그인_배포/010_플러그인_마켓플레이스_생성_및_배포.md",
       "href": "/ko/plugin-marketplaces",
       "url": "https://code.claude.com/docs/ko/plugin-marketplaces.md",
-      "sha256": "946ba4e0226b3451f6ef558662cfbd31278e6ce9d99c3e5cbd050fa23a503927",
-      "bytes": 132151,
+      "sha256": "ba626526f4e2806e85336692444825899ef91b6f531509f89519cfd07ad8750f",
+      "bytes": 133478,
       "contentType": "text/markdown"
     },
     {
@@ -705,8 +705,8 @@
       "경로": "030_관리/060_보안_및_데이터/010_보안.md",
       "href": "/ko/security",
       "url": "https://code.claude.com/docs/ko/security.md",
-      "sha256": "fb8800f33113e15fa89e9ad50b50edf3208bad8243c9381532bcecb65ae9d162",
-      "bytes": 15397,
+      "sha256": "cd5f3d08645d82993923fcdf888fa4df4654d8395e55b0bc7f99f83d383e32f9",
+      "bytes": 15691,
       "contentType": "text/markdown"
     },
     {
@@ -753,8 +753,8 @@
       "경로": "040_구성/010_설정_및_권한/020_권한.md",
       "href": "/ko/permissions",
       "url": "https://code.claude.com/docs/ko/permissions.md",
-      "sha256": "cccdbc632383216554cd4dec1ca63d553810e4e8cfcb9eb75b0994eb9f7ffc2b",
-      "bytes": 89634,
+      "sha256": "b8d037de1f32f545a711016c28b003a162a17242be6808e97c62324117e5a1aa",
+      "bytes": 92289,
       "contentType": "text/markdown"
     },
     {
@@ -769,8 +769,8 @@
       "경로": "040_구성/010_설정_및_권한/040_Bash_샌드박스.md",
       "href": "/ko/sandboxing",
       "url": "https://code.claude.com/docs/ko/sandboxing.md",
-      "sha256": "f7e441547807d6fa8f077e1ed35290867a207ce667984ec832db9847de16b424",
-      "bytes": 87758,
+      "sha256": "0b1df311456b4458085101e5034b3d3dc3983776dce916c440920f759e7fbe3d",
+      "bytes": 89071,
       "contentType": "text/markdown"
     },
     {
@@ -801,8 +801,8 @@
       "경로": "040_구성/020_모델_및_응답/040_출력_스타일.md",
       "href": "/ko/output-styles",
       "url": "https://code.claude.com/docs/ko/output-styles.md",
-      "sha256": "d7d0aaa931d70bc77d100ffb171e48f67ecb90c5d6fe460f1623fa53e77a56da",
-      "bytes": 13258,
+      "sha256": "b0ef861d3c1656658e3d30b99d030220f8e5fc0e2b57ab8e91a59356b357fc5a",
+      "bytes": 13396,
       "contentType": "text/markdown"
     },
     {
@@ -889,8 +889,8 @@
       "경로": "050_참고/010_참고/050_대화형_모드.md",
       "href": "/ko/interactive-mode",
       "url": "https://code.claude.com/docs/ko/interactive-mode.md",
-      "sha256": "75a70bc169521b711f7c5d96a109a088ed6359b5010a97ec9d7bd83617c3f4da",
-      "bytes": 92959,
+      "sha256": "f6bc1bd9aa57efca78c31b703cdc6873310302ecc1de72525c88c191e848791e",
+      "bytes": 96351,
       "contentType": "text/markdown"
     },
     {
