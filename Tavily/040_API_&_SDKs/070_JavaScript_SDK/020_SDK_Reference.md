@@ -143,16 +143,15 @@ The response object you receive will be in the following format:
 
 Each result in the `results` list will be in the following `Result` format:
 
-| Key                        | Type                          | Description                                                                                                                                                                         |
-| :------------------------- | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`                    | `string`                      | The title of the search result.                                                                                                                                                     |
-| `url`                      | `string`                      | The URL of the search result.                                                                                                                                                       |
-| `content`                  | `string`                      | The most query-related content from the scraped URL. Tavily uses proprietary AI to extract the most relevant content based on context quality and size.                             |
-| `score`                    | `float`                       | The relevance score of the search result.                                                                                                                                           |
-| `rawContent` (optional)    | `string`                      | The parsed and cleaned HTML content of the site. This is only available if `includeRawContent` is set to `true`.                                                                    |
-| `publishedDate` (optional) | `string`                      | The publication date of the source. This is only available if the search `topic` is set to `news`.                                                                                  |
-| `favicon` (optional)       | `string`                      | The favicon URL for the result.                                                                                                                                                     |
-| `images` (optional)        | `string[]` or `ImageResult[]` | Images extracted from this search result. Only included when `includeImages` is set to `true`. If `includeImageDescriptions` is set to `true`, each entry will be an `ImageResult`. |
+| Key                     | Type                          | Description                                                                                                                                                                         |
+| :---------------------- | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`                 | `string`                      | The title of the search result.                                                                                                                                                     |
+| `url`                   | `string`                      | The URL of the search result.                                                                                                                                                       |
+| `content`               | `string`                      | The most query-related content from the scraped URL. Tavily uses proprietary AI to extract the most relevant content based on context quality and size.                             |
+| `score`                 | `float`                       | The relevance score of the search result.                                                                                                                                           |
+| `rawContent` (optional) | `string`                      | The parsed and cleaned HTML content of the site. This is only available if `includeRawContent` is set to `true`.                                                                    |
+| `favicon` (optional)    | `string`                      | The favicon URL for the result.                                                                                                                                                     |
+| `images` (optional)     | `string[]` or `ImageResult[]` | Images extracted from this search result. Only included when `includeImages` is set to `true`. If `includeImageDescriptions` is set to `true`, each entry will be an `ImageResult`. |
 
 #### Image Results
 
