@@ -97,10 +97,12 @@ Best for queries seeking specific information:
 
 ### By date
 
-| Parameter                 | Description                                             |
-| ------------------------- | ------------------------------------------------------- |
-| `time_range`              | Filter by relative time: `day`, `week`, `month`, `year` |
-| `start_date` / `end_date` | Filter by specific date range (format: `YYYY-MM-DD`)    |
+| Parameter                  | Description                                                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `time_range`               | Filter by relative time: `day`, `week`, `month`, `year`                                                                                    |
+| `start_date` / `end_date`  | Filter by specific date range (format: `YYYY-MM-DD`)                                                                                       |
+| `include_published_date`   | Return a `published_date` field on each result. Beta. Automatically enabled when `topic` is `news`.                                        |
+| `filter_by_published_date` | Strictly remove results outside the `time_range`/`start_date`/`end_date` window, **and** remove results with no detectable published date. |
 
 ```json theme={null}
 { "query": "latest ML trends", "time_range": "month" }
