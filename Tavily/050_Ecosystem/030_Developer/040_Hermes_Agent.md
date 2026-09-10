@@ -31,12 +31,10 @@ Hermes supports Tavily with or without an API key. Keyless access is free and ra
 
 ## How keyless access works
 
-A fresh Hermes installation with no web credentials can use `web_search` and `web_extract` immediately. Hermes rotates keyless requests across the public free tiers from Tavily, Exa, Parallel, Firecrawl, and Keenable. If one provider is rate-limited, Hermes tries the next provider in the ring.
-
-To make Tavily the primary backend instead of using round-robin rotation, select Tavily in `hermes tools` or set `web.backend` to `tavily`. Keyless requests then start with Tavily and only move to the next provider if Tavily is throttled.
+A fresh Hermes installation with no web credentials can use `web_search` and `web_extract` immediately if Tavily is set as the primary backend. To make Tavily the primary backend, select Tavily in `hermes tools` or set `web.backend` to `tavily`.
 
 <Note>
-  In the default keyless rotation or after rate-limit failover, another provider may serve an individual request. Pinning Tavily makes it the first provider for each request, not the only possible keyless provider.
+  While using the default keyless rotation (round-robin), Tavily is not available. Hermes will rotate keyless requests across the public free tiers of Exa, Parallel, Firecrawl, and Keenable. If one provider is rate-limited, Hermes will try the next provider in the ring.
 </Note>
 
 ## Set up Tavily with Hermes Agent
@@ -62,13 +60,7 @@ To make Tavily the primary backend instead of using round-robin rotation, select
     Follow the Hermes setup flow to configure your model provider.
   </Accordion>
 
-  <Accordion title="Step 2: Choose your Tavily access mode">
-    **Option 1: Use the zero-config keyless rotation**
-
-    No Tavily setup is required. If Hermes has no web backend or web credentials configured, Tavily participates automatically in the five-provider keyless rotation.
-
-    **Option 2: Pin Tavily with keyless access**
-
+  <Accordion title="Step 2: Set Tavily with keyless access">
     Run the interactive tool setup and select **Tavily**. Skip the API key prompt:
 
     ```bash theme={null}
@@ -81,7 +73,7 @@ To make Tavily the primary backend instead of using round-robin rotation, select
     hermes config set web.backend tavily
     ```
 
-    **Option 3: Pin Tavily with an API key**
+    **Pin Tavily with an API key (Optional)**
 
     Save your key and select Tavily as the backend:
 
@@ -173,7 +165,7 @@ If Hermes cannot search or extract content, check these in order:
    hermes config get web.backend
    ```
 4. If using keyed access, confirm `TAVILY_API_KEY` is set in the active profile's `~/.hermes/.env`. Avoid printing the key in terminal output.
-5. Keyless access is rate-limited. If all free providers are throttled, add a free Tavily API key for higher limits.
+5. Keyless access is rate-limited. If the free tier is throttled, add a free Tavily API key for higher limits.
 
 ## Learn more
 
