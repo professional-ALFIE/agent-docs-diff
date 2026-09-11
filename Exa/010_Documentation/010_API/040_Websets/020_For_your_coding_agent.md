@@ -98,22 +98,22 @@ curl -s -X POST "https://api.exa.ai/websets/v0/websets/" \
     "enrichments": [
       {"description": "Find founding year", "format": "number"}
     ]
-  }' | jq
+  }'
 
 # Check status
 curl -s "https://api.exa.ai/websets/v0/websets/{WEBSET_ID}" \
   -H "accept: application/json" \
-  -H "Authorization: Bearer ${EXA_API_KEY}" | jq
+  -H "Authorization: Bearer ${EXA_API_KEY}"
 
 # List items
 curl -s "https://api.exa.ai/websets/v0/websets/{WEBSET_ID}/items" \
   -H "accept: application/json" \
-  -H "Authorization: Bearer ${EXA_API_KEY}" | jq
+  -H "Authorization: Bearer ${EXA_API_KEY}"
 
 # Get webset with items expanded
 curl -s "https://api.exa.ai/websets/v0/websets/{WEBSET_ID}?expand=items" \
   -H "accept: application/json" \
-  -H "Authorization: Bearer ${EXA_API_KEY}" | jq
+  -H "Authorization: Bearer ${EXA_API_KEY}"
 ```
 
 ## SDK Sub-Client Reference
