@@ -37,7 +37,7 @@ Microsoft deprecated the Bing Search API on August 11th, 2025. This guide provid
 <CodeGroup>
   ```bash cURL theme={null}
   curl -s -H "Ocp-Apim-Subscription-Key: YOUR_BING_KEY" \
-    "https://api.bing.microsoft.com/v7.0/search?q=latest%20AI%20news&count=10" | jq
+    "https://api.bing.microsoft.com/v7.0/search?q=latest%20AI%20news&count=10"
   ```
 
   ```python Python theme={null}
@@ -72,7 +72,7 @@ Microsoft deprecated the Bing Search API on August 11th, 2025. This guide provid
     -d '{
       "query": "latest AI news",
       "numResults": 10
-    }' | jq
+    }'
   ```
 
   ```python Python theme={null}
@@ -148,7 +148,7 @@ Microsoft deprecated the Bing Search API on August 11th, 2025. This guide provid
 <CodeGroup>
   ```bash cURL theme={null}
   curl -s -H "Ocp-Apim-Subscription-Key: YOUR_KEY" \
-    "https://api.bing.microsoft.com/v7.0/search?q=AI+news&freshness=Week" | jq
+    "https://api.bing.microsoft.com/v7.0/search?q=AI+news&freshness=Week"
   ```
 
   ```python Python theme={null}
@@ -181,7 +181,7 @@ Microsoft deprecated the Bing Search API on August 11th, 2025. This guide provid
       "query": "AI news",
       "startPublishedDate": "2025-08-04T00:00:00Z",
       "type": "auto"
-    }' | jq
+    }'
   ```
 
   ```python Python theme={null}
@@ -213,7 +213,7 @@ Microsoft deprecated the Bing Search API on August 11th, 2025. This guide provid
 <CodeGroup>
   ```bash cURL theme={null}
   curl -s -H "Ocp-Apim-Subscription-Key: YOUR_KEY" \
-    "https://api.bing.microsoft.com/v7.0/search?q=site:arxiv.org+transformers" | jq
+    "https://api.bing.microsoft.com/v7.0/search?q=site:arxiv.org+transformers"
   ```
 
   ```python Python theme={null}
@@ -249,7 +249,7 @@ Microsoft deprecated the Bing Search API on August 11th, 2025. This guide provid
       "query": "transformers",
       "includeDomains": ["arxiv.org"],
       "type": "auto"
-    }' | jq
+    }'
   ```
 
   ```python Python theme={null}
@@ -286,7 +286,7 @@ Exa provides integrated content extraction, eliminating the need for separate AP
           "query": "key findings"
         }
       }
-    }' | jq
+    }'
   ```
 
   ```python Python theme={null}
