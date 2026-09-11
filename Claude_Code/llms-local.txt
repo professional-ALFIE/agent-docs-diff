@@ -65,6 +65,7 @@
   040_Plugins/
     010_Discover_and_install_prebuilt_plugins.md — Find and install plugins from marketplaces to extend Claude Code with new skills, agents, and capabilities.
     020_Create_plugins.md — Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
+    030_Test_plugins_with_evals.md — Write eval cases for your Claude Code plugin, run them with claude plugin eval, grade the results, compare against a no-plugin baseline, and gate CI on the score.
   050_Artifacts/
     010_Share_session_output_as_artifacts.md — Artifacts turn Claude Code's work into live, interactive pages on claude.ai that you can keep private, share with your organization, or publish to a public link.
   060_Automation/

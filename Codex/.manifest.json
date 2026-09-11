@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-11T16:27:55.471Z",
+  "생성": "2026-09-11T20:57:32.515Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -89,8 +89,8 @@
       "경로": "010_Overview/040_Explore/030_Pricing.md",
       "href": "/codex/pricing",
       "url": "https://learn.chatgpt.com/docs/pricing.md",
-      "sha256": "aa35ac9fac229f008c7525cb7135799f715024e86dbb2991e4a80d633b3c783a",
-      "bytes": 46997,
+      "sha256": "241caa63ba7ea35727f934dc0254d7768123388af37467eed858887939dddb26",
+      "bytes": 47225,
       "contentType": "text/markdown"
     },
     {
@@ -961,8 +961,8 @@
       "경로": "060_Administration/030_ChatGPT_Work/030_ChatGPT_Work_local_security.md",
       "href": "/codex/enterprise/chatgpt-work-local-security",
       "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security.md",
-      "sha256": "6103fb56922ce2d82e02ec63593d66ccfa423cb5a2564bbde2f5c1fa4569e686",
-      "bytes": 15087,
+      "sha256": "23a748de93b59414d3e0679a4dd09cb0c383ef1b0dc4893b0fe0d6f449253495",
+      "bytes": 20324,
       "contentType": "text/markdown"
     },
     {

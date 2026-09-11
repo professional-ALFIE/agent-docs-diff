@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-11T16:26:44.889Z",
+  "생성": "2026-09-11T20:56:41.908Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -25,8 +25,8 @@
       "경로": "010_Getting_started/010_Getting_started/030_Changelog.md",
       "href": "/en/changelog",
       "url": "https://code.claude.com/docs/en/changelog.md",
-      "sha256": "cc7947221a15856299d9a2d84ba82216a5e70d18060b6a42ccbbe32bea26e8f1",
-      "bytes": 694789,
+      "sha256": "e68721817a68e090c14dafb5522e25e62697a0859576d0320e266369aa7a9642",
+      "bytes": 709919,
       "contentType": "text/markdown"
     },
     {
@@ -233,8 +233,8 @@
       "경로": "010_Getting_started/040_Platforms_and_integrations/080_Visual_Studio_Code.md",
       "href": "/en/vs-code",
       "url": "https://code.claude.com/docs/en/vs-code.md",
-      "sha256": "0284d89d9db7df011db7d735fb29850b3eac35d322793ddd14449fb2b83e8a61",
-      "bytes": 66630,
+      "sha256": "26891af5219c5a6deb54d192b601f51ab71b5a750aed40fd98d00d94cf304692",
+      "bytes": 69195,
       "contentType": "text/markdown"
     },
     {
@@ -393,8 +393,8 @@
       "경로": "020_Build_with_Claude_Code/030_Skills/010_Extend_Claude_with_skills.md",
       "href": "/en/skills",
       "url": "https://code.claude.com/docs/en/skills.md",
-      "sha256": "57558f547017a0afef1308a0f36291ac9c8bf5055da3b05cf0318911d8ef7238",
-      "bytes": 111065,
+      "sha256": "89710b5538062d949cb51f2cdbb14714f1d88b323445be52a0440a7f6444af40",
+      "bytes": 111901,
       "contentType": "text/markdown"
     },
     {
@@ -409,8 +409,16 @@
       "경로": "020_Build_with_Claude_Code/040_Plugins/020_Create_plugins.md",
       "href": "/en/plugins",
       "url": "https://code.claude.com/docs/en/plugins.md",
-      "sha256": "1d49d0348ddfaf40aca6c6204adc76ad809691c683dabadee1a2f5acc5364dbe",
-      "bytes": 30336,
+      "sha256": "f1dbdea22af5232e847ee45d71fcb69588840de2daf47bf7cc903cdb0bf128e4",
+      "bytes": 30843,
+      "contentType": "text/markdown"
+    },
+    {
+      "경로": "020_Build_with_Claude_Code/040_Plugins/030_Test_plugins_with_evals.md",
+      "href": "/en/plugin-evals",
+      "url": "https://code.claude.com/docs/en/plugin-evals.md",
+      "sha256": "3e321fedb5799f4eda2abddfe2677275d172d86e374cfc534861c166d0efaa84",
+      "bytes": 70798,
       "contentType": "text/markdown"
     },
     {
@@ -505,8 +513,8 @@
       "경로": "020_Build_with_Claude_Code/080_Troubleshooting/040_Error_reference.md",
       "href": "/en/errors",
       "url": "https://code.claude.com/docs/en/errors.md",
-      "sha256": "3f811b57bbfa560b8b9777846f8f26ec70eb44bcf96c257dd2f54b29ae5d5029",
-      "bytes": 407696,
+      "sha256": "c4f22e8f03dcebccaf7e3ffc35bd74de92372aa0c550b0ae1be199d38379343d",
+      "bytes": 408928,
       "contentType": "text/markdown"
     },
     {
@@ -737,8 +745,8 @@
       "경로": "030_Administration/050_Plugin_distribution/010_Create_and_distribute_a_plugin_marketplace.md",
       "href": "/en/plugin-marketplaces",
       "url": "https://code.claude.com/docs/en/plugin-marketplaces.md",
-      "sha256": "0d6c99f4928972be8256e34f31c15a80eb19b3a50eb55fd348090c712ef04b26",
-      "bytes": 118098,
+      "sha256": "dc24c3a37ace2d2814923fef4315fb934429abe6366aabb5efb3f43382b64273",
+      "bytes": 118308,
       "contentType": "text/markdown"
     },
     {
@@ -1057,8 +1065,8 @@
       "경로": "050_Reference/010_Reference/080_Plugins_reference.md",
       "href": "/en/plugins-reference",
       "url": "https://code.claude.com/docs/en/plugins-reference.md",
-      "sha256": "0fed6bec63e5d3884c497d57e0ff055fc584a4a93cacd19ae260d7cd484732b7",
-      "bytes": 123282,
+      "sha256": "95fe4913601c18f7a6e5b5c79cde9203feeb1636fd0cee1c442e03bc266a6933",
+      "bytes": 131801,
       "contentType": "text/markdown"
     },
     {
@@ -1512,7 +1520,7 @@
   ],
   "제외": [],
   "llms": {
-    "치환": 188,
+    "치환": 189,
     "미노출": 14,
     "외부": 0,
     "메뉴에만": 0
