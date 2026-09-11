@@ -59,7 +59,7 @@ Incompatible requests return `400 INVALID_REQUEST_BODY`, including:
       "compliance": "hipaa",
       "highlights": true,
       "maxAgeHours": -1
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
