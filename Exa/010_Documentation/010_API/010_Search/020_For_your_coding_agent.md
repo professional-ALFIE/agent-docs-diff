@@ -27,7 +27,7 @@ npm install exa-js    # JavaScript
 curl -s -X POST "https://api.exa.ai/search" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -d '{"query": "latest developments in LLMs", "contents": {"highlights": true}}' | jq
+  -d '{"query": "latest developments in LLMs", "contents": {"highlights": true}}'
 ```
 
 ```python theme={null}
