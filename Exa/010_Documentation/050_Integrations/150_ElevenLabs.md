@@ -92,7 +92,7 @@ No server, no callback URL, no listener. ElevenLabs is the HTTP client calling E
             }
           }
         }
-      }' | jq
+      }'
     ```
 
     This creates a tool where:
@@ -127,7 +127,7 @@ No server, no callback URL, no listener. ElevenLabs is the HTTP client calling E
             "first_message": "Hey! I can search the web for you in real-time. What would you like to know?"
           }
         }
-      }' | jq
+      }'
     ```
 
     The response includes an `agent_id`. Open the agent in the ElevenLabs dashboard to test it:
