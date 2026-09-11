@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-09T11:20:35.410Z",
+  "생성": "2026-09-11T04:37:19.766Z",
   "제품폴더": "Exa",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -9,16 +9,16 @@
       "경로": "010_Documentation/010_API/010_Search/010_For_humans.md",
       "href": "/reference/search-api-guide",
       "url": "https://exa.ai/docs/reference/search-api-guide.md",
-      "sha256": "f1e45692e14b18838922afb0c40d5bcf625726146a45eea119ce208f74f38562",
-      "bytes": 10943,
+      "sha256": "f7b47d33f1e46004b02b241d1c79923368b4196a763a7a6e0f7912cf36501dcc",
+      "bytes": 10938,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/010_API/010_Search/020_For_your_coding_agent.md",
       "href": "/reference/search-api-guide-for-coding-agents",
       "url": "https://exa.ai/docs/reference/search-api-guide-for-coding-agents.md",
-      "sha256": "9cb743083e08f12f2b06a433680e934e1f7063fc102b6fe1ee7128ba2a428dac",
-      "bytes": 30398,
+      "sha256": "e0477705c0079ab324f82a963f5eeac7d840f73813c341d73b2ac45d7fbef82d",
+      "bytes": 30393,
       "contentType": "text/markdown"
     },
     {
@@ -33,16 +33,16 @@
       "경로": "010_Documentation/010_API/020_Contents/010_For_humans.md",
       "href": "/reference/contents-api-guide",
       "url": "https://exa.ai/docs/reference/contents-api-guide.md",
-      "sha256": "e72b3691e676818afaf1443f6eefbd401c6011d14135b55f177c6497704d872a",
-      "bytes": 10972,
+      "sha256": "4c1f5db6762405308d38d80d91f49180d7ccc8d61fd2e2f0cdd2f569429908a4",
+      "bytes": 10967,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/010_API/020_Contents/020_For_your_coding_agent.md",
       "href": "/reference/contents-api-guide-for-coding-agents",
       "url": "https://exa.ai/docs/reference/contents-api-guide-for-coding-agents.md",
-      "sha256": "b2e652e54001e7fdf960edc307c58778ffe59cfb2ff17ba549e7b7b3e2fb4df2",
-      "bytes": 18433,
+      "sha256": "c63a9389dcaa3c98ef1fb2b4c7f0c2c8c8e1da451176ffb9e8ed879e1bd63b5a",
+      "bytes": 18428,
       "contentType": "text/markdown"
     },
     {
@@ -57,8 +57,8 @@
       "경로": "010_Documentation/010_API/030_Agent/010_For_Humans.md",
       "href": "/reference/agent-api-guide",
       "url": "https://exa.ai/docs/reference/agent-api-guide.md",
-      "sha256": "bd05d88f397d41943a5dff98b49327c992ee8e6680beebb2a8e8576087462ef3",
-      "bytes": 36074,
+      "sha256": "e33fd27e5f75228df893d44f0650352c99875ed6728e5d5cb0a1e6d36865a29c",
+      "bytes": 36013,
       "contentType": "text/markdown"
     },
     {
@@ -73,16 +73,16 @@
       "경로": "010_Documentation/010_API/040_Websets/010_For_humans.md",
       "href": "/websets/api-guide",
       "url": "https://exa.ai/docs/websets/api-guide.md",
-      "sha256": "29791c1baf5f7d46b443df4ca8906a13ec79c2eb1ec568f121d53d62169d298b",
-      "bytes": 5999,
+      "sha256": "47467e3bec5b3142cb839f35b2060ec368fb06ef0bdc83f54a4e25cfdacbac5b",
+      "bytes": 5994,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/010_API/040_Websets/020_For_your_coding_agent.md",
       "href": "/websets/api-guide-for-coding-agents",
       "url": "https://exa.ai/docs/websets/api-guide-for-coding-agents.md",
-      "sha256": "e400426fe9dd3dec5c45f0e68f1a17b7993cc9baa26d596505d8091cb6fc2e43",
-      "bytes": 38560,
+      "sha256": "7f8ebf9b3a82188e1cde898afb7fbf0f8cd10a4a22d059498040efb586232717",
+      "bytes": 38540,
       "contentType": "text/markdown"
     },
     {
@@ -97,8 +97,8 @@
       "경로": "010_Documentation/010_API/040_Websets/040_How_to_Use_Imports.md",
       "href": "/websets/imports-and-search",
       "url": "https://exa.ai/docs/websets/imports-and-search.md",
-      "sha256": "17c08efeead44116d27e183aa38484700435403faf27652966eb5a38242360d8",
-      "bytes": 16130,
+      "sha256": "26840af92bb85526e2606dbd2e570eab3ae9e5c04f57c570d2fff30e55849c3b",
+      "bytes": 16100,
       "contentType": "text/markdown"
     },
     {
@@ -209,96 +209,96 @@
       "경로": "010_Documentation/010_API/050_Monitors/010_For_humans.md",
       "href": "/reference/monitors-api-guide",
       "url": "https://exa.ai/docs/reference/monitors-api-guide.md",
-      "sha256": "a5603448cb7d3ce54df8edd9da1e52f70659cb2f61928ce0967d604cee618ab9",
-      "bytes": 11042,
+      "sha256": "9df2a6b4d0c5e18e2e8408e4c45fb27e2ce71567f0f653b9ea9e8d313da5282b",
+      "bytes": 11022,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/010_API/050_Monitors/020_For_your_coding_agent.md",
       "href": "/reference/monitors-api-guide-for-coding-agents",
       "url": "https://exa.ai/docs/reference/monitors-api-guide-for-coding-agents.md",
-      "sha256": "986a367057c7e1f3c0672e79ef605328776b7af10bb2da545498a8427ed83be5",
-      "bytes": 42151,
+      "sha256": "b8eb1e7a0f15a04849c02e444fb400547eced278b06b2c418e41b2038f500bef",
+      "bytes": 42136,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/010_Quickstart.md",
       "href": "/reference/agent-api/connect/overview",
       "url": "https://exa.ai/docs/reference/agent-api/connect/overview.md",
-      "sha256": "47c93dd984dabafe05625dbdf1da5e9c89bf03193895315395d80588d7e09127",
-      "bytes": 11459,
+      "sha256": "2f7e04b814bc5b1dffad4ad12a5612ca5d57d002d32ba3ade141abe193fc6135",
+      "bytes": 11454,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/010_Fiber.ai.md",
       "href": "/reference/agent-api/connect/fiber",
       "url": "https://exa.ai/docs/reference/agent-api/connect/fiber.md",
-      "sha256": "5c5fb301f21ebc18f48fc829c7f43962cee1d721734d79e12ea2a331c7348172",
-      "bytes": 5783,
+      "sha256": "d9d55fc2157b808574407495145ef0508b50f3adca6127170aa285a0e9ba7b86",
+      "bytes": 5778,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/020_Similarweb.md",
       "href": "/reference/agent-api/connect/similarweb",
       "url": "https://exa.ai/docs/reference/agent-api/connect/similarweb.md",
-      "sha256": "2d95f9357d127e01d3563506cfd568b11485e7e4d969de21ff0390b9ee4b843d",
-      "bytes": 4063,
+      "sha256": "86f42bf5d9f29e51590d1a1546d6eb88d917a824697966db5e41269beacf60df",
+      "bytes": 4058,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/030_Baselayer.md",
       "href": "/reference/agent-api/connect/baselayer",
       "url": "https://exa.ai/docs/reference/agent-api/connect/baselayer.md",
-      "sha256": "3fed998337f1366b8c5258d9ab686457e11de6ea1a13a5184c024239bb0ecd03",
-      "bytes": 6704,
+      "sha256": "577e28fa6351b149ad6fc3a180865b5615deeac59861af9aa8a4008e203b23de",
+      "bytes": 6699,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/040_Polymarket.md",
       "href": "/reference/agent-api/connect/polymarket",
       "url": "https://exa.ai/docs/reference/agent-api/connect/polymarket.md",
-      "sha256": "76ae914f71ca8134af9257eab67296e9bbddff42e93668a0732944fe968501bb",
-      "bytes": 4864,
+      "sha256": "55449594ff353ad57917061a86b88b19eb7d0cacb1c9c6179fbb139ef7025d4b",
+      "bytes": 4859,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/050_Affiliate.com.md",
       "href": "/reference/agent-api/connect/affiliatecom",
       "url": "https://exa.ai/docs/reference/agent-api/connect/affiliatecom.md",
-      "sha256": "dc612b22adc75c880ee674797f785c67e86a9b8c22ebb92e333c25e65527a26d",
-      "bytes": 4035,
+      "sha256": "43a6c80f547aca053492e75cb782e3393979515b1e0dff9a9d4ffcf61752058e",
+      "bytes": 4030,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/060_Particle.md",
       "href": "/reference/agent-api/connect/particle",
       "url": "https://exa.ai/docs/reference/agent-api/connect/particle.md",
-      "sha256": "74039fb162101af746bed7db998fb23b9d797c3f8d8f36bb63ae774f8aa7f607",
-      "bytes": 4396,
+      "sha256": "042b32e6544acd7a4e3d7205f19dd33a56c861a6e568df56a551b03de9b33949",
+      "bytes": 4391,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/070_Financial_Datasets.md",
       "href": "/reference/agent-api/connect/financialdatasets",
       "url": "https://exa.ai/docs/reference/agent-api/connect/financialdatasets.md",
-      "sha256": "c1ee4ba9e1a1e48a65fe4dae9a8b99cc71cf293df71596c3d07e452ff708d0e3",
-      "bytes": 11862,
+      "sha256": "dbf2cd9bad7581bb672e145256f605436a022ff94407bcbc5a12db8c714e52a4",
+      "bytes": 11857,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/020_Self-Serve_Providers/080_Jinko.md",
       "href": "/reference/agent-api/connect/jinko",
       "url": "https://exa.ai/docs/reference/agent-api/connect/jinko.md",
-      "sha256": "98451c722c4153e5b16624e95f09fee90df79db8857dbe659f227316ae5c3eb6",
-      "bytes": 4118,
+      "sha256": "cacdb39f830bec3af81fc362a254f3394e608a2eb285f135683ad7e941b01362",
+      "bytes": 4113,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/010_Exa_Connect/030_Combining_providers.md",
       "href": "/reference/agent-api/connect/combining-providers",
       "url": "https://exa.ai/docs/reference/agent-api/connect/combining-providers.md",
-      "sha256": "a89c18781d7cfcf6f88b8f30010f2cb86d76477d2e138a49df0eec7e356986b6",
-      "bytes": 7425,
+      "sha256": "be5ed04e067359e77264457be3ab5e489b2d92828c762cf8f03442ebd9824944",
+      "bytes": 7420,
       "contentType": "text/markdown"
     },
     {
@@ -313,64 +313,64 @@
       "경로": "010_Documentation/020_Data/020_People/010_For_humans.md",
       "href": "/reference/verticals/people",
       "url": "https://exa.ai/docs/reference/verticals/people.md",
-      "sha256": "34fc8df9d3d6c4a0a8673b07c21e43483c91519ac32f3deded3085ee9448d9f1",
-      "bytes": 4008,
+      "sha256": "499f786c0afee4a25455c689bab98635009f200a053183b3f6fb9ce99d85d885",
+      "bytes": 4003,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/020_People/020_For_your_coding_agent.md",
       "href": "/reference/verticals/people-for-coding-agents",
       "url": "https://exa.ai/docs/reference/verticals/people-for-coding-agents.md",
-      "sha256": "e7f8c5b8903745b097084a5c5498e6a409cc915ab3c8f2c41b509ee862659a9f",
-      "bytes": 9474,
+      "sha256": "c6aed1ec37118916c1e24054a8d14085d883aca74c9529134ebd9ae5cad7adaf",
+      "bytes": 9469,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/030_Company/010_For_humans.md",
       "href": "/reference/verticals/company",
       "url": "https://exa.ai/docs/reference/verticals/company.md",
-      "sha256": "cee162ba37447877ad1c1f3ad3ecd9c67463d98a930ba553dcf2f6dcad73c202",
-      "bytes": 4284,
+      "sha256": "b415f4cf0c75b5afcad3ff54d76fb118da693a9c5d591603116fbd7e54f6cc7c",
+      "bytes": 4279,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/030_Company/020_For_your_coding_agent.md",
       "href": "/reference/verticals/company-for-coding-agents",
       "url": "https://exa.ai/docs/reference/verticals/company-for-coding-agents.md",
-      "sha256": "544e98bb2db338daf771ec6ffe4f57422d1526da8131c747d98e6697003cff3e",
-      "bytes": 9229,
+      "sha256": "7dce4781421ef99a548538b8b471823136b1c1661bced39d6f6d42be75afc156",
+      "bytes": 9224,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/040_Code/010_For_humans.md",
       "href": "/reference/verticals/code",
       "url": "https://exa.ai/docs/reference/verticals/code.md",
-      "sha256": "25477325e97de8a45e0d88eacea413faf11aca52892ef95dc1323c3ba9a08b53",
-      "bytes": 2506,
+      "sha256": "f3dded2807a3f354325f2911e9dae9165b67c09199e3aa2948efaf6413a19569",
+      "bytes": 2501,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/040_Code/020_For_your_coding_agent.md",
       "href": "/reference/verticals/code-for-coding-agents",
       "url": "https://exa.ai/docs/reference/verticals/code-for-coding-agents.md",
-      "sha256": "795d07b90a9cda6bd367977ddc1858c9685b6e7ee7709593ea39247393262fc2",
-      "bytes": 5259,
+      "sha256": "66b9a43861b18fc629a75f1bdd7ab6b2978a6b90f834425c18d20800e3336bdf",
+      "bytes": 5254,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/050_News/010_For_humans.md",
       "href": "/reference/verticals/news",
       "url": "https://exa.ai/docs/reference/verticals/news.md",
-      "sha256": "2a0e93b0ee4b43a70550f74c3b8723a31c24350c14d59d3067c9623e6835dbd1",
-      "bytes": 2335,
+      "sha256": "e22f89ff7b0055d8ac4030b016a86aff0473ae274eda192e58314bae2777035c",
+      "bytes": 2330,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/020_Data/050_News/020_For_your_coding_agent.md",
       "href": "/reference/verticals/news-for-coding-agents",
       "url": "https://exa.ai/docs/reference/verticals/news-for-coding-agents.md",
-      "sha256": "203275b6d1b1807c2a729b63beaabfdaae88cc16fcb97826b487c29d06501c45",
-      "bytes": 4296,
+      "sha256": "58b61873a596c64c87cf46012c0e7970d853dc3b49ef9aaa509843b1f1bea930",
+      "bytes": 4291,
       "contentType": "text/markdown"
     },
     {
@@ -537,8 +537,8 @@
       "경로": "010_Documentation/050_Integrations/070_OpenAI_SDK.md",
       "href": "/reference/openai-sdk",
       "url": "https://exa.ai/docs/reference/openai-sdk.md",
-      "sha256": "bf50a4ff3e242d1dfe695e8caa745008591ef5b298644b3b0a9fcacef8418f28",
-      "bytes": 12192,
+      "sha256": "5ea139b43a5976973f0602fcbe8a2a24e0ae1f0c8195a39c0f580da5c840e1e1",
+      "bytes": 12172,
       "contentType": "text/markdown"
     },
     {
@@ -601,8 +601,8 @@
       "경로": "010_Documentation/050_Integrations/150_ElevenLabs.md",
       "href": "/integrations/elevenlabs",
       "url": "https://exa.ai/docs/integrations/elevenlabs.md",
-      "sha256": "69a8c53b01f090d50e8eced383860cc576e078aca0e307ab2e9ae2ab80394b5c",
-      "bytes": 13466,
+      "sha256": "80682f81f87384cfe9a97dc5090e7a41ce37b04cf20d81a28c7024cfdfc4d219",
+      "bytes": 13456,
       "contentType": "text/markdown"
     },
     {
@@ -633,8 +633,8 @@
       "경로": "010_Documentation/060_Agentic_payments/010_x402/010_x402_Payments.md",
       "href": "/reference/x402-guide",
       "url": "https://exa.ai/docs/reference/x402-guide.md",
-      "sha256": "88b2adef9c179e33ae23ba8fc4f8f20f68edafb7f9f1026d7d05f9f5d97b9030",
-      "bytes": 17313,
+      "sha256": "c09b88240bcec6b2122945eee12c48babf739da60fd87242052a93fe42b9c602",
+      "bytes": 17306,
       "contentType": "text/markdown"
     },
     {
@@ -721,8 +721,8 @@
       "경로": "010_Documentation/070_Admin/060_Security/020_HIPAA.md",
       "href": "/reference/security/hipaa",
       "url": "https://exa.ai/docs/reference/security/hipaa.md",
-      "sha256": "21a08123e54a5c90c41d236944e5199038b87344ceda350674dd4d99ccd70f3e",
-      "bytes": 2217,
+      "sha256": "a0426aa9710461c02e809cd62baecab75e2476bde14c63ff44f76c733a8d6a79",
+      "bytes": 2212,
       "contentType": "text/markdown"
     },
     {
@@ -745,32 +745,32 @@
       "경로": "010_Documentation/080_Additional_Resources/020_Batch_API.md",
       "href": "/reference/batches",
       "url": "https://exa.ai/docs/reference/batches.md",
-      "sha256": "7be3c8d16d5740c7822dc639b5663d6b396e0ce97e04833f1cdd4da0145193fb",
-      "bytes": 5989,
+      "sha256": "6f7d11df754ea48a80d6a97639b236a0c0002f93526fbfca4e0ad1c39f925910",
+      "bytes": 5969,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/080_Additional_Resources/030_Context_(Exa_Code).md",
       "href": "/reference/context",
       "url": "https://exa.ai/docs/reference/context.md",
-      "sha256": "41d1691e32127257d018086fbed308188c4b8eb94ca5d34e8a7ba1e36b37dc42",
-      "bytes": 7424,
+      "sha256": "4188fc3f70588919262e6cfd8fcc6d593a12ecde2e77fe3b57113e2f59092527",
+      "bytes": 7409,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/080_Additional_Resources/040_Content_Freshness.md",
       "href": "/reference/livecrawling-contents",
       "url": "https://exa.ai/docs/reference/livecrawling-contents.md",
-      "sha256": "6a88a6b743d834c11b851797710d5f3e841dddb3175315304545887eca8d7962",
-      "bytes": 4608,
+      "sha256": "ed89250264e1bc90b5ef15db836c0f171b0ad79b362897d6aa714fcbbeae4bae",
+      "bytes": 4598,
       "contentType": "text/markdown"
     },
     {
       "경로": "010_Documentation/080_Additional_Resources/050_Migrating_from_Bing.md",
       "href": "/reference/migrating-from-bing",
       "url": "https://exa.ai/docs/reference/migrating-from-bing.md",
-      "sha256": "3dbf0e14d1ad638aac1e69b6815f0f94497da15527831d68ff3d602f14b73c54",
-      "bytes": 7775,
+      "sha256": "0d41ed0e961b6641d723256fb61cba79ecb54a4037224d8f83a4ad528d9c4fd4",
+      "bytes": 7740,
       "contentType": "text/markdown"
     },
     {
@@ -833,7 +833,7 @@
       "경로": "020_API_Reference/020_Agent/020_Create_a_run.md",
       "href": "/reference/agent-api/create-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/create-a-run.md",
-      "sha256": "428bd4e856c0a1161368d9337adc2d021907cf2167baccb15416698a7b39172b",
+      "sha256": "4be81850d17073663397489f4b73dbf2ba1f075566d5a1f79b38429dfa79ef21",
       "bytes": 27078,
       "contentType": "text/markdown"
     },
@@ -841,7 +841,7 @@
       "경로": "020_API_Reference/020_Agent/030_Get_a_run.md",
       "href": "/reference/agent-api/get-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/get-a-run.md",
-      "sha256": "6bf3f5704ae8fab8c822d7f92d9a0c05c958d1678f57234e25a197715b63e572",
+      "sha256": "3f24564058ffc497a14bf1441a3b10c3e30c4df97ab079c4bd3a58e003ef66b6",
       "bytes": 15145,
       "contentType": "text/markdown"
     },
@@ -849,7 +849,7 @@
       "경로": "020_API_Reference/020_Agent/040_List_runs.md",
       "href": "/reference/agent-api/list-runs",
       "url": "https://exa.ai/docs/reference/agent-api/list-runs.md",
-      "sha256": "00edf8f45c63ce0be448b0aee83002426b7874b03fcf9cc88c8eb61d1d02aef5",
+      "sha256": "db78b4f3ed6d5bc0b85feb806650f4e0350fb6f29ba3a85cbe88bb0e0ecee220",
       "bytes": 15491,
       "contentType": "text/markdown"
     },
@@ -857,7 +857,7 @@
       "경로": "020_API_Reference/020_Agent/050_Cancel_a_run.md",
       "href": "/reference/agent-api/cancel-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/cancel-a-run.md",
-      "sha256": "c1739c271761ad616d75e5f811734db53aee782b83752a5a223da214d7b59974",
+      "sha256": "0fa217139ed9185dc88e9077c1fddfc40d73347bc3c8c29c93af899427ece706",
       "bytes": 15681,
       "contentType": "text/markdown"
     },
@@ -865,7 +865,7 @@
       "경로": "020_API_Reference/020_Agent/060_Stop_a_run.md",
       "href": "/reference/agent-api/stop-a-run",
       "url": "https://exa.ai/docs/reference/agent-api/stop-a-run.md",
-      "sha256": "b72c2b7b9e5d55dbc1d8b7028db447c031f86dab8b165f7ea18344a9ad1f0b33",
+      "sha256": "a79215ff6284d634a946fb4ee73f55b4f9edbde2da2604595778b2cf89841faf",
       "bytes": 16513,
       "contentType": "text/markdown"
     },
