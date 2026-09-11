@@ -118,7 +118,7 @@ Find 10 fast-growing B2B SaaS companies and their estimated web traffic.
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
