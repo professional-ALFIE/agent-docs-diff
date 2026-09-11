@@ -48,7 +48,7 @@ Set `maxAgeHours` to a low value to ensure you get fresh content. Pair with `liv
       "ids": ["https://www.apple.com"],
       "maxAgeHours": 1,
       "livecrawlTimeout": 12000
-    }' | jq
+    }'
   ```
 
   ```python Python theme={null}
@@ -83,7 +83,7 @@ For production apps, set `maxAgeHours` to match how frequently your target conte
       "ids": ["https://www.apple.com"],
       "maxAgeHours": 24,
       "livecrawlTimeout": 12000
-    }' | jq
+    }'
   ```
 
   ```python Python theme={null}
