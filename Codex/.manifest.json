@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-10T20:51:24.865Z",
+  "생성": "2026-09-11T16:27:55.471Z",
   "제품폴더": "Codex",
   "진입": "https://learn.chatgpt.com/docs/developers",
   "최상위수": 6,
@@ -505,8 +505,8 @@
       "경로": "040_Developers/010_Overview.md",
       "href": "/codex/developers",
       "url": "https://learn.chatgpt.com/docs/developers.md",
-      "sha256": "d12d550e44ced0756a363b33de64d333f34ec3b0d1c9f5ec2c7be8acf0267ed1",
-      "bytes": 6846,
+      "sha256": "d2acc950deb0e5a13d60742b3ea995cc4342369277dba2bafb2183d232d2ff6d",
+      "bytes": 6634,
       "contentType": "text/markdown"
     },
     {
@@ -593,8 +593,8 @@
       "경로": "040_Developers/050_Build_with_Codex/010_Codex_SDK.md",
       "href": "/codex/codex-sdk",
       "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
-      "sha256": "4d1249b278a8fdf4292280239197b2f9e77e55e96c86b11587d8d33e2aaa4eb5",
-      "bytes": 4615,
+      "sha256": "1536dd5f4fad2d5d501afcbefc18110c7ebc7d401fa9b137e203d8c065c3dd9c",
+      "bytes": 4658,
       "contentType": "text/markdown"
     },
     {
@@ -606,15 +606,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "040_Developers/050_Build_with_Codex/030_MCP_Server.md",
-      "href": "/codex/mcp-server",
-      "url": "https://learn.chatgpt.com/docs/mcp-server.md",
-      "sha256": "ea3630f92e56c062d67f0b7470955250ea4f752d8931b5e43153b5ac4739b77a",
-      "bytes": 19868,
-      "contentType": "text/markdown"
-    },
-    {
-      "경로": "040_Developers/050_Build_with_Codex/040_GitHub_Action.md",
+      "경로": "040_Developers/050_Build_with_Codex/030_GitHub_Action.md",
       "href": "/codex/github-action",
       "url": "https://learn.chatgpt.com/docs/github-action.md",
       "sha256": "3a41ef3f6296191004548ad81140be6ada94bf9d8a232060cba8e1e4b5726f4e",
@@ -622,7 +614,7 @@
       "contentType": "text/markdown"
     },
     {
-      "경로": "040_Developers/050_Build_with_Codex/050_Non-interactive_mode.md",
+      "경로": "040_Developers/050_Build_with_Codex/040_Non-interactive_mode.md",
       "href": "/codex/non-interactive-mode",
       "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
       "sha256": "4b5dbd82afc8b676a632b982a60c1e93fe59a4ac35a5a92b41cad96498607cbb",
@@ -673,8 +665,8 @@
       "경로": "040_Developers/070_Reference/020_Developer_commands.md",
       "href": "/codex/developer-commands",
       "url": "https://learn.chatgpt.com/docs/developer-commands.md",
-      "sha256": "0f0e73644404a6d4f21f721e122f261010ac7f3385dd79f509d8b39739d2d73d",
-      "bytes": 55046,
+      "sha256": "642281afe7e602445a432a8b66fbf76130391ab7886a9170fb60080b2a5e5b2a",
+      "bytes": 54742,
       "contentType": "text/markdown"
     },
     {
@@ -1001,8 +993,8 @@
       "경로": "060_Administration/040_Identity_and_authentication/020_Workload_identity.md",
       "href": "/codex/enterprise/workload-identity",
       "url": "https://learn.chatgpt.com/docs/enterprise/workload-identity.md",
-      "sha256": "d0fb0e4870e7fd9899e02315f38ffba2cc212d0405dd16801a928a26f4385ba5",
-      "bytes": 19694,
+      "sha256": "4ca278b11c4fdb62c9b6b2d98d2b536a0c1ce053e464f97b1a4a79c0839fd146",
+      "bytes": 19536,
       "contentType": "text/markdown"
     },
     {
@@ -1197,8 +1189,8 @@
     }
   ],
   "llms": {
-    "치환": 149,
-    "미노출": 5,
+    "치환": 148,
+    "미노출": 6,
     "외부": 6,
     "메뉴에만": 2
   }

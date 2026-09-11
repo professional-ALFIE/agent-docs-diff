@@ -100,9 +100,8 @@
   050_Build_with_Codex/
     010_Codex_SDK.md — Programmatically control local Codex agents
     020_App_Server.md — Embed Codex into your product with the app-server protocol
-    030_MCP_Server.md — Deprecated. Use the Codex app server or the Codex plugin for Claude Code
-    040_GitHub_Action.md — Trigger Codex actions from GitHub Events
-    050_Non-interactive_mode.md — Use `codex exec` to run Codex in scripts and CI
+    030_GitHub_Action.md — Trigger Codex actions from GitHub Events
+    040_Non-interactive_mode.md — Use `codex exec` to run Codex in scripts and CI
   060_Third-party_integrations/
     010_GitHub.md — Set up Code Review and Security Review for GitHub pull requests, request reviews with @codex review and @codex security review, enable automatic reviews, and write custom review rules in AGENTS.md.
     020_GitLab_(Beta).md — Set up Code Review for GitLab merge requests, request reviews with @codex review, enable automatic reviews, and write custom review rules in AGENTS.md.
@@ -205,3 +204,4 @@
 - [Codex manual (Markdown)](https://learn.chatgpt.com/docs/codex-manual.md): Machine-oriented condensed manual generated from the ChatGPT and Codex docs set.
 - [Custom Prompts](https://learn.chatgpt.com/docs/custom-prompts.md): Deprecated. Use skills for reusable prompts
 - [ChatGPT usage limits and spend controls](https://learn.chatgpt.com/docs/enterprise/usage-limits.md): Understand when ChatGPT workspace credit controls can affect plan-dependent Codex usage
+- [Codex MCP server removal](https://learn.chatgpt.com/docs/mcp-server.md): Migrate from the removed Codex MCP server to the app server
