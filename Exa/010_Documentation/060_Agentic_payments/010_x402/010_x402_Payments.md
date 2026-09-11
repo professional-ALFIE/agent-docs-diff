@@ -294,7 +294,7 @@ Probe pricing without a wallet by sending unauthenticated requests:
     -H "Content-Type: application/json" \
     -d '{"query": "test query", "numResults": 3}'
   # Look for the PAYMENT-REQUIRED header in the 402 response
-  # Decode it: echo "<header-value>" | base64 -d | jq .
+  # Decode it: echo "<header-value>" | base64 -d
   ```
 </CodeGroup>
 
