@@ -124,7 +124,7 @@ Find what podcast hosts are saying about AI regulation.
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
