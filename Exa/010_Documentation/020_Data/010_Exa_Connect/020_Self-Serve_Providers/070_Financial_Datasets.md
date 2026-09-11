@@ -273,7 +273,7 @@ Build a structured company-research snapshot for NVIDIA.
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
