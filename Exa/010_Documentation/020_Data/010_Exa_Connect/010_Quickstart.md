@@ -149,7 +149,7 @@ officer reverse lookup) are free. See [Baselayer pricing](/docs/reference/agent-
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
