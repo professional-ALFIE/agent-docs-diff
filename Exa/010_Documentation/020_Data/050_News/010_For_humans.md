@@ -38,7 +38,7 @@ If you're building:
       "query": "AI regulation updates in the European Union",
       "type": "auto",
       "numResults": 10
-    }' | jq
+    }'
   ```
 
   ```python python theme={null}
