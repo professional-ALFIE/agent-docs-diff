@@ -119,7 +119,7 @@ Find wireless noise-cancelling headphones under \$300 and compare pricing.
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
