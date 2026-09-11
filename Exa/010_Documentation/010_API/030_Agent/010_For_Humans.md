@@ -70,6 +70,7 @@ This example starts a run that builds a structured list of people matching your 
   exa = Exa()
   run = exa.agent.runs.create(
       query="Find engineering leaders at AI infrastructure companies that raised a Series A or B in the last 6 months.",
+      effort="auto",
       output_schema={
           "type": "object",
           "properties": {
@@ -89,7 +90,6 @@ This example starts a run that builds a structured list of people matching your 
           },
           "required": ["people"],
       },
-      effort="auto",
   )
 
   print(json.dumps(run.model_dump(), indent=2))
@@ -102,6 +102,7 @@ This example starts a run that builds a structured list of people matching your 
   const run = await exa.agent.runs.create({
     query:
       "Find engineering leaders at AI infrastructure companies that raised a Series A or B in the last 6 months.",
+    effort: "auto",
     outputSchema: {
       type: "object",
       properties: {
@@ -120,8 +121,7 @@ This example starts a run that builds a structured list of people matching your 
         }
       },
       required: ["people"]
-    },
-    effort: "auto"
+    }
   });
 
   console.log(JSON.stringify(run, null, 2));
@@ -153,7 +153,7 @@ This example starts a run that builds a structured list of people matching your 
         },
         "required": ["people"]
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -197,11 +197,11 @@ If you do not stream events, save the returned `id` and poll the run until it re
     RUN_JSON="$(curl -s "https://api.exa.ai/agent/runs/$RUN_ID" \
       -H "Authorization: Bearer $EXA_API_KEY")"
 
-    STATUS="$(echo "$RUN_JSON" | jq -r '.status')"
+    STATUS="$(echo "$RUN_JSON" | python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])')"
     echo "status=$STATUS"
 
     if [ "$STATUS" = "completed" ] || [ "$STATUS" = "failed" ] || [ "$STATUS" = "cancelled" ]; then
-      echo "$RUN_JSON" | jq .
+      echo "$RUN_JSON"
       break
     fi
 
@@ -392,7 +392,7 @@ Beyond list building, use Exa Agent to inspect a single known entity, verify a c
           "reasoning": { "type": ["string", "null"], "maxLength": 300 }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -591,7 +591,7 @@ To request contact information, describe the desired contact fields in `outputSc
         },
         "required": ["companies"]
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -653,7 +653,7 @@ Use `input.exclusion` to exclude certain entries from being surfaced in the run.
           { "animal": "panda" }
         ]
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -709,7 +709,7 @@ Use `previousRunId` to ask follow-ups to the run's previous response. Each follo
     -d '{
       "query": "Narrow that list to companies hiring in San Francisco.",
       "previousRunId": "agent_run_01j..."
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -747,8 +747,7 @@ List recent runs and inspect their statuses:
 
   ```bash cURL theme={null}
   curl -s "https://api.exa.ai/agent/runs?limit=10" \
-    -H "Authorization: Bearer $EXA_API_KEY" \
-    | jq -r '.data[] | "\(.id)\t\(.status)\t\(.createdAt)\t\(.request.query)"'
+    -H "Authorization: Bearer $EXA_API_KEY"
   ```
 </CodeGroup>
 
