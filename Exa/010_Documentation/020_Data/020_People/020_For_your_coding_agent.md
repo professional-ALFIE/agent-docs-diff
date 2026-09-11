@@ -22,7 +22,7 @@ For creating lists or enriching over many people at scale, use [Websets](/docs/w
 curl -s -X POST "https://api.exa.ai/search" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -d '{"query": "senior ML engineers at fintech companies", "category": "people", "contents": {"highlights": true}}' | jq
+  -d '{"query": "senior ML engineers at fintech companies", "category": "people", "contents": {"highlights": true}}'
 ```
 
 ```python theme={null}
