@@ -142,7 +142,7 @@ Build a B2B prospecting list of Series A fintech companies in New York with 50â€
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
