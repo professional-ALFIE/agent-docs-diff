@@ -42,7 +42,7 @@ If you're building:
       "contents": {
         "highlights": true
       }
-    }' | jq
+    }'
   ```
 
   ```python python theme={null}
