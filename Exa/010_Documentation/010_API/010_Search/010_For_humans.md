@@ -243,7 +243,7 @@ Then make your first request:
       "contents": {
         "highlights": true
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
