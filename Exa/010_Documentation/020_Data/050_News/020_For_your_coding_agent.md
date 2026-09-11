@@ -20,7 +20,7 @@
 curl -s -X POST "https://api.exa.ai/search" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -d '{"query": "AI regulation updates", "type": "auto", "contents": {"highlights": true}}' | jq
+  -d '{"query": "AI regulation updates", "type": "auto", "contents": {"highlights": true}}'
 ```
 
 ```python theme={null}
