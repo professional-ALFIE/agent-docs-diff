@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-11T04:37:19.766Z",
+  "생성": "2026-09-11T11:18:04.769Z",
   "제품폴더": "Exa",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -801,24 +801,24 @@
       "경로": "020_API_Reference/010_Search/010_Search.md",
       "href": "/reference/search",
       "url": "https://exa.ai/docs/reference/search.md",
-      "sha256": "b3e4db8134dc6c64d3f0a815ad73f7ba46ca4695f2f6157b0f9a949a665f1233",
-      "bytes": 101050,
+      "sha256": "8cc9d47efd20864cfa73b6d9208310f04c155f3b34813d2034c12b10ae318ee4",
+      "bytes": 94082,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/010_Search/020_Contents.md",
       "href": "/reference/get-contents",
       "url": "https://exa.ai/docs/reference/get-contents.md",
-      "sha256": "ebf49f38bb4c8bb8a8b71e13fe034d754b2f925779427d60e72c1eb2d5b7366d",
-      "bytes": 77599,
+      "sha256": "927eb4d40c803d26d3ce59849b5b2d58710dee6737dfa7933f1d8c689f181dd7",
+      "bytes": 70695,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/010_Search/030_Answer.md",
       "href": "/reference/answer",
       "url": "https://exa.ai/docs/reference/answer.md",
-      "sha256": "3efb2118f7e9efab1c0af5f87a3c7ce0f018360273eb6a2f3f1d7f4c8df1a11f",
-      "bytes": 23836,
+      "sha256": "5b188e29c2820664e1b2b40d274ccae7bdf50f40e831064a4b60955f48c55578",
+      "bytes": 23646,
       "contentType": "text/markdown"
     },
     {
@@ -921,8 +921,8 @@
       "경로": "020_API_Reference/030_Websets/010_Websets/050_Preview_a_webset.md",
       "href": "/websets/api/websets/preview-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/preview-a-webset.md",
-      "sha256": "6b62e9a30d5edff815ab98dd7c8d1a8d5f8a30da61874d5d7c0e0a6ac78b2237",
-      "bytes": 25950,
+      "sha256": "000176285b8987a05d7af2bf21186b3ccaee28247af09b1eb89e8d52edb32b2e",
+      "bytes": 25951,
       "contentType": "text/markdown"
     },
     {
@@ -1217,40 +1217,40 @@
       "경로": "020_API_Reference/040_Monitors/010_Create_a_Monitor.md",
       "href": "/reference/monitors/create-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/create-a-monitor.md",
-      "sha256": "662ef675cd84f6abca117ef6f83395590018cbb4c71374a399588e086a01319a",
-      "bytes": 48759,
+      "sha256": "123cabbbec486c375e559e5a740a3f7e1d71f63080b5c05ae08422d9126c0c53",
+      "bytes": 48519,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/040_Monitors/020_List_Monitors.md",
       "href": "/reference/monitors/list-monitors",
       "url": "https://exa.ai/docs/reference/monitors/list-monitors.md",
-      "sha256": "b79eb784e67500bf21a3da1a17db3356e975581507cb7e9fd4a41faae764d8d4",
-      "bytes": 29606,
+      "sha256": "7119b105e35cc430715b7c36bbd3eda639077cc2aa0cd6f55c2c5f1b4e8c482b",
+      "bytes": 29785,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/040_Monitors/030_Get_a_Monitor.md",
       "href": "/reference/monitors/get-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/get-a-monitor.md",
-      "sha256": "1b393a6e657d6f728cdb5c04b343d2ebad33d61c74db0d2fc093c6658e0e0cf7",
-      "bytes": 28178,
+      "sha256": "b5e2fb4743d6bc5da828fb664d6a5321f6b84c9f682ee520f6f3f00d6537b85e",
+      "bytes": 28357,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/040_Monitors/040_Update_a_Monitor.md",
       "href": "/reference/monitors/update-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/update-a-monitor.md",
-      "sha256": "e9c72caa1945aeb839b1ff7484d8801003701c5507c62302911e94a9821f3ba8",
-      "bytes": 49090,
+      "sha256": "ac6b35b10c606ecb40be9d40da80e66625c23919322cdb0824d262338974926e",
+      "bytes": 48850,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/040_Monitors/050_Delete_a_Monitor.md",
       "href": "/reference/monitors/delete-a-monitor",
       "url": "https://exa.ai/docs/reference/monitors/delete-a-monitor.md",
-      "sha256": "2917235393744b4ccdb44eccc184920e745bcdf75dc7ba0a1bc7b5fe02fac8b5",
-      "bytes": 28212,
+      "sha256": "043f918a13c4ae688a168c105cfaffab489d0e403c5062283f8b3a9eeeb01da7",
+      "bytes": 28391,
       "contentType": "text/markdown"
     },
     {
@@ -1329,48 +1329,48 @@
       "경로": "020_API_Reference/060_Team_Management/010_Create_API_Key.md",
       "href": "/reference/team-management/create-api-key",
       "url": "https://exa.ai/docs/reference/team-management/create-api-key.md",
-      "sha256": "81761442924dd2bc1dbeeef5f52b4384270942d6ea2b8cf10562965316231e7f",
-      "bytes": 6990,
+      "sha256": "c340c07d4377915ab3df057eb825b494306c1cb38bdcbdfaaca18e683ebed68c",
+      "bytes": 7392,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/060_Team_Management/020_List_API_Keys.md",
       "href": "/reference/team-management/list-api-keys",
       "url": "https://exa.ai/docs/reference/team-management/list-api-keys.md",
-      "sha256": "c1b44dd3ad20b921b2225e1ae0c995ceb0f03272d4312ba22da168dabc4cade6",
-      "bytes": 6877,
+      "sha256": "50c5fe34a4120281b51e8497ef738e378272e28c4140d3f43342a06e1a9a8fdd",
+      "bytes": 7279,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/060_Team_Management/030_Get_API_Key.md",
       "href": "/reference/team-management/get-api-key",
       "url": "https://exa.ai/docs/reference/team-management/get-api-key.md",
-      "sha256": "83b0003384180cdb6e13c4489e0b3275e9efefbcbaa903d94ea3ca497f84a455",
-      "bytes": 4317,
+      "sha256": "5d974c5d6aef3f45056b1b60ffbdf0e01a39a8384f55e76f3762229057973df3",
+      "bytes": 4719,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/060_Team_Management/040_Get_API_Key_Usage.md",
       "href": "/reference/team-management/get-api-key-usage",
       "url": "https://exa.ai/docs/reference/team-management/get-api-key-usage.md",
-      "sha256": "4777899e9872baca92d252a2f9f87b1abd61f4e72eed4fdc1336ac09f04bfcae",
-      "bytes": 12360,
+      "sha256": "a466cc2eb928f36c5235a62ab78d193fcac2364cece4336c9915d67ae2f6e61a",
+      "bytes": 12762,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/060_Team_Management/050_Update_API_Key.md",
       "href": "/reference/team-management/update-api-key",
       "url": "https://exa.ai/docs/reference/team-management/update-api-key.md",
-      "sha256": "aff5379b8e20f960b493942f26bc2b7fb0a1df497d639e508710c03ae55d8bdb",
-      "bytes": 7557,
+      "sha256": "f28d5d6c4baf5cee22ce50c29ede0487039e0ab3027b3452a2e8fa07006a1e20",
+      "bytes": 7959,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/060_Team_Management/060_Delete_API_Key.md",
       "href": "/reference/team-management/delete-api-key",
       "url": "https://exa.ai/docs/reference/team-management/delete-api-key.md",
-      "sha256": "e7e8e1a514b812be82f3f6fa838a689b96f033135f0e21a853df9d8c648cd380",
-      "bytes": 4387,
+      "sha256": "7a7edace3a9ac75adbb34ad3fc8f33da9046e3de7f257b6fd0e7b7a4016f116a",
+      "bytes": 4789,
       "contentType": "text/markdown"
     },
     {
