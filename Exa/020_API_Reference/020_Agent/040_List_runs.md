@@ -239,6 +239,8 @@ components:
             behavior. Use this for source preferences, novelty constraints,
             duplication constraints, or other behavior guidance.
           example: Prefer official sources and avoid duplicate results.
+        effort:
+          $ref: '#/components/schemas/AgentEffort'
         input:
           type: object
           properties:
@@ -276,8 +278,6 @@ components:
                 returned as `null`. Supports draft-07, 2019-09, and 2020-12 via
                 `$schema`.
             - type: 'null'
-        effort:
-          $ref: '#/components/schemas/AgentEffort'
         previousRunId:
           $ref: '#/components/schemas/AgentRunId'
         metadata:
