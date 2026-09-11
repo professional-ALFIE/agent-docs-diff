@@ -316,19 +316,19 @@ Then make your first request:
       "webhook": {
         "url": "https://example.com/webhook"
       }
-    }' | jq
+    }'
 
   # Trigger a run
   curl -s -X POST "https://api.exa.ai/monitors/{MONITOR_ID}/trigger" \
-    -H "Authorization: Bearer $EXA_API_KEY" | jq
+    -H "Authorization: Bearer $EXA_API_KEY"
 
   # List runs
   curl -s "https://api.exa.ai/monitors/{MONITOR_ID}/runs" \
-    -H "Authorization: Bearer $EXA_API_KEY" | jq
+    -H "Authorization: Bearer $EXA_API_KEY"
 
   # Get a specific run
   curl -s "https://api.exa.ai/monitors/{MONITOR_ID}/runs/{RUN_ID}" \
-    -H "Authorization: Bearer $EXA_API_KEY" | jq
+    -H "Authorization: Bearer $EXA_API_KEY"
   ```
 </CodeGroup>
 
