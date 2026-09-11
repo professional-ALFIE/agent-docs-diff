@@ -54,7 +54,7 @@ curl -s -X POST "https://api.exa.ai/websets/v0/imports" \
     "size": 128,
     "entity": { "type": "company" },
     "title": "IT Consulting Suppliers"
-  }' | jq
+  }'
 # Response includes an `uploadUrl` and an import `id`
 
 # Step 2: Upload your CSV to the presigned URL from Step 1
@@ -76,7 +76,7 @@ curl -s -X POST "https://api.exa.ai/websets/v0/websets" \
       { "description": "What services does this company provide?", "format": "text" },
       { "description": "Number of employees", "format": "number" }
     ]
-  }' | jq
+  }'
 ```
 
 ### What We See in the Live Webset
@@ -127,7 +127,7 @@ curl -s -X POST "https://api.exa.ai/websets/v0/websets" \
       { "description": "What services does this company provide?", "format": "text" },
       { "description": "Number of employees", "format": "number" }
     ]
-  }' | jq
+  }'
 ```
 
 ### What We See in the Live Webset
@@ -184,7 +184,7 @@ curl -s -X POST "https://api.exa.ai/websets/v0/websets" \
       { "description": "What services does this company provide?", "format": "text" },
       { "description": "Number of employees", "format": "number" }
     ]
-  }' | jq
+  }'
 ```
 
 ### What We See in the Live Webset
@@ -244,7 +244,7 @@ curl -s -X POST "https://api.exa.ai/websets/v0/websets" \
       { "description": "What services does this company provide?", "format": "text" },
       { "description": "Number of employees", "format": "number" }
     ]
-  }' | jq
+  }'
 # Response includes a webset `id` -- save it as <WEBSET_ID>
 
 # Step 3: Wait for the scoped search to complete, then add a web search to discover new matches
@@ -260,7 +260,7 @@ curl -s -X POST "https://api.exa.ai/websets/v0/websets/<WEBSET_ID>/searches" \
     ],
     "count": 25,
     "behavior": "append"
-  }' | jq
+  }'
 ```
 
 ### What We See in the Live Webset
