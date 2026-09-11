@@ -10,6 +10,10 @@
 
 <Card title="Get your Exa API key" icon="key" horizontal href="https://dashboard.exa.ai/api-keys" />
 
+<Info>
+  The Team Management API is enabled per team. It authenticates with a service account API key, which is created from the **Service keys** tab on the [API keys page](https://dashboard.exa.ai/api-keys) once the feature is enabled for your team. Contact [support@exa.ai](mailto:support@exa.ai) to request access.
+</Info>
+
 The Create API Key endpoint allows you to programmatically generate new API keys for your team using your service API key.
 
 ## Optional Parameters
@@ -28,7 +32,8 @@ info:
   description: >-
     API for managing API keys within teams. Provides CRUD operations for
     creating, listing, updating, and deleting API keys with team-based access
-    controls.
+    controls. The API is enabled per team. Contact support@exa.ai to request
+    access.
 servers:
   - url: https://admin-api.exa.ai/team-management
 security:
