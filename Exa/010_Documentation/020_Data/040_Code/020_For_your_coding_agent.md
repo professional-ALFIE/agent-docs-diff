@@ -20,7 +20,7 @@
 curl -s -X POST "https://api.exa.ai/search" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -d '{"query": "how to use Vercel AI SDK streaming", "type": "fast", "contents": {"highlights": true}}' | jq
+  -d '{"query": "how to use Vercel AI SDK streaming", "type": "fast", "contents": {"highlights": true}}'
 ```
 
 ```python theme={null}
