@@ -38,7 +38,7 @@
     040_Scheduled_tasks.md — Run tasks on a schedule or from supported app events in ChatGPT
     050_Long-running_work.md — Keep multi-step work focused with clear outcomes and completion criteria
     060_Notifications.md — Choose how ChatGPT notifies you when work needs attention
-    070_Pets.md — Choose an animated companion and follow chat activity across supported interfaces
+    070_Pets.md — Choose a companion, start chats from your desktop, and follow activity
     080_Codex_Micro.md — Your command center for Codex chats.
   030_Capabilities/
     010_Browser.md — Let ChatGPT research and interact with websites
@@ -48,7 +48,7 @@
     050_Web_search.md — Search the web while you work in ChatGPT
     060_Image_generation.md — Generate and edit images in ChatGPT
     070_Image_inputs.md — Attach screenshots, diagrams, and visual references to ChatGPT prompts
-    080_Appshots.md — Give ChatGPT context from any Mac app
+    080_Appshots.md — Give ChatGPT context from apps on macOS and Windows
     090_Browser_extension.md — Use Chrome, Edge, Brave, Opera, or Vivaldi with ChatGPT
     100_Work_with_files.md — Create, preview, and refine documents, presentations, spreadsheets, and PDF files in ChatGPT
   040_Reference/

@@ -34,7 +34,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Codex App Server](https://learn.chatgpt.com/docs/app-server.md): Embed Codex into your product with the app-server protocol
 
 ## Appshots
-- [Appshots](https://learn.chatgpt.com/docs/appshots.md): Give ChatGPT context from any Mac app
+- [Appshots](https://learn.chatgpt.com/docs/appshots.md): Give ChatGPT context from apps on macOS and Windows
 
 ## Artifacts Viewer
 - [Work with files](https://learn.chatgpt.com/docs/artifacts-viewer.md): Create, preview, and refine documents, presentations, spreadsheets, and PDF files in ChatGPT
@@ -223,7 +223,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Personalize ChatGPT](https://learn.chatgpt.com/docs/personalize.md): Set preferences and carry useful context across chats
 
 ## Pets
-- [Pets](https://learn.chatgpt.com/docs/pets.md): Choose an animated companion and follow chat activity across supported interfaces
+- [Pets](https://learn.chatgpt.com/docs/pets.md): Choose a companion, start chats from your desktop, and follow activity
 
 ## Plugins
 - [Plugins](https://learn.chatgpt.com/docs/plugins.md): Browse, install, and use plugins on supported ChatGPT and Codex surfaces
