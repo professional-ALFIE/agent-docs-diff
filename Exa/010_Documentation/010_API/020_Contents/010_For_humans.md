@@ -288,7 +288,7 @@ Then make your first request:
     -d '{
       "urls": ["https://example.com/article"],
       "highlights": true
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
