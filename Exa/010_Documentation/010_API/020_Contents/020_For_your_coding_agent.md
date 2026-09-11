@@ -29,7 +29,7 @@ npm install exa-js    # JavaScript
 curl -s -X POST "https://api.exa.ai/contents" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -d '{"urls": ["https://example.com"], "text": true}' | jq
+  -d '{"urls": ["https://example.com"], "text": true}'
 ```
 
 ```python theme={null}
