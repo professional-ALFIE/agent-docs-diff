@@ -70,7 +70,7 @@
         },
         {
           title: "Pets",
-          description: "Choose an animated companion and follow chat activity.",
+          description: "Choose a companion, start chats, and follow activity.",
           href: "/codex/pets",
           icon: "customize",
         },
