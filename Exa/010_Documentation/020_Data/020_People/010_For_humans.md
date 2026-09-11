@@ -45,7 +45,7 @@ Use People Search to build:
       "category": "people",
       "type": "auto",
       "numResults": 10
-    }' | jq
+    }'
   ```
 
   ```python python theme={null}
