@@ -117,7 +117,7 @@ To use Exa's `/answer` endpoint via the chat completions interface:
         }
       ],
       "text": true
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -191,7 +191,7 @@ The request blocks until the run completes and returns the terminal `response` o
       "model": "exa-agent",
       "input": "Find the top 5 AI startups founded in 2025 with their funding amounts",
       "reasoning": { "effort": "medium" }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -324,11 +324,11 @@ Set `background: true` to start a run without holding the connection open, then 
       "model": "exa-agent",
       "input": "Find the top 5 AI startups founded in 2025 with their funding amounts",
       "background": true
-    }' | jq
+    }'
 
   # Poll with the returned response ID
   curl -s 'https://api.exa.ai/responses/resp_agent_run_...' \
-    -H "Authorization: Bearer $EXA_API_KEY" | jq
+    -H "Authorization: Bearer $EXA_API_KEY"
   ```
 </CodeGroup>
 
