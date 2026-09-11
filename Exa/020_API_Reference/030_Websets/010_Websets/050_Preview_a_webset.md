@@ -46,8 +46,8 @@ paths:
       parameters:
         - name: search
           required: false
-          in: path
-          description: Weather you want to search for a preview list of items or not
+          in: query
+          description: Whether you want to search for a preview list of items or not
           schema:
             type: boolean
       requestBody:
