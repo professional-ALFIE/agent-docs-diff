@@ -164,7 +164,7 @@ List several partners together and the Exa Agent draws on each where it's strong
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
