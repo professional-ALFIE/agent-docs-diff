@@ -40,7 +40,7 @@ curl -s -X POST 'https://api.exa.ai/context' \
   -d '{
     "query": "how to use React hooks for state management",
     "tokensNum": 5000
-  }' | jq
+  }'
 ```
 
 **Example Response:**
@@ -66,7 +66,7 @@ curl -s -X POST 'https://api.exa.ai/context' \
   -d '{
     "query": "pandas dataframe filtering and groupby operations",
     "tokensNum": "dynamic"
-  }' | jq
+  }'
 ```
 
 **Framework Setup and Configuration**
@@ -78,7 +78,7 @@ curl -s -X POST 'https://api.exa.ai/context' \
   -d '{
     "query": "Next.js 14 app router with TypeScript configuration",
     "tokensNum": "dynamic"
-  }' | jq
+  }'
 ```
 
 ## Response Format
