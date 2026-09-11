@@ -268,156 +268,10 @@ components:
         Schema for each JSON payload emitted in an `/answer` server-sent event
         stream. Each event is emitted as `data: <json>`.
       oneOf:
-        - type: object
-          properties:
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  index:
-                    type: integer
-                    minimum: 0
-                    description: Index of this streamed choice.
-                  delta:
-                    type: object
-                    properties:
-                      role:
-                        type: string
-                        const: assistant
-                      content:
-                        type: string
-                      refusal:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                    additionalProperties:
-                      $ref: '#/components/schemas/JsonValue'
-                    description: Incremental answer content emitted by the model.
-                  finish_reason:
-                    description: Reason this streamed choice finished, when present.
-                    oneOf:
-                      - type: string
-                      - type: 'null'
-                required:
-                  - index
-                  - delta
-                additionalProperties:
-                  $ref: '#/components/schemas/JsonValue'
-              description: >-
-                OpenAI-compatible streamed completion choices with internal
-                provider fields removed.
-          required:
-            - choices
-          additionalProperties:
-            $ref: '#/components/schemas/JsonValue'
-        - type: object
-          properties:
-            citations:
-              type: array
-              items:
-                type: object
-                properties:
-                  title:
-                    type: string
-                    description: The title of the search result.
-                    example: >-
-                      SpaceX valued at $350bn as company agrees to buy shares
-                      from ...
-                  url:
-                    type: string
-                    description: The URL of the search result.
-                    example: >-
-                      https://www.theguardian.com/science/2024/dec/11/spacex-valued-at-350bn-as-company-agrees-to-buy-shares-from-employees
-                    format: uri
-                  publishedDate:
-                    description: >-
-                      An estimate of the creation date, from parsing HTML
-                      content. Format is YYYY-MM-DD.
-                    example: '2023-11-16T01:36:32.547Z'
-                    format: date-time
-                    type: string
-                  author:
-                    description: If available, the author of the content.
-                    example: Humza Naveed
-                    anyOf:
-                      - type: string
-                      - type: 'null'
-                  id:
-                    description: >-
-                      The temporary ID for the document. Useful for the
-                      /contents endpoint.
-                    example: https://arxiv.org/abs/2307.06435
-                    type: string
-                  image:
-                    description: >-
-                      The URL of an image associated with the search result, if
-                      available.
-                    example: https://arxiv.org/pdf/2307.06435.pdf/page_1.png
-                    format: uri
-                    type: string
-                  favicon:
-                    description: The URL of the favicon for the search result's domain.
-                    example: https://arxiv.org/favicon.ico
-                    format: uri
-                    type: string
-                  text:
-                    description: >-
-                      The full text content of each source. Only present when
-                      text contents are requested.
-                    example: >-
-                      SpaceX valued at $350bn as company agrees to buy shares
-                      from ...
-                    type: string
-                required:
-                  - title
-                  - url
-                additionalProperties: false
-              description: Search results cited by the final streamed answer.
-          required:
-            - citations
-          additionalProperties: false
-        - type: object
-          properties:
-            costDollars:
-              $ref: '#/components/schemas/CostDollarsOutput'
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-          required:
-            - costDollars
-          additionalProperties: false
-        - type: object
-          properties:
-            tag:
-              type: string
-              const: ERROR
-            payload:
-              type: object
-              properties:
-                error:
-                  type: object
-                  properties:
-                    code:
-                      type: integer
-                    message:
-                      type: string
-                  required:
-                    - code
-                    - message
-                  additionalProperties: false
-                requestId:
-                  type: string
-                  description: Unique identifier for the request.
-                  example: b5947044c4b78efa9552a7c89b306d95
-              required:
-                - error
-              additionalProperties: false
-          required:
-            - tag
-            - payload
-          additionalProperties: false
+        - $ref: '#/components/schemas/AnswerStreamTextDeltaChunk'
+        - $ref: '#/components/schemas/AnswerStreamCitationsChunkOutput'
+        - $ref: '#/components/schemas/AnswerStreamCostChunkOutput'
+        - $ref: '#/components/schemas/AnswerStreamErrorChunkOutput'
     JsonValue:
       description: Any JSON value.
       oneOf:
@@ -493,6 +347,160 @@ components:
         Endpoint-dependent estimated dollar cost breakdown for the completed
         request. Billing is computed from usage counters rather than this
         response object.
+    AnswerStreamTextDeltaChunk:
+      type: object
+      properties:
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+                minimum: 0
+                description: Index of this streamed choice.
+              delta:
+                type: object
+                properties:
+                  role:
+                    type: string
+                    const: assistant
+                  content:
+                    type: string
+                  refusal:
+                    anyOf:
+                      - type: string
+                      - type: 'null'
+                additionalProperties:
+                  $ref: '#/components/schemas/JsonValue'
+                description: Incremental answer content emitted by the model.
+              finish_reason:
+                description: Reason this streamed choice finished, when present.
+                oneOf:
+                  - type: string
+                  - type: 'null'
+            required:
+              - index
+              - delta
+            additionalProperties:
+              $ref: '#/components/schemas/JsonValue'
+          description: >-
+            OpenAI-compatible streamed completion choices with internal provider
+            fields removed.
+      required:
+        - choices
+      additionalProperties:
+        $ref: '#/components/schemas/JsonValue'
+    AnswerStreamCitationsChunkOutput:
+      type: object
+      properties:
+        citations:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: The title of the search result.
+                example: >-
+                  SpaceX valued at $350bn as company agrees to buy shares from
+                  ...
+              url:
+                type: string
+                description: The URL of the search result.
+                example: >-
+                  https://www.theguardian.com/science/2024/dec/11/spacex-valued-at-350bn-as-company-agrees-to-buy-shares-from-employees
+                format: uri
+              publishedDate:
+                description: >-
+                  An estimate of the creation date, from parsing HTML content.
+                  Format is YYYY-MM-DD.
+                example: '2023-11-16T01:36:32.547Z'
+                format: date-time
+                type: string
+              author:
+                description: If available, the author of the content.
+                example: Humza Naveed
+                anyOf:
+                  - type: string
+                  - type: 'null'
+              id:
+                description: >-
+                  The temporary ID for the document. Useful for the /contents
+                  endpoint.
+                example: https://arxiv.org/abs/2307.06435
+                type: string
+              image:
+                description: >-
+                  The URL of an image associated with the search result, if
+                  available.
+                example: https://arxiv.org/pdf/2307.06435.pdf/page_1.png
+                format: uri
+                type: string
+              favicon:
+                description: The URL of the favicon for the search result's domain.
+                example: https://arxiv.org/favicon.ico
+                format: uri
+                type: string
+              text:
+                description: >-
+                  The full text content of each source. Only present when text
+                  contents are requested.
+                example: >-
+                  SpaceX valued at $350bn as company agrees to buy shares from
+                  ...
+                type: string
+            required:
+              - title
+              - url
+            additionalProperties: false
+          description: Search results cited by the final streamed answer.
+      required:
+        - citations
+      additionalProperties: false
+    AnswerStreamCostChunkOutput:
+      type: object
+      properties:
+        costDollars:
+          $ref: '#/components/schemas/CostDollarsOutput'
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+      required:
+        - costDollars
+      additionalProperties: false
+    AnswerStreamErrorChunkOutput:
+      type: object
+      properties:
+        tag:
+          type: string
+          const: ERROR
+        payload:
+          type: object
+          properties:
+            error:
+              type: object
+              properties:
+                code:
+                  type: integer
+                message:
+                  type: string
+              required:
+                - code
+                - message
+              additionalProperties: false
+            requestId:
+              type: string
+              description: Unique identifier for the request.
+              example: b5947044c4b78efa9552a7c89b306d95
+          required:
+            - error
+          additionalProperties: false
+      required:
+        - tag
+        - payload
+      additionalProperties: false
     ErrorResponse:
       type: object
       properties:
