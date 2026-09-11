@@ -332,38 +332,8 @@ components:
         outputSchema:
           anyOf:
             - oneOf:
-                - type: object
-                  properties:
-                    type:
-                      type: string
-                      const: text
-                    description:
-                      type: string
-                  required:
-                    - type
-                - type: object
-                  properties:
-                    type:
-                      type: string
-                      const: object
-                    description:
-                      type: string
-                    properties:
-                      type: object
-                      propertyNames:
-                        type: string
-                      additionalProperties:
-                        $ref: '#/components/schemas/JsonValue'
-                    required:
-                      type: array
-                      items:
-                        type: string
-                    additionalProperties:
-                      type: boolean
-                  required:
-                    - type
-                  additionalProperties:
-                    $ref: '#/components/schemas/JsonValue'
+                - $ref: '#/components/schemas/OutputSchemaText'
+                - $ref: '#/components/schemas/OutputSchemaObject'
               description: >-
                 JSON schema for synthesized output. Supported root types are
                 "text" and "object". When provided, the response includes an
@@ -371,6 +341,13 @@ components:
                 every search type and adds about 2 seconds of synthesis latency
                 on top of the selected search type.
               type: object
+              discriminator:
+                propertyName: type
+                mapping:
+                  text:
+                    $ref: '#/components/schemas/OutputSchemaText'
+                  object:
+                    $ref: '#/components/schemas/OutputSchemaObject'
             - type: 'null'
         systemPrompt:
           anyOf:
@@ -394,402 +371,37 @@ components:
         - query
     SearchResponse:
       oneOf:
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/SearchResultOutput'
-              description: >-
-                A list of search results containing title, URL, published date,
-                and author.
-            resolvedSearchType:
-              description: >-
-                Deprecated legacy field. Current production responses may return
-                an empty string; clients should not branch on this value.
-              example: ''
-              deprecated: true
-              type: string
-            context:
-              type: string
-              description: >-
-                Deprecated. Combined context string from search results. Use
-                highlights or text instead.
-              deprecated: true
-            costDollars:
-              $ref: '#/components/schemas/CostDollarsOutput'
-            searchTime:
-              type: number
-              description: >-
-                Server-side processing time in milliseconds, measured at the
-                gateway. Covers retrieval but may exclude later phases such as
-                structured output synthesis, so it can be lower than end-to-end
-                request latency.
-              example: 312.4
-            output:
-              $ref: '#/components/schemas/SearchSynthesisOutputOutput'
-          required:
-            - results
-            - output
-          additionalProperties: false
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/SearchResultOutput'
-              description: >-
-                A list of search results containing title, URL, published date,
-                and author.
-            resolvedSearchType:
-              description: >-
-                Deprecated legacy field. Current production responses may return
-                an empty string; clients should not branch on this value.
-              example: ''
-              deprecated: true
-              type: string
-            context:
-              type: string
-              description: >-
-                Deprecated. Combined context string from search results. Use
-                highlights or text instead.
-              deprecated: true
-            costDollars:
-              $ref: '#/components/schemas/CostDollarsOutput'
-            searchTime:
-              type: number
-              description: >-
-                Server-side processing time in milliseconds, measured at the
-                gateway. Covers retrieval but may exclude later phases such as
-                structured output synthesis, so it can be lower than end-to-end
-                request latency.
-              example: 312.4
-          required:
-            - results
-          additionalProperties: false
+        - $ref: '#/components/schemas/SearchSynthesisResponse'
+        - $ref: '#/components/schemas/SearchResultsResponse'
     SearchStreamChunk:
       oneOf:
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            type:
-              type: string
-              const: text-delta
-            delta:
-              type: string
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  index:
-                    type: integer
-                    minimum: 0
-                  delta:
-                    type: object
-                    properties:
-                      role:
-                        type: string
-                        const: assistant
-                      content:
-                        type: string
-                      citations:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            url:
-                              type: string
-                              format: uri
-                              description: Source URL.
-                            title:
-                              type: string
-                              description: Source title.
-                            id:
-                              type: string
-                          required:
-                            - url
-                            - title
-                            - id
-                          additionalProperties: false
-                    additionalProperties: false
-                  finish_reason:
-                    oneOf:
-                      - type: string
-                        const: stop
-                      - type: 'null'
-                required:
-                  - index
-                  - delta
-                  - finish_reason
-                additionalProperties: false
-          required:
-            - type
-            - delta
-          additionalProperties: false
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            type:
-              type: string
-              const: grounding
-            grounding:
-              type: array
-              items:
-                type: object
-                properties:
-                  field:
-                    type: string
-                    description: >-
-                      Field path in output.content, for example content or
-                      companies[0].funding.
-                  citations:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        url:
-                          type: string
-                          format: uri
-                          description: Source URL.
-                        title:
-                          type: string
-                          description: Source title.
-                      required:
-                        - url
-                        - title
-                      additionalProperties: false
-                    description: Sources supporting this output field.
-                  confidence:
-                    type: string
-                    enum:
-                      - low
-                      - medium
-                      - high
-                    description: Model-reported reliability for this field.
-                required:
-                  - field
-                  - citations
-                  - confidence
-                additionalProperties: false
-              description: Field-level grounding for synthesized output.
-            citations:
-              type: array
-              items:
-                type: object
-                properties:
-                  url:
-                    type: string
-                    format: uri
-                    description: Source URL.
-                  title:
-                    type: string
-                    description: Source title.
-                  id:
-                    type: string
-                required:
-                  - url
-                  - title
-                  - id
-                additionalProperties: false
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  index:
-                    type: integer
-                    minimum: 0
-                  delta:
-                    type: object
-                    properties:
-                      role:
-                        type: string
-                        const: assistant
-                      content:
-                        type: string
-                      citations:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            url:
-                              type: string
-                              format: uri
-                              description: Source URL.
-                            title:
-                              type: string
-                              description: Source title.
-                            id:
-                              type: string
-                          required:
-                            - url
-                            - title
-                            - id
-                          additionalProperties: false
-                    additionalProperties: false
-                  finish_reason:
-                    oneOf:
-                      - type: string
-                        const: stop
-                      - type: 'null'
-                required:
-                  - index
-                  - delta
-                  - finish_reason
-                additionalProperties: false
-          required:
-            - type
-            - grounding
-          additionalProperties: false
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            type:
-              type: string
-              const: results
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/SearchResultOutput'
-          required:
-            - type
-            - results
-          additionalProperties: false
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            type:
-              type: string
-              const: stream-reset
-            streamReset:
-              type: boolean
-              const: true
-          required:
-            - type
-            - streamReset
-          additionalProperties: false
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            type:
-              type: string
-              const: done
-            output:
-              anyOf:
-                - $ref: '#/components/schemas/SearchSynthesisOutputOutput'
-                - type: 'null'
-            searchTime:
-              type: number
-              description: >-
-                Server-side processing time in milliseconds, measured at the
-                gateway. Covers retrieval but may exclude later phases such as
-                structured output synthesis, so it can be lower than end-to-end
-                request latency.
-              example: 312.4
-            costDollars:
-              $ref: '#/components/schemas/CostDollarsOutput'
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  index:
-                    type: integer
-                    minimum: 0
-                  delta:
-                    type: object
-                    properties:
-                      role:
-                        type: string
-                        const: assistant
-                      content:
-                        type: string
-                      citations:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            url:
-                              type: string
-                              format: uri
-                              description: Source URL.
-                            title:
-                              type: string
-                              description: Source title.
-                            id:
-                              type: string
-                          required:
-                            - url
-                            - title
-                            - id
-                          additionalProperties: false
-                    additionalProperties: false
-                  finish_reason:
-                    oneOf:
-                      - type: string
-                        const: stop
-                      - type: 'null'
-                required:
-                  - index
-                  - delta
-                  - finish_reason
-                additionalProperties: false
-          required:
-            - type
-            - output
-            - searchTime
-          additionalProperties: false
-        - type: object
-          properties:
-            requestId:
-              type: string
-              description: Unique identifier for the request.
-              example: b5947044c4b78efa9552a7c89b306d95
-            type:
-              type: string
-              const: error
-            error:
-              type: object
-              properties:
-                message:
-                  type: string
-              required:
-                - message
-              additionalProperties: false
-          required:
-            - type
-            - error
-          additionalProperties: false
+        - $ref: '#/components/schemas/SearchStreamTextDeltaChunkOutput'
+        - $ref: '#/components/schemas/SearchStreamGroundingChunkOutput'
+        - $ref: '#/components/schemas/SearchStreamResultsChunkOutput'
+        - $ref: '#/components/schemas/SearchStreamResetChunkOutput'
+        - $ref: '#/components/schemas/SearchStreamDoneChunkOutput'
+        - $ref: '#/components/schemas/SearchStreamErrorChunkOutput'
       description: >-
         Schema for each JSON payload emitted in a `/search` server-sent event
         stream. Each event is emitted as `data: <json>` and the stream
         terminates with `data: [DONE]`, which is not represented by this JSON
         schema.
       type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text-delta:
+            $ref: '#/components/schemas/SearchStreamTextDeltaChunkOutput'
+          grounding:
+            $ref: '#/components/schemas/SearchStreamGroundingChunkOutput'
+          results:
+            $ref: '#/components/schemas/SearchStreamResultsChunkOutput'
+          stream-reset:
+            $ref: '#/components/schemas/SearchStreamResetChunkOutput'
+          done:
+            $ref: '#/components/schemas/SearchStreamDoneChunkOutput'
+          error:
+            $ref: '#/components/schemas/SearchStreamErrorChunkOutput'
     ErrorResponse:
       type: object
       properties:
@@ -1337,6 +949,436 @@ components:
                     minLength: 1
                     maxLength: 100
             - type: 'null'
+    OutputSchemaText:
+      type: object
+      properties:
+        type:
+          type: string
+          const: text
+        description:
+          type: string
+      required:
+        - type
+    OutputSchemaObject:
+      type: object
+      properties:
+        type:
+          type: string
+          const: object
+        description:
+          type: string
+        properties:
+          type: object
+          propertyNames:
+            type: string
+          additionalProperties:
+            $ref: '#/components/schemas/JsonValue'
+        required:
+          type: array
+          items:
+            type: string
+        additionalProperties:
+          type: boolean
+      required:
+        - type
+      additionalProperties:
+        $ref: '#/components/schemas/JsonValue'
+    SearchSynthesisResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultOutput'
+          description: >-
+            A list of search results containing title, URL, published date, and
+            author.
+        resolvedSearchType:
+          description: >-
+            Deprecated legacy field. Current production responses may return an
+            empty string; clients should not branch on this value.
+          example: ''
+          deprecated: true
+          type: string
+        context:
+          type: string
+          description: >-
+            Deprecated. Combined context string from search results. Use
+            highlights or text instead.
+          deprecated: true
+        costDollars:
+          $ref: '#/components/schemas/CostDollarsOutput'
+        searchTime:
+          type: number
+          description: >-
+            Server-side processing time in milliseconds, measured at the
+            gateway. Covers retrieval but may exclude later phases such as
+            structured output synthesis, so it can be lower than end-to-end
+            request latency.
+          example: 312.4
+        output:
+          $ref: '#/components/schemas/SearchSynthesisOutputOutput'
+      required:
+        - results
+        - output
+      additionalProperties: false
+    SearchResultsResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultOutput'
+          description: >-
+            A list of search results containing title, URL, published date, and
+            author.
+        resolvedSearchType:
+          description: >-
+            Deprecated legacy field. Current production responses may return an
+            empty string; clients should not branch on this value.
+          example: ''
+          deprecated: true
+          type: string
+        context:
+          type: string
+          description: >-
+            Deprecated. Combined context string from search results. Use
+            highlights or text instead.
+          deprecated: true
+        costDollars:
+          $ref: '#/components/schemas/CostDollarsOutput'
+        searchTime:
+          type: number
+          description: >-
+            Server-side processing time in milliseconds, measured at the
+            gateway. Covers retrieval but may exclude later phases such as
+            structured output synthesis, so it can be lower than end-to-end
+            request latency.
+          example: 312.4
+      required:
+        - results
+      additionalProperties: false
+    SearchStreamTextDeltaChunkOutput:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        type:
+          type: string
+          const: text-delta
+        delta:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+                minimum: 0
+              delta:
+                type: object
+                properties:
+                  role:
+                    type: string
+                    const: assistant
+                  content:
+                    type: string
+                  citations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          format: uri
+                          description: Source URL.
+                        title:
+                          type: string
+                          description: Source title.
+                        id:
+                          type: string
+                      required:
+                        - url
+                        - title
+                        - id
+                      additionalProperties: false
+                additionalProperties: false
+              finish_reason:
+                oneOf:
+                  - type: string
+                    const: stop
+                  - type: 'null'
+            required:
+              - index
+              - delta
+              - finish_reason
+            additionalProperties: false
+      required:
+        - type
+        - delta
+      additionalProperties: false
+    SearchStreamGroundingChunkOutput:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        type:
+          type: string
+          const: grounding
+        grounding:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+                description: >-
+                  Field path in output.content, for example content or
+                  companies[0].funding.
+              citations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      format: uri
+                      description: Source URL.
+                    title:
+                      type: string
+                      description: Source title.
+                  required:
+                    - url
+                    - title
+                  additionalProperties: false
+                description: Sources supporting this output field.
+              confidence:
+                type: string
+                enum:
+                  - low
+                  - medium
+                  - high
+                description: Model-reported reliability for this field.
+            required:
+              - field
+              - citations
+              - confidence
+            additionalProperties: false
+          description: Field-level grounding for synthesized output.
+        citations:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+                format: uri
+                description: Source URL.
+              title:
+                type: string
+                description: Source title.
+              id:
+                type: string
+            required:
+              - url
+              - title
+              - id
+            additionalProperties: false
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+                minimum: 0
+              delta:
+                type: object
+                properties:
+                  role:
+                    type: string
+                    const: assistant
+                  content:
+                    type: string
+                  citations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          format: uri
+                          description: Source URL.
+                        title:
+                          type: string
+                          description: Source title.
+                        id:
+                          type: string
+                      required:
+                        - url
+                        - title
+                        - id
+                      additionalProperties: false
+                additionalProperties: false
+              finish_reason:
+                oneOf:
+                  - type: string
+                    const: stop
+                  - type: 'null'
+            required:
+              - index
+              - delta
+              - finish_reason
+            additionalProperties: false
+      required:
+        - type
+        - grounding
+      additionalProperties: false
+    SearchStreamResultsChunkOutput:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        type:
+          type: string
+          const: results
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultOutput'
+      required:
+        - type
+        - results
+      additionalProperties: false
+    SearchStreamResetChunkOutput:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        type:
+          type: string
+          const: stream-reset
+        streamReset:
+          type: boolean
+          const: true
+      required:
+        - type
+        - streamReset
+      additionalProperties: false
+    SearchStreamDoneChunkOutput:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        type:
+          type: string
+          const: done
+        output:
+          anyOf:
+            - $ref: '#/components/schemas/SearchSynthesisOutputOutput'
+            - type: 'null'
+        searchTime:
+          type: number
+          description: >-
+            Server-side processing time in milliseconds, measured at the
+            gateway. Covers retrieval but may exclude later phases such as
+            structured output synthesis, so it can be lower than end-to-end
+            request latency.
+          example: 312.4
+        costDollars:
+          $ref: '#/components/schemas/CostDollarsOutput'
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+                minimum: 0
+              delta:
+                type: object
+                properties:
+                  role:
+                    type: string
+                    const: assistant
+                  content:
+                    type: string
+                  citations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          format: uri
+                          description: Source URL.
+                        title:
+                          type: string
+                          description: Source title.
+                        id:
+                          type: string
+                      required:
+                        - url
+                        - title
+                        - id
+                      additionalProperties: false
+                additionalProperties: false
+              finish_reason:
+                oneOf:
+                  - type: string
+                    const: stop
+                  - type: 'null'
+            required:
+              - index
+              - delta
+              - finish_reason
+            additionalProperties: false
+      required:
+        - type
+        - output
+        - searchTime
+      additionalProperties: false
+    SearchStreamErrorChunkOutput:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        type:
+          type: string
+          const: error
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+          required:
+            - message
+          additionalProperties: false
+      required:
+        - type
+        - error
+      additionalProperties: false
     JsonValue:
       description: Any JSON value.
       oneOf:
@@ -1477,730 +1519,19 @@ components:
           type: array
           items:
             oneOf:
-              - type: object
-                properties:
-                  id:
-                    type: string
-                    description: Stable company entity identifier.
-                  type:
-                    type: string
-                    const: company
-                    description: Entity discriminator.
-                  version:
-                    type: integer
-                    minimum: 1
-                    description: Entity schema version.
-                  properties:
-                    type: object
-                    properties:
-                      name:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Company name.
-                      foundedYear:
-                        anyOf:
-                          - type: integer
-                          - type: 'null'
-                        description: Year the company was founded.
-                      description:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Short company description.
-                      workforce:
-                        anyOf:
-                          - type: object
-                            properties:
-                              total:
-                                anyOf:
-                                  - type: number
-                                  - type: 'null'
-                                description: Total estimated employee count.
-                            required:
-                              - total
-                            additionalProperties: false
-                          - type: 'null'
-                        description: Company workforce information.
-                      headquarters:
-                        anyOf:
-                          - type: object
-                            properties:
-                              address:
-                                anyOf:
-                                  - type: string
-                                  - type: 'null'
-                                description: Company headquarters street address.
-                              city:
-                                anyOf:
-                                  - type: string
-                                  - type: 'null'
-                                description: Company headquarters city.
-                              postalCode:
-                                anyOf:
-                                  - type: string
-                                  - type: 'null'
-                                description: Company headquarters postal code.
-                              country:
-                                anyOf:
-                                  - type: string
-                                  - type: 'null'
-                                description: Company headquarters country.
-                            required:
-                              - address
-                              - city
-                              - postalCode
-                              - country
-                            additionalProperties: false
-                          - type: 'null'
-                        description: Company headquarters information.
-                      financials:
-                        anyOf:
-                          - type: object
-                            properties:
-                              revenueAnnual:
-                                anyOf:
-                                  - type: number
-                                  - type: 'null'
-                                description: Estimated annual revenue in USD.
-                              fundingTotal:
-                                anyOf:
-                                  - type: number
-                                  - type: 'null'
-                                description: Total funding raised in USD.
-                              fundingLatestRound:
-                                anyOf:
-                                  - type: object
-                                    properties:
-                                      name:
-                                        anyOf:
-                                          - type: string
-                                          - type: 'null'
-                                        description: Funding round name.
-                                      date:
-                                        anyOf:
-                                          - type: string
-                                          - type: 'null'
-                                        description: Funding round date.
-                                      amount:
-                                        anyOf:
-                                          - type: number
-                                          - type: 'null'
-                                        description: Funding round amount in USD.
-                                    required:
-                                      - name
-                                      - date
-                                      - amount
-                                    additionalProperties: false
-                                  - type: 'null'
-                                description: Most recent funding round, when available.
-                            required:
-                              - revenueAnnual
-                              - fundingTotal
-                              - fundingLatestRound
-                            additionalProperties: false
-                          - type: 'null'
-                        description: Company financial information.
-                      webTraffic:
-                        anyOf:
-                          - type: object
-                            properties:
-                              visitsMonthly:
-                                anyOf:
-                                  - type: number
-                                  - type: 'null'
-                                description: Estimated monthly website visits.
-                              countryRank:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: >-
-                                  Estimated website traffic rank within the
-                                  company's primary country.
-                              avgDurationSeconds:
-                                anyOf:
-                                  - type: number
-                                  - type: 'null'
-                                description: Estimated average visit duration, in seconds.
-                              history:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    value:
-                                      type: number
-                                      description: >-
-                                        Estimated monthly visits for this
-                                        period.
-                                    dateFrom:
-                                      type: string
-                                      description: >-
-                                        Start month for this value, formatted as
-                                        YYYY-MM.
-                                    dateTo:
-                                      type: string
-                                      description: >-
-                                        End month for this value, formatted as
-                                        YYYY-MM.
-                                  required:
-                                    - value
-                                    - dateFrom
-                                    - dateTo
-                                  additionalProperties: false
-                                description: Historical monthly website visits.
-                            required:
-                              - visitsMonthly
-                              - countryRank
-                              - avgDurationSeconds
-                              - history
-                            additionalProperties: false
-                          - type: 'null'
-                        description: Company web traffic information.
-                      research:
-                        anyOf:
-                          - type: object
-                            properties:
-                              worksCount:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Number of works with an affiliated author.
-                              citationCount:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Lifetime citation count.
-                              areas:
-                                type: array
-                                items:
-                                  type: string
-                                description: Ranked research areas, most active first.
-                              notableWorks:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Publication title.
-                                    year:
-                                      anyOf:
-                                        - type: integer
-                                        - type: 'null'
-                                      description: Publication year.
-                                    venue:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Publication venue.
-                                    citationCount:
-                                      anyOf:
-                                        - type: integer
-                                        - type: 'null'
-                                      description: Number of works citing this publication.
-                                    doi:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Digital Object Identifier.
-                                    id:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: >-
-                                        Resolved publication entity identifier,
-                                        when available.
-                                    type:
-                                      anyOf:
-                                        - type: string
-                                          enum:
-                                            - article
-                                            - book
-                                            - book-chapter
-                                            - dataset
-                                            - dissertation
-                                            - preprint
-                                            - report
-                                            - review
-                                        - type: 'null'
-                                      description: Publication type.
-                                  required:
-                                    - title
-                                    - year
-                                    - venue
-                                    - citationCount
-                                    - doi
-                                    - id
-                                    - type
-                                  additionalProperties: false
-                                description: Most-cited notable works.
-                              topResearchers:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    person:
-                                      anyOf:
-                                        - type: object
-                                          properties:
-                                            name:
-                                              anyOf:
-                                                - type: string
-                                                - type: 'null'
-                                              description: Referenced person name.
-                                            id:
-                                              anyOf:
-                                                - type: string
-                                                - type: 'null'
-                                              description: Referenced person entity identifier.
-                                          required:
-                                            - name
-                                            - id
-                                          additionalProperties: false
-                                        - type: 'null'
-                                      description: Referenced researcher.
-                                    worksCount:
-                                      anyOf:
-                                        - type: integer
-                                        - type: 'null'
-                                      description: >-
-                                        Number of works produced at the
-                                        organization.
-                                    citationCount:
-                                      anyOf:
-                                        - type: integer
-                                        - type: 'null'
-                                      description: >-
-                                        Number of citations for works produced
-                                        at the organization.
-                                  required:
-                                    - person
-                                    - worksCount
-                                    - citationCount
-                                  additionalProperties: false
-                                description: >-
-                                  Researchers ordered by works produced at the
-                                  organization.
-                            required:
-                              - worksCount
-                              - citationCount
-                              - areas
-                              - notableWorks
-                              - topResearchers
-                            additionalProperties: false
-                          - type: 'null'
-                        description: Company research information.
-                    required:
-                      - name
-                      - foundedYear
-                      - description
-                      - workforce
-                      - headquarters
-                      - financials
-                      - webTraffic
-                      - research
-                    additionalProperties: false
-                    description: Company-specific entity fields.
-                required:
-                  - id
-                  - type
-                  - version
-                  - properties
-                additionalProperties: false
-              - type: object
-                properties:
-                  id:
-                    type: string
-                    description: Stable person entity identifier.
-                  type:
-                    type: string
-                    const: person
-                    description: Entity discriminator.
-                  version:
-                    type: integer
-                    minimum: 1
-                    description: Entity schema version.
-                  properties:
-                    type: object
-                    properties:
-                      name:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Person name.
-                      firstName:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Person first name.
-                      lastName:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Person last name.
-                      location:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Person location.
-                      workHistory:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            title:
-                              anyOf:
-                                - type: string
-                                - type: 'null'
-                              description: Role title.
-                            location:
-                              anyOf:
-                                - type: string
-                                - type: 'null'
-                              description: Role location.
-                            dates:
-                              anyOf:
-                                - type: object
-                                  properties:
-                                    from:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Start date for the date range.
-                                    to:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: End date for the date range.
-                                  required:
-                                    - from
-                                    - to
-                                  additionalProperties: false
-                                - type: 'null'
-                              description: Role date range.
-                            company:
-                              anyOf:
-                                - type: object
-                                  properties:
-                                    id:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Referenced company identifier.
-                                    name:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Referenced company name.
-                                  required:
-                                    - id
-                                    - name
-                                  additionalProperties: false
-                                - type: 'null'
-                              description: Company for this role.
-                          required:
-                            - title
-                            - location
-                            - dates
-                            - company
-                          additionalProperties: false
-                        description: Known professional roles for this person.
-                      educationHistory:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            degree:
-                              anyOf:
-                                - type: string
-                                - type: 'null'
-                              description: Degree or credential.
-                            dates:
-                              anyOf:
-                                - type: object
-                                  properties:
-                                    from:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Start date for the date range.
-                                    to:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: End date for the date range.
-                                  required:
-                                    - from
-                                    - to
-                                  additionalProperties: false
-                                - type: 'null'
-                              description: Education date range.
-                            institution:
-                              anyOf:
-                                - type: object
-                                  properties:
-                                    id:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Referenced institution identifier.
-                                    name:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Referenced institution name.
-                                  required:
-                                    - id
-                                    - name
-                                  additionalProperties: false
-                                - type: 'null'
-                              description: Education institution.
-                          required:
-                            - degree
-                            - dates
-                            - institution
-                          additionalProperties: false
-                        description: Known education history for this person.
-                      research:
-                        anyOf:
-                          - type: object
-                            properties:
-                              worksCount:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Lifetime number of works.
-                              citationCount:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Lifetime citation count.
-                              hIndex:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Research h-index.
-                              firstPublicationYear:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Year of the first publication.
-                              latestPublicationYear:
-                                anyOf:
-                                  - type: integer
-                                  - type: 'null'
-                                description: Year of the latest publication.
-                              areas:
-                                type: array
-                                items:
-                                  type: string
-                                description: Ranked research areas, most active first.
-                              notableWorks:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Publication title.
-                                    year:
-                                      anyOf:
-                                        - type: integer
-                                        - type: 'null'
-                                      description: Publication year.
-                                    venue:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Publication venue.
-                                    citationCount:
-                                      anyOf:
-                                        - type: integer
-                                        - type: 'null'
-                                      description: Number of works citing this publication.
-                                    doi:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: Digital Object Identifier.
-                                    id:
-                                      anyOf:
-                                        - type: string
-                                        - type: 'null'
-                                      description: >-
-                                        Resolved publication entity identifier,
-                                        when available.
-                                    type:
-                                      anyOf:
-                                        - type: string
-                                          enum:
-                                            - article
-                                            - book
-                                            - book-chapter
-                                            - dataset
-                                            - dissertation
-                                            - preprint
-                                            - report
-                                            - review
-                                        - type: 'null'
-                                      description: Publication type.
-                                  required:
-                                    - title
-                                    - year
-                                    - venue
-                                    - citationCount
-                                    - doi
-                                    - id
-                                    - type
-                                  additionalProperties: false
-                                description: Most-cited notable works.
-                            required:
-                              - worksCount
-                              - citationCount
-                              - hIndex
-                              - firstPublicationYear
-                              - latestPublicationYear
-                              - areas
-                              - notableWorks
-                            additionalProperties: false
-                          - type: 'null'
-                        description: Person research information.
-                    required:
-                      - name
-                      - firstName
-                      - lastName
-                      - location
-                      - workHistory
-                      - educationHistory
-                      - research
-                    additionalProperties: false
-                    description: Person-specific entity fields.
-                required:
-                  - id
-                  - type
-                  - version
-                  - properties
-                additionalProperties: false
-              - type: object
-                properties:
-                  id:
-                    type: string
-                    description: Stable publication entity identifier.
-                  type:
-                    type: string
-                    const: publication
-                    description: Entity discriminator.
-                  version:
-                    type: integer
-                    minimum: 1
-                    description: Entity schema version.
-                  properties:
-                    type: object
-                    properties:
-                      title:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Publication title.
-                      year:
-                        anyOf:
-                          - type: integer
-                          - type: 'null'
-                        description: Publication year.
-                      date:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Publication date.
-                      type:
-                        anyOf:
-                          - type: string
-                            enum:
-                              - article
-                              - book
-                              - book-chapter
-                              - dataset
-                              - dissertation
-                              - preprint
-                              - report
-                              - review
-                          - type: 'null'
-                        description: Publication type.
-                      language:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Publication language.
-                      citationCount:
-                        anyOf:
-                          - type: integer
-                          - type: 'null'
-                        description: >-
-                          Number of works citing this publication (incoming
-                          references).
-                      authors:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            name:
-                              anyOf:
-                                - type: string
-                                - type: 'null'
-                              description: Author display name.
-                            id:
-                              anyOf:
-                                - type: string
-                                - type: 'null'
-                              description: >-
-                                Resolved person entity identifier, when
-                                available.
-                          required:
-                            - name
-                            - id
-                          additionalProperties: false
-                        description: Ordered list of authors.
-                      referenceCount:
-                        anyOf:
-                          - type: integer
-                          - type: 'null'
-                        description: >-
-                          Number of works this publication cites (outgoing
-                          references).
-                      abstract:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Publication abstract text.
-                      doi:
-                        anyOf:
-                          - type: string
-                          - type: 'null'
-                        description: Bare DOI identifier (e.g. 10.1234/abcd).
-                    required:
-                      - title
-                      - year
-                      - date
-                      - type
-                      - language
-                      - citationCount
-                      - authors
-                      - referenceCount
-                      - abstract
-                      - doi
-                    additionalProperties: false
-                    description: Publication-specific entity fields.
-                required:
-                  - id
-                  - type
-                  - version
-                  - properties
-                additionalProperties: false
+              - $ref: '#/components/schemas/SearchCompanyEntityOutput'
+              - $ref: '#/components/schemas/SearchPersonEntityOutput'
+              - $ref: '#/components/schemas/SearchPublicationEntityOutput'
             type: object
+            discriminator:
+              propertyName: type
+              mapping:
+                company:
+                  $ref: '#/components/schemas/SearchCompanyEntityOutput'
+                person:
+                  $ref: '#/components/schemas/SearchPersonEntityOutput'
+                publication:
+                  $ref: '#/components/schemas/SearchPublicationEntityOutput'
         extras:
           description: >-
             Results from extras. Each field is returned only when requested via
@@ -2404,6 +1735,718 @@ components:
         - grounding
       additionalProperties: false
       description: Synthesized output. Returned when outputSchema is provided.
+    SearchCompanyEntityOutput:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Stable company entity identifier.
+        type:
+          type: string
+          const: company
+          description: Entity discriminator.
+        version:
+          type: integer
+          minimum: 1
+          description: Entity schema version.
+        properties:
+          type: object
+          properties:
+            name:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Company name.
+            foundedYear:
+              anyOf:
+                - type: integer
+                - type: 'null'
+              description: Year the company was founded.
+            description:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Short company description.
+            workforce:
+              anyOf:
+                - type: object
+                  properties:
+                    total:
+                      anyOf:
+                        - type: number
+                        - type: 'null'
+                      description: Total estimated employee count.
+                  required:
+                    - total
+                  additionalProperties: false
+                - type: 'null'
+              description: Company workforce information.
+            headquarters:
+              anyOf:
+                - type: object
+                  properties:
+                    address:
+                      anyOf:
+                        - type: string
+                        - type: 'null'
+                      description: Company headquarters street address.
+                    city:
+                      anyOf:
+                        - type: string
+                        - type: 'null'
+                      description: Company headquarters city.
+                    postalCode:
+                      anyOf:
+                        - type: string
+                        - type: 'null'
+                      description: Company headquarters postal code.
+                    country:
+                      anyOf:
+                        - type: string
+                        - type: 'null'
+                      description: Company headquarters country.
+                  required:
+                    - address
+                    - city
+                    - postalCode
+                    - country
+                  additionalProperties: false
+                - type: 'null'
+              description: Company headquarters information.
+            financials:
+              anyOf:
+                - type: object
+                  properties:
+                    revenueAnnual:
+                      anyOf:
+                        - type: number
+                        - type: 'null'
+                      description: Estimated annual revenue in USD.
+                    fundingTotal:
+                      anyOf:
+                        - type: number
+                        - type: 'null'
+                      description: Total funding raised in USD.
+                    fundingLatestRound:
+                      anyOf:
+                        - type: object
+                          properties:
+                            name:
+                              anyOf:
+                                - type: string
+                                - type: 'null'
+                              description: Funding round name.
+                            date:
+                              anyOf:
+                                - type: string
+                                - type: 'null'
+                              description: Funding round date.
+                            amount:
+                              anyOf:
+                                - type: number
+                                - type: 'null'
+                              description: Funding round amount in USD.
+                          required:
+                            - name
+                            - date
+                            - amount
+                          additionalProperties: false
+                        - type: 'null'
+                      description: Most recent funding round, when available.
+                  required:
+                    - revenueAnnual
+                    - fundingTotal
+                    - fundingLatestRound
+                  additionalProperties: false
+                - type: 'null'
+              description: Company financial information.
+            webTraffic:
+              anyOf:
+                - type: object
+                  properties:
+                    visitsMonthly:
+                      anyOf:
+                        - type: number
+                        - type: 'null'
+                      description: Estimated monthly website visits.
+                    countryRank:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: >-
+                        Estimated website traffic rank within the company's
+                        primary country.
+                    avgDurationSeconds:
+                      anyOf:
+                        - type: number
+                        - type: 'null'
+                      description: Estimated average visit duration, in seconds.
+                    history:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          value:
+                            type: number
+                            description: Estimated monthly visits for this period.
+                          dateFrom:
+                            type: string
+                            description: Start month for this value, formatted as YYYY-MM.
+                          dateTo:
+                            type: string
+                            description: End month for this value, formatted as YYYY-MM.
+                        required:
+                          - value
+                          - dateFrom
+                          - dateTo
+                        additionalProperties: false
+                      description: Historical monthly website visits.
+                  required:
+                    - visitsMonthly
+                    - countryRank
+                    - avgDurationSeconds
+                    - history
+                  additionalProperties: false
+                - type: 'null'
+              description: Company web traffic information.
+            research:
+              anyOf:
+                - type: object
+                  properties:
+                    worksCount:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Number of works with an affiliated author.
+                    citationCount:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Lifetime citation count.
+                    areas:
+                      type: array
+                      items:
+                        type: string
+                      description: Ranked research areas, most active first.
+                    notableWorks:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          title:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Publication title.
+                          year:
+                            anyOf:
+                              - type: integer
+                              - type: 'null'
+                            description: Publication year.
+                          venue:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Publication venue.
+                          citationCount:
+                            anyOf:
+                              - type: integer
+                              - type: 'null'
+                            description: Number of works citing this publication.
+                          doi:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Digital Object Identifier.
+                          id:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: >-
+                              Resolved publication entity identifier, when
+                              available.
+                          type:
+                            anyOf:
+                              - type: string
+                                enum:
+                                  - article
+                                  - book
+                                  - book-chapter
+                                  - dataset
+                                  - dissertation
+                                  - preprint
+                                  - report
+                                  - review
+                              - type: 'null'
+                            description: Publication type.
+                        required:
+                          - title
+                          - year
+                          - venue
+                          - citationCount
+                          - doi
+                          - id
+                          - type
+                        additionalProperties: false
+                      description: Most-cited notable works.
+                    topResearchers:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          person:
+                            anyOf:
+                              - type: object
+                                properties:
+                                  name:
+                                    anyOf:
+                                      - type: string
+                                      - type: 'null'
+                                    description: Referenced person name.
+                                  id:
+                                    anyOf:
+                                      - type: string
+                                      - type: 'null'
+                                    description: Referenced person entity identifier.
+                                required:
+                                  - name
+                                  - id
+                                additionalProperties: false
+                              - type: 'null'
+                            description: Referenced researcher.
+                          worksCount:
+                            anyOf:
+                              - type: integer
+                              - type: 'null'
+                            description: Number of works produced at the organization.
+                          citationCount:
+                            anyOf:
+                              - type: integer
+                              - type: 'null'
+                            description: >-
+                              Number of citations for works produced at the
+                              organization.
+                        required:
+                          - person
+                          - worksCount
+                          - citationCount
+                        additionalProperties: false
+                      description: >-
+                        Researchers ordered by works produced at the
+                        organization.
+                  required:
+                    - worksCount
+                    - citationCount
+                    - areas
+                    - notableWorks
+                    - topResearchers
+                  additionalProperties: false
+                - type: 'null'
+              description: Company research information.
+          required:
+            - name
+            - foundedYear
+            - description
+            - workforce
+            - headquarters
+            - financials
+            - webTraffic
+            - research
+          additionalProperties: false
+          description: Company-specific entity fields.
+      required:
+        - id
+        - type
+        - version
+        - properties
+      additionalProperties: false
+    SearchPersonEntityOutput:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Stable person entity identifier.
+        type:
+          type: string
+          const: person
+          description: Entity discriminator.
+        version:
+          type: integer
+          minimum: 1
+          description: Entity schema version.
+        properties:
+          type: object
+          properties:
+            name:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Person name.
+            firstName:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Person first name.
+            lastName:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Person last name.
+            location:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Person location.
+            workHistory:
+              type: array
+              items:
+                type: object
+                properties:
+                  title:
+                    anyOf:
+                      - type: string
+                      - type: 'null'
+                    description: Role title.
+                  location:
+                    anyOf:
+                      - type: string
+                      - type: 'null'
+                    description: Role location.
+                  dates:
+                    anyOf:
+                      - type: object
+                        properties:
+                          from:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Start date for the date range.
+                          to:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: End date for the date range.
+                        required:
+                          - from
+                          - to
+                        additionalProperties: false
+                      - type: 'null'
+                    description: Role date range.
+                  company:
+                    anyOf:
+                      - type: object
+                        properties:
+                          id:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Referenced company identifier.
+                          name:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Referenced company name.
+                        required:
+                          - id
+                          - name
+                        additionalProperties: false
+                      - type: 'null'
+                    description: Company for this role.
+                required:
+                  - title
+                  - location
+                  - dates
+                  - company
+                additionalProperties: false
+              description: Known professional roles for this person.
+            educationHistory:
+              type: array
+              items:
+                type: object
+                properties:
+                  degree:
+                    anyOf:
+                      - type: string
+                      - type: 'null'
+                    description: Degree or credential.
+                  dates:
+                    anyOf:
+                      - type: object
+                        properties:
+                          from:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Start date for the date range.
+                          to:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: End date for the date range.
+                        required:
+                          - from
+                          - to
+                        additionalProperties: false
+                      - type: 'null'
+                    description: Education date range.
+                  institution:
+                    anyOf:
+                      - type: object
+                        properties:
+                          id:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Referenced institution identifier.
+                          name:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Referenced institution name.
+                        required:
+                          - id
+                          - name
+                        additionalProperties: false
+                      - type: 'null'
+                    description: Education institution.
+                required:
+                  - degree
+                  - dates
+                  - institution
+                additionalProperties: false
+              description: Known education history for this person.
+            research:
+              anyOf:
+                - type: object
+                  properties:
+                    worksCount:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Lifetime number of works.
+                    citationCount:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Lifetime citation count.
+                    hIndex:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Research h-index.
+                    firstPublicationYear:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Year of the first publication.
+                    latestPublicationYear:
+                      anyOf:
+                        - type: integer
+                        - type: 'null'
+                      description: Year of the latest publication.
+                    areas:
+                      type: array
+                      items:
+                        type: string
+                      description: Ranked research areas, most active first.
+                    notableWorks:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          title:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Publication title.
+                          year:
+                            anyOf:
+                              - type: integer
+                              - type: 'null'
+                            description: Publication year.
+                          venue:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Publication venue.
+                          citationCount:
+                            anyOf:
+                              - type: integer
+                              - type: 'null'
+                            description: Number of works citing this publication.
+                          doi:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: Digital Object Identifier.
+                          id:
+                            anyOf:
+                              - type: string
+                              - type: 'null'
+                            description: >-
+                              Resolved publication entity identifier, when
+                              available.
+                          type:
+                            anyOf:
+                              - type: string
+                                enum:
+                                  - article
+                                  - book
+                                  - book-chapter
+                                  - dataset
+                                  - dissertation
+                                  - preprint
+                                  - report
+                                  - review
+                              - type: 'null'
+                            description: Publication type.
+                        required:
+                          - title
+                          - year
+                          - venue
+                          - citationCount
+                          - doi
+                          - id
+                          - type
+                        additionalProperties: false
+                      description: Most-cited notable works.
+                  required:
+                    - worksCount
+                    - citationCount
+                    - hIndex
+                    - firstPublicationYear
+                    - latestPublicationYear
+                    - areas
+                    - notableWorks
+                  additionalProperties: false
+                - type: 'null'
+              description: Person research information.
+          required:
+            - name
+            - firstName
+            - lastName
+            - location
+            - workHistory
+            - educationHistory
+            - research
+          additionalProperties: false
+          description: Person-specific entity fields.
+      required:
+        - id
+        - type
+        - version
+        - properties
+      additionalProperties: false
+    SearchPublicationEntityOutput:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Stable publication entity identifier.
+        type:
+          type: string
+          const: publication
+          description: Entity discriminator.
+        version:
+          type: integer
+          minimum: 1
+          description: Entity schema version.
+        properties:
+          type: object
+          properties:
+            title:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Publication title.
+            year:
+              anyOf:
+                - type: integer
+                - type: 'null'
+              description: Publication year.
+            date:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Publication date.
+            type:
+              anyOf:
+                - type: string
+                  enum:
+                    - article
+                    - book
+                    - book-chapter
+                    - dataset
+                    - dissertation
+                    - preprint
+                    - report
+                    - review
+                - type: 'null'
+              description: Publication type.
+            language:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Publication language.
+            citationCount:
+              anyOf:
+                - type: integer
+                - type: 'null'
+              description: Number of works citing this publication (incoming references).
+            authors:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    anyOf:
+                      - type: string
+                      - type: 'null'
+                    description: Author display name.
+                  id:
+                    anyOf:
+                      - type: string
+                      - type: 'null'
+                    description: Resolved person entity identifier, when available.
+                required:
+                  - name
+                  - id
+                additionalProperties: false
+              description: Ordered list of authors.
+            referenceCount:
+              anyOf:
+                - type: integer
+                - type: 'null'
+              description: Number of works this publication cites (outgoing references).
+            abstract:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Publication abstract text.
+            doi:
+              anyOf:
+                - type: string
+                - type: 'null'
+              description: Bare DOI identifier (e.g. 10.1234/abcd).
+          required:
+            - title
+            - year
+            - date
+            - type
+            - language
+            - citationCount
+            - authors
+            - referenceCount
+            - abstract
+            - doi
+          additionalProperties: false
+          description: Publication-specific entity fields.
+      required:
+        - id
+        - type
+        - version
+        - properties
+      additionalProperties: false
   headers:
     XRequestId:
       description: >-
