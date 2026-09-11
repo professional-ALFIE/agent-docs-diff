@@ -206,39 +206,8 @@ components:
     SearchMonitorOutputSchemaOutput:
       anyOf:
         - oneOf:
-            - type: object
-              properties:
-                type:
-                  type: string
-                  const: text
-                description:
-                  type: string
-              required:
-                - type
-              additionalProperties: false
-            - type: object
-              properties:
-                type:
-                  type: string
-                  const: object
-                description:
-                  type: string
-                properties:
-                  type: object
-                  propertyNames:
-                    type: string
-                  additionalProperties:
-                    $ref: '#/components/schemas/JsonValue'
-                required:
-                  type: array
-                  items:
-                    type: string
-                additionalProperties:
-                  type: boolean
-              required:
-                - type
-              additionalProperties:
-                $ref: '#/components/schemas/JsonValue'
+            - $ref: '#/components/schemas/OutputSchemaTextOutput'
+            - $ref: '#/components/schemas/OutputSchemaObject'
           description: >-
             JSON schema for synthesized output. Supported root types are "text"
             and "object". When provided, the response includes an output object
@@ -246,6 +215,13 @@ components:
             adds about 2 seconds of synthesis latency on top of the selected
             search type.
           type: object
+          discriminator:
+            propertyName: type
+            mapping:
+              text:
+                $ref: '#/components/schemas/OutputSchemaTextOutput'
+              object:
+                $ref: '#/components/schemas/OutputSchemaObject'
         - type: 'null'
       description: >-
         Controls the format of the run output. Defaults to `{ "type": "text" }`
@@ -539,19 +515,7 @@ components:
             object with `query` and `maxTokens`.
           oneOf:
             - type: boolean
-            - type: object
-              properties:
-                query:
-                  anyOf:
-                    - type: string
-                      description: Custom query for the LLM-generated summary.
-                      example: Main developments
-                    - type: 'null'
-                maxTokens:
-                  type: integer
-                  minimum: 1
-                  description: Maximum tokens for the generated summary.
-              additionalProperties: false
+            - $ref: '#/components/schemas/SummaryWithMaxTokensOptionsOutput'
         extras:
           type: object
           properties:
@@ -688,6 +652,55 @@ components:
       description: >-
         Content extraction options applied to each search result. All fields are
         optional.
+    OutputSchemaTextOutput:
+      type: object
+      properties:
+        type:
+          type: string
+          const: text
+        description:
+          type: string
+      required:
+        - type
+      additionalProperties: false
+    OutputSchemaObject:
+      type: object
+      properties:
+        type:
+          type: string
+          const: object
+        description:
+          type: string
+        properties:
+          type: object
+          propertyNames:
+            type: string
+          additionalProperties:
+            $ref: '#/components/schemas/JsonValue'
+        required:
+          type: array
+          items:
+            type: string
+        additionalProperties:
+          type: boolean
+      required:
+        - type
+      additionalProperties:
+        $ref: '#/components/schemas/JsonValue'
+    SummaryWithMaxTokensOptionsOutput:
+      type: object
+      properties:
+        query:
+          anyOf:
+            - type: string
+              description: Custom query for the LLM-generated summary.
+              example: Main developments
+            - type: 'null'
+        maxTokens:
+          type: integer
+          minimum: 1
+          description: Maximum tokens for the generated summary.
+      additionalProperties: false
     JsonValue:
       description: Any JSON value.
       oneOf:
