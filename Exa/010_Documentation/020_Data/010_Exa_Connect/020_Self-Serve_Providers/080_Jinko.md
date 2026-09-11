@@ -117,7 +117,7 @@ Find beach destinations reachable from New York for under \$400 round-trip in Ma
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
