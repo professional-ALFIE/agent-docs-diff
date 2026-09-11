@@ -143,7 +143,7 @@ Then make your first request:
       "enrichments": [
         {"description": "Find the company'\''s founding year", "format": "number"}
       ]
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
