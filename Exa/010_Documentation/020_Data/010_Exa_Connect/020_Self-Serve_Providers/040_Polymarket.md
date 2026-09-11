@@ -107,7 +107,7 @@ Get the market-implied odds of a Fed rate cut and how they moved over the past m
           "trend": { "type": "string", "description": "how the implied probability moved over the past month" }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
