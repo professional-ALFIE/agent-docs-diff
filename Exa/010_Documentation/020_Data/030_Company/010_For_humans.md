@@ -46,7 +46,7 @@ If you're building:
       "category": "company",
       "type": "auto",
       "numResults": 10
-    }' | jq
+    }'
   ```
 
   ```python python theme={null}
