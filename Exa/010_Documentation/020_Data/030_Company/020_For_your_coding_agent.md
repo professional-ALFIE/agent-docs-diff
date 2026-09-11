@@ -22,7 +22,7 @@ For creating lists or enriching over many companies at scale, use [Websets](/doc
 curl -s -X POST "https://api.exa.ai/search" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -d '{"query": "fintech companies in Switzerland", "category": "company", "contents": {"highlights": true}}' | jq
+  -d '{"query": "fintech companies in Switzerland", "category": "company", "contents": {"highlights": true}}'
 ```
 
 ```python theme={null}
