@@ -61,7 +61,7 @@ Each item needs a batch-unique `customId`. The same `customId` is returned in th
       "metadata": {
         "project": "weekly-digest"
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
@@ -97,7 +97,7 @@ Poll the batch until it reaches a terminal status:
   ```bash cURL theme={null}
   curl -s "https://api.exa.ai/batches/batch_01j7x9v0m2n4p6q8r0s2t4v6w8" \
     -H "Authorization: Bearer $EXA_API_KEY" \
-    -H "Exa-Beta: batches-2026-06-06" | jq
+    -H "Exa-Beta: batches-2026-06-06"
   ```
 </CodeGroup>
 
@@ -123,7 +123,7 @@ When the batch completes, `resultsUrl` contains a download URL for the JSONL res
   ```bash cURL theme={null}
   curl -s "https://api.exa.ai/batches?limit=100" \
     -H "Authorization: Bearer $EXA_API_KEY" \
-    -H "Exa-Beta: batches-2026-06-06" | jq
+    -H "Exa-Beta: batches-2026-06-06"
   ```
 </CodeGroup>
 
@@ -134,7 +134,7 @@ Pass `status=completed` to list only completed batches:
 ```bash theme={null}
 curl -s "https://api.exa.ai/batches?status=completed" \
   -H "Authorization: Bearer $EXA_API_KEY" \
-  -H "Exa-Beta: batches-2026-06-06" | jq
+  -H "Exa-Beta: batches-2026-06-06"
 ```
 
 `completed` is the only supported value; any other value returns an error. Completed listings are ordered by expiry and use their own cursor, so keep sending `status=completed` on every page — completed and unfiltered cursors are not interchangeable.
