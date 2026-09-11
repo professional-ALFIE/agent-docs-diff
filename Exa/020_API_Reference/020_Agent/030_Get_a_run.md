@@ -194,6 +194,8 @@ components:
             behavior. Use this for source preferences, novelty constraints,
             duplication constraints, or other behavior guidance.
           example: Prefer official sources and avoid duplicate results.
+        effort:
+          $ref: '#/components/schemas/AgentEffort'
         input:
           type: object
           properties:
@@ -231,8 +233,6 @@ components:
                 returned as `null`. Supports draft-07, 2019-09, and 2020-12 via
                 `$schema`.
             - type: 'null'
-        effort:
-          $ref: '#/components/schemas/AgentEffort'
         previousRunId:
           $ref: '#/components/schemas/AgentRunId'
         metadata:
@@ -361,21 +361,6 @@ components:
         - message
       additionalProperties:
         $ref: '#/components/schemas/JsonValue'
-    JsonValue:
-      description: Any JSON value.
-      oneOf:
-        - type: 'null'
-        - type: boolean
-        - type: number
-        - type: string
-        - type: array
-          items:
-            $ref: '#/components/schemas/JsonValue'
-        - type: object
-          propertyNames:
-            type: string
-          additionalProperties:
-            $ref: '#/components/schemas/JsonValue'
     AgentEffort:
       type: string
       enum:
@@ -393,6 +378,21 @@ components:
         cost, including large list building, deep multi-source research, and
         criteria that are hard to verify.
       default: auto
+    JsonValue:
+      description: Any JSON value.
+      oneOf:
+        - type: 'null'
+        - type: boolean
+        - type: number
+        - type: string
+        - type: array
+          items:
+            $ref: '#/components/schemas/JsonValue'
+        - type: object
+          propertyNames:
+            type: string
+          additionalProperties:
+            $ref: '#/components/schemas/JsonValue'
     AgentDataSourceOutput:
       type: object
       properties:
