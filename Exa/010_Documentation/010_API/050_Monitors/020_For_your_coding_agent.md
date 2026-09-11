@@ -106,13 +106,13 @@ npm install exa-js    # JavaScript
       "webhook": {
         "url": "https://example.com/webhook"
       }
-    }' | jq
+    }'
   # 2. Trigger a run (replace MONITOR_ID with the id from the create response)
   curl -s -X POST "https://api.exa.ai/monitors/{MONITOR_ID}/trigger" \
-    -H "Authorization: Bearer $EXA_API_KEY" | jq
+    -H "Authorization: Bearer $EXA_API_KEY"
   # 3. List runs to check status
   curl -s "https://api.exa.ai/monitors/{MONITOR_ID}/runs" \
-    -H "Authorization: Bearer $EXA_API_KEY" | jq
+    -H "Authorization: Bearer $EXA_API_KEY"
   ```
 </CodeGroup>
 
