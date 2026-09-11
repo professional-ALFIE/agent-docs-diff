@@ -160,7 +160,7 @@ Verify a business and retrieve its officer and registration details.
           }
         }
       }
-    }' | jq
+    }'
   ```
 </CodeGroup>
 
