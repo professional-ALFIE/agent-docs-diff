@@ -188,7 +188,7 @@ Subagent의 파일 위치는 누가 사용할 수 있는지를 결정하고, 해
 
 Claude Code는 `.claude/agents/` 및 `~/.claude/agents/`를 재귀적으로 스캔하므로 `agents/review/` 또는 `agents/research/`와 같은 하위 폴더로 정의를 구성할 수 있습니다. 하위 디렉토리 경로는 subagent가 식별되거나 호출되는 방식에 영향을 주지 않습니다. 왜냐하면 ID는 `name` frontmatter 필드에서만 나오기 때문입니다.
 
-전체 트리에서 `name` 값을 고유하게 유지합니다: 동일한 `.claude/agents/` 디렉토리 내의 두 파일이 (하위 폴더 포함) 동일한 이름을 선언하면 Claude Code는 하나만 로드하며, 파일시스템 읽기 순서가 아닌 문서화된 우선순위에 따라 선택됩니다. 중첩된 프로젝트 디렉토리 간에는 작업 디렉토리에 가장 가까운 정의가 우선합니다 (위에서 설명한 대로). [`/doctor`](/docs/ko/commands#all-commands) 설정 점검은 동일한 디렉토리에서 이름을 공유하는 파일을 보고하고 하나를 제외한 모두의 이름을 바꾸거나 제거할 것을 제안합니다. v2.1.205 이전에는 `/doctor`가 진단 화면을 열어 중복을 나열하고 활성 정의를 표시했습니다.
+전체 트리에서 `name` 값을 고유하게 유지합니다: 동일한 `.claude/agents/` 디렉토리 내의 두 파일이 (하위 폴더 포함) 동일한 이름을 선언하면 Claude Code는 하나만 로드하며, 문서화된 우선순위가 아닌 파일시스템 읽기 순서에 따라 선택됩니다. 중첩된 프로젝트 디렉토리 간에는 작업 디렉토리에 가장 가까운 정의가 우선합니다 (위에서 설명한 대로). [`/doctor`](/docs/ko/commands#all-commands) 설정 점검은 동일한 디렉토리에서 이름을 공유하는 파일을 보고하고 하나를 제외한 모두의 이름을 바꾸거나 제거할 것을 제안합니다. v2.1.205 이전에는 `/doctor`가 진단 화면을 열어 중복을 나열하고 활성 정의를 표시했습니다.
 
 플러그인 `agents/` 디렉토리도 재귀적으로 스캔됩니다. 프로젝트 및 사용자 범위와 달리 플러그인의 `agents/` 디렉토리 내의 하위 폴더는 [범위가 지정된 식별자](#invoke-subagents-explicitly)의 일부가 됩니다: 플러그인 `my-plugin`의 `agents/review/security.md`에 있는 파일은 `my-plugin:review:security`로 등록됩니다.
 
@@ -306,7 +306,7 @@ Bash 명령의 경우 Claude Code는 두 가지 방식으로 명령 자체도 �
 | `name`            | 예   | 소문자 및 하이픈을 사용한 고유 식별자. [Hooks](/docs/ko/hooks#subagentstart)는 이 값을 `agent_type`으로 받습니다. 파일 이름이 일치할 필요는 없습니다. 이름에는 `:`를 포함할 수 없으며, 이는 `my-plugin:reviewer`와 같은 [플러그인 범위 식별자](/docs/ko/plugins)에 예약되어 있습니다. Claude Code는 이름을 포함하는 파일을 로드하지 않고 디버그 로그에 오류를 기록합니다. v2.1.218 이전에는 이러한 이름이 허용되었습니다                                                           |
 | `description`     | 예   | Claude가 이 subagent에 위임해야 할 때                                                                                                                                                                                                                                                                                                                 |
 | `tools`           | 아니오 | [도구](#available-tools) subagent가 사용할 수 있습니다. 생략하면 subagent에서 사용 가능한 모든 도구를 상속합니다. 목록의 항목이 도구로 해결되지 않으면 subagent는 일반적으로 [실패하여 시작](/docs/ko/errors#agent-would-be-spawned-with-zero-tools)하고 항목의 이름을 지정하는 오류가 발생합니다. Skills를 컨텍스트에 미리 로드하려면 여기에 `Skill`을 나열하는 대신 `skills` 필드를 사용합니다                                                                 |
-| `disallowedTools` | 아니오 | 거부할 도구, 상속되거나 지정된 목록에서 제거됨                                                                                                                                                                                                                                                                                                                   |
+| `disallowedTools` | 아니오 | 거부할 도구, 상속되거나 지정된 목록에서 제거됨. `Bash(git push *)`와 같은 지정자가 있는 항목은 여전히 [전체 도구를 제거](#available-tools)합니다                                                                                                                                                                                                                                          |
 | `model`           | 아니오 | 사용할 [모델](#choose-a-model): `sonnet`, `opus`, `haiku`, `fable`, `claude-opus-5`와 같은 전체 모델 ID, 또는 `inherit`. 생략하면 Claude Code는 [subagent 모델 순서](#choose-a-model)에서 모델을 선택합니다                                                                                                                                                                   |
 | `permissionMode`  | 아니오 | [권한 모드](#permission-modes): `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, `plan`, 또는 `manual` (기본값의 별칭). `manual` 별칭은 Claude Code v2.1.200 이상이 필요합니다. [플러그인 subagent](#choose-the-subagent-scope)에서는 무시됨                                                                                                                 |
 | `maxTurns`        | 아니오 | Subagent가 중지되기 전의 최대 에이전트 턴 수. Subagent가 한계에 도달하면 Claude Code는 부분으로 표시된 출력을 반환하고 Claude는 [재개](#resume-subagents)하여 계속할 수 있습니다. 부분 표시는 Claude Code v2.1.246 이상이 필요합니다                                                                                                                                                                         |
@@ -429,7 +429,7 @@ v2.1.198부터 subagent는 주 대화의 [extended thinking](/docs/ko/model-conf
   사용 가능한 도구
 </h4>
 
-Subagent는 주 대화에서 사용 가능한 [내장 도구](/docs/ko/tools-reference) 및 MCP 도구를 상속하며, 두 가지 필터로 좁혀집니다: 첫 번째는 모든 subagent에서 도구의 짧은 목록을 제거하고, 두 번째는 [백그라운드](#run-subagents-in-foreground-or-background)에서 실행되는 subagent (기본값)에 대한 내장 도구 세트를 줄입니다. [포크](#fork-the-current-conversation)는 두 필터를 모두 건너뛰고 주 대화의 정확한 도구 풀을 받습니다. 첫 번째 필터는 `tools` 필드에 나열되어 있어도 이러한 도구를 제거합니다:
+Subagent는 주 대화에서 사용 가능한 [내장 도구](/docs/ko/tools-reference) 및 MCP 도구를 상속하며, 두 가지 필터로 좁혀집니다: 첫 번째는 모든 subagent에서 도구의 짧은 목록을 제거하고, 두 번째는 [백그라운드](#run-subagents-in-foreground-or-background)에서 실행되는 subagent (기본값)에 대한 내장 도구 세트를 줄입니다. macOS, Linux, WSL에서 주 대화에 Glob 및 Grep 도구가 없을 때 subagent가 이들을 받을 수 있습니다. [Glob 도구 동작](/docs/ko/tools-reference#glob-tool-behavior)에서 설명한 대로입니다. [포크](#fork-the-current-conversation)는 두 필터를 모두 건너뛰고 주 대화의 정확한 도구 풀을 받습니다. 첫 번째 필터는 `tools` 필드에 나열되어 있어도 이러한 도구를 제거합니다:
 
 * `Agent` (subagent가 [깊이 한계](#let-subagents-spawn-their-own-subagents)에 있을 때); [포크](#fork-the-current-conversation)에서 도구는 나열된 상태로 유지되지만 대신 오류를 반환합니다
 * `AskUserQuestion`
@@ -480,6 +480,8 @@ description: Inherits every tool except those from the github MCP server
 disallowedTools: mcp__github
 ---
 ```
+
+`disallowedTools` 항목에 `Bash(git push *)`와 같은 지정자가 있으면 여전히 전체 도구를 제거하며, 일치하는 명령만 제거하지 않습니다. Bash를 유지하고 특정 명령을 차단하려면 설정에서 `permissions.deny`에 `Bash(git push *)`와 같은 [Bash 거부 규칙](/docs/ko/permissions#bash)을 추가합니다. 규칙은 주 대화와 subagent에 적용됩니다.
 
 <h4 id="restrict-which-subagents-can-be-spawned">
   생성할 수 있는 subagent 제한
@@ -572,7 +574,14 @@ v2.1.153부터 주 세션에 적용되는 MCP 제한은 subagent frontmatter에�
   권한 모드
 </h4>
 
-`permissionMode`를 설정하여 subagent가 실행되는 권한 모드를 선택합니다. 모드의 구성 값을 사용하므로 Manual 모드는 `default`입니다. 설정하지 않으면 subagent는 주 대화의 모드를 상속하며, 이는 Pro, Max, Team 플랜에서 [auto mode](/docs/ko/permission-modes#eliminate-prompts-with-auto-mode)로 시작됩니다. 설정이나 조직이 변경하지 않는 한 설정하면 해당 모드를 재정의합니다. 단, 아래에 설명된 경우는 제외합니다.
+`permissionMode`를 설정하여 subagent가 실행되는 권한 모드를 선택합니다. 모드의 구성 값을 사용하므로 Manual 모드는 `default`입니다. 설정하지 않으면 subagent는 주 대화의 모드를 상속합니다. 주 대화의 모드는 Pro, Max, Team 플랜에서 [auto mode](/docs/ko/permission-modes#eliminate-prompts-with-auto-mode)로 시작되며, 설정이나 조직이 변경하지 않는 한 그렇습니다.
+
+주 대화의 권한 모드는 설정한 값을 Claude Code가 사용하는지 여부를 결정합니다:
+
+* 주 대화가 `bypassPermissions`, `acceptEdits`, 또는 [auto mode](/docs/ko/permission-modes#eliminate-prompts-with-auto-mode)에 있을 때 subagent는 동일한 모드에서 실행되고 Claude Code는 설정한 `permissionMode`를 무시합니다. Auto mode에서 분류기는 주 대화의 차단 및 허용 규칙으로 subagent의 도구 호출을 평가합니다.
+* 주 대화가 `default`, `dontAsk`, 또는 `plan` 모드에 있을 때 subagent는 설정한 권한 모드에서 실행되며, `bypassPermissions` 제외입니다. `bypassPermissions`를 선언하는 subagent는 주 대화의 모드를 대신 유지합니다. `bypassPermissions` 예외는 Claude Code v2.1.267 이상이 필요합니다.
+
+`permissionMode`는 이러한 값을 허용하며, `manual`을 `default`의 별칭으로 허용합니다:
 
 | 모드                  | 동작                                                                                                                                                                                                                                                                                  |
 | :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -580,18 +589,8 @@ v2.1.153부터 주 세션에 적용되는 MCP 제한은 subagent frontmatter에�
 | `acceptEdits`       | 작업 디렉토리 또는 `additionalDirectories`의 경로에 대한 파일 편집 및 일반적인 파일시스템 명령 자동 수락                                                                                                                                                                                                              |
 | `auto`              | [Auto mode](/docs/ko/permission-modes#eliminate-prompts-with-auto-mode): 백그라운드 분류기가 명령을 검토하고 보호된 디렉토리 쓰기                                                                                                                                                                                 |
 | `dontAsk`           | 권한 프롬프트 자동 거부. 명시적으로 허용된 도구는 여전히 작동합니다. `AskUserQuestion`, [`requiresUserInteraction`](/docs/ko/mcp#require-approval-for-a-specific-tool)으로 표시된 MCP 도구, 그리고 connector 도구 (조직이 설정이 Claude Code에 도달하는 세션에서 [`ask`](/docs/ko/mcp#organization-controls-on-connector-tools)로 설정한 경우)는 허용했어도 거부됩니다 |
-| `bypassPermissions` | 권한 프롬프트 건너뛰기                                                                                                                                                                                                                                                                        |
+| `bypassPermissions` | [권한 프롬프트 건너뛰기](/docs/ko/permission-modes#skip-all-checks-with-bypasspermissions-mode). Subagent는 주 대화도 그럴 때만 이 모드에서 실행됩니다                                                                                                                                                                |
 | `plan`              | Plan 모드 (읽기 전용 탐색)                                                                                                                                                                                                                                                                  |
-
-<Warning>
-  `bypassPermissions`는 주의해서 사용하세요. 권한 프롬프트를 건너뛰어 subagent가 승인 없이 작업을 실행할 수 있습니다. `.git`, `.config/git`, `.claude`, `.vscode`, `.idea`, `.husky`, `.cargo`, `.devcontainer`, `.yarn`, `.mvn`에 대한 쓰기를 포함합니다.
-
-  이 모드에서도 [모든 모드가 자동 승인하지 않는 작업](/docs/ko/permission-modes#actions-no-mode-auto-approves)은 여전히 적용됩니다. 자세한 내용은 [권한 모드](/docs/ko/permission-modes#skip-all-checks-with-bypasspermissions-mode)를 참조하세요.
-</Warning>
-
-부모가 `bypassPermissions` 또는 `acceptEdits`를 사용하면 이것이 우선하며 재정의할 수 없습니다. 부모가 [auto mode](/docs/ko/permission-modes#eliminate-prompts-with-auto-mode)를 사용하면 subagent는 auto mode를 상속하고 frontmatter의 모든 `permissionMode`는 무시됩니다: 분류기는 부모 세션과 동일한 차단 및 허용 규칙으로 subagent의 도구 호출을 평가합니다.
-
-bypass 모드가 [`permissions.disableBypassPermissionsMode`](/docs/ko/permissions#managed-settings)로 비활성화되면 Claude Code는 frontmatter의 `permissionMode: bypassPermissions`를 무시하고 subagent는 부모 세션의 모드로 실행됩니다. v2.1.223 이전에는 Claude Code가 bypass가 비활성화되어도 frontmatter 모드를 적용했습니다.
 
 <h4 id="preload-skills-into-subagents">
   Subagent에 skills 미리 로드
@@ -613,10 +612,12 @@ Implement API endpoints. Follow the conventions and patterns from the preloaded 
 
 각 skill의 전체 콘텐츠가 subagent의 컨텍스트에 주입됩니다. 이 필드는 어떤 skills를 미리 로드할지 제어하며, subagent가 액세스할 수 있는 skills를 제어하지 않습니다: 이 필드가 없으면 subagent는 여전히 실행 중에 Skill 도구를 통해 프로젝트, 사용자, 플러그인 skills를 검색하고 호출할 수 있습니다. Subagent가 skills를 완전히 호출하지 못하도록 방지하려면 [`tools`](#available-tools) 목록에서 `Skill`을 생략하거나 `disallowedTools`에 추가합니다.
 
-[`disable-model-invocation: true`](/docs/ko/skills#control-who-invokes-a-skill)를 설정하는 skills는 미리 로드할 수 없습니다. 미리 로드는 Claude가 호출할 수 있는 동일한 skills 세트에서 가져오기 때문입니다. 여기에는 번들된 `/verify` skill이 포함됩니다: 오직 사용자만 실행할 수 있으므로 미리 로드할 수 없습니다. 나열된 skill이 누락되었거나 비활성화된 경우 (예: 조직의 정책에 의해) Claude Code는 이를 건너뛰고 디버그 로그에 경고를 기록합니다.
+[`disable-model-invocation: true`](/docs/ko/skills#control-who-invokes-a-skill)를 설정하는 skills는 미리 로드할 수 없습니다. 미리 로드는 Claude가 호출할 수 있는 동일한 skills 세트에서 가져오기 때문입니다. 여기에는 번들된 `/verify` skill이 포함됩니다: 오직 사용자만 실행할 수 있으므로 미리 로드할 수 없습니다.
+
+나열된 skill이 누락되었거나 비활성화된 경우 (예: 조직의 정책에 의해) Claude Code는 이를 건너뛰고 디버그 로그에 경고를 기록합니다.
 
 <Note>
-  이것은 [subagent에서 skill 실행](/docs/ko/skills#run-skills-in-a-subagent)의 역입니다. Subagent의 `skills`를 사용하면 subagent가 시스템 프롬프트를 제어하고 skill 콘텐츠를 로드합니다. Skill의 `context: fork`를 사용하면 skill 콘텐츠가 지정한 에이전트에 주입됩니다. 둘 다 동일한 기본 시스템을 사용합니다.
+  이것은 [subagent에서 skill 실행](/docs/ko/skills#run-skills-in-a-subagent)의 역입니다. Subagent의 `skills`를 사용하면 subagent가 시스템 프롬프트를 제어하고 skill 콘텐츠를 로드합니다. Skill의 `context: fork`를 사용하면 skill 콘텐츠가 지정한 에이전트에 주입됩니다. 둘 다 subagent는 대화 기록 없이 시작됩니다.
 </Note>
 
 <h4 id="enable-persistent-memory">
@@ -885,7 +886,7 @@ claude --agent code-reviewer
 
 Subagent의 시스템 프롬프트는 [`--system-prompt`](/docs/ko/cli-reference)와 동일한 방식으로 기본 Claude Code 시스템 프롬프트를 완전히 대체합니다. `CLAUDE.md` 파일 및 프로젝트 메모리는 여전히 일반적인 메시지 흐름을 통해 로드됩니다. 에이전트 이름은 시작 헤더에 `@<name>`으로 나타나므로 활성화되었는지 확인할 수 있습니다.
 
-이것은 내장 및 사용자 정의 subagent에서 작동하며, 세션을 재개할 때 선택이 유지됩니다: Claude Code는 에이전트의 시스템 프롬프트, 도구 제한 및 모델을 대화와 함께 복원합니다. 세션을 재개할 때 에이전트가 더 이상 존재하지 않으면 세션은 기본 도구 및 시스템 프롬프트로 계속되며 [에이전트 이름을 지정하는 경고](/docs/ko/errors#session-agent-no-longer-available)를 표시합니다.
+이것은 내장 및 사용자 정의 subagent에서 작동하며, 세션을 재개할 때 선택이 유지됩니다: Claude Code는 에이전트의 시스템 프롬프트, 도구 제한 및 모델을 대화와 함께 복원합니다. 세션을 재개할 때 에이전트가 더 이상 존재하지 않으면 세션은 기본 도구 및 시스템 프롬프트로 계속되며 [에이전트 이름을 지정하는 경고](/docs/ko/errors#session-agent-no-longer-available)를 표시합니다. 시스템 프롬프트의 경우 [재개된 대화에서 시스템 프롬프트 플래그](/docs/ko/cli-reference#system-prompt-flags-in-resumed-conversations)를 참조합니다.
 
 플러그인 제공 subagent의 경우 에이전트 이름만 전달하면 Claude Code가 찾을 수 있습니다:
 
@@ -929,7 +930,9 @@ Claude가 Agent 도구로 생성하는 각 subagent에 대해 Claude Code는 적
 
 `context: fork`를 가진 skill의 경우 Claude Code는 fork 모드가 켜져 있는지 여부와 관계없이 [subagent에서 skill 실행](/docs/ko/skills#run-skills-in-a-subagent)의 규칙을 따릅니다.
 
-Background subagent는 대화 fork를 제외하고 foreground subagent보다 [더 작은 내장 도구 세트](#available-tools)로 실행되며, 주 세션에서 모든 권한 프롬프트를 표시합니다. 해당 프롬프트 중 하나에 세션의 나머지 기간 동안 지속되는 선택 (예: 세션의 나머지 기간 동안 지속되는 부여)으로 답변하면 Claude Code는 주 대화를 포함한 전체 세션에 답변을 적용합니다.
+Background subagent는 대화 fork를 제외하고 foreground subagent보다 [더 작은 내장 도구 세트](#available-tools)로 실행되며, [재개된](#resume-subagents) foreground subagent를 제외합니다.
+
+Background subagent는 주 세션에서 모든 권한 프롬프트를 표시합니다. 해당 프롬프트 중 하나에 세션의 나머지 기간 동안 지속되는 선택 (예: 세션의 나머지 기간 동안 지속되는 부여)으로 답변하면 Claude Code는 주 대화를 포함한 전체 세션에 답변을 적용합니다.
 
 Background subagent는 background [Bash 또는 PowerShell 명령](/docs/ko/tools-reference#background-commands) [실행을 해당 턴의 끝을 지나 계속 실행](/docs/ko/interactive-mode#how-backgrounding-works)할 수 있습니다. 해당 명령이 끝나면 Claude Code는 subagent에 알림을 보냅니다.
 
@@ -953,7 +956,7 @@ Claude Code는 subagent가 어떻게 종료되었는지에 따라 두 가지 방
 
 Claude는 Agent 도구 호출에서 `name` 매개변수를 전달하여 subagent에 이름을 지정할 수 있으며, 먼저 사용자에게 묻지 않고 자체적으로 이름을 지정할 수 있습니다. 이름은 subagent를 주소 지정 가능하게 만듭니다: Claude는 완료 후 [이름으로 메시지를 보내거나 재개](#resume-subagents)할 수 있습니다.
 
-[agent teams](/docs/ko/agent-teams)가 활성화된 대화형 세션에서 주 대화에서 `name`으로 Claude가 생성하는 subagent는 호출이 [fork](#fork-the-current-conversation)이거나 호출 자체에서 `isolation`을 전달하지 않으면 팀원으로 시작합니다. Subagent의 frontmatter의 `isolation` 값은 이를 방지하지 않으며 팀원은 주 세션의 작업 디렉토리에서 실행됩니다. [Claude가 agent team을 시작하는 방법](/docs/ko/agent-teams#how-claude-starts-agent-teams)을 참조합니다.
+[agent teams](/docs/ko/agent-teams)가 활성화된 대화형 세션에서 주 대화에서 `name`으로 Claude가 생성하는 subagent는 호출이 [fork](#fork-the-current-conversation)이거나 호출 자체에서 `isolation`을 전달하는 경우를 제외하고 팀원으로 시작됩니다. Subagent의 frontmatter의 `isolation` 값은 이를 방지하지 않으며 팀원은 주 세션의 작업 디렉토리에서 실행됩니다. [Claude가 agent team을 시작하는 방법](/docs/ko/agent-teams#how-claude-starts-agent-teams)을 참조합니다.
 
 <h3 id="api-errors-in-subagents">
   Subagent의 API 오류
@@ -1147,7 +1150,7 @@ Continue that code review and now analyze the authorization logic
 [Claude resumes the subagent with full context from previous conversation]
 ```
 
-Claude가 완료된 subagent에 `SendMessage` 도구로 메시지를 보낼 때 새로운 `Agent` 호출 없이 background에서 자동으로 재개됩니다. `TaskStop` 도구로 Claude가 중단한 subagent도 마찬가지입니다. 중단된 실행이 종료되면 재개됩니다.
+Claude가 완료된 subagent에 `SendMessage` 도구로 메시지를 보낼 때 새로운 `Agent` 호출 없이 background에서 자동으로 재개됩니다. `TaskStop` 도구로 Claude가 중단한 subagent도 마찬가지입니다. 중단된 실행이 종료되면 재개됩니다. 재개된 실행은 [원래 실행이 워밍한 프롬프트 캐시](/docs/ko/prompt-caching#subagents-and-the-cache)를 계속 읽을 수 있으며 subagent가 처음 실행된 위치에서 [도구 세트](#run-subagents-in-foreground-or-background)를 유지합니다.
 
 Subagent가 `SendMessage` 도구를 가지면 해당 메시지도 보낼 수 있습니다. 대화형 세션에서 재개된 에이전트는 주 대화가 아닌 재개한 subagent에 보고합니다. 해당 subagent는 결과를 받기 전에 완료를 기다립니다. Subagent가 이를 시작한 에이전트 (예: 자신의 런처)에 메시지를 보낼 때 Claude Code는 결과를 리디렉션하지 않고 해당 에이전트를 재개합니다.
 
