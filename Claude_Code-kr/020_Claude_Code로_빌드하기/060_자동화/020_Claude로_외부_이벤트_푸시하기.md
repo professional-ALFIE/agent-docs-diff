@@ -49,7 +49,7 @@ Team, Enterprise 또는 Console 조직을 관리하는 경우 [조직에 대해 
         * `Marketplace "claude-plugins-official" not found`: `/plugin marketplace add anthropics/claude-plugins-official`로 마켓플레이스를 추가한 다음 설치를 다시 시도합니다.
         * 플러그인이 [마켓플레이스에서 찾을 수 없음](/docs/ko/discover-plugins#install-plugins): 플러그인 이름을 확인합니다.
 
-        설치에서 설치 범위를 요청할 때 사용자 범위 옵션을 선택하여 플러그인이 모든 프로젝트에서 사용 가능하도록 합니다. 설치 요약을 확인합니다. `Run /reload-plugins to activate.`를 보고하면 해당 명령을 실행하여 플러그인의 구성 명령을 활성화합니다.
+        설치에서 설치 범위를 요청할 때 사용자 범위 옵션을 선택하여 플러그인이 모든 프로젝트에서 사용 가능하도록 합니다. 설치 요약을 확인합니다. `Run /reload-plugins to activate.`를 보고하면 [플러그인 변경 사항을 다시 시작하지 않고 적용](/docs/ko/discover-plugins#apply-plugin-changes-without-restarting)을 참조하여 플러그인의 구성 명령을 사용 가능하게 합니다.
       </Step>
 
       <Step title="토큰 구성">
@@ -127,7 +127,7 @@ Team, Enterprise 또는 Console 조직을 관리하는 경우 [조직에 대해 
         * `Marketplace "claude-plugins-official" not found`: `/plugin marketplace add anthropics/claude-plugins-official`로 마켓플레이스를 추가한 다음 설치를 다시 시도합니다.
         * 플러그인이 [마켓플레이스에서 찾을 수 없음](/docs/ko/discover-plugins#install-plugins): 플러그인 이름을 확인합니다.
 
-        설치에서 설치 범위를 요청할 때 사용자 범위 옵션을 선택하여 플러그인이 모든 프로젝트에서 사용 가능하도록 합니다. 설치 요약을 확인합니다. `Run /reload-plugins to activate.`를 보고하면 해당 명령을 실행하여 플러그인의 구성 명령을 활성화합니다.
+        설치에서 설치 범위를 요청할 때 사용자 범위 옵션을 선택하여 플러그인이 모든 프로젝트에서 사용 가능하도록 합니다. 설치 요약을 확인합니다. `Run /reload-plugins to activate.`를 보고하면 [플러그인 변경 사항을 다시 시작하지 않고 적용](/docs/ko/discover-plugins#apply-plugin-changes-without-restarting)을 참조하여 플러그인의 구성 명령을 사용 가능하게 합니다.
       </Step>
 
       <Step title="토큰 구성">
