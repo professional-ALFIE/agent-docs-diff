@@ -14,7 +14,7 @@ Claude Code는 작업하면서 Claude의 파일 편집을 자동으로 추적하
   Checkpoint의 작동 방식
 </h2>
 
-Claude와 함께 작업할 때 checkpointing은 각 사용자 프롬프트 전에 코드의 상태를 자동으로 캡처합니다.
+Claude와 함께 작업할 때 checkpointing은 각 사용자 프롬프트가 시작하는 턴 전에 코드의 상태를 자동으로 캡처합니다.
 
 <h3 id="automatic-tracking">
   자동 추적
@@ -22,7 +22,7 @@ Claude와 함께 작업할 때 checkpointing은 각 사용자 프롬프트 전�
 
 Claude Code는 파일 편집 도구로 수행된 모든 변경 사항을 추적합니다:
 
-* 모든 사용자 프롬프트는 새로운 checkpoint를 생성합니다
+* 시작하는 턴마다 보내는 모든 프롬프트는 새로운 checkpoint를 생성합니다
 * Claude Code는 세션의 가장 최근 100개 checkpoint에 대한 파일 스냅샷을 유지합니다. 이전 checkpoint를 삭제하면 남은 checkpoint가 참조하지 않는 스냅샷 파일이 삭제되며, 각 파일의 첫 번째 스냅샷은 예외입니다. 이 스냅샷은 VS Code 확장이 세션 diff의 기준선으로 사용합니다.
 * Checkpoint는 세션과 함께 저장되므로 재개된 세션에서도 `/rewind`를 사용할 수 있습니다
 * Claude Code는 [retention sweep](/docs/ko/claude-directory#cleaned-up-automatically)에서 세션의 파일 스냅샷을 삭제합니다. 기본적으로 세션이 마지막으로 저장된 후 약 30일 후입니다. 스냅샷이 없는 checkpoint로 되돌리면 [`No files were restored`](/docs/ko/errors#no-files-were-restored) 오류가 발생할 수 있습니다. 스냅샷을 더 오래 유지하려면 [`cleanupPeriodDays`](/docs/ko/settings-reference#cleanupperioddays)를 설정하세요.
@@ -37,7 +37,7 @@ Claude Code는 파일 편집 도구로 수행된 모든 변경 사항을 추적�
   프롬프트 입력에 텍스트가 포함되어 있으면 `Esc`를 두 번 누르면 메뉴를 열지 않고 대신 텍스트를 지웁니다. 지워진 텍스트는 입력 기록에 저장되므로 rewind 메뉴에서 작업을 마친 후 `Up`을 눌러 복구할 수 있습니다.
 </Note>
 
-Rewind 메뉴는 세션 중에 보낸 각 프롬프트를 나열합니다. 작업할 지점을 선택한 다음 작업을 선택합니다:
+Rewind 메뉴는 세션 중에 보낸 각 프롬프트를 나열합니다. [턴 중간에 보낸 메시지](#messages-sent-mid-turn-not-checkpointed)는 제외됩니다. 작업할 지점을 선택한 다음 작업을 선택합니다:
 
 * **코드 및 대화 복원**: 코드와 대화를 해당 지점으로 되돌립니다
 * **대화 복원**: 현재 코드를 유지하면서 해당 메시지로 되돌립니다
@@ -111,6 +111,14 @@ cp source.txt dest.txt
 </h3>
 
 Checkpointing은 현재 세션 내에서 편집된 파일만 추적합니다. Claude Code 외부에서 수동으로 수행한 파일 변경 사항과 다른 동시 세션의 편집은 현재 세션과 동일한 파일을 수정하는 경우를 제외하고는 일반적으로 캡처되지 않습니다.
+
+<h3 id="messages-sent-mid-turn-not-checkpointed">
+  차례 중간에 전송된 메시지가 checkpoint되지 않음
+</h3>
+
+[Claude가 작업하는 동안 대기열에 추가한](/docs/ko/interactive-mode#queue-messages-while-claude-works) 메시지가 실행 중인 차례 내에서 Claude에 도달하면, 새로운 차례를 시작하는 대신 해당 차례에 참여합니다. 메시지는 대화에 나타나지만, Claude Code는 이에 대한 checkpoint를 생성하지 않으며 rewind 메뉴에 나열되지 않습니다. Claude Code가 자신의 차례로 전송하는 대기열 메시지는 일반적으로 checkpoint를 받습니다.
+
+이러한 메시지를 제거하거나 메시지 이후 Claude가 수행한 편집을 실행 취소하려면, 차례를 시작한 프롬프트로 rewind합니다. 이렇게 하면 메시지가 도착하기 전에 Claude가 수행한 작업을 포함하여 전체 차례가 rewind됩니다.
 
 <h3 id="symlinked-and-hard-linked-paths-not-restored">
   Symlink 및 hard link 경로가 복원되지 않음
