@@ -19,11 +19,11 @@
 | 404 - Not Found             | **Cause:** Resource not found (e.g., Webset, task, or URL doesn't exist)<br />**Solution:** Verify the resource identifier exists and is accessible                                                                                                                                                              |
 | 409 - Conflict              | **Cause:** Resource already exists (e.g., Webset with same externalId)<br />**Solution:** Use a different identifier or update the existing resource                                                                                                                                                             |
 | 422 - Unprocessable Entity  | **Cause:** Request was well-formed but could not be processed — e.g., a URL that failed to fetch (`/contents`), or a query that could not be decomposed into a valid entity/criteria pair (`/websets`)<br />**Solution:** Check the error message for details; verify URLs are accessible or rephrase your query |
-| 429 - Too Many Requests     | **Cause:** Rate limit exceeded<br />**Solution:** Implement exponential backoff and reduce request rate                                                                                                                                                                                                          |
+| 429 - Too Many Requests     | **Cause:** Your API key, team, or network exceeded its rate limit<br />**Solution:** Reduce your request rate; wait for `Retry-After` seconds when present, otherwise use exponential backoff. See [Rate Limits](/docs/reference/rate-limits) to request a higher limit                                               |
 | 500 - Internal Server Error | **Cause:** Issue on our servers<br />**Solution:** Retry your request after a brief wait and contact us if the issue persists                                                                                                                                                                                    |
 | 501 - Not Implemented       | **Cause:** `/answer` only — the model was unable to generate a response for the given query with the available information<br />**Solution:** Try rephrasing your query or adjusting parameters                                                                                                                  |
 | 502 - Bad Gateway           | **Cause:** Upstream server issue<br />**Solution:** Retry the request after a brief delay                                                                                                                                                                                                                        |
-| 503 - Service Unavailable   | **Cause:** Service temporarily down<br />**Solution:** Retry after delay, check for maintenance announcements                                                                                                                                                                                                    |
+| 503 - Service Unavailable   | **Cause:** Exa is temporarily over capacity (`SERVICE_OVERLOADED`) or unavailable. Your request was not processed, and API-key (credit) billing does not charge for it<br />**Solution:** Retry with exponential backoff. This is not caused by your request rate, so reducing it does not help — retrying does  |
 
 ## Error Response Structure
 
@@ -88,6 +88,25 @@ Error tags provide programmatic identification of the specific error. Use the `t
 | `UNABLE_TO_GENERATE_RESPONSE` | `501`     | `/answer` only — unable to generate a response with the available information |
 | `DEFAULT_ERROR`               | `500`     | Unexpected server error — retry after a brief wait                            |
 | `INTERNAL_ERROR`              | `500`     | Unclassified internal error — retry after a brief wait                        |
+
+### Capacity & Rate Limiting
+
+| Tag                   | HTTP Code | Description                                                                                                  |
+| --------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
+| `RATE_LIMIT_EXCEEDED` | `429`     | Your API key, team, or network exceeded its own rate limit — reduce your request rate                        |
+| `SERVICE_OVERLOADED`  | `503`     | Exa is temporarily over capacity and shed your request before processing it — retry with exponential backoff |
+
+Both responses are safe to retry. Distinguish them by status: a `429` means you are sending too fast and backing off fixes it, while a `503 SERVICE_OVERLOADED` is independent of your request rate and clears once capacity recovers.
+
+```http theme={null}
+HTTP/1.1 503 Service Unavailable
+
+{
+  "requestId": "b3d5f7a9c1e0a2c4e6b8d0f2a4c6e8b1",
+  "error": "Exa is temporarily over capacity. Please retry with exponential backoff.",
+  "tag": "SERVICE_OVERLOADED"
+}
+```
 
 ## Content Fetch Status Tags
 
