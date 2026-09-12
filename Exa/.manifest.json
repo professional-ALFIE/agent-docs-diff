@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-12T04:32:19.306Z",
+  "생성": "2026-09-12T20:32:10.321Z",
   "제품폴더": "Exa",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -809,8 +809,8 @@
       "경로": "020_API_Reference/010_Search/020_Contents.md",
       "href": "/reference/get-contents",
       "url": "https://exa.ai/docs/reference/get-contents.md",
-      "sha256": "649f160bb6fb4e8e61dff4462e7aaaed1e4035ade278879b1cc4025064b5beec",
-      "bytes": 71430,
+      "sha256": "7746039622397241083b0220e5049c7831221f11532c6780a9fe660ebe8b4ced",
+      "bytes": 71140,
       "contentType": "text/markdown"
     },
     {
