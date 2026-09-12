@@ -106,6 +106,8 @@ paths:
           $ref: '#/components/responses/TooManyRequestsResponse'
         '500':
           $ref: '#/components/responses/InternalServerErrorResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailableResponse'
 components:
   schemas:
     SearchRequest:
@@ -2500,7 +2502,7 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     TooManyRequestsResponse:
-      description: A rate limit was exceeded.
+      description: A rate limit for this API key, team, or network was exceeded.
       headers:
         x-request-id:
           $ref: '#/components/headers/XRequestId'
@@ -2527,6 +2529,23 @@ components:
               Sorry, we encountered an error while processing your request.
               Please try again later
             tag: DEFAULT_ERROR
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ServiceUnavailableResponse:
+      description: >-
+        Exa is temporarily over capacity or unavailable. The request was not
+        processed; retry with exponential backoff.
+      headers:
+        x-request-id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          example:
+            requestId: b3d5f7a9c1e0a2c4e6b8d0f2a4c6e8b1
+            error: >-
+              Exa is temporarily over capacity. Please retry with exponential
+              backoff.
+            tag: SERVICE_OVERLOADED
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
