@@ -192,6 +192,8 @@ Claude Code는 AWS 기본 자격 증명 공급자 체인을 한 번 해결하고
 
 체인의 각 해결은 60초 후 시간 초과됩니다. 체인의 단계가 정지되면(예: 받을 수 없는 입력을 기다리는 `credential_process` 도우미), 요청은 [`AWS default-chain credential resolve timed out`](/docs/ko/errors#aws-default-chain-credential-resolve-timed-out)으로 실패합니다. 체인이 `aws-vault`와 같은 래퍼를 통한 MFA가 있는 브라우저 기반 SSO와 같이 합법적으로 더 오래 필요한 대화형 로그인을 실행하는 경우 [`CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS`](/docs/ko/env-vars)를 사용하여 밀리초 단위로 제한을 높입니다. v2.1.207 이전에는 정지된 자격 증명 해결로 인해 요청이 무한정 대기했습니다.
 
+Amazon Bedrock API 키로 인증하는 경우를 제외하고, [설정 마법사](#sign-in-with-bedrock)는 자격 증명을 확인하는 동안 수행하는 각 AWS 호출과 각 모델 확인 전의 자격 증명 조회에 동일한 제한을 적용합니다. 자격 증명 확인 중에 제한을 초과하는 확인은 [`Timed out after 60s waiting for AWS`](/docs/ko/errors#bedrock-setup-verification-timed-out-waiting-for-aws)로 실패합니다.
+
 <h4 id="advanced-credential-configuration">
   고급 자격 증명 구성
 </h4>
@@ -265,7 +267,7 @@ export ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION=us-west-2
 
 Claude Code에 대해 Amazon Bedrock을 활성화할 때 다음을 염두에 두십시오.
 
-* v2.1.172부터 AWS 프로필의 영역을 재정의하거나 프로필에 영역이 없을 때만 `AWS_REGION`을 설정하면 됩니다. Claude Code는 다음 순서로 영역을 해결합니다.
+* `AWS_REGION`을 설정하여 AWS 프로필의 영역을 재정의하거나 프로필에 영역이 없을 때만 필요합니다. Claude Code는 다음 순서로 영역을 해결합니다.
 
   * `AWS_REGION`
   * `AWS_DEFAULT_REGION`
@@ -276,7 +278,7 @@ Claude Code에 대해 Amazon Bedrock을 활성화할 때 다음을 염두에 두
 
   활성 프로필은 설정된 경우 `AWS_PROFILE`이고, 그렇지 않으면 `default`입니다. `AWS_SHARED_CREDENTIALS_FILE` 또는 `AWS_CONFIG_FILE`을 설정하여 기본이 아닌 파일 경로를 가리킵니다.
 
-  `/status`를 실행하여 해결된 영역을 확인합니다. 영역이 AWS 구성 파일 또는 기본 폴백에서 온 경우 Claude Code는 `/status` 출력에서 소스를 기록합니다. v2.1.171 이전에는 Claude Code가 AWS 구성 파일을 읽지 않으므로 `AWS_REGION`을 명시적으로 설정합니다.
+  `/status`를 실행하여 해결된 영역을 확인합니다. 영역이 AWS 구성 파일 또는 기본 폴백에서 온 경우 Claude Code는 `/status` 출력에서 소스를 기록합니다.
 * Amazon Bedrock을 사용할 때 `/logout` 명령은 AWS 자격 증명을 통해 인증이 처리되므로 사용할 수 없습니다.
 * WebSearch 도구는 Amazon Bedrock에서 사용할 수 없습니다. [WebSearch 도구 동작](/docs/ko/tools-reference#websearch-tool-behavior)을 참조하십시오.
 * 다른 프로세스에 유출되지 않으려는 `AWS_PROFILE`과 같은 환경 변수에 설정 파일을 사용할 수 있습니다. 자세한 내용은 [설정](/docs/ko/settings)을 참조하십시오.
@@ -532,7 +534,7 @@ export CLAUDE_CODE_USE_MANTLE=1
 export AWS_REGION=us-east-1
 ```
 
-Claude Code는 AWS 지역에서 엔드포인트 URL을 구성합니다. v2.1.172부터 지역은 [위의 Amazon Bedrock](#3-configure-claude-code)과 동일한 우선순위로 해결되며, 이전 버전은 `AWS_REGION`만 사용합니다. 사용자 정의 엔드포인트 또는 게이트웨이를 위해 URL을 재정의하려면 `ANTHROPIC_BEDROCK_MANTLE_BASE_URL`을 설정하십시오.
+Claude Code는 AWS 지역에서 엔드포인트 URL을 구성합니다. 이는 [위의 Amazon Bedrock](#3-configure-claude-code)과 동일한 우선순위로 해결됩니다. 사용자 정의 엔드포인트 또는 게이트웨이를 위해 URL을 재정의하려면 `ANTHROPIC_BEDROCK_MANTLE_BASE_URL`을 설정하십시오.
 
 Claude Code 내에서 `/status`를 실행하여 확인하십시오. Mantle이 활성화되면 제공자 줄에 `Amazon Bedrock (Mantle)`이 표시됩니다.
 
@@ -607,6 +609,23 @@ export ANTHROPIC_BEDROCK_MANTLE_BASE_URL=https://your-gateway.example.com
 AWS SSO를 사용할 때 브라우저 탭이 반복적으로 생성되면 [설정 파일](/docs/ko/settings)에서 `awsAuthRefresh` 설정을 제거하십시오. 이는 회사 VPN 또는 TLS 검사 프록시가 SSO 브라우저 흐름을 중단할 때 발생할 수 있습니다. Claude Code는 중단된 연결을 인증 실패로 취급하고 `awsAuthRefresh`를 다시 실행하여 무한 루프를 발생시킵니다.
 
 네트워크 환경이 자동 브라우저 기반 SSO 흐름을 방해하는 경우 `awsAuthRefresh`에 의존하는 대신 Claude Code를 시작하기 전에 `aws sso login`을 수동으로 사용하십시오.
+
+<h3 id="certificate-errors-behind-a-tls-inspecting-proxy">
+  TLS 검사 프록시 뒤의 인증서 오류
+</h3>
+
+Claude Code는 다음을 포함하여 AWS에 대한 요청에 [CA 인증서 저장소](/docs/ko/network-config#ca-certificate-store) 구성을 적용합니다.
+
+* 모델 검색
+* 토큰 계산
+* AWS 자격 증명을 확인하는 STS 및 SSO 역할 자격 증명 호출
+* [설정 마법사](#sign-in-with-bedrock)의 자격 증명 확인 및 모델 확인
+
+이러한 요청의 경우 OS 신뢰 저장소 또는 `NODE_EXTRA_CA_CERTS` 번들의 회사 루트 인증서는 Amazon Bedrock 특정 설정이 필요하지 않습니다.
+
+v2.1.260 이전에는 Claude Code가 구성된 프록시를 통해 이동할 때만 이러한 요청에 CA 구성을 적용했으며, 직접 연결에서는 런타임의 기본 인증서 저장소만 신뢰했습니다.
+
+v2.1.261 이전에는 **내 환경에 이미 있는 자격 증명 사용** 옵션을 사용하여 설정 마법사 뒤의 모델 확인에서 자격 증명 조회가 여전히 런타임의 기본 인증서 저장소만 신뢰했습니다. 루트 인증서가 OS 저장소에만 있는 TLS 검사 프록시 뒤에서 영향을 받는 요청은 `unable to get local issuer certificate`로 실패했거나 마법사가 모델을 `unreachable`로 표시했으며, 추론 요청은 성공했습니다. v2.1.261 이상으로 업데이트하십시오.
 
 <h3 id="region-issues">
   지역 문제
