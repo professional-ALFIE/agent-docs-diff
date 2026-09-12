@@ -108,271 +108,41 @@ paths:
 components:
   schemas:
     ContentsRequest:
-      allOf:
-        - type: object
-          properties:
-            ids:
-              minItems: 1
-              maxItems: 100
-              type: array
-              items:
-                type: string
-                minLength: 1
-                maxLength: 2048
-              description: Document IDs obtained from searches.
-              example:
-                - https://arxiv.org/pdf/2307.06435
-            urls:
-              minItems: 1
-              maxItems: 100
-              type: array
-              items:
-                type: string
-                minLength: 1
-                maxLength: 2048
-              description: URLs to crawl (backwards compatible with the `ids` parameter).
-              example:
-                - https://arxiv.org/pdf/2307.06435
-            compliance:
-              anyOf:
-                - type: string
-                  enum:
-                    - hipaa
-                  description: >-
-                    Enterprise-only compliance mode. Set to `hipaa` for HIPAA
-                    mode. Requires cache-only retrieval with supported
-                    parameters. See the HIPAA docs for details.
-                  example: hipaa
-                - type: 'null'
-          description: Provide either `ids` or `urls`, but not both.
-          oneOf:
-            - required:
-                - ids
-            - required:
-                - urls
-        - $ref: '#/components/schemas/ContentsOptions'
-    ContentsResponse:
       type: object
       properties:
-        requestId:
-          type: string
-          description: Unique identifier for the request.
-          example: b5947044c4b78efa9552a7c89b306d95
-        results:
+        ids:
+          minItems: 1
+          maxItems: 100
           type: array
           items:
-            $ref: '#/components/schemas/SearchResultOutput'
-        context:
-          type: string
-          description: >-
-            Deprecated. Combined context string from search results. Use
-            highlights or text instead.
-          deprecated: true
-        statuses:
-          description: Status information for each requested URL or document ID.
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                description: The URL or document ID that was requested.
-                example: https://example.com
-              status:
-                type: string
-                enum:
-                  - success
-                  - error
-                description: Status of the content fetch operation.
-                example: success
-              source:
-                description: Where the returned content was sourced from.
-                type: string
-                enum:
-                  - cached
-                  - crawled
-              error:
-                anyOf:
-                  - type: object
-                    properties:
-                      tag:
-                        description: Specific error type.
-                        example: CRAWL_NOT_FOUND
-                        type: string
-                      httpStatusCode:
-                        anyOf:
-                          - type: integer
-                            minimum: 100
-                            maximum: 599
-                          - type: 'null'
-                        description: The corresponding HTTP status code.
-                        example: 404
-                    additionalProperties: false
-                  - type: 'null'
-                description: Error details, only present when status is "error".
-            required:
-              - id
-              - status
-            additionalProperties: false
-        costDollars:
-          $ref: '#/components/schemas/CostDollarsOutput'
-        searchTime:
-          type: number
-          description: >-
-            Server-side processing time in milliseconds, measured at the
-            gateway. Covers retrieval but may exclude later phases such as
-            structured output synthesis, so it can be lower than end-to-end
-            request latency.
-          example: 312.4
-      additionalProperties: false
-    ErrorResponse:
-      type: object
-      properties:
-        requestId:
-          type: string
-          description: Unique identifier for the request.
-          example: b5947044c4b78efa9552a7c89b306d95
-        error:
-          type: string
-          description: Human-readable message describing the error.
-          example: Invalid API key
-        tag:
-          type: string
-          description: >-
-            Machine-readable error tag identifying the failure. The set of tags
-            is open-ended: new tags may be added at any time, so treat
-            unrecognized tags as a generic error of the response's HTTP status.
-            Known tags are listed as examples.
-          examples:
-            - DEFAULT_ERROR
-            - INTERNAL_ERROR
-            - INVALID_API_KEY
-            - INVALID_REQUEST
-            - INVALID_REQUEST_BODY
-            - INVALID_REQUEST_QUERY
-            - INVALID_JSON_SCHEMA
-            - INVALID_NUM_RESULTS
-            - NUM_RESULTS_EXCEEDED
-            - NO_MORE_CREDITS
-            - API_KEY_BUDGET_EXCEEDED
-            - TEAM_BUDGET_EXCEEDED
-            - NO_CONTENT_FOUND
-            - PROHIBITED_CONTENT
-            - INSUFFICIENT_SCOPE
-            - UNABLE_TO_GENERATE_RESPONSE
-            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
-            - SUBPAGES_LIMIT_EXCEEDED
-            - FEATURE_DISABLED
-            - INVALID_URLS
-            - FETCH_DOCUMENT_ERROR
-            - TEAM_BLOCKED
-            - NOT_FOUND
-            - RATE_LIMIT_EXCEEDED
-      required:
-        - requestId
-        - error
-        - tag
-      additionalProperties: false
-      description: Standard error envelope returned by the Exa API for failed requests.
-    X402PaymentChallenge:
-      type: object
-      properties:
-        requestId:
-          type: string
-          description: Unique identifier for the request.
-          example: b5947044c4b78efa9552a7c89b306d95
-        error:
-          type: string
-          description: Human-readable message describing the error.
-          example: Payment required to access this resource
-        tag:
-          type: string
-          description: >-
-            Machine-readable error tag identifying the failure. The set of tags
-            is open-ended: new tags may be added at any time, so treat
-            unrecognized tags as a generic error of the response's HTTP status.
-            Known tags are listed as examples.
-          examples:
-            - DEFAULT_ERROR
-            - INTERNAL_ERROR
-            - INVALID_API_KEY
-            - INVALID_REQUEST
-            - INVALID_REQUEST_BODY
-            - INVALID_REQUEST_QUERY
-            - INVALID_JSON_SCHEMA
-            - INVALID_NUM_RESULTS
-            - NUM_RESULTS_EXCEEDED
-            - NO_MORE_CREDITS
-            - API_KEY_BUDGET_EXCEEDED
-            - TEAM_BUDGET_EXCEEDED
-            - NO_CONTENT_FOUND
-            - PROHIBITED_CONTENT
-            - INSUFFICIENT_SCOPE
-            - UNABLE_TO_GENERATE_RESPONSE
-            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
-            - SUBPAGES_LIMIT_EXCEEDED
-            - FEATURE_DISABLED
-            - INVALID_URLS
-            - FETCH_DOCUMENT_ERROR
-            - TEAM_BLOCKED
-            - NOT_FOUND
-            - RATE_LIMIT_EXCEEDED
-        x402Version:
-          type: number
-          description: Version of the x402 protocol used to build this challenge.
-          example: 2
-        resource:
-          type: object
-          properties:
-            url:
-              type: string
-              description: URL of the priced resource being requested.
-            description:
-              type: string
-              description: Human-readable resource description.
-            mimeType:
-              type: string
-              description: MIME type of the priced resource.
-          required:
-            - url
-            - description
-            - mimeType
-          additionalProperties: false
-          description: The priced resource this challenge applies to.
-        accepts:
-          type: array
-          items:
-            type: object
-            propertyNames:
-              type: string
-            additionalProperties: {}
-            description: >-
-              An accepted x402 payment requirement (scheme, network, amount,
-              payTo, asset, maxTimeoutSeconds, and scheme-specific `extra`
-              fields).
-          description: Payment requirements the server accepts, one per supported rail.
-        extensions:
-          description: >-
-            Optional x402 protocol extensions (e.g. Bazaar or AgentKit discovery
-            metadata).
-          type: object
-          propertyNames:
             type: string
-          additionalProperties: {}
-      required:
-        - requestId
-        - error
-        - tag
-        - x402Version
-        - resource
-        - accepts
-      additionalProperties: false
-      description: >-
-        x402 payment challenge: the standard error envelope extended with x402
-        payment metadata.
-    ContentsOptions:
-      type: object
-      properties:
+            minLength: 1
+            maxLength: 2048
+          description: Document IDs obtained from searches.
+          example:
+            - https://arxiv.org/pdf/2307.06435
+        urls:
+          minItems: 1
+          maxItems: 100
+          type: array
+          items:
+            type: string
+            minLength: 1
+            maxLength: 2048
+          description: URLs to crawl (backwards compatible with the `ids` parameter).
+          example:
+            - https://arxiv.org/pdf/2307.06435
+        compliance:
+          anyOf:
+            - type: string
+              enum:
+                - hipaa
+              description: >-
+                Enterprise-only compliance mode. Set to `hipaa` for HIPAA mode.
+                Requires cache-only retrieval with supported parameters. See the
+                HIPAA docs for details.
+              example: hipaa
+            - type: 'null'
         text:
           anyOf:
             - description: Text extraction options for each result.
@@ -772,6 +542,246 @@ components:
                     minLength: 1
                     maxLength: 100
             - type: 'null'
+      description: Provide either `ids` or `urls`, but not both.
+      oneOf:
+        - required:
+            - ids
+        - required:
+            - urls
+    ContentsResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultOutput'
+        context:
+          type: string
+          description: >-
+            Deprecated. Combined context string from search results. Use
+            highlights or text instead.
+          deprecated: true
+        statuses:
+          description: Status information for each requested URL or document ID.
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The URL or document ID that was requested.
+                example: https://example.com
+              status:
+                type: string
+                enum:
+                  - success
+                  - error
+                description: Status of the content fetch operation.
+                example: success
+              source:
+                description: Where the returned content was sourced from.
+                type: string
+                enum:
+                  - cached
+                  - crawled
+              error:
+                anyOf:
+                  - type: object
+                    properties:
+                      tag:
+                        description: Specific error type.
+                        example: CRAWL_NOT_FOUND
+                        type: string
+                      httpStatusCode:
+                        anyOf:
+                          - type: integer
+                            minimum: 100
+                            maximum: 599
+                          - type: 'null'
+                        description: The corresponding HTTP status code.
+                        example: 404
+                    additionalProperties: false
+                  - type: 'null'
+                description: Error details, only present when status is "error".
+            required:
+              - id
+              - status
+            additionalProperties: false
+        costDollars:
+          $ref: '#/components/schemas/CostDollarsOutput'
+        searchTime:
+          type: number
+          description: >-
+            Server-side processing time in milliseconds, measured at the
+            gateway. Covers retrieval but may exclude later phases such as
+            structured output synthesis, so it can be lower than end-to-end
+            request latency.
+          example: 312.4
+      additionalProperties: false
+    ErrorResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        error:
+          type: string
+          description: Human-readable message describing the error.
+          example: Invalid API key
+        tag:
+          type: string
+          description: >-
+            Machine-readable error tag identifying the failure. The set of tags
+            is open-ended: new tags may be added at any time, so treat
+            unrecognized tags as a generic error of the response's HTTP status.
+            Known tags are listed as examples.
+          examples:
+            - DEFAULT_ERROR
+            - INTERNAL_ERROR
+            - INVALID_API_KEY
+            - INVALID_REQUEST
+            - INVALID_REQUEST_BODY
+            - INVALID_REQUEST_QUERY
+            - INVALID_JSON_SCHEMA
+            - INVALID_NUM_RESULTS
+            - NUM_RESULTS_EXCEEDED
+            - NO_MORE_CREDITS
+            - API_KEY_BUDGET_EXCEEDED
+            - TEAM_BUDGET_EXCEEDED
+            - NO_CONTENT_FOUND
+            - PROHIBITED_CONTENT
+            - INSUFFICIENT_SCOPE
+            - UNABLE_TO_GENERATE_RESPONSE
+            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
+            - SUBPAGES_LIMIT_EXCEEDED
+            - FEATURE_DISABLED
+            - INVALID_URLS
+            - FETCH_DOCUMENT_ERROR
+            - TEAM_BLOCKED
+            - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
+      required:
+        - requestId
+        - error
+        - tag
+      additionalProperties: false
+      description: Standard error envelope returned by the Exa API for failed requests.
+    X402PaymentChallenge:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: Unique identifier for the request.
+          example: b5947044c4b78efa9552a7c89b306d95
+        error:
+          type: string
+          description: Human-readable message describing the error.
+          example: Payment required to access this resource
+        tag:
+          type: string
+          description: >-
+            Machine-readable error tag identifying the failure. The set of tags
+            is open-ended: new tags may be added at any time, so treat
+            unrecognized tags as a generic error of the response's HTTP status.
+            Known tags are listed as examples.
+          examples:
+            - DEFAULT_ERROR
+            - INTERNAL_ERROR
+            - INVALID_API_KEY
+            - INVALID_REQUEST
+            - INVALID_REQUEST_BODY
+            - INVALID_REQUEST_QUERY
+            - INVALID_JSON_SCHEMA
+            - INVALID_NUM_RESULTS
+            - NUM_RESULTS_EXCEEDED
+            - NO_MORE_CREDITS
+            - API_KEY_BUDGET_EXCEEDED
+            - TEAM_BUDGET_EXCEEDED
+            - NO_CONTENT_FOUND
+            - PROHIBITED_CONTENT
+            - INSUFFICIENT_SCOPE
+            - UNABLE_TO_GENERATE_RESPONSE
+            - UNSUPPORTED_PUBLICATION_INCLUDE_FILTER
+            - SUBPAGES_LIMIT_EXCEEDED
+            - FEATURE_DISABLED
+            - INVALID_URLS
+            - FETCH_DOCUMENT_ERROR
+            - TEAM_BLOCKED
+            - NOT_FOUND
+            - RATE_LIMIT_EXCEEDED
+        x402Version:
+          type: number
+          description: Version of the x402 protocol used to build this challenge.
+          example: 2
+        resource:
+          type: object
+          properties:
+            url:
+              type: string
+              description: URL of the priced resource being requested.
+            description:
+              type: string
+              description: Human-readable resource description.
+            mimeType:
+              type: string
+              description: MIME type of the priced resource.
+          required:
+            - url
+            - description
+            - mimeType
+          additionalProperties: false
+          description: The priced resource this challenge applies to.
+        accepts:
+          type: array
+          items:
+            type: object
+            propertyNames:
+              type: string
+            additionalProperties: {}
+            description: >-
+              An accepted x402 payment requirement (scheme, network, amount,
+              payTo, asset, maxTimeoutSeconds, and scheme-specific `extra`
+              fields).
+          description: Payment requirements the server accepts, one per supported rail.
+        extensions:
+          description: >-
+            Optional x402 protocol extensions (e.g. Bazaar or AgentKit discovery
+            metadata).
+          type: object
+          propertyNames:
+            type: string
+          additionalProperties: {}
+      required:
+        - requestId
+        - error
+        - tag
+        - x402Version
+        - resource
+        - accepts
+      additionalProperties: false
+      description: >-
+        x402 payment challenge: the standard error envelope extended with x402
+        payment metadata.
+    JsonValue:
+      description: Any JSON value.
+      oneOf:
+        - type: 'null'
+        - type: boolean
+        - type: number
+        - type: string
+        - type: array
+          items:
+            $ref: '#/components/schemas/JsonValue'
+        - type: object
+          propertyNames:
+            type: string
+          additionalProperties:
+            $ref: '#/components/schemas/JsonValue'
     SearchResultOutput:
       type: object
       properties:
@@ -1054,21 +1064,6 @@ components:
         Endpoint-dependent estimated dollar cost breakdown for the completed
         request. Billing is computed from usage counters rather than this
         response object.
-    JsonValue:
-      description: Any JSON value.
-      oneOf:
-        - type: 'null'
-        - type: boolean
-        - type: number
-        - type: string
-        - type: array
-          items:
-            $ref: '#/components/schemas/JsonValue'
-        - type: object
-          propertyNames:
-            type: string
-          additionalProperties:
-            $ref: '#/components/schemas/JsonValue'
     SearchCompanyEntityOutput:
       type: object
       properties:
