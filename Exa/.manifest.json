@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-11T11:18:04.769Z",
+  "생성": "2026-09-12T04:32:19.306Z",
   "제품폴더": "Exa",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -705,8 +705,8 @@
       "경로": "010_Documentation/070_Admin/050_Error_Codes.md",
       "href": "/reference/error-codes",
       "url": "https://exa.ai/docs/reference/error-codes.md",
-      "sha256": "cda52300253c2aadbdb5afaa14e2abda494537c77bf49039009e591d80d249ce",
-      "bytes": 12650,
+      "sha256": "e7c78bc65e5b178479f8c92c1cae995ba6f11f878f6363005ee32dc8846dfaad",
+      "bytes": 13752,
       "contentType": "text/markdown"
     },
     {
@@ -801,24 +801,24 @@
       "경로": "020_API_Reference/010_Search/010_Search.md",
       "href": "/reference/search",
       "url": "https://exa.ai/docs/reference/search.md",
-      "sha256": "8cc9d47efd20864cfa73b6d9208310f04c155f3b34813d2034c12b10ae318ee4",
-      "bytes": 94082,
+      "sha256": "d7d62693cc87e70f9e92c385502e6dae2f9dbfbeb38b8ba7c391999086972927",
+      "bytes": 94817,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/010_Search/020_Contents.md",
       "href": "/reference/get-contents",
       "url": "https://exa.ai/docs/reference/get-contents.md",
-      "sha256": "927eb4d40c803d26d3ce59849b5b2d58710dee6737dfa7933f1d8c689f181dd7",
-      "bytes": 70695,
+      "sha256": "649f160bb6fb4e8e61dff4462e7aaaed1e4035ade278879b1cc4025064b5beec",
+      "bytes": 71430,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/010_Search/030_Answer.md",
       "href": "/reference/answer",
       "url": "https://exa.ai/docs/reference/answer.md",
-      "sha256": "5b188e29c2820664e1b2b40d274ccae7bdf50f40e831064a4b60955f48c55578",
-      "bytes": 23646,
+      "sha256": "baa5a5a3d63b2ea49fb12ca45c4a305e9c9435c1dae864b3f9877c9fdc800811",
+      "bytes": 24381,
       "contentType": "text/markdown"
     },
     {

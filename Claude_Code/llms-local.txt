@@ -247,14 +247,14 @@
 - [Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry](https://code.claude.com/docs/en/claude-apps-gateway.md): Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or Microsoft Foundry behind a self-hosted gateway with SSO sign-in, per-group model access, and OTLP telemetry.
 - [Other LLM gateways](https://code.claude.com/docs/en/llm-gateway.md): Route Claude Code through an LLM gateway your organization already runs. Covers connecting Claude Code to a gateway, rolling one out for your organization, and what Claude Code sends to a gateway.
 - [Self-hosted environments](https://code.claude.com/docs/en/self-hosted-environments.md): Run Claude Code cloud sessions on infrastructure you control: set up a self-hosted environment, deploy runners, and route sessions to your own compute.
-- [French (166 pages)](https://code.claude.com/docs/_llms/fr.md): Documentation for French.
-- [German (166 pages)](https://code.claude.com/docs/_llms/de.md): Documentation for German.
-- [Italian (166 pages)](https://code.claude.com/docs/_llms/it.md): Documentation for Italian.
-- [Japanese (166 pages)](https://code.claude.com/docs/_llms/jp.md): Documentation for Japanese.
-- [Spanish (166 pages)](https://code.claude.com/docs/_llms/es.md): Documentation for Spanish.
-- [Korean (166 pages)](https://code.claude.com/docs/_llms/ko.md): Documentation for Korean.
-- [Chinese (166 pages)](https://code.claude.com/docs/_llms/cn.md): Documentation for Chinese.
-- [Traditional Chinese (166 pages)](https://code.claude.com/docs/_llms/zh-hant.md): Documentation for Traditional Chinese.
-- [Russian (166 pages)](https://code.claude.com/docs/_llms/ru.md): Documentation for Russian.
-- [Indonesian (166 pages)](https://code.claude.com/docs/_llms/id.md): Documentation for Indonesian.
-- [Brazilian Portuguese (166 pages)](https://code.claude.com/docs/_llms/pt-br.md): Documentation for Brazilian Portuguese.
+- [French (192 pages)](https://code.claude.com/docs/_llms/fr.md): Documentation for French.
+- [German (192 pages)](https://code.claude.com/docs/_llms/de.md): Documentation for German.
+- [Italian (192 pages)](https://code.claude.com/docs/_llms/it.md): Documentation for Italian.
+- [Japanese (191 pages)](https://code.claude.com/docs/_llms/jp.md): Documentation for Japanese.
+- [Spanish (192 pages)](https://code.claude.com/docs/_llms/es.md): Documentation for Spanish.
+- [Korean (191 pages)](https://code.claude.com/docs/_llms/ko.md): Documentation for Korean.
+- [Chinese (192 pages)](https://code.claude.com/docs/_llms/cn.md): Documentation for Chinese.
+- [Traditional Chinese (192 pages)](https://code.claude.com/docs/_llms/zh-hant.md): Documentation for Traditional Chinese.
+- [Russian (192 pages)](https://code.claude.com/docs/_llms/ru.md): Documentation for Russian.
+- [Indonesian (191 pages)](https://code.claude.com/docs/_llms/id.md): Documentation for Indonesian.
+- [Brazilian Portuguese (192 pages)](https://code.claude.com/docs/_llms/pt-br.md): Documentation for Brazilian Portuguese.
