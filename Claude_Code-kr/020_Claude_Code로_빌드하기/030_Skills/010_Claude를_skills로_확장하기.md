@@ -30,7 +30,7 @@ Claude Code에는 `/doctor`, `/code-review`, `/batch`, `/debug`, `/loop`, `/clau
 
 대부분의 번들된 스킬은 모든 세션에서 사용 가능합니다. 일부는 특정 기능에 따라 달라집니다. 예를 들어 `/workflow-authoring`은 [동적 워크플로우](/docs/ko/workflows)가 활성화된 경우에만 사용 가능합니다.
 
-번들된 스킬을 끄려면 [`disableBundledSkills`](/docs/ko/settings-reference#disablebundledskills) 설정을 사용하면 되며, 이는 `/doctor`를 제외한 모든 번들된 스킬을 비활성화합니다.
+번들된 스킬을 끄려면 [`disableBundledSkills`](/docs/ko/settings-reference#disablebundledskills) 설정을 사용하면 됩니다.
 
 <Note>
   [`/doctor`](/docs/ko/commands#all-commands) 설정 점검은 Claude Code v2.1.205 이상에서 `disableBundledSkills`가 켜져 있을 때도 입력 가능합니다. 이를 숨기려면 `DISABLE_DOCTOR_COMMAND` 환경 변수를 설정하거나 [`skillOverrides`](#override-skill-visibility-from-settings) 항목을 `"doctor": "off"`로 설정하면 됩니다. v2.1.205 이전에는 `/doctor`가 번들된 스킬이 아닌 기본 제공 명령어였습니다.
@@ -138,7 +138,7 @@ Claude는 실패한 명령어나 누락된 단계와 같이 실행을 잘못 조
 
 * **심볼릭 링크된 폴더**: enterprise, personal 또는 project 위치의 `<skill-name>` 항목은 디스크의 다른 곳에 있는 디렉토리로의 심볼릭 링크일 수 있습니다. Claude Code는 대상에서 `SKILL.md`를 읽고 여러 위치가 같은 대상을 가리키더라도 스킬을 한 번만 로드합니다. 플러그인 스킬은 [심볼릭 링크를 다르게 처리합니다](/docs/ko/plugins-reference#share-files-within-a-marketplace-with-symlinks).
 * **예약된 이름**: 스킬 폴더를 `synced`로 이름 지으면 안 됩니다(대소문자 상관없음). Claude Code는 `~/.claude/skills/synced/`를 [claude.ai에서 다운로드한 스킬](#where-synced-skills-load)에 사용하고 enterprise, personal 및 project 위치에서 해당 이름으로 작성한 스킬을 건너뜁니다.
-* **명령 파일**: `.claude/commands/`의 Markdown 파일은 이전 형식이며 여전히 작동합니다. `name` 및 `paths`를 제외한 동일한 [frontmatter](#frontmatter-reference)를 지원하며, 파일 이름으로 호출합니다. 새 작업에는 스킬을 선호하세요. 스킬은 [지원 파일](#add-supporting-files)도 지원하기 때문입니다.
+* **명령 파일**: `.claude/commands/`의 Markdown 파일은 이전 형식이며 여전히 작동합니다. `name` 및 `paths`를 제외한 동일한 [frontmatter](#frontmatter-reference)를 지원합니다. 호출하는 이름을 찾으려면 [스킬이 명령 이름을 얻는 방법](#how-a-skill-gets-its-command-name)을 참조하세요. 새 작업에는 스킬을 선호하세요. 스킬은 [지원 파일](#add-supporting-files)도 지원하기 때문입니다.
 * **플러그인으로서의 스킬 폴더**: 스킬 폴더에 `.claude-plugin/plugin.json`을 추가하면 `<name>@skills-dir`이라는 이름의 [플러그인](/docs/ko/plugins-reference#skills-directory-plugins)으로 로드되므로 에이전트, hooks 및 MCP 서버를 번들할 수 있습니다. 프로젝트의 `.claude/skills/`에서는 먼저 워크스페이스 신뢰 대화를 수락해야 합니다.
 
 <h3 id="discovery-from-parent-and-nested-directories">
@@ -236,7 +236,7 @@ Claude Code는 이름이 다른 명령과 일치하는 동기화된 스킬을 �
 
 Claude Code는 동기화된 스킬에 레이블을 지정하므로 어디에서 왔는지 알 수 있습니다. `/skills` 메뉴와 `/context`는 동기화된 스킬을 `claude.ai sync` 아래에 그룹화하고, `/` 명령 메뉴는 claude.ai에서 온 것으로 표시합니다.
 
-이름을 비교할 때, Claude Code는 대소문자, 공백 및 보이지 않는 문자를 무시하고, 전자 문자 및 대시 변형과 같은 호환성 형식을 일반 등가물로 취급하므로, 동기화된 `Commit`은 로컬 `commit` 옆에 로드될 수 없습니다. 다른 알파벳의 모양이 비슷한 문자로만 다른 이름은 다른 이름으로 간주되며, `claude.ai sync` 레이블은 두 개를 구분하는 방법입니다.
+이름을 비교할 때, Claude Code는 대소문자, 공백 및 보이지 않는 문자를 무시하고, 전자 문자 및 대시 변형과 같은 호환성 형식을 일반 등가물로 취급하므로, 동기화된 `Commit`은 로컬 `commit` 옆에 로드될 수 없습니다. 다른 알파벳의 모양이 비슷한 문자로만 다른 이름은 다른 이름으로 간주되며, `claude.ai sync` 레이블은 두 개를 구분하는 방법입니다. 이러한 검사와 레이블은 Claude Code v2.1.228 이상이 필요합니다.
 
 <h4 id="how-claude-code-handles-the-frontmatter-of-a-synced-skill">
   Claude Code가 동기화된 스킬의 frontmatter를 처리하는 방법
@@ -245,7 +245,7 @@ Claude Code는 동기화된 스킬에 레이블을 지정하므로 어디에서 
 Claude Code는 동기화된 스킬의 frontmatter에 두 가지 규칙을 적용합니다:
 
 * Claude Code는 모든 종류의 세션에서 frontmatter를 준수하므로, `allowed-tools` 부여는 일반 [권한 흐름](/docs/ko/permissions)을 거칩니다.
-* Claude Code는 스킬이 제공하는 표시 텍스트(예: 설명)를 정제합니다. 제어 문자를 제거하고, Claude에 도달하는 텍스트(예: 설명)에서 꺾쇠 괄호를 이스케이프하여 텍스트가 Claude Code의 내부 형식을 모방할 수 없도록 합니다.
+* Claude Code는 스킬이 제공하는 표시 텍스트(예: 설명)를 정제합니다. 제어 문자를 제거하고, Claude에 도달하는 텍스트(예: 설명)에서 꺾쇠 괄호를 이스케이프하여 텍스트가 Claude Code의 내부 형식을 모방할 수 없도록 합니다. 이 정제는 Claude Code v2.1.228 이상이 필요합니다.
 
 <h4 id="how-claude-code-handles-the-body-of-a-synced-skill">
   Claude Code가 동기화된 스킬의 본문을 처리하는 방법
@@ -255,7 +255,7 @@ Claude Code가 동기화된 스킬의 본문으로 수행하는 작업은 세션
 
 * 클라우드 세션에서 본문은 로컬 스킬이 가지는 동작을 유지합니다. 세션이 격리된 컨테이너에서 실행되기 때문입니다.
 * 데스크톱의 Cowork 세션에서 본문은 로컬 스킬이 가지는 동작을 유지합니다. 단, Claude Code는 모든 `!` 명령 줄을 [`disableSkillShellExecution` 플레이스홀더](#inject-dynamic-context)로 바꿉니다. 모든 스킬에 대해 그곳에서 제공하는 것처럼 말입니다.
-* 머신의 다른 세션에서 Claude Code는 [`!` 명령](#inject-dynamic-context)을 실행하지 않고, `@` 참조가 로컬 스킬에 대해 이름을 지정하는 방식으로 파일을 첨부하지 않으며, `${CLAUDE_PROJECT_DIR}` 및 `${CLAUDE_SESSION_ID}` 플레이스홀더를 대체하지 않으므로, `@` 참조와 두 플레이스홀더 모두 Claude에 리터럴 텍스트로 도달합니다. `!` 명령 줄도 리터럴 텍스트로 도달하거나, `disableSkillShellExecution`이 켜져 있을 때 해당 플레이스홀더로 도달합니다.
+* 머신의 다른 세션에서 Claude Code는 [`!` 명령](#inject-dynamic-context)을 실행하지 않고, `@` 참조가 로컬 스킬에 대해 이름을 지정하는 방식으로 파일을 첨부하지 않으며, `${CLAUDE_PROJECT_DIR}` 및 `${CLAUDE_SESSION_ID}` 플레이스홀더를 대체하지 않으므로, `@` 참조와 두 플레이스홀더 모두 Claude에 리터럴 텍스트로 도달합니다. `!` 명령 줄도 리터럴 텍스트로 도달하거나, `disableSkillShellExecution`이 켜져 있을 때 해당 플레이스홀더로 도달합니다. 이 처리는 Claude Code v2.1.228 이상이 필요합니다.
 
 <h3 id="live-change-detection">
   세션 중 스킬 편집
@@ -273,9 +273,9 @@ Claude Code는 [bare mode](/docs/ko/headless#start-faster-with-bare-mode)를 제
 
 * **Personal 또는 project 스킬**: 스킬의 디렉토리 `~/.claude/skills/<skill-name>/` 또는 `.claude/skills/<skill-name>/`을 삭제하세요. Claude Code는 [현재 세션의 `/skills`에서 삭제합니다](#live-change-detection). Claude Code가 이미 로드한 콘텐츠는 [스킬 콘텐츠 수명 주기](#skill-content-lifecycle)를 따릅니다.
 * **Enterprise 스킬**: 관리자가 [관리형 설정 디렉토리](/docs/ko/managed-settings#delivery-mechanisms) 내의 `.claude/skills/`에서 스킬의 디렉토리를 삭제합니다. 예를 들어 Linux의 `/etc/claude-code/.claude/skills/<skill-name>/`.
-* **Plugin 스킬**: `/plugin` 메뉴에서 또는 `/plugin uninstall <plugin-name>@<marketplace-name>`으로 스킬을 제공하는 플러그인을 비활성화하거나 제거하세요. Claude Code는 `/reload-plugins`를 실행하거나 다시 시작한 후 플러그인의 스킬을 언로드합니다. [플러그인 변경 사항을 다시 시작하지 않고 적용](/docs/ko/discover-plugins#apply-plugin-changes-without-restarting) 참조.
+* **Plugin 스킬**: `/plugin` 메뉴에서 또는 `/plugin uninstall <plugin-name>@<marketplace-name>`으로 스킬을 제공하는 플러그인을 비활성화하거나 제거하세요. Claude Code는 [변경 사항이 적용될 때](/docs/ko/discover-plugins#apply-plugin-changes-without-restarting) 또는 다시 시작할 때 플러그인의 스킬을 언로드합니다.
 * **claude.ai에서 동기화된 스킬**: [활성화](#skills-in-cowork-and-cloud-sessions)한 것과 같은 위치에서 claude.ai 계정에 대해 스킬을 끄세요. Claude Code는 다음 번 [스킬을 동기화](#where-synced-skills-load)할 때 `~/.claude/skills/synced/`에서 제거합니다. 대신 디렉토리를 직접 삭제하면 다음 동기화가 스킬이 claude.ai에서 활성화된 상태로 유지되는 동안 다시 다운로드합니다.
-* **번들된 스킬**: [`disableBundledSkills`](#bundled-skills)를 `true`로 설정하여 `/doctor`를 제외한 모든 번들된 스킬을 끄거나, [`skillOverrides`](#override-skill-visibility-from-settings)에서 하나의 스킬을 `"off"`로 설정하여 숨기세요.
+* **번들된 스킬**: [`disableBundledSkills`](#bundled-skills)를 `true`로 설정하여 번들된 스킬을 끄거나, [`skillOverrides`](#override-skill-visibility-from-settings)에서 하나의 스킬을 `"off"`로 설정하여 숨기세요.
 
 Personal 또는 project 스킬을 유지하지만 Claude가 자동으로 호출하지 않도록 하려면, frontmatter에서 [`disable-model-invocation: true`](#control-who-invokes-a-skill)를 설정하거나, 파일을 편집하지 않으려면 [`skillOverrides`](#override-skill-visibility-from-settings)에서 `"user-invocable-only"`를 설정하세요.
 
@@ -349,7 +349,7 @@ Claude Code는 파일의 첫 번째 줄이 `---`일 때만 프론트매터를 �
 | 필드                         | 필수  | 설명                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | :------------------------- | :-- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`                     | 아니요 | 스킬 목록에 표시되는 표시 이름입니다. 기본값은 디렉토리 이름입니다. [스킬이 명령 이름을 얻는 방법](#how-a-skill-gets-its-command-name)을 참조하여 필드가 스킬을 호출하기 위해 입력하는 이름과 어떻게 상호 작용하는지 확인하세요.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `description`              | 권장  | 스킬이 무엇을 하는지, 언제 사용할지입니다. Claude는 이를 사용하여 스킬을 적용할 시기를 결정합니다. 생략하면 마크다운 콘텐츠의 첫 번째 단락을 사용합니다. 주요 사용 사례를 먼저 입력하세요. 결합된 `description` 및 `when_to_use` 텍스트는 컨텍스트 사용을 줄이기 위해 스킬 목록에서 1,536자로 잘립니다.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `description`              | 권장  | 스킬이 무엇을 하는지, 언제 사용할지입니다. Claude는 이를 사용하여 스킬을 적용할 시기를 결정합니다. 생략하면 마크다운 콘텐츠의 첫 번째 비어 있지 않은 줄을 사용합니다. 주요 사용 사례를 먼저 입력하세요. 결합된 `description` 및 `when_to_use` 텍스트는 컨텍스트 사용을 줄이기 위해 스킬 목록에서 1,536자로 잘립니다.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `when_to_use`              | 아니요 | Claude가 스킬을 호출해야 할 때에 대한 추가 컨텍스트입니다. 예를 들어 트리거 구문이나 예제 요청입니다. 스킬 목록의 `description`에 추가되며 1,536자 제한에 포함됩니다.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `argument-hint`            | 아니요 | 자동 완성 중에 표시되는 힌트로 예상 인수를 나타냅니다. 예: `[issue-number]` 또는 `[filename] [format]`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `arguments`                | 아니요 | 스킬 콘텐츠에서 [`$name` 치환](#available-string-substitutions)을 위한 명명된 위치 인수입니다. 공백으로 구분된 문자열 또는 YAML 목록을 허용합니다. 이름은 순서대로 인수 위치에 매핑됩니다.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -398,13 +398,14 @@ Unexpected key(s) in SKILL.md frontmatter: argument-hint. Allowed properties are
 
 아래 표는 각 레이아웃에 대해 명령 이름이 어디에서 나오는지 보여줍니다.
 
-| 스킬 위치                                                              | 명령 이름 소스                                   | 예제                                                                                                                         |
-| :----------------------------------------------------------------- | :----------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| `~/.claude/skills/` 또는 `.claude/skills/` 아래의 스킬 디렉토리               | 디렉토리 이름                                    | `.claude/skills/deploy-staging/SKILL.md` → `/deploy-staging`                                                               |
-| [중첩된](#where-skills-live) `.claude/skills/` 디렉토리(이름이 다른 스킬과 충돌할 때) | 작업 디렉토리를 기준으로 한 서브디렉토리 경로, 그 다음 스킬 디렉토리 이름 | `apps/web/.claude/skills/deploy/SKILL.md` → `/apps/web:deploy`                                                             |
-| `.claude/commands/` 아래의 파일                                         | 확장자 없는 파일 이름                               | `.claude/commands/deploy.md` → `/deploy`                                                                                   |
-| 플러그인 `skills/` 서브디렉토리                                              | 프론트매터 `name` 또는 디렉토리 이름(플러그인으로 네임스페이스됨)    | `my-plugin/skills/review/SKILL.md` → `/my-plugin:review`, 또는 `name: fancy`를 사용하면 `/my-plugin:fancy`                        |
-| 플러그인 루트 `SKILL.md`                                                 | 프론트매터 `name`(플러그인 디렉토리 이름이 폴백)             | `my-plugin/SKILL.md`에서 `name: review` → `/my-plugin:review`. [경로 동작 규칙](/docs/ko/plugins-reference#path-behavior-rules)을 참조하세요. |
+| 스킬 위치                                                              | 명령 이름 소스                                                         | 예제                                                                                                                         |
+| :----------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `~/.claude/skills/` 또는 `.claude/skills/` 아래의 스킬 디렉토리               | 디렉토리 이름                                                          | `.claude/skills/deploy-staging/SKILL.md` → `/deploy-staging`                                                               |
+| [중첩된](#where-skills-live) `.claude/skills/` 디렉토리(이름이 다른 스킬과 충돌할 때) | 작업 디렉토리를 기준으로 한 서브디렉토리 경로, 그 다음 스킬 디렉토리 이름                       | `apps/web/.claude/skills/deploy/SKILL.md` → `/apps/web:deploy`                                                             |
+| `.claude/commands/` 아래의 파일                                         | 확장자 없는 파일 이름                                                     | `.claude/commands/deploy.md` → `/deploy`                                                                                   |
+| `.claude/commands/`의 서브디렉토리 아래의 파일                                 | `commands/`를 기준으로 한 서브디렉토리 경로(각 `/`를 `:`로 대체), 그 다음 확장자 없는 파일 이름 | `.claude/commands/frontend/component.md` → `/frontend:component`                                                           |
+| 플러그인 `skills/` 서브디렉토리                                              | 프론트매터 `name` 또는 디렉토리 이름(플러그인으로 네임스페이스됨)                          | `my-plugin/skills/review/SKILL.md` → `/my-plugin:review`, 또는 `name: fancy`를 사용하면 `/my-plugin:fancy`                        |
+| 플러그인 루트 `SKILL.md`                                                 | 프론트매터 `name`(플러그인 디렉토리 이름이 폴백)                                   | `my-plugin/SKILL.md`에서 `name: review` → `/my-plugin:review`. [경로 동작 규칙](/docs/ko/plugins-reference#path-behavior-rules)을 참조하세요. |
 
 플러그인 스킬에서 프론트매터 `name`은 명령의 마지막 세그먼트에서 디렉토리 이름을 대체하므로 `my-plugin/skills/review/SKILL.md`에서 `name: fancy`는 `/my-plugin:fancy`가 됩니다. 다른 명령이 이미 해당 이름을 사용하지 않으면 `/fancy`도 스킬을 호출합니다. 작성한 `name`이 이미 플러그인 자체의 접두사로 시작하면 v2.1.246 이상에서 Claude Code는 접두사를 다시 추가하지 않습니다. 예를 들어 `name: my-plugin:fancy`는 여전히 `/my-plugin:fancy`가 됩니다. v2.1.216부터 v2.1.245까지 Claude Code는 `name`이 이미 접두사를 가지고 있을 때 접두사를 두 배로 했습니다.
 
@@ -632,7 +633,7 @@ Preserve all existing behavior and tests.
   동적 컨텍스트 주입
 </h3>
 
-`` !`<command>` `` 구문은 스킬 콘텐츠가 Claude에 전송되기 전에 셸 명령을 실행합니다. 명령 출력이 플레이스홀더를 대체하므로 Claude는 명령 자체가 아닌 실제 데이터를 받습니다. Claude Code는 스킬이 [claude.ai 계정에서 동기화될 때](#how-claude-code-handles-the-body-of-a-synced-skill) 이러한 명령을 머신에서 실행하지 않습니다.
+`` !`<command>` `` 구문은 스킬 콘텐츠가 Claude에 전송되기 전에 셸 명령을 실행합니다. 명령 출력이 플레이스홀더를 대체하므로 Claude는 명령 자체가 아닌 실제 데이터를 받습니다. Claude Code는 스킬이 [claude.ai 계정에서 동기화될 때](#how-claude-code-handles-the-body-of-a-synced-skill) 이러한 명령을 머신에서 실행하지 않습니다. 이 제한은 Claude Code v2.1.228 이상이 필요합니다.
 
 이 스킬은 GitHub CLI를 사용하여 라이브 PR 데이터를 가져와 풀 요청을 요약합니다. `` !`gh pr diff` `` 및 기타 명령이 먼저 실행되고 해당 출력이 프롬프트에 삽입됩니다:
 
@@ -718,7 +719,11 @@ PowerShell 도구는 실행하는 명령에 동일한 타임아웃, 백그라운
   서브에이전트에서 스킬 실행
 </h3>
 
-스킬을 격리된 상태에서 실행하려면 프론트매터에 `context: fork`를 추가합니다. 스킬 콘텐츠는 서브에이전트를 구동하는 프롬프트가 됩니다. 대화 기록에 액세스할 수 없습니다.
+스킬을 격리된 상태에서 실행하려면 프론트매터에 `context: fork`를 추가합니다. Claude Code는 `agent` 필드에 설정된 유형의 새로운 서브에이전트를 시작하고 스킬 콘텐츠를 프롬프트로 제공합니다. 서브에이전트는 대화 기록을 보지 않으므로 스킬의 지침이 독립적으로 작동해야 합니다.
+
+<Note>
+  이름에도 불구하고 `context: fork`가 있는 스킬은 [현재 대화의 포크](/docs/ko/sub-agents#fork-the-current-conversation)에서 실행되지 않으며, 이는 지금까지 논의한 모든 것을 서브에이전트에 전달할 것입니다. 작업이 해당 기록에 따라 다를 때 `context: fork` 대신 대화를 포크합니다.
+</Note>
 
 포크된 서브에이전트는 [백그라운드](/docs/ko/sub-agents#run-subagents-in-foreground-or-background)에서 실행됩니다: 실행되는 동안 계속 작업하고 완료되면 결과가 대화에 도착합니다. 프론트매터에서 `background: false`를 설정하여 대신 스킬을 호출한 턴에서 결과를 기다립니다. v2.1.218 이전에는 포크된 스킬이 항상 완료될 때까지 턴을 차단했습니다.
 
@@ -868,6 +873,8 @@ v2.1.199부터 `"off"`는 터미널 `/` 메뉴 외에도 [Remote Control](/docs/
 
 두 가지 모두에 대한 확인은 기준선 비교입니다. 현실적인 프롬프트 몇 개를 수집하고, 스킬을 사용할 수 있는 새로운 세션에서 각각을 실행한 후 [비활성화](#override-skill-visibility-from-settings)된 상태에서 다시 실행하고 결과를 비교합니다. 새로운 세션이 중요한 이유는 스킬 작성 시 남겨진 컨텍스트가 작성된 지침의 간격을 숨길 수 있기 때문입니다.
 
+두 가지 도구가 해당 비교를 자동화합니다. [플러그인](/docs/ko/plugins)에서 제공되는 스킬의 경우, [`claude plugin eval`](/docs/ko/plugin-evals)은 플러그인을 사용하는 경우와 사용하지 않는 경우 각 프롬프트를 격리된 세션에서 실행하고, 정의한 또는 자동으로 작성된 채점자로 점수를 매기며, 임계값 이하에서 0이 아닌 값으로 종료하여 CI에서 이를 제어할 수 있습니다. Claude Code 대화 내에서 단일 스킬을 반복하는 경우, 아래의 스킬 생성자 플러그인은 자체 `evals/evals.json` 형식으로 유사한 루프를 실행합니다. 두 형식은 상호 교환할 수 없습니다.
+
 <h3 id="run-evals-with-skill-creator">
   skill-creator로 평가 실행
 </h3>
@@ -883,7 +890,7 @@ v2.1.199부터 `"off"`는 터미널 `/` 메뉴 외에도 [Remote Control](/docs/
 * `Marketplace "claude-plugins-official" not found`: `/plugin marketplace add anthropics/claude-plugins-official`로 마켓플레이스를 추가한 후 설치를 다시 시도합니다.
 * 플러그인이 [마켓플레이스에서 찾을 수 없음](/docs/ko/discover-plugins#install-plugins): 플러그인 이름을 확인합니다.
 
-설치 요약에서 `Run /reload-plugins to activate.`를 보고하면 해당 명령을 실행하여 현재 세션에서 플러그인의 스킬을 사용할 수 있게 합니다. 그런 다음 Claude에게 기존 스킬을 평가하도록 요청합니다. 예를 들어 `evaluate my summarize-changes skill with skill-creator`입니다. 플러그인은 테스트 케이스 작성을 안내하고 루프를 실행합니다:
+설치 요약에서 `Run /reload-plugins to activate.`를 보고하면 Claude Code가 해당 재로드를 실행합니다. 재로드 시 다음 메시지가 대화를 다시 읽을 것이라는 경고가 표시되면 `/reload-plugins --force`를 실행하여 현재 세션에서 플러그인의 스킬을 사용할 수 있게 합니다. 그런 다음 Claude에게 기존 스킬을 평가하도록 요청합니다. 예를 들어 `evaluate my summarize-changes skill with skill-creator`입니다. 플러그인은 테스트 케이스 작성을 안내하고 루프를 실행합니다:
 
 * **테스트 케이스**: 프롬프트, 입력 파일 및 예상 동작을 스킬 디렉토리 내 `evals/evals.json`에 저장합니다
 * **격리된 실행**: 각 테스트 케이스마다 [서브에이전트](/docs/ko/sub-agents)를 생성하여 각 실행이 깨끗한 컨텍스트로 시작되도록 하고, 토큰 수와 지속 시간을 기록합니다
@@ -1114,6 +1121,8 @@ Claude가 예상대로 스킬을 사용하지 않는 경우:
 4. 스킬이 사용자 호출 가능한 경우 `/skill-name`으로 직접 호출하세요
 
 frontmatter YAML이 잘못된 형식이면 Claude Code는 스킬 본문을 빈 메타데이터로 로드하므로 `/skill-name`은 여전히 작동하지만 Claude는 일치시킬 `description`이 없습니다. `--debug`로 실행하여 파싱 오류를 확인하세요.
+
+스킬이 플러그인에 포함되어 있으면 한 번에 하나씩 확인하는 대신 현실적인 프롬프트에서 얼마나 자주 트리거되는지 측정할 수 있습니다. [`tool_used: Skill` grader](/docs/ko/plugin-evals#create-your-first-eval-suite)를 사용하여 eval 케이스를 작성하고 각 설명 변경 후 `claude plugin eval`로 실행하세요.
 
 frontmatter가 파싱되지 않는 `SKILL.md` 파일을 찾으려면 스킬 디렉토리에서 [`claude plugin validate`](/docs/ko/plugin-marketplaces#validate-a-plugin-or-a-directory-without-a-manifest)를 실행하세요. 예를 들어 프로젝트 스킬의 경우 `claude plugin validate .claude/skills` 또는 개인 스킬의 경우 `claude plugin validate ~/.claude/skills`입니다. Claude Code v2.1.233 이상이 필요합니다.
 
