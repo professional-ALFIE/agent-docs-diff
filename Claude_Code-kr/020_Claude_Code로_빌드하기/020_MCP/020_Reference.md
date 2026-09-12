@@ -54,7 +54,7 @@ MCP 서버가 연결되면 Claude Code에 다음을 요청할 수 있습니다:
     * `Marketplace "claude-plugins-official" not found`: `/plugin marketplace add anthropics/claude-plugins-official`로 마켓플레이스를 추가한 다음 설치를 다시 시도하세요.
     * 플러그인이 [마켓플레이스에서 찾을 수 없음](/docs/ko/discover-plugins#install-plugins): 플러그인 이름을 확인하세요.
 
-    설치 요약을 확인하세요: `Run /reload-plugins to activate.`를 보고하면 해당 명령을 실행하세요.
+    설치 요약에서 `Run /reload-plugins to activate.`를 보고하면 Claude Code가 해당 리로드를 실행합니다. 리로드에서 다음 메시지가 대화를 다시 읽을 것이라고 경고하면 `/reload-plugins --force`를 실행하세요.
   </Step>
 
   <Step title="빌드 스킬 실행">
@@ -104,7 +104,9 @@ claude mcp add --transport http secure-api https://api.example.com/mcp \
   SSE (Server-Sent Events) 전송은 더 이상 사용되지 않습니다. 가능한 경우 HTTP 서버를 사용하세요.
 </Warning>
 
-일부 서비스는 여전히 SSE 엔드포인트만 노출합니다. HTTP 전송과 동일한 명령을 사용하되 `--transport sse`를 사용하세요:
+일부 서비스는 여전히 SSE 엔드포인트만 노출합니다. [HTTP 서버](#option-1-add-a-remote-http-server)와 동일한 `claude mcp add --transport http <name> <url>` 명령으로 추가하세요. Claude Code는 HTTP 전송을 먼저 시도하고 서버가 이를 허용하지 않을 때 SSE로 전환합니다. 자동 전환에는 Claude Code v2.1.265 이상이 필요합니다.
+
+이전 버전에서 또는 SSE를 통해 직접 연결하려면 대신 `--transport sse`를 전달하세요:
 
 ```bash theme={null}
 # 기본 구문
@@ -185,7 +187,7 @@ MCP 서버는 Claude Code에만 해당하지 않으므로 서버의 설정 지�
   URL에서
 </h4>
 
-URL은 서버가 원격임을 의미합니다. `https://` 엔드포인트의 경우 `--transport http`로 추가하거나, 지침에서 엔드포인트가 SSE를 사용한다고 말할 때 `--transport sse`로 추가하세요. `wss://` 엔드포인트의 경우 `--transport`가 `ws`를 허용하지 않으므로 대신 [옵션 4](#option-4-add-a-remote-websocket-server)를 사용하세요:
+URL은 서버가 원격임을 의미합니다. `https://` 엔드포인트의 경우 `--transport http`로 추가하거나, 지침에서 엔드포인트가 SSE를 사용한다고 말할 때 [옵션 2](#option-2-add-a-remote-sse-server)를 따르세요. `wss://` 엔드포인트의 경우 `--transport`가 `ws`를 허용하지 않으므로 대신 [옵션 4](#option-4-add-a-remote-websocket-server)를 사용하세요:
 
 ```bash theme={null}
 claude mcp add --transport http example https://mcp.example.com/mcp
@@ -309,7 +311,7 @@ Claude Code는 또한 추적되지 않은 `.claude/settings.local.json`의 승�
 `/mcp`에서 인증을 완료하고 연결이 여전히 HTTP 상태 또는 전송 오류 코드로 실패하면 Claude Code는 시도한 URL의 코드와 원점을 메시지에 추가합니다. 원점은 체계 및 호스트, 그리고 URL이 이름을 지정할 때 포트입니다. 예: `https://mcp.example.com`.
 
 * 경로 및 쿼리는 해당 메시지에 나타나지 않습니다.
-* Claude Code는 `${VAR}` 확장 후 원점을 가져오므로 변수에서 오는 호스트가 확장됩니다.
+* 로컬, 프로젝트, 사용자 [범위](#mcp-installation-scopes) 또는 관리되는 MCP 구성의 서버의 경우, 원점은 해당 구성에 작성된 호스트를 표시하므로 호스트의 `${VAR}` 참조는 메시지에서 확장되지 않습니다.
 * 상태 또는 오류 코드가 없는 실패의 경우 Claude Code는 원점 없이 오류 텍스트를 표시합니다.
 
 URL이 비어 있는 원격 서버의 구성은 `/mcp`, `claude mcp list` 및 [`/plugin`](/docs/ko/plugins) 관리자에서 `not configured`로 표시되며, Claude Code는 연결을 시도하지 않습니다. 플러그인은 나중에 구성할 커넥터에 대한 자리 표시자 항목을 포함할 수 있으므로 Claude Code가 오류 또는 설정 문제로 보고하지 않습니다. `/mcp`의 서버 세부 정보 보기에는 `No URL configured for this server`가 표시됩니다. 연결하려면 항목의 `url`을 설정하세요. v2.1.208 이전에는 Claude Code가 빈 `url`을 재연결 프롬프트와 함께 구성 문제로 보고했습니다.
@@ -347,7 +349,7 @@ Claude Code는 아래의 구성 문제에 대해 경고합니다. 각 항목은 
 
 서버를 토글하면 Claude Code는 `~/.claude.json`의 프로젝트당 선택을 기록합니다. 이는 분리된 서버 집합을 포함하는 두 목록 중 하나입니다:
 
-* `disabledMcpServers`: 사용자 구성 서버, 플러그인 서버, 조직이 [관리되는 설정을 통해 제공](/docs/ko/managed-mcp#provide-servers-through-managed-settings)하는 서버, Claude Code가 [자체적으로 가져오는](#how-connectors-reach-claude-code) claude.ai 커넥터 및 기본적으로 켜져 있는 기본 제공 서버에 대한 옵트아웃 목록입니다. Claude Code는 여기에 나열한 서버에 연결하지 않습니다. `/mcp` 토글로 claude.ai 커넥터를 비활성화할 때 Claude Code는 이를 표시 이름 (예: `claude.ai Slack`) 아래 이 목록에 씁니다.
+* `disabledMcpServers`: 사용자 구성 서버, 플러그인 서버, 조직이 [관리되는 설정을 통해 제공](/docs/ko/managed-mcp#provide-servers-through-managed-settings)하는 서버, Claude Code가 [자체적으로 가져오는](#how-connectors-reach-claude-code) claude.ai 커넥터 및 기본적으로 켜져 있는 기본 제공 서버에 대한 옵트아웃 목록입니다. Claude Code는 여기에 나열한 서버에 연결하지 않습니다. `/mcp` 토글로 [claude.ai 커넥터를 비활성화](#disable-claude-ai-connectors)할 때 Claude Code는 이를 표시 이름 (예: `claude.ai Slack`) 아래 이 목록에 씁니다.
 * `enabledMcpServers`: `computer-use`와 같이 기본적으로 꺼져 있는 기본 제공 서버에 대한 옵트인 목록입니다. Claude Code는 여기에 나열할 때만 기본 꺼짐 서버에 연결합니다.
 
 Claude Code는 각 서버에 대해 정확히 두 목록 중 하나를 참조하므로 어느 목록도 다른 목록을 재정의하지 않습니다. 일반 서버를 `enabledMcpServers`에 추가하거나 기본 꺼짐 기본 제공 서버를 `disabledMcpServers`에 추가하면 Claude Code는 항목을 무시합니다.
@@ -362,7 +364,7 @@ Claude Code는 두 클라이언트 런타임 중 하나를 통해 MCP 서버에 
 
 Claude Code v2.1.232 이상에서 Claude Code는 v2 런타임을 사용합니다. 시작할 때마다 런타임을 선택하고 종료할 때까지 유지합니다. 다음을 실행할 때 v1을 사용합니다:
 
-* Amazon Bedrock, Claude Platform on AWS, Google Cloud의 Agent Platform 또는 Microsoft Foundry에서. 호스트 플랫폼이 Claude Code를 포함하고 [`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`](/docs/ko/env-vars)를 설정하지 않는 경우는 제외
+* Amazon Bedrock, Claude Platform on AWS, Google Cloud의 Agent Platform 또는 Microsoft Foundry에서. Claude Code를 내장한 호스트 플랫폼이 [`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`](/docs/ko/env-vars)를 설정한 경우는 제외
 * [Claude 앱 게이트웨이](/docs/ko/claude-apps-gateway)를 통해 로그인
 * [기능 플래그 가져오기 꺼짐](/docs/ko/env-vars#features-that-need-feature-flag-fetching)
 
@@ -373,7 +375,7 @@ v2에서 Claude Code는 또한:
 * 더 새로운 개정에 연결되는 [채널](#push-messages-with-channels) 서버를 등록하지 않습니다. 해당 개정은 채널 메시지를 전달할 수 없기 때문입니다.
 * 인증 응답이 예상치 못한 발급자의 이름을 지정하는 [MCP OAuth 로그인](#authenticate-with-remote-mcp-servers)을 실패합니다.
 
-Anthropic은 기능 플래그 Claude Code가 가져오는 특정 서버를 더 이전 프로토콜에 유지하거나 해당 스트림에서 제외할 수 있습니다. [웹의 Claude Code](/docs/ko/cloud-environments#network-access) 세션에서 Claude Code는 [`MCP_PROTOCOL_NEGOTIATION`](/docs/ko/env-vars)을 `auto`로 설정한 경우에만 MCP 커넥터에 묻습니다.
+Anthropic은 기능 플래그 Claude Code가 가져오는 특정 서버를 더 이전 프로토콜에 유지하거나 해당 스트림에서 제외할 수 있습니다.
 
 런타임을 직접 선택하려면 [`MCP_SDK_GENERATION`](/docs/ko/env-vars)을 `v1` 또는 `v2`로 설정하세요. Claude Code가 묻는지 결정하려면 [`MCP_PROTOCOL_NEGOTIATION`](/docs/ko/env-vars)을 `auto` 또는 `legacy`로 설정하세요. Claude Code가 기본적으로 v1을 사용하는 경우, `v2`를 고정해도 묻지 않으므로 `auto`도 설정하세요.
 
@@ -409,7 +411,7 @@ Claude Code는 세션 중에 연결이 끊어진 원격 서버를 다시 연결�
 Claude Code는 지수 백오프를 사용하여 연결이 끊어진 원격 서버를 다시 연결합니다: 최대 5번의 시도, 1초 지연으로 시작하여 매번 두 배씩 증가합니다. 보이는 것은 Claude Code를 실행하는 방식에 따라 다릅니다:
 
 * **대화형 세션**: `/mcp`는 Claude Code가 재연결하는 동안 서버를 보류 중으로 표시합니다. 5번의 실패 시도 후 Claude Code는 서버를 실패로 표시하거나 서버가 다시 인증이 필요할 때 인증 필요로 표시합니다. `/mcp`에서 수동으로 재시도할 수 있습니다.
-* **[`claude -p`](/docs/ko/headless) 실행 및 [Agent SDK](/docs/ko/agent-sdk/overview) 세션**: Claude Code는 동일한 일정으로 재연결하며, `/mcp` 패널이 없어 시도를 표시합니다.
+* **[`claude -p`](/docs/ko/headless) 실행 및 [Agent SDK](/docs/ko/agent-sdk/overview) 세션**: Claude Code는 동일한 일정으로 재연결하지만, 시도를 표시할 `/mcp` 패널은 없습니다.
 
 <h4 id="failed-first-connections">
   실패한 첫 연결
@@ -537,7 +539,7 @@ MCP 서버에 대한 도구 호출이 유휴 윈도우 동안 응답 및 진행 
 
 * **자동 라이프사이클**: 서버는 다음 지점에서 연결 및 연결 해제됩니다:
   * 세션 시작 시 Claude Code는 활성화된 플러그인의 서버를 자동으로 연결합니다. `/mcp`에서 이전에 사용한 원격 (HTTP 또는 SSE) 플러그인 서버는 [`cached` 상태](#server-status-detail)를 대신 표시할 수 있습니다. Claude Code는 Claude가 도구 중 하나를 처음 호출할 때 연결합니다.
-  * 세션 중에 플러그인을 활성화하거나 비활성화하면 `/reload-plugins`를 실행하여 MCP 서버를 연결하거나 연결 해제합니다. 대화형 터미널이 없는 세션에서 다시 로드는 플러그인 MCP 서버를 연결하거나 연결 해제하지 않습니다. 이 변경 사항은 다음 세션에서 적용됩니다.
+  * 세션 중에 플러그인을 활성화하거나 비활성화하면 Claude Code는 변경이 적용될 때 MCP 서버를 연결하거나 연결 해제합니다. [플러그인 변경 사항을 다시 시작하지 않고 적용](/docs/ko/discover-plugins#apply-plugin-changes-without-restarting)은 그 시기를 설명합니다. 대화형 터미널이 없는 세션에서 `/reload-plugins`는 플러그인 MCP 서버를 연결하거나 연결 해제하지 않습니다. 이 변경 사항은 다음 세션에서 적용됩니다.
   * 다시 로드할 때 Claude Code는 구성이 변경되지 않은 플러그인 서버의 라이브 연결을 유지하고, 이름을 지정하지 않고 [Agent SDK에서 세션의 MCP 서버 목록을 바꿀 때](/docs/ko/agent-sdk/typescript#mcpsetserversresult) 동일하게 수행합니다.
   * v2.1.246 이상에서 [`/cd`로 세션을 이동](/docs/ko/permissions#move-the-session-to-another-directory)할 때 Claude Code는 새 디렉터리의 설정이 활성화하는 플러그인의 서버를 연결하고 더 이상 활성화되지 않는 플러그인의 서버를 연결 해제합니다. 이동 후 `/reload-plugins`를 실행할 필요가 없습니다.
   * [웹 세션](/docs/ko/claude-code-on-the-web)에서 아직 연결되지 않은 플러그인 서버에 대한 MCP 호출 (예: 유휴 세션이 깨어난 직후)은 서버를 요청 시 시작하고 연결을 기다립니다.
@@ -636,7 +638,7 @@ claude mcp add --transport http shared-server --scope project https://example.co
 
 보안상의 이유로 Claude Code는 대화형 세션에서 `.mcp.json` 파일의 프로젝트 범위 서버를 사용하기 전에 승인을 요청합니다. 이러한 승인 선택을 재설정하려면 `claude mcp reset-project-choices`를 실행하세요.
 
-`claude -p` 실행, [Agent SDK](/docs/ko/headless) 세션 및 [클라우드 세션](/docs/ko/claude-code-on-the-web)에서 Claude Code는 해당 프롬프트를 표시할 수 없습니다. 프로젝트 범위 서버를 묻지 않고 로드합니다. Claude Code는 또한 [`skipDangerousModePermissionPrompt`](/docs/ko/settings-reference#skipdangerousmodepermissionprompt)가 설정된 `bypassPermissions` 모드에서 시작한 세션에서 프롬프트를 건너뜁니다. 어쨌든 서버를 제외하려면:
+`claude -p` 실행, [Agent SDK](/docs/ko/headless) 세션 및 [클라우드 세션](/docs/ko/claude-code-on-the-web)에서 Claude Code는 해당 프롬프트를 표시할 수 없습니다. 프로젝트 범위 서버를 묻지 않고 로드합니다. Claude Code는 또한 [`skipDangerousModePermissionPrompt`](/docs/ko/settings-reference#skipdangerousmodepermissionprompt)가 사용자 설정 또는 관리형 설정에 설정된 `bypassPermissions` 모드에서 시작한 세션에서 프롬프트를 건너뜁니다. 어쨌든 서버를 제외하려면:
 
 * [`disabledMcpjsonServers`](/docs/ko/settings-reference#disabledmcpjsonservers)에 추가하면 모든 권한 모드에서 차단됩니다.
 * [`--setting-sources`](/docs/ko/cli-reference#cli-flags)를 사용하거나 SDK의 `settingSources` 옵션으로 프로젝트 설정을 완전히 제외합니다.
@@ -780,6 +782,7 @@ Claude Code는 서버가 `401 Unauthorized` 또는 `403 Forbidden`으로 응답�
 * 로그인하지 않은 서버의 경우 두 상태 코드 모두 `/mcp`에서 서버를 플래그하여 OAuth 흐름을 완료할 수 있습니다.
 * [claude.ai 커넥터](#use-mcp-servers-from-claude-ai)의 경우 claude.ai가 세션 토큰을 거부하여 발생한 `401`은 커넥터를 플래그하지 않습니다. 커넥터를 다시 인증해도 로그인을 수정할 수 없기 때문입니다. Claude Code는 대신 [세션 토큰 거부 상태](/docs/ko/errors#claude-ai-rejected-the-session-token)를 표시합니다.
 * `Authorization` 헤더를 구성한 서버의 경우 `headers`에서 또는 [`headersHelper`](#use-dynamic-headers-for-custom-authentication)를 통해 연결 중에 `401` 또는 `403`이 발생하면 서버를 플래그하지 않습니다. 수정할 자격 증명은 구성한 것이기 때문입니다. Claude Code는 대신 연결이 실패한 것으로 보고합니다.
+* [클라우드 세션에 전달된 커넥터](#how-connectors-reach-claude-code)의 경우 Claude Code는 로그인 흐름을 실행하지 않습니다. 세션의 프록시가 claude.ai에서 부여한 인증으로 커넥터에 인증하기 때문입니다. 거기서 커넥터를 다시 인증해야 할 때는 세션에서가 아니라 [claude.ai/customize/connectors](https://claude.ai/customize/connectors)에서 다시 연결합니다.
 
 이미 로그인한 OAuth 서버에 대한 요청이 `401 Unauthorized`를 반환하면 Claude Code는 저장된 토큰을 새로 고치고 재연결한 후 요청을 한 번 재시도합니다. 해당 재시도도 실패한 경우에만 `/mcp`에서 서버를 플래그합니다. v2.1.206 이전에는 네트워크 오류와 같은 일시적인 이유로 토큰 새로 고침이 실패하면 새로 고침 토큰이 여전히 유효했음에도 불구하고 OAuth 서버를 세션의 나머지 기간 동안 인증이 필요한 것으로 플래그했습니다.
 
@@ -925,6 +928,8 @@ claude mcp add --transport http \
   팁:
 
   * 클라이언트 시크릿은 구성에 저장되지 않고 시스템 키체인 (macOS) 또는 자격 증명 파일에 안전하게 저장됩니다
+  * 서버를 추가할 때만 클라이언트 시크릿을 설정할 수 있습니다. `claude mcp login` 또는 `/mcp`에서 인증할 때 Claude Code는 저장된 시크릿을 사용하며 시크릿을 요청하거나 `MCP_CLIENT_SECRET`을 읽지 않습니다
+  * 나중에 시크릿을 추가하거나 변경하려면 `claude mcp remove <name>`으로 서버를 제거한 다음 `--client-secret`과 동일한 `--scope`로 다시 추가합니다
   * 서버가 시크릿이 없는 공개 OAuth 클라이언트를 사용하는 경우 `--client-secret` 없이 `--client-id`만 사용합니다
   * 이러한 플래그는 HTTP 및 SSE 전송에만 적용됩니다. stdio 서버에는 영향을 주지 않습니다
   * `claude mcp get <name>`을 사용하여 OAuth 자격 증명이 서버에 대해 구성되었는지 확인합니다
@@ -1330,6 +1335,7 @@ MCP 도구가 대용량 출력을 생성할 때, Claude Code는 토큰 사용량
 * **구성 가능한 제한**: `MAX_MCP_OUTPUT_TOKENS` 환경 변수를 사용하여 최대 허용 MCP 출력 토큰을 조정할 수 있습니다
 * **기본 제한**: 기본 최댓값은 25,000 토큰입니다
 * **범위**: 환경 변수는 자체 제한을 선언하지 않은 도구에 적용됩니다. [`anthropic/maxResultSizeChars`](#raise-the-limit-for-a-specific-tool)를 설정한 도구는 `MAX_MCP_OUTPUT_TOKENS`가 무엇으로 설정되어 있든 관계없이 텍스트 콘텐츠에 대해 해당 값을 대신 사용합니다. 이미지 데이터를 반환하는 도구는 여전히 `MAX_MCP_OUTPUT_TOKENS`의 적용을 받습니다
+* **제한 초과**: 이미지 콘텐츠가 없는 결과가 제한을 초과하면, Claude Code는 이를 파일에 저장하고 대화에서 파일 경로를 이름으로 하는 메시지로 대체하므로, Claude는 필요할 때 파일을 읽습니다. 파일은 [`~/.claude/projects/`](/docs/ko/claude-directory#cleaned-up-automatically) 아래의 세션의 `tool-results` 디렉터리에 저장됩니다.
 
 대용량 출력을 생성하는 도구의 제한을 늘리려면:
 
