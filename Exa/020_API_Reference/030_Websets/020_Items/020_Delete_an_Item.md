@@ -71,93 +71,63 @@ paths:
 components:
   schemas:
     WebsetItem:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Webset Item
-        object:
           type: string
+        object:
           const: webset_item
           default: webset_item
+          type: string
         source:
-          type:
-            - string
           enum:
             - search
             - import
           description: The source of the Item
+          type: string
         sourceId:
-          type:
-            - string
           description: The unique identifier for the source
+          type: string
         sourceEntityId:
-          type:
-            - string
           description: >-
             The original identifier used to resolve this item (e.g., email,
             name, or URL). Only relevant when the source is import.
+          type: string
         scopeId:
-          type:
-            - string
           description: >-
             The import that sourced this item, when the item came from a scoped
             search with evaluate enabled on the import.
+          type: string
         websetId:
-          type:
-            - string
           description: The unique identifier for the Webset this Item belongs to.
+          type: string
         properties:
+          description: The properties of the Item
           oneOf:
             - $ref: '#/components/schemas/WebsetItemPersonProperties'
-              type:
-                - object
-              title: Person
             - $ref: '#/components/schemas/WebsetItemCompanyProperties'
-              type:
-                - object
-              title: Company
             - $ref: '#/components/schemas/WebsetItemArticleProperties'
-              type:
-                - object
-              title: Article
             - $ref: '#/components/schemas/WebsetItemResearchPaperProperties'
-              type:
-                - object
-              title: Research Paper
             - $ref: '#/components/schemas/WebsetItemCustomProperties'
-              type:
-                - object
-              title: Custom
-          description: The properties of the Item
         evaluations:
-          type:
-            - array
           items:
             $ref: '#/components/schemas/WebsetItemEvaluation'
-            type:
-              - object
           description: The criteria evaluations of the item
-        enrichments:
           type: array
+        enrichments:
           items:
             $ref: '#/components/schemas/EnrichmentResult'
-            type:
-              - object
+          type: array
           description: The enrichments results of the Webset item
           nullable: true
         createdAt:
-          type:
-            - string
           format: date-time
           description: The date and time the item was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: The date and time the item was last updated
+          type: string
       required:
         - id
         - object
@@ -169,31 +139,21 @@ components:
         - enrichments
         - createdAt
         - updatedAt
+      type: object
     WebsetItemPersonProperties:
-      type:
-        - object
       properties:
-        type:
-          type: string
-          const: person
-          default: person
         url:
-          type:
-            - string
           format: uri
           description: The URL of the person profile
+          type: string
         description:
-          type:
-            - string
           description: Short description of the relevance of the person
+          type: string
         person:
-          type:
-            - object
           properties:
             name:
-              type:
-                - string
               description: The name of the person
+              type: string
             location:
               type: string
               description: The location of the person
@@ -203,12 +163,10 @@ components:
               description: The current work position of the person
               nullable: true
             company:
-              type: object
               properties:
                 name:
-                  type:
-                    - string
                   description: The name of the company
+                  type: string
                 location:
                   type: string
                   description: The location the person is working at the company
@@ -216,19 +174,16 @@ components:
               required:
                 - name
                 - location
+              type: object
               title: WebsetItemPersonCompanyPropertiesFields
               nullable: true
             pictureUrl:
-              type: string
               format: uri
+              type: string
               description: The image URL of the person
               nullable: true
             workHistory:
-              type:
-                - array
               items:
-                type:
-                  - object
                 properties:
                   title:
                     type: string
@@ -239,7 +194,6 @@ components:
                     description: Work location
                     nullable: true
                   dates:
-                    type: object
                     properties:
                       from:
                         type: string
@@ -252,11 +206,11 @@ components:
                     required:
                       - from
                       - to
+                    type: object
                     title: WebsetItemPersonDateRange
                     description: Employment dates
                     nullable: true
                   company:
-                    type: object
                     properties:
                       id:
                         type: string
@@ -274,6 +228,7 @@ components:
                       - id
                       - name
                       - linkedinUrl
+                    type: object
                     title: WebsetItemPersonWorkHistoryCompanyRef
                     nullable: true
                 required:
@@ -282,20 +237,17 @@ components:
                   - dates
                   - company
                 title: WebsetItemPersonWorkHistoryEntry
+                type: object
               description: The work history of the person
+              type: array
             educationHistory:
-              type:
-                - array
               items:
-                type:
-                  - object
                 properties:
                   degree:
                     type: string
                     description: Degree obtained
                     nullable: true
                   dates:
-                    type: object
                     properties:
                       from:
                         type: string
@@ -308,11 +260,11 @@ components:
                     required:
                       - from
                       - to
+                    type: object
                     title: WebsetItemPersonDateRange
                     description: Education dates
                     nullable: true
                   institution:
-                    type: object
                     properties:
                       id:
                         type: string
@@ -330,6 +282,7 @@ components:
                       - id
                       - name
                       - linkedinUrl
+                    type: object
                     title: WebsetItemPersonEducationInstitutionRef
                     nullable: true
                 required:
@@ -337,7 +290,9 @@ components:
                   - dates
                   - institution
                 title: WebsetItemPersonEducationHistoryEntry
+                type: object
               description: The education history of the person
+              type: array
           required:
             - name
             - location
@@ -347,40 +302,36 @@ components:
             - workHistory
             - educationHistory
           title: WebsetItemPersonPropertiesFields
+          type: object
+        type:
+          type: string
+          const: person
+          default: person
       required:
         - type
         - url
         - description
         - person
+      title: Person
+      type: object
     WebsetItemCompanyProperties:
-      type:
-        - object
       properties:
-        type:
-          type: string
-          const: company
-          default: company
         url:
-          type:
-            - string
           format: uri
           description: The URL of the company website
+          type: string
         description:
-          type:
-            - string
           description: Short description of the relevance of the company
+          type: string
         content:
           type: string
           description: The text content of the company website
           nullable: true
         company:
-          type:
-            - object
           properties:
             name:
-              type:
-                - string
               description: The name of the company
+              type: string
             location:
               type: string
               description: The main location of the company
@@ -398,8 +349,8 @@ components:
               description: A short description of the company
               nullable: true
             logoUrl:
-              type: string
               format: uri
+              type: string
               description: The logo URL of the company
               nullable: true
             foundedYear:
@@ -407,7 +358,6 @@ components:
               description: The year the company was founded
               nullable: true
             headquarters:
-              type: object
               properties:
                 address:
                   type: string
@@ -440,11 +390,11 @@ components:
                 - postalCode
                 - country
                 - countryCode
+              type: object
               title: WebsetItemCompanyHeadquarters
               description: The structured headquarters address of the company
               nullable: true
             financials:
-              type: object
               properties:
                 revenueAnnual:
                   type: number
@@ -455,7 +405,6 @@ components:
                   description: The total funding raised by the company (USD)
                   nullable: true
                 fundingLatestRound:
-                  type: object
                   properties:
                     name:
                       type: string
@@ -473,6 +422,7 @@ components:
                     - name
                     - date
                     - amount
+                  type: object
                   title: WebsetItemCompanyFundingRound
                   description: The latest funding round
                   nullable: true
@@ -480,11 +430,11 @@ components:
                 - revenueAnnual
                 - fundingTotal
                 - fundingLatestRound
+              type: object
               title: WebsetItemCompanyFinancials
               description: Financial information about the company
               nullable: true
             webTraffic:
-              type: object
               properties:
                 visitsMonthly:
                   type: number
@@ -497,6 +447,7 @@ components:
               required:
                 - visitsMonthly
                 - uniqueVisitors
+              type: object
               title: WebsetItemCompanyWebTraffic
               description: Web traffic metrics for the company
               nullable: true
@@ -512,36 +463,33 @@ components:
             - financials
             - webTraffic
           title: WebsetItemCompanyPropertiesFields
+          type: object
+        type:
+          type: string
+          const: company
+          default: company
       required:
         - type
         - url
         - description
         - content
         - company
+      title: Company
+      type: object
     WebsetItemArticleProperties:
-      type:
-        - object
       properties:
-        type:
-          type: string
-          const: article
-          default: article
         url:
-          type:
-            - string
           format: uri
           description: The URL of the article
+          type: string
         description:
-          type:
-            - string
           description: Short description of the relevance of the article
+          type: string
         content:
           type: string
           description: The text content for the article
           nullable: true
         article:
-          type:
-            - object
           properties:
             title:
               type: string
@@ -560,36 +508,33 @@ components:
             - author
             - publishedAt
           title: WebsetItemArticlePropertiesFields
+          type: object
+        type:
+          type: string
+          const: article
+          default: article
       required:
         - type
         - url
         - description
         - content
         - article
+      title: Article
+      type: object
     WebsetItemResearchPaperProperties:
-      type:
-        - object
       properties:
-        type:
-          type: string
-          const: research_paper
-          default: research_paper
         url:
-          type:
-            - string
           format: uri
           description: The URL of the research paper
+          type: string
         description:
-          type:
-            - string
           description: Short description of the relevance of the research paper
+          type: string
         content:
           type: string
           description: The text content of the research paper
           nullable: true
         researchPaper:
-          type:
-            - object
           properties:
             title:
               type: string
@@ -608,36 +553,33 @@ components:
             - author
             - publishedAt
           title: WebsetItemResearchPaperPropertiesFields
+          type: object
+        type:
+          type: string
+          const: research_paper
+          default: research_paper
       required:
         - type
         - url
         - description
         - content
         - researchPaper
+      title: Research Paper
+      type: object
     WebsetItemCustomProperties:
-      type:
-        - object
       properties:
-        type:
-          type: string
-          const: custom
-          default: custom
         url:
-          type:
-            - string
           format: uri
           description: The URL of the Item
+          type: string
         description:
-          type:
-            - string
           description: Short description of the Item
+          type: string
         content:
           type: string
           description: The text content of the Item
           nullable: true
         custom:
-          type:
-            - object
           properties:
             title:
               type: string
@@ -656,39 +598,38 @@ components:
             - author
             - publishedAt
           title: WebsetItemCustomPropertiesFields
+          type: object
+        type:
+          type: string
+          const: custom
+          default: custom
       required:
         - type
         - url
         - description
         - content
         - custom
+      title: Custom
+      type: object
     WebsetItemEvaluation:
-      type:
-        - object
       properties:
         criterion:
-          type:
-            - string
           description: The description of the criterion
+          type: string
         reasoning:
-          type:
-            - string
           description: The reasoning for the result of the evaluation
+          type: string
         satisfied:
-          type:
-            - string
           enum:
             - 'yes'
             - 'no'
             - unclear
           description: The satisfaction of the criterion
+          type: string
         references:
           default: []
-          type:
-            - array
+          description: The references used to generate the result.
           items:
-            type:
-              - object
             properties:
               title:
                 type: string
@@ -699,44 +640,39 @@ components:
                 description: The relevant snippet of the reference content
                 nullable: true
               url:
-                type:
-                  - string
                 format: uri
                 description: The URL of the reference
+                type: string
             required:
               - title
               - snippet
               - url
-          description: The references used to generate the result.
+            type: object
+          type: array
       required:
         - criterion
         - reasoning
         - satisfied
+      type: object
     EnrichmentResult:
-      type:
-        - object
       properties:
         object:
-          type: string
           const: enrichment_result
           default: enrichment_result
+          type: string
         status:
-          type:
-            - string
           enum:
             - pending
             - completed
             - canceled
           description: The status of the enrichment result.
+          type: string
         format:
           $ref: '#/components/schemas/WebsetEnrichmentFormat'
-          type:
-            - string
         result:
-          type: array
           items:
-            type:
-              - string
+            type: string
+          type: array
           description: The result of the enrichment.
           nullable: true
         reasoning:
@@ -744,11 +680,7 @@ components:
           description: The reasoning for the result when an Agent is used.
           nullable: true
         references:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               title:
                 type: string
@@ -759,19 +691,19 @@ components:
                 description: The relevant snippet of the reference content
                 nullable: true
               url:
-                type:
-                  - string
                 format: uri
                 description: The URL of the reference
+                type: string
             required:
               - title
               - snippet
               - url
+            type: object
           description: The references used to generate the result.
+          type: array
         enrichmentId:
-          type:
-            - string
           description: The id of the Enrichment that generated the result
+          type: string
       required:
         - object
         - status
@@ -780,8 +712,8 @@ components:
         - reasoning
         - references
         - enrichmentId
+      type: object
     WebsetEnrichmentFormat:
-      type: string
       enum:
         - text
         - date
@@ -790,6 +722,7 @@ components:
         - email
         - phone
         - url
+      type: string
   securitySchemes:
     apiKey:
       type: apiKey
