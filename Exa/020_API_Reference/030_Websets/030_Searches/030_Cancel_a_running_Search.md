@@ -73,20 +73,15 @@ paths:
 components:
   schemas:
     WebsetSearch:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the search
-        object:
           type: string
+        object:
           const: webset_search
           default: webset_search
+          type: string
         status:
-          type:
-            - string
           enum:
             - created
             - pending
@@ -95,16 +90,15 @@ components:
             - canceled
           description: The status of the search
           title: WebsetSearchStatus
+          type: string
         websetId:
-          type:
-            - string
           description: The unique identifier for the Webset this search belongs to
+          type: string
         query:
-          description: The query used to create the search.
-          type:
-            - string
           minLength: 1
           maxLength: 5000
+          description: The query used to create the search.
+          type: string
         entity:
           $ref: '#/components/schemas/Entity'
           description: >-
@@ -115,43 +109,38 @@ components:
             select the best entity based on the query.
           nullable: true
         criteria:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               description:
-                type:
-                  - string
                 minLength: 1
                 maxLength: 1000
                 description: The description of the criterion
+                type: string
               successRate:
-                type:
-                  - number
                 minimum: 0
                 maximum: 100
                 description: >-
                   Value between 0 and 100 representing the percentage of results
                   that meet the criterion.
+                type: number
             required:
               - description
               - successRate
+            type: object
           description: >-
             The criteria the search will use to evaluate the results. If not
             provided, we will automatically generate them for you.
+          type: array
         count:
-          type:
-            - number
           minimum: 1
           description: >-
             The number of results the search will attempt to find. The actual
             number of results may be less than this number depending on the
             search complexity.
+          type: number
         maxPeoplePerCompany:
-          type: integer
           minimum: 1
+          type: integer
           description: >-
             The soft cap requested for matching people from the same current
             employer company, or null when no cap was requested.
@@ -159,8 +148,6 @@ components:
         behavior:
           $ref: '#/components/schemas/WebsetSearchBehavior'
           default: override
-          type:
-            - string
           description: >-
             The behavior of the search when it is added to a Webset.
 
@@ -173,64 +160,52 @@ components:
             Webset. Any Items that don't match the new criteria will be
             discarded.
         exclude:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               source:
-                type:
-                  - string
                 enum:
                   - import
                   - webset
+                type: string
               id:
-                type:
-                  - string
+                type: string
             required:
               - source
               - id
+            type: object
           description: >-
             Sources (existing imports or websets) used to omit certain results
             to be found during the search.
+          type: array
         scope:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               source:
-                type:
-                  - string
                 enum:
                   - import
                   - webset
+                type: string
               id:
-                type:
-                  - string
+                type: string
               relationship:
-                type:
-                  - object
                 properties:
                   definition:
-                    type:
-                      - string
                     description: >-
                       What the relationship of the entities you hope to find is
                       relative to the entities contained in the provided source.
+                    type: string
                   limit:
-                    type:
-                      - number
                     minimum: 1
                     maximum: 10
+                    type: number
                 required:
                   - definition
                   - limit
+                type: object
             required:
               - source
               - id
+            type: object
           description: >-
             The scope of the search. By default, there is no scope - thus
             searching the web.
@@ -238,24 +213,20 @@ components:
 
             If provided during creation, the search will only be performed on
             the sources provided.
+          type: array
         progress:
-          type:
-            - object
           properties:
             found:
-              type:
-                - number
               description: The number of results found so far
+              type: number
             analyzed:
-              type:
-                - number
               description: The number of results analyzed so far
+              type: number
             completion:
-              type:
-                - number
               minimum: 0
               maximum: 100
               description: The completion percentage of the search
+              type: number
             timeLeft:
               type: number
               description: The estimated time remaining in seconds, null if unknown
@@ -266,51 +237,45 @@ components:
             - completion
             - timeLeft
           description: The progress of the search
-        recall:
           type: object
+        recall:
           properties:
             expected:
-              type:
-                - object
               properties:
                 total:
-                  type:
-                    - number
                   description: The estimated total number of potential matches
+                  type: number
                 confidence:
-                  type:
-                    - string
                   enum:
                     - high
                     - medium
                     - low
                   description: The confidence in the estimate
+                  type: string
                 bounds:
-                  type:
-                    - object
                   properties:
                     min:
-                      type:
-                        - number
                       description: The minimum estimated total number of potential matches
+                      type: number
                     max:
-                      type:
-                        - number
                       description: The maximum estimated total number of potential matches
+                      type: number
                   required:
                     - min
                     - max
+                  type: object
               required:
                 - total
                 - confidence
                 - bounds
+              type: object
             reasoning:
-              type:
-                - string
               description: The reasoning for the estimate
+              type: string
           required:
             - expected
             - reasoning
+          type: object
           description: >-
             Recall metrics for the search, null if not yet computed or
             requested.
@@ -318,37 +283,34 @@ components:
         metadata:
           default: {}
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         canceledAt:
-          type: string
           format: date-time
+          type: string
           description: The date and time the search was canceled
           nullable: true
         canceledReason:
           $ref: '#/components/schemas/WebsetSearchCanceledReason'
-          type: string
           description: The reason the search was canceled
           nullable: true
         createdAt:
-          type:
-            - string
           format: date-time
           description: The date and time the search was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: The date and time the search was updated
+          type: string
       required:
         - id
         - object
-        - websetId
         - status
+        - websetId
         - query
         - entity
         - criteria
@@ -362,37 +324,26 @@ components:
         - canceledReason
         - createdAt
         - updatedAt
+      type: object
     Entity:
       oneOf:
         - $ref: '#/components/schemas/CompanyEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/PersonEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ArticleEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ResearchPaperEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/CustomEntity'
-          type:
-            - object
     WebsetSearchBehavior:
-      type: string
       enum:
         - override
         - append
-    WebsetSearchCanceledReason:
       type: string
+    WebsetSearchCanceledReason:
       enum:
         - webset_deleted
         - webset_canceled
         - out_of_credits
+      type: string
     CompanyEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -401,9 +352,8 @@ components:
       required:
         - type
       title: Company
+      type: object
     PersonEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -412,9 +362,8 @@ components:
       required:
         - type
       title: Person
+      type: object
     ArticleEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -423,9 +372,8 @@ components:
       required:
         - type
       title: Article
+      type: object
     ResearchPaperEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -434,23 +382,22 @@ components:
       required:
         - type
       title: Research Paper
+      type: object
     CustomEntity:
-      type:
-        - object
       properties:
+        description:
+          minLength: 2
+          maxLength: 200
+          type: string
         type:
           type: string
           const: custom
           default: custom
-        description:
-          type:
-            - string
-          minLength: 2
-          maxLength: 200
       required:
         - type
         - description
       title: Custom
+      type: object
   securitySchemes:
     apiKey:
       type: apiKey
