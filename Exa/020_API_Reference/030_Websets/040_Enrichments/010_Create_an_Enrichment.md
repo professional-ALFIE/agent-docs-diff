@@ -66,20 +66,21 @@ paths:
 components:
   schemas:
     CreateEnrichmentParameters:
-      type:
-        - object
       properties:
         description:
-          type:
-            - string
           minLength: 1
           maxLength: 5000
           description: >-
             Provide a description of the enrichment task you want to perform to
             each Webset Item.
+          type: string
         format:
-          type:
-            - string
+          description: >-
+            Format of the enrichment response.
+
+
+            We automatically select the best format based on the description. If
+            you want to explicitly specify the format, you can do so here.
           enum:
             - text
             - date
@@ -88,65 +89,53 @@ components:
             - email
             - phone
             - url
-          description: >-
-            Format of the enrichment response.
-
-
-            We automatically select the best format based on the description. If
-            you want to explicitly specify the format, you can do so here.
+          type: string
         options:
-          type:
-            - array
-          items:
-            type:
-              - object
-            properties:
-              label:
-                type:
-                  - string
-                description: The label of the option
-            required:
-              - label
-          minItems: 1
-          maxItems: 150
           description: >-
             When the format is options, the different options for the enrichment
             agent to choose from.
+          minItems: 1
+          maxItems: 150
+          items:
+            properties:
+              label:
+                description: The label of the option
+                type: string
+            required:
+              - label
+            type: object
+          type: array
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
       required:
         - description
+      type: object
     WebsetEnrichment:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the enrichment
-        object:
           type: string
+        object:
           const: webset_enrichment
           default: webset_enrichment
+          type: string
         status:
-          type:
-            - string
           enum:
             - pending
             - canceled
             - completed
           description: The status of the enrichment
           title: WebsetEnrichmentStatus
+          type: string
         websetId:
-          type:
-            - string
           description: The unique identifier for the Webset this enrichment belongs to.
+          type: string
         title:
           type: string
           description: >-
@@ -157,28 +146,24 @@ components:
             format.
           nullable: true
         description:
-          type:
-            - string
           description: >-
             The description of the enrichment task provided during the creation
             of the enrichment.
+          type: string
         format:
           $ref: '#/components/schemas/WebsetEnrichmentFormat'
-          type: string
           description: The format of the enrichment response.
           nullable: true
         options:
-          type: array
           items:
-            type:
-              - object
             properties:
               label:
-                type:
-                  - string
                 description: The label of the option
+                type: string
             required:
               - label
+            type: object
+          type: array
           description: >-
             When the format is options, the different options for the enrichment
             agent to choose from.
@@ -196,22 +181,20 @@ components:
         metadata:
           default: {}
           description: The metadata of the enrichment
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         createdAt:
-          type:
-            - string
           format: date-time
           description: The date and time the enrichment was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: The date and time the enrichment was updated
+          type: string
       required:
         - id
         - object
@@ -224,8 +207,8 @@ components:
         - instructions
         - createdAt
         - updatedAt
+      type: object
     WebsetEnrichmentFormat:
-      type: string
       enum:
         - text
         - date
@@ -234,6 +217,7 @@ components:
         - email
         - phone
         - url
+      type: string
   securitySchemes:
     apiKey:
       type: apiKey
