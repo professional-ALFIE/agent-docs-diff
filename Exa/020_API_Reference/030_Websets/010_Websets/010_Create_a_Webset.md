@@ -42,7 +42,6 @@ paths:
         You can specify an `externalId` to reference the Webset with your own
         identifiers for easier integration.
       operationId: websets-create
-      parameters: []
       requestBody:
         required: true
         content:
@@ -52,10 +51,6 @@ paths:
       responses:
         '201':
           description: Webset created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Webset'
           headers:
             X-Request-Id:
               schema:
@@ -63,6 +58,10 @@ paths:
               description: Unique identifier for the request.
               example: req_N6SsgoiaOQOPqsYKKiw5
               required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webset'
         '409':
           description: Webset with this externalId already exists
           headers:
@@ -78,12 +77,10 @@ paths:
 components:
   schemas:
     CreateWebsetParameters:
-      type:
-        - object
       properties:
         title:
-          type: string
           minLength: 1
+          type: string
           description: >-
             Optional name that appears anywhere the Webset is displayed. Leave
             empty to have Exa generate one automatically.
@@ -91,12 +88,8 @@ components:
             - Leading climate tech startups
           nullable: true
         search:
-          type:
-            - object
           properties:
             query:
-              type:
-                - string
               minLength: 1
               maxLength: 5000
               description: >-
@@ -117,17 +110,17 @@ components:
                   products.
                 - AI startups in Europe that raised Series A funding in 2024
                 - SaaS companies with 50-200 employees in the fintech space
+              type: string
             count:
               default: 10
-              type:
-                - number
-              minimum: 1
               description: >-
                 Number of Items the Webset will attempt to find.
 
 
                 The actual number of Items found may be less than this number
                 depending on the search complexity.
+              minimum: 1
+              type: number
             entity:
               $ref: '#/components/schemas/Entity'
               description: >-
@@ -138,15 +131,6 @@ components:
                 entity from all the information provided in the query. Only use
                 this when you need more fine control.
             criteria:
-              type:
-                - array
-              items:
-                $ref: '#/components/schemas/CreateCriterionParameters'
-                type:
-                  - object
-                title: CreateCriterionParameters
-              minItems: 1
-              maxItems: 5
               description: >-
                 Criteria every item is evaluated against.
 
@@ -154,131 +138,113 @@ components:
                 It's not required to provide your own criteria, we automatically
                 detect the criteria from all the information provided in the
                 query. Only use this when you need more fine control.
+              minItems: 1
+              maxItems: 5
+              items:
+                $ref: '#/components/schemas/CreateCriterionParameters'
+                title: CreateCriterionParameters
+              type: array
             maxPeoplePerCompany:
-              type:
-                - integer
-              minimum: 1
               description: >-
                 Optional soft cap for people searches. When set, the search will
                 try to include at most this many matching people from the same
                 current employer company.
+              minimum: 1
+              type: integer
             recall:
-              type:
-                - boolean
               description: >-
                 Whether to provide an estimate of how many total relevant
                 results could exist for this search.
 
                 Result of the analysis will be available in the `recall` field
                 within the search request.
+              type: boolean
             exclude:
-              type:
-                - array
-              items:
-                type:
-                  - object
-                properties:
-                  source:
-                    type:
-                      - string
-                    enum:
-                      - import
-                      - webset
-                  id:
-                    type:
-                      - string
-                    minLength: 1
-                    description: The ID of the source to exclude.
-                required:
-                  - source
-                  - id
               description: >-
                 Sources (existing imports or websets) to exclude from search
                 results. Any results found within these sources will be omitted
                 to prevent finding them during search.
-            scope:
-              type:
-                - array
               items:
-                type:
-                  - object
                 properties:
                   source:
-                    type:
-                      - string
                     enum:
                       - import
                       - webset
+                    type: string
                   id:
-                    type:
-                      - string
                     minLength: 1
-                    description: The ID of the source to search.
-                  relationship:
-                    type:
-                      - object
-                    properties:
-                      definition:
-                        type:
-                          - string
-                        description: >-
-                          What the relationship of the entities you hope to find
-                          is relative to the entities contained in the provided
-                          source.
-                      limit:
-                        type:
-                          - number
-                        minimum: 1
-                        maximum: 10
-                    required:
-                      - definition
-                      - limit
+                    description: The ID of the source to exclude.
+                    type: string
                 required:
                   - source
                   - id
+                type: object
+              type: array
+            scope:
               description: >-
                 Limit the search to specific sources (existing imports or
                 websets). Any results found within these sources matching the
                 search criteria will be included in the Webset.
+              items:
+                properties:
+                  source:
+                    enum:
+                      - import
+                      - webset
+                    type: string
+                  id:
+                    minLength: 1
+                    description: The ID of the source to search.
+                    type: string
+                  relationship:
+                    properties:
+                      definition:
+                        description: >-
+                          What the relationship of the entities you hope to find
+                          is relative to the entities contained in the provided
+                          source.
+                        type: string
+                      limit:
+                        minimum: 1
+                        maximum: 10
+                        type: number
+                    required:
+                      - definition
+                      - limit
+                    type: object
+                required:
+                  - source
+                  - id
+                type: object
+              type: array
           required:
             - query
           description: Create initial search for the Webset.
+          type: object
         import:
-          type:
-            - array
+          description: Import data from existing Websets and Imports into this Webset.
           items:
-            type:
-              - object
             properties:
               source:
-                type:
-                  - string
                 enum:
                   - import
                   - webset
+                type: string
               id:
-                type:
-                  - string
                 minLength: 1
                 description: The ID of the source to import.
+                type: string
               evaluate:
-                type:
-                  - boolean
                 description: >-
                   When true, items from this import will be evaluated against
                   the search criteria. Requires a search to be provided.
+                type: boolean
             required:
               - source
               - id
-          description: Import data from existing Websets and Imports into this Webset.
+            type: object
+          type: array
         enrichments:
-          type:
-            - array
-          items:
-            $ref: '#/components/schemas/CreateEnrichmentParameters'
-            type:
-              - object
-            title: CreateEnrichmentParameters
           description: >-
             Add enrichments to extract additional data from found items.
 
@@ -286,70 +252,65 @@ components:
             Enrichments automatically search for and extract specific
             information (like contact details, funding data, employee counts,
             etc.) from each item added to your Webset.
-        exclude:
-          type:
-            - array
           items:
-            type:
-              - object
-            properties:
-              source:
-                type:
-                  - string
-                enum:
-                  - import
-                  - webset
-              id:
-                type:
-                  - string
-                minLength: 1
-                description: The ID of the source to exclude.
-            required:
-              - source
-              - id
+            $ref: '#/components/schemas/CreateEnrichmentParameters'
+            title: CreateEnrichmentParameters
+          type: array
+        exclude:
           description: >-
             Global exclusion sources (existing imports or websets) that apply to
             all operations within this Webset. Any results found within these
             sources will be omitted across all search and import operations.
+          items:
+            properties:
+              source:
+                enum:
+                  - import
+                  - webset
+                type: string
+              id:
+                minLength: 1
+                description: The ID of the source to exclude.
+                type: string
+            required:
+              - source
+              - id
+            type: object
+          type: array
         externalId:
-          type:
-            - string
-          maxLength: 300
           description: >-
             The external identifier for the webset.
 
 
             You can use this to reference the Webset by your own internal
             identifiers.
+          maxLength: 300
+          type: string
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
       examples:
         - search:
             query: >-
               Marketing agencies based in the US, that focus on consumer
               products.
             count: 10
+      type: object
     Webset:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the webset
-        object:
           type: string
+        object:
           const: webset
           default: webset
+          type: string
         status:
-          type:
-            - string
           enum:
             - idle
             - pending
@@ -357,6 +318,7 @@ components:
             - paused
           description: The status of the webset
           title: WebsetStatus
+          type: string
         externalId:
           type: string
           description: The external identifier for the webset
@@ -366,84 +328,65 @@ components:
           description: The title of the webset
           nullable: true
         searches:
-          type:
-            - array
           items:
             $ref: '#/components/schemas/WebsetSearch'
-            type:
-              - object
           description: The searches that have been performed on the webset.
+          type: array
         imports:
-          type:
-            - array
           items:
             $ref: '#/components/schemas/Import'
-            type:
-              - object
           description: Imports that have been performed on the webset.
+          type: array
         enrichments:
-          type:
-            - array
           items:
             $ref: '#/components/schemas/WebsetEnrichment'
-            type:
-              - object
           description: The Enrichments to apply to the Webset Items.
+          type: array
         monitors:
-          type:
-            - array
           items:
             $ref: '#/components/schemas/Monitor'
-            type:
-              - object
           description: The Monitors for the Webset.
+          type: array
         excludes:
-          type:
-            - array
-          items:
-            type:
-              - object
-            properties:
-              source:
-                type:
-                  - string
-                enum:
-                  - import
-                  - webset
-              id:
-                type:
-                  - string
-            required:
-              - source
-              - id
           description: >-
             The Excludes sources (existing imports or websets) that apply to all
             operations within this Webset. Any results found within these
             sources will be omitted across all search and import operations.
+          items:
+            properties:
+              source:
+                enum:
+                  - import
+                  - webset
+                type: string
+              id:
+                type: string
+            required:
+              - source
+              - id
+            type: object
+          type: array
         metadata:
           default: {}
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         dashboardUrl:
-          type:
-            - string
           format: uri
           description: The URL to view the webset in the Exa dashboard
+          type: string
         createdAt:
-          type:
-            - string
           format: date-time
           description: The date and time the webset was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: The date and time the webset was updated
+          type: string
       required:
         - id
         - object
@@ -457,50 +400,40 @@ components:
         - dashboardUrl
         - createdAt
         - updatedAt
+      type: object
     Entity:
       oneOf:
         - $ref: '#/components/schemas/CompanyEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/PersonEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ArticleEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ResearchPaperEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/CustomEntity'
-          type:
-            - object
     CreateCriterionParameters:
-      type:
-        - object
       properties:
         description:
-          type:
-            - string
           minLength: 1
           maxLength: 1000
           description: The description of the criterion
+          type: string
       required:
         - description
+      type: object
     CreateEnrichmentParameters:
-      type:
-        - object
       properties:
         description:
-          type:
-            - string
           minLength: 1
           maxLength: 5000
           description: >-
             Provide a description of the enrichment task you want to perform to
             each Webset Item.
+          type: string
         format:
-          type:
-            - string
+          description: >-
+            Format of the enrichment response.
+
+
+            We automatically select the best format based on the description. If
+            you want to explicitly specify the format, you can do so here.
           enum:
             - text
             - date
@@ -509,55 +442,43 @@ components:
             - email
             - phone
             - url
-          description: >-
-            Format of the enrichment response.
-
-
-            We automatically select the best format based on the description. If
-            you want to explicitly specify the format, you can do so here.
+          type: string
         options:
-          type:
-            - array
-          items:
-            type:
-              - object
-            properties:
-              label:
-                type:
-                  - string
-                description: The label of the option
-            required:
-              - label
-          minItems: 1
-          maxItems: 150
           description: >-
             When the format is options, the different options for the enrichment
             agent to choose from.
+          minItems: 1
+          maxItems: 150
+          items:
+            properties:
+              label:
+                description: The label of the option
+                type: string
+            required:
+              - label
+            type: object
+          type: array
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
       required:
         - description
+      type: object
     WebsetSearch:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the search
-        object:
           type: string
+        object:
           const: webset_search
           default: webset_search
+          type: string
         status:
-          type:
-            - string
           enum:
             - created
             - pending
@@ -566,16 +487,15 @@ components:
             - canceled
           description: The status of the search
           title: WebsetSearchStatus
+          type: string
         websetId:
-          type:
-            - string
           description: The unique identifier for the Webset this search belongs to
+          type: string
         query:
-          description: The query used to create the search.
-          type:
-            - string
           minLength: 1
           maxLength: 5000
+          description: The query used to create the search.
+          type: string
         entity:
           $ref: '#/components/schemas/Entity'
           description: >-
@@ -586,43 +506,38 @@ components:
             select the best entity based on the query.
           nullable: true
         criteria:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               description:
-                type:
-                  - string
                 minLength: 1
                 maxLength: 1000
                 description: The description of the criterion
+                type: string
               successRate:
-                type:
-                  - number
                 minimum: 0
                 maximum: 100
                 description: >-
                   Value between 0 and 100 representing the percentage of results
                   that meet the criterion.
+                type: number
             required:
               - description
               - successRate
+            type: object
           description: >-
             The criteria the search will use to evaluate the results. If not
             provided, we will automatically generate them for you.
+          type: array
         count:
-          type:
-            - number
           minimum: 1
           description: >-
             The number of results the search will attempt to find. The actual
             number of results may be less than this number depending on the
             search complexity.
+          type: number
         maxPeoplePerCompany:
-          type: integer
           minimum: 1
+          type: integer
           description: >-
             The soft cap requested for matching people from the same current
             employer company, or null when no cap was requested.
@@ -630,8 +545,6 @@ components:
         behavior:
           $ref: '#/components/schemas/WebsetSearchBehavior'
           default: override
-          type:
-            - string
           description: >-
             The behavior of the search when it is added to a Webset.
 
@@ -644,64 +557,52 @@ components:
             Webset. Any Items that don't match the new criteria will be
             discarded.
         exclude:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               source:
-                type:
-                  - string
                 enum:
                   - import
                   - webset
+                type: string
               id:
-                type:
-                  - string
+                type: string
             required:
               - source
               - id
+            type: object
           description: >-
             Sources (existing imports or websets) used to omit certain results
             to be found during the search.
+          type: array
         scope:
-          type:
-            - array
           items:
-            type:
-              - object
             properties:
               source:
-                type:
-                  - string
                 enum:
                   - import
                   - webset
+                type: string
               id:
-                type:
-                  - string
+                type: string
               relationship:
-                type:
-                  - object
                 properties:
                   definition:
-                    type:
-                      - string
                     description: >-
                       What the relationship of the entities you hope to find is
                       relative to the entities contained in the provided source.
+                    type: string
                   limit:
-                    type:
-                      - number
                     minimum: 1
                     maximum: 10
+                    type: number
                 required:
                   - definition
                   - limit
+                type: object
             required:
               - source
               - id
+            type: object
           description: >-
             The scope of the search. By default, there is no scope - thus
             searching the web.
@@ -709,24 +610,20 @@ components:
 
             If provided during creation, the search will only be performed on
             the sources provided.
+          type: array
         progress:
-          type:
-            - object
           properties:
             found:
-              type:
-                - number
               description: The number of results found so far
+              type: number
             analyzed:
-              type:
-                - number
               description: The number of results analyzed so far
+              type: number
             completion:
-              type:
-                - number
               minimum: 0
               maximum: 100
               description: The completion percentage of the search
+              type: number
             timeLeft:
               type: number
               description: The estimated time remaining in seconds, null if unknown
@@ -737,51 +634,45 @@ components:
             - completion
             - timeLeft
           description: The progress of the search
-        recall:
           type: object
+        recall:
           properties:
             expected:
-              type:
-                - object
               properties:
                 total:
-                  type:
-                    - number
                   description: The estimated total number of potential matches
+                  type: number
                 confidence:
-                  type:
-                    - string
                   enum:
                     - high
                     - medium
                     - low
                   description: The confidence in the estimate
+                  type: string
                 bounds:
-                  type:
-                    - object
                   properties:
                     min:
-                      type:
-                        - number
                       description: The minimum estimated total number of potential matches
+                      type: number
                     max:
-                      type:
-                        - number
                       description: The maximum estimated total number of potential matches
+                      type: number
                   required:
                     - min
                     - max
+                  type: object
               required:
                 - total
                 - confidence
                 - bounds
+              type: object
             reasoning:
-              type:
-                - string
               description: The reasoning for the estimate
+              type: string
           required:
             - expected
             - reasoning
+          type: object
           description: >-
             Recall metrics for the search, null if not yet computed or
             requested.
@@ -789,37 +680,34 @@ components:
         metadata:
           default: {}
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         canceledAt:
-          type: string
           format: date-time
+          type: string
           description: The date and time the search was canceled
           nullable: true
         canceledReason:
           $ref: '#/components/schemas/WebsetSearchCanceledReason'
-          type: string
           description: The reason the search was canceled
           nullable: true
         createdAt:
-          type:
-            - string
           format: date-time
           description: The date and time the search was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: The date and time the search was updated
+          type: string
       required:
         - id
         - object
-        - websetId
         - status
+        - websetId
         - query
         - entity
         - criteria
@@ -833,23 +721,18 @@ components:
         - canceledReason
         - createdAt
         - updatedAt
+      type: object
     Import:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Import
+          type: string
         object:
-          type:
-            - string
           enum:
             - import
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - pending
             - processing
@@ -857,44 +740,42 @@ components:
             - failed
             - canceled
           description: The status of the Import
+          type: string
         format:
-          type:
-            - string
           enum:
             - csv
             - webset
           description: The format of the import.
+          type: string
         entity:
           $ref: '#/components/schemas/Entity'
           description: The type of entity the import contains.
           nullable: true
         title:
-          type:
-            - string
           description: The title of the import
+          type: string
         count:
-          type:
-            - number
           description: The number of entities in the import
+          type: number
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         failedReason:
-          type: string
           enum:
             - invalid_format
             - invalid_file_content
             - missing_identifier
+          type: string
           description: The reason the import failed
           nullable: true
         failedAt:
-          type: string
           format: date-time
+          type: string
           description: When the import failed
           nullable: true
         failedMessage:
@@ -902,15 +783,13 @@ components:
           description: A human readable message of the import failure
           nullable: true
         createdAt:
-          type:
-            - string
           format: date-time
           description: When the import was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: When the import was last updated
+          type: string
       required:
         - id
         - object
@@ -925,31 +804,27 @@ components:
         - failedMessage
         - createdAt
         - updatedAt
+      type: object
     WebsetEnrichment:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the enrichment
-        object:
           type: string
+        object:
           const: webset_enrichment
           default: webset_enrichment
+          type: string
         status:
-          type:
-            - string
           enum:
             - pending
             - canceled
             - completed
           description: The status of the enrichment
           title: WebsetEnrichmentStatus
+          type: string
         websetId:
-          type:
-            - string
           description: The unique identifier for the Webset this enrichment belongs to.
+          type: string
         title:
           type: string
           description: >-
@@ -960,28 +835,24 @@ components:
             format.
           nullable: true
         description:
-          type:
-            - string
           description: >-
             The description of the enrichment task provided during the creation
             of the enrichment.
+          type: string
         format:
           $ref: '#/components/schemas/WebsetEnrichmentFormat'
-          type: string
           description: The format of the enrichment response.
           nullable: true
         options:
-          type: array
           items:
-            type:
-              - object
             properties:
               label:
-                type:
-                  - string
                 description: The label of the option
+                type: string
             required:
               - label
+            type: object
+          type: array
           description: >-
             When the format is options, the different options for the enrichment
             agent to choose from.
@@ -999,22 +870,20 @@ components:
         metadata:
           default: {}
           description: The metadata of the enrichment
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         createdAt:
-          type:
-            - string
           format: date-time
           description: The date and time the enrichment was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: The date and time the enrichment was updated
+          type: string
       required:
         - id
         - object
@@ -1027,87 +896,67 @@ components:
         - instructions
         - createdAt
         - updatedAt
+      type: object
     Monitor:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Monitor
+          type: string
         object:
-          type:
-            - string
           enum:
             - monitor
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - enabled
             - disabled
           description: The status of the Monitor
+          type: string
         websetId:
-          type:
-            - string
           description: The id of the Webset the Monitor belongs to
+          type: string
         cadence:
-          type:
-            - object
           properties:
             cron:
               description: >-
                 Cron expression for monitor cadence (must be a valid Unix cron
                 with 5 fields). The schedule must trigger at most once per day.
-              type:
-                - string
+              type: string
             timezone:
-              description: IANA timezone (e.g., "America/New_York")
               default: Etc/UTC
-              type:
-                - string
+              description: IANA timezone (e.g., "America/New_York")
+              type: string
           required:
             - cron
           description: How often the monitor will run
+          type: object
         behavior:
-          type:
-            - object
           properties:
-            type:
-              type: string
-              const: search
-              default: search
             config:
-              type:
-                - object
               properties:
                 query:
-                  type:
-                    - string
-                  minLength: 2
-                  maxLength: 10000
                   description: >-
                     The query to search for. By default, the query from the last
                     search is used.
+                  minLength: 2
+                  maxLength: 10000
+                  type: string
                 criteria:
-                  type:
-                    - array
-                  items:
-                    type:
-                      - object
-                    properties:
-                      description:
-                        type:
-                          - string
-                        minLength: 2
-                        maxLength: 1000
-                    required:
-                      - description
-                  maxItems: 5
                   description: >-
                     The criteria to search for. By default, the criteria from
                     the last search is used.
+                  maxItems: 5
+                  items:
+                    properties:
+                      description:
+                        minLength: 2
+                        maxLength: 1000
+                        type: string
+                    required:
+                      - description
+                    type: object
+                  type: array
                 entity:
                   $ref: '#/components/schemas/Entity'
                   title: Entity
@@ -1115,18 +964,16 @@ components:
                     The entity to search for. By default, the entity from the
                     last search/import is used.
                 count:
-                  type:
-                    - number
                   exclusiveMinimum: 0
                   description: The maximum number of results to find
+                  type: number
                 behavior:
                   default: append
-                  type:
-                    - string
+                  description: The behaviour of the Search when it is added to a Webset.
                   enum:
                     - override
                     - append
-                  description: The behaviour of the Search when it is added to a Webset.
+                  type: string
               required:
                 - count
               description: >-
@@ -1135,37 +982,40 @@ components:
 
                 By default, the search parameters (query, entity and criteria)
                 from the last search are used when no parameters are provided.
+              type: object
+            type:
+              type: string
+              const: search
+              default: search
           required:
             - type
             - config
           description: Behavior to perform when monitor runs
+          type: object
         lastRun:
           $ref: '#/components/schemas/MonitorRun'
-          type: object
           title: MonitorRun
           description: The last run of the monitor
           nullable: true
         nextRunAt:
-          type: string
           format: date-time
+          type: string
           description: Date and time when the next run will occur in
           nullable: true
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         createdAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the monitor was created
         updatedAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the monitor was last updated
       required:
@@ -1180,9 +1030,8 @@ components:
         - metadata
         - createdAt
         - updatedAt
+      type: object
     CompanyEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -1191,9 +1040,8 @@ components:
       required:
         - type
       title: Company
+      type: object
     PersonEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -1202,9 +1050,8 @@ components:
       required:
         - type
       title: Person
+      type: object
     ArticleEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -1213,9 +1060,8 @@ components:
       required:
         - type
       title: Article
+      type: object
     ResearchPaperEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -1224,36 +1070,34 @@ components:
       required:
         - type
       title: Research Paper
+      type: object
     CustomEntity:
-      type:
-        - object
       properties:
+        description:
+          minLength: 2
+          maxLength: 200
+          type: string
         type:
           type: string
           const: custom
           default: custom
-        description:
-          type:
-            - string
-          minLength: 2
-          maxLength: 200
       required:
         - type
         - description
       title: Custom
+      type: object
     WebsetSearchBehavior:
-      type: string
       enum:
         - override
         - append
-    WebsetSearchCanceledReason:
       type: string
+    WebsetSearchCanceledReason:
       enum:
         - webset_deleted
         - webset_canceled
         - out_of_credits
-    WebsetEnrichmentFormat:
       type: string
+    WebsetEnrichmentFormat:
       enum:
         - text
         - date
@@ -1262,23 +1106,18 @@ components:
         - email
         - phone
         - url
+      type: string
     MonitorRun:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Monitor Run
+          type: string
         object:
-          type:
-            - string
           enum:
             - monitor_run
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - created
             - running
@@ -1286,25 +1125,18 @@ components:
             - canceled
             - failed
           description: The status of the Monitor Run
-        monitorId:
-          type:
-            - string
-          description: The monitor that the run is associated with
-        type:
-          type:
-            - string
-          enum:
-            - search
-            - refresh
-          description: The type of the Monitor Run
-        completedAt:
           type: string
+        monitorId:
+          description: The monitor that the run is associated with
+          type: string
+        completedAt:
           format: date-time
+          type: string
           description: When the run completed
           nullable: true
         failedAt:
-          type: string
           format: date-time
+          type: string
           description: When the run failed
           nullable: true
         failedReason:
@@ -1312,25 +1144,29 @@ components:
           description: The reason the run failed
           nullable: true
         canceledAt:
-          type: string
           format: date-time
+          type: string
           description: When the run was canceled
           nullable: true
         createdAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the run was created
         updatedAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the run was last updated
+        type:
+          type: string
+          enum:
+            - search
+            - refresh
+          description: The type of the Monitor Run
       required:
         - id
         - object
-        - monitorId
         - status
+        - monitorId
         - type
         - completedAt
         - failedAt
@@ -1338,6 +1174,7 @@ components:
         - canceledAt
         - createdAt
         - updatedAt
+      type: object
   securitySchemes:
     apiKey:
       type: apiKey
