@@ -39,13 +39,13 @@ paths:
         You can paginate through the results using the `cursor` parameter.
       operationId: webhooks-list
       parameters:
-        - name: cursor
-          required: false
-          in: query
-          description: The cursor to paginate through the results
+        - in: query
+          name: cursor
           schema:
             minLength: 1
             type: string
+          required: false
+          description: The cursor to paginate through the results
         - name: limit
           required: false
           in: query
