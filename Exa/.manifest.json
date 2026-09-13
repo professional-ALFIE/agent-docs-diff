@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-12T20:32:10.321Z",
+  "생성": "2026-09-13T04:44:32.196Z",
   "제품폴더": "Exa",
   "진입": "https://exa.ai/docs/reference/search",
   "최상위수": 3,
@@ -889,120 +889,120 @@
       "경로": "020_API_Reference/030_Websets/010_Websets/010_Create_a_Webset.md",
       "href": "/websets/api/websets/create-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/create-a-webset.md",
-      "sha256": "ff799c972cf56dcb288a1f17a4126bf79b3943f5f786352786076a79440b8efa",
-      "bytes": 38709,
+      "sha256": "727b929446ed17d9e51bc21a80a2ac0a894ff8a2f3e1a699beeff6e061925e7b",
+      "bytes": 36063,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/020_Get_a_Webset.md",
       "href": "/websets/api/websets/get-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/get-a-webset.md",
-      "sha256": "95d8c10ef6acca7802559338455cf9e184bcad331d635d35017d926872e9c133",
-      "bytes": 50422,
+      "sha256": "a50af139d3a5583686a5b8ea945381ff4fedc410c10856ad0e580ea46a647121",
+      "bytes": 47275,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/030_Update_a_Webset.md",
       "href": "/websets/api/websets/update-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/update-a-webset.md",
-      "sha256": "ee5be52cb5c5dad182be4ff91c7091a580c27591766a0d62d8bbfe73f9e26a4d",
-      "bytes": 28682,
+      "sha256": "81a4c0cc7c9ec8fd5b7c418ff84333b973c9727a23a6067ba8aaa5529da83993",
+      "bytes": 26783,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/040_Delete_a_Webset.md",
       "href": "/websets/api/websets/delete-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/delete-a-webset.md",
-      "sha256": "51b07b2753f6558b6ae01ccf2949b7e9ecae7f6b6c634f0525ca0e2e7435671b",
-      "bytes": 27904,
+      "sha256": "34ddcf01bcc15fd87d843b9ecf2e3533de689362d842a5e9dc9c234fafc22837",
+      "bytes": 25995,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/050_Preview_a_webset.md",
       "href": "/websets/api/websets/preview-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/preview-a-webset.md",
-      "sha256": "000176285b8987a05d7af2bf21186b3ccaee28247af09b1eb89e8d52edb32b2e",
-      "bytes": 25951,
+      "sha256": "eeda743218f4f4983e6ab25e954e43f3d137c8b1ec6ad9893670fb4dcf77a913",
+      "bytes": 25418,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/060_Cancel_a_running_Webset.md",
       "href": "/websets/api/websets/cancel-a-running-webset",
       "url": "https://exa.ai/docs/websets/api/websets/cancel-a-running-webset.md",
-      "sha256": "52b37e3b3070aba1cfffa2f5726d9b0332f71df487a2f9bdf4ba22379b8cc471",
-      "bytes": 27746,
+      "sha256": "852cd989ff5d0431d57d28c64d57f7a34a8210f4460b8ea986ca130bf62e0ede",
+      "bytes": 25837,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/010_Websets/070_List_all_Websets.md",
       "href": "/websets/api/websets/list-all-websets",
       "url": "https://exa.ai/docs/websets/api/websets/list-all-websets.md",
-      "sha256": "32d628388775bdf8ef7e2a62de1dc732b431ce91d9ad7ccae0841c6dca25bed4",
-      "bytes": 28975,
+      "sha256": "0ef539ab69a89f5a2ccae2d105c1502001acfb21a57856c3c950d7556467bd57",
+      "bytes": 26987,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/020_Items/010_Get_an_Item.md",
       "href": "/websets/api/websets/items/get-an-item",
       "url": "https://exa.ai/docs/websets/api/websets/items/get-an-item.md",
-      "sha256": "a32b4d18a69beea75ac675b1ef312bfa558aeacea63ce1994a956a1dd808ad11",
-      "bytes": 23724,
+      "sha256": "2ec5be86e0314c1859132195f5bc8e49e1ec07a1b7023b62f7c5ff11e32c8f53",
+      "bytes": 22604,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/020_Items/020_Delete_an_Item.md",
       "href": "/websets/api/websets/items/delete-an-item",
       "url": "https://exa.ai/docs/websets/api/websets/items/delete-an-item.md",
-      "sha256": "6a0ef70975f45ba26b3a6c28c1f3573d82e49964c0feeceaef436a44e50c421b",
-      "bytes": 23887,
+      "sha256": "7ad71cbc1cb919e9e15496ffe346c1b583d5b6c75aa445a3a24d26632c7c139c",
+      "bytes": 22767,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/020_Items/030_List_all_Items_for_a_Webset.md",
       "href": "/websets/api/websets/items/list-all-items-for-a-webset",
       "url": "https://exa.ai/docs/websets/api/websets/items/list-all-items-for-a-webset.md",
-      "sha256": "3c52ebc59857e153a9d14fbc7abaef138020e280fd6a46786f78b4a4211e6532",
-      "bytes": 25014,
+      "sha256": "922bac073b09e3a6abd410d4bcaa9cf4e8a38ff4552727cd24b1942a69eea482",
+      "bytes": 23894,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/030_Searches/010_Create_a_Search.md",
       "href": "/websets/api/websets/searches/create-a-search",
       "url": "https://exa.ai/docs/websets/api/websets/searches/create-a-search.md",
-      "sha256": "eae64112d68dee13b39d604d30937f8ce44a1ab0b134acdde28b21a922654dde",
-      "bytes": 18681,
+      "sha256": "6f076529c57a1b818a6ab7949fe16488dbf539e5794032592c007430e3448de8",
+      "bytes": 17760,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/030_Searches/020_Get_a_Search.md",
       "href": "/websets/api/websets/searches/get-a-search",
       "url": "https://exa.ai/docs/websets/api/websets/searches/get-a-search.md",
-      "sha256": "d7e1a25590b1587e9c14555445f382e1df25928948033ae2385ff755fc6170a6",
-      "bytes": 12589,
+      "sha256": "741d245ff130f71506c829897958817e7047bc170bf1b7c58963e73990a15bdd",
+      "bytes": 11692,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/030_Searches/030_Cancel_a_running_Search.md",
       "href": "/websets/api/websets/searches/cancel-a-running-search",
       "url": "https://exa.ai/docs/websets/api/websets/searches/cancel-a-running-search.md",
-      "sha256": "b7c708936a46c9e1b89e9144f7288074c91b8b50d1a8e01d8727cfbea736fd1f",
-      "bytes": 12870,
+      "sha256": "861363b7581fff537e69686edab386d6f20799edcaf27ea95857d68446568d7c",
+      "bytes": 11973,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/040_Enrichments/010_Create_an_Enrichment.md",
       "href": "/websets/api/websets/enrichments/create-an-enrichment",
       "url": "https://exa.ai/docs/websets/api/websets/enrichments/create-an-enrichment.md",
-      "sha256": "286f50773b016b646cdf35d6b1de6625d01291818c2ddacb3017e6ce9ccdec2d",
-      "bytes": 6607,
+      "sha256": "32256d9cca141cf8c965a63155971dbc741ca44b35277a2ababa7e60e8bc7ffb",
+      "bytes": 6406,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/040_Enrichments/020_Get_an_Enrichment.md",
       "href": "/websets/api/websets/enrichments/get-an-enrichment",
       "url": "https://exa.ai/docs/websets/api/websets/enrichments/get-an-enrichment.md",
-      "sha256": "361396b5c10bbab0e28ab9cf8f4afa6adcd6dbb0217103958d85fb3606745a3d",
-      "bytes": 5195,
+      "sha256": "ebcc5c45d59658957da88e71832d5d9c2f37c81bfbc95646738ccd338f070dea",
+      "bytes": 5062,
       "contentType": "text/markdown"
     },
     {
@@ -1017,112 +1017,112 @@
       "경로": "020_API_Reference/030_Websets/040_Enrichments/040_Delete_an_Enrichment.md",
       "href": "/websets/api/websets/enrichments/delete-an-enrichment",
       "url": "https://exa.ai/docs/websets/api/websets/enrichments/delete-an-enrichment.md",
-      "sha256": "c66ee28af5ede3391b7a420a590f86df66c54cdbed75030e39177e0d45321e77",
-      "bytes": 5355,
+      "sha256": "2205870308a1603afb24f09faafc053454a3dd2bb6a7846d010cc1a59289ffea",
+      "bytes": 5222,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/040_Enrichments/050_Cancel_a_running_Enrichment.md",
       "href": "/websets/api/websets/enrichments/cancel-a-running-enrichment",
       "url": "https://exa.ai/docs/websets/api/websets/enrichments/cancel-a-running-enrichment.md",
-      "sha256": "830f24852dc005f1b16b6931ee859ce2399f6b6af3830e1882dcd1ff02535bab",
-      "bytes": 5256,
+      "sha256": "e882d53d3f00d59e025ab2d9ab6795cb0f2dfc63d5e1ff2f866b9541a95fa151",
+      "bytes": 5123,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/050_Imports/010_Create_an_Import.md",
       "href": "/websets/api/imports/create-an-import",
       "url": "https://exa.ai/docs/websets/api/imports/create-an-import.md",
-      "sha256": "838378af46edfaeff6992061ada9c547b5e7057f22d4ac79f9adde26031bdafc",
-      "bytes": 9985,
+      "sha256": "840cd220b015cc8fe89c6d2acdd1e76f51a200da72723339a6485fa594f4f7c1",
+      "bytes": 9736,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/050_Imports/020_Get_Import.md",
       "href": "/websets/api/imports/get-import",
       "url": "https://exa.ai/docs/websets/api/imports/get-import.md",
-      "sha256": "c8276850af56132c618a38ce9686fa0f689c8a57a991b7812ef20154fa6f92ff",
-      "bytes": 5800,
+      "sha256": "2280253816075cf98813ef400eb64d5a681c6482179b3022d3f9b3845f742d0d",
+      "bytes": 5449,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/050_Imports/030_Update_Import.md",
       "href": "/websets/api/imports/update-import",
       "url": "https://exa.ai/docs/websets/api/imports/update-import.md",
-      "sha256": "3ea483d2e84067d924e8357cd6e59b306254ed1f35c99bdca824d3f22c5bc31d",
-      "bytes": 6253,
+      "sha256": "deeb51c4bbbd36cae2bd5414dd0fb4ee00b0e8f20090291ab3d4b876b9473799",
+      "bytes": 5902,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/050_Imports/040_Delete_Import.md",
       "href": "/websets/api/imports/delete-import",
       "url": "https://exa.ai/docs/websets/api/imports/delete-import.md",
-      "sha256": "534d81af259d91c1f4df21bd25ca9b7c0ee2ecdd121301b53ff91773bb4deaf5",
-      "bytes": 5819,
+      "sha256": "ec9842e1411b3d7ec24564cec2836d5883d1a493f79c3269f84d980279d6ef3c",
+      "bytes": 5468,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/050_Imports/050_List_Imports.md",
       "href": "/websets/api/imports/list-imports",
       "url": "https://exa.ai/docs/websets/api/imports/list-imports.md",
-      "sha256": "02293260172f0c231be638ca90b7eb6e42cc5f255f6f5212eb3dba43d2917c27",
-      "bytes": 6739,
+      "sha256": "73e2d977d31e419c0c397eec8e36fc9fd4c8be6a9b9551cfb36c97573ca51ffb",
+      "bytes": 6388,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/010_Create_a_Monitor.md",
       "href": "/websets/api/monitors/create-a-monitor",
       "url": "https://exa.ai/docs/websets/api/monitors/create-a-monitor.md",
-      "sha256": "5fe4a7a1b8d766d56b8e518ab87e90a76059d08c48b9a889e1a13901ab074f0c",
-      "bytes": 14356,
+      "sha256": "e708b96cdd4d977282fac7735c390fb0936a4db1a71e45aea0a47828fb5d40e4",
+      "bytes": 13680,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/020_Get_Monitor.md",
       "href": "/websets/api/monitors/get-monitor",
       "url": "https://exa.ai/docs/websets/api/monitors/get-monitor.md",
-      "sha256": "e0fe3d8aa9561533a2a460d9dbb9b6d4fe6d8205bd06b62cc65a99d23ddf3ed2",
-      "bytes": 9959,
+      "sha256": "25ab14ab61923dcf965e53d453ad99685c30b88189e127dffa5c0b362b01f72e",
+      "bytes": 9283,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/030_Update_Monitor.md",
       "href": "/websets/api/monitors/update-monitor",
       "url": "https://exa.ai/docs/websets/api/monitors/update-monitor.md",
-      "sha256": "09b3ffeb07dc5833a3aa6a57b044bcce5e34292dde289301b2bddb5f515e4a66",
-      "bytes": 13245,
+      "sha256": "6386b81704f3a648f0a3fa3a6618bb44f7035a6c4bf16dfa8bd832876bef2d21",
+      "bytes": 12569,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/040_Delete_Monitor.md",
       "href": "/websets/api/monitors/delete-monitor",
       "url": "https://exa.ai/docs/websets/api/monitors/delete-monitor.md",
-      "sha256": "675dc6bc42c37d92f0487efe91e32605df56e010b194958252591265e268bd59",
-      "bytes": 9978,
+      "sha256": "ba74ca3e0fb866ed54fc3538fffdeb27cd1016ea78281fc2875b14f3cb00115a",
+      "bytes": 9302,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/050_List_Monitors.md",
       "href": "/websets/api/monitors/list-monitors",
       "url": "https://exa.ai/docs/websets/api/monitors/list-monitors.md",
-      "sha256": "d2ddfe2e5c437f9b3800fd26709b6e911caf141e5bb0353a7237c9918851ac02",
-      "bytes": 11079,
+      "sha256": "dffcf0e7e0ac0e11c91040578d32bc876d47635b44d35f1003ac97f3c154045b",
+      "bytes": 10403,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/060_Monitor_Runs/010_List_Monitor_Runs.md",
       "href": "/websets/api/monitors/runs/list-monitor-runs",
       "url": "https://exa.ai/docs/websets/api/monitors/runs/list-monitor-runs.md",
-      "sha256": "51cc47a2553526014e4bc2b8cb9c97ea20e70304545406a5a0ae8ed7666fab13",
-      "bytes": 4423,
+      "sha256": "9a8bcd0247feb950aff8539e2c10ea5b0e85d5003c6cb6efcc2930dbb4142aa1",
+      "bytes": 4315,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/060_Monitors/060_Monitor_Runs/020_Get_Monitor_Run.md",
       "href": "/websets/api/monitors/runs/get-monitor-run",
       "url": "https://exa.ai/docs/websets/api/monitors/runs/get-monitor-run.md",
-      "sha256": "efa3ce2ac4ed0b09f48c5174ff7762d3a7bc03328eab59d5611b37bd58f1eaa7",
-      "bytes": 3885,
+      "sha256": "dfaa0cb46a8a49351ed72dd043cc250956d97d33ce35283e0afc7dc26447e712",
+      "bytes": 3777,
       "contentType": "text/markdown"
     },
     {
@@ -1161,7 +1161,7 @@
       "경로": "020_API_Reference/030_Websets/070_Webhooks/050_List_webhooks.md",
       "href": "/websets/api/webhooks/list-webhooks",
       "url": "https://exa.ai/docs/websets/api/webhooks/list-webhooks.md",
-      "sha256": "e30a4a82d51a70126521c60187b88d778a5f2254c0afd583aed5723df15f32e8",
+      "sha256": "ce934b54b0e156b907c32d4c825b5e6338c341d47382ee30803cd1aa9d7eafd2",
       "bytes": 5215,
       "contentType": "text/markdown"
     },
@@ -1169,7 +1169,7 @@
       "경로": "020_API_Reference/030_Websets/070_Webhooks/060_List_webhook_attempts.md",
       "href": "/websets/api/webhooks/attempts/list-webhook-attempts",
       "url": "https://exa.ai/docs/websets/api/webhooks/attempts/list-webhook-attempts.md",
-      "sha256": "7205b6dc576d2ab4d16f9f206fc44f0301ee3c9d1b0803a7dea386388d6cf0c5",
+      "sha256": "36d5f3bb7e49e0b9cf74e9b2fd7320f96a9d9bd41936cca6ffe6f185099c44cc",
       "bytes": 6545,
       "contentType": "text/markdown"
     },
@@ -1193,16 +1193,16 @@
       "경로": "020_API_Reference/030_Websets/080_Events/020_List_all_Events.md",
       "href": "/websets/api/events/list-all-events",
       "url": "https://exa.ai/docs/websets/api/events/list-all-events.md",
-      "sha256": "8fff56eb7c3b34a2a50cee2ba7d47d27d416870cbec2ac7cc17ba36d2bb53dea",
-      "bytes": 66272,
+      "sha256": "b72cf34ae349d0e6b68514eb16e3c2581f272aa2b2e82910b55f976751c60591",
+      "bytes": 63243,
       "contentType": "text/markdown"
     },
     {
       "경로": "020_API_Reference/030_Websets/080_Events/030_Get_an_Event.md",
       "href": "/websets/api/events/get-an-event",
       "url": "https://exa.ai/docs/websets/api/events/get-an-event.md",
-      "sha256": "d6ccf8735c5eae6bb88e689d832f7f1369f39994b0bcaeeb586375f8b4f05128",
-      "bytes": 63951,
+      "sha256": "6d6188a837ac06a747744ab3a9a6294eba38465d5fd8e75252533556b5744644",
+      "bytes": 60922,
       "contentType": "text/markdown"
     },
     {
