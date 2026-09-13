@@ -34,13 +34,13 @@ paths:
       description: Lists all imports for the Webset.
       operationId: imports-list
       parameters:
-        - name: cursor
-          required: false
-          in: query
-          description: The cursor to paginate through the results
+        - in: query
+          name: cursor
           schema:
             minLength: 1
             type: string
+          required: false
+          description: The cursor to paginate through the results
         - name: limit
           required: false
           in: query
@@ -94,22 +94,16 @@ components:
         - hasMore
         - nextCursor
     Import:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Import
+          type: string
         object:
-          type:
-            - string
           enum:
             - import
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - pending
             - processing
@@ -117,44 +111,42 @@ components:
             - failed
             - canceled
           description: The status of the Import
+          type: string
         format:
-          type:
-            - string
           enum:
             - csv
             - webset
           description: The format of the import.
+          type: string
         entity:
           $ref: '#/components/schemas/Entity'
           description: The type of entity the import contains.
           nullable: true
         title:
-          type:
-            - string
           description: The title of the import
+          type: string
         count:
-          type:
-            - number
           description: The number of entities in the import
+          type: number
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         failedReason:
-          type: string
           enum:
             - invalid_format
             - invalid_file_content
             - missing_identifier
+          type: string
           description: The reason the import failed
           nullable: true
         failedAt:
-          type: string
           format: date-time
+          type: string
           description: When the import failed
           nullable: true
         failedMessage:
@@ -162,15 +154,13 @@ components:
           description: A human readable message of the import failure
           nullable: true
         createdAt:
-          type:
-            - string
           format: date-time
           description: When the import was created
+          type: string
         updatedAt:
-          type:
-            - string
           format: date-time
           description: When the import was last updated
+          type: string
       required:
         - id
         - object
@@ -185,26 +175,15 @@ components:
         - failedMessage
         - createdAt
         - updatedAt
+      type: object
     Entity:
       oneOf:
         - $ref: '#/components/schemas/CompanyEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/PersonEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ArticleEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ResearchPaperEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/CustomEntity'
-          type:
-            - object
     CompanyEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -213,9 +192,8 @@ components:
       required:
         - type
       title: Company
+      type: object
     PersonEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -224,9 +202,8 @@ components:
       required:
         - type
       title: Person
+      type: object
     ArticleEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -235,9 +212,8 @@ components:
       required:
         - type
       title: Article
+      type: object
     ResearchPaperEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -246,23 +222,22 @@ components:
       required:
         - type
       title: Research Paper
+      type: object
     CustomEntity:
-      type:
-        - object
       properties:
+        description:
+          minLength: 2
+          maxLength: 200
+          type: string
         type:
           type: string
           const: custom
           default: custom
-        description:
-          type:
-            - string
-          minLength: 2
-          maxLength: 200
       required:
         - type
         - description
       title: Custom
+      type: object
   securitySchemes:
     apiKey:
       type: apiKey
