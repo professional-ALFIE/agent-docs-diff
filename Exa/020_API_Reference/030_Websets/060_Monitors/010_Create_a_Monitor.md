@@ -187,86 +187,65 @@ components:
         - cadence
         - behavior
     Monitor:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Monitor
+          type: string
         object:
-          type:
-            - string
           enum:
             - monitor
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - enabled
             - disabled
           description: The status of the Monitor
+          type: string
         websetId:
-          type:
-            - string
           description: The id of the Webset the Monitor belongs to
+          type: string
         cadence:
-          type:
-            - object
           properties:
             cron:
               description: >-
                 Cron expression for monitor cadence (must be a valid Unix cron
                 with 5 fields). The schedule must trigger at most once per day.
-              type:
-                - string
+              type: string
             timezone:
-              description: IANA timezone (e.g., "America/New_York")
               default: Etc/UTC
-              type:
-                - string
+              description: IANA timezone (e.g., "America/New_York")
+              type: string
           required:
             - cron
           description: How often the monitor will run
+          type: object
         behavior:
-          type:
-            - object
           properties:
-            type:
-              type: string
-              const: search
-              default: search
             config:
-              type:
-                - object
               properties:
                 query:
-                  type:
-                    - string
-                  minLength: 2
-                  maxLength: 10000
                   description: >-
                     The query to search for. By default, the query from the last
                     search is used.
+                  minLength: 2
+                  maxLength: 10000
+                  type: string
                 criteria:
-                  type:
-                    - array
-                  items:
-                    type:
-                      - object
-                    properties:
-                      description:
-                        type:
-                          - string
-                        minLength: 2
-                        maxLength: 1000
-                    required:
-                      - description
-                  maxItems: 5
                   description: >-
                     The criteria to search for. By default, the criteria from
                     the last search is used.
+                  maxItems: 5
+                  items:
+                    properties:
+                      description:
+                        minLength: 2
+                        maxLength: 1000
+                        type: string
+                    required:
+                      - description
+                    type: object
+                  type: array
                 entity:
                   $ref: '#/components/schemas/Entity'
                   title: Entity
@@ -274,18 +253,16 @@ components:
                     The entity to search for. By default, the entity from the
                     last search/import is used.
                 count:
-                  type:
-                    - number
                   exclusiveMinimum: 0
                   description: The maximum number of results to find
+                  type: number
                 behavior:
                   default: append
-                  type:
-                    - string
+                  description: The behaviour of the Search when it is added to a Webset.
                   enum:
                     - override
                     - append
-                  description: The behaviour of the Search when it is added to a Webset.
+                  type: string
               required:
                 - count
               description: >-
@@ -294,37 +271,40 @@ components:
 
                 By default, the search parameters (query, entity and criteria)
                 from the last search are used when no parameters are provided.
+              type: object
+            type:
+              type: string
+              const: search
+              default: search
           required:
             - type
             - config
           description: Behavior to perform when monitor runs
+          type: object
         lastRun:
           $ref: '#/components/schemas/MonitorRun'
-          type: object
           title: MonitorRun
           description: The last run of the monitor
           nullable: true
         nextRunAt:
-          type: string
           format: date-time
+          type: string
           description: Date and time when the next run will occur in
           nullable: true
         metadata:
           description: Set of key-value pairs you want to associate with this object.
-          type:
-            - object
+          propertyNames:
+            type: string
           additionalProperties:
-            type:
-              - string
+            type: string
             maxLength: 1000
+          type: object
         createdAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the monitor was created
         updatedAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the monitor was last updated
       required:
@@ -339,40 +319,25 @@ components:
         - metadata
         - createdAt
         - updatedAt
+      type: object
     Entity:
       oneOf:
         - $ref: '#/components/schemas/CompanyEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/PersonEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ArticleEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ResearchPaperEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/CustomEntity'
-          type:
-            - object
     MonitorRun:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Monitor Run
+          type: string
         object:
-          type:
-            - string
           enum:
             - monitor_run
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - created
             - running
@@ -380,25 +345,18 @@ components:
             - canceled
             - failed
           description: The status of the Monitor Run
-        monitorId:
-          type:
-            - string
-          description: The monitor that the run is associated with
-        type:
-          type:
-            - string
-          enum:
-            - search
-            - refresh
-          description: The type of the Monitor Run
-        completedAt:
           type: string
+        monitorId:
+          description: The monitor that the run is associated with
+          type: string
+        completedAt:
           format: date-time
+          type: string
           description: When the run completed
           nullable: true
         failedAt:
-          type: string
           format: date-time
+          type: string
           description: When the run failed
           nullable: true
         failedReason:
@@ -406,25 +364,29 @@ components:
           description: The reason the run failed
           nullable: true
         canceledAt:
-          type: string
           format: date-time
+          type: string
           description: When the run was canceled
           nullable: true
         createdAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the run was created
         updatedAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the run was last updated
+        type:
+          type: string
+          enum:
+            - search
+            - refresh
+          description: The type of the Monitor Run
       required:
         - id
         - object
-        - monitorId
         - status
+        - monitorId
         - type
         - completedAt
         - failedAt
@@ -432,9 +394,8 @@ components:
         - canceledAt
         - createdAt
         - updatedAt
+      type: object
     CompanyEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -443,9 +404,8 @@ components:
       required:
         - type
       title: Company
+      type: object
     PersonEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -454,9 +414,8 @@ components:
       required:
         - type
       title: Person
+      type: object
     ArticleEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -465,9 +424,8 @@ components:
       required:
         - type
       title: Article
+      type: object
     ResearchPaperEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -476,23 +434,22 @@ components:
       required:
         - type
       title: Research Paper
+      type: object
     CustomEntity:
-      type:
-        - object
       properties:
+        description:
+          minLength: 2
+          maxLength: 200
+          type: string
         type:
           type: string
           const: custom
           default: custom
-        description:
-          type:
-            - string
-          minLength: 2
-          maxLength: 200
       required:
         - type
         - description
       title: Custom
+      type: object
   securitySchemes:
     apiKey:
       type: apiKey
