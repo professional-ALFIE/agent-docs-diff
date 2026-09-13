@@ -65,22 +65,16 @@ paths:
 components:
   schemas:
     MonitorRun:
-      type:
-        - object
       properties:
         id:
-          type:
-            - string
           description: The unique identifier for the Monitor Run
+          type: string
         object:
-          type:
-            - string
           enum:
             - monitor_run
           description: The type of object
+          type: string
         status:
-          type:
-            - string
           enum:
             - created
             - running
@@ -88,25 +82,18 @@ components:
             - canceled
             - failed
           description: The status of the Monitor Run
-        monitorId:
-          type:
-            - string
-          description: The monitor that the run is associated with
-        type:
-          type:
-            - string
-          enum:
-            - search
-            - refresh
-          description: The type of the Monitor Run
-        completedAt:
           type: string
+        monitorId:
+          description: The monitor that the run is associated with
+          type: string
+        completedAt:
           format: date-time
+          type: string
           description: When the run completed
           nullable: true
         failedAt:
-          type: string
           format: date-time
+          type: string
           description: When the run failed
           nullable: true
         failedReason:
@@ -114,25 +101,29 @@ components:
           description: The reason the run failed
           nullable: true
         canceledAt:
-          type: string
           format: date-time
+          type: string
           description: When the run was canceled
           nullable: true
         createdAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the run was created
         updatedAt:
-          type:
-            - string
+          type: string
           format: date-time
           description: When the run was last updated
+        type:
+          type: string
+          enum:
+            - search
+            - refresh
+          description: The type of the Monitor Run
       required:
         - id
         - object
-        - monitorId
         - status
+        - monitorId
         - type
         - completedAt
         - failedAt
@@ -140,6 +131,7 @@ components:
         - canceledAt
         - createdAt
         - updatedAt
+      type: object
   securitySchemes:
     apiKey:
       type: apiKey
