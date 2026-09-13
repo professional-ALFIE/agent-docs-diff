@@ -40,13 +40,13 @@ paths:
           description: The ID of the webhook
           schema:
             type: string
-        - name: cursor
-          required: false
-          in: query
-          description: The cursor to paginate through the results
+        - in: query
+          name: cursor
           schema:
             minLength: 1
             type: string
+          required: false
+          description: The cursor to paginate through the results
         - name: limit
           required: false
           in: query
