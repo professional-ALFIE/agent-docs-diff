@@ -208,16 +208,16 @@ components:
               - string
             maxLength: 1000
         failedReason:
-          type: string
           enum:
             - invalid_format
             - invalid_file_content
             - missing_identifier
+          type: string
           description: The reason the import failed
           nullable: true
         failedAt:
-          type: string
           format: date-time
+          type: string
           description: When the import failed
           nullable: true
         failedMessage:
@@ -264,8 +264,6 @@ components:
         The response to a successful import. Includes the upload URL and the
         upload valid until date.
     CompanyEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -274,9 +272,8 @@ components:
       required:
         - type
       title: Company
+      type: object
     PersonEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -285,9 +282,8 @@ components:
       required:
         - type
       title: Person
+      type: object
     ArticleEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -296,9 +292,8 @@ components:
       required:
         - type
       title: Article
+      type: object
     ResearchPaperEntity:
-      type:
-        - object
       properties:
         type:
           type: string
@@ -307,40 +302,29 @@ components:
       required:
         - type
       title: Research Paper
+      type: object
     CustomEntity:
-      type:
-        - object
       properties:
+        description:
+          minLength: 2
+          maxLength: 200
+          type: string
         type:
           type: string
           const: custom
           default: custom
-        description:
-          type:
-            - string
-          minLength: 2
-          maxLength: 200
       required:
         - type
         - description
       title: Custom
+      type: object
     Entity:
       oneOf:
         - $ref: '#/components/schemas/CompanyEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/PersonEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ArticleEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/ResearchPaperEntity'
-          type:
-            - object
         - $ref: '#/components/schemas/CustomEntity'
-          type:
-            - object
   securitySchemes:
     apiKey:
       type: apiKey
