@@ -60,7 +60,7 @@ IDE에 대한 링크를 클릭하여 직접 설치합니다:
 
     * **활동 표시줄**: 왼쪽 사이드바의 Spark 아이콘을 클릭하여 세션 목록을 엽니다. 세션을 클릭하여 [선호하는 위치](#extension-settings)에서 열거나 새로운 세션을 시작합니다. 이 아이콘은 항상 활동 표시줄에 표시됩니다.
     * **명령 팔레트**: `Cmd+Shift+P`(Mac) 또는 `Ctrl+Shift+P`(Windows/Linux)를 누르고 "Claude Code"를 입력한 후 "새 탭에서 열기"와 같은 옵션을 선택합니다.
-    * **상태 표시줄**: [`preferredLocation`](#extension-settings)을 `sidebar`로 설정했거나 **Claude Code: 사이드 바에서 열기**로 Claude를 열었다면 창의 오른쪽 아래 모서리에서 **✱ Claude Code**를 클릭합니다. 파일을 열지 않았을 때도 작동합니다.
+    * **상태 표시줄**: [`preferredLocation`](#extension-settings)을 `sidebar`로 설정했거나 **Claude Code: 사이드 바에서 열기**로 Claude를 열었다면 창의 오른쪽 아래 모서리에서 **✻ Claude Code**를 클릭합니다. 파일을 열지 않았을 때도 작동합니다.
 
     Claude 패널을 드래그하여 VS Code의 어디든지 재배치할 수 있습니다. 자세한 내용은 [워크플로우 사용자 정의](#customize-your-workflow)를 참조하세요.
   </Step>
@@ -202,7 +202,7 @@ Claude Code 패널 상단의 **Session history** 버튼을 클릭하여 대화 �
 
 `/usage`를 실행하여 Account & usage 대화를 엽니다. 대화에는 claude.ai 로그인이 필요하므로 [3차 공급자](#use-third-party-providers)에서 제공되지 않습니다. 로그인한 계정, 플랜 및 현재 세션과 주의 사용량 막대를 표시합니다. 각 막대는 제한이 재설정될 때까지의 시간을 표시합니다.
 
-대화는 또한 플랜 제한에 기여하는 항목을 분류합니다. 캐시 미스, 긴 컨텍스트, 서브에이전트 집약적 또는 고도로 병렬 세션과 같이 최근 사용량의 10% 이상을 차지하는 동작에 플래그를 지정하며, 각각 이를 줄이기 위한 팁이 있습니다. Attribution 테이블은 각 스킬, 서브에이전트, 플러그인 및 MCP 서버에서 얼마나 많은 사용량이 나왔는지 보여줍니다. Claude Code v2.1.174 이상이 필요합니다.
+대화는 또한 플랜 제한에 기여하는 항목을 분류합니다. 캐시 미스, 긴 컨텍스트, 서브에이전트 집약적 또는 고도로 병렬 세션과 같이 최근 사용량의 10% 이상을 차지하는 동작에 플래그를 지정하며, 각각 이를 줄이기 위한 팁이 있습니다. Attribution 테이블은 각 스킬, 서브에이전트, 플러그인 및 MCP 서버에서 얼마나 많은 사용량이 나왔는지 보여줍니다.
 
 Day와 Week 토글을 사용하여 지난 24시간과 지난 7일 사이를 전환합니다. 수치는 대략적이며 이 컴퓨터의 로컬 세션에서 계산되므로 다른 장치 또는 claude.ai의 사용량은 포함되지 않습니다. 사용량 추적 및 감소에 대한 자세한 내용은 [Track your costs](/docs/ko/costs#track-your-costs)를 참조하세요.
 
@@ -433,7 +433,7 @@ vscode://anthropic.claude-code/open?prompt=review%20my%20changes
 
 확장 프로그램에는 두 가지 유형의 설정이 있습니다:
 
-* **VS Code의 확장 프로그램 설정**: VS Code 내에서 확장 프로그램의 동작을 제어합니다. `Cmd+,`(Mac) 또는 `Ctrl+,`(Windows/Linux)로 열고, Extensions → Claude Code로 이동합니다. `/`를 입력하고 **General Config**를 선택하여 설정을 열 수도 있습니다.
+* **VS Code의 확장 프로그램 설정**: VS Code 내에서 확장 프로그램의 동작을 제어합니다. `Cmd+,`(Mac) 또는 `Ctrl+,`(Windows/Linux)로 열고, Extensions → Claude Code로 이동합니다. `/`를 입력하고 \*\*General config…\*\*를 선택하여 설정을 열 수도 있습니다.
 * **`~/.claude/settings.json`의 Claude Code 설정**: 확장 프로그램과 CLI 간에 공유됩니다. 허용된 명령, 환경 변수, hooks 및 MCP 서버에 사용합니다. Pro, Max 및 Team 플랜에서는 권한 모드 대화가 시작되는 입력 중 하나이기도 합니다. [권한 모드 전환](/docs/ko/permission-modes#switch-permission-modes)에서 순서를 나열합니다. 자세한 내용은 [설정](/docs/ko/settings)을 참조하세요.
 
 <Tip>
@@ -668,7 +668,7 @@ Spark 아이콘은 파일이 열려 있을 때 **편집기 도구 모음**(편�
 4. **충돌하는 확장 프로그램 비활성화**: 다른 AI 확장 프로그램(Cline, Continue 등) 임시 비활성화
 5. **작업 영역 신뢰 확인**: 확장 프로그램은 제한된 모드에서 작동하지 않습니다
 
-또는 [`preferredLocation`](#extension-settings)을 `sidebar`로 설정했거나 **Claude Code: Open in Side Bar**로 Claude를 열었다면, **상태 표시줄**(우측 하단 모서리)의 "✱ Claude Code"를 클릭하세요. 이는 파일이 열려 있지 않아도 작동합니다. **명령 팔레트**(`Cmd+Shift+P` / `Ctrl+Shift+P`)를 사용하고 "Claude Code"를 입력할 수도 있습니다.
+또는 [`preferredLocation`](#extension-settings)을 `sidebar`로 설정했거나 **Claude Code: Open in Side Bar**로 Claude를 열었다면, **상태 표시줄**(우측 하단 모서리)의 "✻ Claude Code"를 클릭하세요. 이는 파일이 열려 있지 않아도 작동합니다. **명령 팔레트**(`Cmd+Shift+P` / `Ctrl+Shift+P`)를 사용하고 "Claude Code"를 입력할 수도 있습니다.
 
 <h3 id="cmd-esc-does-nothing-on-macos">
   macOS에서 Cmd+Esc가 작동하지 않음
