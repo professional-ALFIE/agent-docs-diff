@@ -515,7 +515,7 @@ class ClaudeSDKClient:
     async def receive_messages(self) -> AsyncIterator[Message]
     async def receive_response(self) -> AsyncIterator[Message]
     async def interrupt(self) -> None
-    async def set_permission_mode(self, mode: str) -> None
+    async def set_permission_mode(self, mode: PermissionMode) -> None
     async def set_model(self, model: str | None = None) -> None
     async def rewind_files(self, user_message_id: str) -> None
     async def get_mcp_status(self) -> McpStatusResponse
@@ -545,7 +545,7 @@ class ClaudeSDKClient:
 | `reconnect_mcp_server(server_name)`       | 실패했거나 연결이 끊긴 MCP 서버에 다시 연결 시도                                                                                |
 | `toggle_mcp_server(server_name, enabled)` | 세션 중간에 MCP 서버 활성화 또는 비활성화. 비활성화하면 도구 제거                                                                      |
 | `stop_task(task_id)`                      | 실행 중인 백그라운드 작업 중지. 상태 `"stopped"`인 [`TaskNotificationMessage`](#tasknotificationmessage)가 메시지 스트림에서 따릅니다     |
-| `get_server_info()`                       | 세션 ID 및 기능을 포함한 서버 정보 가져오기                                                                                   |
+| `get_server_info()`                       | 사용 가능한 명령 및 출력 스타일을 포함한 서버의 초기화 정보 가져오기                                                                      |
 | `disconnect()`                            | Claude에서 연결 해제                                                                                               |
 
 <h4 id="context-manager-support">
@@ -2008,7 +2008,14 @@ CLI가 [긴 MCP 도구 호출을 백그라운드로 이동](/docs/ko/mcp#automat
 모든 콘텐츠 블록의 합집합 타입입니다.
 
 ```python theme={null}
-ContentBlock = TextBlock | ThinkingBlock | ToolUseBlock | ToolResultBlock
+ContentBlock = (
+    TextBlock
+    | ThinkingBlock
+    | ToolUseBlock
+    | ToolResultBlock
+    | ServerToolUseBlock
+    | ServerToolResultBlock
+)
 ```
 
 <h3 id="textblock">
@@ -3679,7 +3686,7 @@ class SandboxNetworkConfig(TypedDict, total=False):
 | `allowedDomains`          | `list[str]` | `[]`    | 샌드박스된 프로세스가 접근할 수 있는 도메인 이름                                                                                                 |
 | `deniedDomains`           | `list[str]` | `[]`    | 샌드박스된 프로세스가 접근할 수 없는 도메인 이름입니다. `allowedDomains`보다 우선합니다                                                                    |
 | `allowManagedDomainsOnly` | `bool`      | `False` | 관리되는 설정만: 관리되는 설정에서 설정되면, 관리되지 않는 설정 소스의 `allowedDomains` 및 `WebFetch(domain:...)` 허용 규칙을 무시합니다. SDK 옵션을 통해 설정할 때는 효과가 없습니다 |
-| `allowUnixSockets`        | `list[str]` | `[]`    | 프로세스가 접근할 수 있는 Unix 소켓 경로 (예: Docker 소켓)                                                                                    |
+| `allowUnixSockets`        | `list[str]` | `[]`    | macOS만 해당: 프로세스가 접근할 수 있는 Unix 소켓 경로 (예: Docker 소켓). Linux에서는 무시됩니다                                                         |
 | `allowAllUnixSockets`     | `bool`      | `False` | 모든 Unix 소켓에 대한 접근 허용                                                                                                        |
 | `allowLocalBinding`       | `bool`      | `False` | 프로세스가 로컬 포트에 바인딩하도록 허용 (예: 개발 서버용)                                                                                          |
 | `allowMachLookup`         | `list[str]` | `[]`    | macOS만 해당: 허용할 XPC/Mach 서비스 이름입니다. 후행 와일드카드를 지원합니다                                                                          |
