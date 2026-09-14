@@ -1,5 +1,5 @@
 {
-  "생성": "2026-09-13T20:47:41.448Z",
+  "생성": "2026-09-14T12:42:27.250Z",
   "제품폴더": "Claude_Code",
   "진입": "https://code.claude.com/docs/en/overview",
   "최상위수": 8,
@@ -169,7 +169,7 @@
       "경로": "010_Getting_started/040_Platforms_and_integrations/040_Claude_Code_on_desktop/020_Reference.md",
       "href": "/en/desktop",
       "url": "https://code.claude.com/docs/en/desktop.md",
-      "sha256": "a7a5296a597b2f59ced47d65a27242f12474b2712da9ec8e339d0bb95d4a8dd1",
+      "sha256": "0243ef21e94597abfbce233848d1bea087f6c6f2d7194a2e870a19d932ae429a",
       "bytes": 102081,
       "contentType": "text/markdown"
     },
