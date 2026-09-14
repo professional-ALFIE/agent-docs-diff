@@ -187,9 +187,11 @@ Claude Code는 플러그인의 스킬, 명령, 에이전트, hook, 모니터 또
   전체 도구 거부
 </h3>
 
-`Bash` 또는 `WebFetch`와 같은 단순 도구 이름을 [거부 규칙](/docs/ko/permissions#manage-permissions)으로 추가하면 해당 도구가 Claude의 컨텍스트에서 완전히 제거됩니다. Claude Code는 기본 제공 도구 정의를 시스템 프롬프트 레이어에 로드하므로 세션 중에 이러한 규칙 중 하나를 추가하거나 제거하면 캐시가 무효화됩니다. Claude Code는 `/permissions`를 통해 규칙을 추가하거나 [설정 파일을 직접 편집](/docs/ko/settings#when-edits-take-effect)하여 다음 요청에 변경을 적용합니다. 여기에는 턴 중간에 `/permissions`를 통해 추가하는 규칙이 포함됩니다.
+`Bash` 또는 `WebFetch`와 같은 단순 도구 이름을 [거부 규칙](/docs/ko/permissions#manage-permissions)으로 추가하면 `/permissions`를 통해 규칙을 추가하거나 [설정 파일을 직접 편집](/docs/ko/settings#when-edits-take-effect)하여 다음 요청부터 Claude가 해당 도구를 호출할 수 없습니다. 여기에는 턴 중간에 `/permissions`를 통해 추가하는 규칙이 포함됩니다.
 
-도구 이름 위치에서 일치하는 거부 규칙만 이 효과를 가집니다. 단순 도구 이름, 동등한 `Bash(*)` 형식, 또는 `"*"`와 같은 [도구 이름 glob](/docs/ko/permissions#tool-name-wildcards)입니다. `"mcp__*"`와 같이 MCP 도구만 일치하는 glob은 해당 도구를 같은 방식으로 제거하지만 일치하는 도구가 [연기](#connecting-or-disconnecting-an-mcp-server)되면 캐시를 그대로 유지합니다. 기본값이므로 연기된 정의는 캐시된 접두사에 없었습니다. `Bash(rm *)`과 같은 범위 지정 거부 규칙, 그리고 모든 허용 및 요청 규칙은 Claude가 보는 도구를 변경하지 않습니다. Claude Code는 Claude가 호출을 시도할 때 확인하여 접두사를 그대로 유지합니다.
+[도구 검색](/docs/ko/mcp#scale-with-mcp-tool-search)이 활성화되어 있을 때(지원되는 모델의 기본값), 요청의 도구 정의가 변경되지 않고 캐시된 접두사가 유지됩니다. 도구 검색을 사용할 수 없거나 비활성화되어 있을 때 Claude Code는 다음 요청에서 정의를 제거하므로 캐시가 무효화되며, 나중에 규칙을 제거해도 마찬가지입니다.
+
+도구 이름 위치에서 일치하는 거부 규칙만 이 방식으로 도구를 차단합니다. 단순 도구 이름, 동등한 `Bash(*)` 형식, 또는 `"*"`와 같은 [도구 이름 glob](/docs/ko/permissions#tool-name-wildcards)입니다. `"mcp__*"`와 같이 MCP 도구만 일치하는 glob은 해당 도구를 같은 방식으로 차단합니다. `Bash(rm *)`과 같은 범위 지정 거부 규칙, 그리고 모든 허용 및 요청 규칙은 Claude가 보는 도구를 변경하지 않습니다. Claude Code는 Claude가 호출을 시도할 때 확인하여 접두사를 그대로 유지합니다.
 
 <h3 id="compacting-the-conversation">
   대화 압축
