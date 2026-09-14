@@ -11,7 +11,7 @@
 [git worktree](https://git-scm.com/docs/git-worktree)는 자체 파일과 브랜치를 가진 별도의 작업 디렉토리이며, 메인 체크아웃과 동일한 저장소 히스토리 및 원격을 공유합니다. 각 Claude Code 세션을 자체 worktree에서 실행하면 한 세션의 편집이 다른 세션의 파일을 건드리지 않으므로, 한 세션이 기능을 구축하는 동안 두 번째 세션이 버그를 수정할 수 있습니다.
 
 <Note>
-  Worktree는 git 저장소가 필요합니다. 다른 버전 관리 시스템의 경우 [훅을 구성하여 git 로직을 대체](#non-git-version-control)합니다. [데스크톱 앱](/docs/ko/desktop#work-in-parallel-with-sessions)에서는 모든 새 세션이 자동으로 자체 worktree를 가져옵니다.
+  Worktree는 git 저장소가 필요합니다. 다른 버전 관리 시스템의 경우 [훅을 구성하여 git 로직을 대체](#non-git-version-control)합니다. [데스크톱 앱](/docs/ko/desktop#work-in-parallel-with-sessions)에서는 세션을 시작할 때 **worktree** 옵션을 선택하여 자체 worktree를 제공합니다.
 </Note>
 
 Worktree는 Claude를 병렬로 실행하는 여러 방법 중 하나입니다. 이들은 파일 편집을 격리합니다. [서브에이전트](/docs/ko/sub-agents)는 한 세션 내에서 작업을 분할하고, [크로스 세션 메시징](/docs/ko/cross-session-messaging)을 통해 Claude는 worktree의 세션 간에 발견 사항을 전달할 수 있습니다. [Claude를 병렬로 실행](/docs/ko/agents)을 참조하여 접근 방식을 비교하거나, [worktree로 서브에이전트 격리](#isolate-subagents-with-worktrees)로 건너뛰어 worktree와 서브에이전트를 함께 사용합니다.
