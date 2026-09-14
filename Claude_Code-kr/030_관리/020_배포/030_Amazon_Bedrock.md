@@ -241,7 +241,7 @@ Claude Code는 AWS SSO 및 회사 ID 공급자에 대한 자동 자격 증명 �
 
 `aws configure export-credentials --format process`의 평면 출력도 허용되며, `Credentials` 아래에 중첩되지 않고 최상위 수준에 동일한 키가 있습니다.
 
-`Expiration`은 선택 사항입니다. Claude Code v2.1.176부터 명령이 유효한 ISO 8601 `Expiration`을 반환하면 Claude Code는 해당 시간 5분 전까지 자격 증명을 캐시합니다. 없거나 이전 버전에서는 자격 증명이 1시간 동안 캐시됩니다.
+`Expiration`은 선택 사항입니다. 명령이 유효한 ISO 8601 `Expiration`을 반환하면 Claude Code는 해당 시간 5분 전까지 자격 증명을 캐시합니다. 없으면 자격 증명이 1시간 동안 캐시됩니다.
 
 `awsCredentialExport`를 `awsAuthRefresh` 없이 구성하면 Claude Code는 내보낸 자격 증명을 직접 사용하고 시작 시 AWS 기본 자격 증명 공급자 체인을 다시 해결하지 않습니다. Claude Code v2.1.206 이상이 필요합니다.
 
