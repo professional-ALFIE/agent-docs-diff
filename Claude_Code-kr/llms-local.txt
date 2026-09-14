@@ -21,7 +21,7 @@
   040_플랫폼_및_통합/
     010_개요.md
     020_Remote_Control.md
-    030_웹에서_Claude_Code/
+    030_웹에서_Claude_Code_사용하기/
       010_시작하기.md
       020_참고.md
       030_루틴.md
