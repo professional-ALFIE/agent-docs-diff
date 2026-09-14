@@ -118,13 +118,20 @@ Claude Code로 할 수 있는 작업에 대한 더 많은 아이디어는 [일�
   * Customize 섹션에서 **Output styles**를 선택하여 사용자 정의 스타일을 포함한 [출력 스타일](/docs/ko/output-styles)을 선택합니다. Claude Code v2.1.257 이상이 필요합니다.
 
     대신 사용자 정의 스타일을 만들려면 **Output styles** 메뉴에서 **Build a custom style**을 선택합니다. Claude Code는 프로젝트 또는 사용자 수준에서 [스타일 파일](/docs/ko/output-styles#create-a-custom-output-style)을 작성합니다. Claude Code v2.1.261 이상이 필요합니다.
+  * Customize 섹션에서 **Hooks**를 선택하여 세션에 로드된 [훅](/docs/ko/hooks)을 이벤트별로 그룹화하여 봅니다. 사용자, 프로젝트 및 로컬 설정 파일에 저장된 훅을 추가, 편집 또는 제거할 수 있습니다. 관리되는 설정 또는 플러그인과 같은 다른 소스의 훅은 읽기 전용입니다. Claude Code v2.1.269 이상이 필요합니다.
+  * Customize 섹션에서 **Permissions**를 선택하여 세션의 [권한 규칙](/docs/ko/permissions)을 Allow, Ask, Deny로 그룹화하여 봅니다. 사용자, 프로젝트 또는 로컬 설정에 규칙을 추가하고 거기에 저장된 규칙을 제거할 수 있습니다. 관리되는 설정 또는 이 세션에만 적용되는 승인과 같은 다른 소스의 규칙은 읽기 전용입니다. Claude Code v2.1.269 이상이 필요합니다.
   * Settings 섹션에는 **Enable Remote Control for all sessions**이 포함되어 있으며, 이는 [`remoteControlAtStartup`](/docs/ko/settings-reference#remotecontrolatstartup)을 설정하여 [새 대화형 세션이 Remote Control에 자동으로 연결되는지](/docs/ko/remote-control#enable-remote-control-for-all-sessions) 제어합니다. Claude Code v2.1.203 이상이 필요합니다.
 
     VS Code 창에서 토글을 켜거나 끌 때 변경 사항은 그 이후에 시작하는 세션뿐만 아니라 해당 VS Code 창에서 이미 열려 있는 세션에 적용됩니다. 토글을 끄면 열려 있는 세션이 연결 해제됩니다. Claude Code v2.1.261 이상에서는 변경 사항이 다른 VS Code 창에서 열려 있는 세션에도 도달합니다.
-  * Settings 섹션에는 또한 **Focus view**가 포함되어 있으며, 이는 도구 호출, 도구 결과 및 사고를 확장 가능한 행 뒤에 숨기고 프롬프트와 Claude의 응답을 남깁니다. Claude의 최신 할 일 목록은 계속 표시되며, Claude가 묻는 보류 중인 질문의 텍스트도 표시됩니다. 이는 Claude Code v2.1.225 이상이 필요합니다. 여기서 토글하거나, `Ctrl+Option+F` (Mac) / `Ctrl+Alt+F` (Windows/Linux)를 사용하거나, Command Palette에서 **Claude Code: Toggle Focus view**를 사용하여 토글합니다. 변경 사항은 모든 열려 있는 세션에 적용되고 세션 전체에서 유지됩니다. Claude Code v2.1.221 이상이 필요합니다.
+  * Settings 섹션에는 또한 **Focus view**가 포함되어 있으며, 이는 도구 호출, 도구 결과 및 사고를 확장 가능한 행 뒤에 숨기고 프롬프트와 Claude의 응답을 남깁니다. 여기서 토글하거나, `Ctrl+Option+F` (Mac) / `Ctrl+Alt+F` (Windows/Linux)를 사용하거나, Command Palette에서 **Claude Code: Toggle Focus view**를 사용하여 토글합니다. 변경 사항은 모든 열려 있는 세션에 적용되고 세션 전체에서 유지됩니다. Claude Code v2.1.221 이상이 필요합니다.
+
+    Claude의 최신 할 일 목록은 계속 표시되며, Claude가 묻는 보류 중인 질문의 텍스트도 표시됩니다. 이는 Claude Code v2.1.225 이상이 필요합니다. Claude가 [서브에이전트](/docs/ko/sub-agents)를 실행하는 동안 최신 활동이 있는 라이브 진행 행이 이들을 시작한 도구 호출 그룹 아래에 나타납니다. Claude Code v2.1.269 이상이 필요합니다.
   * 버그를 보고하려면 메뉴 하단의 **Report a problem**을 클릭하거나 `/bug` 또는 `/feedback`을 입력하고 선택적으로 보고서를 미리 채우는 설명을 입력합니다. 보고서를 제출하고 1차 연결에서 Anthropic에 로그인한 경우 Claude Code는 이를 Anthropic에 보냅니다. 3차 공급자에서 또는 Anthropic 자격 증명 없이 대화 상자가 여전히 열리지만 제출하면 오류가 표시되고 아무것도 전송되지 않습니다. CLI의 `/bug`와 달리 확장 프로그램은 로컬 아카이브를 작성하지 않습니다. Claude Code v2.1.229 이상이 필요합니다.
 * **Side questions**: `/btw` 다음에 질문을 입력하여 [대화에 추가하지 않고](/docs/ko/interactive-mode#side-questions-with-%2Fbtw) 세션에 대해 질문합니다. 답변은 채팅 옆의 패널에서 열리며, 여기서 후속 질문을 할 수 있습니다. 스레드는 창 다시 로드를 유지합니다. Claude Code는 최신 20개 교환을 유지하고 Claude Code가 [안전하게 보존 기간을 결정](/docs/ko/claude-directory#cleaned-up-automatically)할 수 있는 한 [`cleanupPeriodDays`](/docs/ko/settings-reference#cleanupperioddays) 일정에 따라 저장된 스레드를 만료합니다. 스레드를 지우려면 패널의 휴지통 아이콘을 클릭합니다. Claude Code v2.1.227 이상이 필요합니다.
 * **Context indicator**: 프롬프트 상자는 Claude의 컨텍스트 윈도우를 얼마나 사용하고 있는지 보여줍니다. Claude는 필요할 때 자동으로 압축하거나 `/compact`를 수동으로 실행할 수 있습니다.
+* **Agent map**: 대화에 [서브에이전트](/docs/ko/sub-agents)가 포함되면 프롬프트 상자 하단에 **2 agents**와 같은 에이전트 수가 나타납니다. 점은 서브에이전트가 작동 중인지 또는 권한을 기다리고 있는지 여부를 보여줍니다.
+
+  에이전트 맵을 열려면 에이전트 수를 클릭합니다. 에이전트 맵은 대화의 서브에이전트를 주 에이전트 아래의 트리로 그리며, 각각 상태, 경과 시간 및 토큰 수를 표시합니다. 서브에이전트를 클릭하여 프롬프트 및 도구 호출을 보거나, 읽기 전용 기록을 열거나, 실행 중일 때 중지합니다. Claude Code v2.1.269 이상이 필요합니다.
 * **Extended thinking**: Claude가 복잡한 문제를 추론하는 데 더 많은 시간을 소비할 수 있게 합니다. 명령 메뉴(`/`)를 통해 토글합니다. Claude의 추론은 대화에 축소된 블록으로 나타납니다. 블록을 클릭하여 읽거나 `Ctrl+O`를 눌러 세션의 모든 사고 블록을 확장하거나 축소합니다. 자세한 내용은 [Extended thinking](/docs/ko/model-config#extended-thinking)을 참조하세요.
 * **Multi-line input**: `Shift+Enter`를 눌러 보내지 않고 새 줄을 추가합니다. 이는 질문 대화의 "Other" 자유 텍스트 입력에서도 작동합니다.
 
@@ -141,7 +148,7 @@ What's in @src/components/ (include a trailing slash for folders)
 
 큰 PDF의 경우 전체 파일 대신 특정 페이지를 읽도록 Claude에 요청할 수 있습니다. 단일 페이지, 1-10페이지와 같은 범위 또는 3페이지 이상과 같은 개방형 범위입니다.
 
-편집기에서 텍스트를 선택하면 Claude가 강조 표시된 코드를 자동으로 볼 수 있습니다. 프롬프트 상자 바닥글은 선택된 줄 수를 표시합니다. `Option+K` (Mac) / `Alt+K` (Windows/Linux)를 눌러 파일 경로 및 줄 번호가 있는 @-멘션을 삽입합니다 (예: `@app.ts#5-10`). 선택 표시기를 클릭하여 Claude가 강조 표시된 텍스트를 볼 수 있는지 여부를 토글합니다. 눈-슬래시 아이콘은 선택이 Claude에서 숨겨져 있음을 의미합니다.
+편집기에서 텍스트를 선택하면 Claude가 강조 표시된 코드를 자동으로 볼 수 있습니다. 프롬프트 상자 바닥글은 선택된 줄 수를 표시합니다. `Option+K` (Mac) / `Alt+K` (Windows/Linux)를 눌러 파일 경로 및 줄 번호가 있는 @-멘션을 삽입합니다 (예: `@app.ts#5-10`). 선택 표시기의 **X**를 클릭하여 Claude가 선택 항목을 받지 않도록 제거합니다. 다른 텍스트를 선택하거나 다른 파일로 전환하면 표시기가 다시 나타납니다.
 
 클립보드에서 이미지를 붙여넣어 프롬프트 상자에 첨부할 수 있습니다. 파일을 프롬프트 상자로 드래그할 때 `Shift`를 누르고 있으면 첨부 파일로 추가할 수 있습니다. 첨부 파일의 X를 클릭하여 컨텍스트에서 제거합니다.
 
@@ -240,7 +247,7 @@ Claude 패널을 드래그하여 VS Code의 어느 곳이든 위치를 변경할
 
 * **세션 그룹화 또는 그룹 해제**: 세션을 마우스 오른쪽 버튼으로 클릭하여 그룹을 만들거나, 기존 그룹으로 이동하거나, 그룹에서 제거합니다. 각 세션은 한 번에 하나의 그룹에만 속하므로, 다른 그룹으로 이동하면 첫 번째 그룹에서 제거됩니다.
 * **여러 세션을 한 번에 이동**: `Cmd`-클릭(Mac) / `Ctrl`-클릭(Windows/Linux)으로 각 세션을 선택하거나, `Shift`-클릭으로 범위를 선택한 후 선택 항목을 마우스 오른쪽 버튼으로 클릭합니다.
-* **탭에서 세션 그룹화**: 명령 팔레트에서 **Claude Code: Add Session Tab to Group**을 실행하거나, 세션의 편집기 탭을 마우스 오른쪽 버튼으로 클릭한 후 그룹을 선택하거나 만듭니다. Claude Code v2.1.257 이상이 필요합니다.
+* **탭에서 세션 그룹화**: 명령 팔레트에서 **Claude Code: Add Session Tab to Group**을 실행한 후 그룹을 선택하거나 만듭니다. Claude Code v2.1.257 이상이 필요합니다.
 * **그룹 이름 바꾸기 또는 삭제**: 그룹 헤더를 마우스 오른쪽 버튼으로 클릭합니다. 그룹을 삭제하면 그룹만 제거되고 해당 세션은 그룹화되지 않은 목록으로 돌아갑니다.
 
 확장 프로그램은 작업 영역 폴더별로 그룹을 저장하므로, 창을 다시 로드해도 유지되며 같은 폴더를 여는 모든 창에 표시됩니다. 목록을 검색할 때 확장 프로그램은 모든 그룹에서 일치하는 항목을 하나의 평면 목록으로 표시합니다.
@@ -361,9 +368,9 @@ Claude는 브라우저 작업을 위해 새 탭을 열고 브라우저의 로그
 | Reopen Closed Session      | `Cmd+Shift+T` (Mac) / `Ctrl+Shift+T` (Windows/Linux)     | 가장 최근에 닫은 Claude 세션 탭을 다시 열기. 마지막으로 닫은 탭이 Claude 세션이 아닌 경우 VS Code의 일반 닫힌 편집기 다시 열기로 폴스루됨. `enableReopenClosedSessionShortcut`으로 비활성화 |
 | Insert @-Mention Reference | `Option+K` (Mac) / `Alt+K` (Windows/Linux)               | 현재 파일 및 선택 항목에 대한 참조 삽입(편집기가 포커스되어 있어야 함)                                                                                             |
 | Toggle Focus view          | `Ctrl+Option+F` (Mac) / `Ctrl+Alt+F` (Windows/Linux)     | 대화에서 도구 활동 숨기기 또는 표시. Claude 패널 또는 사이드바가 표시되는 동안 작동. Claude Code v2.1.221 이상 필요                                                       |
-| Rename Session Tab         | -                                                        | 활성 Claude 탭의 세션 이름 바꾸기. 명령어는 탭의 우클릭 메뉴에도 나타남. Claude Code v2.1.257 이상 필요                                                              |
-| Add Session Tab to Group   | -                                                        | 활성 Claude 탭의 세션을 선택하거나 만드는 [세션 그룹](#organize-sessions-into-groups)에 추가. 명령어는 탭의 우클릭 메뉴에도 나타남. Claude Code v2.1.257 이상 필요              |
-| Mark Session as Unread     | -                                                        | 활성 Claude 탭의 세션을 세션 목록에서 읽지 않음으로 표시. 명령어는 탭의 우클릭 메뉴에도 나타남. Claude Code v2.1.257 이상 필요                                                 |
+| Rename Session Tab         | -                                                        | 활성 Claude 탭의 세션 이름 바꾸기. Claude Code v2.1.257 이상 필요                                                                                    |
+| Add Session Tab to Group   | -                                                        | 활성 Claude 탭의 세션을 선택하거나 만드는 [세션 그룹](#organize-sessions-into-groups)에 추가. Claude Code v2.1.257 이상 필요                                    |
+| Mark Session as Unread     | -                                                        | 활성 Claude 탭의 세션을 세션 목록에서 읽지 않음으로 표시. Claude Code v2.1.257 이상 필요                                                                       |
 | Show Logs                  | -                                                        | 확장 프로그램 디버그 로그 보기                                                                                                                     |
 | Logout                     | -                                                        | Anthropic 계정에서 로그아웃                                                                                                                   |
 
