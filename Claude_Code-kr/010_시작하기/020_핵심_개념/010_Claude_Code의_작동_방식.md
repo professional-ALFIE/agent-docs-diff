@@ -213,7 +213,7 @@ Claude Code는 사용 방법을 가르칠 수 있습니다. "hooks를 설정하�
 
 내장 명령도 설정을 안내합니다:
 
-* `/init`은 프로젝트를 위한 CLAUDE.md 생성을 안내합니다
+* `/init`은 프로젝트를 위한 시작 CLAUDE.md를 생성합니다
 * `/doctor`는 설치 및 구성 문제를 진단하고 수정할 수 있습니다
 
 <h3 id="it’s-a-conversation">
