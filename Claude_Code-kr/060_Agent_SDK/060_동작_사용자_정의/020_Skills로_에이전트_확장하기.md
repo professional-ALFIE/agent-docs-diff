@@ -175,7 +175,7 @@ SDK를 통해 대화형 터미널 없이 작동하는 명령을 전달할 수 �
 Available commands: ["clear", "compact", "context", "usage", "code-review", "verify", "security-check", ...]
 ```
 
-사용자 호출 가능 Skills는 이 목록과 [Skills 로드 확인하기](#confirm-skills-loaded)의 `skills` 배열에 모두 나타납니다. `slash_commands` 목록은 세션에서 사용 가능한 나머지 명령을 추가합니다. frontmatter에 [`user-invocable: false`](/docs/ko/skills#control-who-invokes-a-skill)가 있는 Skill은 둘 다에 나타나지 않습니다. [MCP 서버](/docs/ko/agent-sdk/mcp)를 구성하는 세션은 또한 [MCP 프롬프트를 명령으로 노출](/docs/ko/mcp#use-mcp-prompts-as-commands)할 수 있습니다.
+frontmatter에 [`user-invocable: false`](/docs/ko/skills#control-who-invokes-a-skill)가 있는 Skill은 이 목록이나 [Skills 로드 확인하기](#confirm-skills-loaded)의 `skills` 배열에 나타나지 않습니다. [MCP 서버](/docs/ko/agent-sdk/mcp)를 구성하는 세션은 또한 [MCP 프롬프트를 명령으로 노출](/docs/ko/mcp#use-mcp-prompts-as-commands)할 수 있습니다.
 
 <h3 id="dispatch-commands-by-name">
   이름으로 명령 전달하기
