@@ -198,8 +198,6 @@ SDK는 훅을 정의하는 두 가지 방법을 지원하며, 이들은 나란�
 * **파일시스템 훅:** `settings.json`에 정의된 셸 명령, `settingSources`에 관련 소스가 포함될 때 로드됩니다. 이는 [대화형 Claude Code 세션](/docs/ko/hooks-guide)에 대해 구성하는 것과 동일한 훅입니다.
 * **프로그래밍 방식 훅:** `query()`에 직접 전달되는 콜백 함수입니다. 이들은 애플리케이션 프로세스에서 실행되며 구조화된 결정을 반환할 수 있습니다. [훅으로 실행 제어](/docs/ko/agent-sdk/hooks)를 참조하세요.
 
-두 유형 모두 동일한 훅 수명 주기 동안 실행됩니다. 프로젝트의 `.claude/settings.json`에 이미 훅이 있고 `settingSources: ["project"]`를 설정하면 추가 구성 없이 SDK에서 해당 훅이 자동으로 실행됩니다.
-
 훅 콜백은 도구 입력을 받고 결정 딕셔너리를 반환합니다. `{}`를 반환하면 도구가 진행되도록 허용합니다. 실행을 차단하려면 `permissionDecision: "deny"`와 `permissionDecisionReason`을 포함하는 `hookSpecificOutput` 객체를 반환합니다. 이유는 도구 결과로 Claude에 전송됩니다. 전체 콜백 서명 및 반환 유형은 [훅 가이드](/docs/ko/agent-sdk/hooks)를 참조하세요.
 
 <CodeGroup>
