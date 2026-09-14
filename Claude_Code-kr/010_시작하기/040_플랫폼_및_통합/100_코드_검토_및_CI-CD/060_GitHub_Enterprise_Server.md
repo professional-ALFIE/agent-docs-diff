@@ -118,7 +118,7 @@ cd api-service
 claude --cloud "Add retry logic to the payment webhook handler"
 ```
 
-세션은 GHES에서 저장소를 복제하고 변경 사항을 분기로 다시 푸시합니다. `/tasks`를 사용하거나 [claude.ai/code](https://claude.ai/code)에서 진행 상황을 모니터링합니다. diff 리뷰, 자동 수정 및 루틴을 포함한 전체 클라우드 세션 워크플로우는 [웹에서 Claude Code](/docs/ko/claude-code-on-the-web)를 참조하십시오.
+세션은 GHES에서 저장소를 복제하고 변경 사항을 분기로 다시 푸시합니다. [claude.ai/code](https://claude.ai/code)에서 진행 상황을 모니터링합니다. diff 리뷰, 자동 수정 및 루틴을 포함한 전체 클라우드 세션 워크플로우는 [웹에서 Claude Code](/docs/ko/claude-code-on-the-web)를 참조하십시오.
 
 <h3 id="teleport-sessions-to-your-terminal">
   터미널로 세션 Teleport
