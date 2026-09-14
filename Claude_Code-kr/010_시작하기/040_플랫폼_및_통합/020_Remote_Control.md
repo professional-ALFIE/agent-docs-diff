@@ -140,9 +140,7 @@ CLI 또는 VS Code 확장에서 Remote Control 세션을 시작할 수 있습니
 
 연결이 실패하면 Claude Code는 실패 이유가 있는 알림을 표시하고, 대화에 이유가 있는 경고 줄을 추가하며, 표시기를 제자리에 유지되는 실패 상태로 전환합니다. 다시 연결하려면 `/remote-control`을 실행하세요. 단, [이유가 세션이 다른 곳에서 인수되거나 종료되었거나 서버가 찾을 수 없다고 말하는](#session-ended-elsewhere) 경우는 제외합니다.
 
-다시 연결하기 전에 이유를 읽으세요. 세션이 다른 기기, 앱 또는 Claude Code 세션에서 인수되었거나 다른 곳에서 종료되었거나 서버가 찾을 수 없을 때 이유는 어느 것인지 말하며 Claude Code는 일반적인 `/remote-control` 실행 조언을 생략합니다:
-
-<span id="session-ended-elsewhere" />
+<span id="session-ended-elsewhere" />다시 연결하기 전에 이유를 읽으세요. 세션이 다른 기기, 앱 또는 Claude Code 세션에서 인수되었거나 다른 곳에서 종료되었거나 서버가 찾을 수 없을 때 이유는 어느 것인지 말하며 Claude Code는 일반적인 `/remote-control` 실행 조언을 생략합니다:
 
 * **다른 기기 또는 Claude Code 세션이 세션을 인수했습니다**: 해당 기기에서 세션을 다시 가져오려는 경우에만 `/remote-control`을 실행하세요.
 * **다른 기기 또는 앱에서 세션을 종료하거나 보관했습니다**: 다시 원하는 경우에만 `/remote-control`을 실행하세요. Claude Code는 보관된 세션을 다시 엽니다.
@@ -178,7 +176,7 @@ Remote Control 세션이 활성화되면 다른 기기에서 연결하는 몇 �
 3. 기존 대화 기록의 마지막 의미 있는 메시지
 4. `myhost-graceful-unicorn`과 같은 자동 생성된 이름입니다. 여기서 `myhost`는 컴퓨터의 호스트 이름 또는 `--remote-control-session-name-prefix`로 설정한 접두사입니다.
 
-명시적 이름을 설정하지 않았다면 메시지를 보낸 후 제목이 프롬프트를 반영하도록 업데이트됩니다. Claude Code는 자동 생성된 제목을 대화의 언어 또는 구성된 [`language`](/docs/ko/settings-reference#language) 설정과 일치시킵니다. 언어 일치는 Claude Code v2.1.176 이상이 필요합니다.
+명시적 이름을 설정하지 않았다면 메시지를 보낸 후 제목이 프롬프트를 반영하도록 업데이트됩니다. Claude Code는 자동 생성된 제목을 대화의 언어 또는 구성된 [`language`](/docs/ko/settings-reference#language) 설정과 일치시킵니다.
 
 claude.ai 또는 Claude 앱에서 세션의 이름을 바꾸면 `claude --resume`에 표시되는 로컬 제목도 업데이트됩니다. Claude Code는 동일한 이름 바꾸기를 프롬프트 바에 표시된 세션 이름과 세션이 [백그라운드에서 실행](/docs/ko/agent-view)될 때 `claude agents` 목록에 적용합니다. v2.1.221 이전에는 claude.ai의 세션 목록 또는 Claude 앱에서 이름을 바꾸면 제목만 업데이트되었고 CLI는 이전 세션 이름을 유지했습니다. CLI 자체에서 실행되는 `/rename`은 모든 버전에서 이름을 설정합니다.
 
