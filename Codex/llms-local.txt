@@ -77,7 +77,7 @@
     010_Record_&_Replay.md — Show ChatGPT or Codex a workflow once and turn it into a reusable skill
     020_MCP.md — Give Codex access to third-party tools and context
   060_Linux/
-    010_Desktop_app.md — Install and update ChatGPT on supported Ubuntu, Debian, and Fedora desktop distributions
+    010_Desktop_app.md — Install and update ChatGPT on supported Ubuntu, Debian, Fedora, and Arch Linux desktop distributions
   070_Windows/
     010_Desktop_app.md — Use ChatGPT on Windows with native sandbox and PowerShell support
     020_Windows_sandbox.md — Configure and troubleshoot the native Codex sandbox on Windows

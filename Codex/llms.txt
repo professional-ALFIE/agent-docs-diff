@@ -190,7 +190,7 @@ Use this as a compact map of ChatGPT docs for Codex. Each page has a Markdown tw
 - [Best practices](https://learn.chatgpt.com/guides/best-practices.md): Getting started with Codex and proven practices for better results
 
 ## Linux
-- [ChatGPT desktop app for Linux](https://learn.chatgpt.com/docs/linux/linux-app.md): Install and update ChatGPT on supported Ubuntu, Debian, and Fedora desktop distributions
+- [ChatGPT desktop app for Linux](https://learn.chatgpt.com/docs/linux/linux-app.md): Install and update ChatGPT on supported Ubuntu, Debian, Fedora, and Arch Linux desktop distributions
 
 ## Long Running Work
 - [Long-running work](https://learn.chatgpt.com/docs/long-running-work.md): Keep multi-step work focused with clear outcomes and completion criteria
