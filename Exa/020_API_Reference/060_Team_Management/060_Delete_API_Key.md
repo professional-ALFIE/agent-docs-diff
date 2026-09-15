@@ -44,7 +44,7 @@ paths:
     delete:
       tags:
         - Team Management
-      summary: Delete API Key
+      summary: Delete API key
       description: >-
         Deletes an API key. Only API keys belonging to the authenticated team
         can be deleted.
