@@ -49,7 +49,7 @@ paths:
     get:
       tags:
         - Team Management
-      summary: List API Keys
+      summary: List API keys
       description: >-
         Returns all API keys belonging to the authenticated team. Includes ID,
         name, and rate limit for each key.
