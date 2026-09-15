@@ -54,7 +54,7 @@ paths:
     get:
       tags:
         - Team Management
-      summary: Get API Key
+      summary: Get API key
       description: Retrieves details of a specific API key by its ID.
       operationId: get-api-key
       parameters:
