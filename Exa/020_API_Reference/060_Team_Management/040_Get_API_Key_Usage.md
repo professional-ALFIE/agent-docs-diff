@@ -84,7 +84,7 @@ paths:
     get:
       tags:
         - Team Management
-      summary: Get API Key Usage
+      summary: Get API key usage
       description: >-
         Retrieves usage analytics and billing data for a specific API key over a
         given time period. Returns cost breakdown by price type from the billing
