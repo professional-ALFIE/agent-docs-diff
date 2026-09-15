@@ -217,27 +217,30 @@
 070_What's_New/
   010_What's_New/
     010_What's_new.md — A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.
-    020_Week_34_·_August_17–21.md — Draft editable UI artboards with the /design skill, set the Concise output style, and start a Claude Code session on your machine from your phone.
-    030_Week_33_·_August_10–14.md — Claude Code Desktop auto-continues after a usage limit resets, fork mode turns on by default, and GitLab merge requests and marketplaces join GitHub.
-    040_Week_32_·_August_3–7.md — Claude Code sessions message each other, self-hosted environments run cloud sessions on your infrastructure, and auto mode becomes the default permission mode.
-    050_Week_30_·_July_20–24.md — Opus 5 becomes the default Opus model, Claude Code Desktop adds an iOS Simulator pane, and the Claude Security plugin scans your code for vulnerabilities.
-    060_Week_29_·_July_13–17.md — Pull live data into published artifacts through MCP connectors, and use Claude Code with a screen reader in the new screen reader mode.
-    070_Week_28_·_July_6–10.md — Browse external sites from the Desktop app's built-in browser, run a full setup checkup with /doctor, and pick up auto mode transcript protections and agent view upgrades.
-    080_Week_27_·_June_29_–_July_3.md — Claude Sonnet 5 becomes the default model, Claude in Chrome reaches general availability, subagents run in the background by default, Claude Desktop arrives on Linux in beta, and /radio tunes into Claude FM.
-    090_Week_26_·_June_22–26.md — Authenticate MCP servers from your shell with claude mcp login, get a response to shell mode command output with the ! prefix, and resume a conversation from before /clear with /rewind.
-    100_Week_25_·_June_15–19.md — Publish a live, shareable page from your session with Artifacts, match tool parameters in deny and ask rules, and set any setting from the prompt with /config.
-    110_Week_24_·_June_8–12.md — Move a session to a new directory with /cd, let subagents spawn their own subagents, and troubleshoot a broken configuration with safe mode.
-    120_Week_23_·_June_1–5.md — Run auto mode on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry, prompt before writing files that can run code in acceptEdits mode, list installed plugins with /plugin list, and require an approved version range for managed deployments.
-    130_Week_22_·_May_25–29.md — Run Claude Code on Claude Opus 4.8, orchestrate large tasks with dynamic workflows, catch security issues with the security-guidance plugin, and use fast mode on Opus 4.8 at a lower price.
-    140_Week_21_·_May_18–22.md — Use auto mode on the Pro plan and with Sonnet 4.6, see which skills, subagents, and MCP servers drive your plan limits in /usage, and review diffs with the new /code-review command.
-    150_Week_20_·_May_11–15.md — Manage every Claude Code session from one screen with agent view, keep Claude working toward a goal until a condition holds, and run fast mode on Opus 4.7 by default.
-    160_Week_19_·_May_4–8.md — Load plugins from .zip archives and URLs, search command history across every project with Ctrl+R, branch new worktrees from local HEAD or the remote default, and block actions unconditionally with auto mode hard deny rules.
-    170_Week_18_·_Apr_27_–_May_1.md — Claude Code on Windows runs without Git Bash, claude auth login accepts a pasted OAuth code when the browser callback can't reach localhost, claude project purge cleans up local state per project, and pasting a PR URL into /resume finds the session that created it.
-    180_Week_17_·_Apr_20–24.md — /ultrareview opens as a research preview, automatic session recaps when you return to a terminal, custom color themes you can build and ship in plugins, and a redesigned Claude Code on the web.
-    190_Week_16_·_Apr_13–17.md — Claude Opus 4.7 with the new xhigh effort level, Routines on Claude Code on the web, mobile push notifications that ping your phone when Claude needs you, a /usage breakdown that shows what's driving your limits, and native binaries replacing the bundled JavaScript.
-    200_Week_15_·_Apr_6–10.md — Ultraplan cloud planning, the Monitor tool with self-pacing /loop, /team-onboarding for packaging your setup, and /autofix-pr from your terminal.
-    210_Week_14_·_Mar_30_–_Apr_3.md — Computer use in the CLI, interactive in-product lessons, flicker-free rendering, per-tool MCP result-size overrides, and plugin executables on PATH.
-    220_Week_13_·_Mar_23–27.md — Auto mode for hands-off permissions, computer use built in, PR auto-fix in the cloud, transcript search, and a PowerShell tool for Windows.
+    020_Week_37_·_September_7–11.md — Test your plugins with claude plugin eval and pop Claude Code Desktop panes out into their own windows.
+    030_Week_36_·_Aug_31_–_Sep_4.md — Switch to Claude Fable 5.1, let computer use run in the background on Desktop, and watch Claude's edits in a live /diff panel.
+    040_Week_35_·_August_24–28.md — Resume terminal sessions in the Claude Code Desktop app, review feedback reports that Claude drafts for you, and start a session in restricted mode.
+    050_Week_34_·_August_17–21.md — Draft editable UI artboards with the /design skill, set the Concise output style, and start a Claude Code session on your machine from your phone.
+    060_Week_33_·_August_10–14.md — Claude Code Desktop auto-continues after a usage limit resets, fork mode turns on by default, and GitLab merge requests and marketplaces join GitHub.
+    070_Week_32_·_August_3–7.md — Claude Code sessions message each other, self-hosted environments run cloud sessions on your infrastructure, and auto mode becomes the default permission mode.
+    080_Week_30_·_July_20–24.md — Opus 5 becomes the default Opus model, Claude Code Desktop adds an iOS Simulator pane, and the Claude Security plugin scans your code for vulnerabilities.
+    090_Week_29_·_July_13–17.md — Pull live data into published artifacts through MCP connectors, and use Claude Code with a screen reader in the new screen reader mode.
+    100_Week_28_·_July_6–10.md — Browse external sites from the Desktop app's built-in browser, run a full setup checkup with /doctor, and pick up auto mode transcript protections and agent view upgrades.
+    110_Week_27_·_June_29_–_July_3.md — Claude Sonnet 5 becomes the default model, Claude in Chrome reaches general availability, subagents run in the background by default, Claude Desktop arrives on Linux in beta, and /radio tunes into Claude FM.
+    120_Week_26_·_June_22–26.md — Authenticate MCP servers from your shell with claude mcp login, get a response to shell mode command output with the ! prefix, and resume a conversation from before /clear with /rewind.
+    130_Week_25_·_June_15–19.md — Publish a live, shareable page from your session with Artifacts, match tool parameters in deny and ask rules, and set any setting from the prompt with /config.
+    140_Week_24_·_June_8–12.md — Move a session to a new directory with /cd, let subagents spawn their own subagents, and troubleshoot a broken configuration with safe mode.
+    150_Week_23_·_June_1–5.md — Run auto mode on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry, prompt before writing files that can run code in acceptEdits mode, list installed plugins with /plugin list, and require an approved version range for managed deployments.
+    160_Week_22_·_May_25–29.md — Run Claude Code on Claude Opus 4.8, orchestrate large tasks with dynamic workflows, catch security issues with the security-guidance plugin, and use fast mode on Opus 4.8 at a lower price.
+    170_Week_21_·_May_18–22.md — Use auto mode on the Pro plan and with Sonnet 4.6, see which skills, subagents, and MCP servers drive your plan limits in /usage, and review diffs with the new /code-review command.
+    180_Week_20_·_May_11–15.md — Manage every Claude Code session from one screen with agent view, keep Claude working toward a goal until a condition holds, and run fast mode on Opus 4.7 by default.
+    190_Week_19_·_May_4–8.md — Load plugins from .zip archives and URLs, search command history across every project with Ctrl+R, branch new worktrees from local HEAD or the remote default, and block actions unconditionally with auto mode hard deny rules.
+    200_Week_18_·_Apr_27_–_May_1.md — Claude Code on Windows runs without Git Bash, claude auth login accepts a pasted OAuth code when the browser callback can't reach localhost, claude project purge cleans up local state per project, and pasting a PR URL into /resume finds the session that created it.
+    210_Week_17_·_Apr_20–24.md — /ultrareview opens as a research preview, automatic session recaps when you return to a terminal, custom color themes you can build and ship in plugins, and a redesigned Claude Code on the web.
+    220_Week_16_·_Apr_13–17.md — Claude Opus 4.7 with the new xhigh effort level, Routines on Claude Code on the web, mobile push notifications that ping your phone when Claude needs you, a /usage breakdown that shows what's driving your limits, and native binaries replacing the bundled JavaScript.
+    230_Week_15_·_Apr_6–10.md — Ultraplan cloud planning, the Monitor tool with self-pacing /loop, /team-onboarding for packaging your setup, and /autofix-pr from your terminal.
+    240_Week_14_·_Mar_30_–_Apr_3.md — Computer use in the CLI, interactive in-product lessons, flicker-free rendering, per-tool MCP result-size overrides, and plugin executables on PATH.
+    250_Week_13_·_Mar_23–27.md — Auto mode for hands-off permissions, computer use built in, PR auto-fix in the cloud, transcript search, and a PowerShell tool for Windows.
 080_Resources/
   010_Resources/
     010_Legal_and_compliance.md — Legal agreements, compliance certifications, and security information for Claude Code.

@@ -196,16 +196,16 @@
     090_Teams/
       010_Get_Team_Info.md — Retrieve information about your team including concurrency usage and limits.
   040_Monitors/
-    010_Create_a_Monitor.md — Creates a new Monitor to run recurring Exa searches on a schedule.
-    020_List_Monitors.md — Lists all monitors for the authenticated team. Supports filtering by status and cursor-based pagination.
-    030_Get_a_Monitor.md — Retrieves a single monitor by its ID.
-    040_Update_a_Monitor.md — Updates an existing monitor. All fields are optional. For `search`, you can send a partial object containing only the fields you want to change. Set `trigger` to `null` to remove the schedule.
-    050_Delete_a_Monitor.md — Deletes a monitor. This cannot be undone.
-    060_Trigger_a_Monitor.md — Triggers a run immediately, regardless of the schedule. Works for monitors with status `active` or `paused`.
-    070_Batch_Action_on_Monitors.md — Perform a batch action on monitors matching the provided filters.
+    010_Create_a_monitor.md — Creates a new Monitor to run recurring Exa searches on a schedule.
+    020_List_monitors.md — Lists all monitors for the authenticated team. Supports filtering by status and cursor-based pagination.
+    030_Get_a_monitor.md — Retrieves a single monitor by its ID.
+    040_Update_a_monitor.md — Updates an existing monitor. All fields are optional. For `search`, you can send a partial object containing only the fields you want to change. Set `trigger` to `null` to remove the schedule.
+    050_Delete_a_monitor.md — Deletes a monitor. This cannot be undone.
+    060_Trigger_a_monitor.md — Triggers a run immediately, regardless of the schedule. Works for monitors with status `active` or `paused`.
+    070_Batch_action_on_monitors.md — Perform a batch action on monitors matching the provided filters.
     080_Runs/
-      010_List_Runs.md — Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
-      020_Get_a_Run.md — Retrieves a single run by its ID, including the full output if the run is completed.
+      010_List_runs.md — Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
+      020_Get_a_run.md — Retrieves a single run by its ID, including the full output if the run is completed.
   050_Batch/
     010_Create_a_batch.md — Submit a batch of Exa API requests to run asynchronously.
     020_List_batches.md — Retrieve a paginated list of batches for your team.
@@ -233,6 +233,5 @@
 - [Crawling Subpages](https://exa.ai/docs/reference/crawling-subpages.md)
 - [IBM WatsonX](https://exa.ai/docs/reference/ibm-watsonx.md)
 - [The Exa Index](https://exa.ai/docs/reference/the-exa-index.md): We spend a lot of time and energy creating a high quality, curated index.
-- [2026 08 24 design button behavioral stability](https://exa.ai/docs/superpowers/plans/2026-08-24-design-button-behavioral-stability.md)
-- [exa-spec](https://exa.ai/docs/exa-spec.yaml)
 - [team-management-spec](https://exa.ai/docs/team-management-spec.yaml)
+- [exa-spec](https://exa.ai/docs/exa-spec.yaml)

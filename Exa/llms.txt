@@ -154,15 +154,15 @@
 - [List all Events](https://exa.ai/docs/websets/api/events/list-all-events.md): List all events that have occurred in the system.
 - [Get an Event](https://exa.ai/docs/websets/api/events/get-an-event.md): Get a single Event by id.
 - [Get Team Info](https://exa.ai/docs/websets/api/teams/get-team-info.md): Retrieve information about your team including concurrency usage and limits.
-- [Create a Monitor](https://exa.ai/docs/reference/monitors/create-a-monitor.md): Creates a new Monitor to run recurring Exa searches on a schedule.
-- [List Monitors](https://exa.ai/docs/reference/monitors/list-monitors.md): Lists all monitors for the authenticated team. Supports filtering by status and cursor-based pagination.
-- [Get a Monitor](https://exa.ai/docs/reference/monitors/get-a-monitor.md): Retrieves a single monitor by its ID.
-- [Update a Monitor](https://exa.ai/docs/reference/monitors/update-a-monitor.md): Updates an existing monitor. All fields are optional. For `search`, you can send a partial object containing only the fields you want to change. Set `trigger` to `null` to remove the schedule.
-- [Delete a Monitor](https://exa.ai/docs/reference/monitors/delete-a-monitor.md): Deletes a monitor. This cannot be undone.
-- [Trigger a Monitor](https://exa.ai/docs/reference/monitors/trigger-a-monitor.md): Triggers a run immediately, regardless of the schedule. Works for monitors with status `active` or `paused`.
-- [Batch Action on Monitors](https://exa.ai/docs/reference/monitors/batch-monitors.md): Perform a batch action on monitors matching the provided filters.
-- [List Runs](https://exa.ai/docs/reference/monitors/runs/list-runs.md): Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
-- [Get a Run](https://exa.ai/docs/reference/monitors/runs/get-a-run.md): Retrieves a single run by its ID, including the full output if the run is completed.
+- [Create a monitor](https://exa.ai/docs/reference/monitors/create-a-monitor.md): Creates a new Monitor to run recurring Exa searches on a schedule.
+- [List monitors](https://exa.ai/docs/reference/monitors/list-monitors.md): Lists all monitors for the authenticated team. Supports filtering by status and cursor-based pagination.
+- [Get a monitor](https://exa.ai/docs/reference/monitors/get-a-monitor.md): Retrieves a single monitor by its ID.
+- [Update a monitor](https://exa.ai/docs/reference/monitors/update-a-monitor.md): Updates an existing monitor. All fields are optional. For `search`, you can send a partial object containing only the fields you want to change. Set `trigger` to `null` to remove the schedule.
+- [Delete a monitor](https://exa.ai/docs/reference/monitors/delete-a-monitor.md): Deletes a monitor. This cannot be undone.
+- [Trigger a monitor](https://exa.ai/docs/reference/monitors/trigger-a-monitor.md): Triggers a run immediately, regardless of the schedule. Works for monitors with status `active` or `paused`.
+- [Batch action on monitors](https://exa.ai/docs/reference/monitors/batch-monitors.md): Perform a batch action on monitors matching the provided filters.
+- [List runs](https://exa.ai/docs/reference/monitors/runs/list-runs.md): Lists all runs for a monitor with cursor-based pagination. Runs are returned in reverse chronological order.
+- [Get a run](https://exa.ai/docs/reference/monitors/runs/get-a-run.md): Retrieves a single run by its ID, including the full output if the run is completed.
 - [Create a batch](https://exa.ai/docs/reference/batches/create-a-batch.md): Submit a batch of Exa API requests to run asynchronously.
 - [List batches](https://exa.ai/docs/reference/batches/list-batches.md): Retrieve a paginated list of batches for your team.
 - [Get a batch](https://exa.ai/docs/reference/batches/get-a-batch.md): Retrieve a batch by ID.
@@ -183,9 +183,8 @@
 - [Crawling Subpages](https://exa.ai/docs/reference/crawling-subpages.md)
 - [IBM WatsonX](https://exa.ai/docs/reference/ibm-watsonx.md)
 - [The Exa Index](https://exa.ai/docs/reference/the-exa-index.md): We spend a lot of time and energy creating a high quality, curated index.
-- [2026 08 24 design button behavioral stability](https://exa.ai/docs/superpowers/plans/2026-08-24-design-button-behavioral-stability.md)
 
 ## OpenAPI Specs
 
-- [exa-spec](https://exa.ai/docs/exa-spec.yaml)
 - [team-management-spec](https://exa.ai/docs/team-management-spec.yaml)
+- [exa-spec](https://exa.ai/docs/exa-spec.yaml)
