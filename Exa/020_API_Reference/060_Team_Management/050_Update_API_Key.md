@@ -49,7 +49,7 @@ paths:
     put:
       tags:
         - Team Management
-      summary: Update API Key
+      summary: Update API key
       description: >-
         Updates an existing API key's name and/or rate limit. Only API keys
         belonging to the authenticated team can be updated.
