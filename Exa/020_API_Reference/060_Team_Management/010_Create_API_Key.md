@@ -43,7 +43,7 @@ paths:
     post:
       tags:
         - Team Management
-      summary: Create API Key
+      summary: Create API key
       description: >-
         Creates a new API key for the authenticated team. Optionally specify a
         name, rate limit, and budget for the API key.
