@@ -55,7 +55,7 @@ paths:
     get:
       tags:
         - Teams
-      summary: Get Team Info
+      summary: Get team info
       description: >-
         Returns information about the authenticated team, including current
         concurrency usage and limits.
